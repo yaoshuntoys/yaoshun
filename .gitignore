@@ -1,0 +1,33 @@
+# Dependencies
+node_modules
+
+# Build output and caches
+dist
+.next
+.vercel
+.turbo
+coverage
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# OS and editor files
+.DS_Store
+.idea
+.vscode
+
+# App-specific local runtime data
+apps/server/uploads
+apps/server/prisma/dev.db
+apps/server/prisma/dev.db-journal

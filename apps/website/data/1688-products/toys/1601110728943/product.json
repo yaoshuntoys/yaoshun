@@ -1,0 +1,998 @@
+{
+  "productId": "1601110728943",
+  "title": {
+    "en": "120-Piece Glow-in-the-Dark Fortress Building Kit",
+    "zh": "120件套夜光儿童堡垒拼搭套装"
+  },
+  "sourceUrl": "https://www.alibaba.com/product-detail/Children-s-Puzzle-Fortress-Blocks-Parent_1601110728943.html",
+  "categories": {
+    "en": [
+      "Mother, Kids & Toys",
+      "Blocks & Model Building Toys",
+      "Building Block Sets"
+    ],
+    "zh": [
+      "母婴与玩具",
+      "积木与模型拼搭玩具",
+      "积木套装"
+    ]
+  },
+  "pricing": {
+    "display": {
+      "en": "$13.98",
+      "zh": "$13.98"
+    },
+    "currency": "$",
+    "min": 12.58,
+    "max": 13.98,
+    "isRange": true,
+    "minOrder": {
+      "en": "1 box",
+      "zh": "1 箱"
+    },
+    "tiers": [
+      {
+        "quantity": {
+          "en": "1 - 499 boxes",
+          "zh": "1 - 499 箱"
+        },
+        "price": "$13.98"
+      },
+      {
+        "quantity": {
+          "en": "500 - 999 boxes",
+          "zh": "500 - 999 箱"
+        },
+        "price": "$13.28"
+      },
+      {
+        "quantity": {
+          "en": ">= 1,000 boxes",
+          "zh": ">= 1,000 箱"
+        },
+        "price": "$12.58"
+      }
+    ]
+  },
+  "customizationOptions": [
+    {
+      "label": {
+        "en": "Customized logo",
+        "zh": "支持Logo定制"
+      },
+      "minOrder": {
+        "en": "1000 boxes",
+        "zh": "1000 箱"
+      }
+    },
+    {
+      "label": {
+        "en": "Customized packaging",
+        "zh": "支持包装定制"
+      },
+      "minOrder": {
+        "en": "1000 boxes",
+        "zh": "1000 箱"
+      }
+    },
+    {
+      "label": {
+        "en": "Graphic customization",
+        "zh": "支持图文定制"
+      },
+      "minOrder": {
+        "en": "1000 boxes",
+        "zh": "1000 箱"
+      }
+    }
+  ],
+  "specifications": [
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Glow fort building toy",
+        "zh": "夜光堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "120",
+        "zh": "120"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization",
+        "zh": "支持 OEM/ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Single Set Weight",
+        "zh": "单套重量"
+      },
+      "value": {
+        "en": "3.5kg",
+        "zh": "3.5kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Recommended Users",
+        "zh": "适玩人数"
+      },
+      "value": {
+        "en": "1-3 children",
+        "zh": "1-3个孩子"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Glow play and spatial thinking development",
+        "zh": "夜光探索与空间思维启发"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    }
+  ],
+  "productAttributes": [
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Brand Name",
+        "zh": "品牌"
+      },
+      "value": {
+        "en": "YaoShun",
+        "zh": "YaoShun"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "120PCSYG",
+        "zh": "120PCSYG"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Company Type",
+        "zh": "企业类型"
+      },
+      "value": {
+        "en": "Manufacturer and Exporter",
+        "zh": "制造商与出口商"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization",
+        "zh": "支持 OEM/ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Color box",
+        "zh": "彩盒"
+      },
+      "value": {
+        "en": "43*25*12cm",
+        "zh": "43*25*12cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Outer box",
+        "zh": "外箱"
+      },
+      "value": {
+        "en": "44*26*13cm",
+        "zh": "44*26*13cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Packed Weight",
+        "zh": "重量"
+      },
+      "value": {
+        "en": "3.5kg / 4kg",
+        "zh": "3.5kg / 4kg"
+      }
+    },
+    {
+      "key": {
+        "en": "PP Ball Size",
+        "zh": "PP球尺寸"
+      },
+      "value": {
+        "en": "5.6cm",
+        "zh": "5.6cm"
+      }
+    },
+    {
+      "key": {
+        "en": "PP Rod Size",
+        "zh": "PP杆尺寸"
+      },
+      "value": {
+        "en": "40cm",
+        "zh": "40cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Recommended Users",
+        "zh": "适玩人数"
+      },
+      "value": {
+        "en": "1-3 children",
+        "zh": "1-3个孩子"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Glow play and spatial thinking development",
+        "zh": "夜光探索与空间思维启发"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    }
+  ],
+  "packagingAndShipping": {
+    "unitSize": "43X25X12",
+    "unitVolume": "",
+    "unitWeight": "3.5",
+    "summary": {
+      "en": "Packaging & Shipping",
+      "zh": "包装与运输"
+    },
+    "blocks": [
+      {
+        "label": {
+          "en": "Selling unit",
+          "zh": "销售单位"
+        },
+        "value": {
+          "en": "Single item",
+          "zh": "单件商品"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Single package size",
+          "zh": "单个包装尺寸"
+        },
+        "value": {
+          "en": "43 x 25 x 12 cm",
+          "zh": "43 x 25 x 12 厘米"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Single gross weight",
+          "zh": "单个毛重"
+        },
+        "value": {
+          "en": "3.5 kg",
+          "zh": "3.5 千克"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Packaging",
+          "zh": "包装方式"
+        },
+        "value": {
+          "en": "Color box + outer carton",
+          "zh": "彩盒 + 外箱"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      }
+    ]
+  },
+  "leadTime": {
+    "tiers": [
+      {
+        "minQuantity": "1",
+        "maxQuantity": "1",
+        "processPeriodDays": 7
+      },
+      {
+        "minQuantity": "2",
+        "maxQuantity": "500",
+        "processPeriodDays": 30
+      },
+      {
+        "minQuantity": "501",
+        "maxQuantity": "1000",
+        "processPeriodDays": 60
+      }
+    ]
+  },
+  "videoDescription": {
+    "title": {
+      "en": "Product Video",
+      "zh": "产品视频"
+    },
+    "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/videos/video-001.mp4",
+    "duration": ""
+  },
+  "media": {
+    "main": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/1.webp"
+      }
+    ],
+    "detail": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/2.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/3.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/4.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/5.webp"
+      }
+    ]
+  },
+  "productDetails": [
+    {
+      "sectionTitle": {
+        "en": "Night Glow Castle",
+        "zh": "夜光城堡"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/1.webp",
+      "text": {
+        "en": "The glow frame creates an eye-catching castle effect for bedtime play, camping themes, and gift campaigns.",
+        "zh": "夜光框架可形成醒目的城堡效果，适合睡前玩耍、露营主题和礼品推广。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Retail Package Size",
+        "zh": "零售包装尺寸"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/2.webp",
+      "text": {
+        "en": "Compact color-box packaging helps buyers plan shelf display, carton loading, online listings, and branded artwork updates.",
+        "zh": "紧凑彩盒包装便于规划货架陈列、装箱、电商 listing 和品牌画面更新。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Complete Accessory Set",
+        "zh": "完整配件套装"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/3.webp",
+      "text": {
+        "en": "Storage bag, glow poles, connector balls, guide sheet, and size references support easy inspection before sampling or mass production.",
+        "zh": "收纳袋、夜光杆、连接球、说明页和尺寸参考齐全，便于打样或量产前核对。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Stable Roof Structures",
+        "zh": "稳定屋顶结构"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/4.webp",
+      "text": {
+        "en": "Triangular bracing helps children build stronger castle roofs while learning balance, load paths, and spatial relationships.",
+        "zh": "三角支撑帮助儿童搭建更稳固的城堡屋顶，同时理解平衡、受力路径和空间关系。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Low-Light Play Value",
+        "zh": "暗光玩法价值"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/5.webp",
+      "text": {
+        "en": "The luminous effect extends play from daytime construction to evening storytelling, creating stronger emotional value for families.",
+        "zh": "夜光效果把白天拼搭延伸到夜间故事场景，为家庭使用带来更强情绪价值。"
+      }
+    }
+  ],
+  "module": "toys",
+  "priority": 1,
+  "tags": [
+    {
+      "key": "toys",
+      "en": "Toys",
+      "zh": "玩具"
+    },
+    {
+      "key": "toys-mother-kids-toys",
+      "en": "Mother, Kids & Toys",
+      "zh": "母婴与玩具"
+    },
+    {
+      "key": "toys-blocks-model-building-toys",
+      "en": "Blocks & Model Building Toys",
+      "zh": "积木与模型拼搭玩具"
+    },
+    {
+      "key": "toys-building-block-sets",
+      "en": "Building Block Sets",
+      "zh": "积木套装"
+    },
+    {
+      "key": "pp",
+      "en": "pp",
+      "zh": "pp"
+    }
+  ],
+  "structuredData": [
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "@id": "1601110728943",
+      "name": "120-Piece Glow-in-the-Dark Fortress Building Kit",
+      "image": [
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/1.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/2.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/3.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/4.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/5.webp"
+      ],
+      "description": "Glow-in-the-dark rods add a stronger play effect after charging under light, making the set attractive for bedrooms and themed gifts. The 120-piece configuration supports castles, towers, tents, tunnels, and other repeatable frame structures. PP components are lightweight, durable, and easy for children to connect, remove, and rebuild. Color-box packaging and accessory planning make the item suitable for retail, e-commerce, event gifts, and OEM/ODM cooperation.",
+      "sku": "1601110728943",
+      "mpn": "1601110728943-00",
+      "brand": {
+        "@type": "Brand",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.alibaba.com/product-detail/Children-s-Puzzle-Fortress-Blocks-Parent_1601110728943.html",
+        "offerCount": 1,
+        "availability": "http://schema.org/InStock",
+        "priceCurrency": "USD",
+        "price": "12.58",
+        "priceValidUntil": "2027-04-25"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "@id": "1601110728943",
+      "name": "120-Piece Glow-in-the-Dark Fortress Building Kit",
+      "description": "Glow-in-the-dark rods add a stronger play effect after charging under light, making the set attractive for bedrooms and themed gifts. The 120-piece configuration supports castles, towers, tents, tunnels, and other repeatable frame structures. PP components are lightweight, durable, and easy for children to connect, remove, and rebuild. Color-box packaging and accessory planning make the item suitable for retail, e-commerce, event gifts, and OEM/ODM cooperation.",
+      "thumbnailUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/1.webp",
+      "uploadDate": "2026-04-25",
+      "duration": "PT17S",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/videos/video-001.mp4"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/1.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/2.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/3.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/4.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/5.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Mother, Kids & Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Mother+Kids+Toys&categoryId=26"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blocks & Model Building Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Blocks+Model+Building+Toys&categoryId=201459117"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Building Block Sets",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Building+Block+Sets&categoryId=201455928"
+        }
+      ]
+    }
+  ],
+  "images": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/1.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/2.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/3.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/4.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/5.webp"
+  ],
+  "videos": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/videos/video-001.mp4"
+  ],
+  "summary": {
+    "en": "A 120-piece glow fort kit for night play, STEM building, and gift-ready imaginative construction.",
+    "zh": "120件夜光堡垒拼搭套装，适合夜间玩法、STEM搭建和礼品化创意建构。"
+  },
+  "description": {
+    "en": [
+      "Glow-in-the-dark rods add a stronger play effect after charging under light, making the set attractive for bedrooms and themed gifts.",
+      "The 120-piece configuration supports castles, towers, tents, tunnels, and other repeatable frame structures.",
+      "PP components are lightweight, durable, and easy for children to connect, remove, and rebuild.",
+      "Color-box packaging and accessory planning make the item suitable for retail, e-commerce, event gifts, and OEM/ODM cooperation."
+    ],
+    "zh": [
+      "夜光杆件吸光后带来更强的玩耍效果，适合卧室场景和主题礼品。",
+      "120件配置可支持城堡、高塔、帐篷、通道等多种可重复框架结构。",
+      "PP组件轻便耐用，儿童可轻松连接、拆卸和重新搭建。",
+      "彩盒包装和配件配置完整，适合零售、电商、活动礼品和OEM/ODM合作。"
+    ]
+  },
+  "attributePairs": [
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Glow fort building toy",
+        "zh": "夜光堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "120",
+        "zh": "120"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization",
+        "zh": "支持 OEM/ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Single Set Weight",
+        "zh": "单套重量"
+      },
+      "value": {
+        "en": "3.5kg",
+        "zh": "3.5kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Recommended Users",
+        "zh": "适玩人数"
+      },
+      "value": {
+        "en": "1-3 children",
+        "zh": "1-3个孩子"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Glow play and spatial thinking development",
+        "zh": "夜光探索与空间思维启发"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Brand Name",
+        "zh": "品牌"
+      },
+      "value": {
+        "en": "YaoShun",
+        "zh": "YaoShun"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "120PCSYG",
+        "zh": "120PCSYG"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Company Type",
+        "zh": "企业类型"
+      },
+      "value": {
+        "en": "Manufacturer and Exporter",
+        "zh": "制造商与出口商"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization",
+        "zh": "支持 OEM/ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Color box",
+        "zh": "彩盒"
+      },
+      "value": {
+        "en": "43*25*12cm",
+        "zh": "43*25*12cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Outer box",
+        "zh": "外箱"
+      },
+      "value": {
+        "en": "44*26*13cm",
+        "zh": "44*26*13cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Packed Weight",
+        "zh": "重量"
+      },
+      "value": {
+        "en": "3.5kg / 4kg",
+        "zh": "3.5kg / 4kg"
+      }
+    },
+    {
+      "key": {
+        "en": "PP Ball Size",
+        "zh": "PP球尺寸"
+      },
+      "value": {
+        "en": "5.6cm",
+        "zh": "5.6cm"
+      }
+    },
+    {
+      "key": {
+        "en": "PP Rod Size",
+        "zh": "PP杆尺寸"
+      },
+      "value": {
+        "en": "40cm",
+        "zh": "40cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Recommended Users",
+        "zh": "适玩人数"
+      },
+      "value": {
+        "en": "1-3 children",
+        "zh": "1-3个孩子"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Glow play and spatial thinking development",
+        "zh": "夜光探索与空间思维启发"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    }
+  ],
+  "packagingPairs": [
+    {
+      "key": {
+        "en": "Unit Size",
+        "zh": "单件尺寸"
+      },
+      "value": {
+        "en": "43X25X12 cm",
+        "zh": "43X25X12 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Unit Weight",
+        "zh": "单件重量"
+      },
+      "value": {
+        "en": "3.5 kg",
+        "zh": "3.5 kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Shipping Summary",
+        "zh": "包装运输摘要"
+      },
+      "value": {
+        "en": "Packaging & Shipping",
+        "zh": "包装与运输"
+      }
+    },
+    {
+      "key": {
+        "en": "Selling unit",
+        "zh": "销售单位"
+      },
+      "value": {
+        "en": "Single item",
+        "zh": "单件商品"
+      }
+    },
+    {
+      "key": {
+        "en": "Single package size",
+        "zh": "单个包装尺寸"
+      },
+      "value": {
+        "en": "43 x 25 x 12 cm",
+        "zh": "43 x 25 x 12 厘米"
+      }
+    },
+    {
+      "key": {
+        "en": "Single gross weight",
+        "zh": "单个毛重"
+      },
+      "value": {
+        "en": "3.5 kg",
+        "zh": "3.5 千克"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    }
+  ]
+}

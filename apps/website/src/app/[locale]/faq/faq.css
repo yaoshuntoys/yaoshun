@@ -1,0 +1,241 @@
+/* FAQ */
+
+.faq-page {
+  display: grid;
+  gap: 0;
+  padding-top: 4rem;
+}
+
+.faq-breadcrumb-wrap,
+.faq-content-grid {
+  width: min(960px, calc(100% - 24px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faq-breadcrumb-wrap {
+  margin-bottom: 1rem;
+}
+
+.faq-section-head h2 {
+  margin: 0;
+  color: #17306e;
+  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  letter-spacing: -0.06em;
+}
+
+.faq-section-head p,
+.faq-accordion-answer,
+.faq-support-item span,
+.faq-support-contact-row span {
+  margin: 0;
+  color: #6d7ca7;
+  line-height: 1.72;
+}
+
+.faq-content-grid {
+  margin: 0 auto;
+  display: grid;
+  gap: 0;
+}
+
+.faq-main-panel,
+.faq-support-panel {
+  display: grid;
+  align-content: start;
+  gap: 1.25rem;
+  padding: 1.55rem 1.45rem;
+  border: 1px solid rgba(24, 56, 138, 0.08);
+  border-radius: 1.7rem;
+  background: #ffffff;
+  box-shadow: 0 20px 46px -36px rgba(18, 41, 103, 0.16);
+}
+
+.faq-support-panel {
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 255, 0.16), transparent 34%),
+    linear-gradient(135deg, rgba(243, 247, 255, 0.98) 0%, rgba(255, 255, 255, 0.98) 100%);
+}
+
+.faq-section-head {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.faq-section-head h2 {
+  font-size: clamp(1.95rem, 2.8vw, 2.6rem);
+  line-height: 1.04;
+}
+
+.faq-accordion-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.faq-accordion-item {
+  border: 1px solid rgba(24, 56, 138, 0.08);
+  border-radius: 1.1rem;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.faq-accordion-item summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.05rem;
+  color: #17306e;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.faq-accordion-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-accordion-icon {
+  flex-shrink: 0;
+  color: #2563ff;
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.faq-accordion-item[open] .faq-accordion-icon {
+  transform: rotate(45deg);
+}
+
+.faq-accordion-answer {
+  padding: 0 1.05rem 1rem;
+  font-size: 0.95rem;
+}
+
+.faq-support-points {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq-support-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 3.2rem;
+  padding: 0.82rem 0.92rem;
+  border-radius: 1rem;
+  background: rgba(247, 250, 255, 0.9);
+  border: 1px solid rgba(24, 56, 138, 0.08);
+}
+
+.faq-support-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: rgba(37, 99, 255, 0.1);
+  color: #2563ff;
+  flex-shrink: 0;
+}
+
+.faq-support-contact {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.2rem 0;
+}
+
+.faq-support-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #17306e;
+}
+
+.faq-support-contact-row svg {
+  color: #2563ff;
+  flex-shrink: 0;
+}
+
+.faq-support-actions {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 0.1rem;
+}
+
+.faq-primary-cta,
+.faq-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: fit-content;
+  font-weight: 700;
+}
+
+.faq-primary-cta {
+  min-height: 50px;
+  padding: 0 1.45rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563ff 0%, #1a43c9 100%);
+  color: #ffffff;
+  box-shadow: 0 18px 40px -26px rgba(37, 99, 255, 0.68);
+}
+
+.faq-primary-cta span,
+.faq-primary-cta svg {
+  color: #ffffff;
+}
+
+.faq-secondary-link {
+  color: #2563ff;
+}
+
+.faq-secondary-link:hover {
+  color: #1a43c9;
+}
+
+@media (max-width: 767.98px) {
+
+  .faq-content-grid {
+    gap: 1rem;
+  }
+
+  .faq-main-panel,
+  .faq-support-panel {
+    gap: 1.05rem;
+    padding: 1.15rem 1rem;
+    border-radius: 1.3rem;
+  }
+
+  .faq-section-head h2 {
+    font-size: clamp(1.8rem, 8vw, 2.3rem);
+  }
+
+  .faq-accordion-item summary {
+    padding: 0.92rem 0.95rem;
+    font-size: 0.95rem;
+  }
+
+  .faq-accordion-answer {
+    padding: 0 0.95rem 0.95rem;
+    font-size: 0.9rem;
+  }
+
+  .faq-primary-cta {
+    width: 100%;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .faq-page {
+    padding-top: 4.5rem;
+  }
+
+  .faq-content-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

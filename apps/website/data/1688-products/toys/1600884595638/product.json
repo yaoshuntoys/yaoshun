@@ -1,0 +1,983 @@
+{
+  "productId": "1600884595638",
+  "title": {
+    "en": "69-Piece Oversized Fort & Tent Building Kit",
+    "zh": "69件套大颗粒儿童堡垒帐篷套装"
+  },
+  "sourceUrl": "https://www.alibaba.com/product-detail/Indoor-Discovery-Big-Set-69piece-Best_1600884595638.html",
+  "categories": {
+    "en": [
+      "Mother, Kids & Toys",
+      "Educational Toys",
+      "Other Educational Toys"
+    ],
+    "zh": [
+      "母婴与玩具",
+      "益智玩具",
+      "其他益智玩具"
+    ]
+  },
+  "pricing": {
+    "display": {
+      "en": "$9.50",
+      "zh": "$9.50"
+    },
+    "currency": "$",
+    "min": 7.5,
+    "max": 9.5,
+    "isRange": true,
+    "minOrder": {
+      "en": "1 box",
+      "zh": "1 箱"
+    },
+    "tiers": [
+      {
+        "quantity": {
+          "en": "1 - 7 boxes",
+          "zh": "1 - 7 箱"
+        },
+        "price": "$9.50"
+      },
+      {
+        "quantity": {
+          "en": "8 - 999 boxes",
+          "zh": "8 - 999 箱"
+        },
+        "price": "$8.50"
+      },
+      {
+        "quantity": {
+          "en": ">= 1,000 boxes",
+          "zh": ">= 1,000 箱"
+        },
+        "price": "$7.50"
+      }
+    ]
+  },
+  "customizationOptions": [
+    {
+      "label": {
+        "en": "Customized logo",
+        "zh": "支持Logo定制"
+      },
+      "minOrder": {
+        "en": "1000 boxes",
+        "zh": "1000 箱"
+      }
+    },
+    {
+      "label": {
+        "en": "Customized packaging",
+        "zh": "支持包装定制"
+      },
+      "minOrder": {
+        "en": "1000 boxes",
+        "zh": "1000 箱"
+      }
+    },
+    {
+      "label": {
+        "en": "Graphic customization",
+        "zh": "支持图文定制"
+      },
+      "minOrder": {
+        "en": "1000 boxes",
+        "zh": "1000 箱"
+      }
+    }
+  ],
+  "specifications": [
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Oversized fort and tent building toy",
+        "zh": "大颗粒堡垒帐篷拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization",
+        "zh": "支持 OEM/ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "69",
+        "zh": "69"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP/Non-woven Fabric",
+        "zh": "PP/无纺布"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 3-15",
+        "zh": "3-15岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Feature",
+        "zh": "特色"
+      },
+      "value": {
+        "en": "Includes non-woven fabric cover",
+        "zh": "含无纺布帐篷覆盖件"
+      }
+    }
+  ],
+  "productAttributes": [
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 3-15",
+        "zh": "3-15岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Oversized fort and tent building toy",
+        "zh": "大颗粒堡垒帐篷拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Brand Name",
+        "zh": "品牌"
+      },
+      "value": {
+        "en": "YunShun",
+        "zh": "YunShun"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "69",
+        "zh": "69"
+      }
+    },
+    {
+      "key": {
+        "en": "Product Name",
+        "zh": "产品名称"
+      },
+      "value": {
+        "en": "Oversized fort and tent building kit",
+        "zh": "大颗粒儿童堡垒帐篷套装"
+      }
+    },
+    {
+      "key": {
+        "en": "Company Type",
+        "zh": "企业类型"
+      },
+      "value": {
+        "en": "Manufacturer and Exporter",
+        "zh": "制造商与出口商"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization",
+        "zh": "支持 OEM/ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Style",
+        "zh": "产品风格"
+      },
+      "value": {
+        "en": "Creative construction and tent play",
+        "zh": "创意拼搭与帐篷游戏"
+      }
+    },
+    {
+      "key": {
+        "en": "Color Box Size",
+        "zh": "彩盒尺寸"
+      },
+      "value": {
+        "en": "40*29*6.5cm",
+        "zh": "40*29*6.5cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Carton Size",
+        "zh": "外箱尺寸"
+      },
+      "value": {
+        "en": "42*31*56cm",
+        "zh": "42*31*56cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Single Set Weight",
+        "zh": "单套重量"
+      },
+      "value": {
+        "en": "1.6kg",
+        "zh": "1.6kg"
+      }
+    },
+    {
+      "key": {
+        "en": "MOQ",
+        "zh": "最小起订量"
+      },
+      "value": {
+        "en": "6 sets",
+        "zh": "6套"
+      }
+    },
+    {
+      "key": {
+        "en": "Feature",
+        "zh": "特色"
+      },
+      "value": {
+        "en": "Includes non-woven fabric cover",
+        "zh": "含无纺布帐篷覆盖件"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP/Non-woven Fabric",
+        "zh": "PP/无纺布"
+      }
+    }
+  ],
+  "packagingAndShipping": {
+    "unitSize": "40X29X6.5",
+    "unitVolume": "",
+    "unitWeight": "1.6",
+    "summary": {
+      "en": "Packaging & Shipping",
+      "zh": "包装与运输"
+    },
+    "blocks": [
+      {
+        "label": {
+          "en": "Selling unit",
+          "zh": "销售单位"
+        },
+        "value": {
+          "en": "Single item",
+          "zh": "单件商品"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Single package size",
+          "zh": "单个包装尺寸"
+        },
+        "value": {
+          "en": "40 x 29 x 6.5 cm",
+          "zh": "40 x 29 x 6.5 厘米"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Single gross weight",
+          "zh": "单个毛重"
+        },
+        "value": {
+          "en": "1.6 kg",
+          "zh": "1.6 千克"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Packaging",
+          "zh": "包装方式"
+        },
+        "value": {
+          "en": "Color box packing",
+          "zh": "彩盒包装"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      }
+    ]
+  },
+  "leadTime": {
+    "tiers": [
+      {
+        "minQuantity": "1",
+        "maxQuantity": "1",
+        "processPeriodDays": 3
+      },
+      {
+        "minQuantity": "2",
+        "maxQuantity": "8",
+        "processPeriodDays": 3
+      },
+      {
+        "minQuantity": "9",
+        "maxQuantity": "1000",
+        "processPeriodDays": 25
+      }
+    ]
+  },
+  "videoDescription": {
+    "title": {
+      "en": "Product Video",
+      "zh": "产品视频"
+    },
+    "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/videos/video-001.mp4",
+    "duration": ""
+  },
+  "media": {
+    "main": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/1.webp"
+      }
+    ],
+    "detail": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/2.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/3.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/4.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/5.webp"
+      }
+    ]
+  },
+  "productDetails": [
+    {
+      "sectionTitle": {
+        "en": "Glow Castle Play",
+        "zh": "发光城堡玩法"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/1.webp",
+      "text": {
+        "en": "Glow rods help children turn a simple frame into a castle-style play space for bedtime stories, pretend play, and family interaction.",
+        "zh": "发光杆件可将基础框架变成城堡式游戏空间，适合睡前故事、角色扮演和亲子互动。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Retail-Ready Packing",
+        "zh": "零售化包装配置"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/2.webp",
+      "text": {
+        "en": "The set includes a color box, storage bag, manual, off-white poles, and orange connector balls for convenient packing review and resale planning.",
+        "zh": "套装包含彩盒、收纳袋、说明书、米白杆件和橙色连接球，便于包装核对和零售销售规划。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Tall STEM Builds",
+        "zh": "高结构STEM搭建"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/3.webp",
+      "text": {
+        "en": "Children can build taller house frames and learn how triangles, roof lines, and support points improve structural stability.",
+        "zh": "儿童可搭建更高的房屋框架，并理解三角结构、屋顶线条和支撑点如何提升稳定性。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Simple House Assembly",
+        "zh": "简易房屋拼搭"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/4.webp",
+      "text": {
+        "en": "The pole-and-ball layout makes the house structure easy to understand, helping children follow patterns and rebuild independently.",
+        "zh": "杆球连接方式让房屋结构更易理解，帮助儿童按规律拼接并尝试独立重建。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Durable PP Components",
+        "zh": "耐用PP组件"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/5.webp",
+      "text": {
+        "en": "Smooth PP rods and perforated connector balls are designed for repeated play, easy gripping, and safer handling by young builders.",
+        "zh": "平滑PP杆件和多孔连接球适合反复玩耍，握持方便，也更适合低龄儿童安全操作。"
+      }
+    }
+  ],
+  "module": "toys",
+  "priority": 8,
+  "tags": [
+    {
+      "key": "toys",
+      "en": "Toys",
+      "zh": "玩具"
+    },
+    {
+      "key": "toys-mother-kids-toys",
+      "en": "Mother, Kids & Toys",
+      "zh": "母婴与玩具"
+    },
+    {
+      "key": "toys-educational-toys",
+      "en": "Educational Toys",
+      "zh": "益智玩具"
+    },
+    {
+      "key": "toys-other-educational-toys",
+      "en": "Other Educational Toys",
+      "zh": "其他益智玩具"
+    },
+    {
+      "key": "pp",
+      "en": "PP",
+      "zh": "PP"
+    },
+    {
+      "key": "non-woven-fabric",
+      "en": "Non-woven Fabric",
+      "zh": "Non-woven Fabric"
+    }
+  ],
+  "structuredData": [
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "@id": "1600884595638",
+      "name": "69-Piece Oversized Fort & Tent Building Kit",
+      "image": [
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/1.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/2.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/3.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/4.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/5.webp"
+      ],
+      "description": "The 69-piece configuration is suitable for small forts, tent frames, reading corners, and lightweight indoor exploration spaces. PP rods and rounded connector balls support repeated assembly while keeping the structure easy for children to handle. Glow-style play adds stronger gift appeal for bedrooms, family activities, and seasonal promotions. The color box, storage bag, and instruction sheet make the set practical for retail, e-commerce, and OEM/ODM programs.",
+      "sku": "1600884595638",
+      "mpn": "1600884595638-00",
+      "brand": {
+        "@type": "Brand",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.alibaba.com/product-detail/Indoor-Discovery-Big-Set-69piece-Best_1600884595638.html",
+        "offerCount": 1,
+        "availability": "http://schema.org/InStock",
+        "priceCurrency": "USD",
+        "price": "7.5",
+        "priceValidUntil": "2027-04-25"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "@id": "1600884595638",
+      "name": "69-Piece Oversized Fort & Tent Building Kit",
+      "description": "The 69-piece configuration is suitable for small forts, tent frames, reading corners, and lightweight indoor exploration spaces. PP rods and rounded connector balls support repeated assembly while keeping the structure easy for children to handle. Glow-style play adds stronger gift appeal for bedrooms, family activities, and seasonal promotions. The color box, storage bag, and instruction sheet make the set practical for retail, e-commerce, and OEM/ODM programs.",
+      "thumbnailUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/1.webp",
+      "uploadDate": "2026-04-25",
+      "duration": "PT22S",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/videos/video-001.mp4"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/1.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/2.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/3.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/4.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/5.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Mother, Kids & Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Mother+Kids+Toys&categoryId=26"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Educational Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Educational+Toys&categoryId=100001714"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Other Educational Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Other+Educational+Toys&categoryId=100001735"
+        }
+      ]
+    }
+  ],
+  "images": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/1.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/2.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/3.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/4.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/5.webp"
+  ],
+  "videos": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/videos/video-001.mp4"
+  ],
+  "summary": {
+    "en": "A compact fort-and-tent building set for younger builders, combining glow play, simple assembly, and gift-ready packaging.",
+    "zh": "适合低龄儿童的堡垒帐篷拼搭套装，兼具发光玩法、简易组装和礼品化包装。"
+  },
+  "description": {
+    "en": [
+      "The 69-piece configuration is suitable for small forts, tent frames, reading corners, and lightweight indoor exploration spaces.",
+      "PP rods and rounded connector balls support repeated assembly while keeping the structure easy for children to handle.",
+      "Glow-style play adds stronger gift appeal for bedrooms, family activities, and seasonal promotions.",
+      "The color box, storage bag, and instruction sheet make the set practical for retail, e-commerce, and OEM/ODM programs."
+    ],
+    "zh": [
+      "69件配置适合搭建小型堡垒、帐篷框架、阅读角和轻量室内探索空间。",
+      "PP杆件与圆润连接球支持反复拆装，结构轻便，儿童更容易操作。",
+      "发光玩法增强卧室场景、亲子活动和节庆礼品渠道的吸引力。",
+      "彩盒、收纳袋和说明书配置完整，适合零售、电商和OEM/ODM项目。"
+    ]
+  },
+  "attributePairs": [
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Oversized fort and tent building toy",
+        "zh": "大颗粒堡垒帐篷拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization",
+        "zh": "支持 OEM/ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "69",
+        "zh": "69"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP/Non-woven Fabric",
+        "zh": "PP/无纺布"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 3-15",
+        "zh": "3-15岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Feature",
+        "zh": "特色"
+      },
+      "value": {
+        "en": "Includes non-woven fabric cover",
+        "zh": "含无纺布帐篷覆盖件"
+      }
+    },
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 3-15",
+        "zh": "3-15岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Oversized fort and tent building toy",
+        "zh": "大颗粒堡垒帐篷拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Brand Name",
+        "zh": "品牌"
+      },
+      "value": {
+        "en": "YunShun",
+        "zh": "YunShun"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "69",
+        "zh": "69"
+      }
+    },
+    {
+      "key": {
+        "en": "Product Name",
+        "zh": "产品名称"
+      },
+      "value": {
+        "en": "Oversized fort and tent building kit",
+        "zh": "大颗粒儿童堡垒帐篷套装"
+      }
+    },
+    {
+      "key": {
+        "en": "Company Type",
+        "zh": "企业类型"
+      },
+      "value": {
+        "en": "Manufacturer and Exporter",
+        "zh": "制造商与出口商"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization",
+        "zh": "支持 OEM/ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Style",
+        "zh": "产品风格"
+      },
+      "value": {
+        "en": "Creative construction and tent play",
+        "zh": "创意拼搭与帐篷游戏"
+      }
+    },
+    {
+      "key": {
+        "en": "Color Box Size",
+        "zh": "彩盒尺寸"
+      },
+      "value": {
+        "en": "40*29*6.5cm",
+        "zh": "40*29*6.5cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Carton Size",
+        "zh": "外箱尺寸"
+      },
+      "value": {
+        "en": "42*31*56cm",
+        "zh": "42*31*56cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Single Set Weight",
+        "zh": "单套重量"
+      },
+      "value": {
+        "en": "1.6kg",
+        "zh": "1.6kg"
+      }
+    },
+    {
+      "key": {
+        "en": "MOQ",
+        "zh": "最小起订量"
+      },
+      "value": {
+        "en": "6 sets",
+        "zh": "6套"
+      }
+    },
+    {
+      "key": {
+        "en": "Feature",
+        "zh": "特色"
+      },
+      "value": {
+        "en": "Includes non-woven fabric cover",
+        "zh": "含无纺布帐篷覆盖件"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP/Non-woven Fabric",
+        "zh": "PP/无纺布"
+      }
+    }
+  ],
+  "packagingPairs": [
+    {
+      "key": {
+        "en": "Unit Size",
+        "zh": "单件尺寸"
+      },
+      "value": {
+        "en": "40X29X6.5 cm",
+        "zh": "40X29X6.5 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Unit Weight",
+        "zh": "单件重量"
+      },
+      "value": {
+        "en": "1.6 kg",
+        "zh": "1.6 kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Shipping Summary",
+        "zh": "包装运输摘要"
+      },
+      "value": {
+        "en": "Packaging & Shipping",
+        "zh": "包装与运输"
+      }
+    },
+    {
+      "key": {
+        "en": "Selling unit",
+        "zh": "销售单位"
+      },
+      "value": {
+        "en": "Single item",
+        "zh": "单件商品"
+      }
+    },
+    {
+      "key": {
+        "en": "Single package size",
+        "zh": "单个包装尺寸"
+      },
+      "value": {
+        "en": "40 x 29 x 6.5 cm",
+        "zh": "40 x 29 x 6.5 厘米"
+      }
+    },
+    {
+      "key": {
+        "en": "Single gross weight",
+        "zh": "单个毛重"
+      },
+      "value": {
+        "en": "1.6 kg",
+        "zh": "1.6 千克"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box packing",
+        "zh": "彩盒包装"
+      }
+    }
+  ]
+}

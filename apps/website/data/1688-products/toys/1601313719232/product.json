@@ -1,0 +1,998 @@
+{
+  "productId": "1601313719232",
+  "title": {
+    "en": "100-Piece STEM Fort Building Kit",
+    "zh": "100件套STEM儿童堡垒拼搭套装"
+  },
+  "sourceUrl": "https://www.alibaba.com/product-detail/First-Choice-for-Children-s-Christmas_1601313719232.html",
+  "categories": {
+    "en": [
+      "Mother, Kids & Toys",
+      "Educational Toys",
+      "Other Educational Toys"
+    ],
+    "zh": [
+      "母婴与玩具",
+      "益智玩具",
+      "其他益智玩具"
+    ]
+  },
+  "pricing": {
+    "display": {
+      "en": "$13",
+      "zh": "$13"
+    },
+    "currency": "$",
+    "min": 11,
+    "max": 13,
+    "isRange": true,
+    "minOrder": {
+      "en": "1 box",
+      "zh": "1 箱"
+    },
+    "tiers": [
+      {
+        "quantity": {
+          "en": "1 - 499 boxes",
+          "zh": "1 - 499 箱"
+        },
+        "price": "$13"
+      },
+      {
+        "quantity": {
+          "en": "500 - 999 boxes",
+          "zh": "500 - 999 箱"
+        },
+        "price": "$12"
+      },
+      {
+        "quantity": {
+          "en": ">= 1,000 boxes",
+          "zh": ">= 1,000 箱"
+        },
+        "price": "$11"
+      }
+    ]
+  },
+  "customizationOptions": [
+    {
+      "label": {
+        "en": "Customized logo",
+        "zh": "支持Logo定制"
+      },
+      "minOrder": {
+        "en": "1000 boxes",
+        "zh": "1000 箱"
+      }
+    },
+    {
+      "label": {
+        "en": "Customized packaging",
+        "zh": "支持包装定制"
+      },
+      "minOrder": {
+        "en": "1000 boxes",
+        "zh": "1000 箱"
+      }
+    },
+    {
+      "label": {
+        "en": "Graphic customization",
+        "zh": "支持图文定制"
+      },
+      "minOrder": {
+        "en": "1000 boxes",
+        "zh": "1000 箱"
+      }
+    }
+  ],
+  "specifications": [
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "STEM fort building toy",
+        "zh": "STEM堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "100",
+        "zh": "100"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization",
+        "zh": "支持 OEM/ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Single Set Weight",
+        "zh": "单套重量"
+      },
+      "value": {
+        "en": "2.5kg",
+        "zh": "2.5kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Spatial thinking and creative construction development",
+        "zh": "空间思维与创意搭建启发"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Recommended Users",
+        "zh": "适玩人数"
+      },
+      "value": {
+        "en": "1-3 children",
+        "zh": "1-3个孩子"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    }
+  ],
+  "productAttributes": [
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "STEM fort building toy",
+        "zh": "STEM堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "100PCSYG",
+        "zh": "100PCSYG"
+      }
+    },
+    {
+      "key": {
+        "en": "Company Type",
+        "zh": "企业类型"
+      },
+      "value": {
+        "en": "Manufacturer and Exporter",
+        "zh": "制造商与出口商"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization",
+        "zh": "支持 OEM/ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Color box",
+        "zh": "彩盒"
+      },
+      "value": {
+        "en": "43*33.5*7.5cm",
+        "zh": "43*33.5*7.5cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Outer box",
+        "zh": "外箱"
+      },
+      "value": {
+        "en": "45*35*9cm",
+        "zh": "45*35*9cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Packed Weight",
+        "zh": "重量"
+      },
+      "value": {
+        "en": "2.5kg / 3.5kg",
+        "zh": "2.5kg / 3.5kg"
+      }
+    },
+    {
+      "key": {
+        "en": "PP Ball Size",
+        "zh": "PP球尺寸"
+      },
+      "value": {
+        "en": "5.6cm",
+        "zh": "5.6cm"
+      }
+    },
+    {
+      "key": {
+        "en": "PP Rod Size",
+        "zh": "PP杆尺寸"
+      },
+      "value": {
+        "en": "40cm",
+        "zh": "40cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Recommended Users",
+        "zh": "适玩人数"
+      },
+      "value": {
+        "en": "1-3 children",
+        "zh": "1-3个孩子"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Spatial thinking and creative construction development",
+        "zh": "空间思维与创意搭建启发"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    }
+  ],
+  "packagingAndShipping": {
+    "unitSize": "43X33.5X7.5",
+    "unitVolume": "",
+    "unitWeight": "2.5",
+    "summary": {
+      "en": "Packaging & Shipping",
+      "zh": "包装与运输"
+    },
+    "blocks": [
+      {
+        "label": {
+          "en": "Selling unit",
+          "zh": "销售单位"
+        },
+        "value": {
+          "en": "Single item",
+          "zh": "单件商品"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Single package size",
+          "zh": "单个包装尺寸"
+        },
+        "value": {
+          "en": "43 x 33.5 x 7.5 cm",
+          "zh": "43 x 33.5 x 7.5 厘米"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Single gross weight",
+          "zh": "单个毛重"
+        },
+        "value": {
+          "en": "2.5 kg",
+          "zh": "2.5 千克"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Packaging",
+          "zh": "包装方式"
+        },
+        "value": {
+          "en": "Color box + outer carton",
+          "zh": "彩盒 + 外箱"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      }
+    ]
+  },
+  "leadTime": {
+    "tiers": [
+      {
+        "minQuantity": "1",
+        "maxQuantity": "1",
+        "processPeriodDays": 7
+      },
+      {
+        "minQuantity": "2",
+        "maxQuantity": "500",
+        "processPeriodDays": 30
+      },
+      {
+        "minQuantity": "501",
+        "maxQuantity": "1000",
+        "processPeriodDays": 60
+      }
+    ]
+  },
+  "videoDescription": {
+    "title": {
+      "en": "Product Video",
+      "zh": "产品视频"
+    },
+    "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/videos/video-001.mp4",
+    "duration": ""
+  },
+  "media": {
+    "main": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/1.webp"
+      }
+    ],
+    "detail": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/2.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/3.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/4.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/5.webp"
+      }
+    ]
+  },
+  "productDetails": [
+    {
+      "sectionTitle": {
+        "en": "Open-Ended House Builds",
+        "zh": "开放式房屋搭建"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/1.webp",
+      "text": {
+        "en": "Children can build simple house frames and expand them into different shapes, encouraging creativity and early engineering thinking.",
+        "zh": "儿童可搭建简单房屋框架并扩展成不同造型，培养创造力和早期工程思维。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Real Packed Components",
+        "zh": "真实包装配置"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/2.webp",
+      "text": {
+        "en": "Balls, rods, storage bag, and instructions are packed for easy checking during sampling, quality review, and buyer approval.",
+        "zh": "球体、杆件、收纳袋和说明书配置清晰，便于打样、质检和客户确认。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Shared Play Space",
+        "zh": "共享游戏空间"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/3.webp",
+      "text": {
+        "en": "The assembled playhouse offers enough space for two children, supporting cooperative building and story-based play.",
+        "zh": "成品游戏屋可容纳两个孩子互动，支持协作拼搭和故事化玩法。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Specification Clarity",
+        "zh": "规格清晰"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/4.webp",
+      "text": {
+        "en": "Pole lengths, connector counts, and stability icons make it easier for buyers to compare versions and plan replenishment.",
+        "zh": "杆长、连接球数量和稳定性图标便于采购对比版本并规划补货。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "OEM Color Options",
+        "zh": "OEM配色选择"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/5.webp",
+      "text": {
+        "en": "Alternative pole and connector colors can support private-label projects, seasonal themes, and differentiated retail lines.",
+        "zh": "不同杆件和连接球颜色可支持自有品牌、季节主题和差异化零售系列。"
+      }
+    }
+  ],
+  "module": "toys",
+  "priority": 12,
+  "tags": [
+    {
+      "key": "toys",
+      "en": "Toys",
+      "zh": "玩具"
+    },
+    {
+      "key": "toys-mother-kids-toys",
+      "en": "Mother, Kids & Toys",
+      "zh": "母婴与玩具"
+    },
+    {
+      "key": "toys-educational-toys",
+      "en": "Educational Toys",
+      "zh": "益智玩具"
+    },
+    {
+      "key": "toys-other-educational-toys",
+      "en": "Other Educational Toys",
+      "zh": "其他益智玩具"
+    },
+    {
+      "key": "pp",
+      "en": "pp",
+      "zh": "pp"
+    }
+  ],
+  "structuredData": [
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "@id": "1601313719232",
+      "name": "100-Piece STEM Fort Building Kit",
+      "image": [
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/1.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/2.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/3.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/4.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/5.webp"
+      ],
+      "description": "The 100-piece set supports house frames, play tents, and simple architectural structures for home and classroom activities. Colorful rods and connector balls help children recognize patterns, build sequences, and experiment with balance. Actual packed components make the set practical for retail display, sampling review, and production confirmation. The flat color-box format is convenient for shipping stacks, gift channels, and OEM/ODM packaging updates.",
+      "sku": "1601313719232",
+      "mpn": "1601313719232-00",
+      "brand": {
+        "@type": "Brand",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.alibaba.com/product-detail/First-Choice-for-Children-s-Christmas_1601313719232.html",
+        "offerCount": 1,
+        "availability": "http://schema.org/InStock",
+        "priceCurrency": "USD",
+        "price": "11",
+        "priceValidUntil": "2027-04-25"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "@id": "1601313719232",
+      "name": "100-Piece STEM Fort Building Kit",
+      "description": "The 100-piece set supports house frames, play tents, and simple architectural structures for home and classroom activities. Colorful rods and connector balls help children recognize patterns, build sequences, and experiment with balance. Actual packed components make the set practical for retail display, sampling review, and production confirmation. The flat color-box format is convenient for shipping stacks, gift channels, and OEM/ODM packaging updates.",
+      "thumbnailUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/1.webp",
+      "uploadDate": "2026-04-25",
+      "duration": "PT36S",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/videos/video-001.mp4"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/1.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/2.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/3.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/4.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/5.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Mother, Kids & Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Mother+Kids+Toys&categoryId=26"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Educational Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Educational+Toys&categoryId=100001714"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Other Educational Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Other+Educational+Toys&categoryId=100001735"
+        }
+      ]
+    }
+  ],
+  "images": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/1.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/2.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/3.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/4.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/5.webp"
+  ],
+  "videos": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/videos/video-001.mp4"
+  ],
+  "summary": {
+    "en": "A 100-piece STEM fort kit for colorful house frames, group play, and retail-ready creative building.",
+    "zh": "100件STEM堡垒拼搭套装，适合彩色房屋框架、多人互动和零售化创意建构。"
+  },
+  "description": {
+    "en": [
+      "The 100-piece set supports house frames, play tents, and simple architectural structures for home and classroom activities.",
+      "Colorful rods and connector balls help children recognize patterns, build sequences, and experiment with balance.",
+      "Actual packed components make the set practical for retail display, sampling review, and production confirmation.",
+      "The flat color-box format is convenient for shipping stacks, gift channels, and OEM/ODM packaging updates."
+    ],
+    "zh": [
+      "100件套可支持房屋框架、游戏帐篷和简单建筑结构，适合家庭与课堂活动。",
+      "彩色杆件和连接球帮助儿童识别规律、建立拼接顺序并尝试平衡结构。",
+      "实际包装组件清晰，便于零售备货、样品核对和生产确认。",
+      "扁盒彩盒形式便于运输堆叠、礼品渠道和OEM/ODM包装调整。"
+    ]
+  },
+  "attributePairs": [
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "STEM fort building toy",
+        "zh": "STEM堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "100",
+        "zh": "100"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization",
+        "zh": "支持 OEM/ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Single Set Weight",
+        "zh": "单套重量"
+      },
+      "value": {
+        "en": "2.5kg",
+        "zh": "2.5kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Spatial thinking and creative construction development",
+        "zh": "空间思维与创意搭建启发"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Recommended Users",
+        "zh": "适玩人数"
+      },
+      "value": {
+        "en": "1-3 children",
+        "zh": "1-3个孩子"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "STEM fort building toy",
+        "zh": "STEM堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "100PCSYG",
+        "zh": "100PCSYG"
+      }
+    },
+    {
+      "key": {
+        "en": "Company Type",
+        "zh": "企业类型"
+      },
+      "value": {
+        "en": "Manufacturer and Exporter",
+        "zh": "制造商与出口商"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization",
+        "zh": "支持 OEM/ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Color box",
+        "zh": "彩盒"
+      },
+      "value": {
+        "en": "43*33.5*7.5cm",
+        "zh": "43*33.5*7.5cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Outer box",
+        "zh": "外箱"
+      },
+      "value": {
+        "en": "45*35*9cm",
+        "zh": "45*35*9cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Packed Weight",
+        "zh": "重量"
+      },
+      "value": {
+        "en": "2.5kg / 3.5kg",
+        "zh": "2.5kg / 3.5kg"
+      }
+    },
+    {
+      "key": {
+        "en": "PP Ball Size",
+        "zh": "PP球尺寸"
+      },
+      "value": {
+        "en": "5.6cm",
+        "zh": "5.6cm"
+      }
+    },
+    {
+      "key": {
+        "en": "PP Rod Size",
+        "zh": "PP杆尺寸"
+      },
+      "value": {
+        "en": "40cm",
+        "zh": "40cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Recommended Users",
+        "zh": "适玩人数"
+      },
+      "value": {
+        "en": "1-3 children",
+        "zh": "1-3个孩子"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Spatial thinking and creative construction development",
+        "zh": "空间思维与创意搭建启发"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    }
+  ],
+  "packagingPairs": [
+    {
+      "key": {
+        "en": "Unit Size",
+        "zh": "单件尺寸"
+      },
+      "value": {
+        "en": "43X33.5X7.5 cm",
+        "zh": "43X33.5X7.5 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Unit Weight",
+        "zh": "单件重量"
+      },
+      "value": {
+        "en": "2.5 kg",
+        "zh": "2.5 kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Shipping Summary",
+        "zh": "包装运输摘要"
+      },
+      "value": {
+        "en": "Packaging & Shipping",
+        "zh": "包装与运输"
+      }
+    },
+    {
+      "key": {
+        "en": "Selling unit",
+        "zh": "销售单位"
+      },
+      "value": {
+        "en": "Single item",
+        "zh": "单件商品"
+      }
+    },
+    {
+      "key": {
+        "en": "Single package size",
+        "zh": "单个包装尺寸"
+      },
+      "value": {
+        "en": "43 x 33.5 x 7.5 cm",
+        "zh": "43 x 33.5 x 7.5 厘米"
+      }
+    },
+    {
+      "key": {
+        "en": "Single gross weight",
+        "zh": "单个毛重"
+      },
+      "value": {
+        "en": "2.5 kg",
+        "zh": "2.5 千克"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    }
+  ]
+}

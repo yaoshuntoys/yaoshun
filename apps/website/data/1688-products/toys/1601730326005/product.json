@@ -1,0 +1,1044 @@
+{
+  "productId": "1601730326005",
+  "title": {
+    "en": "130-Piece Creative STEM Indoor Fort Building Kit for Kids",
+    "zh": "130件室内STEM堡垒拼搭套装"
+  },
+  "sourceUrl": "https://www.alibaba.com/product-detail/Creative-STEM-Educational-Toys-for-Kids_1601730326005.html",
+  "categories": {
+    "en": [
+      "Mother, Kids & Toys",
+      "Blocks & Model Building Toys",
+      "Building Block Sets"
+    ],
+    "zh": [
+      "母婴与玩具",
+      "积木与模型拼搭玩具",
+      "积木套装"
+    ]
+  },
+  "pricing": {
+    "display": {
+      "en": "$16.15",
+      "zh": "$16.15"
+    },
+    "currency": "$",
+    "min": 15.95,
+    "max": 16.15,
+    "isRange": true,
+    "minOrder": {
+      "en": "5 boxes",
+      "zh": "5 箱"
+    },
+    "tiers": [
+      {
+        "quantity": {
+          "en": "5 - 499 boxes",
+          "zh": "5 - 499 箱"
+        },
+        "price": "$16.15"
+      },
+      {
+        "quantity": {
+          "en": ">= 500 boxes",
+          "zh": ">= 500 箱"
+        },
+        "price": "$15.95"
+      }
+    ]
+  },
+  "customizationOptions": [
+    {
+      "label": {
+        "en": "Customized packaging",
+        "zh": "支持包装定制"
+      },
+      "minOrder": {
+        "en": "500 boxes",
+        "zh": "500 箱"
+      }
+    },
+    {
+      "label": {
+        "en": "Custom color",
+        "zh": "支持颜色定制"
+      },
+      "minOrder": {
+        "en": "500 boxes",
+        "zh": "500 箱"
+      }
+    }
+  ],
+  "specifications": [
+    {
+      "key": {
+        "en": "Weight",
+        "zh": "重量"
+      },
+      "value": {
+        "en": "3kg",
+        "zh": "3kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Helps improve children's hands-on coordination",
+        "zh": "帮助提升儿童动手协调能力"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM / ODM customization",
+        "zh": "支持 OEM / ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "130",
+        "zh": "130"
+      }
+    },
+    {
+      "key": {
+        "en": "Theme",
+        "zh": "主题"
+      },
+      "value": {
+        "en": "Indoor Fort Building",
+        "zh": "室内堡垒拼搭"
+      }
+    }
+  ],
+  "productAttributes": [
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "130",
+        "zh": "130"
+      }
+    },
+    {
+      "key": {
+        "en": "Theme",
+        "zh": "主题"
+      },
+      "value": {
+        "en": "Indoor Fort Building",
+        "zh": "室内堡垒拼搭"
+      }
+    },
+    {
+      "key": {
+        "en": "Brand Name",
+        "zh": "品牌"
+      },
+      "value": {
+        "en": "LONDY",
+        "zh": "LONDY"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "YS-LONDY25130",
+        "zh": "YS-LONDY25130"
+      }
+    },
+    {
+      "key": {
+        "en": "Plastic Type",
+        "zh": "塑料材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 5-13",
+        "zh": "5-13岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Weight",
+        "zh": "重量"
+      },
+      "value": {
+        "en": "3kg",
+        "zh": "3kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Helps improve children's hands-on coordination",
+        "zh": "帮助提升儿童动手协调能力"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM / ODM customization",
+        "zh": "支持 OEM / ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "PP Ball size",
+        "zh": "PP球尺寸"
+      },
+      "value": {
+        "en": "5.6cm",
+        "zh": "5.6cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Company Type",
+        "zh": "企业类型"
+      },
+      "value": {
+        "en": "Manufacturer and Exporter",
+        "zh": "制造商与出口商"
+      }
+    },
+    {
+      "key": {
+        "en": "Color box",
+        "zh": "彩盒"
+      },
+      "value": {
+        "en": "43.5 x 28.5 x 11 cm",
+        "zh": "43.5 x 28.5 x 11 厘米"
+      }
+    },
+    {
+      "key": {
+        "en": "Outer box",
+        "zh": "外箱"
+      },
+      "value": {
+        "en": "45 x 30 x 60 cm",
+        "zh": "45 x 30 x 60 厘米"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "PP rod size",
+        "zh": "PP杆尺寸"
+      },
+      "value": {
+        "en": "40cm",
+        "zh": "40cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Style",
+        "zh": "产品风格"
+      },
+      "value": {
+        "en": "Construction Toy, DIY TOY, MODEL TOY, Educational Toy",
+        "zh": "拼搭玩具、DIY 玩具、模型玩具、益智玩具"
+      }
+    }
+  ],
+  "packagingAndShipping": {
+    "unitSize": "43.5X28.5X11",
+    "unitVolume": "",
+    "unitWeight": "3.000",
+    "summary": {
+      "en": "Packaging & Shipping",
+      "zh": "包装与运输"
+    },
+    "blocks": [
+      {
+        "label": {
+          "en": "Selling unit",
+          "zh": "销售单位"
+        },
+        "value": {
+          "en": "Single item",
+          "zh": "单件商品"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Single package size",
+          "zh": "单个包装尺寸"
+        },
+        "value": {
+          "en": "43.5 x 28.5 x 11 cm",
+          "zh": "43.5 x 28.5 x 11 厘米"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Single gross weight",
+          "zh": "单个产品毛重"
+        },
+        "value": {
+          "en": "3.000 kg",
+          "zh": "3.000 公斤"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Packaging",
+          "zh": "包装方式"
+        },
+        "value": {
+          "en": "Color box + outer carton",
+          "zh": "彩盒 + 外箱"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Shipping note",
+          "zh": "发货说明"
+        },
+        "value": {
+          "en": "Suitable for indoor fort-themed retail, family activity packs, and educational channel shipment.",
+          "zh": "适合室内堡垒主题零售、亲子活动包和教育渠道项目出货。"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      }
+    ]
+  },
+  "leadTime": {
+    "tiers": [
+      {
+        "minQuantity": "1",
+        "maxQuantity": "5",
+        "processPeriodDays": 7
+      },
+      {
+        "minQuantity": "6",
+        "maxQuantity": "500",
+        "processPeriodDays": 35
+      }
+    ]
+  },
+  "videoDescription": {
+    "title": {
+      "en": "Product Video",
+      "zh": "产品视频"
+    },
+    "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/videos/video-001.mp4",
+    "duration": ""
+  },
+  "media": {
+    "main": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/1.webp"
+      }
+    ],
+    "detail": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/2.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/3.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/4.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/5.webp"
+      }
+    ]
+  },
+  "productDetails": [
+    {
+      "sectionTitle": {
+        "en": "Complete 130-Piece Kit",
+        "zh": "130件完整套装"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/1.webp",
+      "text": {
+        "en": "Box, rods, connector balls, guide materials, and themed accessories create a complete retail-ready building set.",
+        "zh": "彩盒、杆件、连接球、说明资料和主题配件组成完整的零售化拼搭套装。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Glow Tent Experience",
+        "zh": "夜光帐篷体验"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/2.webp",
+      "text": {
+        "en": "The frame can be covered to create a reading nook, secret base, or night-play shelter for family use.",
+        "zh": "框架可覆盖成阅读角、秘密基地或夜间游戏小屋，适合家庭使用。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Space-Themed Gift Box",
+        "zh": "太空主题礼品盒"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/3.webp",
+      "text": {
+        "en": "Moon-themed graphics strengthen the exploration story and help the product stand out in gift and e-commerce channels.",
+        "zh": "月球主题画面强化探索故事，帮助产品在礼品和电商渠道中形成差异化。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Camping-Style Play",
+        "zh": "露营风格玩法"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/4.webp",
+      "text": {
+        "en": "Outdoor night scenes make the set suitable for camping-themed promotions, yard play, and seasonal activity programs.",
+        "zh": "户外夜间场景适合露营主题促销、庭院玩耍和季节活动项目。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Bedroom Glow Castle",
+        "zh": "卧室夜光城堡"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/5.webp",
+      "text": {
+        "en": "A luminous castle frame brings magic to indoor play and gives children a strong reason to rebuild the set after dark.",
+        "zh": "发光城堡框架为室内玩耍增加梦幻感，也让儿童在夜间更愿意反复搭建。"
+      }
+    }
+  ],
+  "module": "toys",
+  "priority": 7,
+  "tags": [
+    {
+      "key": "toys",
+      "en": "Toys",
+      "zh": "玩具"
+    },
+    {
+      "key": "toys-mother-kids-toys",
+      "en": "Mother, Kids & Toys",
+      "zh": "母婴与玩具"
+    },
+    {
+      "key": "toys-blocks-model-building-toys",
+      "en": "Blocks & Model Building Toys",
+      "zh": "积木与模型拼搭玩具"
+    },
+    {
+      "key": "toys-building-block-sets",
+      "en": "Building Block Sets",
+      "zh": "积木套装"
+    },
+    {
+      "key": "pp",
+      "en": "PP",
+      "zh": "PP"
+    }
+  ],
+  "structuredData": [
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "@id": "1601730326005",
+      "name": "130-Piece Creative STEM Indoor Fort Building Kit for Kids",
+      "image": [
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/1.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/2.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/3.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/4.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/5.webp"
+      ],
+      "description": "The 130-piece set supports indoor forts, tents, towers, and imaginative structures for children ages 5 and up. Lightweight PP parts are easy to connect, remove, and rebuild for repeated learning and play. Glow-themed packaging and structures make the item suitable for gifts, night play, and themed retail programs. Custom packaging, branding, and accessory combinations can be discussed for OEM/ODM cooperation.",
+      "sku": "1601730326005",
+      "mpn": "1601730326005-00",
+      "brand": {
+        "@type": "Brand",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.alibaba.com/product-detail/Creative-STEM-Educational-Toys-for-Kids_1601730326005.html",
+        "offerCount": 1,
+        "availability": "http://schema.org/InStock",
+        "priceCurrency": "USD",
+        "price": "15.95",
+        "priceValidUntil": "2027-04-25"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "@id": "1601730326005",
+      "name": "130-Piece Creative STEM Indoor Fort Building Kit for Kids",
+      "description": "The 130-piece set supports indoor forts, tents, towers, and imaginative structures for children ages 5 and up. Lightweight PP parts are easy to connect, remove, and rebuild for repeated learning and play. Glow-themed packaging and structures make the item suitable for gifts, night play, and themed retail programs. Custom packaging, branding, and accessory combinations can be discussed for OEM/ODM cooperation.",
+      "thumbnailUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/1.webp",
+      "uploadDate": "2026-04-25",
+      "duration": "PT10S",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/videos/video-001.mp4"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/1.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/2.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/3.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/4.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/5.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Mother, Kids & Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Mother+Kids+Toys&categoryId=26"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blocks & Model Building Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Blocks+Model+Building+Toys&categoryId=201459117"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Building Block Sets",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Building+Block+Sets&categoryId=201455928"
+        }
+      ]
+    }
+  ],
+  "images": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/1.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/2.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/3.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/4.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/5.webp"
+  ],
+  "videos": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/videos/video-001.mp4"
+  ],
+  "summary": {
+    "en": "A 130-piece creative STEM fort kit for indoor building, glow-themed play, and gift-ready learning activities.",
+    "zh": "130件创意STEM堡垒拼搭套装，适合室内搭建、夜光主题玩法和礼品化学习活动。"
+  },
+  "description": {
+    "en": [
+      "The 130-piece set supports indoor forts, tents, towers, and imaginative structures for children ages 5 and up.",
+      "Lightweight PP parts are easy to connect, remove, and rebuild for repeated learning and play.",
+      "Glow-themed packaging and structures make the item suitable for gifts, night play, and themed retail programs.",
+      "Custom packaging, branding, and accessory combinations can be discussed for OEM/ODM cooperation."
+    ],
+    "zh": [
+      "130件套支持室内堡垒、帐篷、高塔和想象力结构，适合5岁以上儿童。",
+      "轻便PP配件易于连接、拆卸和重建，适合反复学习与玩耍。",
+      "夜光主题包装和结构适合礼品、夜间玩法和主题零售项目。",
+      "可根据OEM/ODM合作沟通包装、品牌和配件组合。"
+    ]
+  },
+  "attributePairs": [
+    {
+      "key": {
+        "en": "Weight",
+        "zh": "重量"
+      },
+      "value": {
+        "en": "3kg",
+        "zh": "3kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Helps improve children's hands-on coordination",
+        "zh": "帮助提升儿童动手协调能力"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM / ODM customization",
+        "zh": "支持 OEM / ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "130",
+        "zh": "130"
+      }
+    },
+    {
+      "key": {
+        "en": "Theme",
+        "zh": "主题"
+      },
+      "value": {
+        "en": "Indoor Fort Building",
+        "zh": "室内堡垒拼搭"
+      }
+    },
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "130",
+        "zh": "130"
+      }
+    },
+    {
+      "key": {
+        "en": "Theme",
+        "zh": "主题"
+      },
+      "value": {
+        "en": "Indoor Fort Building",
+        "zh": "室内堡垒拼搭"
+      }
+    },
+    {
+      "key": {
+        "en": "Brand Name",
+        "zh": "品牌"
+      },
+      "value": {
+        "en": "LONDY",
+        "zh": "LONDY"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "YS-LONDY25130",
+        "zh": "YS-LONDY25130"
+      }
+    },
+    {
+      "key": {
+        "en": "Plastic Type",
+        "zh": "塑料材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 5-13",
+        "zh": "5-13岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Weight",
+        "zh": "重量"
+      },
+      "value": {
+        "en": "3kg",
+        "zh": "3kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Helps improve children's hands-on coordination",
+        "zh": "帮助提升儿童动手协调能力"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM / ODM customization",
+        "zh": "支持 OEM / ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "PP Ball size",
+        "zh": "PP球尺寸"
+      },
+      "value": {
+        "en": "5.6cm",
+        "zh": "5.6cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Company Type",
+        "zh": "企业类型"
+      },
+      "value": {
+        "en": "Manufacturer and Exporter",
+        "zh": "制造商与出口商"
+      }
+    },
+    {
+      "key": {
+        "en": "Color box",
+        "zh": "彩盒"
+      },
+      "value": {
+        "en": "43.5 x 28.5 x 11 cm",
+        "zh": "43.5 x 28.5 x 11 厘米"
+      }
+    },
+    {
+      "key": {
+        "en": "Outer box",
+        "zh": "外箱"
+      },
+      "value": {
+        "en": "45 x 30 x 60 cm",
+        "zh": "45 x 30 x 60 厘米"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "PP rod size",
+        "zh": "PP杆尺寸"
+      },
+      "value": {
+        "en": "40cm",
+        "zh": "40cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Style",
+        "zh": "产品风格"
+      },
+      "value": {
+        "en": "Construction Toy, DIY TOY, MODEL TOY, Educational Toy",
+        "zh": "拼搭玩具、DIY 玩具、模型玩具、益智玩具"
+      }
+    }
+  ],
+  "packagingPairs": [
+    {
+      "key": {
+        "en": "Unit Size",
+        "zh": "单件尺寸"
+      },
+      "value": {
+        "en": "43.5X28.5X11 cm",
+        "zh": "43.5X28.5X11 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Unit Weight",
+        "zh": "单件重量"
+      },
+      "value": {
+        "en": "3.000 kg",
+        "zh": "3.000 kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Shipping Summary",
+        "zh": "包装运输摘要"
+      },
+      "value": {
+        "en": "Packaging & Shipping",
+        "zh": "包装与运输"
+      }
+    },
+    {
+      "key": {
+        "en": "Selling unit",
+        "zh": "销售单位"
+      },
+      "value": {
+        "en": "Single item",
+        "zh": "单件商品"
+      }
+    },
+    {
+      "key": {
+        "en": "Single package size",
+        "zh": "单个包装尺寸"
+      },
+      "value": {
+        "en": "43.5 x 28.5 x 11 cm",
+        "zh": "43.5 x 28.5 x 11 厘米"
+      }
+    },
+    {
+      "key": {
+        "en": "Single gross weight",
+        "zh": "单个产品毛重"
+      },
+      "value": {
+        "en": "3.000 kg",
+        "zh": "3.000 公斤"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Shipping note",
+        "zh": "发货说明"
+      },
+      "value": {
+        "en": "Suitable for indoor fort-themed retail, family activity packs, and educational channel shipment.",
+        "zh": "适合室内堡垒主题零售、亲子活动包和教育渠道项目出货。"
+      }
+    }
+  ]
+}

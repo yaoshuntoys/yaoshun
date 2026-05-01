@@ -1,0 +1,967 @@
+{
+  "productId": "1601213973459",
+  "title": {
+    "en": "72-Piece Secret Base Fort Building Kit",
+    "zh": "72件套儿童秘密基地堡垒拼搭套装"
+  },
+  "sourceUrl": "https://www.alibaba.com/product-detail/Fort-Toy-Build-a-Secret-Base_1601213973459.html",
+  "categories": {
+    "en": [
+      "Mother, Kids & Toys",
+      "Educational Toys",
+      "Other Educational Toys"
+    ],
+    "zh": [
+      "母婴与玩具",
+      "益智玩具",
+      "其他益智玩具"
+    ]
+  },
+  "pricing": {
+    "display": {
+      "en": "$10",
+      "zh": "$10"
+    },
+    "currency": "$",
+    "min": 8,
+    "max": 10,
+    "isRange": true,
+    "minOrder": {
+      "en": "1 box",
+      "zh": "1 箱"
+    },
+    "tiers": [
+      {
+        "quantity": {
+          "en": "1 - 499 boxes",
+          "zh": "1 - 499 箱"
+        },
+        "price": "$10"
+      },
+      {
+        "quantity": {
+          "en": "500 - 999 boxes",
+          "zh": "500 - 999 箱"
+        },
+        "price": "$9"
+      },
+      {
+        "quantity": {
+          "en": ">= 1,000 boxes",
+          "zh": ">= 1,000 箱"
+        },
+        "price": "$8"
+      }
+    ]
+  },
+  "customizationOptions": [],
+  "specifications": [
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Secret base fort building toy",
+        "zh": "秘密基地堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "72",
+        "zh": "72"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Spatial thinking and imagination development",
+        "zh": "空间思维与想象力启发"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Recommended Users",
+        "zh": "适玩人数"
+      },
+      "value": {
+        "en": "1-3 children",
+        "zh": "1-3个孩子"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    }
+  ],
+  "productAttributes": [
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Secret base fort building toy",
+        "zh": "秘密基地堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Brand Name",
+        "zh": "品牌"
+      },
+      "value": {
+        "en": "YaoShun",
+        "zh": "YaoShun"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "72PCS",
+        "zh": "72PCS"
+      }
+    },
+    {
+      "key": {
+        "en": "Company Type",
+        "zh": "企业类型"
+      },
+      "value": {
+        "en": "Manufacturer and Exporter",
+        "zh": "制造商与出口商"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization",
+        "zh": "支持 OEM/ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Color box",
+        "zh": "彩盒"
+      },
+      "value": {
+        "en": "40.5*29*6.5cm",
+        "zh": "40.5*29*6.5cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Outer box",
+        "zh": "外箱"
+      },
+      "value": {
+        "en": "42*30*8cm",
+        "zh": "42*30*8cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Single Set Weight",
+        "zh": "单套重量"
+      },
+      "value": {
+        "en": "1.8kg",
+        "zh": "1.8kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Carton Gross Weight",
+        "zh": "装箱毛重"
+      },
+      "value": {
+        "en": "11kg",
+        "zh": "11kg"
+      }
+    },
+    {
+      "key": {
+        "en": "PP Ball Size",
+        "zh": "PP球尺寸"
+      },
+      "value": {
+        "en": "5.6cm",
+        "zh": "5.6cm"
+      }
+    },
+    {
+      "key": {
+        "en": "PP Rod Size",
+        "zh": "PP杆尺寸"
+      },
+      "value": {
+        "en": "38cm",
+        "zh": "38cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Spatial thinking and imagination development",
+        "zh": "空间思维与想象力启发"
+      }
+    },
+    {
+      "key": {
+        "en": "Recommended Users",
+        "zh": "适玩人数"
+      },
+      "value": {
+        "en": "1-3 children",
+        "zh": "1-3个孩子"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    }
+  ],
+  "packagingAndShipping": {
+    "unitSize": "40.5X29X6.5",
+    "unitVolume": "",
+    "unitWeight": "1.8",
+    "summary": {
+      "en": "Packaging & Shipping",
+      "zh": "包装与运输"
+    },
+    "blocks": [
+      {
+        "label": {
+          "en": "Selling unit",
+          "zh": "销售单位"
+        },
+        "value": {
+          "en": "Single item",
+          "zh": "单件商品"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Single package size",
+          "zh": "单个包装尺寸"
+        },
+        "value": {
+          "en": "40.5 x 29 x 6.5 cm",
+          "zh": "40.5 x 29 x 6.5 厘米"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Single gross weight",
+          "zh": "单个毛重"
+        },
+        "value": {
+          "en": "1.8 kg",
+          "zh": "1.8 千克"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Packaging",
+          "zh": "包装方式"
+        },
+        "value": {
+          "en": "Color box + outer carton",
+          "zh": "彩盒 + 外箱"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      }
+    ]
+  },
+  "leadTime": {
+    "tiers": [
+      {
+        "minQuantity": "1",
+        "maxQuantity": "1",
+        "processPeriodDays": 7
+      },
+      {
+        "minQuantity": "2",
+        "maxQuantity": "500",
+        "processPeriodDays": 30
+      },
+      {
+        "minQuantity": "501",
+        "maxQuantity": "1000",
+        "processPeriodDays": 60
+      }
+    ]
+  },
+  "videoDescription": {
+    "title": {
+      "en": "Product Video",
+      "zh": "产品视频"
+    },
+    "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/videos/video-001.mp4",
+    "duration": ""
+  },
+  "media": {
+    "main": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/1.webp"
+      }
+    ],
+    "detail": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/2.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/3.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/4.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/5.webp"
+      }
+    ]
+  },
+  "productDetails": [
+    {
+      "sectionTitle": {
+        "en": "Compact Secret Base",
+        "zh": "小型秘密基地"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/1.webp",
+      "text": {
+        "en": "The frame can be covered with fabric or lights to create a cozy hideout for reading, storytelling, and pretend play.",
+        "zh": "框架可覆盖布料或灯串，形成适合阅读、讲故事和角色扮演的温馨小基地。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Compact Gift Box",
+        "zh": "小巧礼品彩盒"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/2.webp",
+      "text": {
+        "en": "The box format is suitable for entry-level fort programs where buyers need gift appeal, clear sizing, and efficient shipping.",
+        "zh": "彩盒形式适合入门级堡垒项目，兼顾礼品感、尺寸清晰和运输效率。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Frame and Parts Set",
+        "zh": "框架与配件组合"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/3.webp",
+      "text": {
+        "en": "Rods, connector balls, storage bag, and guide materials give buyers a complete view of how the set is packed and used.",
+        "zh": "杆件、连接球、收纳袋和说明资料组成完整配置，便于采购理解包装与使用方式。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Rounded PP Connectors",
+        "zh": "圆润PP连接件"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/4.webp",
+      "text": {
+        "en": "Rounded connector holes and smooth poles make assembly more comfortable for young children while supporting repeated rebuilding.",
+        "zh": "圆润连接孔和平滑杆件让低龄儿童拼接更舒适，并支持反复重建。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Open-Ended Building",
+        "zh": "开放式拼搭"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/5.webp",
+      "text": {
+        "en": "Children can build, take apart, and redesign new shapes with the same basic parts, extending the play value of a compact set.",
+        "zh": "儿童可用同一套基础组件反复搭建、拆解和重新设计，提升小套装的持续玩耍价值。"
+      }
+    }
+  ],
+  "module": "toys",
+  "priority": 10,
+  "tags": [
+    {
+      "key": "toys",
+      "en": "Toys",
+      "zh": "玩具"
+    },
+    {
+      "key": "toys-mother-kids-toys",
+      "en": "Mother, Kids & Toys",
+      "zh": "母婴与玩具"
+    },
+    {
+      "key": "toys-educational-toys",
+      "en": "Educational Toys",
+      "zh": "益智玩具"
+    },
+    {
+      "key": "toys-other-educational-toys",
+      "en": "Other Educational Toys",
+      "zh": "其他益智玩具"
+    },
+    {
+      "key": "pp",
+      "en": "pp",
+      "zh": "pp"
+    }
+  ],
+  "structuredData": [
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "@id": "1601213973459",
+      "name": "72-Piece Secret Base Fort Building Kit",
+      "image": [
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/1.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/2.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/3.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/4.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/5.webp"
+      ],
+      "description": "The 72-piece set is designed for compact forts, small tents, and beginner-friendly indoor building projects. Lightweight PP rods and connector balls are easy for children to handle and suitable for repeated assembly. The simple pole-and-ball system supports spatial awareness, hands-on coordination, and cooperative play. A practical color box and storage bag make the item suitable for retail, promotional gifts, and OEM/ODM customization.",
+      "sku": "1601213973459",
+      "mpn": "1601213973459-00",
+      "brand": {
+        "@type": "Brand",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.alibaba.com/product-detail/Fort-Toy-Build-a-Secret-Base_1601213973459.html",
+        "offerCount": 1,
+        "availability": "http://schema.org/InStock",
+        "priceCurrency": "USD",
+        "price": "8",
+        "priceValidUntil": "2027-04-25"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "@id": "1601213973459",
+      "name": "72-Piece Secret Base Fort Building Kit",
+      "description": "The 72-piece set is designed for compact forts, small tents, and beginner-friendly indoor building projects. Lightweight PP rods and connector balls are easy for children to handle and suitable for repeated assembly. The simple pole-and-ball system supports spatial awareness, hands-on coordination, and cooperative play. A practical color box and storage bag make the item suitable for retail, promotional gifts, and OEM/ODM customization.",
+      "thumbnailUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/1.webp",
+      "uploadDate": "2026-04-25",
+      "duration": "PT20S",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/videos/video-001.mp4"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/1.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/2.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/3.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/4.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/5.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Mother, Kids & Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Mother+Kids+Toys&categoryId=26"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Educational Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Educational+Toys&categoryId=100001714"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Other Educational Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Other+Educational+Toys&categoryId=100001735"
+        }
+      ]
+    }
+  ],
+  "images": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/1.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/2.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/3.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/4.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/5.webp"
+  ],
+  "videos": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/videos/video-001.mp4"
+  ],
+  "summary": {
+    "en": "An entry-level 72-piece fort kit for compact secret bases, tent frames, and family gift programs.",
+    "zh": "入门级72件堡垒拼搭套装，适合小型秘密基地、帐篷框架和家庭礼品项目。"
+  },
+  "description": {
+    "en": [
+      "The 72-piece set is designed for compact forts, small tents, and beginner-friendly indoor building projects.",
+      "Lightweight PP rods and connector balls are easy for children to handle and suitable for repeated assembly.",
+      "The simple pole-and-ball system supports spatial awareness, hands-on coordination, and cooperative play.",
+      "A practical color box and storage bag make the item suitable for retail, promotional gifts, and OEM/ODM customization."
+    ],
+    "zh": [
+      "72件套适合搭建小型堡垒、小帐篷和入门级室内拼搭项目。",
+      "轻便PP杆件与连接球便于儿童操作，也适合反复拆装。",
+      "简单的杆球拼接系统有助于空间认知、动手协调和协作玩耍。",
+      "实用彩盒和收纳袋配置适合零售、促销礼品和OEM/ODM定制。"
+    ]
+  },
+  "attributePairs": [
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Secret base fort building toy",
+        "zh": "秘密基地堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "72",
+        "zh": "72"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Spatial thinking and imagination development",
+        "zh": "空间思维与想象力启发"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Recommended Users",
+        "zh": "适玩人数"
+      },
+      "value": {
+        "en": "1-3 children",
+        "zh": "1-3个孩子"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Secret base fort building toy",
+        "zh": "秘密基地堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Brand Name",
+        "zh": "品牌"
+      },
+      "value": {
+        "en": "YaoShun",
+        "zh": "YaoShun"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "72PCS",
+        "zh": "72PCS"
+      }
+    },
+    {
+      "key": {
+        "en": "Company Type",
+        "zh": "企业类型"
+      },
+      "value": {
+        "en": "Manufacturer and Exporter",
+        "zh": "制造商与出口商"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization",
+        "zh": "支持 OEM/ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Color box",
+        "zh": "彩盒"
+      },
+      "value": {
+        "en": "40.5*29*6.5cm",
+        "zh": "40.5*29*6.5cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Outer box",
+        "zh": "外箱"
+      },
+      "value": {
+        "en": "42*30*8cm",
+        "zh": "42*30*8cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Single Set Weight",
+        "zh": "单套重量"
+      },
+      "value": {
+        "en": "1.8kg",
+        "zh": "1.8kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Carton Gross Weight",
+        "zh": "装箱毛重"
+      },
+      "value": {
+        "en": "11kg",
+        "zh": "11kg"
+      }
+    },
+    {
+      "key": {
+        "en": "PP Ball Size",
+        "zh": "PP球尺寸"
+      },
+      "value": {
+        "en": "5.6cm",
+        "zh": "5.6cm"
+      }
+    },
+    {
+      "key": {
+        "en": "PP Rod Size",
+        "zh": "PP杆尺寸"
+      },
+      "value": {
+        "en": "38cm",
+        "zh": "38cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Spatial thinking and imagination development",
+        "zh": "空间思维与想象力启发"
+      }
+    },
+    {
+      "key": {
+        "en": "Recommended Users",
+        "zh": "适玩人数"
+      },
+      "value": {
+        "en": "1-3 children",
+        "zh": "1-3个孩子"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    }
+  ],
+  "packagingPairs": [
+    {
+      "key": {
+        "en": "Unit Size",
+        "zh": "单件尺寸"
+      },
+      "value": {
+        "en": "40.5X29X6.5 cm",
+        "zh": "40.5X29X6.5 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Unit Weight",
+        "zh": "单件重量"
+      },
+      "value": {
+        "en": "1.8 kg",
+        "zh": "1.8 kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Shipping Summary",
+        "zh": "包装运输摘要"
+      },
+      "value": {
+        "en": "Packaging & Shipping",
+        "zh": "包装与运输"
+      }
+    },
+    {
+      "key": {
+        "en": "Selling unit",
+        "zh": "销售单位"
+      },
+      "value": {
+        "en": "Single item",
+        "zh": "单件商品"
+      }
+    },
+    {
+      "key": {
+        "en": "Single package size",
+        "zh": "单个包装尺寸"
+      },
+      "value": {
+        "en": "40.5 x 29 x 6.5 cm",
+        "zh": "40.5 x 29 x 6.5 厘米"
+      }
+    },
+    {
+      "key": {
+        "en": "Single gross weight",
+        "zh": "单个毛重"
+      },
+      "value": {
+        "en": "1.8 kg",
+        "zh": "1.8 千克"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box + outer carton",
+        "zh": "彩盒 + 外箱"
+      }
+    }
+  ]
+}

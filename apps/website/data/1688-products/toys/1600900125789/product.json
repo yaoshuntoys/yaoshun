@@ -1,0 +1,958 @@
+{
+  "productId": "1600900125789",
+  "title": {
+    "en": "100-Piece Creative Fort Building Gift Set",
+    "zh": "100件套创意堡垒拼搭礼盒套装"
+  },
+  "sourceUrl": "https://www.alibaba.com/product-detail/100PCS-Christmas-Gift-Dry-Set-Children_1600900125789.html",
+  "categories": {
+    "en": [
+      "Mother, Kids & Toys",
+      "Educational Toys",
+      "Other Educational Toys"
+    ],
+    "zh": [
+      "母婴与玩具",
+      "益智玩具",
+      "其他益智玩具"
+    ]
+  },
+  "pricing": {
+    "display": {
+      "en": "$13",
+      "zh": "$13"
+    },
+    "currency": "$",
+    "min": 11,
+    "max": 13,
+    "isRange": true,
+    "minOrder": {
+      "en": "1 box",
+      "zh": "1 箱"
+    },
+    "tiers": [
+      {
+        "quantity": {
+          "en": "1 - 499 boxes",
+          "zh": "1 - 499 箱"
+        },
+        "price": "$13"
+      },
+      {
+        "quantity": {
+          "en": "500 - 999 boxes",
+          "zh": "500 - 999 箱"
+        },
+        "price": "$12"
+      },
+      {
+        "quantity": {
+          "en": ">= 1,000 boxes",
+          "zh": ">= 1,000 箱"
+        },
+        "price": "$11"
+      }
+    ]
+  },
+  "customizationOptions": [
+    {
+      "label": {
+        "en": "Customized logo",
+        "zh": "支持Logo定制"
+      },
+      "minOrder": {
+        "en": "1000 boxes",
+        "zh": "1000 箱"
+      }
+    },
+    {
+      "label": {
+        "en": "Customized packaging",
+        "zh": "支持包装定制"
+      },
+      "minOrder": {
+        "en": "1000 boxes",
+        "zh": "1000 箱"
+      }
+    },
+    {
+      "label": {
+        "en": "Graphic customization",
+        "zh": "支持图文定制"
+      },
+      "minOrder": {
+        "en": "1000 boxes",
+        "zh": "1000 箱"
+      }
+    }
+  ],
+  "specifications": [
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Fort building toy",
+        "zh": "堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "100",
+        "zh": "100"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 3-15",
+        "zh": "3-15岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Color",
+        "zh": "颜色"
+      },
+      "value": {
+        "en": "Standard colors, glow option available",
+        "zh": "常规配色，可定制夜光款"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box packing",
+        "zh": "彩盒包装"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    }
+  ],
+  "productAttributes": [
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 3-15",
+        "zh": "3-15岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Fort building toy",
+        "zh": "堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Brand Name",
+        "zh": "品牌"
+      },
+      "value": {
+        "en": "YaoShun",
+        "zh": "YaoShun"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "YS100PCS",
+        "zh": "YS100PCS"
+      }
+    },
+    {
+      "key": {
+        "en": "Product Name",
+        "zh": "产品名称"
+      },
+      "value": {
+        "en": "Creative fort building gift set",
+        "zh": "创意堡垒拼搭礼盒套装"
+      }
+    },
+    {
+      "key": {
+        "en": "Color",
+        "zh": "颜色"
+      },
+      "value": {
+        "en": "Standard colors, glow option available",
+        "zh": "常规配色，可定制夜光款"
+      }
+    },
+    {
+      "key": {
+        "en": "Color Box Size",
+        "zh": "彩盒尺寸"
+      },
+      "value": {
+        "en": "43*33.5*7.5cm",
+        "zh": "43*33.5*7.5cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Carton Size",
+        "zh": "外箱尺寸"
+      },
+      "value": {
+        "en": "45*36*51cm",
+        "zh": "45*36*51cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Single Set Weight",
+        "zh": "单套重量"
+      },
+      "value": {
+        "en": "3kg",
+        "zh": "3kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box packing",
+        "zh": "彩盒包装"
+      }
+    },
+    {
+      "key": {
+        "en": "MOQ",
+        "zh": "最小起订量"
+      },
+      "value": {
+        "en": "6 sets",
+        "zh": "6套"
+      }
+    },
+    {
+      "key": {
+        "en": "Customization MOQ",
+        "zh": "定制起订量"
+      },
+      "value": {
+        "en": "1000 sets",
+        "zh": "1000套"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    }
+  ],
+  "packagingAndShipping": {
+    "unitSize": "43X33.5X7.5",
+    "unitVolume": "",
+    "unitWeight": "3",
+    "summary": {
+      "en": "Packaging & Shipping",
+      "zh": "包装与运输"
+    },
+    "blocks": [
+      {
+        "label": {
+          "en": "Selling unit",
+          "zh": "销售单位"
+        },
+        "value": {
+          "en": "Single item",
+          "zh": "单件商品"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Single package size",
+          "zh": "单个包装尺寸"
+        },
+        "value": {
+          "en": "43 x 33.5 x 7.5 cm",
+          "zh": "43 x 33.5 x 7.5 厘米"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Single gross weight",
+          "zh": "单个毛重"
+        },
+        "value": {
+          "en": "3 kg",
+          "zh": "3 千克"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "label": {
+          "en": "Packaging",
+          "zh": "包装方式"
+        },
+        "value": {
+          "en": "Color box packing",
+          "zh": "彩盒包装"
+        },
+        "title": {
+          "en": "",
+          "zh": ""
+        },
+        "text": {
+          "en": "",
+          "zh": ""
+        }
+      }
+    ]
+  },
+  "leadTime": {
+    "tiers": [
+      {
+        "minQuantity": "1",
+        "maxQuantity": "1",
+        "processPeriodDays": 7
+      },
+      {
+        "minQuantity": "2",
+        "maxQuantity": "500",
+        "processPeriodDays": 30
+      },
+      {
+        "minQuantity": "501",
+        "maxQuantity": "1000",
+        "processPeriodDays": 60
+      }
+    ]
+  },
+  "videoDescription": {
+    "title": {
+      "en": "Product Video",
+      "zh": "产品视频"
+    },
+    "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/videos/video-001.mp4",
+    "duration": ""
+  },
+  "media": {
+    "main": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/1.webp"
+      }
+    ],
+    "detail": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/2.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/3.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/4.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/5.webp"
+      }
+    ]
+  },
+  "productDetails": [
+    {
+      "sectionTitle": {
+        "en": "Cozy Tent Building",
+        "zh": "温馨帐篷搭建"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/1.webp",
+      "text": {
+        "en": "Children can cover the frame with fabric or lights to create a reading nook, secret base, or quiet pretend-play corner.",
+        "zh": "儿童可在框架外覆盖布料或灯串，打造阅读角、秘密基地或安静的角色扮演角落。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Gift-Ready Box",
+        "zh": "礼品化彩盒"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/2.webp",
+      "text": {
+        "en": "The Starry Sky Dreamer packaging gives the set a strong gifting identity for online shops, holiday promotions, and retail shelves.",
+        "zh": "Starry Sky Dreamer 包装强化礼品属性，适合线上店铺、节日促销和零售货架。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Clear Parts Planning",
+        "zh": "清晰配件配置"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/3.webp",
+      "text": {
+        "en": "Defined pole and connector counts help buyers confirm set value, carton planning, and replacement-part requirements before production.",
+        "zh": "明确的杆件和连接球数量便于采购在生产前确认套装价值、装箱方案和补件需求。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Room-Size Play Space",
+        "zh": "房间级游戏空间"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/4.webp",
+      "text": {
+        "en": "The kit can form wider structures with multiple play zones, making it suitable for siblings, friends, and story-based group play.",
+        "zh": "套装可形成更宽的多区域结构，适合兄弟姐妹、朋友和故事化多人游戏。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Flexible Geometry",
+        "zh": "灵活几何造型"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/5.webp",
+      "text": {
+        "en": "Beyond standard house frames, children can build dome and rounded structures that make the product feel more open-ended.",
+        "zh": "除标准房屋框架外，儿童还可搭建圆顶和弧形结构，让产品更具开放式创造空间。"
+      }
+    }
+  ],
+  "module": "toys",
+  "priority": 9,
+  "tags": [
+    {
+      "key": "toys",
+      "en": "Toys",
+      "zh": "玩具"
+    },
+    {
+      "key": "toys-mother-kids-toys",
+      "en": "Mother, Kids & Toys",
+      "zh": "母婴与玩具"
+    },
+    {
+      "key": "toys-educational-toys",
+      "en": "Educational Toys",
+      "zh": "益智玩具"
+    },
+    {
+      "key": "toys-other-educational-toys",
+      "en": "Other Educational Toys",
+      "zh": "其他益智玩具"
+    },
+    {
+      "key": "pp",
+      "en": "PP",
+      "zh": "PP"
+    }
+  ],
+  "structuredData": [
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "@id": "1600900125789",
+      "name": "100-Piece Creative Fort Building Gift Set",
+      "image": [
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/1.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/2.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/3.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/4.webp",
+        "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/5.webp"
+      ],
+      "description": "The 100-piece set gives children enough parts to build compact tents, house frames, domes, and multi-bay play spaces. Lightweight PP rods and connector balls make assembly approachable for family use, classroom play, and retail demonstrations. The gift-style box and storage bag support e-commerce sales, holiday programs, and branded promotional bundles. Standard and glow-style options can be adapted for OEM/ODM projects, including color matching and packaging updates.",
+      "sku": "1600900125789",
+      "mpn": "1600900125789-00",
+      "brand": {
+        "@type": "Brand",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.alibaba.com/product-detail/100PCS-Christmas-Gift-Dry-Set-Children_1600900125789.html",
+        "offerCount": 1,
+        "availability": "http://schema.org/InStock",
+        "priceCurrency": "USD",
+        "price": "11",
+        "priceValidUntil": "2027-04-25"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "@id": "1600900125789",
+      "name": "100-Piece Creative Fort Building Gift Set",
+      "description": "The 100-piece set gives children enough parts to build compact tents, house frames, domes, and multi-bay play spaces. Lightweight PP rods and connector balls make assembly approachable for family use, classroom play, and retail demonstrations. The gift-style box and storage bag support e-commerce sales, holiday programs, and branded promotional bundles. Standard and glow-style options can be adapted for OEM/ODM projects, including color matching and packaging updates.",
+      "thumbnailUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/1.webp",
+      "uploadDate": "2026-04-25",
+      "duration": "PT24S",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/videos/video-001.mp4"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/1.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/2.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/3.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/4.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/5.webp",
+      "creditText": "Dongguan Yaoshun Technology Co., Ltd.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Dongguan Yaoshun Technology Co., Ltd."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Mother, Kids & Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Mother+Kids+Toys&categoryId=26"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Educational Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Educational+Toys&categoryId=100001714"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Other Educational Toys",
+          "item": "https://www.alibaba.com/trade/search?tab=all&SearchText=Other+Educational+Toys&categoryId=100001735"
+        }
+      ]
+    }
+  ],
+  "images": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/1.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/2.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/3.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/4.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/5.webp"
+  ],
+  "videos": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/videos/video-001.mp4"
+  ],
+  "summary": {
+    "en": "A 100-piece creative fort kit for tents, secret bases, dome shapes, and family gift projects.",
+    "zh": "100件创意堡垒拼搭套装，适合帐篷、秘密基地、圆顶造型和家庭礼品项目。"
+  },
+  "description": {
+    "en": [
+      "The 100-piece set gives children enough parts to build compact tents, house frames, domes, and multi-bay play spaces.",
+      "Lightweight PP rods and connector balls make assembly approachable for family use, classroom play, and retail demonstrations.",
+      "The gift-style box and storage bag support e-commerce sales, holiday programs, and branded promotional bundles.",
+      "Standard and glow-style options can be adapted for OEM/ODM projects, including color matching and packaging updates."
+    ],
+    "zh": [
+      "100件配置可支持儿童搭建小型帐篷、房屋框架、圆顶结构和多分区游戏空间。",
+      "轻便PP杆件与连接球让家庭、课堂和零售演示场景中的拼搭更容易上手。",
+      "礼品化彩盒和收纳袋适合电商销售、节日项目和品牌促销组合。",
+      "可根据OEM/ODM需求调整普通款或夜光款，包括配色和包装方案。"
+    ]
+  },
+  "attributePairs": [
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Fort building toy",
+        "zh": "堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "100",
+        "zh": "100"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 3-15",
+        "zh": "3-15岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Color",
+        "zh": "颜色"
+      },
+      "value": {
+        "en": "Standard colors, glow option available",
+        "zh": "常规配色，可定制夜光款"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box packing",
+        "zh": "彩盒包装"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 3-15",
+        "zh": "3-15岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Fort building toy",
+        "zh": "堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Brand Name",
+        "zh": "品牌"
+      },
+      "value": {
+        "en": "YaoShun",
+        "zh": "YaoShun"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "YS100PCS",
+        "zh": "YS100PCS"
+      }
+    },
+    {
+      "key": {
+        "en": "Product Name",
+        "zh": "产品名称"
+      },
+      "value": {
+        "en": "Creative fort building gift set",
+        "zh": "创意堡垒拼搭礼盒套装"
+      }
+    },
+    {
+      "key": {
+        "en": "Color",
+        "zh": "颜色"
+      },
+      "value": {
+        "en": "Standard colors, glow option available",
+        "zh": "常规配色，可定制夜光款"
+      }
+    },
+    {
+      "key": {
+        "en": "Color Box Size",
+        "zh": "彩盒尺寸"
+      },
+      "value": {
+        "en": "43*33.5*7.5cm",
+        "zh": "43*33.5*7.5cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Carton Size",
+        "zh": "外箱尺寸"
+      },
+      "value": {
+        "en": "45*36*51cm",
+        "zh": "45*36*51cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Single Set Weight",
+        "zh": "单套重量"
+      },
+      "value": {
+        "en": "3kg",
+        "zh": "3kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box packing",
+        "zh": "彩盒包装"
+      }
+    },
+    {
+      "key": {
+        "en": "MOQ",
+        "zh": "最小起订量"
+      },
+      "value": {
+        "en": "6 sets",
+        "zh": "6套"
+      }
+    },
+    {
+      "key": {
+        "en": "Customization MOQ",
+        "zh": "定制起订量"
+      },
+      "value": {
+        "en": "1000 sets",
+        "zh": "1000套"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    }
+  ],
+  "packagingPairs": [
+    {
+      "key": {
+        "en": "Unit Size",
+        "zh": "单件尺寸"
+      },
+      "value": {
+        "en": "43X33.5X7.5 cm",
+        "zh": "43X33.5X7.5 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Unit Weight",
+        "zh": "单件重量"
+      },
+      "value": {
+        "en": "3 kg",
+        "zh": "3 kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Shipping Summary",
+        "zh": "包装运输摘要"
+      },
+      "value": {
+        "en": "Packaging & Shipping",
+        "zh": "包装与运输"
+      }
+    },
+    {
+      "key": {
+        "en": "Selling unit",
+        "zh": "销售单位"
+      },
+      "value": {
+        "en": "Single item",
+        "zh": "单件商品"
+      }
+    },
+    {
+      "key": {
+        "en": "Single package size",
+        "zh": "单个包装尺寸"
+      },
+      "value": {
+        "en": "43 x 33.5 x 7.5 cm",
+        "zh": "43 x 33.5 x 7.5 厘米"
+      }
+    },
+    {
+      "key": {
+        "en": "Single gross weight",
+        "zh": "单个毛重"
+      },
+      "value": {
+        "en": "3 kg",
+        "zh": "3 千克"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box packing",
+        "zh": "彩盒包装"
+      }
+    }
+  ]
+}
