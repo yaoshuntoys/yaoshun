@@ -14,7 +14,8 @@ import Link from "next/link";
 
 import { PageHero } from "@/components/page-hero";
 import { StructuredData } from "@/components/structured-data";
-import { buildMetadata } from "@/lib/metadata";
+import { newsContent } from "@/content/site";
+import { buildPageMetadata } from "@/lib/metadata";
 import {
   formatPublishedDate,
   getNewsCategoryLabel,
@@ -117,19 +118,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
-  return buildMetadata(
-    locale,
-    "News | Dongguan Yaoshun Technology",
-    "Read factory updates, OEM/ODM insights, compliance progress, quality-control articles, and product news from Dongguan Yaoshun Technology.",
-    "news",
-    [
-      "educational toy manufacturer news",
-      "oem odm factory updates",
-      "custom plastic production insights",
-      "toy compliance and qc news",
-      "dongguan yaoshun technology news",
-    ],
-  );
+  return buildPageMetadata(locale, newsContent.seo, "news");
 }
 
 export default async function NewsPage({

@@ -127,7 +127,7 @@
 .home-section-title,
 .home-solutions-title {
   margin: 0;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   color: #17306e;
   line-height: 0.96;
   letter-spacing: -0.07em;
@@ -458,7 +458,7 @@
   position: relative;
   z-index: 1;
   color: #17306e;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.08rem;
   letter-spacing: -0.03em;
 }
@@ -529,7 +529,7 @@
 }
 
 .home-stat-value {
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   color: #17306e;
   font-size: 1.54rem;
   font-weight: 700;
@@ -740,7 +740,7 @@
 .home-about-stat strong {
   display: block;
   color: #17306e;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(1.35rem, 1.8vw, 1.74rem);
   line-height: 1;
   letter-spacing: -0.04em;
@@ -773,7 +773,7 @@
   inset: auto 0 0;
   transform: translateY(6%);
   color: rgba(37, 99, 255, 0.04);
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(6rem, 18vw, 12rem);
   font-weight: 800;
   letter-spacing: -0.08em;

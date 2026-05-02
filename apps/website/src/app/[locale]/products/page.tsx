@@ -11,7 +11,8 @@ import Link from "next/link";
 
 import { PageHero } from "@/components/page-hero";
 import { ProductsFeaturedCarousel } from "@/components/products-featured-carousel";
-import { buildMetadata } from "@/lib/metadata";
+import { productsPageContent } from "@/content/site";
+import { buildPageMetadata } from "@/lib/metadata";
 import { getLocaleFromParams, t } from "@/lib/i18n";
 import {
   getProductPiecesLabel,
@@ -89,17 +90,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
-  return buildMetadata(
-    locale,
-    "Educational Building Toys Catalog | yaoshun toys",
-    "Browse Yaoshun's catalog of educational building toys, interlocking products, and OEM/ODM-ready product lines with bilingual product detail pages.",
-    "products",
-    [
-      "educational toy catalog",
-      "building block toy products",
-      "interlocking toy supplier",
-    ],
-  );
+  return buildPageMetadata(locale, productsPageContent.seo, "products");
 }
 
 export default async function ProductsPage({

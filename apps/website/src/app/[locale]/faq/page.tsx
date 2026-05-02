@@ -1,26 +1,15 @@
 import type {Metadata} from "next";
 import {Breadcrumbs} from "@/components/marketing";
 import {StructuredData} from "@/components/structured-data";
-import {buildMetadata} from "@/lib/metadata";
+import {faqContent} from "@/content/site";
+import {buildPageMetadata} from "@/lib/metadata";
 import {getLocaleFromParams, t} from "@/lib/i18n";
 import {toAbsoluteUrl} from "@/lib/site-config";
 import {faqItems} from "./data";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
-  return buildMetadata(
-    locale,
-    "FAQ | Educational Toy OEM/ODM Manufacturer",
-    "Answers about educational toy manufacturing, in-house mold development, custom plastic production, quality control, compliance files, and export support from Dongguan Yaoshun Technology.",
-    "faq",
-    [
-      "educational toy manufacturer faq",
-      "oem odm toy supplier questions",
-      "custom plastic manufacturer faq",
-      "in-house mold development manufacturer",
-      "toy compliance and qc support",
-    ],
-  );
+  return buildPageMetadata(locale, faqContent.seo, "faq");
 }
 
 function copy(locale: "en" | "zh") {

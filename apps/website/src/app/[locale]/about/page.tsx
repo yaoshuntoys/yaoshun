@@ -25,7 +25,8 @@ import Link from "next/link";
 import {AboutCertificateGallery} from "@/components/about-certificate-gallery";
 import {StructuredData} from "@/components/structured-data";
 import {siteCopy} from "@/components/site-shell.data";
-import {buildMetadata} from "@/lib/metadata";
+import {aboutContent} from "@/content/site";
+import {buildPageMetadata} from "@/lib/metadata";
 import {getLocaleFromParams, t} from "@/lib/i18n";
 import {contactFormPath} from "@/lib/routes";
 import {toAbsoluteUrl} from "@/lib/site-config";
@@ -449,19 +450,7 @@ const deliveryMethods: BrandItem[] = [
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
-  return buildMetadata(
-    locale,
-    "About Dongguan Yaoshun Technology | Educational Toy OEM/ODM Factory",
-    "Learn more about Dongguan Yaoshun Technology Co., Ltd., a full-chain manufacturer for educational toys, precision plastic products, in-house mold development, compliance support, and export delivery.",
-    "about",
-    [
-      "about Dongguan Yaoshun Technology",
-      "educational toy manufacturer china",
-      "custom plastic oem odm factory",
-      "in-house mold development factory",
-      "precision injection molding dongguan",
-    ],
-  );
+  return buildPageMetadata(locale, aboutContent.seo, "about");
 }
 
 function copy(locale: "en" | "zh") {

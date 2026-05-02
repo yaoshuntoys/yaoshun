@@ -54,9 +54,9 @@ const config: Config = {
         'inverse-primary': '#b3c5ff'
       },
       fontFamily: {
-        headline: ['Manrope', 'Avenir Next', 'Segoe UI', 'sans-serif'],
-        body: ['Manrope', 'Avenir Next', 'PingFang SC', 'Segoe UI', 'Microsoft YaHei', 'sans-serif'],
-        label: ['Inter', 'Avenir Next', 'Segoe UI', 'sans-serif']
+        headline: ['var(--font-heading)'],
+        body: ['var(--font-body)'],
+        label: ['var(--font-label)']
       },
       borderRadius: {
         xl2: '1.5rem',

@@ -24,6 +24,7 @@ import {
   type ProductJson,
   type ProductJsonPair,
 } from "@/content/site/products-catalog";
+import { productsPageContent } from "@/content/site";
 import { buildMetadata } from "@/lib/metadata";
 import {
   findShowcaseProduct,
@@ -47,6 +48,10 @@ function localize(
 ) {
   if (!value) return fallback;
   return value[locale] || value.en || value.zh || fallback;
+}
+
+function applyProductSeoTemplate(template: string, productTitle: string) {
+  return template.replace("{product}", productTitle);
 }
 
 function findProduct(slug: string): ProductJson | undefined {
@@ -276,21 +281,40 @@ export async function generateMetadata({
   if (!product) {
     return buildMetadata(
       locale,
-      "Product Detail",
-      "yaoshun toys product detail",
+      t(locale, { en: "Product Detail", zh: "产品详情" }),
+      t(locale, {
+        en: "yaoshun toys product detail",
+        zh: "yaoshun toys 产品详情",
+      }),
       `products/${slug}`,
     );
   }
 
-  const title = localize(locale, product.title, slug);
+  const productTitle = localize(locale, product.title, slug);
   const descriptionList = product.description || { en: [], zh: [] };
-  const description =
+  const productDescription =
     descriptionList[locale]?.[0] ||
     descriptionList.en?.[0] ||
     descriptionList.zh?.[0] ||
-    title;
-  return buildMetadata(locale, title, description, `products/${slug}`, [
-    title,
+    productTitle;
+  const title = applyProductSeoTemplate(
+    t(locale, productsPageContent.seo.detailTitleTemplate),
+    productTitle,
+  );
+  const description = applyProductSeoTemplate(
+    t(locale, productsPageContent.seo.detailDescriptionTemplate),
+    productTitle,
+  );
+  const categoryKeywords = [
+    ...(product.categories?.[locale] || []),
+    ...(product.categories?.en || []),
+    ...(product.categories?.zh || []),
+  ];
+
+  return buildMetadata(locale, title, description || productDescription, `products/${slug}`, [
+    productTitle,
+    productDescription,
+    ...categoryKeywords,
     "yaoshun toys product detail",
   ]);
 }
@@ -609,11 +633,16 @@ export default async function ProductDetailPage({
       </nav>
 
       <section className="grid min-w-0 items-start gap-6 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-8">
-        <ProductGallery images={allImages} title={title} />
+        <ProductGallery
+          images={allImages}
+          key={allImages.join("|")}
+          locale={locale}
+          title={title}
+        />
 
         <div className="grid min-w-0 content-start gap-4 lg:gap-5">
           <div className="grid gap-3">
-            <h1 className="m-0 break-words font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1.9rem] font-semibold leading-[1.14] text-[#17306e] sm:text-[2.35rem] lg:text-[3rem]">
+            <h1 className="m-0 break-words font-display text-[1.9rem] font-semibold leading-[1.14] text-[#17306e] sm:text-[2.35rem] lg:text-[3rem]">
               {title}
             </h1>
             {topBadges.length > 0 ? (
@@ -635,7 +664,7 @@ export default async function ProductDetailPage({
               <p className="m-0 text-[0.96rem] font-medium text-[#6f7ea9]">
                 {text.priceLabel}
               </p>
-              <div className="font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1.8rem] font-extrabold leading-none text-[#ff7e1f] sm:text-[2.35rem]">
+              <div className="font-display text-[1.8rem] font-extrabold leading-none text-[#ff7e1f] sm:text-[2.35rem]">
                 {formatPriceRange(product)}
                 <span className="ml-2 inline-block text-[0.95rem] font-semibold text-[#6f7ea9]">
                   / {priceUnit}
@@ -718,7 +747,7 @@ export default async function ProductDetailPage({
 
       <section className="grid overflow-hidden rounded-[1.4rem] border border-[rgba(24,56,138,0.08)] bg-[linear-gradient(135deg,#eef5ff_0%,#ffffff_100%)] shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.7rem] lg:grid-cols-[minmax(0,1fr)_auto]">
         <div className="grid content-start gap-4 px-5 py-5 sm:gap-5 sm:px-8 sm:py-8">
-          <h2 className="m-0 font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1.5rem] font-semibold text-[#17306e] sm:text-[1.7rem]">
+          <h2 className="m-0 font-display text-[1.5rem] font-semibold text-[#17306e] sm:text-[1.7rem]">
             {text.highlights}
           </h2>
           <ul className="m-0 grid gap-3 p-0">
@@ -747,7 +776,7 @@ export default async function ProductDetailPage({
       </section>
 
       <section className="rounded-[1.4rem] border border-[rgba(24,56,138,0.08)] bg-white p-4 shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.7rem] sm:p-6">
-        <h2 className="m-0 font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1.45rem] font-semibold text-[#17306e] sm:text-[1.55rem]">
+        <h2 className="m-0 font-display text-[1.45rem] font-semibold text-[#17306e] sm:text-[1.55rem]">
           {text.attributes}
         </h2>
         <div className="mt-5 grid gap-2 sm:hidden">
@@ -791,7 +820,7 @@ export default async function ProductDetailPage({
 
       <section className="grid gap-4 md:grid-cols-3">
         <article className="rounded-[1.4rem] border border-[rgba(24,56,138,0.08)] bg-white p-4 shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.7rem] sm:p-6">
-          <h2 className="m-0 font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1.35rem] font-semibold text-[#17306e] sm:text-[1.55rem]">
+          <h2 className="m-0 font-display text-[1.35rem] font-semibold text-[#17306e] sm:text-[1.55rem]">
             {text.customization}
           </h2>
           <div className="mt-5 grid gap-5">
@@ -832,7 +861,7 @@ export default async function ProductDetailPage({
         </article>
 
         <article className="rounded-[1.4rem] border border-[rgba(24,56,138,0.08)] bg-white p-4 shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.7rem] sm:p-6">
-          <h2 className="m-0 font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1.35rem] font-semibold text-[#17306e] sm:text-[1.55rem]">
+          <h2 className="m-0 font-display text-[1.35rem] font-semibold text-[#17306e] sm:text-[1.55rem]">
             {text.packagingShipping}
           </h2>
           <div className="mt-5 grid gap-5">
@@ -862,7 +891,7 @@ export default async function ProductDetailPage({
         </article>
 
         <article className="rounded-[1.4rem] border border-[rgba(24,56,138,0.08)] bg-white p-4 shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.7rem] sm:p-6">
-          <h2 className="m-0 font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1.35rem] font-semibold text-[#17306e] sm:text-[1.55rem]">
+          <h2 className="m-0 font-display text-[1.35rem] font-semibold text-[#17306e] sm:text-[1.55rem]">
             {text.leadTime}
           </h2>
           {leadTime.length > 0 ? (
@@ -912,7 +941,7 @@ export default async function ProductDetailPage({
               <span className="inline-flex w-fit items-center rounded-full bg-[rgba(37,99,255,0.08)] px-3 py-1 text-[0.78rem] font-bold uppercase tracking-[0.12em] text-[#2563ff]">
                 {text.productDetails}
               </span>
-              <h2 className="m-0 max-w-[48rem] font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1.45rem] font-semibold leading-tight text-[#17306e] sm:text-[1.85rem]">
+              <h2 className="m-0 max-w-[48rem] font-display text-[1.45rem] font-semibold leading-tight text-[#17306e] sm:text-[1.85rem]">
                 {title}
               </h2>
             </div>
@@ -956,7 +985,7 @@ export default async function ProductDetailPage({
                     <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(37,99,255,0.08)] text-[0.78rem] font-extrabold text-[#2563ff]">
                       {(index + 1).toString().padStart(2, "0")}
                     </span>
-                    <h3 className="m-0 font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1.18rem] font-semibold leading-tight text-[#17306e] sm:text-[1.35rem]">
+                    <h3 className="m-0 font-display text-[1.18rem] font-semibold leading-tight text-[#17306e] sm:text-[1.35rem]">
                       {item.title || text.productDetails}
                     </h3>
                     <p className="m-0 text-[0.96rem] leading-7 text-[#50638f] sm:text-[1rem] sm:leading-8">
@@ -989,7 +1018,7 @@ export default async function ProductDetailPage({
           <span className="text-[0.82rem] font-bold uppercase tracking-[0.12em] text-[#2563ff]">
             {text.previousProduct}
           </span>
-          <strong className="font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1.28rem] leading-[1.2] tracking-[-0.04em] text-[#17306e]">
+          <strong className="font-display text-[1.28rem] leading-[1.2] tracking-[-0.04em] text-[#17306e]">
             {adjacentProducts.previous
               ? t(locale, adjacentProducts.previous.label)
               : text.backToProducts}
@@ -1012,7 +1041,7 @@ export default async function ProductDetailPage({
           <span className="text-[0.82rem] font-bold uppercase tracking-[0.12em] text-[#2563ff]">
             {text.nextProduct}
           </span>
-          <strong className="font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1.28rem] leading-[1.2] tracking-[-0.04em] text-[#17306e]">
+          <strong className="font-display text-[1.28rem] leading-[1.2] tracking-[-0.04em] text-[#17306e]">
             {adjacentProducts.next
               ? t(locale, adjacentProducts.next.label)
               : text.browseMoreProducts}

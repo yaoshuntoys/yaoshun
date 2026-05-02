@@ -1,12 +1,5 @@
-import nextVitals from 'eslint-config-next/core-web-vitals';
+import nextVitals from "eslint-config-next/core-web-vitals";
 
-const config = [
-  ...nextVitals,
-  {
-    rules: {
-      '@next/next/no-page-custom-font': 'off'
-    }
-  }
-];
+const config = [...nextVitals];
 
 export default config;

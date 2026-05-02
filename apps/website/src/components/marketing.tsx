@@ -1,17 +1,16 @@
 import Image from "@/components/smart-image";
 import Link from "next/link";
-import {ArrowRight, ChevronRight} from "lucide-react";
+import {ChevronRight} from "lucide-react";
 
 import type {LocalizedText} from "@/content/site-relaunch";
 import {t, type Locale} from "@/lib/i18n";
-import {primaryButtonClass, secondaryButtonClass} from "@/lib/ui";
 
 export function BrandMark({compact = false}: {compact?: boolean}) {
   const iconSize = compact ? 32 : 40;
 
   return (
     <div
-      className={`inline-flex items-center whitespace-nowrap font-['Outfit','Plus_Jakarta_Sans',sans-serif] font-extrabold leading-none tracking-[-0.06em] ${
+      className={`inline-flex items-center whitespace-nowrap font-display font-extrabold leading-none tracking-[-0.06em] ${
         compact ? "gap-1.5 text-[1.28rem]" : "gap-2 text-[clamp(1.45rem,2vw,1.95rem)]"
       }`}
     >
@@ -88,95 +87,5 @@ export function Breadcrumbs({
         );
       })}
     </nav>
-  );
-}
-
-export function MetricStrip({
-  locale,
-  items,
-}: {
-  locale: Locale;
-  items: Array<{value: string; label: LocalizedText}>;
-}) {
-  return (
-    <div className="metric-strip">
-      {items.map((item) => (
-        <div key={`${item.value}-${t(locale, item.label)}`} className="metric-item">
-          <div className="metric-value">{item.value}</div>
-          <div className="metric-label">{t(locale, item.label)}</div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-export function PrimaryLink({
-  href,
-  children,
-  ghost = false,
-}: {
-  href: string;
-  children: React.ReactNode;
-  ghost?: boolean;
-}) {
-  return (
-    <Link className={ghost ? secondaryButtonClass : primaryButtonClass} href={href}>
-      <span>{children}</span>
-      <ArrowRight size={16} strokeWidth={2.2} />
-    </Link>
-  );
-}
-
-export function NewsletterBanner({
-  locale,
-  title,
-  description,
-  placeholder,
-  action,
-  actionHref,
-}: {
-  locale: Locale;
-  title: LocalizedText;
-  description: LocalizedText;
-  placeholder: LocalizedText;
-  action: LocalizedText;
-  actionHref: string;
-}) {
-  return (
-    <section className="newsletter-banner">
-      <div>
-        <h3 className="newsletter-title">{t(locale, title)}</h3>
-        <p className="newsletter-copy">{t(locale, description)}</p>
-      </div>
-      <form action={actionHref} className="newsletter-form">
-        <input aria-label={t(locale, placeholder)} placeholder={t(locale, placeholder)} type="email" />
-        <button type="submit">{t(locale, action)}</button>
-      </form>
-    </section>
-  );
-}
-
-export function SpotlightCard({
-  image,
-  title,
-  text,
-  children,
-}: {
-  image: string;
-  title: string;
-  text: string;
-  children?: React.ReactNode;
-}) {
-  return (
-    <article className="spotlight-card">
-      <div className="spotlight-image-wrap">
-        <Image alt={title} className="spotlight-image" fill sizes="(min-width: 1024px) 30vw, 100vw" src={image} />
-      </div>
-      <div className="spotlight-body">
-        <h3>{title}</h3>
-        <p>{text}</p>
-        {children}
-      </div>
-    </article>
   );
 }

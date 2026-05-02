@@ -19,7 +19,8 @@ import { ContactForm } from "@/components/contact-form";
 import { PageHero } from "@/components/page-hero";
 import { StructuredData } from "@/components/structured-data";
 import { siteCopy } from "@/components/site-shell.data";
-import { buildMetadata } from "@/lib/metadata";
+import { contactContent } from "@/content/site";
+import { buildPageMetadata } from "@/lib/metadata";
 import { getLocaleFromParams, t } from "@/lib/i18n";
 import { toAbsoluteUrl } from "@/lib/site-config";
 import { contactCopy } from "./data";
@@ -135,19 +136,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
-  return buildMetadata(
-    locale,
-    "Contact Dongguan Yaoshun Technology | OEM/ODM Toy & Plastic Projects",
-    "Contact Dongguan Yaoshun Technology for educational toys, interlocking toy OEM/ODM, in-house mold development, custom plastic production, compliance files, and export delivery support.",
-    "contact",
-    [
-      "contact educational toy manufacturer",
-      "oem odm toy project inquiry",
-      "custom plastic production contact",
-      "in-house mold development contact",
-      "toy compliance export support",
-    ],
-  );
+  return buildPageMetadata(locale, contactContent.seo, "contact");
 }
 
 function copy(locale: "en" | "zh") {

@@ -1,12 +1,13 @@
 import type {Metadata} from "next";
 
 import {Breadcrumbs, SectionTitle} from "@/components/marketing";
-import {buildMetadata} from "@/lib/metadata";
+import {termsContent} from "@/content/site";
+import {buildPageMetadata} from "@/lib/metadata";
 import {getLocaleFromParams} from "@/lib/i18n";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
-  return buildMetadata(locale, "Terms of Use | yaoshun toys", "Terms of use for the yaoshun toys website.", "terms");
+  return buildPageMetadata(locale, termsContent.seo, "terms");
 }
 
 export default async function TermsPage({params}: {params: Promise<{locale: string}>}) {

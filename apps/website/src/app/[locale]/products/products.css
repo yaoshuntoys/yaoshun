@@ -211,7 +211,7 @@
 .products-hero-title,
 .products-featured-title,
 .products-oem-copy h2 {
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   color: #17306e;
   letter-spacing: -0.06em;
 }
@@ -425,7 +425,7 @@
 .products-grid-body h3 {
   margin: 0;
   color: #17306e;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.04rem;
   line-height: 1.22;
   letter-spacing: -0.04em;
@@ -545,7 +545,7 @@
 .products-sidebar-group h3 {
   margin: 0;
   color: #17306e;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.04rem;
 }
 
@@ -702,7 +702,7 @@
 
 .products-grid-footer strong {
   color: #17306e;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.22rem;
   letter-spacing: -0.04em;
 }

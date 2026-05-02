@@ -161,7 +161,7 @@
 .about-info-card h2 {
   margin: 0;
   color: #142c74;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   letter-spacing: -0.06em;
 }
 
@@ -361,7 +361,7 @@
 
 .about-metric-body strong {
   color: #17306e;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.85rem;
   line-height: 1;
   letter-spacing: -0.05em;
@@ -537,7 +537,7 @@
 }
 
 .about-certificate-modal-copy strong {
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.12rem;
   letter-spacing: -0.04em;
 }
@@ -802,7 +802,7 @@
 .about-service-detail-copy h3 {
   margin: 0;
   color: #17306e;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.08rem;
   line-height: 1.2;
   letter-spacing: -0.03em;

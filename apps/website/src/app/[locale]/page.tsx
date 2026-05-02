@@ -23,7 +23,8 @@ import Link from "next/link";
 import { HomeLeadForm } from "@/components/home-lead-form";
 import { PageHero } from "@/components/page-hero";
 import { siteCopy } from "@/components/site-shell.data";
-import { buildMetadata } from "@/lib/metadata";
+import { homeContent } from "@/content/site";
+import { buildPageMetadata } from "@/lib/metadata";
 import { getLocaleFromParams, t, type Locale } from "@/lib/i18n";
 import { getHomeFeaturedShowcaseCatalog } from "@/lib/relaunch-data";
 import { productPath } from "@/lib/routes";
@@ -131,21 +132,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
-  return buildMetadata(
-    locale,
-    "Educational Toy OEM/ODM Manufacturer | Dongguan Yaoshun Technology",
-    "Dongguan Yaoshun Technology develops and manufactures educational toys, interlocking building toys, AI toy plastic electronic parts, and custom plastic products with in-house mold development, eco-safe materials, and global delivery.",
-    "",
-    [
-      "educational toy manufacturer",
-      "interlocking toy oem odm",
-      "building block toy supplier",
-      "custom plastic product manufacturer",
-      "in-house mold development manufacturer",
-      "ai toy plastic electronic products",
-      "precision injection molding china",
-    ],
-  );
+  return buildPageMetadata(locale, homeContent.seo, "");
 }
 
 export default async function HomePage({

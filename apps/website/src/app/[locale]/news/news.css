@@ -94,7 +94,7 @@
   display: grid;
   margin: 0;
   color: #17306e;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(3rem, 5vw, 5rem);
   line-height: 0.96;
   letter-spacing: -0.07em;
@@ -190,7 +190,7 @@
 .news-sidebar-card h2 {
   margin: 0 0 1.1rem;
   color: #17306e;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.8rem;
   letter-spacing: -0.04em;
 }
@@ -418,7 +418,7 @@
 .news-card-body h3 {
   margin: 0;
   color: #17306e;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.34rem;
   line-height: 1.26;
   letter-spacing: -0.03em;

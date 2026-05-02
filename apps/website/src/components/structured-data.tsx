@@ -9,7 +9,9 @@ type StructuredDataProps = {
 };
 
 export function StructuredData({data}: StructuredDataProps) {
-  return <script dangerouslySetInnerHTML={{__html: JSON.stringify(data)}} type="application/ld+json" />;
+  const serializedData = JSON.stringify(data).replace(/</g, "\\u003c");
+
+  return <script dangerouslySetInnerHTML={{__html: serializedData}} type="application/ld+json" />;
 }
 
 function localizeProductTitle(locale: Locale, value: Partial<Record<Locale, string>> | undefined, fallback: string): string {
@@ -54,8 +56,9 @@ export function SiteStructuredData({locale}: {locale: Locale}) {
       url: localizedProducts,
       itemListElement: products
         .filter((product) => Boolean(product.productId))
-        .map((product) => ({
+        .map((product, index) => ({
           '@type': 'ListItem',
+          position: index + 1,
           name: localizeProductTitle(locale, product.title, product.productId),
           url: `${siteUrl}${localizedPath(locale, 'products')}/${product.productId}`
         }))

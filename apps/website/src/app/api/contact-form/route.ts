@@ -1,10 +1,13 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+import { defaultLocale, isLocale } from "@/lib/i18n";
+
 export const runtime = "nodejs";
 
 const rateLimitWindowMs = 10 * 60 * 1000;
 const maxSubmissionsPerWindow = 5;
+const maxMessageLength = 5000;
 const rateLimitBuckets = new Map<string, number[]>();
 
 function escapeHtml(value: string) {
@@ -18,6 +21,10 @@ function escapeHtml(value: string) {
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function jsonError(message: string, status: number) {
+  return NextResponse.json({ ok: false, message }, { status });
 }
 
 function getClientAddress(request: Request) {
@@ -71,11 +78,11 @@ export async function POST(request: Request) {
     try {
       body = (await request.json()) as typeof body;
     } catch {
-      return NextResponse.json({ ok: false, message: "Invalid JSON payload." }, { status: 400 });
+      return jsonError("Invalid JSON payload.", 400);
     }
 
     if (!body || typeof body !== "object") {
-      return NextResponse.json({ ok: false, message: "Invalid form payload." }, { status: 400 });
+      return jsonError("Invalid form payload.", 400);
     }
 
     const name = String(body.name ?? "").trim();
@@ -83,7 +90,8 @@ export async function POST(request: Request) {
     const email = String(body.email ?? "").trim();
     const message = String(body.message ?? "").trim();
     const website = String(body.website ?? "").trim();
-    const locale = String(body.locale ?? "zh").trim() || "zh";
+    const rawLocale = String(body.locale ?? defaultLocale).trim();
+    const locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
     const normalizedEmail = email.toLowerCase();
     const now = Date.now();
 
@@ -92,34 +100,38 @@ export async function POST(request: Request) {
     }
 
     if (!name) {
-      return NextResponse.json({ ok: false, message: "Name is required." }, { status: 400 });
+      return jsonError("Name is required.", 400);
     }
 
     if (!email) {
-      return NextResponse.json({ ok: false, message: "Email is required." }, { status: 400 });
+      return jsonError("Email is required.", 400);
     }
 
     if (!message) {
-      return NextResponse.json({ ok: false, message: "Project brief is required." }, { status: 400 });
+      return jsonError("Project brief is required.", 400);
     }
 
     if (name.length > 120) {
-      return NextResponse.json({ ok: false, message: "Name is too long." }, { status: 400 });
+      return jsonError("Name is too long.", 400);
     }
 
     if (company.length > 160) {
-      return NextResponse.json({ ok: false, message: "Company is too long." }, { status: 400 });
+      return jsonError("Company is too long.", 400);
+    }
+
+    if (message.length > maxMessageLength) {
+      return jsonError("Project brief is too long.", 400);
     }
 
     if (!isValidEmail(normalizedEmail)) {
-      return NextResponse.json({ ok: false, message: "Invalid email format." }, { status: 400 });
+      return jsonError("Invalid email format.", 400);
     }
 
     const clientAddress = getClientAddress(request);
     const rateLimitKey = `${clientAddress}:${normalizedEmail}`;
 
     if (isRateLimited(rateLimitKey, now)) {
-      return NextResponse.json({ ok: false, message: "Too many requests. Please try again later." }, { status: 429 });
+      return jsonError("Too many requests. Please try again later.", 429);
     }
 
     const ticketEmail = process.env.TAWK_TICKET_EMAIL?.trim();
@@ -129,8 +141,8 @@ export async function POST(request: Request) {
     const pass = process.env.EMAIL_PASS?.trim();
     const from = process.env.EMAIL_FROM?.trim();
 
-    if (!ticketEmail || !host || !user || !pass || !from || Number.isNaN(port)) {
-      return NextResponse.json({ ok: false, message: "Mail config missing." }, { status: 500 });
+    if (!ticketEmail || !host || !user || !pass || !from || !Number.isInteger(port) || port <= 0) {
+      return jsonError("Mail config missing.", 500);
     }
 
     const secure = port === 465;
@@ -144,7 +156,10 @@ export async function POST(request: Request) {
 
     const submittedAt = new Date().toISOString();
     const subjectPrefix = locale === "en" ? "Website Form" : "官网表单";
-    const subject = `${subjectPrefix}: ${name}${company ? ` (${company})` : ""} 的咨询`;
+    const subject =
+      locale === "en"
+        ? `${subjectPrefix}: Inquiry from ${name}${company ? ` (${company})` : ""}`
+        : `${subjectPrefix}: ${name}${company ? ` (${company})` : ""} 的咨询`;
     const escapedName = escapeHtml(name);
     const escapedCompany = escapeHtml(company || "-");
     const escapedEmail = escapeHtml(normalizedEmail);

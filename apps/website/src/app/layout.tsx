@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import { headers } from "next/headers";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -6,11 +7,17 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { AnalyticsEvents } from "@/components/analytics-events";
 import { TawkScript } from "@/components/tawk-script";
 import { TrackingScripts } from "@/components/tracking-scripts";
-import { defaultLocale, localeRegistry, matchSupportedLocale } from "@/lib/i18n";
+import { homeContent, siteSeo } from "@/content/site";
+import {
+  defaultLocale,
+  localeRegistry,
+  locales,
+  matchSupportedLocale,
+  t,
+} from "@/lib/i18n";
 import {
   defaultOgImage,
   googleSiteVerification,
-  siteDescription,
   siteName,
   siteUrl,
   toAbsoluteUrl,
@@ -28,40 +35,56 @@ import "./[locale]/faq/faq.css";
 import "./[locale]/products/products.css";
 import "./[locale]/products/product-detail.css";
 
+const outfit = Outfit({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  weight: ["500", "600", "700", "800"],
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta-sans",
+  weight: ["400", "500", "600", "700"],
+});
+
+const defaultTitle = t(defaultLocale, homeContent.seo.title);
+const defaultDescription = t(defaultLocale, homeContent.seo.description);
+const languageAlternates = Object.fromEntries(
+  locales.map((locale) => [
+    localeRegistry[locale].htmlLang,
+    `${siteUrl}/${locale}`,
+  ]),
+);
+const defaultKeywords = Array.from(
+  new Set(locales.flatMap((locale) => t(locale, siteSeo.defaultKeywords))),
+);
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: siteName,
-  description: siteDescription,
-  keywords: [
-    "尧顺",
-    "尧顺科技",
-    "东莞市尧顺科技有限公司",
-    "益智玩具厂家",
-    "积木拼装玩具厂家",
-    "拼插玩具供应商",
-    "玩具制造商",
-    "玩具OEM ODM",
-    "精密注塑",
-    "塑料制品定制",
-    "环保无毒玩具材料",
-    "Yaoshun",
-    "Dongguan Yaoshun Technology",
-    "Dongguan Yaoshun Technology Co., Ltd.",
-    "educational toy manufacturer",
-    "interlocking toy manufacturer",
-    "building block toy supplier",
-    "precision injection molding",
-    "custom plastic product manufacturer",
-    "eco-friendly toy materials",
-    "toy manufacturer",
-    "OEM toy manufacturer",
-    "ODM toy manufacturer",
-  ],
+  title: defaultTitle,
+  description: defaultDescription,
+  keywords: defaultKeywords,
   applicationName: siteName,
   authors: [{ name: siteName }],
+  category: "manufacturing",
   creator: siteName,
+  formatDetection: {
+    address: false,
+    email: false,
+    telephone: false,
+  },
   publisher: siteName,
+  referrer: "origin-when-cross-origin",
   manifest: "/site.webmanifest",
+  alternates: {
+    canonical: siteUrl,
+    languages: {
+      ...languageAlternates,
+      "x-default": `${siteUrl}/${defaultLocale}`,
+    },
+  },
   icons: {
     icon: [
       {
@@ -93,23 +116,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName,
-    title: siteName,
-    description: siteDescription,
+    title: defaultTitle,
+    description: defaultDescription,
     url: siteUrl,
     locale: localeRegistry[defaultLocale].ogLocale,
+    alternateLocale: locales
+      .filter((locale) => locale !== defaultLocale)
+      .map((locale) => localeRegistry[locale].ogLocale),
     images: [
       {
         url: toAbsoluteUrl(defaultOgImage),
         width: 1200,
         height: 630,
-        alt: siteName,
+        alt: defaultTitle,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteName,
-    description: siteDescription,
+    title: defaultTitle,
+    description: defaultDescription,
     images: [toAbsoluteUrl(defaultOgImage)],
   },
   verification: {
@@ -131,22 +157,11 @@ export default async function RootLayout({
 
   return (
     <html
+      className={`${outfit.variable} ${plusJakartaSans.variable}`}
       data-scroll-behavior="smooth"
       lang={htmlLang}
       suppressHydrationWarning
     >
-      <head>
-        <link href="https://fonts.googleapis.com" rel="preconnect" />
-        <link
-          crossOrigin=""
-          href="https://fonts.gstatic.com"
-          rel="preconnect"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body>
         <TawkScript />
         <TrackingScripts />

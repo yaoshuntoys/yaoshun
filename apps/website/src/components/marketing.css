@@ -46,7 +46,7 @@
 
 .section-title {
   margin: 0;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(1.95rem, 4vw, 3.55rem);
   line-height: 0.98;
   letter-spacing: -0.06em;
@@ -161,7 +161,7 @@
 .detail-sidebar-card h3,
 .info-card h3 {
   margin: 0;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.15rem;
   line-height: 1.2;
   letter-spacing: -0.04em;
@@ -180,7 +180,7 @@
 }
 
 .metric-value {
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.06em;
@@ -199,7 +199,7 @@
 
 .newsletter-title {
   margin: 0;
-  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.75rem;
   letter-spacing: -0.04em;
 }

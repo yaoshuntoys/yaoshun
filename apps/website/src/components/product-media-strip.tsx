@@ -27,7 +27,7 @@ export function ProductMediaStrip({locale, images, title, videos}: ProductMediaS
   return (
     <section className="rounded-[1.7rem] border border-[rgba(24,56,138,0.08)] bg-white p-5 shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <h2 className="m-0 font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1.55rem] font-semibold tracking-[-0.05em] text-[#17306e]">
+        <h2 className="m-0 font-display text-[1.55rem] font-semibold tracking-[-0.05em] text-[#17306e]">
           {text.heading}
         </h2>
         <div className="flex flex-wrap gap-3">

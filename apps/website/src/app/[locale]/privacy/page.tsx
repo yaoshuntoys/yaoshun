@@ -1,12 +1,13 @@
 import type {Metadata} from "next";
 
 import {Breadcrumbs, SectionTitle} from "@/components/marketing";
-import {buildMetadata} from "@/lib/metadata";
+import {privacyContent} from "@/content/site";
+import {buildPageMetadata} from "@/lib/metadata";
 import {getLocaleFromParams} from "@/lib/i18n";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
-  return buildMetadata(locale, "Privacy Policy | yaoshun toys", "Privacy policy for the yaoshun toys website.", "privacy");
+  return buildPageMetadata(locale, privacyContent.seo, "privacy");
 }
 
 export default async function PrivacyPage({params}: {params: Promise<{locale: string}>}) {

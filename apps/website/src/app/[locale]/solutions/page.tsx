@@ -20,7 +20,8 @@ import Link from "next/link";
 import {PageHero} from "@/components/page-hero";
 import {StructuredData} from "@/components/structured-data";
 import {siteCopy} from "@/components/site-shell.data";
-import {buildMetadata} from "@/lib/metadata";
+import {solutionsContent} from "@/content/site";
+import {buildPageMetadata} from "@/lib/metadata";
 import {getLocaleFromParams, t} from "@/lib/i18n";
 import {contactFormPath} from "@/lib/routes";
 import {toAbsoluteUrl} from "@/lib/site-config";
@@ -271,21 +272,7 @@ const partnerItems = [
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
-  return buildMetadata(
-    locale,
-    "Educational Toy & Custom Plastic Solutions | Dongguan Yaoshun Technology",
-    "Focused R&D and manufacturing solutions for educational toys, building block assembly products, custom plastic products, tubing, in-house mold development, safe materials, and OEM/ODM delivery.",
-    "solutions",
-    [
-      "educational toy manufacturer",
-      "building block toy supplier",
-      "stem toy oem odm",
-      "custom plastic toy products",
-      "safe non-toxic toy materials",
-      "in-house mold development",
-      "plastic tubing and profile manufacturer",
-    ],
-  );
+  return buildPageMetadata(locale, solutionsContent.seo, "solutions");
 }
 
 function copy(locale: "en" | "zh") {
