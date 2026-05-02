@@ -418,7 +418,7 @@ export default async function SolutionsPage({params}: {params: Promise<{locale: 
       <PageHero
         backgroundClassName="solutions-hero-background"
         backgroundImageClassName="solutions-hero-background-image"
-        backgroundSrc="https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/misc/home-bg.webp"
+        backgroundSrc="/site/misc/home-bg.webp"
         copyClassName="solutions-hero-copy"
         gridClassName="solutions-hero-grid"
         innerClassName="solutions-hero-inner"
@@ -488,8 +488,10 @@ export default async function SolutionsPage({params}: {params: Promise<{locale: 
           <Image
             alt={text.customTitle}
             className="solutions-banner-image"
+            height={1024}
             sizes="(min-width: 1024px) 32vw, (min-width: 768px) 44vw, 100vw"
             src={solutionsPageImages.custom}
+            width={1536}
           />
         </div>
         <div className="solutions-banner-copy">

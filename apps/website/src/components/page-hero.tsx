@@ -26,7 +26,7 @@ export function PageHero({
   innerClassName,
   priority = true,
   sectionClassName,
-  unoptimized = true,
+  unoptimized = false,
 }: PageHeroProps) {
   const fallbackBackgroundStyle = {
     backgroundColor: "var(--hero-fallback-background, #edf4ff)",
@@ -40,6 +40,7 @@ export function PageHero({
           className={backgroundImageClassName}
           fill
           priority={priority}
+          quality={88}
           sizes="100vw"
           src={backgroundSrc}
           unoptimized={unoptimized}

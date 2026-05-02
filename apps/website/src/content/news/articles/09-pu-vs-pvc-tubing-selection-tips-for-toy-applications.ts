@@ -18,14 +18,14 @@ const article: NewsArticleSeed = {
     "zh": "PU 管材通常在柔韧性和耐磨性上更有优势，PVC 则常用于护套与导向场景并具备成本和加工稳定性。选型应结合应用场景、合规目标与寿命预期。"
   },
   "media": {
-    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600898789412/1.webp",
+    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1600898789412/1.webp",
     "coverAlt": {
       "en": "PU tube sample",
       "zh": "PU 管材样品"
     },
     "sections": [
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600898789412/3.webp",
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600898789412/4.webp"
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1600898789412/3.webp",
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1600898789412/4.webp"
     ]
   },
   "detailDraft": {

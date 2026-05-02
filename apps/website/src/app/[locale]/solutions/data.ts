@@ -1,8 +1,8 @@
-const customImage = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions/custom.webp";
-const ourSolution1 = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions/ourSolution1.webp";
-const ourSolution2 = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions/ourSolution2.webp";
-const ourSolution3 = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions/ourSolution3.webp";
-const ourSolution4 = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions/ourSolution4.webp";
+const customImage = "/site/solutions/custom.webp";
+const ourSolution1 = "/site/solutions/ourSolution1.webp";
+const ourSolution2 = "/site/solutions/ourSolution2.webp";
+const ourSolution3 = "/site/solutions/ourSolution3.webp";
+const ourSolution4 = "/site/solutions/ourSolution4.webp";
 
 export const solutionsPageImages = {
   custom: customImage,

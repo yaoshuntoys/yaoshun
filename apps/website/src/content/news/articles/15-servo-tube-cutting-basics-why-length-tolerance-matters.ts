@@ -18,14 +18,14 @@ const article: NewsArticleSeed = {
     "zh": "在玩具帐篷 PP 管套件中，裁切长度不稳会导致框架松动与角位受力不均。通过伺服裁断并结合刀具点检，可稳定装配匹配和重复一致性。"
   },
   "media": {
-    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/3.webp",
+    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601313719232/3.webp",
     "coverAlt": {
       "en": "Servo cutter and tube process line",
       "zh": "伺服裁断与管件工序线"
     },
     "sections": [
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/4.webp",
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/5.webp"
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601313719232/4.webp",
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601313719232/5.webp"
     ]
   },
   "detailDraft": {

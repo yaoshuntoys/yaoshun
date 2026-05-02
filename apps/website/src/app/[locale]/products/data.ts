@@ -1,5 +1,4 @@
-const heroImage = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/products/hero.webp";
-const customSideImage = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/products/custom-side-v2.webp";
+const customSideImage = "/site/products/custom-side-v2.webp";
 
 import type {LocalizedText, ShowcaseProductSeed} from "@/content/site-relaunch";
 
@@ -19,7 +18,6 @@ export const pieceBands: Array<{key: ShowcaseProductSeed["pieceBand"]; label: Lo
 ];
 
 export const productsPageAssets = {
-  heroImage,
-  fallbackImage: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/1.webp",
+  fallbackImage: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601110728943/1.webp",
   lifestyleImage: customSideImage,
 } as const;

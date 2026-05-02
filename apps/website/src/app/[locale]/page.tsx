@@ -4,7 +4,6 @@ import {
   Brain,
   Blocks,
   Circle,
-  CircleArrowRight,
   Clock3,
   Factory,
   Globe2,
@@ -220,7 +219,7 @@ export default async function HomePage({
         }
         backgroundClassName="home-hero-background"
         backgroundImageClassName="home-section-image home-hero-background-image"
-        backgroundSrc="https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/misc/solution-bg.webp"
+        backgroundSrc="/site/misc/solution-bg.webp"
         copyClassName="home-hero-copy"
         gridClassName="home-hero-grid"
         innerClassName="home-hero-inner"
@@ -353,7 +352,7 @@ export default async function HomePage({
                 <h3>{item.title}</h3>
                 <p>{item.meta}</p>
                 <span aria-hidden="true" className="home-product-arrow">
-                  <CircleArrowRight size={18} strokeWidth={2.1} />
+                  <ArrowRight size={16} strokeWidth={2.2} />
                 </span>
               </div>
             </Link>

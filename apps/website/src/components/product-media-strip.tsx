@@ -32,7 +32,7 @@ export function ProductMediaStrip({locale, images, title, videos}: ProductMediaS
         </h2>
         <div className="flex flex-wrap gap-3">
           <button
-            className={`inline-flex min-h-8 items-center rounded-full px-3 text-[0.84rem] font-bold transition ${
+            className={`inline-flex min-h-11 items-center rounded-full px-4 text-[0.84rem] font-bold transition ${
               tab === "images"
                 ? "bg-[#2563ff] text-white"
                 : "bg-[rgba(37,99,255,0.08)] text-[#6f7ea9] hover:bg-[rgba(37,99,255,0.12)]"
@@ -44,7 +44,7 @@ export function ProductMediaStrip({locale, images, title, videos}: ProductMediaS
           </button>
           {videoItems.length > 0 ? (
             <button
-              className={`inline-flex min-h-8 items-center rounded-full px-3 text-[0.84rem] font-bold transition ${
+              className={`inline-flex min-h-11 items-center rounded-full px-4 text-[0.84rem] font-bold transition ${
                 tab === "videos"
                   ? "bg-[#2563ff] text-white"
                   : "bg-[rgba(37,99,255,0.08)] text-[#6f7ea9] hover:bg-[rgba(37,99,255,0.12)]"
@@ -72,10 +72,8 @@ export function ProductMediaStrip({locale, images, title, videos}: ProductMediaS
                 alt={`${title} ${index + 1}`}
                 className="object-contain object-center transition duration-200"
                 fill
-                loading="eager"
                 sizes="(min-width: 1280px) 12rem, (min-width: 768px) 20vw, 44vw"
                 src={image}
-                unoptimized
               />
             </a>
           ))}

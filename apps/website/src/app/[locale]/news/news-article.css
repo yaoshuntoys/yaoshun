@@ -199,6 +199,11 @@
   align-items: center;
   gap: 0.55rem;
   width: fit-content;
+  min-height: 2.75rem;
+  padding: 0 0.95rem;
+  border: 1px solid rgba(37, 99, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(37, 99, 255, 0.05);
   color: #2563ff;
   font-weight: 700;
 }
@@ -477,6 +482,11 @@
 
   .news-article-more-head {
     align-items: start;
+  }
+
+  .news-article-back {
+    min-height: 2.75rem;
+    padding: 0 1rem;
   }
 
   .news-article-recent-grid {

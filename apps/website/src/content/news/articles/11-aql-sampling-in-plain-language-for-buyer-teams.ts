@@ -18,14 +18,14 @@ const article: NewsArticleSeed = {
     "zh": "AQL 并不等于零缺陷，而是通过抽样方案约定可接受风险。理解批量、抽样量和接收数，能显著减少交付争议。"
   },
   "media": {
-    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601214840405/1.webp",
+    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601214840405/1.webp",
     "coverAlt": {
       "en": "Procurement sampling batch",
       "zh": "采购抽检批次示意"
     },
     "sections": [
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601214840405/3.webp",
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601214840405/4.webp"
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601214840405/3.webp",
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601214840405/4.webp"
     ]
   },
   "detailDraft": {

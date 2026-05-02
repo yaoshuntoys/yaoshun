@@ -598,8 +598,7 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
             fill
             priority
             sizes="100vw"
-            src="https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/misc/about-bg-new.webp"
-            unoptimized
+            src="/site/misc/about-bg-new.webp"
           />
         </div>
 

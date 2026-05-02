@@ -18,14 +18,14 @@ const article: NewsArticleSeed = {
     "zh": "若模具设计未充分补偿收缩率，成品会出现缝隙、应力或卡扣不稳。前期 DFM 对壁厚与进胶位置的评审非常关键。"
   },
   "media": {
-    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730435470/3.webp",
+    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601730435470/3.webp",
     "coverAlt": {
       "en": "Injection part profile sample",
       "zh": "注塑结构件示意"
     },
     "sections": [
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730435470/4.webp",
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730435470/2.webp"
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601730435470/4.webp",
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601730435470/2.webp"
     ]
   },
   "detailDraft": {

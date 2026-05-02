@@ -18,14 +18,14 @@ const article: NewsArticleSeed = {
     "zh": "当项目提出材料替代方案时，团队会在放行前统一评估兼容性、气味、色偏与模具匹配影响。"
   },
   "media": {
-    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/4.webp",
+    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601730326005/4.webp",
     "coverAlt": {
       "en": "PVC tube profile reference",
       "zh": "PVC 管材截面示意"
     },
     "sections": [
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601316583146/4.webp",
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601362237263/4.webp"
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601316583146/4.webp",
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601362237263/4.webp"
     ]
   },
   "detailDraft": {

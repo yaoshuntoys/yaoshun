@@ -18,14 +18,14 @@ const article: NewsArticleSeed = {
     "zh": "来料检验、过程控制与出货放行已统一批次追溯卡格式，客户可在同一链路内查看问题闭环与责任归属。"
   },
   "media": {
-    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600884595638/3.webp",
+    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1600884595638/3.webp",
     "coverAlt": {
       "en": "Lot-level project sample",
       "zh": "批次项目样品示意"
     },
     "sections": [
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/4.webp",
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601214840405/3.webp"
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601313719232/4.webp",
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601214840405/3.webp"
     ]
   },
   "detailDraft": {

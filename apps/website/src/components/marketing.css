@@ -89,6 +89,23 @@
   line-height: 1.15;
 }
 
+.breadcrumbs-link,
+.breadcrumbs-current {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+}
+
+.breadcrumbs-link {
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.breadcrumbs-link:hover {
+  color: var(--primary);
+}
+
 .breadcrumbs-item:last-child {
   color: #17306e;
 }
@@ -350,6 +367,21 @@
 
 .breadcrumbs {
     font-size: 0.78rem;
+    gap: 0.26rem 0.18rem;
+  }
+
+  .breadcrumbs-item {
+    gap: 0.34rem;
+  }
+
+  .breadcrumbs-link,
+  .breadcrumbs-current {
+    min-height: 2.75rem;
+  }
+
+  .breadcrumbs-link {
+    min-width: 2.75rem;
+    justify-content: center;
   }
 
 .hero-grid,

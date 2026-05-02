@@ -18,14 +18,14 @@ const article: NewsArticleSeed = {
     "zh": "即使产品本体质量稳定，纸箱抗压不足仍会导致运输破损。箱材等级、码垛方式与湿度环境应一并评估。"
   },
   "media": {
-    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/2.webp",
+    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1600900125789/2.webp",
     "coverAlt": {
       "en": "Carton and set shipping example",
       "zh": "套装纸箱运输示意"
     },
     "sections": [
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601316583146/2.webp",
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601728749802/2.webp"
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601316583146/2.webp",
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601728749802/2.webp"
     ]
   },
   "detailDraft": {

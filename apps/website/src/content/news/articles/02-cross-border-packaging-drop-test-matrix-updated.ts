@@ -18,14 +18,14 @@ const article: NewsArticleSeed = {
     "zh": "新版测试增加了叠箱角位与高湿运输模拟场景，已纳入海运与多渠道交付项目的必测项。"
   },
   "media": {
-    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601316583146/2.webp",
+    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601316583146/2.webp",
     "coverAlt": {
       "en": "Toy set packaging view",
       "zh": "玩具套装包装场景"
     },
     "sections": [
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/2.webp",
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601728749802/2.webp"
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1600900125789/2.webp",
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601728749802/2.webp"
     ]
   },
   "detailDraft": {

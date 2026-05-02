@@ -3,19 +3,23 @@ import NextImage, {type ImageProps, type StaticImageData} from "next/image";
 
 export type {ImageProps, StaticImageData};
 
-function shouldBypassOptimization(src: ImageProps["src"]) {
+function isRemoteHttpSource(src: ImageProps["src"]) {
   return typeof src === "string" && /^https?:\/\//.test(src);
 }
 
 function canUsePlainImage(props: ImageProps) {
-  const isRemote = shouldBypassOptimization(props.src);
+  const isRemote = isRemoteHttpSource(props.src);
   const hasFill = Boolean(props.fill);
   const hasExplicitSize = typeof props.width !== "undefined" && typeof props.height !== "undefined";
   return isRemote && !hasFill && !hasExplicitSize;
 }
 
 export default function SmartImage(props: ImageProps) {
-  const bypassOptimization = props.unoptimized ?? shouldBypassOptimization(props.src);
+  const bypassOptimization = props.unoptimized ?? false;
+  const nextImageProps =
+    typeof props.quality === "undefined"
+      ? {...props, quality: 92}
+      : props;
 
   if (canUsePlainImage(props)) {
     const {
@@ -35,7 +39,7 @@ export default function SmartImage(props: ImageProps) {
     } = props;
 
     const plainProps: ImgHTMLAttributes<HTMLImageElement> = {
-      alt,
+      alt: alt ?? "",
       className,
       decoding,
       draggable,
@@ -49,14 +53,16 @@ export default function SmartImage(props: ImageProps) {
       style,
       width: typeof width === "number" || typeof width === "string" ? width : undefined,
     };
+    const {alt: plainAlt, ...restPlainProps} = plainProps;
 
-    return <img {...plainProps} />;
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img alt={plainAlt} {...restPlainProps} />;
   }
 
   if (bypassOptimization) {
-    const {quality: _quality, ...nextProps} = props;
+    const {quality: _quality, ...nextProps} = nextImageProps;
     return <NextImage {...nextProps} unoptimized />;
   }
 
-  return <NextImage {...props} />;
+  return <NextImage {...nextImageProps} />;
 }

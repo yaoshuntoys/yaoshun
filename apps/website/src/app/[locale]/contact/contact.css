@@ -154,6 +154,14 @@
   font-size: 1.38rem;
 }
 
+.contact-card-grid,
+.contact-lower-grid,
+.contact-solution-grid,
+.contact-assurance-strip {
+  display: grid;
+  gap: 1.15rem;
+}
+
 .contact-form-panel,
 .contact-company-panel,
 .contact-faq-panel,
@@ -218,7 +226,7 @@
   background:
     linear-gradient(135deg, rgba(243, 247, 255, 0.92) 0%, rgba(247, 250, 255, 0.84) 36%, rgba(255, 255, 255, 0.64) 100%),
     radial-gradient(circle at top left, rgba(37, 99, 255, 0.16), transparent 34%),
-    url("https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/contact/image.webp");
+    url("/site/contact/image.webp");
   background-size: cover;
   background-position: center center;
   overflow: hidden;
@@ -376,7 +384,6 @@
 }
 
 .contact-assurance-strip {
-  gap: 0;
   padding: 1.45rem 1.25rem;
   border-radius: 1.55rem;
   background: linear-gradient(135deg, #eef5ff 0%, #ffffff 100%);
@@ -398,12 +405,13 @@
 
 @media (max-width: 767.98px) {
   .contact-hero-title {
-    font-size: clamp(2rem, 8vw, 2.2rem);
-    line-height: 1.02;
+    max-width: 16rem;
+    font-size: clamp(1.9rem, 7.3vw, 2.12rem);
+    line-height: 1.06;
   }
 
   .contact-hero {
-    min-height: 460px;
+    min-height: 420px;
   }
 
   .contact-hero::after {
@@ -412,16 +420,21 @@
 
   .contact-hero-background::after {
     background:
-      linear-gradient(104deg, rgba(255, 255, 255, 0.86) 0%, rgba(255, 255, 255, 0.76) 34%, rgba(255, 255, 255, 0.38) 56%, rgba(255, 255, 255, 0.1) 74%, rgba(255, 255, 255, 0) 100%),
-      radial-gradient(circle at 15% 18%, rgba(244, 248, 255, 0.42) 0%, rgba(244, 248, 255, 0.18) 22%, rgba(244, 248, 255, 0) 44%);
+      linear-gradient(106deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 30%, rgba(255, 255, 255, 0.74) 50%, rgba(255, 255, 255, 0.36) 70%, rgba(255, 255, 255, 0.08) 84%, rgba(255, 255, 255, 0) 100%),
+      radial-gradient(circle at 16% 16%, rgba(245, 249, 255, 0.68) 0%, rgba(245, 249, 255, 0.28) 24%, rgba(245, 249, 255, 0) 48%);
+  }
+
+  .contact-hero-background-image {
+    object-position: 68% center;
+    filter: saturate(0.88) contrast(0.92) brightness(0.78);
   }
 
   .contact-hero-grid {
-    gap: 1.2rem;
+    gap: 1rem;
   }
 
   .contact-hero-copy {
-    padding: 1.2rem 0 0.6rem;
+    padding: 0.85rem 0 0.4rem;
   }
 
   .contact-hero-copy::before {
@@ -429,8 +442,14 @@
     filter: blur(4px);
   }
 
+  .contact-hero-text {
+    max-width: 22rem;
+    font-size: 0.9rem;
+    line-height: 1.62;
+  }
+
   .contact-hero-visual {
-    min-height: 16rem;
+    min-height: 14rem;
     width: min(100%, 24rem);
     margin: 0 auto;
   }
@@ -443,18 +462,31 @@
     gap: 1rem;
   }
 
+  .contact-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
   .contact-card {
     min-height: auto;
-    padding: 1.15rem 1rem 1rem;
+    gap: 0.55rem;
+    padding: 1rem 0.85rem 0.9rem;
   }
 
   .contact-card h3 {
-    font-size: 1.2rem;
+    font-size: 0.98rem;
+    line-height: 1.18;
+  }
+
+  .contact-card-head {
+    align-items: flex-start;
+    gap: 0.55rem;
   }
 
   .contact-card-value,
   .contact-card-note {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
   }
 
   .contact-form-panel,
@@ -470,9 +502,35 @@
     padding-top: 1.55rem;
   }
 
+  .contact-form-panel {
+    order: -1;
+  }
+
   .contact-company-content,
   .contact-company-stats {
     gap: 1rem;
+  }
+
+  .contact-company-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .contact-company-stat {
+    gap: 0.65rem;
+    padding: 0.75rem;
+    border: 1px solid rgba(24, 56, 138, 0.08);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.72);
+  }
+
+  .contact-company-stat strong {
+    font-size: 1.25rem;
+  }
+
+  .contact-panel-head h2 {
+    font-size: clamp(1.5rem, 6.8vw, 1.85rem);
+    line-height: 1.08;
   }
 
   .contact-company-placeholder {
@@ -490,6 +548,17 @@
   .contact-assurance-item {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+  }
+
+  .contact-assurance-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+    padding: 1rem 0.8rem;
+  }
+
+  .contact-assurance-item {
+    gap: 0.5rem;
+    padding: 0.8rem 0.75rem 0.85rem;
   }
 
 }

@@ -205,7 +205,7 @@ export default async function NewsPage({
       <PageHero
         backgroundClassName="news-hero-background"
         backgroundImageClassName="news-hero-background-image"
-        backgroundSrc="https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/misc/new-bg.webp"
+        backgroundSrc="/site/misc/new-bg.webp"
         copyClassName="news-hero-copy"
         gridClassName="news-hero-grid"
         innerClassName="news-hero-inner"

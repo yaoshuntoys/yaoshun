@@ -7,14 +7,23 @@ import {t, type Locale} from "@/lib/i18n";
 import {primaryButtonClass, secondaryButtonClass} from "@/lib/ui";
 
 export function BrandMark({compact = false}: {compact?: boolean}) {
+  const iconSize = compact ? 32 : 40;
+
   return (
     <div
-      className={`inline-flex whitespace-nowrap font-['Outfit','Plus_Jakarta_Sans',sans-serif] font-extrabold leading-none tracking-[-0.06em] ${
-        compact ? "items-end gap-1 text-[1.28rem]" : "items-end gap-1 text-[clamp(1.45rem,2vw,1.95rem)]"
+      className={`inline-flex items-center whitespace-nowrap font-['Outfit','Plus_Jakarta_Sans',sans-serif] font-extrabold leading-none tracking-[-0.06em] ${
+        compact ? "gap-1.5 text-[1.28rem]" : "gap-2 text-[clamp(1.45rem,2vw,1.95rem)]"
       }`}
     >
+      <Image
+        alt="yaoshun toys"
+        className={`shrink-0 ${compact ? "h-8 w-8" : "h-10 w-10"}`}
+        height={iconSize}
+        src="/favicon-rounded-192.png"
+        width={iconSize}
+      />
       <span className="text-[#2563ff]">yaoshun</span>
-      <span className="translate-y-[0.02em] text-[#ff9700]">toys</span>
+      <span className="text-[#ff9700]">toys</span>
     </div>
   );
 }
@@ -56,9 +65,11 @@ export function Breadcrumbs({
     <nav aria-label="Breadcrumb" className={className ? `breadcrumbs ${className}` : "breadcrumbs"}>
       {items.map((item, index) => {
         const content = item.href ? (
-          <Link href={item.href}>{t(locale, item.label)}</Link>
+          <Link className="breadcrumbs-link" href={item.href}>
+            {t(locale, item.label)}
+          </Link>
         ) : (
-          <span>{t(locale, item.label)}</span>
+          <span className="breadcrumbs-current">{t(locale, item.label)}</span>
         );
 
         return (

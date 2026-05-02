@@ -202,6 +202,7 @@
 .news-inline-link,
 .contact-inline-link {
   color: #2563ff;
+  min-height: 2rem;
 }
 
 .solutions-inline-link:hover,
@@ -725,17 +726,22 @@ display: grid;
   .solutions-page,
   .news-page,
   .contact-page {
-    gap: 4.5rem;
+    gap: 3.35rem;
   }
 
   .solutions-hero {
-    min-height: 460px;
+    min-height: 420px;
   }
 
   .solutions-hero-background::after {
     background:
-      linear-gradient(104deg, rgba(255, 255, 255, 0.86) 0%, rgba(255, 255, 255, 0.76) 34%, rgba(255, 255, 255, 0.38) 56%, rgba(255, 255, 255, 0.1) 74%, rgba(255, 255, 255, 0) 100%),
-      radial-gradient(circle at 15% 18%, rgba(244, 248, 255, 0.42) 0%, rgba(244, 248, 255, 0.18) 22%, rgba(244, 248, 255, 0) 44%);
+      linear-gradient(106deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 30%, rgba(255, 255, 255, 0.74) 50%, rgba(255, 255, 255, 0.36) 70%, rgba(255, 255, 255, 0.08) 84%, rgba(255, 255, 255, 0) 100%),
+      radial-gradient(circle at 16% 16%, rgba(245, 249, 255, 0.68) 0%, rgba(245, 249, 255, 0.28) 24%, rgba(245, 249, 255, 0) 48%);
+  }
+
+  .solutions-hero-background-image {
+    object-position: 72% center;
+    filter: saturate(0.88) contrast(0.92) brightness(0.78);
   }
 
   .solutions-hero-grid {
@@ -780,6 +786,12 @@ display: grid;
     justify-content: center;
   }
 
+  .solutions-inline-link,
+  .news-inline-link,
+  .contact-inline-link {
+    min-height: 2.75rem;
+  }
+
   .solutions-hero-visual,
   .news-hero-visual,
   .contact-hero-visual {
@@ -796,10 +808,10 @@ display: grid;
   .solutions-banner-copy h2,
   .news-subscribe-copy h2,
   .contact-panel-head h2 {
-    font-size: clamp(1.8rem, 8vw, 2.35rem);
+    font-size: clamp(1.55rem, 7.2vw, 2.05rem);
   }
 
-.solutions-card-body,
+  .solutions-card-body,
 .solutions-proof-item,
 .solutions-value-card,
   .solutions-banner,
@@ -808,19 +820,114 @@ display: grid;
     padding-right: 1rem;
   }
 
+  .solutions-proof-strip,
+  .solutions-value-grid,
+  .solutions-process-grid,
+  .solutions-partner-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .solutions-card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(10.4rem, 1fr));
+    gap: 0.75rem;
+  }
+
+  .solutions-card {
+    border-radius: 1.2rem;
+  }
+
+  .solutions-card-visual {
+    min-height: 132px;
+  }
+
+  .solutions-card-badge {
+    left: 0.8rem;
+    bottom: -1rem;
+    width: 3.1rem;
+    height: 3.1rem;
+  }
+
+  .solutions-card-badge svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
   .solutions-card-body {
-    padding-top: 2rem;
-    padding-bottom: 1.05rem;
+    gap: 0.58rem;
+    padding: 1.6rem 0.92rem 0.95rem;
+  }
+
+  .solutions-card-body h3 {
+    font-size: 1rem;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .solutions-card-body p {
+    margin: 0;
+    color: #4d5f8d;
+    font-size: 0.78rem;
+    line-height: 1.48;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .solutions-card-list {
+    gap: 0.38rem;
+  }
+
+  .solutions-card-list li {
+    padding-left: 0.9rem;
+    font-size: 0.73rem;
+    line-height: 1.42;
+  }
+
+  .solutions-card-list li::before {
+    top: 0.4rem;
+    width: 0.38rem;
+    height: 0.38rem;
+  }
+
+  .solutions-inline-link {
+    font-size: 0.8rem;
+  }
+
+  .solutions-proof-item,
+  .solutions-value-card,
+  .solutions-process-card {
+    gap: 0.65rem;
+    padding: 0.95rem 0.85rem;
+    border-radius: 1.2rem;
+  }
+
+  .solutions-proof-value {
+    font-size: 1.35rem;
+    line-height: 1;
+  }
+
+  .solutions-proof-label,
+  .solutions-value-card h3,
+  .solutions-process-card h3,
+  .solutions-partner-item h3 {
+    font-size: 0.94rem;
+    line-height: 1.22;
   }
 
   .solutions-process-card {
-    padding: 1.2rem 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .solutions-process-icon,
   .contact-card-icon {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3rem;
+    height: 3rem;
   }
 
   .solutions-banner-visual {
@@ -844,17 +951,37 @@ display: grid;
 
   .solutions-banner-copy p {
     max-width: none;
-    font-size: 0.94rem;
+    font-size: 0.9rem;
+    line-height: 1.58;
   }
 
   .solutions-banner-list li,
   .solutions-proof-item p,
   .solutions-value-card p {
-    font-size: 0.92rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
   }
 
   .solutions-partner-strip {
-    gap: 1.1rem;
+    gap: 0.9rem;
+  }
+
+  .solutions-partner-item {
+    gap: 0.55rem;
+    align-items: flex-start;
+    padding: 0.15rem 0;
+  }
+
+  .solutions-partner-item svg {
+    flex-shrink: 0;
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .solutions-partner-item p,
+  .solutions-process-card p {
+    font-size: 0.82rem;
+    line-height: 1.5;
   }
 
 }

@@ -32,7 +32,7 @@ export function SiteStructuredData({locale}: {locale: Locale}) {
     name: t(locale, companyProfile.companyName),
     alternateName: t(locale, companyProfile.brandShort),
     url: localizedHome,
-    logo: toAbsoluteUrl('/logo.svg'),
+    logo: toAbsoluteUrl('/favicon-rounded-192.png'),
     description: t(locale, companyProfile.seoDescription),
     slogan: t(locale, companyProfile.tagline),
     foundingDate: companyProfile.foundedYear,

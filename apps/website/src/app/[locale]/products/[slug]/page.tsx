@@ -581,14 +581,14 @@ export default async function ProductDetailPage({
         className="flex min-h-[3.25rem] items-center gap-2 overflow-x-auto rounded-[1rem] border border-[rgba(24,56,138,0.08)] bg-white px-3 py-3 text-[0.8rem] leading-6 text-[#6f7ea9] shadow-[0_14px_34px_-32px_rgba(18,41,103,0.18)] sm:px-4"
       >
         <Link
-          className="shrink-0 transition hover:text-[#2563ff]"
+          className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full px-3 transition hover:bg-[#2563ff]/8 hover:text-[#2563ff]"
           href={`/${locale}`}
         >
           {text.home}
         </Link>
         <span className="shrink-0">/</span>
         <Link
-          className="shrink-0 transition hover:text-[#2563ff]"
+          className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full px-3 transition hover:bg-[#2563ff]/8 hover:text-[#2563ff]"
           href={`/${locale}/products`}
         >
           {text.products}
@@ -943,10 +943,8 @@ export default async function ProductDetailPage({
                         alt={`${item.title || title} ${index + 1}`}
                         className="object-contain object-center"
                         fill
-                        loading="eager"
                         sizes="(min-width: 1024px) 19rem, 100vw"
                         src={item.image}
-                        unoptimized
                       />
                     ) : null}
                   </div>

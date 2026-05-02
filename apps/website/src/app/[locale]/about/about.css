@@ -1012,15 +1012,15 @@
 
 @media (max-width: 767.98px) {
 
-  .about-page {
+.about-page {
     --about-hero-metrics-overlap: clamp(2.5rem, 8vw, 3.4rem);
-    gap: 4.5rem;
+    gap: 4rem;
   }
 
   .about-hero {
-    min-height: 460px;
+    min-height: 420px;
     margin-bottom: 0;
-    padding: 0 0 1rem;
+    padding: 0 0 0.65rem;
   }
 
   .about-hero-inner,
@@ -1033,8 +1033,8 @@
   }
 
   .about-hero-copy {
-    max-width: 22rem;
-    padding: 0.9rem 0 0.3rem;
+    max-width: 24rem;
+    padding: 0.7rem 0 0.15rem;
   }
 
   .about-hero-copy::before {
@@ -1044,19 +1044,19 @@
   }
 
   .about-hero-title {
-    max-width: 9.6ch;
-    font-size: clamp(2.45rem, 10.8vw, 3.6rem);
-    line-height: 0.95;
+    max-width: 11.2ch;
+    font-size: clamp(2.2rem, 10.2vw, 3.2rem);
+    line-height: 0.98;
   }
 
   .about-hero-text,
   .about-certificate-copy p {
-    font-size: 0.94rem;
-    line-height: 1.72;
+    font-size: 0.91rem;
+    line-height: 1.66;
   }
 
   .about-hero-text {
-    max-width: 18.6rem;
+    max-width: 20.5rem;
   }
 
   .about-hero::before {
@@ -1089,18 +1089,19 @@
     bottom: auto;
     width: 100%;
     transform: none;
-    padding-top: 0.9rem;
+    padding-top: 0.65rem;
   }
 
   .about-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    padding: 0.58rem;
+    padding: 0.46rem;
     gap: 0;
   }
 
   .about-metric {
     min-height: auto;
-    padding: 0.92rem 0.8rem;
+    gap: 0.7rem;
+    padding: 0.78rem 0.7rem;
   }
 
   .about-metric:not(:last-child) {
@@ -1116,17 +1117,18 @@
   }
 
   .about-metric-icon {
-    width: 2.45rem;
-    height: 2.45rem;
+    width: 2.25rem;
+    height: 2.25rem;
   }
 
   .about-metric-body strong {
-    font-size: 1.34rem;
+    font-size: 1.22rem;
   }
 
   .about-metric-body span {
     white-space: normal;
-    font-size: 0.78rem;
+    font-size: 0.74rem;
+    line-height: 1.25;
   }
 
   .about-section-heading h2 {

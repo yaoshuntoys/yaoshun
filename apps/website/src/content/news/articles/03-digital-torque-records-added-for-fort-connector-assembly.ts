@@ -18,14 +18,14 @@ const article: NewsArticleSeed = {
     "zh": "DIY 帐篷连接件套装的关键锁付点位已记录扭矩区间与操作人员编号，进一步提升 PP 结构件放量项目的一致性控制。"
   },
   "media": {
-    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601728749802/3.webp",
+    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601728749802/3.webp",
     "coverAlt": {
       "en": "Connector fastening point close-up",
       "zh": "连接件锁付点位示意"
     },
     "sections": [
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601724919450/4.webp",
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/3.webp"
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601724919450/4.webp",
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601730326005/3.webp"
     ]
   },
   "detailDraft": {

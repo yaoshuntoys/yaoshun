@@ -18,14 +18,14 @@ const article: NewsArticleSeed = {
     "zh": "工程、模具与外贸团队在打样前统一使用 DFM 清单进行联合评审。前置对齐后，首轮样品的结构反复修改明显减少。"
   },
   "media": {
-    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/1.webp",
+    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601213973459/1.webp",
     "coverAlt": {
       "en": "Fort connector assembly reference",
       "zh": "帐篷连接件装配示意"
     },
     "sections": [
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/3.webp",
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/4.webp"
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601213973459/3.webp",
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601213973459/4.webp"
     ]
   },
   "detailDraft": {

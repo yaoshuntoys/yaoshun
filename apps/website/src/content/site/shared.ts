@@ -274,17 +274,17 @@ export const companyProfile = {
 };
 
 export const visualAssets = {
-  companyHero: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/1.webp",
-  factoryHero: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730326005/1.webp",
-  factoryFloor: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1600900125789/1.webp",
-  toyLearning: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601724919450/1.webp",
-  profileSeries: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601730435470/1.webp",
-  engineeringSupport: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601316583146/1.webp",
-  rdLab: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601728749802/3.webp",
-  craftsmanship: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601213973459/1.webp",
-  complianceLab: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601214840405/1.webp",
-  oemWorkflow: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601729187617/1.webp",
-  projectEngineering: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601313719232/3.webp",
+  companyHero: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601110728943/1.webp",
+  factoryHero: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601730326005/1.webp",
+  factoryFloor: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1600900125789/1.webp",
+  toyLearning: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601724919450/1.webp",
+  profileSeries: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601730435470/1.webp",
+  engineeringSupport: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601316583146/1.webp",
+  rdLab: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601728749802/3.webp",
+  craftsmanship: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601213973459/1.webp",
+  complianceLab: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601214840405/1.webp",
+  oemWorkflow: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601729187617/1.webp",
+  projectEngineering: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601313719232/3.webp",
 } as const;
 
 export const siteStats = [

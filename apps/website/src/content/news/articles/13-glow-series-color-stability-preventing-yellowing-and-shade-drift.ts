@@ -18,14 +18,14 @@ const article: NewsArticleSeed = {
     "zh": "针对夜光拼搭产品，色差漂移常由原料波动、干燥条件和工艺温区引起。稳定夜光母粒供应与受控成型参数是核心控制点。"
   },
   "media": {
-    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/1.webp",
+    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601110728943/1.webp",
     "coverAlt": {
       "en": "Glow material color sample",
       "zh": "夜光材质颜色样件"
     },
     "sections": [
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/4.webp",
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/5.webp"
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601110728943/4.webp",
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601110728943/5.webp"
     ]
   },
   "detailDraft": {

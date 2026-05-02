@@ -202,7 +202,7 @@ export default async function NewsDetailPage({
       name: "Dongguan Yaoshun Technology Co., Ltd.",
       logo: {
         "@type": "ImageObject",
-        url: toAbsoluteUrl("/logo.svg"),
+        url: toAbsoluteUrl("/favicon-rounded-192.png"),
       },
     },
   };

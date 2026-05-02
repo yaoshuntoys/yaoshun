@@ -248,7 +248,7 @@ export default async function ContactPage({
       <PageHero
         backgroundClassName="contact-hero-background"
         backgroundImageClassName="contact-hero-background-image"
-        backgroundSrc="https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/misc/contact-bg.webp"
+        backgroundSrc="/site/misc/contact-bg.webp"
         copyClassName="contact-hero-copy"
         gridClassName="contact-hero-grid"
         innerClassName="contact-hero-inner"

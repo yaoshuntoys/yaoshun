@@ -18,14 +18,14 @@ const article: NewsArticleSeed = {
     "zh": "本期培训重点覆盖夜光系列帐篷杆与连接珠的批次一致性、水分控制与杂质检测。来料环节将发光效果与冲击强度一并评审。"
   },
   "media": {
-    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/1.webp",
+    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601110728943/1.webp",
     "coverAlt": {
       "en": "Glow fort component sample",
       "zh": "夜光拼搭件样品"
     },
     "sections": [
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/3.webp",
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601110728943/5.webp"
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601110728943/3.webp",
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601110728943/5.webp"
     ]
   },
   "detailDraft": {

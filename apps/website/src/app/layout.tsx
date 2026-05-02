@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { AnalyticsEvents } from "@/components/analytics-events";
 import { TawkScript } from "@/components/tawk-script";
@@ -62,7 +63,21 @@ export const metadata: Metadata = {
   publisher: siteName,
   manifest: "/site.webmanifest",
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      {
+        url: "/favicon-rounded.png",
+        type: "image/png",
+        sizes: "64x64",
+      },
+    ],
+    shortcut: "/favicon-rounded.png",
+    apple: [
+      {
+        url: "/favicon-rounded-192.png",
+        type: "image/png",
+        sizes: "192x192",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -138,6 +153,7 @@ export default async function RootLayout({
         <AnalyticsEvents />
         {children}
         <VercelAnalytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -18,14 +18,14 @@ const article: NewsArticleSeed = {
     "zh": "试产可以提前暴露台架样品难以发现的装配偏差、工艺波动与包装薄弱点，避免放量后高成本返工。"
   },
   "media": {
-    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601729187617/1.webp",
+    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601729187617/1.webp",
     "coverAlt": {
       "en": "Pilot build set reference",
       "zh": "试产拼搭套装示意"
     },
     "sections": [
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601729187617/3.webp",
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601729187617/4.webp"
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601729187617/3.webp",
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601729187617/4.webp"
     ]
   },
   "detailDraft": {

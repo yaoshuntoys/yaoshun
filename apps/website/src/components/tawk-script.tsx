@@ -21,8 +21,11 @@ export function TawkScript() {
   return (
     <Script id="tawk-to-script" strategy="afterInteractive">
       {`
-        var Tawk_API = window.Tawk_API || {}, Tawk_LoadStart = new Date();
         (function() {
+          if (window.matchMedia('(max-width: 767.98px)').matches) {
+            return;
+          }
+          var Tawk_API = window.Tawk_API || {}, Tawk_LoadStart = new Date();
           var s1 = document.createElement('script');
           var s0 = document.getElementsByTagName('script')[0];
           s1.async = true;

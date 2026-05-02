@@ -147,7 +147,7 @@ export default async function ProductsPage({
       <PageHero
         backgroundClassName="products-hero-background"
         backgroundImageClassName="products-hero-background-image"
-        backgroundSrc="https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/misc/product-bg.webp"
+        backgroundSrc="/site/misc/product-bg.webp"
         copyClassName="products-hero-copy"
         gridClassName="products-hero-grid"
         innerClassName="products-hero-inner"
@@ -355,8 +355,10 @@ export default async function ProductsPage({
           <Image
             alt="OEM ODM support"
             className="products-oem-image"
+            height={1023}
             sizes="(min-width: 1024px) 40vw, 100vw"
             src={productsPageAssets.lifestyleImage}
+            width={1537}
           />
         </div>
       </section>

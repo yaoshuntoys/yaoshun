@@ -8,7 +8,7 @@ import {useEffect, useMemo, useRef, useState} from "react";
 import {BrandMark} from "@/components/marketing";
 import {navItems, siteCopy} from "@/components/site-shell.data";
 import {localeRegistry, t, type Locale} from "@/lib/i18n";
-import {localizedPath, replaceLocaleInPath} from "@/lib/routes";
+import {contactFormPath, localizedPath, replaceLocaleInPath} from "@/lib/routes";
 type SiteShellProps = {
   children: React.ReactNode;
   locale: Locale;
@@ -21,6 +21,7 @@ function isActive(pathname: string, locale: Locale, href: string) {
 
 export function SiteShell({children, locale}: SiteShellProps) {
   const pathname = usePathname();
+  const contactHref = contactFormPath(locale);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [localeOpen, setLocaleOpen] = useState(false);
   const localeMenuRef = useRef<HTMLDivElement>(null);
@@ -33,7 +34,7 @@ export function SiteShell({children, locale}: SiteShellProps) {
     {label: {en: "Solutions", zh: "解决方案"}, href: localizedPath(locale, "solutions")},
     {label: {en: "News", zh: "新闻"}, href: localizedPath(locale, "news")},
     {label: {en: "About Us", zh: "关于我们"}, href: localizedPath(locale, "about")},
-    {label: {en: "Contact Us", zh: "联系我们"}, href: localizedPath(locale, "contact")},
+    {label: {en: "Contact Us", zh: "联系我们"}, href: contactHref},
   ] as const;
   const footerProductLinks = [
     {label: {en: "Building Toy Sets", zh: "拼搭玩具套装"}, href: localizedPath(locale, "products")},
@@ -133,6 +134,10 @@ export function SiteShell({children, locale}: SiteShellProps) {
     "inline-flex h-11 items-center justify-center gap-2 rounded-full border border-transparent bg-[linear-gradient(135deg,#2563ff_0%,#1a43c9_100%)] px-4 text-[0.92rem] font-bold text-white shadow-[0_16px_34px_-20px_rgba(37,99,255,0.58)] transition duration-200 hover:-translate-y-0.5 hover:text-white hover:shadow-[0_20px_40px_-22px_rgba(37,99,255,0.66)] [&>span]:text-white [&>svg]:text-white";
   const mobileHeaderCtaClass =
     "relative z-10 mt-4 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border border-transparent bg-[linear-gradient(135deg,#2563ff_0%,#1a43c9_100%)] px-4 text-[0.92rem] font-bold text-white shadow-[0_16px_34px_-20px_rgba(37,99,255,0.58)] transition duration-200 hover:-translate-y-0.5 hover:text-white hover:shadow-[0_20px_40px_-22px_rgba(37,99,255,0.66)] [&>span]:text-white [&>svg]:text-white";
+  const footerSocialClass =
+    "inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(32,62,143,0.10)] bg-white text-[#0e2f9a] shadow-[0_12px_24px_-22px_rgba(20,44,119,0.22)] transition duration-200 hover:-translate-y-0.5 hover:border-transparent hover:bg-[linear-gradient(135deg,#2563ff_0%,#1a43c9_100%)] hover:text-white hover:shadow-[0_18px_38px_-24px_rgba(37,99,255,0.62)] md:h-[2.55rem] md:w-[2.55rem]";
+  const footerLinkClass =
+    "inline-flex min-h-11 w-full items-center rounded-[0.95rem] px-2 text-[0.82rem] leading-5 text-[#6f7ea9] transition hover:bg-[#2563ff]/6 hover:text-[#2563ff] md:min-h-0 md:w-auto md:rounded-none md:px-0 md:text-[0.92rem] md:leading-7 md:hover:bg-transparent";
   const closeMenus = () => {
     setMobileOpen(false);
     setLocaleOpen(false);
@@ -195,7 +200,7 @@ export function SiteShell({children, locale}: SiteShellProps) {
               ) : null}
             </div>
 
-            <Link className={headerCtaClass} href={`/${locale}/contact`} onClick={closeMenus}>
+            <Link className={headerCtaClass} href={contactHref} onClick={closeMenus}>
               <span>{t(locale, siteCopy.headerCta)}</span>
               <ArrowRight size={15} strokeWidth={2.2} />
             </Link>
@@ -231,7 +236,7 @@ export function SiteShell({children, locale}: SiteShellProps) {
                   </nav>
 
                   <div className="grid gap-4 pb-1">
-                    <Link className={mobileHeaderCtaClass} href={`/${locale}/contact`} onClick={closeMenus}>
+                    <Link className={mobileHeaderCtaClass} href={contactHref} onClick={closeMenus}>
                       <span>{t(locale, siteCopy.headerCta)}</span>
                       <ArrowRight size={15} strokeWidth={2.2} />
                     </Link>
@@ -260,62 +265,62 @@ export function SiteShell({children, locale}: SiteShellProps) {
         </div>
       </header>
 
-      <main className="w-full px-0 pb-[4rem] lg:pb-[4.5rem]">{children}</main>
+      <main className="w-full px-0 pb-[3rem] lg:pb-[4.5rem]">{children}</main>
 
-      <footer className="border-t border-[rgba(19,41,104,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(245,249,255,0.96)_100%)] py-8 md:bg-white/92 md:py-10">
-        <div className="mx-auto grid w-[min(1260px,calc(100%-24px))] gap-4 md:w-[min(1260px,calc(100%-32px))] md:gap-8 md:grid-cols-[1.2fr_0.9fr_1fr_0.95fr] md:items-start">
-          <div className="rounded-[1.5rem] border border-[rgba(32,62,143,0.08)] bg-white/88 p-4 shadow-[0_18px_36px_-30px_rgba(20,44,119,0.16)] md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+      <footer className="border-t border-[rgba(19,41,104,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(245,249,255,0.96)_100%)] py-6 md:bg-white/92 md:py-10">
+        <div className="mx-auto grid w-[min(1260px,calc(100%-24px))] grid-cols-2 gap-3 md:w-[min(1260px,calc(100%-32px))] md:gap-8 md:grid-cols-[1.2fr_0.9fr_1fr_0.95fr] md:items-start">
+          <div className="col-span-2 rounded-[1.35rem] border border-[rgba(32,62,143,0.08)] bg-white/88 p-3.5 shadow-[0_18px_36px_-30px_rgba(20,44,119,0.16)] md:col-span-1 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
             <BrandMark compact />
-            <p className="mt-2 max-w-[18rem] text-[0.9rem] leading-6 text-[#6f7ea9] md:max-w-[16rem] md:text-[0.92rem] md:leading-7">{t(locale, siteCopy.brandTagline)}</p>
-            <div className="mt-4 flex gap-2.5">
-              <a className="inline-flex h-[2.35rem] w-[2.35rem] items-center justify-center rounded-full border border-[rgba(32,62,143,0.10)] bg-white text-[#0e2f9a] shadow-[0_12px_24px_-22px_rgba(20,44,119,0.22)] transition duration-200 hover:-translate-y-0.5 hover:border-transparent hover:bg-[linear-gradient(135deg,#2563ff_0%,#1a43c9_100%)] hover:text-white hover:shadow-[0_18px_38px_-24px_rgba(37,99,255,0.62)]" aria-label="Facebook" href="https://www.facebook.com" rel="noreferrer" target="_blank">
+            <p className="mt-2 max-w-none text-[0.84rem] leading-5 text-[#6f7ea9] md:max-w-[16rem] md:text-[0.92rem] md:leading-7">{t(locale, siteCopy.brandTagline)}</p>
+            <div className="mt-3 flex gap-2 md:mt-4 md:gap-2.5">
+              <a className={footerSocialClass} aria-label="Facebook" href="https://www.facebook.com" rel="noreferrer" target="_blank">
                 <Facebook size={14} strokeWidth={2.1} />
               </a>
-              <a className="inline-flex h-[2.35rem] w-[2.35rem] items-center justify-center rounded-full border border-[rgba(32,62,143,0.10)] bg-white text-[#0e2f9a] shadow-[0_12px_24px_-22px_rgba(20,44,119,0.22)] transition duration-200 hover:-translate-y-0.5 hover:border-transparent hover:bg-[linear-gradient(135deg,#2563ff_0%,#1a43c9_100%)] hover:text-white hover:shadow-[0_18px_38px_-24px_rgba(37,99,255,0.62)]" aria-label="Instagram" href="https://www.instagram.com" rel="noreferrer" target="_blank">
+              <a className={footerSocialClass} aria-label="Instagram" href="https://www.instagram.com" rel="noreferrer" target="_blank">
                 <Instagram size={14} strokeWidth={2.1} />
               </a>
-              <a className="inline-flex h-[2.35rem] w-[2.35rem] items-center justify-center rounded-full border border-[rgba(32,62,143,0.10)] bg-white text-[#0e2f9a] shadow-[0_12px_24px_-22px_rgba(20,44,119,0.22)] transition duration-200 hover:-translate-y-0.5 hover:border-transparent hover:bg-[linear-gradient(135deg,#2563ff_0%,#1a43c9_100%)] hover:text-white hover:shadow-[0_18px_38px_-24px_rgba(37,99,255,0.62)]" aria-label="LinkedIn" href="https://www.linkedin.com" rel="noreferrer" target="_blank">
+              <a className={footerSocialClass} aria-label="LinkedIn" href="https://www.linkedin.com" rel="noreferrer" target="_blank">
                 <Linkedin size={14} strokeWidth={2.1} />
               </a>
-              <a className="inline-flex h-[2.35rem] w-[2.35rem] items-center justify-center rounded-full border border-[rgba(32,62,143,0.10)] bg-white text-[#0e2f9a] shadow-[0_12px_24px_-22px_rgba(20,44,119,0.22)] transition duration-200 hover:-translate-y-0.5 hover:border-transparent hover:bg-[linear-gradient(135deg,#2563ff_0%,#1a43c9_100%)] hover:text-white hover:shadow-[0_18px_38px_-24px_rgba(37,99,255,0.62)]" aria-label="YouTube" href="https://www.youtube.com" rel="noreferrer" target="_blank">
+              <a className={footerSocialClass} aria-label="YouTube" href="https://www.youtube.com" rel="noreferrer" target="_blank">
                 <Youtube size={14} strokeWidth={2.1} />
               </a>
             </div>
           </div>
 
-          <div className="rounded-[1.35rem] border border-[rgba(32,62,143,0.07)] bg-white/84 p-4 shadow-[0_16px_34px_-30px_rgba(20,44,119,0.14)] md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
-            <h4 className="mb-3 font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1rem] font-semibold text-[#132968] md:mb-4 md:text-[1.02rem]">
+          <div className="rounded-[1.2rem] border border-[rgba(32,62,143,0.07)] bg-white/84 p-3.5 shadow-[0_16px_34px_-30px_rgba(20,44,119,0.14)] md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+            <h4 className="mb-2.5 font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[0.95rem] font-semibold text-[#132968] md:mb-4 md:text-[1.02rem]">
               {t(locale, {en: "Quick Links", zh: "快捷链接"})}
             </h4>
-            <div className="grid gap-2">
+            <div className="grid gap-1.5 md:gap-2">
               {footerQuickLinks.map((item) => (
-                <Link className="text-[0.9rem] leading-6 text-[#6f7ea9] transition hover:text-[#2563ff] md:text-[0.92rem] md:leading-7" key={item.href + t(locale, item.label)} href={item.href}>
+                <Link className={footerLinkClass} key={item.href + t(locale, item.label)} href={item.href}>
                   {t(locale, item.label)}
                 </Link>
               ))}
             </div>
           </div>
 
-          <div className="rounded-[1.35rem] border border-[rgba(32,62,143,0.07)] bg-white/84 p-4 shadow-[0_16px_34px_-30px_rgba(20,44,119,0.14)] md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
-            <h4 className="mb-3 font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1rem] font-semibold text-[#132968] md:mb-4 md:text-[1.02rem]">
+          <div className="rounded-[1.2rem] border border-[rgba(32,62,143,0.07)] bg-white/84 p-3.5 shadow-[0_16px_34px_-30px_rgba(20,44,119,0.14)] md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+            <h4 className="mb-2.5 font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[0.95rem] font-semibold text-[#132968] md:mb-4 md:text-[1.02rem]">
               {t(locale, {en: "Products", zh: "产品"})}
             </h4>
-            <div className="grid gap-2">
+            <div className="grid gap-1.5 md:gap-2">
               {footerProductLinks.map((item) => (
-                <Link className="text-[0.9rem] leading-6 text-[#6f7ea9] transition hover:text-[#2563ff] md:text-[0.92rem] md:leading-7" key={item.href + t(locale, item.label)} href={item.href}>
+                <Link className={footerLinkClass} key={item.href + t(locale, item.label)} href={item.href}>
                   {t(locale, item.label)}
                 </Link>
               ))}
             </div>
           </div>
 
-          <div className="rounded-[1.35rem] border border-[rgba(32,62,143,0.07)] bg-white/84 p-4 shadow-[0_16px_34px_-30px_rgba(20,44,119,0.14)] md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
-            <h4 className="mb-3 font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[1rem] font-semibold text-[#132968] md:mb-4 md:text-[1.02rem]">
+          <div className="col-span-2 rounded-[1.2rem] border border-[rgba(32,62,143,0.07)] bg-white/84 p-3.5 shadow-[0_16px_34px_-30px_rgba(20,44,119,0.14)] md:col-span-1 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+            <h4 className="mb-2.5 font-['Outfit','Plus_Jakarta_Sans',sans-serif] text-[0.95rem] font-semibold text-[#132968] md:mb-4 md:text-[1.02rem]">
               {t(locale, {en: "Support", zh: "支持"})}
             </h4>
-            <div className="grid gap-2">
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 md:grid-cols-1 md:gap-2">
               {footerSupportLinks.map((item) => (
-                <Link className="text-[0.9rem] leading-6 text-[#6f7ea9] transition hover:text-[#2563ff] md:text-[0.92rem] md:leading-7" key={item.href + t(locale, item.label)} href={item.href}>
+                <Link className={footerLinkClass} key={item.href + t(locale, item.label)} href={item.href}>
                   {t(locale, item.label)}
                 </Link>
               ))}
@@ -323,7 +328,7 @@ export function SiteShell({children, locale}: SiteShellProps) {
           </div>
         </div>
 
-        <p className="mx-auto mt-5 w-[min(1260px,calc(100%-24px))] border-t border-[rgba(19,41,104,0.08)] pt-4 text-center text-[0.8rem] leading-6 text-[#6f7ea9] md:mt-8 md:w-[min(1260px,calc(100%-32px))] md:border-0 md:pt-0 md:text-[0.84rem]">
+        <p className="mx-auto mt-4 w-[min(1260px,calc(100%-24px))] border-t border-[rgba(19,41,104,0.08)] pt-3 text-center text-[0.76rem] leading-5 text-[#6f7ea9] md:mt-8 md:w-[min(1260px,calc(100%-32px))] md:border-0 md:pt-0 md:text-[0.84rem]">
           © 2026 {t(locale, siteCopy.companyName)}. All Rights Reserved.
         </p>
       </footer>

@@ -18,14 +18,14 @@ const article: NewsArticleSeed = {
     "zh": "不同市场对应不同标准框架，但都关注材料安全、机械风险与标签信息。越早明确目标市场，越能减少重复测试。"
   },
   "media": {
-    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601362237263/3.webp",
+    "cover": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601362237263/3.webp",
     "coverAlt": {
       "en": "Compliance sample set",
       "zh": "合规测试样品组"
     },
     "sections": [
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601362237263/4.webp",
-      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products/1601362237263/5.webp"
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601362237263/4.webp",
+      "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601362237263/5.webp"
     ]
   },
   "detailDraft": {
