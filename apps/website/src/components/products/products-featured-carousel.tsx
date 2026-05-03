@@ -2,7 +2,7 @@
 
 import {startTransition, useState} from "react";
 import {ArrowRight, ChevronLeft, ChevronRight} from "lucide-react";
-import Image from "@/components/smart-image";
+import Image from "@/components/media/smart-image";
 import Link from "next/link";
 
 import {t, type Locale} from "@/lib/i18n";

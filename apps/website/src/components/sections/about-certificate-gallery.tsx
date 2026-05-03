@@ -1,7 +1,7 @@
 "use client";
 
 import {X} from "lucide-react";
-import Image, {type StaticImageData} from "@/components/smart-image";
+import Image, {type StaticImageData} from "@/components/media/smart-image";
 import {useEffect, useState} from "react";
 
 type CertificateItem = {

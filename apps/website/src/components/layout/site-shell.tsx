@@ -13,9 +13,10 @@ import {
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-import { BrandMark } from "@/components/marketing";
-import { navItems, siteCopy } from "@/components/site-shell.data";
+import { BrandMark } from "@/components/ui/marketing";
+import { navItems, siteCopy } from "@/components/layout/site-shell.data";
 import { sharedUi } from "@/content/site";
+import { openCookieConsentManager } from "@/lib/cookie-consent";
 import { localeRegistry, t, type Locale } from "@/lib/i18n";
 import {
   contactFormPath,
@@ -61,6 +62,8 @@ const footerSupportLinkRoutes = [
   { label: { en: "Custom Solutions", zh: "定制方案" }, route: "solutions" },
   { label: { en: "Company Capability", zh: "公司能力" }, route: "about" },
   { label: { en: "Get a Quote", zh: "获取报价" }, route: "contact" },
+  { label: { en: "User Agreement", zh: "用户协议" }, route: "terms" },
+  { label: { en: "Privacy Policy", zh: "隐私政策" }, route: "privacy" },
 ] as const satisfies ReadonlyArray<{
   label: { en: string; zh: string };
   route: RouteKey;
@@ -481,6 +484,13 @@ function SiteFooter({ locale }: { locale: Locale }) {
                 {t(locale, item.label)}
               </Link>
             ))}
+            <button
+              className={`${footerLinkClass} text-left`}
+              type="button"
+              onClick={openCookieConsentManager}
+            >
+              {t(locale, { en: "Cookie Settings", zh: "Cookie 设置" })}
+            </button>
           </div>
         </div>
       </div>

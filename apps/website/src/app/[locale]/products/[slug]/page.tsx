@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "@/components/smart-image";
+import Image from "@/components/media/smart-image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -16,9 +16,9 @@ import {
 } from "lucide-react";
 import { notFound } from "next/navigation";
 
-import { ProductGallery } from "@/components/product-gallery";
-import { ProductMediaStrip } from "@/components/product-media-strip";
-import { StructuredData } from "@/components/structured-data";
+import { ProductGallery } from "@/components/products/product-gallery";
+import { ProductMediaStrip } from "@/components/products/product-media-strip";
+import { StructuredData } from "@/components/seo/structured-data";
 import {
   products,
   type ProductJson,
@@ -31,7 +31,7 @@ import {
   getAdjacentShowcaseProducts,
   getPackagingAttributes,
   getPrimaryAttributes,
-} from "@/lib/relaunch-data";
+} from "@/lib/site-data";
 import { getLocaleFromParams, locales, t, type Locale } from "@/lib/i18n";
 import { contactFormPath } from "@/lib/routes";
 import { toAbsoluteUrl } from "@/lib/site-config";

@@ -1,8 +1,8 @@
-import Image from "@/components/smart-image";
+import Image from "@/components/media/smart-image";
 import Link from "next/link";
 import {ChevronRight} from "lucide-react";
 
-import type {LocalizedText} from "@/content/site-relaunch";
+import type {LocalizedText} from "@/content/types";
 import {t, type Locale} from "@/lib/i18n";
 
 export function BrandMark({compact = false}: {compact?: boolean}) {

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "@/components/smart-image";
+import Image from "@/components/media/smart-image";
 import {PlayCircle} from "lucide-react";
 import {useMemo, useState} from "react";
 

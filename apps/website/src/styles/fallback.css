@@ -1,0 +1,210 @@
+.fallback-page {
+  display: grid;
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: clamp(3.75rem, 8vw, 6.5rem) 0 0;
+  gap: 1.2rem;
+}
+
+.fallback-hero {
+  display: grid;
+  justify-items: center;
+  overflow: hidden;
+  padding: clamp(2.2rem, 6vw, 4.8rem);
+  border: 1px solid rgba(32, 62, 143, 0.1);
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(247, 250, 255, 0.96) 100%);
+  box-shadow: 0 26px 54px -42px rgba(20, 44, 119, 0.28);
+  text-align: center;
+}
+
+.fallback-status {
+  display: inline-flex;
+  min-height: 2.4rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+  padding: 0 0.85rem;
+  border: 1px solid rgba(37, 99, 255, 0.13);
+  border-radius: 999px;
+  background: rgba(37, 99, 255, 0.07);
+  color: var(--primary-dark);
+  font-family: var(--font-label);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.fallback-spinner {
+  width: 0.82rem;
+  height: 0.82rem;
+  border: 2px solid rgba(37, 99, 255, 0.22);
+  border-top-color: var(--primary);
+  border-radius: 999px;
+  animation: fallback-spin 0.8s linear infinite;
+}
+
+.fallback-title {
+  max-width: 760px;
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2.05rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  color: var(--text);
+}
+
+.fallback-copy {
+  max-width: 680px;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.fallback-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1.35rem;
+}
+
+.fallback-support {
+  max-width: 600px;
+  margin: 1rem 0 0;
+  color: #7b89af;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.fallback-reference {
+  max-width: 100%;
+  margin: 0.8rem 0 0;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(19, 41, 104, 0.05);
+  color: #6f7ea9;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+.fallback-suggestions {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.fallback-suggestion {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.95rem;
+  min-height: 5.25rem;
+  padding: 1rem;
+  border: 1px solid rgba(32, 62, 143, 0.09);
+  border-radius: 1.05rem;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 36px -34px rgba(20, 44, 119, 0.2);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.fallback-suggestion:hover {
+  transform: translateY(-1px);
+  border-color: rgba(37, 99, 255, 0.18);
+  box-shadow: 0 24px 44px -34px rgba(20, 44, 119, 0.26);
+}
+
+.fallback-suggestion-icon {
+  display: inline-flex;
+  width: 2.55rem;
+  height: 2.55rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.9rem;
+  background: rgba(37, 99, 255, 0.09);
+  color: var(--primary);
+}
+
+.fallback-suggestion-body {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.fallback-suggestion-body strong {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.fallback-suggestion-body span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.fallback-suggestion-arrow {
+  color: var(--primary);
+}
+
+@keyframes fallback-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 900px) {
+  .fallback-suggestions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .fallback-suggestion {
+    min-height: 11.5rem;
+    align-items: start;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .fallback-suggestion-arrow {
+    align-self: end;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .fallback-page {
+    width: min(100%, calc(100% - 24px));
+    padding-top: 3rem;
+  }
+
+  .fallback-hero {
+    padding: 1.35rem;
+    border-radius: 1.2rem;
+  }
+
+  .fallback-title {
+    font-size: clamp(1.8rem, 10vw, 2.6rem);
+    line-height: 1.02;
+  }
+
+  .fallback-copy {
+    font-size: 0.94rem;
+    line-height: 1.72;
+  }
+
+  .fallback-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .fallback-actions a,
+  .fallback-actions button {
+    width: 100%;
+  }
+}

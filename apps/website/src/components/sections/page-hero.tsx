@@ -1,5 +1,5 @@
 import type {ReactNode} from "react";
-import Image from "@/components/smart-image";
+import Image from "@/components/media/smart-image";
 
 type PageHeroProps = {
   afterContent?: ReactNode;

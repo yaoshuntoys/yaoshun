@@ -4,6 +4,7 @@ export type CookieConsentStatus = 'granted' | 'denied';
 
 export const cookieConsentStorageKey = 'yaoshun-cookie-consent';
 const cookieConsentChangeEventName = 'cookie-consent-change';
+const cookieConsentManageEventName = 'cookie-consent-manage';
 
 declare global {
   interface Window {
@@ -86,6 +87,14 @@ export function dispatchCookieConsentChange() {
   window.dispatchEvent(new Event(cookieConsentChangeEventName));
 }
 
+export function openCookieConsentManager() {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  window.dispatchEvent(new Event(cookieConsentManageEventName));
+}
+
 export function subscribeToCookieConsent(callback: () => void) {
   if (typeof window === 'undefined') {
     return () => {};
@@ -106,6 +115,18 @@ export function subscribeToCookieConsent(callback: () => void) {
   return () => {
     window.removeEventListener('storage', handleStorage);
     window.removeEventListener(cookieConsentChangeEventName, handleConsentChange);
+  };
+}
+
+export function subscribeToCookieConsentManager(callback: () => void) {
+  if (typeof window === 'undefined') {
+    return () => {};
+  }
+
+  window.addEventListener(cookieConsentManageEventName, callback);
+
+  return () => {
+    window.removeEventListener(cookieConsentManageEventName, callback);
   };
 }
 

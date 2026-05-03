@@ -2,7 +2,7 @@ import type { Locale } from "@/lib/i18n";
 import type { RouteKey } from "@/lib/routes";
 
 export type LocalizedText = Partial<Record<Locale, string>>;
-export type LocalizedKeywords = Partial<Record<Locale, string[]>>;
+export type LocalizedKeywords = Partial<Record<Locale, readonly string[]>>;
 export type ProductModule = "toys";
 export type LocalizedTag = {
   key: string;
@@ -47,7 +47,7 @@ export const pageLabels: Record<RouteKey, LocalizedText> = {
   compliance: { en: "Compliance", zh: "资质合规" },
   contact: { en: "Get a Quote", zh: "获取报价" },
   privacy: { en: "Privacy", zh: "隐私政策" },
-  terms: { en: "Terms", zh: "服务条款" },
+  terms: { en: "User Agreement", zh: "用户协议" },
 };
 
 export const desktopNav: RouteKey[] = [

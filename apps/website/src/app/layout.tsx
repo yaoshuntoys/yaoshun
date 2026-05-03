@@ -4,9 +4,10 @@ import { headers } from "next/headers";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { AnalyticsEvents } from "@/components/analytics-events";
-import { TawkScript } from "@/components/tawk-script";
-import { TrackingScripts } from "@/components/tracking-scripts";
+import { AnalyticsEvents } from "@/components/tracking/analytics-events";
+import { CookieConsentManager } from "@/components/tracking/cookie-consent-manager";
+import { TawkScript } from "@/components/tracking/tawk-script";
+import { TrackingScripts } from "@/components/tracking/tracking-scripts";
 import { homeContent, siteSeo } from "@/content/site";
 import {
   defaultLocale,
@@ -23,17 +24,18 @@ import {
   toAbsoluteUrl,
 } from "@/lib/site-config";
 
-import "./globals.css";
-import "../components/marketing.css";
-import "./[locale]/home.css";
-import "./[locale]/about/about.css";
-import "./[locale]/solutions/solutions.css";
-import "./[locale]/news/news.css";
-import "./[locale]/news/news-article.css";
-import "./[locale]/contact/contact.css";
-import "./[locale]/faq/faq.css";
-import "./[locale]/products/products.css";
-import "./[locale]/products/product-detail.css";
+import "../styles/globals.css";
+import "../styles/marketing.css";
+import "../styles/fallback.css";
+import "../styles/pages/home.css";
+import "../styles/pages/about.css";
+import "../styles/pages/solutions.css";
+import "../styles/pages/news.css";
+import "../styles/pages/news-article.css";
+import "../styles/pages/contact.css";
+import "../styles/pages/faq.css";
+import "../styles/pages/products.css";
+import "../styles/pages/product-detail.css";
 
 const outfit = Outfit({
   display: "swap",
@@ -167,6 +169,7 @@ export default async function RootLayout({
         <TrackingScripts />
         <AnalyticsEvents />
         {children}
+        <CookieConsentManager />
         <VercelAnalytics />
         <SpeedInsights />
       </body>

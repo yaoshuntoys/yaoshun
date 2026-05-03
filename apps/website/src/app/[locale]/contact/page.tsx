@@ -14,17 +14,17 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-import { Breadcrumbs } from "@/components/marketing";
-import { ContactForm } from "@/components/contact-form";
-import { PageHero } from "@/components/page-hero";
-import { StructuredData } from "@/components/structured-data";
-import { siteCopy } from "@/components/site-shell.data";
+import { Breadcrumbs } from "@/components/ui/marketing";
+import { ContactForm } from "@/components/forms/contact-form";
+import { PageHero } from "@/components/sections/page-hero";
+import { StructuredData } from "@/components/seo/structured-data";
+import { siteCopy } from "@/components/layout/site-shell.data";
 import { contactContent } from "@/content/site";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getLocaleFromParams, t } from "@/lib/i18n";
 import { toAbsoluteUrl } from "@/lib/site-config";
-import { contactCopy } from "./data";
-import { faqItems } from "../faq/data";
+import { contactCopy } from "@/content/pages/contact";
+import { faqItems } from "@/content/pages/faq";
 
 const contactCards = [
   {

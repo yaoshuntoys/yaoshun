@@ -1,40 +1,31 @@
 # yaoshun monorepo
 
-使用 `pnpm workspace` 管理多个子项目，并默认切换到国内镜像源。
-当前已按架构文档初始化三个应用的基础工程。
+Yaoshun 的 pnpm workspace，用于管理企业官网以及后续后台、服务端应用。
 
 ## 项目结构
 
 ```text
 apps/
-  website/   企业官网
-  admin/     企业运营后台
-  server/    后台服务
+  website/   Next.js 企业官网
+  admin/     预留的运营后台工作区
+  server/    预留的服务端工作区
 ```
 
-## 快速开始
+当前主要代码集中在 `apps/website`。`admin` 与 `server` 目前仅保留占位目录，避免 README 描述超前于实际实现。
+
+## 常用命令
 
 ```bash
 pnpm install
 pnpm dev
+pnpm lint
+pnpm typecheck
+pnpm build
 ```
 
-## 说明
+## 技术基线
 
-- 根目录 `.npmrc` 已切换为 `https://registry.npmmirror.com/`
-- `apps/website`：`Next.js 16 + React 19 + next-intl + Tailwind CSS`
-- `apps/admin`：`React 19 + Vite 8 + Ant Design 6 + react-router-dom 7 + Zustand`
-- `apps/server`：`NestJS 11 + Prisma 7 + PostgreSQL`
-*** Add File: /Users/lukang.liu/Desktop/gitlab/yaoshun/tsconfig.base.json
-{
-  "compilerOptions": {
-    "target": "ES2022",
-    "strict": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleDetection": "force"
-  }
-}
+- 包管理：`pnpm` workspace
+- 官网：Next.js 16、React 19、TypeScript、Tailwind CSS
+- 共享配置：根目录 `tsconfig.base.json`
+- 运行时环境：各应用自己的 `.env*` 文件

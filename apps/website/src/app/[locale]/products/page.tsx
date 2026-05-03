@@ -6,11 +6,11 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
-import Image from "@/components/smart-image";
+import Image from "@/components/media/smart-image";
 import Link from "next/link";
 
-import { PageHero } from "@/components/page-hero";
-import { ProductsFeaturedCarousel } from "@/components/products-featured-carousel";
+import { PageHero } from "@/components/sections/page-hero";
+import { ProductsFeaturedCarousel } from "@/components/products/products-featured-carousel";
 import { productsPageContent } from "@/content/site";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getLocaleFromParams, t } from "@/lib/i18n";
@@ -19,8 +19,8 @@ import {
   getProductPriceLabel,
   getProductsFeaturedRailCatalog,
   getShowcaseCatalog,
-} from "@/lib/relaunch-data";
-import { productCollections, productsPageAssets } from "./data";
+} from "@/lib/site-data";
+import { productCollections, productsPageAssets } from "@/content/pages/products";
 
 type SearchParamMap = {
   category?: string;

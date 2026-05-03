@@ -1,5 +1,5 @@
-import {newsArticles} from "@/app/[locale]/news/data";
-import {type NewsArticleSeed, type ShowcaseProductSeed} from "@/content/site-relaunch";
+import {newsArticles} from "@/content/pages/news";
+import {type NewsArticleSeed, type ShowcaseProductSeed} from "@/content/types";
 import {
   products,
   type ProductJson,

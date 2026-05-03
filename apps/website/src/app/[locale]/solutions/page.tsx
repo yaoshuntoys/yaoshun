@@ -14,18 +14,18 @@ import {
   Sparkles,
   Wrench,
 } from "lucide-react";
-import Image from "@/components/smart-image";
+import Image from "@/components/media/smart-image";
 import Link from "next/link";
 
-import {PageHero} from "@/components/page-hero";
-import {StructuredData} from "@/components/structured-data";
-import {siteCopy} from "@/components/site-shell.data";
+import {PageHero} from "@/components/sections/page-hero";
+import {StructuredData} from "@/components/seo/structured-data";
+import {siteCopy} from "@/components/layout/site-shell.data";
 import {solutionsContent} from "@/content/site";
 import {buildPageMetadata} from "@/lib/metadata";
 import {getLocaleFromParams, t} from "@/lib/i18n";
 import {contactFormPath} from "@/lib/routes";
 import {toAbsoluteUrl} from "@/lib/site-config";
-import {solutionsPageImages} from "./data";
+import {solutionsPageImages} from "@/content/pages/solutions";
 
 const proofPoints = [
   {

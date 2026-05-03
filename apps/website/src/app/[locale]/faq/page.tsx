@@ -1,11 +1,11 @@
 import type {Metadata} from "next";
-import {Breadcrumbs} from "@/components/marketing";
-import {StructuredData} from "@/components/structured-data";
+import {Breadcrumbs} from "@/components/ui/marketing";
+import {StructuredData} from "@/components/seo/structured-data";
 import {faqContent} from "@/content/site";
 import {buildPageMetadata} from "@/lib/metadata";
 import {getLocaleFromParams, t} from "@/lib/i18n";
 import {toAbsoluteUrl} from "@/lib/site-config";
-import {faqItems} from "./data";
+import {faqItems} from "@/content/pages/faq";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);

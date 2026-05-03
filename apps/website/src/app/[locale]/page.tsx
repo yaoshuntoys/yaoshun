@@ -17,18 +17,18 @@ import {
   Sparkles,
   Wrench,
 } from "lucide-react";
-import Image from "@/components/smart-image";
+import Image from "@/components/media/smart-image";
 import Link from "next/link";
 
-import { HomeLeadForm } from "@/components/home-lead-form";
-import { PageHero } from "@/components/page-hero";
-import { siteCopy } from "@/components/site-shell.data";
+import { HomeLeadForm } from "@/components/forms/home-lead-form";
+import { PageHero } from "@/components/sections/page-hero";
+import { siteCopy } from "@/components/layout/site-shell.data";
 import { homeContent } from "@/content/site";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getLocaleFromParams, t, type Locale } from "@/lib/i18n";
-import { getHomeFeaturedShowcaseCatalog } from "@/lib/relaunch-data";
+import { getHomeFeaturedShowcaseCatalog } from "@/lib/site-data";
 import { productPath } from "@/lib/routes";
-import { homePageImages } from "./_home/data";
+import { homePageImages } from "@/content/pages/home";
 
 function copy(locale: Locale) {
   return {
@@ -338,9 +338,6 @@ export default async function HomePage({
               <div className="home-product-body">
                 <h3>{item.title}</h3>
                 <p>{item.meta}</p>
-                <span aria-hidden="true" className="home-product-arrow">
-                  <ArrowRight size={16} strokeWidth={2.2} />
-                </span>
               </div>
             </Link>
           ))}

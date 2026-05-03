@@ -1,6 +1,6 @@
 const customSideImage = "/site/products/custom-side-v2.webp";
 
-import type {LocalizedText, ShowcaseProductSeed} from "@/content/site-relaunch";
+import type {LocalizedText, ShowcaseProductSeed} from "@/content/types";
 
 export const productCollections: Array<{key: ShowcaseProductSeed["collection"]; label: LocalizedText}> = [
   {key: "starter", label: {en: "Starter Kits", zh: "入门套装"}},

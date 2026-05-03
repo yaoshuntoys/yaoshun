@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { products } from "@/content/site/products-catalog";
 import { defaultLocale, localeRegistry, locales } from "@/lib/i18n";
-import { getNewsList } from "@/lib/relaunch-data";
+import { getNewsList } from "@/lib/site-data";
 import { routePathMap, type RouteKey } from "@/lib/routes";
 import { siteUrl } from "@/lib/site-config";
 

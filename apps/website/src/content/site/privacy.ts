@@ -1,180 +1,164 @@
 export const privacyContent = {
   seo: {
     title: {
-      en: 'Privacy Policy | Dongguan Yaoshun Technology Co., Ltd. | 东莞市尧顺科技有限公司',
-      zh: '隐私政策 | 东莞市尧顺科技有限公司 | Dongguan Yaoshun Technology Co., Ltd.'
+      en: "Privacy Policy | Dongguan Yaoshun Technology Co., Ltd.",
+      zh: "隐私政策 | 东莞市尧顺科技有限公司",
     },
     description: {
-      en: 'Read how Dongguan Yaoshun Technology Co., Ltd. handles quote and inquiry form data, analytics cookies, and business contact information submitted through this manufacturing website.',
-      zh: '了解东莞市尧顺科技有限公司如何处理官网报价表单、询盘信息、分析 Cookie 与商务联系数据。'
+      en: "Privacy policy for B2B inquiries, quote forms, cookies, Google Analytics, Google Ads conversion measurement, and privacy requests.",
+      zh: "适用于 B2B 询盘、报价表单、Cookie、Google Analytics、Google Ads 转化衡量和隐私请求的隐私政策。",
     },
     keywords: {
       en: [
-        'privacy policy',
-        'b2b inquiry privacy',
-        'contact form data protection',
-        'supplier privacy policy',
-        'quote form privacy',
-        'business contact data handling'
+        "privacy policy",
+        "cookie policy",
+        "Google Ads conversion tracking",
+        "Google Analytics",
+        "B2B inquiry privacy",
       ],
       zh: [
-        '隐私政策',
-        '询盘隐私',
-        '表单数据保护',
-        '商务信息处理',
-        '报价信息隐私',
-        '网站数据说明'
-      ]
-    }
+        "隐私政策",
+        "Cookie政策",
+        "Google Ads转化追踪",
+        "Google Analytics",
+        "B2B询盘隐私",
+      ],
+    },
   },
   hero: {
-    eyebrow: {en: 'Legal Document', zh: '法律文件'},
-    title: {en: 'Privacy Policy & Data Protection', zh: '隐私政策与数据保护'},
+    eyebrow: {en: "Legal Document", zh: "法律文件"},
+    title: {en: "Privacy Policy", zh: "隐私政策"},
     description: {
-      en: 'This policy explains what data we collect, why we collect it, how long we retain it, and how business visitors can request access, correction, or deletion.',
-      zh: '本政策说明我们收集哪些数据、收集目的、保存期限，以及商务访客如何申请访问、更正或删除。'
-    }
+      en: "This document explains how Dongguan Yaoshun Technology Co., Ltd. handles information collected through this B2B website, inquiry forms, and advertising landing pages.",
+      zh: "本文件说明东莞市尧顺科技有限公司如何处理通过本 B2B 网站、询盘表单和广告落地页收集的信息。",
+    },
   },
   policyMeta: {
-    effectiveDateLabel: {en: 'Effective Date', zh: '生效日期'},
-    updatedDateLabel: {en: 'Last Updated', zh: '最近更新'},
-    effectiveDate: {en: 'January 1, 2026', zh: '2026 年 1 月 1 日'},
-    updatedDate: {en: 'April 4, 2026', zh: '2026 年 4 月 4 日'}
+    effectiveDateLabel: {en: "Effective Date", zh: "生效日期"},
+    updatedDateLabel: {en: "Last Updated", zh: "最近更新"},
+    effectiveDate: {en: "January 1, 2026", zh: "2026 年 1 月 1 日"},
+    updatedDate: {en: "May 3, 2026", zh: "2026 年 5 月 3 日"},
   },
-  collectionSection: {
-    title: {en: 'Data Collection', zh: '数据收集'},
-    items: [
-      {
-        title: {en: 'Data Controller', zh: '数据控制者'},
-        text: {
-          en: 'Dongguan Yaoshun Technology Co., Ltd. is the controller of personal data submitted through this website.',
-          zh: '通过本网站提交的个人信息由东莞市尧顺科技有限公司负责处理。'
-        }
-      },
-      {
-        title: {en: 'Contact Forms', zh: '联系表单'},
-        text: {
-          en: 'We collect name, email, company name, and message content when visitors submit inquiry or quote forms.',
-          zh: '当访客提交询盘或报价表单时，我们会收集姓名、邮箱、公司信息与留言内容。'
-        }
-      },
-      {
-        title: {en: 'Processing Purpose', zh: '处理目的'},
-        text: {
-          en: 'Data is used for inquiry response, quotation review, project communication, and service follow-up.',
-          zh: '信息用于询盘回复、报价评估、项目沟通与服务跟进。'
-        }
-      },
-      {
-        title: {en: 'Cookies & Analytics', zh: 'Cookie 与分析'},
-        text: {
-          en: 'We use essential cookies and analytics tools to maintain site performance and measure page/form interactions.',
-          zh: '我们使用必要 Cookie 和分析工具以保障网站运行并统计页面与表单交互。'
-        }
-      },
-      {
-        title: {en: 'Third-Party Services', zh: '第三方服务'},
-        text: {
-          en: 'When analytics or advertising tools are enabled, related providers may process limited technical identifiers under their own policies.',
-          zh: '当启用分析或广告工具时，相关服务商可能依据其政策处理必要的技术标识信息。'
-        }
-      },
-      {
-        title: {en: 'Contact For Privacy Requests', zh: '隐私请求联系'},
-        text: {
-          en: 'For privacy requests, please contact yaoshuntoys@gmail.com with your company name and request details.',
-          zh: '如需提交隐私请求，请发送邮件至 yaoshuntoys@gmail.com，并附公司信息与请求说明。'
-        }
-      }
-    ]
-  },
-  handlingCard: {
-    title: {en: 'Data Retention & Protection', zh: '数据保存与保护'},
-    text: {
-      en: 'We keep inquiry records only for as long as needed for business communication, quotation follow-up, legal compliance, and dispute handling.',
-      zh: '询盘记录仅在商务沟通、报价跟进、法定义务或争议处理所需期限内保存。'
+  sections: [
+    {
+      title: {en: "1. Scope", zh: "1. 适用范围"},
+      paragraphs: [
+        {
+          en: "This policy is issued by Dongguan Yaoshun Technology Co., Ltd., which is responsible for information submitted through this website, inquiry forms, email communication, chat tools where enabled, and advertising landing pages.",
+          zh: "本政策由东莞市尧顺科技有限公司发布，适用于通过本网站、询盘表单、邮件沟通、启用时的聊天工具和广告落地页提交的信息。",
+        },
+        {
+          en: "This website is used for B2B product sourcing, OEM/ODM toy manufacturing inquiries, factory capability review, quotation requests, sample planning, and business communication.",
+          zh: "本网站用于 B2B 产品采购、玩具 OEM/ODM 制造询盘、工厂能力了解、报价申请、样品规划和商务沟通。",
+        },
+        {
+          en: "The website and its forms are intended for adult business visitors, procurement teams, distributors, and brand owners. Please do not submit personal information about children through this website.",
+          zh: "本网站及表单面向成年商务访客、采购团队、经销商和品牌方。请勿通过本网站提交儿童个人信息。",
+        },
+      ],
     },
-    note: {en: 'You can request deletion where legally applicable.', zh: '在符合法律前提下可申请删除。'}
-  },
-  rightsSection: {
-    eyebrow: {en: 'Section {number}', zh: '第 {number} 节'},
-    title: {en: 'Your Rights', zh: '您的权利'},
-    items: [
-      {
-        title: {en: 'Right to Access', zh: '访问权'},
-        text: {en: 'Request a copy of the information submitted through business forms.', zh: '可申请查看通过商务表单提交的信息副本。'}
-      },
-      {
-        title: {en: 'Right to Rectification', zh: '更正权'},
-        text: {en: 'Update incorrect business contact details or shipping notes.', zh: '可以更正错误的商务联系人或发货信息。'}
-      },
-      {
-        title: {en: 'Right to Erasure', zh: '删除权'},
-        text: {en: 'Marketing follow-up data can be removed upon request unless required for a live transaction.', zh: '在不影响正在执行的交易前提下，可申请删除营销跟进数据。'}
-      },
-      {
-        title: {en: 'Data Portability', zh: '数据可携带权'},
-        text: {en: 'Quote-related records can be exported for handover if needed.', zh: '如有需要，可导出与报价相关的记录用于交接。'}
-      }
-    ]
-  },
-  cookiesSection: {
-    eyebrow: {en: 'Section {number}', zh: '第 {number} 节'},
-    title: {en: 'Cookie Policy', zh: 'Cookie 政策'},
-    headers: {
-      category: {en: 'Category', zh: '类别'},
-      purpose: {en: 'Purpose', zh: '用途'},
-      retention: {en: 'Retention', zh: '保留时间'}
+    {
+      title: {en: "2. Information We Collect", zh: "2. 我们收集的信息"},
+      paragraphs: [
+        {
+          en: "When you contact us, we may collect your name, company name, email address, phone number, country or region, product requirements, quantity plan, target market, packaging needs, drawings, samples, and message content.",
+          zh: "当你联系我们时，我们可能收集姓名、公司名称、邮箱、电话、国家或地区、产品需求、数量计划、目标市场、包装需求、图纸、样品和留言内容。",
+        },
+        {
+          en: "When you visit the website, limited technical information may also be collected, such as IP-derived region, device and browser type, page URL, referrer, cookie identifiers, consent status, interaction events, and approximate time.",
+          zh: "当你访问网站时，我们也可能收集有限技术信息，例如基于 IP 推断的地区、设备和浏览器类型、页面 URL、来源页面、Cookie 标识、同意状态、交互事件和大致时间。",
+        },
+      ],
     },
-    rows: [
-      {
-        category: {en: 'Essential', zh: '必要'},
-        purpose: {en: 'Form continuity and page rendering.', zh: '用于表单连续性和页面渲染。'},
-        retention: {en: 'Session', zh: '会话期'}
-      },
-      {
-        category: {en: 'Analytics', zh: '分析'},
-        purpose: {en: 'Measure site performance and interaction quality.', zh: '衡量站点性能与交互质量。'},
-        retention: {en: 'Up to 24 months', zh: '最长 24 个月'}
-      },
-      {
-        category: {en: 'Marketing', zh: '营销'},
-        purpose: {en: 'Used only when advertising features are enabled and consent is obtained where required.', zh: '仅在启用广告功能且按要求取得同意后使用。'},
-        retention: {en: 'As configured', zh: '按工具配置'}
-      }
-    ]
-  },
-  advertisingSection: {
-    title: {en: 'Advertising & Measurement Notice', zh: '广告与测量说明'},
-    items: [
-      {
-        title: {en: 'Google Ads', zh: 'Google Ads'},
-        text: {
-          en: 'If advertising features are enabled, ad platforms may receive limited technical data to measure conversions and campaign performance.',
-          zh: '如启用广告功能，广告平台可能接收必要技术数据用于转化与投放效果评估。'
-        }
-      },
-      {
-        title: {en: 'Consent Handling', zh: '同意管理'},
-        text: {
-          en: 'Where local law requires consent, marketing and measurement tags are activated only after required consent is obtained.',
-          zh: '在当地法律要求同意的场景下，营销与测量标签仅在取得必要同意后启用。'
-        }
-      },
-      {
-        title: {en: 'Opt-Out Request', zh: '退出请求'},
-        text: {
-          en: 'You may request restriction or deletion of marketing-related data by contacting yaoshuntoys@gmail.com.',
-          zh: '如需限制或删除营销相关数据，可通过 yaoshuntoys@gmail.com 提交请求。'
-        }
-      }
-    ]
-  },
-  journey: {
-    title: {en: 'Return To Business Pages', zh: '返回业务页面'},
-    description: {
-      en: 'From privacy handling you can return to the quote page, company information, or product catalog.',
-      zh: '从隐私页可以返回报价页、公司资料或产品目录。'
-    }
-  }
-};
+    {
+      title: {en: "3. How We Use Information", zh: "3. 我们如何使用信息"},
+      paragraphs: [
+        {
+          en: "We use information to respond to inquiries, evaluate project feasibility, prepare quotations, arrange samples, communicate about OEM/ODM cooperation, improve the website, prevent spam or misuse, and keep necessary business records.",
+          zh: "我们使用相关信息来回复询盘、评估项目可行性、准备报价、安排样品、沟通 OEM/ODM 合作、改进网站、防止垃圾或滥用提交，并保存必要商务记录。",
+        },
+        {
+          en: "Depending on the context, our processing may be based on steps needed before a business contract, legitimate business interests, consent where required, or compliance with legal and trade obligations.",
+          zh: "根据具体场景，我们处理信息的依据可能包括签订商务合同前的必要步骤、合法商业利益、依法需要时的同意，以及履行法律和贸易义务。",
+        },
+        {
+          en: "We do not sell business inquiry data. We do not intentionally send sensitive personal data, children's personal data, payment card data, health data, or protected-category information to advertising platforms.",
+          zh: "我们不会出售商务询盘数据。我们不会有意向广告平台发送敏感个人信息、儿童个人信息、银行卡数据、健康数据或受保护类别信息。",
+        },
+      ],
+    },
+    {
+      title: {en: "4. Cookies, Analytics And Advertising", zh: "4. Cookie、分析与广告"},
+      paragraphs: [
+        {
+          en: "This website may use cookies and similar technologies for language routing, consent records, form operation, security, website analytics, and advertising performance measurement.",
+          zh: "本网站可能使用 Cookie 和类似技术，用于语言路由、同意记录、表单运行、安全、网站分析和广告效果衡量。",
+        },
+        {
+          en: "We may use Google Analytics and Google Ads tags for page-view and event measurement, campaign attribution, submitted-lead conversion tracking, and landing-page performance review. These tools may process cookies, device information, page URLs, referrers, campaign identifiers, consent status, and event data.",
+          zh: "我们可能使用 Google Analytics 与 Google Ads 标签进行页面浏览和事件衡量、广告系列归因、已提交线索的转化追踪，以及落地页效果评估。这些工具可能处理 Cookie、设备信息、页面 URL、来源页面、广告系列标识、同意状态和事件数据。",
+        },
+        {
+          en: "Where consent is required, advertising and analytics storage may be controlled through Google consent settings, including ad_storage, analytics_storage, ad_user_data, and ad_personalization. We do not attempt to identify individual users in Google reports or merge personally identifiable information with Google advertising data unless proper notice, consent, and a supported Google feature are in place.",
+          zh: "在需要同意的场景下，广告与分析存储可能通过 Google 同意设置控制，包括 ad_storage、analytics_storage、ad_user_data 和 ad_personalization。除非已完成适当告知、取得同意且使用 Google 支持的功能，我们不会尝试识别 Google 报告中的个人用户，也不会将可识别个人身份的信息与 Google 广告数据合并。",
+        },
+        {
+          en: "We do not currently upload customer lists to Google Ads or use enhanced conversions based on submitted contact details. If we adopt those features later, we will provide any required notice and obtain consent where required.",
+          zh: "我们目前不会向 Google Ads 上传客户名单，也不会基于提交的联系方式使用增强型转化。若未来采用相关功能，我们会完成必要告知，并在需要时取得同意。",
+        },
+      ],
+      links: [
+        {
+          label: {en: "Google Ads Settings", zh: "Google 广告设置"},
+          href: "https://myadcenter.google.com/",
+        },
+        {
+          label: {en: "Google Analytics Opt-Out", zh: "Google Analytics 退出工具"},
+          href: "https://tools.google.com/dlpage/gaoptout",
+        },
+        {
+          label: {en: "Google Privacy Policy", zh: "Google 隐私权政策"},
+          href: "https://policies.google.com/privacy",
+        },
+        {
+          label: {en: "Google Business Data Responsibility", zh: "Google 商业数据责任说明"},
+          href: "https://business.safety.google/privacy/",
+        },
+      ],
+    },
+    {
+      title: {en: "5. Sharing, Retention And Security", zh: "5. 共享、保存与安全"},
+      paragraphs: [
+        {
+          en: "We may share information with service providers that help us operate the website, host assets, send or receive email, manage inquiries, run analytics, measure advertising, protect systems, and support logistics or compliance work after a project advances.",
+          zh: "我们可能与帮助我们运营网站、托管资源、收发邮件、管理询盘、开展分析、衡量广告、保护系统，以及在项目推进后支持物流或合规工作的服务提供商共享信息。",
+        },
+        {
+          en: "Business inquiry records are kept only as long as reasonably needed for communication, quotations, repeat sourcing, order support, legal duties, or dispute handling. We use reasonable safeguards, but no internet transmission or storage method is completely secure.",
+          zh: "商务询盘记录仅在沟通、报价、复购采购、订单支持、法律义务或争议处理合理需要期间保存。我们采取合理保护措施，但任何互联网传输或存储方式都无法保证绝对安全。",
+        },
+        {
+          en: "We do not intentionally place form contact details in page URLs or pass them through Google advertising or analytics tags.",
+          zh: "我们不会有意将表单联系方式放入页面 URL，也不会通过 Google 广告或分析标签传递这些联系方式。",
+        },
+      ],
+    },
+    {
+      title: {en: "6. Your Choices And Contact", zh: "6. 你的选择与联系"},
+      paragraphs: [
+        {
+          en: "Depending on your location, you may request access, correction, deletion, restriction, objection to processing, withdrawal of consent, or a copy of information submitted through website forms.",
+          zh: "根据你所在地区，你可以申请访问、更正、删除、限制处理、反对处理、撤回同意，或获取通过网站表单提交的信息副本。",
+        },
+        {
+          en: "You can control cookies through browser settings, Google controls linked above, and any consent control displayed on this website. You may withdraw consent by changing those settings or clearing this website's stored browser data.",
+          zh: "你可以通过浏览器设置、上方 Google 控制入口，以及本网站显示的任何同意控制来管理 Cookie。你可以通过更改这些设置或清除本网站在浏览器中保存的数据来撤回同意。",
+        },
+        {
+          en: "For privacy requests, please contact yaoshuntoys@gmail.com and include your company name, request details, and the email address used in the inquiry. We may update this policy when website features, advertising tools, or legal requirements change.",
+          zh: "隐私请求请联系 yaoshuntoys@gmail.com，并附公司名称、请求详情以及询盘时使用的邮箱。若网站功能、广告工具或法律要求变化，我们可能更新本政策。",
+        },
+      ],
+    },
+  ],
+} as const;

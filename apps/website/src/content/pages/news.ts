@@ -5,7 +5,7 @@ const certImage4 = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaos
 const certImage5 = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/news/cert-5.webp";
 const certImage6 = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/news/cert-6.webp";
 
-import type { NewsArticleSeed } from "@/content/site-relaunch";
+import type { NewsArticleSeed } from "@/content/types";
 
 export const newsArticles: NewsArticleSeed[] = [
   {

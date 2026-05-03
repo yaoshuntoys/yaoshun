@@ -1,5 +1,5 @@
-import {SiteStructuredData} from '@/components/structured-data';
-import {SiteShell} from '@/components/site-shell';
+import {SiteStructuredData} from '@/components/seo/structured-data';
+import {SiteShell} from '@/components/layout/site-shell';
 import {getLocaleFromParams, localeRegistry, locales} from '@/lib/i18n';
 
 export function generateStaticParams() {

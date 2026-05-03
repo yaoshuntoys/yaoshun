@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "pnpm --filter @yaoshun/website dev",
     "dev:website": "pnpm --filter @yaoshun/website dev",
+    "lint": "pnpm -r lint",
     "build": "pnpm -r build",
     "typecheck": "pnpm -r typecheck"
   }

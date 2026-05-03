@@ -9,18 +9,18 @@ import {
   Sparkles,
   TentTree,
 } from "lucide-react";
-import Image from "@/components/smart-image";
+import Image from "@/components/media/smart-image";
 import Link from "next/link";
 
-import { PageHero } from "@/components/page-hero";
-import { StructuredData } from "@/components/structured-data";
+import { PageHero } from "@/components/sections/page-hero";
+import { StructuredData } from "@/components/seo/structured-data";
 import { newsContent } from "@/content/site";
 import { buildPageMetadata } from "@/lib/metadata";
 import {
   formatPublishedDate,
   getNewsCategoryLabel,
   getNewsList,
-} from "@/lib/relaunch-data";
+} from "@/lib/site-data";
 import { getLocaleFromParams, t } from "@/lib/i18n";
 import { toAbsoluteUrl } from "@/lib/site-config";
 

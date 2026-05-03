@@ -1,117 +1,138 @@
 export const termsContent = {
   seo: {
     title: {
-      en: 'Terms of Service | Dongguan Yaoshun Technology Co., Ltd. | 东莞市尧顺科技有限公司',
-      zh: '服务条款 | 东莞市尧顺科技有限公司 | Dongguan Yaoshun Technology Co., Ltd.'
+      en: "User Agreement | Dongguan Yaoshun Technology Co., Ltd.",
+      zh: "用户协议 | 东莞市尧顺科技有限公司",
     },
     description: {
-      en: 'Review the website terms governing business inquiries, quotation requests, content use, and OEM/ODM cooperation with Dongguan Yaoshun Technology Co., Ltd.',
-      zh: '查看东莞市尧顺科技有限公司官网关于商务询盘、报价申请、内容使用及 OEM/ODM 合作的服务条款。'
+      en: "Simple user agreement for this B2B toy manufacturing website, covering website use, inquiries, quotations, product information, advertising landing pages, and project documents.",
+      zh: "本 B2B 玩具制造网站的简明用户协议，涵盖网站使用、询盘、报价、产品信息、广告落地页和项目文件。",
     },
     keywords: {
       en: [
-        'terms of service',
-        'website terms',
-        'b2b supplier terms',
-        'quote request terms',
-        'OEM ODM cooperation terms',
-        'manufacturing website legal terms'
+        "user agreement",
+        "terms of service",
+        "B2B website terms",
+        "quote request terms",
+        "OEM ODM toy manufacturer",
       ],
       zh: [
-        '服务条款',
-        '网站条款',
-        '供应商条款',
-        '报价申请条款',
-        'OEM ODM合作条款',
-        '官网法律说明'
-      ]
-    }
+        "用户协议",
+        "服务条款",
+        "B2B网站条款",
+        "报价申请条款",
+        "OEM ODM玩具工厂",
+      ],
+    },
   },
   hero: {
-    eyebrow: {en: 'Legal Document', zh: '法律文件'},
-    title: {en: 'Terms of Service', zh: '服务条款'},
+    eyebrow: {en: "Legal Document", zh: "法律文件"},
+    title: {en: "User Agreement", zh: "用户协议"},
     description: {
-      en: 'These terms define website use, inquiry submission rules, and legal boundaries for toy OEM/ODM cooperation discussions.',
-      zh: '本条款用于说明网站使用规则、询盘提交规范，以及围绕玩具 OEM/ODM 合作沟通的法律边界。'
-    }
+      en: "This agreement explains the basic rules for using our B2B website, submitting inquiries, reviewing product information, and contacting us through advertising landing pages.",
+      zh: "本协议说明使用本 B2B 网站、提交询盘、查看产品信息以及通过广告落地页联系我们时适用的基本规则。",
+    },
   },
   policyMeta: {
-    effectiveDateLabel: {en: 'Effective Date', zh: '生效日期'},
-    updatedDateLabel: {en: 'Last Updated', zh: '最近更新'},
-    effectiveDate: {en: 'January 1, 2026', zh: '2026 年 1 月 1 日'},
-    updatedDate: {en: 'April 4, 2026', zh: '2026 年 4 月 4 日'}
-  },
-  summaryCard: {
-    title: {en: 'Business Website Scope', zh: '官网使用范围'},
-    text: {
-      en: 'This website is for B2B communication, quotation requests, and capability review. Website content does not constitute a binding sales contract by itself.',
-      zh: '本网站用于 B2B 商务沟通、报价申请与能力评估；网站内容本身不直接构成最终销售合同。'
-    },
-    note: {en: 'Contract terms are confirmed separately in orders or agreements.', zh: '最终交易条款以订单或双方协议为准。'}
+    effectiveDateLabel: {en: "Effective Date", zh: "生效日期"},
+    updatedDateLabel: {en: "Last Updated", zh: "最近更新"},
+    effectiveDate: {en: "January 1, 2026", zh: "2026 年 1 月 1 日"},
+    updatedDate: {en: "May 3, 2026", zh: "2026 年 5 月 3 日"},
   },
   sections: [
     {
-      title: {en: '1. Website Use', zh: '1. 网站使用'},
-      text: {
-        en: 'Visitors may access website information only for lawful business purposes related to product sourcing, project evaluation, and cooperation communication.',
-        zh: '访客仅可基于合法商务目的访问网站内容，包括选品评估、项目沟通与合作洽谈。'
-      }
+      title: {en: "1. Acceptance And Scope", zh: "1. 接受协议与适用范围"},
+      paragraphs: [
+        {
+          en: "This website is operated by Dongguan Yaoshun Technology Co., Ltd. for B2B communication, product reference, quotation requests, sample planning, factory review, and OEM/ODM cooperation discussions.",
+          zh: "本网站由东莞市尧顺科技有限公司运营，用于 B2B 商务沟通、产品参考、报价申请、样品规划、工厂了解和 OEM/ODM 合作洽谈。",
+        },
+        {
+          en: "By accessing the website, submitting a form, requesting a quote, or contacting us through a landing page, you agree to this User Agreement and the related Privacy Policy.",
+          zh: "当你访问网站、提交表单、申请报价，或通过落地页联系我们时，即表示你同意本用户协议及相关隐私政策。",
+        },
+      ],
     },
     {
-      title: {en: '2. Inquiry & Quote Requests', zh: '2. 询盘与报价申请'},
-      text: {
-        en: 'When submitting forms, visitors should provide accurate contact and project information. False, misleading, or unauthorized submissions may be rejected.',
-        zh: '访客提交表单时应提供真实的联系人与项目信息。对于虚假、误导或未经授权的信息提交，平台有权拒绝处理。'
-      }
+      title: {en: "2. Business Use And Submitted Information", zh: "2. 商务使用与提交信息"},
+      paragraphs: [
+        {
+          en: "The website is intended for adult business visitors, procurement teams, distributors, and brand owners. You should be authorized to submit company, contact, product, drawing, sample, target-market, and shipment information on behalf of your organization.",
+          zh: "本网站面向成年商务访客、采购团队、经销商和品牌方。你应获得授权代表所在组织提交公司、联系人、产品、图纸、样品、目标市场和出货信息。",
+        },
+        {
+          en: "You must not submit false leads, spam, unlawful product requests, counterfeit projects, sensitive personal data, children's personal data, payment card details, health data, or protected-category information.",
+          zh: "你不得提交虚假线索、垃圾询盘、违法产品需求、假冒项目、敏感个人信息、儿童个人信息、银行卡信息、健康数据或受保护类别信息。",
+        },
+      ],
     },
     {
-      title: {en: '3. Product & Capability Information', zh: '3. 产品与能力信息'},
-      text: {
-        en: 'Published specifications and references are for general guidance only. Final technical scope shall be confirmed through drawings, samples, approved BOM/material plans, and signed documents.',
-        zh: '网站展示的规格与案例仅供一般参考；最终技术范围以图纸、样品、BOM/材料方案及双方确认文件为准。'
-      }
+      title: {en: "3. Product Information And Quotations", zh: "3. 产品信息与报价"},
+      paragraphs: [
+        {
+          en: "Product photos, specifications, materials, MOQ references, lead-time ranges, certification references, prices, website content, and landing-page descriptions are provided for general business evaluation only.",
+          zh: "产品图片、规格、材料、起订量参考、交期范围、认证参考、价格、网站内容和落地页说明仅用于一般商务评估。",
+        },
+        {
+          en: "Final specifications, prices, payment terms, samples, tooling, packaging, testing scope, delivery timing, and compliance documents must be confirmed in written quotations, pro forma invoices, purchase orders, or signed agreements.",
+          zh: "最终规格、价格、付款条件、样品、模具、包装、检测范围、交付时间和合规文件，需以书面报价、形式发票、采购订单或签署协议确认。",
+        },
+      ],
     },
     {
-      title: {en: '4. Intellectual Property', zh: '4. 知识产权'},
-      text: {
-        en: 'Text, images, and layouts are owned by Dongguan Yaoshun Technology Co., Ltd. or respective right holders. Unauthorized commercial reuse, scraping, or misleading reproduction is prohibited.',
-        zh: '网站文字、图片与版式归东莞市尧顺科技有限公司或相应权利人所有。未经授权的商业转载、抓取或误导性使用均被禁止。'
-      }
+      title: {en: "4. Advertising Landing Pages And Privacy", zh: "4. 广告落地页与隐私"},
+      paragraphs: [
+        {
+          en: "Some visitors may arrive through Google Ads or other paid placements. Landing pages may use analytics, campaign parameters, conversion tracking, and lead-measurement events to understand advertising performance.",
+          zh: "部分访客可能通过 Google Ads 或其他付费展示进入网站。落地页可能使用分析、广告系列参数、转化追踪和线索衡量事件，以了解广告效果。",
+        },
+        {
+          en: "The collection and use of website, form, cookie, analytics, and advertising measurement data are explained in the Privacy Policy. Where consent is required, related processing may depend on your consent choices.",
+          zh: "网站、表单、Cookie、分析和广告衡量数据的收集与使用方式见隐私政策。在需要同意的场景下，相关处理可能取决于你的同意选择。",
+        },
+        {
+          en: "Advertising text, landing-page examples, first-response targets, and automatic form confirmations do not create a final quote, delivery promise, certification guarantee, or sales contract.",
+          zh: "广告文案、落地页示例、首次回复目标和表单自动确认不构成最终报价、交付承诺、认证保证或销售合同。",
+        },
+      ],
     },
     {
-      title: {en: '5. Orders, Samples & Production', zh: '5. 订单、打样与生产'},
-      text: {
-        en: 'Sampling, tooling, production, logistics, and after-sales commitments are governed by mutually signed orders or agreements, including price, schedule, quality criteria, and payment terms.',
-        zh: '打样、开模、量产、物流及售后承诺以双方签署的订单或协议为准，包括价格、排期、质量标准与付款条款。'
-      }
+      title: {en: "5. Website Content And Intellectual Property", zh: "5. 网站内容与知识产权"},
+      paragraphs: [
+        {
+          en: "Website text, images, product pages, articles, layouts, logos, and visual materials belong to Dongguan Yaoshun Technology Co., Ltd. or their respective rights holders.",
+          zh: "网站文字、图片、产品页面、文章、版式、标识和视觉材料归东莞市尧顺科技有限公司或相应权利人所有。",
+        },
+        {
+          en: "You may view and share page links for legitimate business evaluation. Unauthorized commercial reuse, misleading copying, scraping, system probing, reverse engineering, or use suggesting false endorsement is prohibited.",
+          zh: "你可基于合法商务评估查看并分享页面链接。未经授权的商业复用、误导性复制、抓取内容、探测系统、逆向工程或暗示虚假背书的使用均被禁止。",
+        },
+      ],
     },
     {
-      title: {en: '6. Liability & Updates', zh: '6. 责任限制与更新'},
-      text: {
-        en: 'Yaoshun may update website content and legal notices at any time. Visitors should verify critical commercial details directly with the company before making procurement decisions.',
-        zh: '尧顺可根据业务变化更新网站内容与法律说明；访客在采购决策前应与公司直接确认关键商务信息。'
-      }
+      title: {en: "6. Disclaimers, Project Documents And Contact", zh: "6. 免责声明、项目文件与联系"},
+      paragraphs: [
+        {
+          en: "We try to keep website information accurate and useful, but content may change due to product updates, material availability, tooling feasibility, testing requirements, shipping conditions, or market rules.",
+          zh: "我们尽力保持网站信息准确有用，但内容可能因产品更新、材料供应、开模可行性、检测要求、运输条件或市场规则发生变化。",
+        },
+        {
+          en: "To the maximum extent permitted by applicable law, we are not responsible for indirect, incidental, consequential, punitive, or lost-profit damages arising from website use, delayed communication, incomplete inquiry information, or reliance on unconfirmed website or advertising content.",
+          zh: "在适用法律允许的最大范围内，我们不对因网站使用、沟通延迟、询盘信息不完整，或依赖未经确认的网站或广告内容而产生的间接、附带、后果性、惩罚性或利润损失承担责任。",
+        },
+        {
+          en: "Nothing in this agreement excludes liability that cannot be excluded under applicable law.",
+          zh: "本协议不排除适用法律下不得排除的责任。",
+        },
+        {
+          en: "If a quotation, purchase order, pro forma invoice, tooling agreement, NDA, quality standard, or signed contract conflicts with this User Agreement, the project-specific written document prevails.",
+          zh: "若报价、采购订单、形式发票、模具协议、保密协议、质量标准或签署合同与本用户协议冲突，则以项目专属书面文件为准。",
+        },
+        {
+          en: "For legal or commercial clarification, contact yaoshuntoys@gmail.com. We may update this User Agreement when website features, advertising platform requirements, legal rules, or business operations change.",
+          zh: "如需法律或商务说明，请联系 yaoshuntoys@gmail.com。若网站功能、广告平台要求、法律规则或业务运营变化，我们可能更新本用户协议。",
+        },
+      ],
     },
-    {
-      title: {en: '7. Prohibited Conduct', zh: '7. 禁止行为'},
-      text: {
-        en: 'Users may not submit unlawful content, attempt unauthorized system access, or use this website for spam, fraud, or infringement activities.',
-        zh: '用户不得提交违法内容，不得尝试未授权访问系统，也不得将本网站用于垃圾信息、欺诈或侵权活动。'
-      }
-    },
-    {
-      title: {en: '8. Contact & Governing Communication', zh: '8. 联系方式与适用沟通'},
-      text: {
-        en: 'For legal or commercial clarification, contact yaoshuntoys@gmail.com. If terms conflict with a signed agreement, the signed agreement prevails.',
-        zh: '如需法律或商务条款说明，请联系 yaoshuntoys@gmail.com。若本条款与已签署协议冲突，以已签署协议为准。'
-      }
-    }
   ],
-  journey: {
-    title: {en: 'Continue To Related Pages', zh: '继续查看相关页面'},
-    description: {
-      en: 'After reading the service terms, continue to privacy handling, direct contact, or company background pages.',
-      zh: '查看服务条款后，可继续浏览隐私说明、联系页面或企业介绍。'
-    }
-  }
-};
+} as const;

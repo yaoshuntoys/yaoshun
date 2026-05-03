@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "@/components/smart-image";
+import Image from "@/components/media/smart-image";
 import {useState} from "react";
 import {ChevronLeft, ChevronRight, Search} from "lucide-react";
 

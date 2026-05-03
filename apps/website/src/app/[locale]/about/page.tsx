@@ -19,18 +19,18 @@ import {
   Truck,
   UserRound,
 } from "lucide-react";
-import Image from "@/components/smart-image";
+import Image from "@/components/media/smart-image";
 import Link from "next/link";
 
-import {AboutCertificateGallery} from "@/components/about-certificate-gallery";
-import {StructuredData} from "@/components/structured-data";
-import {siteCopy} from "@/components/site-shell.data";
+import {AboutCertificateGallery} from "@/components/sections/about-certificate-gallery";
+import {StructuredData} from "@/components/seo/structured-data";
+import {siteCopy} from "@/components/layout/site-shell.data";
 import {aboutContent} from "@/content/site";
 import {buildPageMetadata} from "@/lib/metadata";
 import {getLocaleFromParams, t} from "@/lib/i18n";
 import {contactFormPath} from "@/lib/routes";
 import {toAbsoluteUrl} from "@/lib/site-config";
-import {aboutCertificateCopy, certificateItems, factoryItems} from "./data";
+import {aboutCertificateCopy, certificateItems, factoryItems} from "@/content/pages/about";
 
 const heroFactItems = [
   {

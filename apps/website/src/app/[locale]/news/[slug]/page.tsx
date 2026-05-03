@@ -7,12 +7,12 @@ import {
   FileText,
   Share2,
 } from "lucide-react";
-import Image from "@/components/smart-image";
+import Image from "@/components/media/smart-image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { StructuredData } from "@/components/structured-data";
-import { Breadcrumbs } from "@/components/marketing";
+import { StructuredData } from "@/components/seo/structured-data";
+import { Breadcrumbs } from "@/components/ui/marketing";
 import { buildMetadata } from "@/lib/metadata";
 import {
   findNewsArticle,
@@ -20,10 +20,10 @@ import {
   getAdjacentNews,
   getNewsCategoryLabel,
   getRecentNews,
-} from "@/lib/relaunch-data";
+} from "@/lib/site-data";
 import { getLocaleFromParams, locales, t, type Locale } from "@/lib/i18n";
 import { toAbsoluteUrl } from "@/lib/site-config";
-import { newsArticles } from "../data";
+import { newsArticles } from "@/content/pages/news";
 
 function copy(locale: Locale) {
   return {
