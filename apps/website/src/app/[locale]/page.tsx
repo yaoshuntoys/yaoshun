@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "@/styles/pages/home.css";
 import {
   ArrowRight,
   Brain,
@@ -22,6 +23,7 @@ import Link from "next/link";
 
 import { HomeLeadForm } from "@/components/forms/home-lead-form";
 import { PageHero } from "@/components/sections/page-hero";
+import { StructuredData } from "@/components/seo/structured-data";
 import { siteCopy } from "@/components/layout/site-shell.data";
 import { homeContent } from "@/content/site";
 import { buildPageMetadata } from "@/lib/metadata";
@@ -29,6 +31,7 @@ import { getLocaleFromParams, t, type Locale } from "@/lib/i18n";
 import { getHomeFeaturedShowcaseCatalog } from "@/lib/site-data";
 import { productPath } from "@/lib/routes";
 import { homePageImages } from "@/content/pages/home";
+import { siteUrl, toAbsoluteUrl } from "@/lib/site-config";
 
 function copy(locale: Locale) {
   return {
@@ -142,6 +145,7 @@ export default async function HomePage({
 }) {
   const locale = await getLocaleFromParams(params);
   const text = copy(locale);
+  const pageUrl = toAbsoluteUrl(`/${locale}`);
   const featuredProducts = getHomeFeaturedShowcaseCatalog().map((item) => ({
     title: t(locale, item.label),
     meta: t(locale, item.summary),
@@ -149,9 +153,40 @@ export default async function HomePage({
     image: item.images[0] || "",
     productId: item.product.productId,
   }));
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name:
+        locale === "zh"
+          ? "东莞市尧顺科技有限公司首页"
+          : "Dongguan Yaoshun Technology Home",
+      description: text.heroText,
+      url: pageUrl,
+      inLanguage: locale === "zh" ? "zh-CN" : "en-US",
+      about: {
+        "@id": `${siteUrl}#organization`,
+      },
+      isPartOf: {
+        "@id": `${pageUrl}#website`,
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: locale === "zh" ? "首页精选拼搭玩具" : "Featured Building Toys",
+      itemListElement: featuredProducts.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.title,
+        url: toAbsoluteUrl(item.href),
+      })),
+    },
+  ];
 
   return (
     <div className="home-page">
+      <StructuredData data={structuredData} />
       <PageHero
         afterContent={
           <div className="home-hero-surface-anchor">
@@ -210,6 +245,7 @@ export default async function HomePage({
         copyClassName="home-hero-copy"
         gridClassName="home-hero-grid"
         innerClassName="home-hero-inner"
+        quality={75}
         sectionClassName="home-hero-section"
       >
         <p className="home-eyebrow">{text.eyebrow}</p>
@@ -224,11 +260,25 @@ export default async function HomePage({
         <p className="home-hero-text">{text.heroText}</p>
 
         <div className="home-hero-actions">
-          <Link className="home-primary-cta" href={`/${locale}/products`}>
+          <Link
+            className="home-primary-cta"
+            data-track-destination={`/${locale}/products`}
+            data-track-event="cta_click"
+            data-track-label="explore_products"
+            data-track-location="home_hero"
+            href={`/${locale}/products`}
+          >
             <span>{text.explore}</span>
             <ArrowRight size={16} strokeWidth={2.25} />
           </Link>
-          <Link className="home-secondary-cta" href={`/${locale}/about`}>
+          <Link
+            className="home-secondary-cta"
+            data-track-destination={`/${locale}/about`}
+            data-track-event="cta_click"
+            data-track-label="learn_more"
+            data-track-location="home_hero"
+            href={`/${locale}/about`}
+          >
             <span>{text.learnMore}</span>
             <span className="home-secondary-dot" />
           </Link>
@@ -290,6 +340,10 @@ export default async function HomePage({
           </div>
           <Link
             className="home-inline-link view-accent-link"
+            data-track-destination={`/${locale}/products`}
+            data-track-event="cta_click"
+            data-track-label="view_all_products"
+            data-track-location="home_bestsellers"
             href={`/${locale}/products`}
           >
             <span>{text.viewAllProducts}</span>
@@ -313,6 +367,7 @@ export default async function HomePage({
                     alt={item.title}
                     className="home-section-image home-product-image"
                     fill
+                    quality={75}
                     sizes="(min-width: 1280px) 18rem, (min-width: 768px) 24vw, 100vw"
                     src={item.image}
                   />
@@ -408,6 +463,7 @@ export default async function HomePage({
             alt={text.whyImageAlt}
             className="home-section-image home-why-image"
             fill
+            quality={75}
             sizes="(min-width: 1024px) 36vw, 100vw"
             src={homePageImages.why}
           />
@@ -451,6 +507,10 @@ export default async function HomePage({
 
           <Link
             className="home-primary-cta home-about-cta"
+            data-track-destination={`/${locale}/about`}
+            data-track-event="cta_click"
+            data-track-label="about_learn_more"
+            data-track-location="home_about"
             href={`/${locale}/about`}
           >
             <span>{text.aboutCta}</span>
@@ -464,6 +524,7 @@ export default async function HomePage({
               alt={text.factoryAlt}
               className="home-section-image home-about-image"
               fill
+              quality={75}
               sizes="(min-width: 1024px) 42vw, 100vw"
               src={homePageImages.about}
             />

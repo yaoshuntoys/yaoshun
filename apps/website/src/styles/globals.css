@@ -18,9 +18,47 @@
   --secondary-shadow: 0 16px 34px -26px rgba(18, 41, 103, 0.18);
   --accent: #ff9700;
   --shadow: 0 18px 42px -30px rgba(20, 44, 119, 0.14);
-  --font-heading: var(--font-outfit, "Outfit"), var(--font-plus-jakarta-sans, "Plus Jakarta Sans"), "PingFang SC", "Microsoft YaHei", sans-serif;
-  --font-body: var(--font-plus-jakarta-sans, "Plus Jakarta Sans"), "PingFang SC", "Microsoft YaHei", sans-serif;
-  --font-label: var(--font-outfit, "Outfit"), var(--font-plus-jakarta-sans, "Plus Jakarta Sans"), "PingFang SC", "Microsoft YaHei", sans-serif;
+  --safe-area-inline-start: env(safe-area-inset-left, 0px);
+  --safe-area-inline-end: env(safe-area-inset-right, 0px);
+  --site-safe-inline: calc(
+    24px + var(--safe-area-inline-start) + var(--safe-area-inline-end)
+  );
+  --site-container-width: calc(100% - var(--site-safe-inline));
+  --site-container-max-width: 1260px;
+  --site-container-narrow-max-width: 1120px;
+  --font-heading:
+    var(--font-outfit, "Outfit"),
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+  --font-body:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+  --font-label:
+    var(--font-outfit, "Outfit"),
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+}
+
+@media (min-width: 768px) {
+
+  :root {
+    --site-safe-inline: calc(
+      32px + var(--safe-area-inline-start) + var(--safe-area-inline-end)
+    );
+  }
+
 }
 
 html {
@@ -69,4 +107,16 @@ button {
 
 .font-display {
   font-family: var(--font-heading);
+}
+
+.site-container {
+  width: var(--site-container-width);
+  max-width: var(--site-container-max-width);
+  margin-inline: auto;
+}
+
+.site-container-narrow {
+  width: var(--site-container-width);
+  max-width: var(--site-container-narrow-max-width);
+  margin-inline: auto;
 }

@@ -1,4 +1,5 @@
 import type {Metadata} from "next";
+import "@/styles/pages/about.css";
 import type {ReactNode} from "react";
 import {
   ArrowRight,
@@ -599,7 +600,14 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
               <span>{text.heroTitleLine2}</span>
             </h1>
             <p className="about-hero-text">{text.heroText}</p>
-            <Link className="about-primary-cta" href="#about-advantages">
+            <Link
+              className="about-primary-cta"
+              data-track-destination="#about-advantages"
+              data-track-event="cta_click"
+              data-track-label="learn_more"
+              data-track-location="about_hero"
+              href="#about-advantages"
+            >
               <span>{text.learnMore}</span>
               <ArrowRight size={16} strokeWidth={2.15} />
             </Link>
@@ -666,6 +674,7 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
                   fill
                   sizes="(min-width: 1024px) 26vw, (min-width: 768px) 42vw, 100vw"
                   src={item.image}
+                  unoptimized={item.image.startsWith("http")}
                 />
               </div>
               <div className="about-factory-label">{item.title[locale]}</div>
@@ -816,7 +825,14 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
           <h2>{text.closingTitle}</h2>
         </div>
         <p className="about-section-copy">{text.closingText}</p>
-        <Link className="about-primary-cta" href={contactFormPath(locale)}>
+        <Link
+          className="about-primary-cta"
+          data-track-destination={contactFormPath(locale)}
+          data-track-event="cta_click"
+          data-track-label="contact_us"
+          data-track-location="about_closing"
+          href={contactFormPath(locale)}
+        >
           <span>{text.contactUs}</span>
           <ArrowRight size={16} strokeWidth={2.15} />
         </Link>

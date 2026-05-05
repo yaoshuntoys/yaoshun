@@ -1,4 +1,5 @@
 import type {Metadata} from "next";
+import "@/styles/pages/solutions.css";
 import {
   ArrowRight,
   Boxes,
@@ -414,7 +415,14 @@ export default async function SolutionsPage({params}: {params: Promise<{locale: 
         <p className="solutions-eyebrow">{text.eyebrow}</p>
         <h1 className="solutions-hero-title">{text.heroTitle}</h1>
         <p className="solutions-hero-text">{text.heroText}</p>
-        <Link className="solutions-primary-cta" href={contactFormPath(locale)}>
+        <Link
+          className="solutions-primary-cta"
+          data-track-destination={contactFormPath(locale)}
+          data-track-event="cta_click"
+          data-track-label="discuss_custom_project"
+          data-track-location="solutions_hero"
+          href={contactFormPath(locale)}
+        >
           <span>{text.contact}</span>
           <ArrowRight size={16} strokeWidth={2.15} />
         </Link>
@@ -460,7 +468,14 @@ export default async function SolutionsPage({params}: {params: Promise<{locale: 
                     <li key={bullet.en}>{bullet[locale]}</li>
                   ))}
                 </ul>
-                <Link className="solutions-inline-link" href={contactFormPath(locale)}>
+                <Link
+                  className="solutions-inline-link"
+                  data-track-destination={contactFormPath(locale)}
+                  data-track-event="cta_click"
+                  data-track-label={item.key}
+                  data-track-location="solutions_capability_card"
+                  href={contactFormPath(locale)}
+                >
                   <span>{text.contact}</span>
                   <ArrowRight size={15} strokeWidth={2.1} />
                 </Link>
@@ -489,7 +504,14 @@ export default async function SolutionsPage({params}: {params: Promise<{locale: 
             <li>{locale === "zh" ? "塑料制品、PVC / PU / ABS / PC / 尼龙管材、结构件与塑胶电子外壳协同开发" : "Custom plastic products, PVC / PU / ABS / PC / nylon tubing, structural parts, and smart plastic housings"}</li>
             <li>{locale === "zh" ? "24 小时内初步回复、常规 7-15 天交期规划、检测资料与出口协同" : "24-hour initial response, typical 7-15 day lead-time planning, reports, and export coordination"}</li>
           </ul>
-          <Link className="solutions-primary-cta" href={contactFormPath(locale)}>
+          <Link
+            className="solutions-primary-cta"
+            data-track-destination={contactFormPath(locale)}
+            data-track-event="cta_click"
+            data-track-label="start_custom_discussion"
+            data-track-location="solutions_banner"
+            href={contactFormPath(locale)}
+          >
             <span>{text.customAction}</span>
             <ArrowRight size={16} strokeWidth={2.15} />
           </Link>

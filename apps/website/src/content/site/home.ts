@@ -15,29 +15,29 @@ export const homeContent = {
         'Dongguan Yaoshun Technology',
         'Dongguan Yaoshun Technology Co., Ltd.',
         'Yaoshun toy manufacturer',
-        'toy manufacturer',
-        'toy manufacturer china',
-        'b2b toy supplier',
         'educational toy manufacturer',
         'interlocking toy manufacturer',
-        'building block toy supplier',
-        'oem odm toy factory',
-        'plastic toy manufacturer',
-        'custom toy production'
+        'interlocking building toy supplier',
+        'building block toy OEM ODM',
+        'custom building toy factory',
+        'plastic building toy manufacturer',
+        'Dongguan toy manufacturing company',
+        'b2b toy supplier china',
+        'toy manufacturing company'
       ],
       zh: [
         '东莞市尧顺科技有限公司',
         '东莞市尧顺科技',
         '尧顺玩具制造',
-        '玩具厂家',
-        '玩具制造工厂',
-        'B2B玩具供应商',
         '益智玩具厂家',
+        '拼接玩具厂家',
         '拼插玩具厂家',
-        '过家家玩具厂家',
-        'OEM ODM玩具工厂',
-        '塑胶玩具生产厂家',
-        '外贸玩具工厂'
+        '积木拼装玩具工厂',
+        '玩具OEM ODM工厂',
+        '塑胶拼搭玩具厂家',
+        '东莞玩具制造企业',
+        'B2B玩具外贸工厂',
+        '拼插玩具供应商'
       ]
     }
   },

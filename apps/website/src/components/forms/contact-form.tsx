@@ -21,6 +21,7 @@ type ContactFormProps = {
 
 export function ContactForm({locale, labels}: ContactFormProps) {
   const [submitState, setSubmitState] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [hasStarted, setHasStarted] = useState(false);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -47,20 +48,36 @@ export function ContactForm({locale, labels}: ContactFormProps) {
         }),
       });
 
-      ok = response.ok;
+      if (!response.ok) {
+        trackEvent("form_submit_error", {
+          error_type: "response_error",
+          form_location: "contact_page",
+          lead_type: "contact_form",
+          locale,
+          status_code: response.status,
+        });
+        ok = false;
+      } else {
+        ok = true;
+      }
     } catch {
+      trackEvent("form_submit_error", {
+        error_type: "network_error",
+        form_location: "contact_page",
+        lead_type: "contact_form",
+        locale,
+      });
       ok = false;
     }
 
-    trackEvent("generate_lead", {
-      form_location: "contact_page",
-      locale,
-      has_subject: false,
-      has_company: false,
-      lead_type: "contact_form",
-    });
-
     if (ok) {
+      trackEvent("generate_lead", {
+        form_location: "contact_page",
+        has_company: false,
+        has_subject: false,
+        lead_type: "contact_form",
+        locale,
+      });
       reportGoogleAdsLeadConversion({currency: "CNY", value: 1});
       setSubmitState("success");
       form.reset();
@@ -71,7 +88,22 @@ export function ContactForm({locale, labels}: ContactFormProps) {
   }
 
   return (
-    <form className="grid gap-4" onSubmit={handleSubmit}>
+    <form
+      className="grid gap-4"
+      onFocusCapture={() => {
+        if (hasStarted) {
+          return;
+        }
+
+        setHasStarted(true);
+        trackEvent("form_start", {
+          form_location: "contact_page",
+          lead_type: "contact_form",
+          locale,
+        });
+      }}
+      onSubmit={handleSubmit}
+    >
       <div className="grid gap-4 md:grid-cols-2">
         <label className="grid gap-2">
           <span className="text-[0.92rem] font-bold text-[#17306e]">{t(locale, labels.name.label)}</span>

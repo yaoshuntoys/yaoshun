@@ -19,7 +19,7 @@ export function TawkScript() {
   }
 
   return (
-    <Script id="tawk-to-script" strategy="afterInteractive">
+    <Script id="tawk-to-script" strategy="lazyOnload">
       {`
         (function() {
           if (window.matchMedia('(max-width: 767.98px)').matches) {

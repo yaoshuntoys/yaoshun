@@ -1,4 +1,6 @@
 import type {Metadata} from "next";
+import "@/styles/pages/faq.css";
+import {FaqAccordionItem} from "@/components/sections/faq-accordion-item";
 import {Breadcrumbs} from "@/components/ui/marketing";
 import {StructuredData} from "@/components/seo/structured-data";
 import {faqContent} from "@/content/site";
@@ -71,6 +73,7 @@ export default async function FaqPage({params}: {params: Promise<{locale: string
             {label: {en: "FAQ", zh: "常见问题"}},
           ]}
           locale={locale}
+          trackingLocation="faq_breadcrumbs"
         />
       </div>
 
@@ -83,13 +86,13 @@ export default async function FaqPage({params}: {params: Promise<{locale: string
 
           <div className="faq-accordion-list">
             {faqItems.map((item, index) => (
-              <details className="faq-accordion-item" key={item.question.en} open={index === 0}>
-                <summary>
-                  <span>{item.question[locale]}</span>
-                  <span className="faq-accordion-icon" aria-hidden="true">+</span>
-                </summary>
-                <p className="faq-accordion-answer">{item.answer[locale]}</p>
-              </details>
+              <FaqAccordionItem
+                answer={item.answer[locale]}
+                defaultOpen={index === 0}
+                key={item.question.en}
+                locale={locale}
+                question={item.question[locale]}
+              />
             ))}
           </div>
         </div>

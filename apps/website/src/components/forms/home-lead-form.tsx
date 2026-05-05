@@ -2,11 +2,13 @@
 
 import {type FormEvent, useState} from "react";
 
+import {reportGoogleAdsLeadConversion, trackEvent} from "@/lib/analytics";
 import {t, type Locale} from "@/lib/i18n";
 import {formFeedbackBaseClass, inputClass, primaryButtonClass, textareaClass} from "@/lib/ui";
 
 export function HomeLeadForm({locale}: {locale: Locale}) {
   const [state, setState] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [hasStarted, setHasStarted] = useState(false);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -30,19 +32,55 @@ export function HomeLeadForm({locale}: {locale: Locale}) {
       });
 
       if (!response.ok) {
+        trackEvent("form_submit_error", {
+          error_type: "response_error",
+          form_location: "home_page",
+          lead_type: "home_lead_form",
+          locale,
+          status_code: response.status,
+        });
         setState("error");
         return;
       }
 
+      trackEvent("generate_lead", {
+        form_location: "home_page",
+        has_company: false,
+        has_subject: false,
+        lead_type: "home_lead_form",
+        locale,
+      });
+      reportGoogleAdsLeadConversion({currency: "CNY", value: 1});
       setState("success");
       form.reset();
     } catch {
+      trackEvent("form_submit_error", {
+        error_type: "network_error",
+        form_location: "home_page",
+        lead_type: "home_lead_form",
+        locale,
+      });
       setState("error");
     }
   }
 
   return (
-    <form className="grid gap-4" onSubmit={handleSubmit}>
+    <form
+      className="grid gap-4"
+      onFocusCapture={() => {
+        if (hasStarted) {
+          return;
+        }
+
+        setHasStarted(true);
+        trackEvent("form_start", {
+          form_location: "home_page",
+          lead_type: "home_lead_form",
+          locale,
+        });
+      }}
+      onSubmit={handleSubmit}
+    >
       <div className="grid gap-4 md:grid-cols-2">
         <input
           className={inputClass}

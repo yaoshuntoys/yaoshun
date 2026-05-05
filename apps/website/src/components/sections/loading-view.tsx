@@ -3,7 +3,7 @@ export function LoadingView() {
     <section
       aria-live="polite"
       aria-label="Loading"
-      className="mx-auto flex min-h-screen w-[min(1260px,calc(100%-32px))] items-center justify-center py-0"
+      className="site-container flex min-h-screen items-center justify-center py-0"
     >
       <div className="flex items-center justify-center">
         <div className="relative flex h-11 w-11 items-center justify-center">

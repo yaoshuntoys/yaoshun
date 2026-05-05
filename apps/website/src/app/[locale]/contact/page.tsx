@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "@/styles/pages/contact.css";
 import {
   ArrowRight,
   Clock3,
@@ -164,6 +165,10 @@ function copy(locale: "en" | "zh") {
   };
 }
 
+function telephoneHref(phone: string) {
+  return `tel:${phone.replace(/[^\d+]/g, "")}`;
+}
+
 export default async function ContactPage({
   params,
 }: {
@@ -249,12 +254,18 @@ export default async function ContactPage({
             { label: { en: "Contact", zh: "联系我们" } },
           ]}
           locale={locale}
+          trackingLocation="contact_breadcrumbs"
         />
         <p className="contact-eyebrow">{contactCopy.eyebrow[locale]}</p>
         <h1 className="contact-hero-title">{text.heroTitle}</h1>
         <p className="contact-hero-text">{contactCopy.description[locale]}</p>
         <Link
           className="contact-primary-cta"
+          data-track-destination={`mailto:${siteCopy.contact.email}`}
+          data-track-event="contact_click"
+          data-track-label="get_in_touch"
+          data-track-location="contact_hero"
+          data-track-method="email"
           href={`mailto:${siteCopy.contact.email}`}
         >
           <span>{text.getInTouch}</span>
@@ -274,9 +285,37 @@ export default async function ContactPage({
                 <h3>{item.title[locale]}</h3>
               </div>
               <p className="contact-card-value">
-                {typeof item.value === "string"
-                  ? item.value
-                  : item.value[locale]}
+                {item.icon === Mail ? (
+                  <a
+                    className="transition hover:text-[#2563ff]"
+                    data-track-event="contact_click"
+                    data-track-label="contact_card_email"
+                    data-track-location="contact_cards"
+                    data-track-method="email"
+                    href={`mailto:${siteCopy.contact.email}`}
+                  >
+                    {typeof item.value === "string"
+                      ? item.value
+                      : item.value[locale]}
+                  </a>
+                ) : item.icon === Phone ? (
+                  <a
+                    className="transition hover:text-[#2563ff]"
+                    data-track-event="contact_click"
+                    data-track-label="contact_card_phone"
+                    data-track-location="contact_cards"
+                    data-track-method="phone"
+                    href={telephoneHref(siteCopy.contact.phone)}
+                  >
+                    {typeof item.value === "string"
+                      ? item.value
+                      : item.value[locale]}
+                  </a>
+                ) : (
+                  typeof item.value === "string"
+                    ? item.value
+                    : item.value[locale]
+                )}
               </p>
               <p className="contact-card-note">{item.note[locale]}</p>
             </article>
@@ -402,7 +441,14 @@ export default async function ContactPage({
               );
             })}
           </div>
-          <Link className="contact-secondary-cta" href={`/${locale}/solutions`}>
+          <Link
+            className="contact-secondary-cta"
+            data-track-destination={`/${locale}/solutions`}
+            data-track-event="cta_click"
+            data-track-label="learn_more_solutions"
+            data-track-location="contact_solutions"
+            href={`/${locale}/solutions`}
+          >
             <span>{text.solutionsAction}</span>
             <ArrowRight size={16} strokeWidth={2.1} />
           </Link>
@@ -422,6 +468,10 @@ export default async function ContactPage({
           </div>
           <Link
             className="contact-inline-link view-accent-link contact-faq-link"
+            data-track-destination={`/${locale}/faq`}
+            data-track-event="cta_click"
+            data-track-label="view_all_faq"
+            data-track-location="contact_faq"
             href={`/${locale}/faq`}
           >
             <span>{text.faqAction}</span>

@@ -1,0 +1,442 @@
+/* Shared page styles */
+
+.solutions-page,
+.news-page,
+.news-article-page,
+.contact-page {
+  display: grid;
+  gap: 6rem;
+}
+
+.solutions-page,
+.news-page,
+.contact-page,
+.product-detail-page {
+  padding-top: 0.15rem;
+}
+
+.solutions-hero,
+.news-hero,
+.contact-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 460px;
+}
+
+.solutions-hero-inner,
+.news-hero-inner,
+.contact-hero-inner {
+  display: grid;
+  gap: 1.6rem;
+  align-items: stretch;
+}
+
+.solutions-hero-copy,
+.news-hero-copy,
+.contact-hero-copy {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  padding: 1.6rem 0 2rem;
+}
+
+.solutions-eyebrow,
+.news-eyebrow,
+.contact-eyebrow,
+.contact-mini-eyebrow {
+  margin: 0;
+  color: #2563ff;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.solutions-hero-title,
+.news-hero-title,
+.contact-hero-title,
+.news-article-title {
+  margin: 0;
+  color: #142c74;
+  font-family: var(--font-heading);
+  letter-spacing: -0.06em;
+}
+
+.solutions-hero-title,
+.contact-hero-title {
+  max-width: 36rem;
+  font-size: clamp(3.2rem, 5vw, 4.6rem);
+  line-height: 0.98;
+}
+
+.solutions-hero-text,
+.news-hero-text,
+.contact-hero-text,
+.solutions-section-head p,
+.solutions-card-body p,
+.solutions-process-card p,
+.solutions-partner-item p,
+.news-count,
+.news-card-body p,
+.news-subscribe-copy p,
+.news-article-lead,
+.news-article-section-copy p,
+.contact-card p,
+.contact-panel-head p,
+.contact-solution-item p,
+.contact-assurance-item p,
+.contact-company-stat span {
+  margin: 0;
+  color: #4d618f;
+  line-height: 1.8;
+}
+
+.solutions-hero-text,
+.news-hero-text,
+.contact-hero-text {
+  max-width: 32rem;
+  font-size: 1.04rem;
+}
+
+.solutions-primary-cta,
+.contact-primary-cta,
+.contact-secondary-cta,
+.solutions-inline-link,
+.news-inline-link,
+.contact-inline-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: fit-content;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+.solutions-primary-cta,
+.contact-primary-cta,
+.contact-secondary-cta,
+.news-subscribe-form button {
+  min-height: 50px;
+  padding: 0 1.45rem;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563ff 0%, #1a43c9 100%);
+  color: #ffffff;
+  box-shadow: 0 18px 40px -26px rgba(37, 99, 255, 0.68);
+}
+
+.solutions-primary-cta span,
+.solutions-primary-cta svg,
+.contact-primary-cta span,
+.contact-primary-cta svg,
+.contact-secondary-cta span,
+.contact-secondary-cta svg {
+  color: #ffffff;
+}
+
+.solutions-primary-cta:hover,
+.contact-primary-cta:hover,
+.contact-secondary-cta:hover {
+  transform: translateY(-1px);
+  color: #ffffff;
+  box-shadow: 0 22px 46px -22px rgba(37, 99, 255, 0.72);
+}
+
+.solutions-primary-cta:hover span,
+.solutions-primary-cta:hover svg,
+.contact-primary-cta:hover span,
+.contact-primary-cta:hover svg,
+.contact-secondary-cta:hover span,
+.contact-secondary-cta:hover svg {
+  color: #ffffff;
+}
+
+.solutions-inline-link,
+.news-inline-link,
+.contact-inline-link {
+  min-height: 2rem;
+  color: #2563ff;
+}
+
+.solutions-inline-link:hover,
+.news-inline-link:hover,
+.contact-inline-link:hover {
+  color: #1a43c9;
+}
+
+.solutions-hero-visual,
+.news-hero-visual,
+.contact-hero-visual {
+  position: relative;
+  min-height: 420px;
+}
+
+.news-category-link,
+.products-category-link,
+.products-check-link,
+.news-article-back,
+.news-article-recent-card {
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.solutions-card,
+.news-card,
+.contact-card,
+.contact-form-panel,
+.contact-company-panel,
+.contact-faq-panel,
+.contact-solution-panel,
+.news-article-main,
+.news-article-sidecard {
+  border: 1px solid rgba(24, 56, 138, 0.08);
+  border-radius: 1.6rem;
+  background: #ffffff;
+  box-shadow: 0 18px 44px -34px rgba(18, 41, 103, 0.16);
+}
+
+.solutions-card-body h3,
+.news-card-body h3,
+.news-featured-topic h3,
+.contact-card h3,
+.contact-solution-item h3,
+.contact-assurance-item h3,
+.news-article-recent-item h3,
+.news-article-adjacent-card strong {
+  margin: 0;
+  color: #17306e;
+  font-family: var(--font-heading);
+  letter-spacing: -0.04em;
+}
+
+.contact-lower-grid,
+.news-article-layout {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.solutions-primary-cta,
+.solutions-primary-cta span,
+.solutions-primary-cta svg,
+.contact-primary-cta,
+.contact-primary-cta span,
+.contact-primary-cta svg,
+.contact-secondary-cta,
+.contact-secondary-cta span,
+.contact-secondary-cta svg,
+.products-oem-link,
+.products-oem-link span,
+.products-oem-link svg,
+.home-primary-cta,
+.home-primary-cta span,
+.home-primary-cta svg,
+.home-inline-submit,
+.about-primary-cta,
+.about-primary-cta span,
+.about-primary-cta svg,
+.view-accent-link,
+.view-accent-link span,
+.view-accent-link svg,
+.product-detail-primary,
+.product-detail-primary span,
+.product-detail-primary svg,
+.news-subscribe-form button,
+.newsletter-form button,
+.site-footer-newsletter button,
+.products-category-link.active,
+.products-category-link.active span,
+.products-category-link.active svg,
+.products-featured-link:hover,
+.products-featured-link:hover svg,
+.products-grid-cart:hover,
+.products-grid-cart:hover svg,
+.products-rail-nav:hover,
+.products-rail-nav:hover svg,
+.fort-visual-play:hover,
+.fort-visual-play:hover svg,
+.news-search-form button:hover,
+.news-search-form button:hover svg,
+.news-pagination a:hover,
+.news-pagination button:hover {
+  color: #ffffff !important;
+}
+
+.home-surface,
+.home-feature-item,
+.home-stat-item,
+.home-product-card,
+.home-about-stat,
+.home-solution-step,
+.products-hero-feature,
+.products-sidebar-group,
+.products-grid-card,
+.products-oem-banner,
+.about-metric,
+.about-factory-card,
+.about-info-card,
+.solutions-card,
+.solutions-process-card,
+.solutions-partner-item,
+.news-sidebar-card,
+.news-card,
+.news-article-sidecard,
+.news-article-adjacent-card,
+.contact-card,
+.contact-form-panel,
+.contact-company-panel,
+.contact-faq-panel,
+.contact-solution-panel,
+.contact-faq-item,
+.contact-solution-item,
+.contact-assurance-item,
+.product-detail-side-panel,
+.product-detail-highlight,
+.product-detail-attributes {
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background-color 0.22s ease;
+}
+
+@media (hover: hover) {
+
+  .news-article-recent-card:hover,
+  .news-category-link:hover,
+  .products-category-link:hover,
+  .products-check-link:hover,
+  .news-article-back:hover {
+    transform: translateY(-1px);
+    border-color: rgba(37, 99, 255, 0.18);
+    background: rgba(37, 99, 255, 0.05);
+    box-shadow: 0 16px 34px -28px rgba(18, 41, 103, 0.18);
+  }
+
+  .home-product-card:hover .home-product-image,
+  .products-grid-card:hover .products-grid-image,
+  .about-factory-card:hover .about-factory-image,
+  .products-featured-card:hover .products-featured-image,
+  .news-card:hover .news-card-placeholder,
+  .news-article-recent-card:hover .news-article-recent-thumb,
+  .contact-company-panel:hover .contact-company-placeholder,
+  .product-gallery:hover .product-gallery-image {
+    transform: scale(1.03);
+  }
+
+  .home-surface:hover,
+  .products-oem-banner:hover,
+  .product-detail-highlight:hover,
+  .product-detail-attributes:hover,
+  .contact-company-panel:hover {
+    transform: translateY(-3px);
+    border-color: rgba(37, 99, 255, 0.12);
+    box-shadow: 0 24px 52px -34px rgba(18, 41, 103, 0.2);
+  }
+
+  .home-feature-item:hover,
+  .home-stat-item:hover,
+  .home-product-card:hover,
+  .home-about-stat:hover,
+  .home-solution-step:hover,
+  .products-hero-feature:hover,
+  .products-sidebar-group:hover,
+  .products-grid-card:hover,
+  .about-metric:hover,
+  .about-factory-card:hover,
+  .about-info-card:hover,
+  .solutions-card:hover,
+  .solutions-process-card:hover,
+  .news-sidebar-card:hover,
+  .news-card:hover,
+  .news-article-sidecard:hover,
+  .news-article-adjacent-card:hover,
+  .contact-card:hover,
+  .contact-form-panel:hover,
+  .contact-faq-panel:hover,
+  .contact-solution-panel:hover,
+  .product-detail-side-panel:hover {
+    transform: translateY(-4px);
+    border-color: rgba(37, 99, 255, 0.14);
+    box-shadow: 0 26px 56px -34px rgba(18, 41, 103, 0.22);
+  }
+
+  .solutions-partner-item:hover,
+  .contact-solution-item:hover,
+  .contact-assurance-item:hover {
+    transform: translateY(-2px);
+  }
+
+}
+
+@media (max-width: 767.98px) {
+
+  .news-page {
+    gap: 3.35rem;
+  }
+
+  .solutions-page {
+    gap: 2.55rem;
+  }
+
+  .contact-page {
+    gap: 2.95rem;
+  }
+
+  .solutions-hero {
+    min-height: 388px;
+  }
+
+  .solutions-hero-copy,
+  .news-hero-copy,
+  .contact-hero-copy {
+    gap: 0.9rem;
+    padding: 0.85rem 0 1rem;
+  }
+
+  .solutions-hero-title,
+  .news-hero-title,
+  .contact-hero-title {
+    font-size: clamp(2.3rem, 10vw, 3.2rem);
+    line-height: 1.02;
+  }
+
+  .solutions-hero-text,
+  .news-hero-text,
+  .contact-hero-text {
+    font-size: 0.94rem;
+    line-height: 1.72;
+  }
+
+  .solutions-primary-cta,
+  .contact-primary-cta,
+  .contact-secondary-cta {
+    min-height: 48px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .solutions-inline-link,
+  .news-inline-link,
+  .contact-inline-link {
+    min-height: 2.75rem;
+  }
+
+  .solutions-hero-visual,
+  .news-hero-visual,
+  .contact-hero-visual {
+    min-height: 300px;
+  }
+
+}

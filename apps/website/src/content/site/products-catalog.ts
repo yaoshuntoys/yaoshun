@@ -101,25 +101,33 @@ export type ProductJson = {
   productDetails?: ProductJsonDetailBlock[];
 };
 
-const importedProducts = [
-  p1601110728943,
-  p1601730435470,
-  p1600898789412,
-  p1601362237263,
-  p1601728749802,
-  p1601316583146,
-  p1601730326005,
-  p1600884595638,
-  p1600900125789,
-  p1601213973459,
-  p1601214840405,
-  p1601313719232,
-  p1601316497567,
-  p1601724919450,
-  p1601729143208,
-  p1601729187617,
-] as ProductJson[];
+function withSource(data: ProductJson, sourcePath: string) {
+  return {data, sourcePath};
+}
 
-export const products: ProductJson[] = [...importedProducts].sort(
+const importedProducts = [
+  withSource(p1601110728943 as ProductJson, "apps/website/data/1688-products/toys/1601110728943/product.json"),
+  withSource(p1601730435470 as ProductJson, "apps/website/data/1688-products/toys/1601730435470/product.json"),
+  withSource(p1600898789412 as ProductJson, "apps/website/data/1688-products/toys/1600898789412/product.json"),
+  withSource(p1601362237263 as ProductJson, "apps/website/data/1688-products/toys/1601362237263/product.json"),
+  withSource(p1601728749802 as ProductJson, "apps/website/data/1688-products/toys/1601728749802/product.json"),
+  withSource(p1601316583146 as ProductJson, "apps/website/data/1688-products/toys/1601316583146/product.json"),
+  withSource(p1601730326005 as ProductJson, "apps/website/data/1688-products/toys/1601730326005/product.json"),
+  withSource(p1600884595638 as ProductJson, "apps/website/data/1688-products/toys/1600884595638/product.json"),
+  withSource(p1600900125789 as ProductJson, "apps/website/data/1688-products/toys/1600900125789/product.json"),
+  withSource(p1601213973459 as ProductJson, "apps/website/data/1688-products/toys/1601213973459/product.json"),
+  withSource(p1601214840405 as ProductJson, "apps/website/data/1688-products/toys/1601214840405/product.json"),
+  withSource(p1601313719232 as ProductJson, "apps/website/data/1688-products/toys/1601313719232/product.json"),
+  withSource(p1601316497567 as ProductJson, "apps/website/data/1688-products/toys/1601316497567/product.json"),
+  withSource(p1601724919450 as ProductJson, "apps/website/data/1688-products/toys/1601724919450/product.json"),
+  withSource(p1601729143208 as ProductJson, "apps/website/data/1688-products/toys/1601729143208/product.json"),
+  withSource(p1601729187617 as ProductJson, "apps/website/data/1688-products/toys/1601729187617/product.json"),
+] as const;
+
+export const productSourcePathById = new Map(
+  importedProducts.map((item) => [item.data.productId, item.sourcePath]),
+);
+
+export const products: ProductJson[] = importedProducts.map((item) => item.data).sort(
   (a, b) => a.priority - b.priority || a.productId.localeCompare(b.productId),
 );

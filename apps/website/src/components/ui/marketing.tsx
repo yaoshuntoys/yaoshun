@@ -54,17 +54,26 @@ export function Breadcrumbs({
   items,
   className,
   separator = "slash",
+  trackingLocation = "breadcrumbs",
 }: {
   locale: Locale;
   items: Array<{label: LocalizedText; href?: string}>;
   className?: string;
   separator?: "chevron" | "slash";
+  trackingLocation?: string;
 }) {
   return (
     <nav aria-label="Breadcrumb" className={className ? `breadcrumbs ${className}` : "breadcrumbs"}>
       {items.map((item, index) => {
         const content = item.href ? (
-          <Link className="breadcrumbs-link" href={item.href}>
+          <Link
+            className="breadcrumbs-link"
+            data-track-destination={item.href}
+            data-track-event="breadcrumb_click"
+            data-track-label={t(locale, item.label)}
+            data-track-location={trackingLocation}
+            href={item.href}
+          >
             {t(locale, item.label)}
           </Link>
         ) : (

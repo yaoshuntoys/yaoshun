@@ -11,7 +11,7 @@ const pageStyle: CSSProperties = {
   background: "linear-gradient(180deg, #ffffff 0%, #f6f9ff 100%)",
   color: "#132968",
   fontFamily:
-    'var(--font-plus-jakarta-sans, "Plus Jakarta Sans"), "PingFang SC", "Microsoft YaHei", sans-serif',
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif',
 };
 
 const wrapStyle: CSSProperties = {

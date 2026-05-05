@@ -21,6 +21,20 @@
   box-shadow: 0 22px 46px -22px rgba(37, 99, 255, 0.72);
 }
 
+.page-shell,
+.home-page,
+.products-page,
+.about-page,
+.solutions-page,
+.news-page,
+.contact-page,
+.news-article-page,
+.product-detail-page {
+  width: var(--site-container-width);
+  max-width: var(--site-container-max-width);
+  margin: 0 auto;
+}
+
 .page-shell {
   display: grid;
   gap: 6rem;
@@ -350,7 +364,6 @@
   .contact-page,
   .news-article-page,
   .product-detail-page {
-    width: min(100%, calc(100% - 24px));
     gap: 3.2rem;
   }
 

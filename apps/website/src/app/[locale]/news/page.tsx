@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "@/styles/pages/news.css";
 import {
   ArrowRight,
   Award,
@@ -114,11 +115,33 @@ function copy(locale: "en" | "zh") {
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<SearchParamMap>;
 }): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
-  return buildPageMetadata(locale, newsContent.seo, "news");
+  const query = await searchParams;
+  const metadata = buildPageMetadata(locale, newsContent.seo, "news");
+
+  if ((query.category && query.category !== "all") || (query.page && query.page !== "1")) {
+    return {
+      ...metadata,
+      robots: {
+        index: false,
+        follow: true,
+        googleBot: {
+          index: false,
+          follow: true,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+          "max-video-preview": -1,
+        },
+      },
+    };
+  }
+
+  return metadata;
 }
 
 export default async function NewsPage({
@@ -224,6 +247,11 @@ export default async function NewsPage({
                           ? "news-category-link active"
                           : "news-category-link"
                       }
+                      data-track-category={category.key}
+                      data-track-destination={`/${locale}/news${buildQueryString({}, { category: category.key === "all" ? undefined : category.key, page: undefined })}`}
+                      data-track-event="filter_select"
+                      data-track-label={category.key}
+                      data-track-location="news_category_filter"
                       href={`/${locale}/news${buildQueryString({}, { category: category.key === "all" ? undefined : category.key, page: undefined })}`}
                       key={category.key}
                       scroll={false}
@@ -258,6 +286,11 @@ export default async function NewsPage({
                 <Link
                   aria-label={localize(article.title, locale, "News Article")}
                   className="news-card"
+                  data-track-category={article.category}
+                  data-track-destination={`/${locale}/news/${article.slug}`}
+                  data-track-event="news_card_click"
+                  data-track-label={article.slug}
+                  data-track-location="news_grid"
                   href={`/${locale}/news/${article.slug}`}
                   key={article.slug}
                 >
@@ -303,6 +336,10 @@ export default async function NewsPage({
             {currentPage > 1 ? (
               <Link
                 aria-label="Previous page"
+                data-track-destination={`/${locale}/news${buildQueryString(query, { page: String(currentPage - 1) === "1" ? undefined : String(currentPage - 1) })}`}
+                data-track-event="pagination_click"
+                data-track-label="previous"
+                data-track-location="news_pagination"
                 href={`/${locale}/news${buildQueryString(query, { page: String(currentPage - 1) === "1" ? undefined : String(currentPage - 1) })}`}
                 scroll={false}
               >
@@ -320,7 +357,15 @@ export default async function NewsPage({
                   {page}
                 </span>
               ) : (
-                <Link key={page} href={href} scroll={false}>
+                <Link
+                  data-track-destination={href}
+                  data-track-event="pagination_click"
+                  data-track-label={page}
+                  data-track-location="news_pagination"
+                  key={page}
+                  href={href}
+                  scroll={false}
+                >
                   {page}
                 </Link>
               );
@@ -328,6 +373,10 @@ export default async function NewsPage({
             {currentPage < totalPages ? (
               <Link
                 aria-label="Next page"
+                data-track-destination={`/${locale}/news${buildQueryString(query, { page: String(currentPage + 1) })}`}
+                data-track-event="pagination_click"
+                data-track-label="next"
+                data-track-location="news_pagination"
                 href={`/${locale}/news${buildQueryString(query, { page: String(currentPage + 1) })}`}
                 scroll={false}
               >

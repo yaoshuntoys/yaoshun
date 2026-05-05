@@ -61,6 +61,12 @@ function redirectToLocalizedPath(
 }
 
 export function proxy(request: NextRequest) {
+  if (request.nextUrl.pathname === "/sitemap" || request.nextUrl.pathname === "/sitemap/") {
+    const url = request.nextUrl.clone();
+    url.pathname = "/sitemap.xml";
+    return NextResponse.redirect(url, 308);
+  }
+
   const localeInPath = getLocaleFromPathname(request.nextUrl.pathname);
   const requestHeaders = new Headers(request.headers);
   const consentRequired = isConsentRequiredCountry(resolveCountryCode(request));

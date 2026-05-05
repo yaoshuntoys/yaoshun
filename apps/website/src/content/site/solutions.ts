@@ -12,13 +12,25 @@ export const solutionsContent = {
     },
     keywords: {
       en: [
-        'toy oem solution',
-        'toy odm workflow',
-        'custom toy development process',
-        'toy manufacturing project lifecycle',
-        'oem odm quality control'
+        'interlocking toy OEM solution',
+        'building toy ODM workflow',
+        'custom interlocking toy development',
+        'toy manufacturing company process',
+        'building block toy project management',
+        'B2B toy OEM ODM service',
+        'toy factory quality control workflow',
+        'custom plastic toy manufacturing solution'
       ],
-      zh: ['玩具OEM方案', '玩具ODM流程', '定制玩具开发流程', '项目生命周期', 'OEM ODM质量控制']
+      zh: [
+        '拼接玩具OEM方案',
+        '拼插玩具ODM流程',
+        '拼搭玩具定制开发',
+        '积木拼装玩具项目流程',
+        '玩具企业OEM ODM服务',
+        '玩具工厂质量控制流程',
+        'B2B玩具定制方案',
+        '塑胶玩具制造解决方案'
+      ]
     }
   },
   hero: {

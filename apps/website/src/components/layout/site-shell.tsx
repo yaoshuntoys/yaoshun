@@ -33,6 +33,7 @@ type SiteShellProps = {
 type FooterLink = {
   href: string;
   label: string;
+  trackingLabel?: string;
 };
 
 const localeEntries = Object.entries(localeRegistry) as Array<
@@ -152,12 +153,14 @@ function LocaleSwitcher({
   locale,
   localeOpen,
   pathname,
+  trackingLocation,
   toggleLocaleOpen,
 }: {
   closeMenus: () => void;
   locale: Locale;
   localeOpen: boolean;
   pathname: string;
+  trackingLocation: string;
   toggleLocaleOpen: () => void;
 }) {
   const localeMenuId = `site-locale-menu-${locale}`;
@@ -169,6 +172,9 @@ function LocaleSwitcher({
         aria-expanded={localeOpen}
         aria-label={t(locale, sharedUi.siteShell.localeMenuLabel)}
         className={localeButtonClass}
+        data-track-event="cta_click"
+        data-track-label="locale_menu"
+        data-track-location={trackingLocation}
         type="button"
         onClick={toggleLocaleOpen}
       >
@@ -184,6 +190,10 @@ function LocaleSwitcher({
               className={`${localeOptionClass} ${
                 entry === locale ? localeOptionActiveClass : ""
               }`}
+              data-track-destination={replaceLocaleInPath(pathname, entry)}
+              data-track-event="locale_switch"
+              data-track-label={entry}
+              data-track-location={trackingLocation}
               href={replaceLocaleInPath(pathname, entry)}
               hrefLang={localeRegistry[entry].htmlLang}
               onClick={closeMenus}
@@ -267,8 +277,16 @@ function SiteHeader({
 
   return (
     <header className="sticky top-0 z-50 border-b border-[rgba(19,41,104,0.06)] bg-white/88 shadow-[0_14px_34px_-28px_rgba(18,41,103,0.24)] backdrop-blur-[22px]">
-      <div className="mx-auto flex min-h-[72px] w-[min(1260px,calc(100%-24px))] items-center gap-4 md:min-h-[84px] md:w-[min(1260px,calc(100%-32px))] md:gap-6">
-        <Link aria-label="yaoshun toys" className="shrink-0" href={`/${locale}`}>
+      <div className="site-container flex min-h-[72px] items-center gap-4 md:min-h-[84px] md:gap-6">
+        <Link
+          aria-label="yaoshun toys"
+          className="shrink-0"
+          data-track-destination={`/${locale}`}
+          data-track-event="nav_click"
+          data-track-label="brand_logo"
+          data-track-location="header"
+          href={`/${locale}`}
+        >
           <div className="flex flex-col gap-1">
             <BrandMark />
             <span className="text-[0.62rem] font-medium leading-[1.2] text-[#6f7ea9] md:text-[0.68rem]">
@@ -287,6 +305,10 @@ function SiteHeader({
               className={`${navLinkBase} ${
                 isActive(pathname, locale, item.href) ? navLinkActive : ""
               }`}
+              data-track-destination={`/${locale}${item.href}`}
+              data-track-event="nav_click"
+              data-track-label={item.key}
+              data-track-location="header"
               href={`/${locale}${item.href}`}
               onClick={closeMenus}
             >
@@ -302,11 +324,20 @@ function SiteHeader({
               locale={locale}
               localeOpen={localeOpen}
               pathname={pathname}
+              trackingLocation="header"
               toggleLocaleOpen={() => setLocaleOpen((value) => !value)}
             />
           </div>
 
-          <Link className={headerCtaClass} href={contactHref} onClick={closeMenus}>
+          <Link
+            className={headerCtaClass}
+            data-track-destination={contactHref}
+            data-track-event="cta_click"
+            data-track-label="contact_us"
+            data-track-location="header"
+            href={contactHref}
+            onClick={closeMenus}
+          >
             <span>{t(locale, siteCopy.headerCta)}</span>
             <ArrowRight size={15} strokeWidth={2.2} />
           </Link>
@@ -318,6 +349,9 @@ function SiteHeader({
             aria-expanded={mobileOpen}
             aria-label={t(locale, sharedUi.siteShell.mobileMenuAriaLabel)}
             className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-transparent bg-[linear-gradient(135deg,#2563ff_0%,#1a43c9_100%)] text-white shadow-[0_16px_34px_-20px_rgba(37,99,255,0.58)] transition duration-200 hover:-translate-y-0.5 hover:text-white hover:shadow-[0_20px_40px_-22px_rgba(37,99,255,0.66)]"
+            data-track-event="nav_click"
+            data-track-label={mobileOpen ? "mobile_menu_close" : "mobile_menu_open"}
+            data-track-location="mobile_header"
             type="button"
             onClick={() => setMobileOpen((value) => !value)}
           >
@@ -347,6 +381,10 @@ function SiteHeader({
                           ? "border-transparent bg-[linear-gradient(135deg,#2563ff_0%,#1a43c9_100%)] !text-white shadow-[0_18px_38px_-24px_rgba(37,99,255,0.54)]"
                           : "border-[rgba(37,99,255,0.10)] bg-white text-[#17306e] hover:border-[rgba(37,99,255,0.16)] hover:bg-white"
                       }`}
+                      data-track-destination={`/${locale}${item.href}`}
+                      data-track-event="nav_click"
+                      data-track-label={item.key}
+                      data-track-location="mobile_header"
                       href={`/${locale}${item.href}`}
                       onClick={closeMenus}
                     >
@@ -358,6 +396,10 @@ function SiteHeader({
                 <div className="grid gap-4 pb-1">
                   <Link
                     className={mobileHeaderCtaClass}
+                    data-track-destination={contactHref}
+                    data-track-event="cta_click"
+                    data-track-label="contact_us"
+                    data-track-location="mobile_header"
                     href={contactHref}
                     onClick={closeMenus}
                   >
@@ -375,6 +417,10 @@ function SiteHeader({
                             ? "border-transparent bg-[#dceaff] text-[#16368d]"
                             : "border-[rgba(37,99,255,0.10)] bg-white text-[#17306e] hover:bg-[#2563ff]/10 hover:text-[#0e2f9a]"
                         }`}
+                        data-track-destination={replaceLocaleInPath(pathname, entry)}
+                        data-track-event="locale_switch"
+                        data-track-label={entry}
+                        data-track-location="mobile_header"
                         href={replaceLocaleInPath(pathname, entry)}
                         hrefLang={localeRegistry[entry].htmlLang}
                         onClick={closeMenus}
@@ -396,16 +442,26 @@ function SiteHeader({
 function FooterLinkGroup({
   links,
   title,
+  trackingLocation,
 }: {
   links: FooterLink[];
   title: string;
+  trackingLocation: string;
 }) {
   return (
     <div className="rounded-[1.2rem] border border-[rgba(32,62,143,0.07)] bg-white/84 p-3.5 shadow-[0_16px_34px_-30px_rgba(20,44,119,0.14)] md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
       <h4 className={footerHeadingClass}>{title}</h4>
       <div className="grid gap-1.5 md:gap-2">
         {links.map((item) => (
-          <Link className={footerLinkClass} href={item.href} key={item.href + item.label}>
+          <Link
+            className={footerLinkClass}
+            data-track-destination={item.href}
+            data-track-event="nav_click"
+            data-track-label={item.trackingLabel ?? item.label}
+            data-track-location={trackingLocation}
+            href={item.href}
+            key={item.href + item.label}
+          >
             {item.label}
           </Link>
         ))}
@@ -432,24 +488,39 @@ function SiteFooter({ locale }: { locale: Locale }) {
   }));
   const supportLinks = footerSupportLinkRoutes.map((item) => ({
     href: localizedPath(locale, item.route),
-    label: item.label,
+    label: t(locale, item.label),
+    trackingLabel: item.route,
   }));
   const copyrightYear = new Date().getFullYear();
 
   return (
     <footer className="border-t border-[rgba(19,41,104,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(245,249,255,0.96)_100%)] py-6 md:bg-white/92 md:py-10">
-      <div className="mx-auto grid w-[min(1260px,calc(100%-24px))] grid-cols-2 gap-3 md:w-[min(1260px,calc(100%-32px))] md:gap-8 md:grid-cols-[1.2fr_0.9fr_1fr_0.95fr] md:items-start">
+      <div className="site-container grid grid-cols-2 gap-3 md:gap-8 md:grid-cols-[1.2fr_0.9fr_1fr_0.95fr] md:items-start">
         <div className="col-span-2 rounded-[1.35rem] border border-[rgba(32,62,143,0.08)] bg-white/88 p-3.5 shadow-[0_18px_36px_-30px_rgba(20,44,119,0.16)] md:col-span-1 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
           <BrandMark compact />
           <p className="mt-2 max-w-none text-[0.84rem] leading-5 text-[#6f7ea9] md:max-w-[16rem] md:text-[0.92rem] md:leading-7">
             {t(locale, siteCopy.brandTagline)}
           </p>
           <div className="mt-3 grid gap-1.5 md:mt-4 md:gap-2">
-            <a className={footerContactClass} href={`mailto:${siteCopy.contact.email}`}>
+            <a
+              className={footerContactClass}
+              data-track-event="contact_click"
+              data-track-label="footer_email"
+              data-track-location="footer"
+              data-track-method="email"
+              href={`mailto:${siteCopy.contact.email}`}
+            >
               <Mail size={14} strokeWidth={2.1} />
               <span>{siteCopy.contact.email}</span>
             </a>
-            <a className={footerContactClass} href={telephoneHref(siteCopy.contact.phone)}>
+            <a
+              className={footerContactClass}
+              data-track-event="contact_click"
+              data-track-label="footer_phone"
+              data-track-location="footer"
+              data-track-method="phone"
+              href={telephoneHref(siteCopy.contact.phone)}
+            >
               <Phone size={14} strokeWidth={2.1} />
               <span>{siteCopy.contact.phone}</span>
             </a>
@@ -462,11 +533,13 @@ function SiteFooter({ locale }: { locale: Locale }) {
 
         <FooterLinkGroup
           links={quickLinks}
+          trackingLocation="footer_quick_links"
           title={t(locale, { en: "Quick Links", zh: "快捷链接" })}
         />
 
         <FooterLinkGroup
           links={productLinks}
+          trackingLocation="footer_products"
           title={t(locale, { en: "Products", zh: "产品" })}
         />
 
@@ -478,14 +551,21 @@ function SiteFooter({ locale }: { locale: Locale }) {
             {supportLinks.map((item) => (
               <Link
                 className={footerLinkClass}
+                data-track-destination={item.href}
+                data-track-event="nav_click"
+                data-track-label={item.trackingLabel ?? item.label}
+                data-track-location="footer_support"
                 href={item.href}
-                key={item.href + item.label.en}
+                key={item.href + item.label}
               >
-                {t(locale, item.label)}
+                {item.label}
               </Link>
             ))}
             <button
               className={`${footerLinkClass} text-left`}
+              data-track-event="cta_click"
+              data-track-label="cookie_settings"
+              data-track-location="footer_support"
               type="button"
               onClick={openCookieConsentManager}
             >
@@ -495,7 +575,7 @@ function SiteFooter({ locale }: { locale: Locale }) {
         </div>
       </div>
 
-      <p className="mx-auto mt-4 w-[min(1260px,calc(100%-24px))] border-t border-[rgba(19,41,104,0.08)] pt-3 text-center text-[0.76rem] leading-5 text-[#6f7ea9] md:mt-8 md:w-[min(1260px,calc(100%-32px))] md:border-0 md:pt-0 md:text-[0.84rem]">
+      <p className="site-container mt-4 border-t border-[rgba(19,41,104,0.08)] pt-3 text-center text-[0.76rem] leading-5 text-[#6f7ea9] md:mt-8 md:border-0 md:pt-0 md:text-[0.84rem]">
         © {copyrightYear} {t(locale, siteCopy.companyName)}. All Rights Reserved.
       </p>
     </footer>

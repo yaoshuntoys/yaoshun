@@ -18,20 +18,25 @@ export const productsPageContent = {
     },
     keywords: {
       en: [
-        'toy product catalog',
-        'b2b toy supplier catalog',
-        'educational toys wholesale',
-        'toy oem odm products',
-        'custom toy project catalog',
-        'toy components supplier'
+        'interlocking toy catalog',
+        'interlocking toy supplier catalog',
+        'building block toy catalog',
+        'custom building toy products',
+        'educational building toys wholesale',
+        'toy OEM ODM product catalog',
+        'B2B building toy manufacturer',
+        'plastic toy component supplier',
+        'interlocking toy manufacturer china'
       ],
       zh: [
-        '玩具产品目录',
-        'B2B玩具供应商目录',
-        '益智玩具目录',
-        '玩具OEM ODM产品',
-        '玩具项目目录',
-        '玩具结构件供应'
+        '拼接玩具目录',
+        '拼插玩具目录',
+        '积木拼装玩具目录',
+        '拼搭玩具产品目录',
+        '益智拼装玩具批发',
+        '玩具OEM ODM产品目录',
+        'B2B拼插玩具供应商',
+        '塑胶玩具结构件供应'
       ]
     }
   },

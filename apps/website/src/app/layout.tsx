@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
-import { headers } from "next/headers";
+import { Outfit } from "next/font/google";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Suspense } from "react";
 
 import { AnalyticsEvents } from "@/components/tracking/analytics-events";
 import { CookieConsentManager } from "@/components/tracking/cookie-consent-manager";
@@ -13,7 +13,6 @@ import {
   defaultLocale,
   localeRegistry,
   locales,
-  matchSupportedLocale,
   t,
 } from "@/lib/i18n";
 import {
@@ -26,16 +25,7 @@ import {
 
 import "../styles/globals.css";
 import "../styles/marketing.css";
-import "../styles/fallback.css";
-import "../styles/pages/home.css";
-import "../styles/pages/about.css";
-import "../styles/pages/solutions.css";
-import "../styles/pages/news.css";
-import "../styles/pages/news-article.css";
-import "../styles/pages/contact.css";
-import "../styles/pages/faq.css";
-import "../styles/pages/products.css";
-import "../styles/pages/product-detail.css";
+import "../styles/page-shared.css";
 
 const outfit = Outfit({
   display: "swap",
@@ -44,21 +34,8 @@ const outfit = Outfit({
   weight: ["500", "600", "700", "800"],
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  display: "swap",
-  subsets: ["latin"],
-  variable: "--font-plus-jakarta-sans",
-  weight: ["400", "500", "600", "700"],
-});
-
 const defaultTitle = t(defaultLocale, homeContent.seo.title);
 const defaultDescription = t(defaultLocale, homeContent.seo.description);
-const languageAlternates = Object.fromEntries(
-  locales.map((locale) => [
-    localeRegistry[locale].htmlLang,
-    `${siteUrl}/${locale}`,
-  ]),
-);
 const defaultKeywords = Array.from(
   new Set(locales.flatMap((locale) => t(locale, siteSeo.defaultKeywords))),
 );
@@ -80,13 +57,6 @@ export const metadata: Metadata = {
   publisher: siteName,
   referrer: "origin-when-cross-origin",
   manifest: "/site.webmanifest",
-  alternates: {
-    canonical: siteUrl,
-    languages: {
-      ...languageAlternates,
-      "x-default": `${siteUrl}/${defaultLocale}`,
-    },
-  },
   icons: {
     icon: [
       {
@@ -153,29 +123,24 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const requestHeaders = await headers();
-  const detectedLocale = matchSupportedLocale(
-    requestHeaders.get("x-detected-locale"),
-  );
-  const htmlLang =
-    localeRegistry[detectedLocale ?? defaultLocale].htmlLang;
-
   return (
     <html
-      className={`${outfit.variable} ${plusJakartaSans.variable}`}
+      className={outfit.variable}
       data-scroll-behavior="smooth"
-      lang={htmlLang}
+      lang={localeRegistry[defaultLocale].htmlLang}
       suppressHydrationWarning
     >
       <body>
         <TawkScript />
         <TrackingScripts />
-        <AnalyticsEvents />
+        <Suspense fallback={null}>
+          <AnalyticsEvents />
+        </Suspense>
         {children}
         <CookieConsentManager />
         <VercelAnalytics />

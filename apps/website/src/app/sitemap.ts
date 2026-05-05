@@ -1,6 +1,11 @@
 import type { MetadataRoute } from "next";
 
 import { products } from "@/content/site/products-catalog";
+import {
+  getNewsLastModified,
+  getProductLastModified,
+  getStaticRouteLastModified,
+} from "@/lib/content-lastmod";
 import { defaultLocale, localeRegistry, locales } from "@/lib/i18n";
 import { getNewsList } from "@/lib/site-data";
 import { routePathMap, type RouteKey } from "@/lib/routes";
@@ -44,6 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const route of routeEntries) {
       entries.push({
         url: withBase(`/${locale}${route}`),
+        lastModified: getStaticRouteLastModified(route),
         alternates: buildAlternates(route),
         changeFrequency: route === "" ? "weekly" : "monthly",
         priority: route === "" ? 1 : 0.8,
@@ -55,6 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const path = `/products/${product.productId}`;
       entries.push({
         url: withBase(`/${locale}${path}`),
+        lastModified: getProductLastModified(product.productId),
         alternates: buildAlternates(path),
         changeFrequency: "monthly",
         priority: 0.7,
@@ -65,7 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const path = `/news/${article.slug}`;
       entries.push({
         url: withBase(`/${locale}${path}`),
-        lastModified: new Date(`${article.publishedAt}T00:00:00Z`),
+        lastModified: getNewsLastModified(article.publishedAt),
         alternates: buildAlternates(path),
         changeFrequency: "monthly",
         priority: 0.7,

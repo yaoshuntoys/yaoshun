@@ -1,16 +1,19 @@
 'use client';
 
-import {usePathname} from 'next/navigation';
+import {usePathname, useSearchParams} from 'next/navigation';
 import {useEffect} from 'react';
 
 import {buildTrackedDatasetParams, trackEvent, trackPageView} from '@/lib/analytics';
 
 export function AnalyticsEvents() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const search = searchParams.toString();
+  const currentPath = search ? `${pathname}?${search}` : pathname;
 
   useEffect(() => {
-    trackPageView(pathname);
-  }, [pathname]);
+    trackPageView(currentPath);
+  }, [currentPath]);
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -22,7 +25,7 @@ export function AnalyticsEvents() {
 
       trackEvent(target.dataset.trackEvent, {
         ...buildTrackedDatasetParams(target.dataset),
-        page_path: pathname,
+        page_path: currentPath,
       });
     };
 
@@ -31,7 +34,7 @@ export function AnalyticsEvents() {
     return () => {
       document.removeEventListener('click', handleClick, true);
     };
-  }, [pathname]);
+  }, [currentPath]);
 
   return null;
 }

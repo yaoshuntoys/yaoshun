@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "@/styles/pages/news-article.css";
 import {
   ArrowLeft,
   ArrowRight,
@@ -218,11 +219,19 @@ export default async function NewsDetailPage({
           { label: { en: articleTitle, zh: articleTitle } },
         ]}
         locale={locale}
+        trackingLocation="news_article_breadcrumbs"
       />
 
       <article className="news-article-shell">
         <header className="news-article-header">
-          <Link className="news-article-back" href={`/${locale}/news`}>
+          <Link
+            className="news-article-back"
+            data-track-destination={`/${locale}/news`}
+            data-track-event="nav_click"
+            data-track-label="back_to_news"
+            data-track-location="news_article_header"
+            href={`/${locale}/news`}
+          >
             <ArrowLeft size={16} strokeWidth={2.1} />
             <span>{text.backToNews}</span>
           </Link>
@@ -319,7 +328,14 @@ export default async function NewsDetailPage({
             <p className="about-section-eyebrow">{categoryLabel}</p>
             <h2>{text.recentNews}</h2>
           </div>
-          <Link className="news-inline-link" href={`/${locale}/news`}>
+          <Link
+            className="news-inline-link"
+            data-track-destination={`/${locale}/news`}
+            data-track-event="nav_click"
+            data-track-label="back_to_news"
+            data-track-location="news_article_more"
+            href={`/${locale}/news`}
+          >
             <span>{text.backToNews}</span>
             <ArrowRight size={15} strokeWidth={2.05} />
           </Link>
@@ -327,7 +343,16 @@ export default async function NewsDetailPage({
 
         <div className="news-article-recent-grid">
           {recentNews.map((item) => (
-            <Link className="news-article-recent-card" href={`/${locale}/news/${item.slug}`} key={item.slug}>
+            <Link
+              className="news-article-recent-card"
+              data-track-category={item.category}
+              data-track-destination={`/${locale}/news/${item.slug}`}
+              data-track-event="news_card_click"
+              data-track-label={item.slug}
+              data-track-location="news_article_recent"
+              href={`/${locale}/news/${item.slug}`}
+              key={item.slug}
+            >
               <div className="news-article-recent-image-frame">
                 <Image
                   alt={localize(item.title, locale)}
@@ -349,6 +374,12 @@ export default async function NewsDetailPage({
         <div className="news-article-adjacent">
           <Link
             className="news-article-adjacent-card"
+            data-track-destination={
+              adjacent.previous ? `/${locale}/news/${adjacent.previous.slug}` : `/${locale}/news`
+            }
+            data-track-event={adjacent.previous ? "news_card_click" : "nav_click"}
+            data-track-label={adjacent.previous?.slug ?? "back_to_news"}
+            data-track-location="news_article_adjacent"
             href={adjacent.previous ? `/${locale}/news/${adjacent.previous.slug}` : `/${locale}/news`}
           >
             <span>{text.previousArticle}</span>
@@ -358,6 +389,12 @@ export default async function NewsDetailPage({
           </Link>
           <Link
             className="news-article-adjacent-card"
+            data-track-destination={
+              adjacent.next ? `/${locale}/news/${adjacent.next.slug}` : `/${locale}/news`
+            }
+            data-track-event={adjacent.next ? "news_card_click" : "nav_click"}
+            data-track-label={adjacent.next?.slug ?? "browse_more_news"}
+            data-track-location="news_article_adjacent"
             href={adjacent.next ? `/${locale}/news/${adjacent.next.slug}` : `/${locale}/news`}
           >
             <span>{text.nextArticle}</span>

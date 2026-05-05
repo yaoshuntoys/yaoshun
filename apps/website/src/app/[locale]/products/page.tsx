@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "@/styles/pages/products.css";
 import {
   ArrowRight,
   Gift,
@@ -11,6 +12,7 @@ import Link from "next/link";
 
 import { PageHero } from "@/components/sections/page-hero";
 import { ProductsFeaturedCarousel } from "@/components/products/products-featured-carousel";
+import { StructuredData } from "@/components/seo/structured-data";
 import { productsPageContent } from "@/content/site";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getLocaleFromParams, t } from "@/lib/i18n";
@@ -21,6 +23,7 @@ import {
   getShowcaseCatalog,
 } from "@/lib/site-data";
 import { productCollections, productsPageAssets } from "@/content/pages/products";
+import { toAbsoluteUrl } from "@/lib/site-config";
 
 type SearchParamMap = {
   category?: string;
@@ -86,11 +89,33 @@ function buildQueryString(
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<SearchParamMap>;
 }): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
-  return buildPageMetadata(locale, productsPageContent.seo, "products");
+  const query = await searchParams;
+  const metadata = buildPageMetadata(locale, productsPageContent.seo, "products");
+
+  if (query.category || (query.page && query.page !== "1")) {
+    return {
+      ...metadata,
+      robots: {
+        index: false,
+        follow: true,
+        googleBot: {
+          index: false,
+          follow: true,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+          "max-video-preview": -1,
+        },
+      },
+    };
+  }
+
+  return metadata;
 }
 
 export default async function ProductsPage({
@@ -132,9 +157,49 @@ export default async function ProductsPage({
     category: query.category,
     page: query.page,
   };
+  const pageUrl = toAbsoluteUrl(`/${locale}/products`);
+  const currentPath = `/${locale}/products${buildQueryString(currentQuery, {})}`;
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: locale === "zh" ? "首页" : "Home",
+          item: toAbsoluteUrl(`/${locale}`),
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: locale === "zh" ? "产品" : "Products",
+          item: pageUrl,
+        },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: text.heroTitle,
+      description: text.heroText,
+      url: toAbsoluteUrl(currentPath),
+      inLanguage: locale === "zh" ? "zh-CN" : "en-US",
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: gridProducts.map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1 + (currentPage - 1) * pageSize,
+          url: toAbsoluteUrl(`/${locale}/products/${item.product.productId}`),
+          name: t(locale, item.label),
+        })),
+      },
+    },
+  ];
 
   return (
     <div className="products-page">
+      <StructuredData data={structuredData} />
       <PageHero
         backgroundClassName="products-hero-background"
         backgroundImageClassName="products-hero-background-image"
@@ -208,6 +273,11 @@ export default async function ProductsPage({
                       ? "products-category-link active"
                       : "products-category-link"
                   }
+                  data-track-category="all"
+                  data-track-destination={`/${locale}/products${buildQueryString(currentQuery, { category: undefined, page: undefined })}`}
+                  data-track-event="filter_select"
+                  data-track-label="all_products"
+                  data-track-location="products_category_filter"
                   href={`/${locale}/products${buildQueryString(currentQuery, { category: undefined, page: undefined })}`}
                   scroll={false}
                 >
@@ -221,6 +291,11 @@ export default async function ProductsPage({
                         ? "products-category-link active"
                         : "products-category-link"
                     }
+                    data-track-category={collection.key}
+                    data-track-destination={`/${locale}/products${buildQueryString(currentQuery, { category: collection.key, page: undefined })}`}
+                    data-track-event="filter_select"
+                    data-track-label={collection.key}
+                    data-track-location="products_category_filter"
                     href={`/${locale}/products${buildQueryString(currentQuery, { category: collection.key, page: undefined })}`}
                     scroll={false}
                   >
@@ -288,6 +363,10 @@ export default async function ProductsPage({
             {currentPage > 1 ? (
               <Link
                 aria-label="Previous page"
+                data-track-destination={`/${locale}/products${buildQueryString(currentQuery, { page: String(currentPage - 1) === "1" ? undefined : String(currentPage - 1) })}`}
+                data-track-event="pagination_click"
+                data-track-label="previous"
+                data-track-location="products_pagination"
                 href={`/${locale}/products${buildQueryString(currentQuery, { page: String(currentPage - 1) === "1" ? undefined : String(currentPage - 1) })}`}
                 scroll={false}
               >
@@ -307,7 +386,15 @@ export default async function ProductsPage({
                   {page}
                 </span>
               ) : (
-                <Link href={href} key={page} scroll={false}>
+                <Link
+                  data-track-destination={href}
+                  data-track-event="pagination_click"
+                  data-track-label={page}
+                  data-track-location="products_pagination"
+                  href={href}
+                  key={page}
+                  scroll={false}
+                >
                   {page}
                 </Link>
               );
@@ -316,6 +403,10 @@ export default async function ProductsPage({
             {currentPage < totalPages ? (
               <Link
                 aria-label="Next page"
+                data-track-destination={`/${locale}/products${buildQueryString(currentQuery, { page: String(currentPage + 1) })}`}
+                data-track-event="pagination_click"
+                data-track-label="next"
+                data-track-location="products_pagination"
                 href={`/${locale}/products${buildQueryString(currentQuery, { page: String(currentPage + 1) })}`}
                 scroll={false}
               >
@@ -334,6 +425,10 @@ export default async function ProductsPage({
           <p>{text.customText}</p>
           <Link
             className="products-oem-link products-oem-cta"
+            data-track-destination={`/${locale}/solutions`}
+            data-track-event="cta_click"
+            data-track-label="learn_more"
+            data-track-location="products_oem_banner"
             href={`/${locale}/solutions`}
           >
             <span>{text.customAction}</span>

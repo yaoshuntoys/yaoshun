@@ -48,7 +48,8 @@
 .contact-hero-inner {
   position: relative;
   z-index: 2;
-  width: min(1260px, calc(100% - 24px));
+  width: var(--site-container-width);
+  max-width: var(--site-container-max-width);
   margin: 0 auto;
   min-height: inherit;
   display: grid;

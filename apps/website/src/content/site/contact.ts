@@ -10,20 +10,22 @@ export const contactContent = {
     },
     keywords: {
       en: [
-        'toy oem odm quotation',
-        'toy manufacturing inquiry',
-        'china toy factory contact',
-        'sampling and mass production quote',
-        'toy packaging and shipping support',
-        'b2b toy supplier quotation'
+        'interlocking toy quote',
+        'building toy OEM inquiry',
+        'custom building toy quotation',
+        'Dongguan toy company contact',
+        'B2B toy supplier quotation',
+        'toy sampling and mass production quote',
+        'interlocking toy factory contact'
       ],
       zh: [
-        '玩具OEM ODM报价',
-        '玩具制造询盘',
-        '中国玩具工厂联系',
+        '拼接玩具报价',
+        '拼插玩具OEM询盘',
+        '拼搭玩具定制报价',
+        '东莞玩具企业联系',
+        'B2B玩具供应商询价',
         '打样量产报价',
-        '玩具包装出货支持',
-        'B2B玩具供应商询价'
+        '积木拼装玩具工厂联系'
       ]
     }
   },

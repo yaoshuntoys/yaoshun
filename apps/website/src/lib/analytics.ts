@@ -54,7 +54,7 @@ export function trackPageView(pathname: string, title?: string) {
     return;
   }
 
-  const locale = getLocaleFromPathname(pathname);
+  const locale = getLocaleFromPathname(pathname.split('?')[0] || pathname);
 
   trackEvent('page_view', {
     page_path: pathname,

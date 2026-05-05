@@ -11,6 +11,7 @@ type PageHeroProps = {
   gridClassName: string;
   innerClassName: string;
   priority?: boolean;
+  quality?: number;
   sectionClassName: string;
   unoptimized?: boolean;
 };
@@ -25,6 +26,7 @@ export function PageHero({
   gridClassName,
   innerClassName,
   priority = true,
+  quality = 75,
   sectionClassName,
   unoptimized = false,
 }: PageHeroProps) {
@@ -38,9 +40,10 @@ export function PageHero({
         <Image
           alt=""
           className={backgroundImageClassName}
+          fetchPriority={priority ? "high" : undefined}
           fill
           priority={priority}
-          quality={88}
+          quality={quality}
           sizes="100vw"
           src={backgroundSrc}
           unoptimized={unoptimized}

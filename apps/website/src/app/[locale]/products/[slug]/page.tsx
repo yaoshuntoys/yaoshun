@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "@/styles/pages/product-detail.css";
 import Image from "@/components/media/smart-image";
 import Link from "next/link";
 import {
@@ -597,7 +598,7 @@ export default async function ProductDetailPage({
   ];
 
   return (
-    <div className="mx-auto grid w-[min(1260px,calc(100%-24px))] gap-7 pb-4 pt-4 sm:w-[min(1260px,calc(100%-32px))] sm:pt-6 lg:gap-10">
+    <div className="site-container grid gap-7 pb-4 pt-4 sm:pt-6 lg:gap-10">
       <StructuredData data={structuredData} />
 
       <nav
@@ -606,6 +607,10 @@ export default async function ProductDetailPage({
       >
         <Link
           className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full px-3 transition hover:bg-[#2563ff]/8 hover:text-[#2563ff]"
+          data-track-destination={`/${locale}`}
+          data-track-event="breadcrumb_click"
+          data-track-label={text.home}
+          data-track-location="product_detail_breadcrumbs"
           href={`/${locale}`}
         >
           {text.home}
@@ -613,6 +618,10 @@ export default async function ProductDetailPage({
         <span className="shrink-0">/</span>
         <Link
           className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full px-3 transition hover:bg-[#2563ff]/8 hover:text-[#2563ff]"
+          data-track-destination={`/${locale}/products`}
+          data-track-event="breadcrumb_click"
+          data-track-label={text.products}
+          data-track-location="product_detail_breadcrumbs"
           href={`/${locale}/products`}
         >
           {text.products}
@@ -709,6 +718,10 @@ export default async function ProductDetailPage({
             <div className="flex flex-wrap gap-3">
               <Link
                 className="inline-flex min-h-[3.2rem] w-full items-center justify-center gap-2 rounded-full border border-transparent bg-[linear-gradient(135deg,#2563ff_0%,#1a43c9_100%)] px-6 text-[0.98rem] font-bold text-[#fff] shadow-[0_18px_40px_-20px_rgba(37,99,255,0.68)] transition hover:-translate-y-0.5 hover:text-[#fff] sm:w-auto"
+                data-track-destination={contactFormPath(locale)}
+                data-track-event="cta_click"
+                data-track-label="get_latest_price"
+                data-track-location="product_detail_quote"
                 href={contactFormPath(locale)}
               >
                 <span className="text-[#fff]">{text.getLatestPrice}</span>
@@ -1009,6 +1022,14 @@ export default async function ProductDetailPage({
       <section className="grid gap-4 md:grid-cols-2">
         <Link
           className="grid gap-3 rounded-[1.5rem] border border-[rgba(24,56,138,0.08)] bg-white p-5 shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] transition hover:-translate-y-1 hover:border-[rgba(37,99,255,0.14)] hover:shadow-[0_26px_56px_-34px_rgba(18,41,103,0.22)] sm:p-6"
+          data-track-destination={
+            adjacentProducts.previous
+              ? `/${locale}/products/${adjacentProducts.previous.product.productId}`
+              : `/${locale}/products`
+          }
+          data-track-event={adjacentProducts.previous ? "product_card_click" : "nav_click"}
+          data-track-label={adjacentProducts.previous?.product.productId ?? "back_to_products"}
+          data-track-location="product_detail_adjacent"
           href={
             adjacentProducts.previous
               ? `/${locale}/products/${adjacentProducts.previous.product.productId}`
@@ -1032,6 +1053,14 @@ export default async function ProductDetailPage({
 
         <Link
           className="grid gap-3 rounded-[1.5rem] border border-[rgba(24,56,138,0.08)] bg-white p-5 text-right shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] transition hover:-translate-y-1 hover:border-[rgba(37,99,255,0.14)] hover:shadow-[0_26px_56px_-34px_rgba(18,41,103,0.22)] sm:p-6"
+          data-track-destination={
+            adjacentProducts.next
+              ? `/${locale}/products/${adjacentProducts.next.product.productId}`
+              : `/${locale}/products`
+          }
+          data-track-event={adjacentProducts.next ? "product_card_click" : "nav_click"}
+          data-track-label={adjacentProducts.next?.product.productId ?? "browse_more_products"}
+          data-track-location="product_detail_adjacent"
           href={
             adjacentProducts.next
               ? `/${locale}/products/${adjacentProducts.next.product.productId}`
