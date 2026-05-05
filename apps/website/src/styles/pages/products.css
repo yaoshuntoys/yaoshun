@@ -820,11 +820,11 @@
 @media (max-width: 767.98px) {
 
   .products-page {
-    gap: 3.4rem;
+    gap: 2.95rem;
   }
 
   .products-hero {
-    min-height: 396px;
+    min-height: 356px;
   }
 
   .products-hero-background::after {
@@ -839,12 +839,12 @@
   }
 
   .products-hero-grid {
-    gap: 1.4rem;
+    gap: 1.1rem;
   }
 
   .products-hero-copy {
-    gap: 1rem;
-    padding: 0.92rem 0 1.05rem;
+    gap: 0.82rem;
+    padding: 0.62rem 0 0.72rem;
   }
 
   .products-hero-copy::before {
@@ -853,17 +853,40 @@
   }
 
   .products-hero-title {
-    font-size: clamp(2.2rem, 10vw, 3rem);
-    line-height: 1.04;
+    font-size: clamp(2.02rem, 8.9vw, 2.7rem);
+    line-height: 1.02;
   }
 
   .products-hero-text {
-    font-size: 0.94rem;
-    line-height: 1.7;
+    font-size: 0.91rem;
+    line-height: 1.64;
   }
 
   .products-hero-features {
-    gap: 0.7rem;
+    gap: 0.58rem;
+  }
+
+  .products-hero-feature {
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 0.72rem;
+    row-gap: 0.12rem;
+    align-items: start;
+  }
+
+  .products-hero-feature-icon {
+    grid-row: 1 / span 2;
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
+  .products-hero-feature h3 {
+    font-size: 0.88rem;
+  }
+
+  .products-hero-feature p {
+    max-width: none;
+    font-size: 0.75rem;
+    line-height: 1.52;
   }
 
   .products-hero-visual {

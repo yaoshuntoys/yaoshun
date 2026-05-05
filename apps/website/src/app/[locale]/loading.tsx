@@ -2,7 +2,7 @@
 
 import {useParams} from "next/navigation";
 
-import {FallbackPage} from "@/components/sections/fallback-page";
+import {LoadingView} from "@/components/sections/loading-view";
 import {defaultLocale, isLocale, type Locale} from "@/lib/i18n";
 
 function useSafeLocale(): Locale {
@@ -16,17 +16,13 @@ export default function LocaleLoading() {
   const locale = useSafeLocale();
 
   return (
-    <FallbackPage
+    <LoadingView
       description={{
-        en: "We are loading the latest page content and keeping the current navigation ready.",
-        zh: "我们正在加载页面内容，并保持当前导航可用。",
+        en: "Loading the next page.",
+        zh: "正在加载页面。",
       }}
-      eyebrow={{en: "Loading", zh: "加载中"}}
-      isLoading
       locale={locale}
-      statusLabel={locale === "zh" ? "加载中" : "Loading"}
-      suggestions={[]}
-      title={{en: "Preparing Your Page", zh: "正在准备页面"}}
+      title={{en: "Loading", zh: "加载中"}}
     />
   );
 }

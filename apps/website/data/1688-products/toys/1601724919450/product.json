@@ -19,12 +19,12 @@
   },
   "pricing": {
     "display": {
-      "en": "US$19.75",
-      "zh": "US$19.75"
+      "en": "US$31.89",
+      "zh": "US$31.89"
     },
     "currency": "$",
-    "min": 19.75,
-    "max": 19.75,
+    "min": 31.89,
+    "max": 31.89,
     "isRange": false,
     "minOrder": {
       "en": "1 set",
@@ -36,7 +36,7 @@
           "en": ">= 1 sets",
           "zh": ">= 1 套"
         },
-        "price": "US$19.75"
+        "price": "US$31.89"
       }
     ]
   },
@@ -606,7 +606,7 @@
         "offerCount": 1,
         "availability": "http://schema.org/InStock",
         "priceCurrency": "USD",
-        "price": "19.75",
+        "price": "31.89",
         "priceValidUntil": "2027-04-29"
       }
     },

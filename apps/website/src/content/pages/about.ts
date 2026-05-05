@@ -7,7 +7,7 @@ const certificateImage6 = "https://7j7davvujdsmddan.public.blob.vercel-storage.c
 const factoryImage1 = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-7.webp";
 const factoryImage2 = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-8.webp";
 const factoryImage3 = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-9.webp";
-const factoryImage4 = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-6.webp";
+const factoryImage4 = "/site/home/about-factory.webp";
 const factoryImage5 = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy10.webp";
 const factoryImage6 = "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy11.webp";
 
@@ -28,13 +28,13 @@ export const certificateItems = [
 ] as const;
 
 export const factoryItems = [
+  { title: { en: "Factory Exterior", zh: "工厂外景" }, image: factoryImage4 },
   { title: { en: "Automatic Cutting Line", zh: "自动切管生产线" }, image: factoryImage1 },
   {
     title: { en: "Extrusion Production Line", zh: "挤出生产线" },
     image: factoryImage2,
   },
   { title: { en: "Production Workshop", zh: "生产车间" }, image: factoryImage3 },
-  { title: { en: "Factory Exterior", zh: "工厂外景" }, image: factoryImage4 },
   { title: { en: "Packing Warehouse", zh: "包装仓储区" }, image: factoryImage5 },
   {
     title: { en: "Injection Molding Machine", zh: "注塑设备" },

@@ -1,7 +1,7 @@
-import {Breadcrumbs} from "@/components/ui/marketing";
-import type {LocalizedText} from "@/content/types";
-import {t, type Locale} from "@/lib/i18n";
-import {localizedPath} from "@/lib/routes";
+import { Breadcrumbs } from "@/components/ui/marketing";
+import type { LocalizedText } from "@/content/types";
+import { t, type Locale } from "@/lib/i18n";
+import { localizedPath } from "@/lib/routes";
 
 type LegalLink = {
   href: string;
@@ -43,8 +43,11 @@ export function LegalDocumentPage({
       <section className="section-panel min-w-0">
         <Breadcrumbs
           items={[
-            {href: localizedPath(locale, "home"), label: {en: "Home", zh: "首页"}},
-            {label: currentLabel},
+            {
+              href: localizedPath(locale, "home"),
+              label: { en: "Home", zh: "首页" },
+            },
+            { label: currentLabel },
           ]}
           locale={locale}
         />

@@ -1,21 +1,17 @@
 import {SiteShell} from "@/components/layout/site-shell";
-import {FallbackPage} from "@/components/sections/fallback-page";
+import {LoadingView} from "@/components/sections/loading-view";
 import {defaultLocale} from "@/lib/i18n";
 
 export default function RootLoading() {
   return (
     <SiteShell locale={defaultLocale}>
-      <FallbackPage
+      <LoadingView
         description={{
-          en: "We are preparing the next view and checking the content needed for this request.",
-          zh: "我们正在准备下一个视图，并加载本次请求所需内容。",
+          en: "Loading the next page.",
+          zh: "正在加载页面。",
         }}
-        eyebrow={{en: "Loading", zh: "加载中"}}
-        isLoading
         locale={defaultLocale}
-        statusLabel="Loading"
-        suggestions={[]}
-        title={{en: "Preparing Your Page", zh: "正在准备页面"}}
+        title={{en: "Loading", zh: "加载中"}}
       />
     </SiteShell>
   );

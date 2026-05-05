@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import { headers } from "next/headers";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
@@ -143,6 +143,14 @@ export const metadata: Metadata = {
   verification: {
     google: googleSiteVerification || undefined,
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
 };
 
 export default async function RootLayout({

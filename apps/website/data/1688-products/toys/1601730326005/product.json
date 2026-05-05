@@ -19,12 +19,12 @@
   },
   "pricing": {
     "display": {
-      "en": "$16.15",
-      "zh": "$16.15"
+      "en": "$30.13",
+      "zh": "$30.13"
     },
     "currency": "$",
-    "min": 15.95,
-    "max": 16.15,
+    "min": 30.03,
+    "max": 30.13,
     "isRange": true,
     "minOrder": {
       "en": "5 boxes",
@@ -36,14 +36,14 @@
           "en": "5 - 499 boxes",
           "zh": "5 - 499 箱"
         },
-        "price": "$16.15"
+        "price": "$30.13"
       },
       {
         "quantity": {
           "en": ">= 500 boxes",
           "zh": ">= 500 箱"
         },
-        "price": "$15.95"
+        "price": "$30.03"
       }
     ]
   },
@@ -589,7 +589,7 @@
         "offerCount": 1,
         "availability": "http://schema.org/InStock",
         "priceCurrency": "USD",
-        "price": "15.95",
+        "price": "30.03",
         "priceValidUntil": "2027-04-25"
       }
     },

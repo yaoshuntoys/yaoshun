@@ -943,7 +943,7 @@
     --home-hero-surface-overlap: clamp(2.5rem, 8vw, 3.4rem);
     --home-section-padding-y: 1.15rem;
     --home-section-padding-x: 0.95rem;
-    gap: 2.3rem;
+    gap: 2.05rem;
   }
 
   .home-hero-section {

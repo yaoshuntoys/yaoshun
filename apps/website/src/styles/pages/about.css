@@ -1014,7 +1014,7 @@
 
 .about-page {
     --about-hero-metrics-overlap: clamp(2.5rem, 8vw, 3.4rem);
-    gap: 4rem;
+    gap: 3.1rem;
   }
 
   .about-hero {
