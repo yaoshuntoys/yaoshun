@@ -1,17 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import {
-  ArrowRight,
-  Home,
-  Mail,
-  Newspaper,
-  PackageSearch,
-  RefreshCw,
-  Search,
-  Wrench,
-  type LucideIcon,
-} from "lucide-react";
 
 import type {LocalizedText} from "@/content/types";
 import {t, type Locale} from "@/lib/i18n";
@@ -55,7 +44,119 @@ type FallbackPageProps = {
   title: LocalizedText;
 };
 
-const iconMap: Record<FallbackIconKey, LucideIcon> = {
+type IconProps = {
+  className?: string;
+  size?: number;
+  strokeWidth?: number;
+};
+
+type IconComponent = (props: IconProps) => React.ReactNode;
+
+function IconBase({
+  children,
+  className,
+  size = 24,
+  strokeWidth = 2,
+}: IconProps & {children: React.ReactNode}) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={className}
+      fill="none"
+      focusable="false"
+      height={size}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={strokeWidth}
+      viewBox="0 0 24 24"
+      width={size}
+    >
+      {children}
+    </svg>
+  );
+}
+
+function ArrowRight(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M5 12h14" />
+      <path d="m13 6 6 6-6 6" />
+    </IconBase>
+  );
+}
+
+function Home(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+      <path d="M3 10a2 2 0 0 1 .7-1.5l7-6a2 2 0 0 1 2.6 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+    </IconBase>
+  );
+}
+
+function Mail(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <rect height="16" rx="2" width="20" x="2" y="4" />
+      <path d="m22 7-10 6L2 7" />
+    </IconBase>
+  );
+}
+
+function Newspaper(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M15 18h-5" />
+      <path d="M18 14h-8" />
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
+      <rect height="4" rx="1" width="8" x="10" y="6" />
+    </IconBase>
+  );
+}
+
+function PackageSearch(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M21 10V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l2-1.1" />
+      <path d="m7.5 4.3 9 5.1" />
+      <path d="M3.3 7 12 12l8.7-5" />
+      <path d="M12 22V12" />
+      <circle cx="18.5" cy="15.5" r="2.5" />
+      <path d="M20.3 17.3 22 19" />
+    </IconBase>
+  );
+}
+
+function RefreshCw(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M3 12a9 9 0 0 1 15.7-6.3L21 8" />
+      <path d="M21 3v5h-5" />
+      <path d="M21 12a9 9 0 0 1-15.7 6.3L3 16" />
+      <path d="M3 21v-5h5" />
+    </IconBase>
+  );
+}
+
+function Search(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <circle cx="11" cy="11" r="8" />
+      <path d="m21 21-4.3-4.3" />
+    </IconBase>
+  );
+}
+
+function Wrench(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a6 6 0 0 1-7.3 7.3l-7.9 7.9a2.1 2.1 0 0 1-3-3l7.9-7.9a6 6 0 0 1 7.3-7.3Z" />
+    </IconBase>
+  );
+}
+
+const iconMap: Record<FallbackIconKey, IconComponent> = {
   contact: Mail,
   home: Home,
   news: Newspaper,
@@ -97,7 +198,7 @@ const defaultSuggestions: FallbackSuggestion[] = [
 
 function FallbackIcon({icon}: {icon: FallbackIconKey}) {
   const Icon = iconMap[icon];
-  return <Icon aria-hidden="true" size={17} strokeWidth={2.2} />;
+  return <Icon size={17} strokeWidth={2.2} />;
 }
 
 function resolveSuggestionHref(locale: Locale, route: RouteKey) {
@@ -202,7 +303,6 @@ export function FallbackPage({
                 </span>
               </span>
               <ArrowRight
-                aria-hidden="true"
                 className="text-[#2563ff] min-[900px]:self-end"
                 size={17}
                 strokeWidth={2.2}

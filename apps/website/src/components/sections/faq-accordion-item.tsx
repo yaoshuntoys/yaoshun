@@ -2,8 +2,19 @@
 
 import {useEffect, useRef} from "react";
 
-import {trackEvent} from "@/lib/analytics";
 import type {Locale} from "@/lib/i18n";
+
+function trackFaqExpand(locale: Locale, question: string) {
+  void import("@/lib/analytics")
+    .then(({trackEvent}) => {
+      trackEvent("faq_expand", {
+        locale,
+        location: "faq_page",
+        question,
+      });
+    })
+    .catch(() => undefined);
+}
 
 export function FaqAccordionItem({
   answer,
@@ -30,11 +41,7 @@ export function FaqAccordionItem({
           return;
         }
 
-        trackEvent("faq_expand", {
-          locale,
-          location: "faq_page",
-          question,
-        });
+        trackFaqExpand(locale, question);
       }}
       open={defaultOpen}
     >

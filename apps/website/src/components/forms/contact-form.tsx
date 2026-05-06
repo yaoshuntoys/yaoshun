@@ -1,9 +1,7 @@
 "use client";
 
 import {type FormEvent, useState} from "react";
-import {SendHorizontal} from "lucide-react";
 
-import {reportGoogleAdsLeadConversion, trackEvent} from "@/lib/analytics";
 import {t, type Locale} from "@/lib/i18n";
 import {formFeedbackBaseClass, inputClass, primaryButtonClass, textareaClass} from "@/lib/ui";
 
@@ -18,6 +16,44 @@ type ContactFormProps = {
     error: {en?: string; zh?: string};
   };
 };
+
+type FormTrackingValue = string | number | boolean;
+
+function SendHorizontal({size = 24, strokeWidth = 2}: {size?: number; strokeWidth?: number}) {
+  return (
+    <svg
+      aria-hidden="true"
+      fill="none"
+      focusable="false"
+      height={size}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={strokeWidth}
+      viewBox="0 0 24 24"
+      width={size}
+    >
+      <path d="m22 2-7 20-4-9-9-4Z" />
+      <path d="M22 2 11 13" />
+    </svg>
+  );
+}
+
+function trackFormEvent(eventName: string, params: Record<string, FormTrackingValue>) {
+  void import("@/lib/analytics")
+    .then(({trackEvent}) => {
+      trackEvent(eventName, params);
+    })
+    .catch(() => undefined);
+}
+
+function reportLeadConversion() {
+  void import("@/lib/analytics")
+    .then(({reportGoogleAdsLeadConversion}) => {
+      reportGoogleAdsLeadConversion({currency: "CNY", value: 1});
+    })
+    .catch(() => undefined);
+}
 
 export function ContactForm({locale, labels}: ContactFormProps) {
   const [submitState, setSubmitState] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -49,7 +85,7 @@ export function ContactForm({locale, labels}: ContactFormProps) {
       });
 
       if (!response.ok) {
-        trackEvent("form_submit_error", {
+        trackFormEvent("form_submit_error", {
           error_type: "response_error",
           form_location: "contact_page",
           lead_type: "contact_form",
@@ -61,7 +97,7 @@ export function ContactForm({locale, labels}: ContactFormProps) {
         ok = true;
       }
     } catch {
-      trackEvent("form_submit_error", {
+      trackFormEvent("form_submit_error", {
         error_type: "network_error",
         form_location: "contact_page",
         lead_type: "contact_form",
@@ -71,14 +107,14 @@ export function ContactForm({locale, labels}: ContactFormProps) {
     }
 
     if (ok) {
-      trackEvent("generate_lead", {
+      trackFormEvent("generate_lead", {
         form_location: "contact_page",
         has_company: false,
         has_subject: false,
         lead_type: "contact_form",
         locale,
       });
-      reportGoogleAdsLeadConversion({currency: "CNY", value: 1});
+      reportLeadConversion();
       setSubmitState("success");
       form.reset();
       return;
@@ -96,7 +132,7 @@ export function ContactForm({locale, labels}: ContactFormProps) {
         }
 
         setHasStarted(true);
-        trackEvent("form_start", {
+        trackFormEvent("form_start", {
           form_location: "contact_page",
           lead_type: "contact_form",
           locale,

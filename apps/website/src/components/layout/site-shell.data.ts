@@ -30,3 +30,14 @@ export const navItems = [
   {key: "news", href: "/news", label: {en: "News", zh: "新闻"}},
   {key: "about", href: "/about", label: {en: "About Us", zh: "关于我们"}},
 ] as const;
+
+export const siteShellUi = {
+  mobileMenuAriaLabel: {
+    en: "Toggle navigation menu",
+    zh: "切换导航菜单",
+  },
+  localeMenuLabel: {
+    en: "Language / Region",
+    zh: "语言 / 地区",
+  },
+} as const;

@@ -2,9 +2,26 @@
 
 import {type FormEvent, useState} from "react";
 
-import {reportGoogleAdsLeadConversion, trackEvent} from "@/lib/analytics";
 import {t, type Locale} from "@/lib/i18n";
 import {formFeedbackBaseClass, inputClass, primaryButtonClass, textareaClass} from "@/lib/ui";
+
+type FormTrackingValue = string | number | boolean;
+
+function trackFormEvent(eventName: string, params: Record<string, FormTrackingValue>) {
+  void import("@/lib/analytics")
+    .then(({trackEvent}) => {
+      trackEvent(eventName, params);
+    })
+    .catch(() => undefined);
+}
+
+function reportLeadConversion() {
+  void import("@/lib/analytics")
+    .then(({reportGoogleAdsLeadConversion}) => {
+      reportGoogleAdsLeadConversion({currency: "CNY", value: 1});
+    })
+    .catch(() => undefined);
+}
 
 export function HomeLeadForm({locale}: {locale: Locale}) {
   const [state, setState] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -32,7 +49,7 @@ export function HomeLeadForm({locale}: {locale: Locale}) {
       });
 
       if (!response.ok) {
-        trackEvent("form_submit_error", {
+        trackFormEvent("form_submit_error", {
           error_type: "response_error",
           form_location: "home_page",
           lead_type: "home_lead_form",
@@ -43,18 +60,18 @@ export function HomeLeadForm({locale}: {locale: Locale}) {
         return;
       }
 
-      trackEvent("generate_lead", {
+      trackFormEvent("generate_lead", {
         form_location: "home_page",
         has_company: false,
         has_subject: false,
         lead_type: "home_lead_form",
         locale,
       });
-      reportGoogleAdsLeadConversion({currency: "CNY", value: 1});
+      reportLeadConversion();
       setState("success");
       form.reset();
     } catch {
-      trackEvent("form_submit_error", {
+      trackFormEvent("form_submit_error", {
         error_type: "network_error",
         form_location: "home_page",
         lead_type: "home_lead_form",
@@ -73,7 +90,7 @@ export function HomeLeadForm({locale}: {locale: Locale}) {
         }
 
         setHasStarted(true);
-        trackEvent("form_start", {
+        trackFormEvent("form_start", {
           form_location: "home_page",
           lead_type: "home_lead_form",
           locale,

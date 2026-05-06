@@ -1,9 +1,26 @@
-import Image from "@/components/media/smart-image";
 import Link from "next/link";
-import {ChevronRight} from "lucide-react";
 
 import type {LocalizedText} from "@/content/types";
 import {t, type Locale} from "@/lib/i18n";
+
+function ChevronRight({size = 24, strokeWidth = 2}: {size?: number; strokeWidth?: number}) {
+  return (
+    <svg
+      aria-hidden="true"
+      fill="none"
+      focusable="false"
+      height={size}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={strokeWidth}
+      viewBox="0 0 24 24"
+      width={size}
+    >
+      <path d="m9 18 6-6-6-6" />
+    </svg>
+  );
+}
 
 export function BrandMark({compact = false}: {compact?: boolean}) {
   const iconSize = compact ? 32 : 40;
@@ -14,10 +31,13 @@ export function BrandMark({compact = false}: {compact?: boolean}) {
         compact ? "gap-1.5 text-[1.28rem]" : "gap-2 text-[clamp(1.45rem,2vw,1.95rem)]"
       }`}
     >
-      <Image
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         alt="yaoshun toys"
         className={`shrink-0 ${compact ? "h-8 w-8" : "h-10 w-10"}`}
+        decoding="async"
         height={iconSize}
+        loading="lazy"
         src="/favicon-rounded-192.png"
         width={iconSize}
       />

@@ -1,22 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import {
-  ArrowRight,
-  Globe,
-  Mail,
-  MapPin,
-  Menu,
-  Phone,
-  X,
-} from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { BrandMark } from "@/components/ui/marketing";
-import { navItems, siteCopy } from "@/components/layout/site-shell.data";
-import { sharedUi } from "@/content/site";
-import { openCookieConsentManager } from "@/lib/cookie-consent";
+import { navItems, siteCopy, siteShellUi } from "@/components/layout/site-shell.data";
+import { openCookieConsentManager } from "@/lib/cookie-consent-events";
 import { localeRegistry, t, type Locale } from "@/lib/i18n";
 import {
   contactFormPath,
@@ -35,6 +25,99 @@ type FooterLink = {
   label: string;
   trackingLabel?: string;
 };
+
+type IconProps = {
+  size?: number;
+  strokeWidth?: number;
+};
+
+function IconBase({
+  children,
+  size = 24,
+  strokeWidth = 2,
+}: IconProps & { children: React.ReactNode }) {
+  return (
+    <svg
+      aria-hidden="true"
+      fill="none"
+      focusable="false"
+      height={size}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={strokeWidth}
+      viewBox="0 0 24 24"
+      width={size}
+    >
+      {children}
+    </svg>
+  );
+}
+
+function ArrowRight(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M5 12h14" />
+      <path d="m13 6 6 6-6 6" />
+    </IconBase>
+  );
+}
+
+function Globe(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20" />
+      <path d="M12 2a15.3 15.3 0 0 1 0 20" />
+      <path d="M12 2a15.3 15.3 0 0 0 0 20" />
+    </IconBase>
+  );
+}
+
+function Mail(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <rect height="16" rx="2" width="20" x="2" y="4" />
+      <path d="m22 7-10 6L2 7" />
+    </IconBase>
+  );
+}
+
+function MapPin(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </IconBase>
+  );
+}
+
+function Menu(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M4 6h16" />
+      <path d="M4 12h16" />
+      <path d="M4 18h16" />
+    </IconBase>
+  );
+}
+
+function Phone(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z" />
+    </IconBase>
+  );
+}
+
+function X(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
+    </IconBase>
+  );
+}
 
 const localeEntries = Object.entries(localeRegistry) as Array<
   [Locale, (typeof localeRegistry)[Locale]]
@@ -170,7 +253,7 @@ function LocaleSwitcher({
       <button
         aria-controls={localeMenuId}
         aria-expanded={localeOpen}
-        aria-label={t(locale, sharedUi.siteShell.localeMenuLabel)}
+        aria-label={t(locale, siteShellUi.localeMenuLabel)}
         className={localeButtonClass}
         data-track-event="cta_click"
         data-track-label="locale_menu"
@@ -351,7 +434,7 @@ function SiteHeader({
           <button
             aria-controls={mobileMenuId}
             aria-expanded={mobileOpen}
-            aria-label={t(locale, sharedUi.siteShell.mobileMenuAriaLabel)}
+            aria-label={t(locale, siteShellUi.mobileMenuAriaLabel)}
             className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-transparent bg-[linear-gradient(135deg,#2563ff_0%,#1a43c9_100%)] text-white shadow-[0_16px_34px_-20px_rgba(37,99,255,0.58)] transition duration-200 hover:-translate-y-0.5 hover:text-white hover:shadow-[0_20px_40px_-22px_rgba(37,99,255,0.66)]"
             data-track-event="nav_click"
             data-track-label={mobileOpen ? "mobile_menu_close" : "mobile_menu_open"}
