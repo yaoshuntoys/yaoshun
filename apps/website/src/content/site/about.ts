@@ -1,43 +1,42 @@
+import {seoKeywordPools} from '@/content/site/shared';
+
 export const aboutContent = {
   seo: {
     title: {
-      en: "About Us | Dongguan Yaoshun Technology Co., Ltd. | 东莞市尧顺科技有限公司",
-      zh: "关于我们 | 东莞市尧顺科技有限公司 | Dongguan Yaoshun Technology Co., Ltd.",
+      en: "About Yaoshun | Dongguan Source Factory For Building & Custom Toys",
+      zh: "关于尧顺 | 东莞源头工厂 | 搭建玩具与定制玩具",
     },
     description: {
-      en: "Learn about Dongguan Yaoshun Technology Co., Ltd., an OEM/ODM manufacturer focused on educational toys, interlocking toys, precision plastics, and integrated factory delivery.",
-      zh: "了解东莞市尧顺科技有限公司：聚焦益智玩具、拼插玩具、精密塑胶制造与一体化工厂交付能力。",
+      en: "Learn about Dongguan Yaoshun Technology Co., Ltd., a source factory for fort building toys, STEM building kits, toy OEM/ODM, mold development, precision injection molding, extrusion, packaging, compliance files and export delivery.",
+      zh: "了解东莞市尧顺科技有限公司：东莞源头工厂，主营堡垒拼搭玩具、STEM搭建套装，支持玩具 OEM/ODM、模具开发、精密注塑、挤出、包装、合规资料与出口交付。",
     },
     keywords: {
       en: [
+        ...seoKeywordPools.company.en,
+        ...seoKeywordPools.factoryCapabilities.en,
+        ...seoKeywordPools.compliance.en.slice(0, 5),
         "Dongguan Yaoshun company profile",
-        "interlocking toy manufacturer company",
-        "building toy factory profile",
-        "toy manufacturing company profile",
-        "dongguan toy supplier",
         "OEM ODM toy enterprise",
-        "interlocking toy factory capabilities",
       ],
       zh: [
+        ...seoKeywordPools.company.zh,
+        ...seoKeywordPools.factoryCapabilities.zh,
+        ...seoKeywordPools.compliance.zh.slice(0, 5),
         "尧顺企业简介",
         "东莞市尧顺科技有限公司资料",
-        "拼接玩具企业",
-        "拼插玩具工厂介绍",
-        "积木拼装玩具工厂实力",
-        "玩具制造企业资料",
         "OEM ODM玩具企业",
       ],
     },
   },
   hero: {
-    eyebrow: { en: "Founded In 2016", zh: "成立于 2016 年" },
+    eyebrow: { en: "Dongguan Source Factory Founded In 2016", zh: "成立于 2016 年的东莞源头工厂" },
     title: {
-      en: "A Toy Manufacturing Team Built For Long-Term OEM/ODM Collaboration",
-      zh: "面向长期 OEM/ODM 协作的玩具制造团队",
+      en: "A Source Toy Factory Built For OEM/ODM And Custom Development",
+      zh: "面向 OEM/ODM 与定制化开发的源头玩具工厂",
     },
     description: {
-      en: "Yaoshun focuses on educational toys, interlocking toy projects, precision injection molding, tubing, profiles, and coordinated plastic manufacturing workflows.",
-      zh: "尧顺聚焦益智玩具、拼插玩具项目、精密注塑件、管材型材及协同塑胶制造流程。",
+      en: "Yaoshun focuses on building toys, custom toys, educational toys, interlocking toy projects, custom toy development, precision injection molding, tubing, profiles, and coordinated factory delivery workflows.",
+      zh: "尧顺聚焦搭建玩具、定制玩具、益智玩具、拼插玩具项目、玩具定制化开发、精密注塑件、管材型材及协同工厂交付流程。",
     },
   },
   positioning: {

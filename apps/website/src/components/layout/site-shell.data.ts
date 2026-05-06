@@ -1,15 +1,15 @@
 export const siteCopy = {
   brandTagline: {
-    en: "Educational toys, AI toy plastic electronics, custom tubing, and precision plastic manufacturing with reliable global delivery.",
-    zh: "专注益智玩具、AI塑胶电子、定制管材与精密塑胶制造，并提供稳定全球交付。",
+    en: "Dongguan source toy factory for building toys, custom toys, toy OEM/ODM, custom development, mold making, assembly, packaging, and global delivery.",
+    zh: "尧顺是东莞源头玩具工厂，支持搭建玩具、定制玩具、玩具 OEM/ODM、定制化开发、开模注塑、组装包装与全球交付。",
   },
   companyName: {
     en: "Dongguan Yaoshun Technology Co., Ltd.",
     zh: "东莞市尧顺科技有限公司",
   },
   companyIntro: {
-    en: "Founded in 2016, Yaoshun is a manufacturer focused on educational toys, AI toy plastic electronic products, interlocking plastic toys, precision injection molding, custom tubing, and profiles, with OEM/ODM development from design and tooling to delivery.",
-    zh: "尧顺成立于 2016 年，专注益智玩具、AI塑胶电子产品、拼插类塑胶玩具、精密注塑件及管材型材配套，提供从设计、开模到交付的 OEM/ODM 一站式支持。",
+    en: "Founded in 2016, Yaoshun is a Dongguan source factory focused on building toys, custom toys, educational toys, AI toy plastic electronic products, interlocking plastic toys, precision injection molding, custom tubing, and profiles, with toy OEM/ODM and custom development from design and tooling to delivery.",
+    zh: "尧顺成立于 2016 年，是一家东莞源头工厂，专注搭建玩具、定制玩具、益智玩具、AI塑胶电子产品、拼插类塑胶玩具、精密注塑件及管材型材配套，提供从设计、开模到交付的玩具 OEM/ODM 与定制化开发支持。",
   },
   contact: {
     email: "yaoshuntoys@gmail.com",

@@ -53,11 +53,14 @@ pnpm --filter @yaoshun/website build
 
 ```bash
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_ENABLE_THIRD_PARTY_TRACKING=
 NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=
 NEXT_PUBLIC_GOOGLE_ADS_ID=
 NEXT_PUBLIC_GOOGLE_ADS_LEAD_CONVERSION_SEND_TO=
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
 ```
+
+`NEXT_PUBLIC_ENABLE_THIRD_PARTY_TRACKING` 留空时默认开启；填 `0` 可关闭 GA/Google Ads 脚本，填 `1` 可显式开启。
 
 联系表单会提交到 `POST /api/contact-form`，并通过邮件转发到 Tawk ticket inbox：
 

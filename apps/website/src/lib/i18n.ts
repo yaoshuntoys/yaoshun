@@ -70,29 +70,11 @@ export function getLocaleFromPathname(pathname: string): Locale | null {
 
 export function resolvePreferredLocale(options?: {
   cookieLocale?: string | null;
-  acceptLanguage?: string | null;
 }): Locale {
   const matchedCookie = matchSupportedLocale(options?.cookieLocale);
 
   if (matchedCookie) {
     return matchedCookie;
-  }
-
-  const header = options?.acceptLanguage;
-
-  if (header) {
-    const candidates = header
-      .split(",")
-      .map((item) => item.split(";")[0]?.trim())
-      .filter(Boolean);
-
-    for (const candidate of candidates) {
-      const matched = matchSupportedLocale(candidate);
-
-      if (matched) {
-        return matched;
-      }
-    }
   }
 
   return defaultLocale;

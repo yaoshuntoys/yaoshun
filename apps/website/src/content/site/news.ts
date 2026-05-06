@@ -1,3 +1,5 @@
+import {seoKeywordPools} from '@/content/site/shared';
+
 export const newsContent = {
   seo: {
     title: {
@@ -5,12 +7,28 @@ export const newsContent = {
       zh: '新闻中心 | 东莞市尧顺科技有限公司 | 玩具 OEM/ODM 动态'
     },
     description: {
-      en: 'Browse factory updates and science explainers around toy OEM/ODM, PU/PVC tubing, quality control, and delivery execution.',
-      zh: '查看围绕玩具 OEM/ODM、PU/PVC 管材、质量管理与交付执行的工厂动态与科普文章。'
+      en: 'Browse factory updates and explainers around fort building toys, STEM building kits, toy OEM/ODM, PU/PVC tubing, injection molding, quality control and delivery execution.',
+      zh: '查看围绕堡垒拼搭玩具、STEM搭建套装、玩具 OEM/ODM、PU/PVC 管材、注塑、质量管理与交付执行的工厂动态与科普文章。'
     },
     keywords: {
-      en: ['toy manufacturing news', 'oem odm updates', 'toy quality explainers', 'pu pvc tubing knowledge', 'factory delivery practices'],
-      zh: ['玩具制造新闻', 'OEM ODM 动态', '玩具质量科普', 'PU PVC 管材知识', '工厂交付实践']
+      en: [
+        ...seoKeywordPools.products.en.slice(0, 8),
+        ...seoKeywordPools.factoryCapabilities.en.slice(0, 6),
+        'toy manufacturing news',
+        'oem odm updates',
+        'toy quality explainers',
+        'pu pvc tubing knowledge',
+        'factory delivery practices'
+      ],
+      zh: [
+        ...seoKeywordPools.products.zh.slice(0, 8),
+        ...seoKeywordPools.factoryCapabilities.zh.slice(0, 6),
+        '玩具制造新闻',
+        'OEM ODM 动态',
+        '玩具质量科普',
+        'PU PVC 管材知识',
+        '工厂交付实践'
+      ]
     }
   },
   hero: {

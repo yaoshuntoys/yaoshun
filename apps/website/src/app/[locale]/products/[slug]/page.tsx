@@ -32,6 +32,8 @@ import {
   getAdjacentShowcaseProducts,
   getPackagingAttributes,
   getPrimaryAttributes,
+  getProductBusinessCategories,
+  getProductSeoKeywords,
 } from "@/lib/site-data";
 import { getLocaleFromParams, locales, t, type Locale } from "@/lib/i18n";
 import { contactFormPath } from "@/lib/routes";
@@ -306,18 +308,16 @@ export async function generateMetadata({
     t(locale, productsPageContent.seo.detailDescriptionTemplate),
     productTitle,
   );
-  const categoryKeywords = [
-    ...(product.categories?.[locale] || []),
-    ...(product.categories?.en || []),
-    ...(product.categories?.zh || []),
-  ];
-
-  return buildMetadata(locale, title, description || productDescription, `products/${slug}`, [
-    productTitle,
-    productDescription,
-    ...categoryKeywords,
-    "yaoshun toys product detail",
-  ]);
+  return buildMetadata(
+    locale,
+    title,
+    description || productDescription,
+    `products/${slug}`,
+    [
+      ...getProductSeoKeywords(locale, product),
+      productTitle,
+    ],
+  );
 }
 
 export default async function ProductDetailPage({
@@ -345,12 +345,7 @@ export default async function ProductDetailPage({
   const descriptionList = product.description || { en: [], zh: [] };
   const descriptionLines =
     descriptionList[locale] || descriptionList.en || descriptionList.zh || [];
-  const categoryTrail = (
-    product.categories?.[locale] ||
-    product.categories?.en ||
-    product.categories?.zh ||
-    []
-  ).slice(1, 3);
+  const categoryTrail = getProductBusinessCategories(locale, product);
   const minOrder = localize(locale, product.pricing?.minOrder, "");
   const priceUnit = getPriceUnit(locale, minOrder);
   const ageRange = formatAgeRangeValue(
@@ -506,11 +501,7 @@ export default async function ProductDetailPage({
   ]).slice(0, 2);
   const productUrl = toAbsoluteUrl(`/${locale}/products/${slug}`);
   const productDescription = uniqueLines(descriptionLines).join(" ").trim() || title;
-  const categoryNames =
-    product.categories?.[locale] ||
-    product.categories?.en ||
-    product.categories?.zh ||
-    [];
+  const categoryNames = categoryTrail;
   const structuredImages = mediaImages.slice(0, 8).map((image) => toAbsoluteUrl(image));
   const currencyCode = normalizeCurrencyCode(product.pricing?.currency);
   const hasMinPrice = typeof product.pricing?.min === "number";
@@ -1035,6 +1026,7 @@ export default async function ProductDetailPage({
               ? `/${locale}/products/${adjacentProducts.previous.product.productId}`
               : `/${locale}/products`
           }
+          prefetch={false}
         >
           <span className="text-[0.82rem] font-bold uppercase tracking-[0.12em] text-[#2563ff]">
             {text.previousProduct}
@@ -1066,6 +1058,7 @@ export default async function ProductDetailPage({
               ? `/${locale}/products/${adjacentProducts.next.product.productId}`
               : `/${locale}/products`
           }
+          prefetch={false}
         >
           <span className="text-[0.82rem] font-bold uppercase tracking-[0.12em] text-[#2563ff]">
             {text.nextProduct}

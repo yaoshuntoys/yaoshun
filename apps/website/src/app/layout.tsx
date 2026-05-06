@@ -1,13 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
-import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Suspense } from "react";
 
-import { AnalyticsEvents } from "@/components/tracking/analytics-events";
-import { CookieConsentManager } from "@/components/tracking/cookie-consent-manager";
-import { TawkScript } from "@/components/tracking/tawk-script";
-import { TrackingScripts } from "@/components/tracking/tracking-scripts";
+import { ClientRuntime } from "@/components/tracking/client-runtime";
 import { homeContent, siteSeo } from "@/content/site";
 import {
   defaultLocale,
@@ -29,9 +23,9 @@ import "../styles/page-shared.css";
 
 const outfit = Outfit({
   display: "swap",
+  preload: false,
   subsets: ["latin"],
   variable: "--font-outfit",
-  weight: ["500", "600", "700", "800"],
 });
 
 const defaultTitle = t(defaultLocale, homeContent.seo.title);
@@ -39,12 +33,25 @@ const defaultDescription = t(defaultLocale, homeContent.seo.description);
 const defaultKeywords = Array.from(
   new Set(locales.flatMap((locale) => t(locale, siteSeo.defaultKeywords))),
 );
+const defaultAlternates = Object.fromEntries(
+  locales.map((locale) => [
+    localeRegistry[locale].htmlLang,
+    `${siteUrl}/${locale}`,
+  ]),
+);
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: defaultTitle,
   description: defaultDescription,
   keywords: defaultKeywords,
+  alternates: {
+    canonical: `${siteUrl}/${defaultLocale}`,
+    languages: {
+      ...defaultAlternates,
+      "x-default": `${siteUrl}/${defaultLocale}`,
+    },
+  },
   applicationName: siteName,
   authors: [{ name: siteName }],
   category: "manufacturing",
@@ -136,15 +143,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
-        <TawkScript />
-        <TrackingScripts />
-        <Suspense fallback={null}>
-          <AnalyticsEvents />
-        </Suspense>
         {children}
-        <CookieConsentManager />
-        <VercelAnalytics />
-        <SpeedInsights />
+        <ClientRuntime />
       </body>
     </html>
   );

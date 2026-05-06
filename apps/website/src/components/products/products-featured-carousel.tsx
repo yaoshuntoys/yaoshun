@@ -96,6 +96,7 @@ export function ProductsFeaturedCarousel({
                 data-track-location="products_featured_carousel"
                 href={item.href}
                 key={item.id}
+                prefetch={false}
               >
                 <div className="products-featured-image-wrap">
                   <Image

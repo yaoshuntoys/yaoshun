@@ -1,13 +1,26 @@
-import Script from 'next/script';
+'use client';
 
-import {cookieConsentStorageKey} from '@/lib/cookie-consent';
-import {consentRequiredCookieName} from '@/lib/privacy-region';
+import Script from 'next/script';
+import {useSyncExternalStore} from 'react';
+
+import {readCookieConsentStatus, subscribeToCookieConsent} from '@/lib/cookie-consent';
 import {googleAdsId, googleAnalyticsId} from '@/lib/site-config';
 
-const enableThirdPartyTracking = (
-  process.env.NODE_ENV === 'production'
-  || process.env.NEXT_PUBLIC_ENABLE_THIRD_PARTY_TRACKING === '1'
-);
+function resolveThirdPartyTrackingEnabled() {
+  const flag = process.env.NEXT_PUBLIC_ENABLE_THIRD_PARTY_TRACKING?.trim().toLowerCase();
+
+  if (flag === '0' || flag === 'false') {
+    return false;
+  }
+
+  if (flag === '1' || flag === 'true') {
+    return true;
+  }
+
+  return true;
+}
+
+const enableThirdPartyTracking = resolveThirdPartyTrackingEnabled();
 
 function buildTrackingBootstrap() {
   const configs = [googleAnalyticsId, googleAdsId].filter(Boolean)
@@ -19,54 +32,24 @@ function buildTrackingBootstrap() {
     function gtag(){dataLayer.push(arguments);}
     window.gtag = gtag;
     gtag('js', new Date());
-    var consentRequired = true;
-    try {
-      var consentCookieName = '${consentRequiredCookieName}=';
-      var cookieItems = document.cookie.split(';');
-      for (var index = 0; index < cookieItems.length; index += 1) {
-        var cookie = cookieItems[index].trim();
-        if (cookie.indexOf(consentCookieName) === 0) {
-          consentRequired = cookie.slice(consentCookieName.length) !== '0';
-          break;
-        }
-      }
-    } catch (error) {}
-    gtag('consent', 'default', consentRequired ? {
-      ad_personalization: 'denied',
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      analytics_storage: 'denied',
-      wait_for_update: 500
-    } : {
+    gtag('consent', 'default', {
       ad_personalization: 'granted',
       ad_storage: 'granted',
       ad_user_data: 'granted',
       analytics_storage: 'granted',
       wait_for_update: 500
     });
-    try {
-      var cookieConsentStatus = window.localStorage.getItem('${cookieConsentStorageKey}');
-      if (cookieConsentStatus === 'granted') {
-        gtag('consent', 'update', {
-          ad_personalization: 'granted',
-          ad_storage: 'granted',
-          ad_user_data: 'granted',
-          analytics_storage: 'granted'
-        });
-      } else if (cookieConsentStatus === 'denied') {
-        gtag('consent', 'update', {
-          ad_personalization: 'denied',
-          ad_storage: 'denied',
-          ad_user_data: 'denied',
-          analytics_storage: 'denied'
-        });
-      }
-    } catch (error) {}
     ${configs}
   `;
 }
 
 export function TrackingScripts() {
+  const consentStatus = useSyncExternalStore(
+    subscribeToCookieConsent,
+    readCookieConsentStatus,
+    () => null,
+  );
+
   if (!enableThirdPartyTracking) {
     return null;
   }
@@ -74,6 +57,10 @@ export function TrackingScripts() {
   const trackingId = googleAdsId || googleAnalyticsId;
 
   if (!trackingId) {
+    return null;
+  }
+
+  if (consentStatus !== 'granted') {
     return null;
   }
 

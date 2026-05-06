@@ -29,18 +29,29 @@ export function SiteStructuredData({locale}: {locale: Locale}) {
 
   const organization = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': ['Organization', 'LocalBusiness'],
     '@id': `${siteUrl}#organization`,
     name: t(locale, companyProfile.companyName),
-    alternateName: t(locale, companyProfile.brandShort),
-    url: localizedHome,
+    legalName: t(locale, companyProfile.companyName),
+    alternateName: [
+      t(locale, companyProfile.brandShort),
+      'yaoshun toys',
+      'Yaoshun',
+      'Dongguan Yaoshun Technology'
+    ],
+    url: siteUrl,
     logo: toAbsoluteUrl('/favicon-rounded-192.png'),
     description: t(locale, companyProfile.seoDescription),
     slogan: t(locale, companyProfile.tagline),
     foundingDate: companyProfile.foundedYear,
+    foundingLocation: {
+      '@type': 'Place',
+      name: 'Dongguan, Guangdong, China'
+    },
     email: companyProfile.email,
     telephone: companyProfile.phone,
-    sameAs: [companyProfile.website],
+    sameAs: [companyProfile.website, 'https://www.1688.com/factory/b2b-33834399288d4ed.html'],
+    keywords: expertise,
     knowsAbout: expertise,
     areaServed: serviceRegions,
     address: {
@@ -50,6 +61,37 @@ export function SiteStructuredData({locale}: {locale: Locale}) {
       addressRegion: 'Guangdong',
       addressCountry: 'CN'
     },
+    location: {
+      '@type': 'Place',
+      name: t(locale, companyProfile.companyName),
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: t(locale, companyProfile.address),
+        addressLocality: 'Dongguan',
+        addressRegion: 'Guangdong',
+        addressCountry: 'CN'
+      }
+    },
+    makesOffer: [
+      {
+        '@type': 'Offer',
+        name: locale === 'zh' ? '搭建玩具与定制玩具 OEM/ODM' : 'Building toy and custom toy OEM/ODM',
+        itemOffered: {
+          '@type': 'Service',
+          name: locale === 'zh' ? '玩具 OEM/ODM 与定制化开发服务' : 'Toy OEM/ODM and custom development service',
+          serviceType: locale === 'zh' ? '东莞源头工厂定制开发' : 'Dongguan source factory custom development'
+        }
+      },
+      {
+        '@type': 'Offer',
+        name: locale === 'zh' ? '模具开发、注塑、组装包装与出口交付' : 'Mold development, injection molding, assembly, packaging, and export delivery',
+        itemOffered: {
+          '@type': 'Service',
+          name: locale === 'zh' ? '全链路玩具制造服务' : 'Full-chain toy manufacturing service',
+          serviceType: locale === 'zh' ? '工厂生产与交付' : 'Factory manufacturing and delivery'
+        }
+      }
+    ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: t(locale, pageLabels.products),
@@ -78,9 +120,9 @@ export function SiteStructuredData({locale}: {locale: Locale}) {
   const website = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': `${localizedHome}#website`,
+    '@id': `${siteUrl}#website`,
     name: t(locale, companyProfile.companyName),
-    url: localizedHome,
+    url: siteUrl,
     inLanguage: localeMeta.htmlLang,
     description: t(locale, companyProfile.seoDescription),
     about: {

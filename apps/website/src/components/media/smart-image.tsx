@@ -18,7 +18,7 @@ export default function SmartImage(props: ImageProps) {
   const bypassOptimization = props.unoptimized ?? false;
   const nextImageProps =
     typeof props.quality === "undefined"
-      ? {...props, quality: 92}
+      ? {...props, quality: 75}
       : props;
 
   if (canUsePlainImage(props)) {

@@ -279,16 +279,16 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 function copy(locale: "en" | "zh") {
   return {
     eyebrow: t(locale, {
-      en: "STEM EDUCATIONAL TOY SOLUTIONS",
-      zh: "STEM 益智玩具解决方案",
+      en: "TOY OEM/ODM · DONGGUAN SOURCE FACTORY",
+      zh: "玩具 OEM/ODM · 东莞源头工厂",
     }),
     heroTitle: t(locale, {
-      en: "Focused R&D And Manufacturing For Educational Toys And Building Block Assembly Products",
-      zh: "专注益智玩具与积木拼装玩具研发生产的定制供应商",
+      en: "Custom Development For Building Toys And Custom Toys",
+      zh: "搭建玩具与定制玩具的定制化开发方案",
     }),
     heroText: t(locale, {
-      en: "We are a supplier, manufacturer, and development partner focused on STEM educational toys, building block assembly products, custom interlocking toy programs, and related plastic product manufacturing. In-house mold development, eco-friendly non-toxic materials, and strict quality control help us deliver safe, durable, and export-ready products to domestic and overseas markets.",
-      zh: "我们是专注于 STEM 益智玩具、积木拼装玩具、拼接玩具定制及相关塑料制品开发生产的供应商与生产商。依托自有开模、环保无毒材料方案与严格质量控制流程，我们持续为国内外市场提供安全、耐用且适合出口交付的产品。",
+      en: "Yaoshun is a Dongguan source toy factory focused on building toys, custom toys, STEM educational toys, custom interlocking toy programs, and related plastic product manufacturing. In-house mold development, eco-friendly non-toxic materials, and strict quality control help us deliver safe, durable, and export-ready toy OEM/ODM projects.",
+      zh: "尧顺是东莞源头玩具工厂，专注搭建玩具、定制玩具、STEM 益智玩具、拼接玩具定制及相关塑料制品开发生产。依托自有开模、环保无毒材料方案与严格质量控制流程，我们持续交付安全、耐用且适合出口的玩具 OEM/ODM 定制化开发项目。",
     }),
     heroAlt: t(locale, {
       en: "yaoshun toys solutions hero visual",
@@ -297,16 +297,16 @@ function copy(locale: "en" | "zh") {
     contact: t(locale, {en: "Discuss Your Custom Project", zh: "沟通定制项目"}),
     solutionsTitle: t(locale, {en: "Core Capability Focus", zh: "核心能力聚焦"}),
     solutionsText: t(locale, {
-      en: "The page centers on what buyers actually need from us: focused toy R&D, in-house tooling, custom building toy execution, plastic product support, and reliable safety-driven manufacturing.",
-      zh: "这里重点呈现客户真正关心的能力：专注玩具研发、自有模具、拼搭玩具定制、塑料制品协同开发，以及以安全和稳定交付为核心的制造能力。",
+      en: "The page centers on what buyers actually need from us: source-factory toy R&D, in-house tooling, building toy execution, custom toy development, plastic product support, and reliable safety-driven manufacturing.",
+      zh: "这里重点呈现客户真正关心的能力：源头工厂玩具研发、自有模具、搭建玩具执行、定制玩具开发、塑料制品协同开发，以及以安全和稳定交付为核心的制造能力。",
     }),
     customTitle: t(locale, {
-      en: "Custom Building Toys And Plastic Products Built Around Your Market",
-      zh: "围绕市场需求定制拼搭玩具与塑料制品",
+      en: "Building Toys, Custom Toys, And Plastic Products Built Around Your Market",
+      zh: "围绕市场需求开发搭建玩具、定制玩具与塑料制品",
     }),
     customText: t(locale, {
-      en: "We can support more custom projects for interlocking toys, educational building products, plastic structures, branded combinations, tubing, and selected smart plastic housings. From material planning to structural refinement, reports, and packaging coordination, the work is organized for real production and export delivery.",
-      zh: "我们可以围绕拼接玩具、益智拼搭产品、塑料结构件、品牌组合套装、管材型材以及部分塑胶电子外壳开展更多定制项目。从材料规划、结构优化到检测资料与包装协同，整套工作方式都面向真实生产与出口交付。",
+      en: "We can support custom projects for building toys, custom toys, interlocking toys, educational building products, plastic structures, branded combinations, tubing, and selected smart plastic housings. From material planning to structural refinement, reports, and packaging coordination, the work is organized for real production and export delivery.",
+      zh: "我们可以围绕搭建玩具、定制玩具、拼接玩具、益智拼搭产品、塑料结构件、品牌组合套装、管材型材以及部分塑胶电子外壳开展定制项目。从材料规划、结构优化到检测资料与包装协同，整套工作方式都面向真实生产与出口交付。",
     }),
     customAction: t(locale, {en: "Start A Custom Discussion", zh: "开启定制沟通"}),
     valuesTitle: t(locale, {en: "Product Value Highlights", zh: "产品价值亮点"}),
@@ -355,10 +355,10 @@ export default async function SolutionsPage({params}: {params: Promise<{locale: 
       inLanguage: locale === "zh" ? "zh-CN" : "en-US",
       serviceType:
         locale === "zh"
-          ? "益智玩具研发制造、积木拼装玩具定制与塑料制品定制"
-          : "Educational toy R&D, building block toy manufacturing, and custom plastic product manufacturing",
+          ? "东莞源头工厂、搭建玩具定制、定制玩具开发、玩具 OEM/ODM 与塑料制品定制"
+          : "Dongguan source factory, building toy customization, custom toy development, toy OEM/ODM, and custom plastic product manufacturing",
       provider: {
-        "@type": "Organization",
+        "@type": ["Organization", "LocalBusiness"],
         name: siteCopy.companyName[locale],
         url: toAbsoluteUrl(`/${locale}`),
         email: siteCopy.contact.email,

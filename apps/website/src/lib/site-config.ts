@@ -1,7 +1,7 @@
 const rawSiteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").trim();
 export const siteUrl = rawSiteUrl.replace(/\/+$/, "");
-export const siteName = "yaoshun toys | Dongguan Yaoshun Technology Co., Ltd.";
-export const siteDescription = "yaoshun toys is the international website of Dongguan Yaoshun Technology Co., Ltd., focused on educational toys, AI toy plastic electronics, interlocking building toys, custom plastic products, in-house mold development, precision injection, extrusion, eco-safe materials, and global OEM/ODM delivery support.";
+export const siteName = "Dongguan Yaoshun Technology Co., Ltd. | yaoshun toys";
+export const siteDescription = "Dongguan Yaoshun Technology Co., Ltd. is a Dongguan source toy factory supporting building toys, custom toys, toy OEM/ODM, custom development, in-house mold development, precision injection molding, assembly, packaging, and export-ready delivery for global B2B buyers.";
 export const defaultOgImage = "/site/misc/home-bg.webp";
 
 export const googleAnalyticsId = (process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || "").trim();

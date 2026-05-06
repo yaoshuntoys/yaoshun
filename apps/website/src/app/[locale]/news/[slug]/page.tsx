@@ -352,6 +352,7 @@ export default async function NewsDetailPage({
               data-track-location="news_article_recent"
               href={`/${locale}/news/${item.slug}`}
               key={item.slug}
+              prefetch={false}
             >
               <div className="news-article-recent-image-frame">
                 <Image
@@ -381,6 +382,7 @@ export default async function NewsDetailPage({
             data-track-label={adjacent.previous?.slug ?? "back_to_news"}
             data-track-location="news_article_adjacent"
             href={adjacent.previous ? `/${locale}/news/${adjacent.previous.slug}` : `/${locale}/news`}
+            prefetch={false}
           >
             <span>{text.previousArticle}</span>
             <strong>
@@ -396,6 +398,7 @@ export default async function NewsDetailPage({
             data-track-label={adjacent.next?.slug ?? "browse_more_news"}
             data-track-location="news_article_adjacent"
             href={adjacent.next ? `/${locale}/news/${adjacent.next.slug}` : `/${locale}/news`}
+            prefetch={false}
           >
             <span>{text.nextArticle}</span>
             <strong>{adjacent.next ? localize(adjacent.next.title, locale) : text.nextFallback}</strong>

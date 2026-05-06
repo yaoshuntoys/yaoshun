@@ -8,7 +8,7 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "rm -rf .next && next typegen && rm -f tsconfig.tsbuildinfo && tsc --noEmit"
+    "typecheck": "next typegen && rm -f tsconfig.tsbuildinfo && tsc --noEmit"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",

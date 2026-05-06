@@ -1,3 +1,5 @@
+import {seoKeywordPools} from '@/content/site/shared';
+
 export const contactContent = {
   seo: {
     title: {
@@ -5,27 +7,25 @@ export const contactContent = {
       zh: '获取玩具制造报价 | 东莞市尧顺科技有限公司'
     },
     description: {
-      en: 'Contact Dongguan Yaoshun Technology Co., Ltd. for toy OEM/ODM quotation, sampling planning, production lead time evaluation, packaging options, and export delivery support.',
-      zh: '联系东莞市尧顺科技有限公司，获取玩具 OEM/ODM 报价、打样规划、量产交期评估、包装方案与出口交付支持。'
+      en: 'Contact Dongguan Yaoshun Technology Co., Ltd. for fort building toy, STEM kit and custom toy OEM/ODM quotation, sampling, mold evaluation, color box packaging and export delivery support.',
+      zh: '联系东莞市尧顺科技有限公司，获取堡垒拼搭玩具、STEM搭建套装和定制玩具 OEM/ODM 报价，支持打样、开模评估、彩盒包装与出口交付。'
     },
     keywords: {
       en: [
-        'interlocking toy quote',
+        ...seoKeywordPools.company.en.slice(0, 6),
+        ...seoKeywordPools.products.en.slice(0, 8),
+        ...seoKeywordPools.customization.en.slice(0, 10),
         'building toy OEM inquiry',
         'custom building toy quotation',
-        'Dongguan toy company contact',
-        'B2B toy supplier quotation',
-        'toy sampling and mass production quote',
-        'interlocking toy factory contact'
+        'toy sampling and mass production quote'
       ],
       zh: [
-        '拼接玩具报价',
-        '拼插玩具OEM询盘',
+        ...seoKeywordPools.company.zh.slice(0, 6),
+        ...seoKeywordPools.products.zh.slice(0, 8),
+        ...seoKeywordPools.customization.zh.slice(0, 10),
         '拼搭玩具定制报价',
-        '东莞玩具企业联系',
         'B2B玩具供应商询价',
-        '打样量产报价',
-        '积木拼装玩具工厂联系'
+        '打样量产报价'
       ]
     }
   },

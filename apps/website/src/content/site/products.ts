@@ -1,42 +1,39 @@
+import {seoKeywordPools} from '@/content/site/shared';
+
 export const productsPageContent = {
   seo: {
     title: {
-      en: 'Product Catalog | Dongguan Yaoshun Technology Co., Ltd. | 东莞市尧顺科技有限公司',
-      zh: '产品目录 | 东莞市尧顺科技有限公司 | Dongguan Yaoshun Technology Co., Ltd.'
+      en: 'Building & Custom Toy Catalog | Yaoshun Dongguan Source Factory',
+      zh: '搭建玩具与定制玩具目录 | 尧顺东莞源头工厂'
     },
     description: {
-      en: 'Explore toy-focused product programs from Dongguan Yaoshun Technology Co., Ltd., including finished toy lines, plastic toy components, and process-support capabilities for OEM/ODM delivery.',
-      zh: '查看东莞市尧顺科技有限公司以玩具为核心的产品方案，涵盖成品玩具项目、玩具结构件与 OEM/ODM 交付所需配套工艺能力。'
+      en: 'Explore Yaoshun fort building toys, STEM building kits, glow-in-the-dark fort kits, rotating ball building toys, PP rods, connector balls, storage bags and color box packaging for toy OEM/ODM projects.',
+      zh: '查看尧顺堡垒拼搭玩具、STEM搭建套装、夜光拼搭套装、旋转球搭建玩具、PP连接杆、连接球、收纳袋与彩盒包装定制方案。'
     },
     detailTitleTemplate: {
-      en: '{product} | Dongguan Yaoshun Technology Co., Ltd. | 东莞市尧顺科技有限公司',
-      zh: '{product} | 东莞市尧顺科技有限公司 | Dongguan Yaoshun Technology Co., Ltd.'
+      en: '{product} | Building & Custom Toy OEM/ODM | Yaoshun Source Factory',
+      zh: '{product} | 搭建玩具定制玩具 OEM/ODM | 尧顺源头工厂'
     },
     detailDescriptionTemplate: {
-      en: '{product} from Dongguan Yaoshun Technology Co., Ltd., with toy manufacturing, OEM/ODM support, quality checkpoints, and delivery collaboration.',
-      zh: '{product} 由东莞市尧顺科技有限公司提供，支持玩具制造、OEM/ODM 协作、质量控制与交付配合。'
+      en: '{product} from Yaoshun, a Dongguan source factory supporting building toys, custom toys, toy OEM/ODM, custom development, mold planning, quality checkpoints, and export delivery.',
+      zh: '{product} 由尧顺东莞源头工厂提供，支持搭建玩具、定制玩具、玩具 OEM/ODM、定制化开发、开模规划、质量控制与出口交付。'
     },
     keywords: {
       en: [
-        'interlocking toy catalog',
-        'interlocking toy supplier catalog',
-        'building block toy catalog',
-        'custom building toy products',
+        ...seoKeywordPools.products.en,
+        ...seoKeywordPools.customization.en.slice(0, 8),
+        ...seoKeywordPools.company.en.slice(3, 8),
         'educational building toys wholesale',
-        'toy OEM ODM product catalog',
-        'B2B building toy manufacturer',
-        'plastic toy component supplier',
-        'interlocking toy manufacturer china'
+        'building toy product catalog'
       ],
       zh: [
-        '拼接玩具目录',
-        '拼插玩具目录',
-        '积木拼装玩具目录',
-        '拼搭玩具产品目录',
-        '益智拼装玩具批发',
-        '玩具OEM ODM产品目录',
-        'B2B拼插玩具供应商',
-        '塑胶玩具结构件供应'
+        ...seoKeywordPools.products.zh,
+        ...seoKeywordPools.customization.zh.slice(0, 9),
+        ...seoKeywordPools.company.zh.slice(3, 8),
+        '搭建玩具目录',
+        '定制玩具目录',
+        '源头工厂玩具产品',
+        '益智拼装玩具批发'
       ]
     }
   },

@@ -1,4 +1,4 @@
-import {visualAssets} from '@/content/site/shared';
+import {seoKeywordPools, visualAssets} from '@/content/site/shared';
 
 export const complianceContent = {
   seo: {
@@ -7,34 +7,26 @@ export const complianceContent = {
       zh: '资质合规与供应商文件 | 东莞市尧顺科技有限公司 | Dongguan Yaoshun Technology Co., Ltd.'
     },
     description: {
-      en: 'Review Dongguan Yaoshun Technology supplier documents including business credentials, corporate credit files, annual reports, tax rating A, ISO 9000 files, CE materials, and buyer due-diligence support.',
-      zh: '查看东莞市尧顺科技有限公司可提供的供应商资料，包括工商资质、企业信用文件、年报、税务 A 级、ISO 9000 文件、CE 资料以及客户尽调支持。'
+      en: 'Review Dongguan Yaoshun Technology supplier documents and toy project compliance support, including business credentials, ISO 9000 files, RoHS, REACH, EN71, ASTM F963, CE materials and buyer due-diligence support.',
+      zh: '查看东莞市尧顺科技有限公司供应商资料与玩具项目合规支持，包括工商资质、ISO 9000、RoHS、REACH、EN71、ASTM F963、CE 资料及客户尽调支持。'
     },
     keywords: {
       en: [
-        'Dongguan Yaoshun compliance',
-        'Yaoshun certification files',
-        'Dongguan Yaoshun supplier documents',
+        ...seoKeywordPools.company.en.slice(0, 6),
+        ...seoKeywordPools.compliance.en,
+        ...seoKeywordPools.factoryCapabilities.en.slice(6, 12),
         'toy compliance supplier',
-        'en71 astm toy factory',
-        'ce toy manufacturer',
-        'iso 9000 toy factory',
-        'b2b supplier qualification documents',
         'factory certification files',
-        'export compliance support',
         'buyer due diligence documents'
       ],
       zh: [
+        ...seoKeywordPools.company.zh.slice(0, 6),
+        ...seoKeywordPools.compliance.zh,
+        ...seoKeywordPools.factoryCapabilities.zh.slice(6, 12),
         '尧顺资质',
-        '尧顺认证资料',
         '尧顺供应商文件',
         '玩具资质',
-        'EN71 ASTM测试支持',
-        'CE认证资料',
-        'ISO9000工厂',
         '供应商尽调资料',
-        '企业信用资料',
-        '出口合规支持',
         '工厂资质文件'
       ]
     }

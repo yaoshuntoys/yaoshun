@@ -21,24 +21,43 @@ function resolveCountryCode(request: NextRequest): string | null {
   );
 }
 
+function isPrefetchRequest(request: NextRequest) {
+  return (
+    request.headers.get("next-router-prefetch") === "1" ||
+    request.headers.get("purpose") === "prefetch" ||
+    request.headers.get("sec-purpose")?.includes("prefetch")
+  );
+}
+
 function applyContextCookies(
   response: NextResponse,
+  request: NextRequest,
   locale: string,
   consentRequired: boolean,
 ) {
-  response.cookies.set(localeCookieName, locale, {
-    path: "/",
-    maxAge: oneYearInSeconds,
-  });
-  response.cookies.set(consentRequiredCookieName, consentRequired ? "1" : "0", {
-    path: "/",
-    maxAge: thirtyDaysInSeconds,
-  });
+  if (isPrefetchRequest(request)) {
+    return;
+  }
+
+  const consentRequiredValue = consentRequired ? "1" : "0";
+
+  if (request.cookies.get(localeCookieName)?.value !== locale) {
+    response.cookies.set(localeCookieName, locale, {
+      path: "/",
+      maxAge: oneYearInSeconds,
+    });
+  }
+
+  if (request.cookies.get(consentRequiredCookieName)?.value !== consentRequiredValue) {
+    response.cookies.set(consentRequiredCookieName, consentRequiredValue, {
+      path: "/",
+      maxAge: thirtyDaysInSeconds,
+    });
+  }
 }
 
 function getPreferredLocale(request: NextRequest) {
   return resolvePreferredLocale({
-    acceptLanguage: request.headers.get("accept-language"),
     cookieLocale: request.cookies.get(localeCookieName)?.value,
   });
 }
@@ -55,8 +74,7 @@ function redirectToLocalizedPath(
       : `/${locale}${request.nextUrl.pathname}`;
 
   const response = NextResponse.redirect(url);
-  response.headers.append("Vary", "Accept-Language");
-  applyContextCookies(response, locale, consentRequired);
+  applyContextCookies(response, request, locale, consentRequired);
   return response;
 }
 
@@ -68,17 +86,11 @@ export function proxy(request: NextRequest) {
   }
 
   const localeInPath = getLocaleFromPathname(request.nextUrl.pathname);
-  const requestHeaders = new Headers(request.headers);
   const consentRequired = isConsentRequiredCountry(resolveCountryCode(request));
 
   if (localeInPath) {
-    requestHeaders.set("x-detected-locale", localeInPath);
-    const response = NextResponse.next({
-      request: {
-        headers: requestHeaders,
-      },
-    });
-    applyContextCookies(response, localeInPath, consentRequired);
+    const response = NextResponse.next();
+    applyContextCookies(response, request, localeInPath, consentRequired);
     return response;
   }
 

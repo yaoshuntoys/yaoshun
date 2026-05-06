@@ -35,14 +35,14 @@ import { siteUrl, toAbsoluteUrl } from "@/lib/site-config";
 
 function copy(locale: Locale) {
   return {
-    eyebrow: t(locale, { en: "Educational Toy & Plastic OEM/ODM", zh: "益智玩具与塑料制品 OEM/ODM" }),
-    heroLine1: t(locale, { en: "OEM/ODM For", zh: "专注提供" }),
-    heroLine2a: t(locale, { en: "Educational Toys", zh: "益智玩具" }),
+    eyebrow: t(locale, { en: "Dongguan Source Factory · Toy OEM/ODM", zh: "东莞源头工厂 · 玩具 OEM/ODM" }),
+    heroLine1: t(locale, { en: "Yaoshun Source Factory For", zh: "尧顺源头工厂" }),
+    heroLine2a: t(locale, { en: "Building Toys", zh: "搭建玩具" }),
     heroLine2b: t(locale, { en: "And Custom", zh: "与定制" }),
-    heroLine2c: t(locale, { en: "Plastics", zh: "塑料制品" }),
+    heroLine2c: t(locale, { en: "Toys", zh: "玩具" }),
     heroText: t(locale, {
-      en: "Founded in 2016, Dongguan Yaoshun Technology develops and manufactures educational toys, interlocking building toys, AI toy plastic electronic parts, and custom plastic products with in-house mold development, eco-safe materials, and export-ready delivery.",
-      zh: "东莞市尧顺科技有限公司成立于 2016 年，专注益智玩具、积木拼装玩具、AI 玩具塑胶电子部件及塑料制品的研发生产，提供自有开模、环保材料方案与稳定出口交付支持。",
+      en: "Founded in 2016, Dongguan Yaoshun Technology Co., Ltd. is a Dongguan source toy factory supporting building toys, custom toys, toy OEM/ODM, and custom development, with in-house mold development, injection molding, assembly, packaging, and export-ready delivery.",
+      zh: "东莞市尧顺科技有限公司成立于 2016 年，是一家东莞源头玩具工厂，支持搭建玩具、定制玩具、玩具 OEM/ODM 与定制化开发，覆盖自有开模、注塑、组装包装与出口交付。",
     }),
     explore: t(locale, { en: "Explore Products", zh: "探索产品" }),
     learnMore: t(locale, { en: "Learn More", zh: "了解更多" }),
@@ -53,10 +53,10 @@ function copy(locale: Locale) {
     }),
     aboutEyebrow: t(locale, { en: "ABOUT YAOSHUN", zh: "关于尧顺" }),
     aboutTitleA: t(locale, { en: "Your Trusted OEM/ODM", zh: "值得信赖的 OEM/ODM" }),
-    aboutTitleB: t(locale, { en: "Factory Partner", zh: "工厂合作伙伴" }),
+    aboutTitleB: t(locale, { en: "Source Factory Partner", zh: "源头工厂合作伙伴" }),
     aboutText: t(locale, {
-      en: "Founded on August 26, 2016, Dongguan Yaoshun Technology Co., Ltd. is a full-chain manufacturer focused on educational toys, interlocking plastic toys, precision injection molded parts, and tubing or profile support, with one-stop OEM/ODM service from tooling to production and delivery.",
-      zh: "东莞市尧顺科技有限公司成立于 2016 年 8 月 26 日，是一家聚焦益智玩具、拼插类塑胶玩具、精密注塑件及管材型材配套的全链路制造企业，提供从开模到生产交付的一站式 OEM/ODM 服务。",
+      en: "Founded on August 26, 2016, Dongguan Yaoshun Technology Co., Ltd. is a full-chain source factory focused on building toys, custom toys, educational toys, interlocking plastic toys, precision injection molded parts, and tubing or profile support, with one-stop toy OEM/ODM and custom development from design and tooling to production, packaging, and delivery.",
+      zh: "东莞市尧顺科技有限公司成立于 2016 年 8 月 26 日，是一家聚焦搭建玩具、定制玩具、益智玩具、拼插类塑胶玩具、精密注塑件及管材型材配套的全链路源头工厂，提供从设计、开模到生产、包装、交付的一站式玩具 OEM/ODM 与定制化开发服务。",
     }),
     solutions: t(locale, {
       en: "Our One-stop Solutions",
@@ -75,8 +75,8 @@ function copy(locale: Locale) {
     bestsellersLead: t(locale, { en: "Our", zh: "我们的" }),
     bestsellersAccent: t(locale, { en: "Bestsellers", zh: "热销产品" }),
     bestsellersTags: t(locale, {
-      en: "OEM/ODM · Factory Direct · Export-Ready",
-      zh: "OEM/ODM · 源头工厂 · 面向出口",
+      en: "Building Toys · Custom Toys · Source Factory",
+      zh: "搭建玩具 · 定制玩具 · 源头工厂",
     }),
     viewAllProducts: t(locale, { en: "View All Products", zh: "查看全部产品" }),
     whyChooseLead: t(locale, { en: "Why Choose", zh: "为什么选择" }),
@@ -159,8 +159,8 @@ export default async function HomePage({
       "@type": "WebPage",
       name:
         locale === "zh"
-          ? "东莞市尧顺科技有限公司首页"
-          : "Dongguan Yaoshun Technology Home",
+          ? "尧顺东莞源头工厂首页"
+          : "Yaoshun Dongguan Source Toy Factory Home",
       description: text.heroText,
       url: pageUrl,
       inLanguage: locale === "zh" ? "zh-CN" : "en-US",
@@ -174,7 +174,7 @@ export default async function HomePage({
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      name: locale === "zh" ? "首页精选拼搭玩具" : "Featured Building Toys",
+      name: locale === "zh" ? "尧顺精选搭建玩具与定制玩具" : "Featured Yaoshun Building Toys And Custom Toys",
       itemListElement: featuredProducts.map((item, index) => ({
         "@type": "ListItem",
         position: index + 1,
@@ -360,6 +360,7 @@ export default async function HomePage({
               data-track-location="home_bestsellers"
               href={item.href}
               key={item.title}
+              prefetch={false}
             >
               <div className="home-product-image-wrap">
                 {item.image ? (

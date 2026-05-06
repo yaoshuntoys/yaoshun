@@ -1,4 +1,4 @@
-import {visualAssets} from '@/content/site/shared';
+import {seoKeywordPools, visualAssets} from '@/content/site/shared';
 
 export const factoryContent = {
   seo: {
@@ -7,34 +7,24 @@ export const factoryContent = {
       zh: '工厂展示 | 东莞市尧顺科技有限公司 | 玩具制造能力'
     },
     description: {
-      en: 'Explore factory capabilities for toy OEM/ODM projects at Dongguan Yaoshun Technology Co., Ltd. (东莞市尧顺科技有限公司), including mold, injection, assembly, packaging, and shipment coordination.',
-      zh: '查看东莞市尧顺科技有限公司（Dongguan Yaoshun Technology Co., Ltd.）在玩具 OEM/ODM 项目中的工厂能力，包括开模、注塑、组装、包装与出货协同。'
+      en: 'Explore Dongguan Yaoshun factory capabilities for fort building toys, STEM building kits and toy OEM/ODM projects, including mold development, injection molding, extrusion, assembly, color box packaging and export coordination.',
+      zh: '查看东莞市尧顺科技有限公司在堡垒拼搭玩具、STEM搭建套装与玩具 OEM/ODM 项目中的工厂能力，包括模具开发、注塑、挤出、组装、彩盒包装与出口协同。'
     },
     keywords: {
       en: [
-        'Dongguan Yaoshun factory',
-        'Yaoshun factory tour',
-        'toy factory',
-        'toy manufacturing facility',
-        'interlocking toy factory',
-        'educational toy factory',
-        'plastic injection molding factory',
-        'extrusion factory china',
-        'b2b manufacturing capacity',
+        ...seoKeywordPools.company.en.slice(0, 8),
+        ...seoKeywordPools.factoryCapabilities.en,
+        ...seoKeywordPools.products.en.slice(0, 8),
+        ...seoKeywordPools.customization.en.slice(0, 6),
         'toy production line',
         'plastic processing factory'
       ],
       zh: [
-        '尧顺工厂',
-        '尧顺工厂参观',
-        '玩具工厂',
+        ...seoKeywordPools.company.zh.slice(0, 8),
+        ...seoKeywordPools.factoryCapabilities.zh,
+        ...seoKeywordPools.products.zh.slice(0, 8),
+        ...seoKeywordPools.customization.zh.slice(0, 6),
         '玩具生产车间',
-        '拼插玩具工厂',
-        '益智玩具工厂',
-        '注塑工厂',
-        '挤出工厂',
-        '生产能力展示',
-        '塑胶加工工厂',
         '制造车间'
       ]
     }

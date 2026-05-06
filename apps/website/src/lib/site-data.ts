@@ -1,8 +1,10 @@
 import {newsArticles} from "@/content/pages/news";
 import {type NewsArticleSeed, type ShowcaseProductSeed} from "@/content/types";
+import {seoKeywordPools} from "@/content/site/shared";
 import {
   products,
   type ProductJson,
+  type ProductJsonPair,
 } from "@/content/site/products-catalog";
 import {t, type Locale} from "@/lib/i18n";
 
@@ -110,6 +112,450 @@ function normalizeCatalogSummary(product: ProductJson) {
     en: trimLine(summary.en || product.title?.en || product.productId),
     zh: trimLine(summary.zh || product.title?.zh || product.productId),
   };
+}
+
+function localizeProductText(
+  locale: Locale,
+  value: Partial<Record<Locale, string>> | undefined,
+  fallback = "",
+) {
+  if (!value) return fallback;
+  return value[locale] || value.en || value.zh || fallback;
+}
+
+function getKeywordPool(
+  locale: Locale,
+  value: Partial<Record<Locale, readonly string[]>>,
+) {
+  return value[locale] || value.en || value.zh || [];
+}
+
+function normalizeSeoKeyword(value: string) {
+  return value
+    .replace(/[|]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function normalizeKeywordForMatching(keyword: string) {
+  return keyword
+    .toLowerCase()
+    .replace(/[&,+/]/g, " ")
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+const seoSearchIntentSignals = [
+  "abs rotating",
+  "ai",
+  "assembly",
+  "building",
+  "castle",
+  "connector",
+  "custom",
+  "dongguan",
+  "drawing",
+  "educational",
+  "export",
+  "extrusion",
+  "factory",
+  "fort",
+  "glow",
+  "injection",
+  "kit",
+  "manufacturer",
+  "mold",
+  "odm",
+  "oem",
+  "packaging",
+  "private label",
+  "rods",
+  "sample",
+  "source",
+  "stem",
+  "storage",
+  "supplier",
+  "tent",
+  "toy",
+  "yaoshun",
+  "搭建",
+  "拼搭",
+  "拼插",
+  "积木",
+  "堡垒",
+  "帐篷",
+  "城堡",
+  "秘密基地",
+  "夜光",
+  "旋转球",
+  "连接杆",
+  "连接球",
+  "收纳袋",
+  "益智",
+  "玩具",
+  "定制",
+  "贴牌",
+  "包装",
+  "彩盒",
+  "来样",
+  "来图",
+  "工厂",
+  "源头",
+  "尧顺",
+  "东莞",
+  "模具",
+  "开模",
+  "注塑",
+  "挤出",
+  "交付",
+  "出口",
+] as const;
+
+function hasSeoSearchIntent(keyword: string) {
+  const normalized = keyword
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/\s+/g, "")
+    .trim();
+
+  if (/^(toy|toys|kids|children|material|package|service|玩具)$/i.test(keyword)) {
+    return false;
+  }
+
+  if (/^([a-z]{2,3}|[A-Z]{2,3})$/.test(keyword.trim())) {
+    return false;
+  }
+
+  if (/other|mother\s+kids|其他|母婴/i.test(keyword)) {
+    return false;
+  }
+
+  return (
+    normalized.length > 1 &&
+    seoSearchIntentSignals.some((signal) =>
+      normalizeKeywordForMatching(keyword).includes(signal.toLowerCase()),
+    )
+  );
+}
+
+function uniqueSeoKeywords(keywords: string[], limit: number) {
+  const seen = new Set<string>();
+  const result: string[] = [];
+
+  for (const item of keywords) {
+    const keyword = normalizeSeoKeyword(item);
+    const lookupKey = keyword.toLowerCase();
+
+    if (
+      !keyword ||
+      keyword.length > 90 ||
+      !hasSeoSearchIntent(keyword) ||
+      seen.has(lookupKey)
+    ) {
+      continue;
+    }
+
+    seen.add(lookupKey);
+    result.push(keyword);
+
+    if (result.length >= limit) {
+      break;
+    }
+  }
+
+  return result;
+}
+
+const categorySeoKeywordRules = [
+  {
+    source: ["educational toys", "益智玩具"],
+    keywords: {
+      en: ["STEM educational toys", "educational building toys"],
+      zh: ["STEM益智玩具", "益智搭建玩具"],
+    },
+  },
+  {
+    source: ["blocks model building toys", "积木与模型拼搭玩具"],
+    keywords: {
+      en: ["building block assembly toys", "model building toys"],
+      zh: ["积木拼搭玩具", "模型拼搭玩具"],
+    },
+  },
+  {
+    source: ["building block sets", "积木套装"],
+    keywords: {
+      en: ["building block sets", "fort building block sets"],
+      zh: ["积木套装", "堡垒积木拼搭套装"],
+    },
+  },
+  {
+    source: ["outdoor toys structures", "户外玩具与设施"],
+    keywords: {
+      en: ["outdoor fort building kit", "outdoor building toys"],
+      zh: ["户外堡垒拼搭套装", "户外搭建玩具"],
+    },
+  },
+] as const;
+
+function getMappedCategorySeoKeywords(locale: Locale, values: string[]) {
+  const sourceText = normalizeKeywordForMatching(values.join(" "));
+
+  return categorySeoKeywordRules.flatMap((rule) =>
+    rule.source.some((source) =>
+      sourceText.includes(normalizeKeywordForMatching(source)),
+    )
+      ? getKeywordPool(locale, rule.keywords)
+      : [],
+  );
+}
+
+function getMaterialSeoKeywords(locale: Locale, value: string) {
+  const normalized = normalizeKeywordForMatching(value);
+  const keywords: string[] = [];
+
+  if (normalized.includes("pp")) {
+    keywords.push(
+      ...getKeywordPool(locale, {
+        en: ["PP rods connector balls", "PP fort building toy parts"],
+        zh: ["PP连接杆连接球", "PP堡垒拼搭玩具配件"],
+      }),
+    );
+  }
+
+  if (normalized.includes("abs")) {
+    keywords.push(
+      ...getKeywordPool(locale, {
+        en: ["ABS rotating ball connectors", "ABS rotating ball fort building kit"],
+        zh: ["ABS旋转球连接件", "ABS旋转球堡垒拼搭套装"],
+      }),
+    );
+  }
+
+  if (/non\s*woven|无纺布/.test(normalized)) {
+    keywords.push(
+      ...getKeywordPool(locale, {
+        en: ["non-woven fabric fort cover", "fort tent cover kit"],
+        zh: ["无纺布堡垒帐篷布套", "堡垒帐篷布套"],
+      }),
+    );
+  }
+
+  return keywords;
+}
+
+function getPackagingSeoKeywords(locale: Locale, value: string) {
+  const normalized = normalizeKeywordForMatching(value);
+  const keywords: string[] = [];
+
+  if (normalized.includes("color box") || normalized.includes("彩盒")) {
+    keywords.push(
+      ...getKeywordPool(locale, {
+        en: ["color box toy packaging", "custom color box packaging"],
+        zh: ["彩盒包装定制", "玩具彩盒包装"],
+      }),
+    );
+  }
+
+  if (normalized.includes("storage bag") || normalized.includes("收纳袋")) {
+    keywords.push(
+      ...getKeywordPool(locale, {
+        en: ["storage bag fort kit", "building toy storage bag"],
+        zh: ["收纳袋玩具套装", "搭建玩具收纳袋"],
+      }),
+    );
+  }
+
+  if (normalized.includes("carton") || normalized.includes("外箱")) {
+    keywords.push(
+      ...getKeywordPool(locale, {
+        en: ["export carton toy packaging"],
+        zh: ["玩具出口外箱包装"],
+      }),
+    );
+  }
+
+  return keywords;
+}
+
+const seoPairKeyHints = [
+  "type",
+  "product name",
+  "item name",
+  "theme",
+  "style",
+  "function",
+  "feature",
+  "material",
+  "service",
+  "packaging",
+  "package",
+  "keywords",
+  "产品类型",
+  "产品名称",
+  "主题",
+  "产品风格",
+  "功能",
+  "特色",
+  "材质",
+  "服务",
+  "包装方式",
+  "关键词",
+] as const;
+
+function getSeoPairKeywords(locale: Locale, pair: ProductJsonPair) {
+  const key = [
+    localizeProductText(locale, pair.key),
+    localizeProductText(locale === "zh" ? "en" : "zh", pair.key),
+  ]
+    .join(" ")
+    .toLowerCase();
+  const value = localizeProductText(locale, pair.value);
+
+  if (key.includes("company type") || key.includes("企业类型")) {
+    return [];
+  }
+
+  if (!seoPairKeyHints.some((hint) => key.includes(hint.toLowerCase()))) {
+    return [];
+  }
+
+  if (key.includes("material") || key.includes("材质")) {
+    return getMaterialSeoKeywords(locale, value);
+  }
+
+  if (key.includes("packaging") || key.includes("package") || key.includes("包装")) {
+    return getPackagingSeoKeywords(locale, value);
+  }
+
+  if (key.includes("service") || key.includes("服务")) {
+    return /oem|odm|private|label|定制|贴牌/i.test(value)
+      ? getKeywordPool(locale, seoKeywordPools.customization).slice(0, 5)
+      : [];
+  }
+
+  return [value];
+}
+
+export function getProductSeoKeywords(
+  locale: Locale,
+  product: ProductJson,
+  limit = 28,
+) {
+  const title = localizeProductText(locale, product.title, product.productId);
+  const sourceCategories = [
+    ...(product.categories?.en || []),
+    ...(product.categories?.zh || []),
+  ];
+  const tags =
+    product.tags?.map((tag) => (locale === "zh" ? tag.zh : tag.en)) || [];
+  const categorySeoKeywords = getMappedCategorySeoKeywords(locale, [
+    ...sourceCategories,
+    ...tags,
+  ]);
+  const pairValues = [
+    ...(product.attributePairs || []),
+    ...(product.productAttributes || []),
+    ...(product.specifications || []),
+    ...(product.packagingPairs || []),
+  ]
+    .flatMap((pair) => getSeoPairKeywords(locale, pair))
+    .filter(Boolean);
+
+  return uniqueSeoKeywords(
+    [
+      title,
+      ...categorySeoKeywords,
+      ...pairValues,
+      ...getKeywordPool(locale, seoKeywordPools.products),
+      ...getKeywordPool(locale, seoKeywordPools.customization).slice(0, 6),
+      ...getKeywordPool(locale, seoKeywordPools.company).slice(0, 4),
+    ],
+    limit,
+  );
+}
+
+export function getCatalogSeoKeywords(locale: Locale, limit = 32) {
+  const productTitles = products.map((product) =>
+    localizeProductText(locale, product.title, product.productId),
+  );
+  const categorySeoKeywords = getMappedCategorySeoKeywords(
+    locale,
+    products.flatMap((product) => [
+      ...(product.categories?.en || []),
+      ...(product.categories?.zh || []),
+      ...(product.tags?.flatMap((tag) => [tag.en, tag.zh]) || []),
+    ]),
+  );
+
+  return uniqueSeoKeywords(
+    [
+      ...getKeywordPool(locale, seoKeywordPools.products),
+      ...categorySeoKeywords,
+      ...productTitles,
+      ...getKeywordPool(locale, seoKeywordPools.customization).slice(0, 8),
+      ...getKeywordPool(locale, seoKeywordPools.company).slice(0, 6),
+    ],
+    limit,
+  );
+}
+
+function getBusinessCategoryPairValue(locale: Locale, pair: ProductJsonPair) {
+  const key = [
+    localizeProductText(locale, pair.key),
+    localizeProductText(locale === "zh" ? "en" : "zh", pair.key),
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  if (key.includes("company type") || key.includes("企业类型")) {
+    return "";
+  }
+
+  if (
+    ![
+      "type",
+      "product type",
+      "product name",
+      "theme",
+      "style",
+      "产品类型",
+      "产品名称",
+      "主题",
+      "产品风格",
+    ].some((hint) => key.includes(hint.toLowerCase()))
+  ) {
+    return "";
+  }
+
+  return localizeProductText(locale, pair.value);
+}
+
+export function getProductBusinessCategories(
+  locale: Locale,
+  product: ProductJson,
+  limit = 2,
+) {
+  const sourceCategories = [
+    ...(product.categories?.en || []),
+    ...(product.categories?.zh || []),
+    ...(product.tags?.flatMap((tag) => [tag.en, tag.zh]) || []),
+  ];
+  const pairCategories = [
+    ...(product.attributePairs || []),
+    ...(product.productAttributes || []),
+    ...(product.specifications || []),
+  ]
+    .map((pair) => getBusinessCategoryPairValue(locale, pair))
+    .filter(Boolean);
+
+  return uniqueSeoKeywords(
+    [
+      ...pairCategories,
+      ...getMappedCategorySeoKeywords(locale, sourceCategories),
+      ...getKeywordPool(locale, seoKeywordPools.products),
+    ],
+    limit,
+  );
 }
 
 export function getShowcaseCatalog(): ShowcaseCatalogItem[] {

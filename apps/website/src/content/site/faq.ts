@@ -1,3 +1,5 @@
+import {seoKeywordPools} from '@/content/site/shared';
+
 export const faqContent = {
   seo: {
     title: {
@@ -5,28 +7,28 @@ export const faqContent = {
       zh: 'FAQ、起订量与交期 | 东莞市尧顺科技有限公司 | Dongguan Yaoshun Technology Co., Ltd.'
     },
     description: {
-      en: 'Find answers about MOQ, lead time, sampling, OEM/ODM workflow, quality checkpoints, packaging, shipment, and after-sales handling for toy manufacturing projects.',
-      zh: '查看玩具制造项目的常见问题，包括 MOQ、交期、打样、OEM/ODM 流程、质量节点、包装出货与售后处理。'
+      en: 'Find answers about MOQ, lead time, sampling, OEM/ODM workflow, packaging, shipment and quality checkpoints for fort building toys, STEM kits, interlocking toys and custom toy manufacturing projects.',
+      zh: '查看堡垒拼搭玩具、STEM搭建套装、拼插类玩具与定制玩具制造项目的 MOQ、交期、打样、OEM/ODM 流程、包装出货和质量节点。'
     },
     keywords: {
       en: [
+        ...seoKeywordPools.products.en.slice(0, 8),
+        ...seoKeywordPools.customization.en.slice(0, 8),
         'toy manufacturing faq',
         'toy moq lead time',
-        'oem odm faq',
         'b2b shipping support',
         'toy export logistics',
-        'sample fee toy supplier',
-        'toy supplier warranty'
+        'sample fee toy supplier'
       ],
       zh: [
+        ...seoKeywordPools.products.zh.slice(0, 8),
+        ...seoKeywordPools.customization.zh.slice(0, 8),
         '玩具FAQ',
         '起订量交期',
-        'OEM ODM常见问题',
         '外贸物流支持',
         '玩具出口发货',
         '打样费说明',
-        '工厂交期',
-        '质保售后'
+        '工厂交期'
       ]
     }
   },

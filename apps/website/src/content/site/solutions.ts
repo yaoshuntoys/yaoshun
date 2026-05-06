@@ -1,35 +1,29 @@
-import {visualAssets} from '@/content/site/shared';
+import {seoKeywordPools, visualAssets} from '@/content/site/shared';
 
 export const solutionsContent = {
   seo: {
     title: {
-      en: 'Toy OEM/ODM Solutions | Dongguan Yaoshun Technology Co., Ltd. | 东莞市尧顺科技有限公司',
-      zh: '玩具 OEM/ODM 解决方案 | 东莞市尧顺科技有限公司 | Dongguan Yaoshun Technology Co., Ltd.'
+      en: 'Toy OEM/ODM & Custom Development | Yaoshun Dongguan Source Factory',
+      zh: '玩具 OEM/ODM 与定制化开发 | 尧顺东莞源头工厂'
     },
     description: {
-      en: 'Explore toy-centered OEM/ODM collaboration models from requirement intake to mass-production handoff, with engineering review, quality checkpoints, and delivery coordination.',
-      zh: '查看以玩具为中心的 OEM/ODM 协作方案，覆盖需求接收、工程评审、质量节点到量产交接。'
+      en: 'Yaoshun provides toy OEM/ODM and custom development for fort building toys, STEM building kits and interlocking plastic toys, covering structure design, mold planning, sampling, injection molding, color box packaging and shipment handoff.',
+      zh: '尧顺作为东莞源头工厂提供玩具 OEM/ODM 与定制化开发，覆盖堡垒拼搭玩具、STEM搭建套装、拼插类塑胶玩具的结构设计、开模、打样、注塑、彩盒包装与出货交接。'
     },
     keywords: {
       en: [
-        'interlocking toy OEM solution',
-        'building toy ODM workflow',
-        'custom interlocking toy development',
-        'toy manufacturing company process',
-        'building block toy project management',
-        'B2B toy OEM ODM service',
+        ...seoKeywordPools.customization.en,
+        ...seoKeywordPools.products.en.slice(0, 12),
+        ...seoKeywordPools.factoryCapabilities.en.slice(0, 10),
         'toy factory quality control workflow',
-        'custom plastic toy manufacturing solution'
+        'building block toy project management'
       ],
       zh: [
-        '拼接玩具OEM方案',
-        '拼插玩具ODM流程',
-        '拼搭玩具定制开发',
-        '积木拼装玩具项目流程',
-        '玩具企业OEM ODM服务',
+        ...seoKeywordPools.customization.zh,
+        ...seoKeywordPools.products.zh.slice(0, 12),
+        ...seoKeywordPools.factoryCapabilities.zh.slice(0, 10),
         '玩具工厂质量控制流程',
-        'B2B玩具定制方案',
-        '塑胶玩具制造解决方案'
+        '积木拼装玩具项目流程'
       ]
     }
   },

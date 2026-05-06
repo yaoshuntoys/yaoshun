@@ -1,43 +1,27 @@
-import {visualAssets} from '@/content/site/shared';
+import {seoKeywordPools, visualAssets} from '@/content/site/shared';
 
 export const homeContent = {
   seo: {
     title: {
-      en: 'Dongguan Yaoshun Technology Co., Ltd. | 东莞市尧顺科技有限公司 | Interlocking & Educational Toys',
-      zh: '东莞市尧顺科技有限公司 | Dongguan Yaoshun Technology Co., Ltd. | 拼插益智玩具与儿童玩具'
+      en: 'Yaoshun | Dongguan Source Toy Factory | Building & Custom Toys OEM/ODM',
+      zh: '尧顺 | 东莞源头工厂 | 搭建玩具定制玩具 OEM/ODM'
     },
     description: {
-      en: 'Dongguan Yaoshun Technology Co., Ltd. (东莞市尧顺科技有限公司), founded in 2016, develops and manufactures educational toys, interlocking toys, precision injection-molded components, plastic tubing, profiles, and OEM/ODM programs for global B2B buyers.',
-      zh: '东莞市尧顺科技有限公司（Dongguan Yaoshun Technology Co., Ltd.）成立于 2016 年，面向全球 B 端客户提供益智玩具、拼插类塑胶玩具、精密注塑件、塑胶管材型材及 OEM/ODM 项目开发与生产支持。'
+      en: 'Yaoshun is a Dongguan source toy factory for fort building toys, STEM building kits, interlocking toys and custom toy OEM/ODM, supporting mold making, injection molding, color box packaging and export delivery.',
+      zh: '尧顺是东莞源头玩具工厂，主营堡垒拼搭玩具、STEM搭建套装、拼插类玩具与定制玩具 OEM/ODM，支持开模、注塑、彩盒包装定制及出口交付。'
     },
     keywords: {
       en: [
-        'Dongguan Yaoshun Technology',
-        'Dongguan Yaoshun Technology Co., Ltd.',
-        'Yaoshun toy manufacturer',
-        'educational toy manufacturer',
-        'interlocking toy manufacturer',
-        'interlocking building toy supplier',
-        'building block toy OEM ODM',
-        'custom building toy factory',
-        'plastic building toy manufacturer',
-        'Dongguan toy manufacturing company',
-        'b2b toy supplier china',
-        'toy manufacturing company'
+        ...seoKeywordPools.company.en.slice(0, 8),
+        ...seoKeywordPools.products.en.slice(0, 12),
+        ...seoKeywordPools.customization.en.slice(0, 8),
+        ...seoKeywordPools.factoryCapabilities.en.slice(0, 5)
       ],
       zh: [
-        '东莞市尧顺科技有限公司',
-        '东莞市尧顺科技',
-        '尧顺玩具制造',
-        '益智玩具厂家',
-        '拼接玩具厂家',
-        '拼插玩具厂家',
-        '积木拼装玩具工厂',
-        '玩具OEM ODM工厂',
-        '塑胶拼搭玩具厂家',
-        '东莞玩具制造企业',
-        'B2B玩具外贸工厂',
-        '拼插玩具供应商'
+        ...seoKeywordPools.company.zh.slice(0, 8),
+        ...seoKeywordPools.products.zh.slice(0, 12),
+        ...seoKeywordPools.customization.zh.slice(0, 9),
+        ...seoKeywordPools.factoryCapabilities.zh.slice(0, 5)
       ]
     }
   },

@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    staleTimes: {
+      dynamic: 600,
+      static: 60 * 60 * 24,
+    },
+  },
   async redirects() {
     return [
       {

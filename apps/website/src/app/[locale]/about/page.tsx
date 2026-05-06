@@ -456,35 +456,35 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 
 function copy(locale: "en" | "zh") {
   return {
-    heroEyebrow: t(locale, {en: "About Us", zh: "关于我们"}),
+    heroEyebrow: t(locale, {en: "Dongguan Source Factory", zh: "东莞源头工厂"}),
     heroTitleLine1: t(locale, {
-      en: "Focused Educational Toy",
-      zh: "专注益智玩具研发与制造",
+      en: "Building Toy And Custom Toy",
+      zh: "搭建玩具与定制玩具",
     }),
     heroTitleLine2: t(locale, {
-      en: "R&D And Manufacturing",
-      zh: "让创意点亮未来",
+      en: "OEM/ODM Development",
+      zh: "OEM/ODM 定制化开发",
     }),
     heroText: t(locale, {
-      en: "Founded in 2016, Dongguan Yaoshun Technology Co., Ltd. combines design, tooling, production, quality control, and export coordination to deliver safe, durable educational toys, interlocking toy programs, and custom plastic products for global OEM/ODM buyers.",
-      zh: "东莞市尧顺科技有限公司成立于 2016 年，集设计、开模、生产、质控与出口协同于一体，持续为全球客户提供安全耐用的益智玩具、拼插玩具项目与定制塑料制品解决方案。",
+      en: "Founded in 2016, Dongguan Yaoshun Technology Co., Ltd. is a Dongguan source toy factory combining design, tooling, production, quality control, and export coordination for building toys, custom toys, and global toy OEM/ODM programs.",
+      zh: "东莞市尧顺科技有限公司成立于 2016 年，是一家东莞源头玩具工厂，集设计、开模、生产、质控与出口协同于一体，为全球客户提供搭建玩具、定制玩具与玩具 OEM/ODM 定制化开发服务。",
     }),
     intro: t(locale, {
-      en: "Founded on August 26, 2016 with registered capital of RMB 3 million, Dongguan Yaoshun Technology Co., Ltd. is a full-chain manufacturer integrating mold development, plastic extrusion, precision injection molding, quality inspection, finished assembly, and export delivery. We focus on educational toys, interlocking plastic toys, custom tubing, profiles, precision molded parts, and selected AI toy plastic electronic products for global OEM/ODM buyers.",
-      zh: "东莞市尧顺科技有限公司成立于 2016 年 8 月 26 日，注册资本 300 万元，是一家集模具开发、塑胶挤出、精密注塑、品质检测、成品组装与出口交付于一体的全链路制造企业。公司聚焦益智玩具、拼插类塑胶玩具、定制管材型材、高精密注塑件以及部分 AI 玩具塑胶电子产品，为全球 OEM/ODM 客户提供一站式支持。",
+      en: "Founded on August 26, 2016 with registered capital of RMB 3 million, Dongguan Yaoshun Technology Co., Ltd. is a full-chain Dongguan source factory integrating mold development, plastic extrusion, precision injection molding, quality inspection, finished assembly, and export delivery. We focus on building toys, custom toys, educational toys, interlocking plastic toys, custom tubing, profiles, precision molded parts, and selected AI toy plastic electronic products for global OEM/ODM buyers.",
+      zh: "东莞市尧顺科技有限公司成立于 2016 年 8 月 26 日，注册资本 300 万元，是一家集模具开发、塑胶挤出、精密注塑、品质检测、成品组装与出口交付于一体的东莞源头工厂。公司聚焦搭建玩具、定制玩具、益智玩具、拼插类塑胶玩具、定制管材型材、高精密注塑件以及部分 AI 玩具塑胶电子产品，为全球 OEM/ODM 客户提供一站式定制化开发支持。",
     }),
     companyTitle: t(locale, {en: "Dongguan Yaoshun Technology Co., Ltd.", zh: "东莞市尧顺科技有限公司"}),
     learnMore: t(locale, {en: "Learn More", zh: "了解更多"}),
     contactUs: t(locale, {en: "Contact Us", zh: "联系我们"}),
     certificate: t(locale, {en: "Certificates & Compliance", zh: "资质证书"}),
     certificateEyebrow: t(locale, {en: "Compliance", zh: "合规资料"}),
-    factory: t(locale, {en: "Our Factory", zh: "我们的工厂"}),
+    factory: t(locale, {en: "Our Source Factory", zh: "我们的源头工厂"}),
     factoryEyebrow: t(locale, {en: "Manufacturing", zh: "生产制造"}),
     advantages: t(locale, {en: "Our Advantages", zh: "我们的优势"}),
     advantagesEyebrow: t(locale, {en: "Why Choose Us", zh: "核心优势"}),
     advantagesText: t(locale, {
-      en: "Our competitive edge comes from combining toy-focused product development with in-house tooling, extrusion, injection, compliance, automated inspection, and delivery execution in one factory system.",
-      zh: "我们的优势在于把玩具研发与自有模具、挤出、注塑、合规、自动化检测和交付能力整合到同一工厂体系中，形成更稳定的项目执行力。",
+      en: "Our competitive edge comes from combining building toy and custom toy development with in-house tooling, extrusion, injection, compliance, automated inspection, and delivery execution in one source-factory system.",
+      zh: "我们的优势在于把搭建玩具与定制玩具开发、自有模具、挤出、注塑、合规、自动化检测和交付能力整合到同一源头工厂体系中，形成更稳定的项目执行力。",
     }),
     oneStop: t(locale, {en: "Core Services", zh: "核心服务"}),
     serviceEyebrow: t(locale, {en: "Capabilities", zh: "能力模块"}),
@@ -499,8 +499,8 @@ function copy(locale: "en" | "zh") {
     viewCertificate: t(locale, {en: "View certificate", zh: "查看证书"}),
     closePreview: t(locale, {en: "Close preview", zh: "关闭预览"}),
     factoryText: t(locale, {
-      en: "Our production system covers extrusion lines, injection molding capacity, clean processing areas, assembly stations, and inspection checkpoints for both toys and plastic support products.",
-      zh: "生产体系覆盖挤出产线、注塑设备、洁净生产区域、组装工位与检测节点，可同时支撑玩具及塑胶配套产品的稳定交付。",
+      en: "Our Dongguan source-factory system covers extrusion lines, injection molding capacity, clean processing areas, assembly stations, and inspection checkpoints for building toys, custom toys, and plastic support products.",
+      zh: "尧顺东莞源头工厂体系覆盖挤出产线、注塑设备、洁净生产区域、组装工位与检测节点，可支撑搭建玩具、定制玩具及塑胶配套产品的稳定交付。",
     }),
     serviceText: t(locale, {
       en: "From concept or sample to validated production, reports, and shipment, key tasks stay inside one connected execution chain.",
@@ -516,8 +516,8 @@ function copy(locale: "en" | "zh") {
     }),
     closingTitle: t(locale, {en: "Build With A Reliable OEM/ODM Factory Team", zh: "与可靠的 OEM/ODM 工厂团队协同合作"}),
     closingText: t(locale, {
-      en: "Whether you are building an educational toy line, custom plastic component, tubing project, or export-ready OEM program, Yaoshun is ready to support your project with practical engineering, disciplined quality control, and responsive delivery.",
-      zh: "无论你正在推进益智玩具、自定义塑胶部件、管材项目，还是面向出口的 OEM 项目，尧顺都可以通过务实工程能力、严格质控流程和稳定交付节奏为你提供支持。",
+      en: "Whether you are building a toy line, custom toy, custom plastic component, tubing project, or export-ready OEM program, Yaoshun is ready to support your project with source-factory engineering, disciplined quality control, and responsive delivery.",
+      zh: "无论你正在推进搭建玩具、定制玩具、自定义塑胶部件、管材项目，还是面向出口的 OEM 项目，尧顺都可以通过源头工厂工程能力、严格质控流程和稳定交付节奏为你提供支持。",
     }),
   };
 }
@@ -553,7 +553,7 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
       url: pageUrl,
       inLanguage: locale === "zh" ? "zh-CN" : "en-US",
       about: {
-        "@type": "Organization",
+        "@type": ["Organization", "LocalBusiness"],
         name: siteCopy.companyName[locale],
         foundingDate: "2016-08-26",
         email: siteCopy.contact.email,
@@ -566,6 +566,9 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
           addressCountry: "CN",
         },
         knowsAbout: [
+          locale === "zh" ? "东莞源头玩具工厂" : "Dongguan source toy factory",
+          locale === "zh" ? "搭建玩具与定制玩具" : "Building toys and custom toys",
+          locale === "zh" ? "玩具 OEM/ODM 定制化开发" : "Toy OEM/ODM custom development",
           locale === "zh" ? "益智玩具研发制造" : "Educational toy development and manufacturing",
           locale === "zh" ? "积木拼装玩具定制" : "Interlocking building toy customization",
           locale === "zh" ? "精密注塑件生产" : "Precision injection molded components",
