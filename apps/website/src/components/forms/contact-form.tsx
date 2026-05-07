@@ -2,6 +2,10 @@
 
 import {type FormEvent, useState} from "react";
 
+import {
+  buildCampaignEventParams,
+  recordCampaignAttribution,
+} from "@/lib/campaign-attribution";
 import {t, type Locale} from "@/lib/i18n";
 import {formFeedbackBaseClass, inputClass, primaryButtonClass, textareaClass} from "@/lib/ui";
 
@@ -68,6 +72,7 @@ export function ContactForm({locale, labels}: ContactFormProps) {
     const email = String(formData.get("email") ?? "").trim();
     const message = String(formData.get("message") ?? "").trim();
     const website = String(formData.get("website") ?? "").trim();
+    const attribution = recordCampaignAttribution();
     let ok = false;
 
     try {
@@ -81,6 +86,7 @@ export function ContactForm({locale, labels}: ContactFormProps) {
           message,
           website,
           locale,
+          attribution,
         }),
       });
 
@@ -108,6 +114,7 @@ export function ContactForm({locale, labels}: ContactFormProps) {
 
     if (ok) {
       trackFormEvent("generate_lead", {
+        ...buildCampaignEventParams(attribution),
         form_location: "contact_page",
         has_company: false,
         has_subject: false,
@@ -133,6 +140,7 @@ export function ContactForm({locale, labels}: ContactFormProps) {
 
         setHasStarted(true);
         trackFormEvent("form_start", {
+          ...buildCampaignEventParams(recordCampaignAttribution()),
           form_location: "contact_page",
           lead_type: "contact_form",
           locale,

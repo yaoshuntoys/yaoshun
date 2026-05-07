@@ -2,6 +2,10 @@
 
 import {type FormEvent, useState} from "react";
 
+import {
+  buildCampaignEventParams,
+  recordCampaignAttribution,
+} from "@/lib/campaign-attribution";
 import {t, type Locale} from "@/lib/i18n";
 import {formFeedbackBaseClass, inputClass, primaryButtonClass, textareaClass} from "@/lib/ui";
 
@@ -32,6 +36,7 @@ export function HomeLeadForm({locale}: {locale: Locale}) {
     setState("submitting");
     const form = event.currentTarget;
     const formData = new FormData(form);
+    const attribution = recordCampaignAttribution();
     const payload = {
       name: String(formData.get("name") ?? "").trim(),
       email: String(formData.get("email") ?? "").trim(),
@@ -39,6 +44,7 @@ export function HomeLeadForm({locale}: {locale: Locale}) {
       company: "",
       website: String(formData.get("website") ?? "").trim(),
       locale,
+      attribution,
     };
 
     try {
@@ -61,6 +67,7 @@ export function HomeLeadForm({locale}: {locale: Locale}) {
       }
 
       trackFormEvent("generate_lead", {
+        ...buildCampaignEventParams(attribution),
         form_location: "home_page",
         has_company: false,
         has_subject: false,
@@ -91,6 +98,7 @@ export function HomeLeadForm({locale}: {locale: Locale}) {
 
         setHasStarted(true);
         trackFormEvent("form_start", {
+          ...buildCampaignEventParams(recordCampaignAttribution()),
           form_location: "home_page",
           lead_type: "home_lead_form",
           locale,

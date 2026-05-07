@@ -80,7 +80,7 @@ export default async function FaqPage({params}: {params: Promise<{locale: string
       <section className="faq-content-grid">
         <div className="faq-main-panel">
           <div className="faq-section-head">
-            <h2>{text.sectionTitle}</h2>
+            <h1>{text.sectionTitle}</h1>
             <p>{text.sectionText}</p>
           </div>
 

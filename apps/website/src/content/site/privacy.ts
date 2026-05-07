@@ -37,7 +37,7 @@ export const privacyContent = {
     effectiveDateLabel: {en: "Effective Date", zh: "生效日期"},
     updatedDateLabel: {en: "Last Updated", zh: "最近更新"},
     effectiveDate: {en: "January 1, 2026", zh: "2026 年 1 月 1 日"},
-    updatedDate: {en: "May 3, 2026", zh: "2026 年 5 月 3 日"},
+    updatedDate: {en: "May 7, 2026", zh: "2026 年 5 月 7 日"},
   },
   sections: [
     {
@@ -97,6 +97,10 @@ export const privacyContent = {
         {
           en: "We may use Google Analytics and Google Ads tags for page-view and event measurement, campaign attribution, submitted-lead conversion tracking, and landing-page performance review. These tools may process cookies, device information, page URLs, referrers, campaign identifiers, consent status, and event data.",
           zh: "我们可能使用 Google Analytics 与 Google Ads 标签进行页面浏览和事件衡量、广告系列归因、已提交线索的转化追踪，以及落地页效果评估。这些工具可能处理 Cookie、设备信息、页面 URL、来源页面、广告系列标识、同意状态和事件数据。",
+        },
+        {
+          en: "Where analytics or advertising consent is active, we may keep first-party campaign attribution in browser storage, such as UTM parameters, click identifiers, referrers, first landing page, and last campaign touch, so submitted inquiries can be matched with advertising and search performance at a business level.",
+          zh: "在分析或广告同意生效的情况下，我们可能在浏览器本地保存第一方广告归因信息，例如 UTM 参数、点击标识、来源页面、首次落地页和最近一次广告触点，以便将提交的询盘与广告和搜索表现进行业务层面的匹配。",
         },
         {
           en: "Where consent is required, advertising and analytics storage may be controlled through Google consent settings, including ad_storage, analytics_storage, ad_user_data, and ad_personalization. We do not attempt to identify individual users in Google reports or merge personally identifiable information with Google advertising data unless proper notice, consent, and a supported Google feature are in place.",

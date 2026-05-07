@@ -17,7 +17,7 @@
   margin-bottom: 1rem;
 }
 
-.faq-section-head h2 {
+.faq-section-head h1 {
   margin: 0;
   color: #17306e;
   font-family: var(--font-heading);
@@ -62,7 +62,7 @@
   gap: 0.7rem;
 }
 
-.faq-section-head h2 {
+.faq-section-head h1 {
   font-size: clamp(1.95rem, 2.8vw, 2.6rem);
   line-height: 1.04;
 }
@@ -210,7 +210,7 @@
     border-radius: 1.3rem;
   }
 
-  .faq-section-head h2 {
+  .faq-section-head h1 {
     font-size: clamp(1.8rem, 8vw, 2.3rem);
   }
 

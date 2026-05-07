@@ -1,6 +1,11 @@
 'use client';
 
-import {googleAdsLeadConversionSendTo} from '@/lib/site-config';
+import {
+  googleAdsContactConversionSendTo,
+  googleAdsLeadConversionCurrency,
+  googleAdsLeadConversionSendTo,
+  googleAdsLeadConversionValue,
+} from '@/lib/site-config';
 import {readCookieConsentStatus} from '@/lib/cookie-consent';
 import {getLocaleFromPathname} from '@/lib/i18n';
 
@@ -49,7 +54,11 @@ export function trackEvent(eventName: string, params: AnalyticsParams = {}) {
   window.gtag('event', eventName, params);
 }
 
-export function trackPageView(pathname: string, title?: string) {
+export function trackPageView(
+  pathname: string,
+  title?: string,
+  extraParams: AnalyticsParams = {},
+) {
   if (typeof window === 'undefined') {
     return;
   }
@@ -61,6 +70,7 @@ export function trackPageView(pathname: string, title?: string) {
     page_location: window.location.href,
     page_title: title ?? document.title,
     locale: locale ?? 'unknown',
+    ...extraParams,
   });
 }
 
@@ -80,7 +90,13 @@ export function reportGoogleAdsLeadConversion(options: GoogleAdsConversionOption
     return true;
   }
 
-  const {currency = 'CNY', url, value = 1} = options;
+  const {
+    currency = googleAdsLeadConversionCurrency,
+    url,
+    value = Number.isFinite(googleAdsLeadConversionValue)
+      ? googleAdsLeadConversionValue
+      : 1,
+  } = options;
   const callback = () => {
     if (url) {
       window.location.href = url;
@@ -92,6 +108,32 @@ export function reportGoogleAdsLeadConversion(options: GoogleAdsConversionOption
     value,
     currency,
     event_callback: callback,
+  });
+
+  return false;
+}
+
+export function reportGoogleAdsContactConversion(options: GoogleAdsConversionOptions = {}) {
+  if (
+    typeof window === 'undefined'
+    || typeof window.gtag !== 'function'
+    || !googleAdsContactConversionSendTo
+    || readCookieConsentStatus() !== 'granted'
+  ) {
+    return true;
+  }
+
+  const {
+    currency = googleAdsLeadConversionCurrency,
+    value = Number.isFinite(googleAdsLeadConversionValue)
+      ? googleAdsLeadConversionValue
+      : 1,
+  } = options;
+
+  window.gtag('event', 'conversion', {
+    send_to: googleAdsContactConversionSendTo,
+    value,
+    currency,
   });
 
   return false;

@@ -21,6 +21,17 @@ type LocalizedSeo = {
   keywords?: LocalizedKeywords;
 };
 
+type MetadataImageOptions = {
+  alt?: string;
+  height?: number;
+  url: string;
+  width?: number;
+};
+
+type BuildMetadataOptions = {
+  image?: MetadataImageOptions;
+};
+
 function normalizePath(path: string): string {
   return path ? `/${path.replace(/^\/+/, "")}` : "";
 }
@@ -41,6 +52,7 @@ export function buildMetadata(
   description: string,
   path: string,
   keywords: string[] = [],
+  options: BuildMetadataOptions = {},
 ): Metadata {
   const normalizedPath = normalizePath(path);
   const localePath = `/${locale}${normalizedPath}`;
@@ -55,6 +67,19 @@ export function buildMetadata(
       `${siteUrl}/${item}${normalizedPath}`,
     ]),
   );
+  const primaryImage = options.image
+    ? {
+        url: toAbsoluteUrl(options.image.url),
+        width: options.image.width,
+        height: options.image.height,
+        alt: options.image.alt || title,
+      }
+    : {
+        url: toAbsoluteUrl(defaultOgImage),
+        width: 1200,
+        height: 630,
+        alt: title,
+      };
 
   return {
     title,
@@ -89,20 +114,13 @@ export function buildMetadata(
         .map((item) => localeRegistry[item].ogLocale),
       siteName,
       type: "website",
-      images: [
-        {
-          url: toAbsoluteUrl(defaultOgImage),
-          width: 1200,
-          height: 630,
-          alt: title,
-        },
-      ],
+      images: [primaryImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [toAbsoluteUrl(defaultOgImage)],
+      images: [primaryImage.url],
     },
   };
 }

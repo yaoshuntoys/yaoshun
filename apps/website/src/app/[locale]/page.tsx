@@ -168,7 +168,7 @@ export default async function HomePage({
         "@id": `${siteUrl}#organization`,
       },
       isPartOf: {
-        "@id": `${pageUrl}#website`,
+        "@id": `${siteUrl}#website`,
       },
     },
     {

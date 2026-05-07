@@ -4,6 +4,7 @@ import {usePathname, useSearchParams} from 'next/navigation';
 import {useEffect} from 'react';
 
 import {buildTrackedDatasetParams, trackEvent, trackPageView} from '@/lib/analytics';
+import {buildCampaignEventParams, recordCampaignAttribution} from '@/lib/campaign-attribution';
 
 export function AnalyticsEvents() {
   const pathname = usePathname();
@@ -12,7 +13,8 @@ export function AnalyticsEvents() {
   const currentPath = search ? `${pathname}?${search}` : pathname;
 
   useEffect(() => {
-    trackPageView(currentPath);
+    const attribution = recordCampaignAttribution();
+    trackPageView(currentPath, undefined, buildCampaignEventParams(attribution));
   }, [currentPath]);
 
   useEffect(() => {
@@ -23,10 +25,22 @@ export function AnalyticsEvents() {
         return;
       }
 
-      trackEvent(target.dataset.trackEvent, {
+      const eventName = target.dataset.trackEvent;
+      const eventParams = {
         ...buildTrackedDatasetParams(target.dataset),
+        ...buildCampaignEventParams(),
         page_path: currentPath,
-      });
+      };
+
+      trackEvent(eventName, eventParams);
+
+      if (eventName === 'contact_click') {
+        void import('@/lib/analytics')
+          .then(({reportGoogleAdsContactConversion}) => {
+            reportGoogleAdsContactConversion();
+          })
+          .catch(() => undefined);
+      }
     };
 
     document.addEventListener('click', handleClick, true);

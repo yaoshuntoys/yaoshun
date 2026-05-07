@@ -23,7 +23,6 @@ import "../styles/page-shared.css";
 
 const outfit = Outfit({
   display: "swap",
-  preload: false,
   subsets: ["latin"],
   variable: "--font-outfit",
 });
@@ -64,6 +63,7 @@ export const metadata: Metadata = {
   publisher: siteName,
   referrer: "origin-when-cross-origin",
   manifest: "/site.webmanifest",
+  classification: "B2B toy manufacturing, toy OEM/ODM, custom toy development",
   icons: {
     icon: [
       {
@@ -120,13 +120,18 @@ export const metadata: Metadata = {
   verification: {
     google: googleSiteVerification || undefined,
   },
+  other: {
+    "geo.region": "CN-GD",
+    "geo.placename": "Dongguan",
+    "business:contact_data:country_name": "China",
+    "business:contact_data:region": "Guangdong",
+    "business:contact_data:locality": "Dongguan",
+  },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   viewportFit: "cover",
 };
 

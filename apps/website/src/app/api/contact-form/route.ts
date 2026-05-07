@@ -8,6 +8,7 @@ export const runtime = "nodejs";
 const rateLimitWindowMs = 10 * 60 * 1000;
 const maxSubmissionsPerWindow = 5;
 const maxMessageLength = 5000;
+const maxAttributionLength = 8000;
 const rateLimitBuckets = new Map<string, number[]>();
 
 function escapeHtml(value: string) {
@@ -25,6 +26,22 @@ function isValidEmail(value: string) {
 
 function jsonError(message: string, status: number) {
   return NextResponse.json({ ok: false, message }, { status });
+}
+
+function stringifyAttribution(value: unknown) {
+  if (!value || typeof value !== "object") {
+    return "";
+  }
+
+  try {
+    const serialized = JSON.stringify(value, null, 2);
+
+    return serialized.length > maxAttributionLength
+      ? `${serialized.slice(0, maxAttributionLength)}\n...[truncated]`
+      : serialized;
+  } catch {
+    return "";
+  }
 }
 
 function getClientAddress(request: Request) {
@@ -73,6 +90,7 @@ export async function POST(request: Request) {
       message?: string;
       website?: string;
       locale?: string;
+      attribution?: unknown;
     };
 
     try {
@@ -92,6 +110,7 @@ export async function POST(request: Request) {
     const website = String(body.website ?? "").trim();
     const rawLocale = String(body.locale ?? defaultLocale).trim();
     const locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
+    const attribution = stringifyAttribution(body.attribution);
     const normalizedEmail = email.toLowerCase();
     const now = Date.now();
 
@@ -166,16 +185,25 @@ export async function POST(request: Request) {
     const escapedLocale = escapeHtml(locale);
     const escapedSubmittedAt = escapeHtml(submittedAt);
     const escapedMessage = escapeHtml(message);
+    const escapedAttribution = escapeHtml(attribution || "-");
+    const attributionHtml = attribution
+      ? `
+                  <tr>
+                    <td style="width:150px;padding:14px 0;border-bottom:1px solid #e5e7eb;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.1em;vertical-align:top;">Attribution</td>
+                    <td style="padding:14px 0;border-bottom:1px solid #e5e7eb;font-size:12px;line-height:1.65;color:#111827;vertical-align:top;white-space:pre-wrap;word-break:break-word;">${escapedAttribution}</td>
+                  </tr>`
+      : "";
     const text = [
       `Name: ${name}`,
       `Company: ${company || "-"}`,
       `Email: ${normalizedEmail}`,
       `Locale: ${locale}`,
       `Submitted At: ${submittedAt}`,
+      attribution ? `Attribution: ${attribution}` : "",
       "",
       "Message:",
       message,
-    ].join("\n");
+    ].filter(Boolean).join("\n");
 
     await transporter.sendMail({
       from,
@@ -216,6 +244,7 @@ export async function POST(request: Request) {
                     <td style="width:150px;padding:14px 0;border-bottom:1px solid #e5e7eb;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.1em;vertical-align:top;">Submitted At</td>
                     <td style="padding:14px 0;border-bottom:1px solid #e5e7eb;font-size:14px;color:#111827;vertical-align:top;">${escapedSubmittedAt}</td>
                   </tr>
+                  ${attributionHtml}
                   <tr>
                     <td style="width:150px;padding:14px 0;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.1em;vertical-align:top;">Message</td>
                     <td style="padding:14px 0;font-size:14px;line-height:1.75;color:#111827;vertical-align:top;white-space:pre-wrap;word-break:break-word;">${escapedMessage}</td>

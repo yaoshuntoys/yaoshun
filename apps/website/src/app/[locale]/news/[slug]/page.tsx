@@ -107,6 +107,16 @@ export async function generateMetadata({
       "toy manufacturing news",
       "quality and compliance updates",
     ],
+    article.image
+      ? {
+          image: {
+            url: article.image,
+            width: 1200,
+            height: 630,
+            alt: articleTitle,
+          },
+        }
+      : undefined,
   );
 
   return {

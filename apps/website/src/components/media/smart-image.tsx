@@ -25,7 +25,7 @@ export default function SmartImage(props: ImageProps) {
     const {
       alt,
       className,
-      decoding,
+      decoding = "async",
       draggable,
       fetchPriority,
       height,

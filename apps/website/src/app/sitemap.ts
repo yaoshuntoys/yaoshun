@@ -9,7 +9,7 @@ import {
 import { defaultLocale, localeRegistry, locales } from "@/lib/i18n";
 import { getNewsList } from "@/lib/site-data";
 import { routePathMap, type RouteKey } from "@/lib/routes";
-import { siteUrl } from "@/lib/site-config";
+import { siteUrl, toAbsoluteUrl } from "@/lib/site-config";
 
 const sitemapRouteKeys = [
   "home",
@@ -41,6 +41,25 @@ function buildAlternates(path: string) {
   };
 }
 
+function getRouteChangeFrequency(route: string): MetadataRoute.Sitemap[number]["changeFrequency"] {
+  if (route === "") return "weekly";
+  if (route === "/products" || route === "/news") return "weekly";
+  if (route === "/privacy" || route === "/terms") return "yearly";
+
+  return "monthly";
+}
+
+function getRoutePriority(route: string) {
+  if (route === "") return 1;
+  if (route === "/products") return 0.95;
+  if (route === "/contact") return 0.9;
+  if (route === "/solutions" || route === "/about") return 0.85;
+  if (route === "/faq" || route === "/news") return 0.75;
+  if (route === "/privacy" || route === "/terms") return 0.25;
+
+  return 0.7;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const routeEntries = sitemapRouteKeys.map((key) => routePathMap[key]);
   const entries: MetadataRoute.Sitemap = [];
@@ -51,8 +70,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: withBase(`/${locale}${route}`),
         lastModified: getStaticRouteLastModified(route),
         alternates: buildAlternates(route),
-        changeFrequency: route === "" ? "weekly" : "monthly",
-        priority: route === "" ? 1 : 0.8,
+        changeFrequency: getRouteChangeFrequency(route),
+        priority: getRoutePriority(route),
       });
     }
 
@@ -64,6 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: getProductLastModified(product.productId),
         alternates: buildAlternates(path),
         changeFrequency: "monthly",
+        images: product.images?.slice(0, 4).map((image) => toAbsoluteUrl(image)),
         priority: 0.7,
       });
     }
@@ -75,6 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: getNewsLastModified(article.publishedAt),
         alternates: buildAlternates(path),
         changeFrequency: "monthly",
+        images: article.image ? [toAbsoluteUrl(article.image)] : undefined,
         priority: 0.7,
       });
     }

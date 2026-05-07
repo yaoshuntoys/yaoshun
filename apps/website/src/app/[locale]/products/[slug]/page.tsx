@@ -308,6 +308,8 @@ export async function generateMetadata({
     t(locale, productsPageContent.seo.detailDescriptionTemplate),
     productTitle,
   );
+  const primaryProductImage = product.images?.[0];
+
   return buildMetadata(
     locale,
     title,
@@ -317,6 +319,14 @@ export async function generateMetadata({
       ...getProductSeoKeywords(locale, product),
       productTitle,
     ],
+    primaryProductImage
+      ? {
+          image: {
+            url: primaryProductImage,
+            alt: productTitle,
+          },
+        }
+      : undefined,
   );
 }
 
@@ -518,6 +528,8 @@ export default async function ProductDetailPage({
             highPrice: product.pricing?.max ?? product.pricing?.min,
             priceCurrency: currencyCode,
             availability: "https://schema.org/InStock",
+            businessFunction: "https://schema.org/Sell",
+            itemCondition: "https://schema.org/NewCondition",
             url: productUrl,
             seller: {
               "@type": "Organization",
@@ -529,6 +541,8 @@ export default async function ProductDetailPage({
             price: product.pricing?.min ?? product.pricing?.max,
             priceCurrency: currencyCode,
             availability: "https://schema.org/InStock",
+            businessFunction: "https://schema.org/Sell",
+            itemCondition: "https://schema.org/NewCondition",
             url: productUrl,
             seller: {
               "@type": "Organization",
@@ -566,6 +580,9 @@ export default async function ProductDetailPage({
       "@type": "Product",
       name: title,
       description: productDescription,
+      url: productUrl,
+      mainEntityOfPage: productUrl,
+      inLanguage: locale === "zh" ? "zh-CN" : "en-US",
       sku: product.productId,
       mpn: modelNumber !== "-" ? modelNumber : undefined,
       category: categoryNames.join(" / ") || undefined,
@@ -577,6 +594,13 @@ export default async function ProductDetailPage({
       manufacturer: {
         "@type": "Organization",
         name: "Dongguan Yaoshun Technology Co., Ltd.",
+      },
+      audience: {
+        "@type": "BusinessAudience",
+        audienceType:
+          locale === "zh"
+            ? "品牌采购、跨境卖家、礼品渠道、教育渠道与玩具进口商"
+            : "brand sourcing teams, cross-border sellers, gift channels, education channels, and toy importers",
       },
       material: material !== "-" ? material : undefined,
       offers: structuredOffer,
