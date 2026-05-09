@@ -3,12 +3,12 @@ import {seoKeywordPools, visualAssets} from '@/content/site/shared';
 export const complianceContent = {
   seo: {
     title: {
-      en: 'Compliance & Supplier Documents | Dongguan Yaoshun Technology Co., Ltd. | 东莞市尧顺科技有限公司',
-      zh: '资质合规与供应商文件 | 东莞市尧顺科技有限公司 | Dongguan Yaoshun Technology Co., Ltd.'
+      en: 'Compliance & Supplier Documents | Yaoshun Toys',
+      zh: '资质合规与供应商文件 | 尧顺玩具'
     },
     description: {
-      en: 'Review Dongguan Yaoshun Technology supplier documents and toy project compliance support, including business credentials, ISO 9000 files, RoHS, REACH, EN71, ASTM F963, CE materials and buyer due-diligence support.',
-      zh: '查看东莞市尧顺科技有限公司供应商资料与玩具项目合规支持，包括工商资质、ISO 9000、RoHS、REACH、EN71、ASTM F963、CE 资料及客户尽调支持。'
+      en: 'Review Yaoshun supplier documents and toy project compliance support, including business credentials, ISO 9000 files, RoHS, REACH, EN71, ASTM F963 and CE materials.',
+      zh: '查看尧顺供应商资料与玩具项目合规支持，包括工商资质、ISO 9000、RoHS、REACH、EN71、ASTM F963 与 CE 资料。'
     },
     keywords: {
       en: [

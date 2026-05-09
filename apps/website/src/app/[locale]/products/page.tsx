@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import "@/styles/pages/products.css";
 import {
   ArrowRight,
-  Gift,
+  Boxes,
+  PackageCheck,
   ShieldCheck,
-  Sparkles,
+  Wrench,
 } from "lucide-react";
 import Image from "@/components/media/smart-image";
 import Link from "next/link";
@@ -35,6 +36,9 @@ function copy(locale: "en" | "zh") {
       en: "Building Toys And Custom Toys",
       zh: "搭建玩具与定制玩具",
     }),
+    heroTitleLead: t(locale, {en: "Product Catalog For", zh: "搭建玩具"}),
+    heroTitleBlue: t(locale, {en: "Building", zh: "产品"}),
+    heroTitleOrange: t(locale, {en: "Toys", zh: "目录"}),
     heroText: t(locale, {
       en: "Explore building toys, custom toys, educational interlocking sets, and custom-ready product lines from Yaoshun, a Dongguan source factory supporting safe materials, toy OEM/ODM, custom development, and stable manufacturing execution.",
       zh: "浏览尧顺东莞源头工厂的搭建玩具、定制玩具、益智拼接套装与可定制产品系列，背后由安全材料方案、玩具 OEM/ODM、定制化开发能力和稳定制造体系提供支持。",
@@ -51,6 +55,8 @@ function copy(locale: "en" | "zh") {
     categories: t(locale, { en: "Categories", zh: "分类" }),
     allProducts: t(locale, { en: "All Products", zh: "全部产品" }),
     viewDetails: t(locale, { en: "View details", zh: "查看详情" }),
+    browseCatalog: t(locale, {en: "Browse Catalog", zh: "浏览目录"}),
+    customService: t(locale, {en: "Custom Service", zh: "定制服务"}),
     customTitle: t(locale, {
       en: "Looking for Custom Toys From A Source Factory?",
       zh: "正在寻找源头工厂定制玩具？",
@@ -107,7 +113,7 @@ export default async function ProductsPage({
     collection: item.collection,
     images: item.images,
     piecesLabel: getProductPiecesLabel(item),
-    priceLabel: getProductPriceLabel(item),
+    priceLabel: getProductPriceLabel(item, locale),
     bestseller: item.bestseller,
   }));
   const defaultGridProducts = [...catalog]
@@ -165,44 +171,52 @@ export default async function ProductsPage({
         sectionClassName="products-hero"
       >
         <p className="products-hero-eyebrow">{text.heroEyebrow}</p>
-        <h1 className="products-hero-title">{text.heroTitle}</h1>
+        <h1 className="products-hero-title">
+          <span>{text.heroTitleLead}</span>
+          <span>
+            <span className="hero-blue-word">{text.heroTitleBlue}</span>{" "}
+            <span className="hero-orange-word">{text.heroTitleOrange}</span>
+          </span>
+        </h1>
         <p className="products-hero-text">{text.heroText}</p>
 
-        <div className="products-hero-features">
+        <div className="page-hero-actions">
+          <Link className="hero-primary-cta" href={`/${locale}/products#products-catalog`}>
+            <span>{text.browseCatalog}</span>
+            <ArrowRight size={16} strokeWidth={2.25} />
+          </Link>
+          <Link className="hero-secondary-cta" href={`/${locale}/solutions`}>
+            <span>{text.customService}</span>
+            <span className="hero-secondary-dot" />
+          </Link>
+        </div>
+
+        <div className="hero-feature-strip">
           {[
             {
-              title: { en: "Safe & Durable", zh: "安全耐用" },
-              text: {
-                en: "Premium non-toxic materials",
-                zh: "优质无毒材质",
-              },
+              title: { en: "Safe Material Options", zh: "安全材料可选" },
               icon: ShieldCheck,
             },
             {
-              title: { en: "Build Creativity", zh: "激发创造力" },
-              text: {
-                en: "Encourage imagination and STEM learning",
-                zh: "鼓励想象力与 STEM 学习",
-              },
-              icon: Sparkles,
+              title: { en: "OEM/ODM Catalog Review", zh: "OEM/ODM 目录评估" },
+              icon: Boxes,
             },
             {
-              title: { en: "Perfect Gift", zh: "理想礼物" },
-              text: {
-                en: "Ideal for birthdays, holidays & more",
-                zh: "适合生日、节日等礼赠场景",
-              },
-              icon: Gift,
+              title: { en: "Packaging & Sampling", zh: "包装与打样支持" },
+              icon: Wrench,
+            },
+            {
+              title: { en: "Batch Delivery Planning", zh: "批量交付规划" },
+              icon: PackageCheck,
             },
           ].map((item) => {
             const Icon = item.icon;
             return (
-              <article key={item.title.en} className="products-hero-feature">
-                <div className="products-hero-feature-icon">
+              <article key={item.title.en} className="hero-feature-item">
+                <div className="hero-feature-icon">
                   <Icon size={21} strokeWidth={1.95} />
                 </div>
-                <h3>{t(locale, item.title)}</h3>
-                <p>{t(locale, item.text)}</p>
+                <p>{t(locale, item.title)}</p>
               </article>
             );
           })}

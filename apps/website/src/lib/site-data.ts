@@ -13,13 +13,6 @@ export type ShowcaseCatalogItem = ShowcaseProductSeed & {
   images: string[];
 };
 
-const curatedHomeFeaturedProductIds = [
-  "1601110728943",
-  "1601728749802",
-  "1601316583146",
-  "1601730326005",
-] as const;
-
 const curatedProductsFeaturedRailIds = [
   "1600884595638",
   "1600900125789",
@@ -91,7 +84,9 @@ function deriveCollection(product: ProductJson): ShowcaseProductSeed["collection
   const isAccessory =
     /(connector|construction rod|rods|sphere|rotating ball piece|piece set|配件|连接球|连接杆)/.test(text) &&
     !/(fort building kit|fort builder|堡垒搭建|套装)/.test(text);
+  const isCustom = /(custom|oem|odm|private label|定制|贴牌|来样|来图)/.test(text);
 
+  if (isCustom) return "accessories";
   if (isAccessory) return "accessories";
   if (/(glow|secret base|christmas|sports|outdoor|night|夜光|秘密基地|圣诞|运动)/.test(text)) return "themed";
   if (/(rotating|oversized|creative|1:8|升级|大颗粒|旋转球)/.test(text)) return "creative";
@@ -571,7 +566,7 @@ export function getShowcaseCatalog(): ShowcaseCatalogItem[] {
       ageGroup: deriveAgeGroup(product),
       pieceBand: derivePieceBand(product),
       hero: index < 3,
-      bestseller: index < 6,
+      bestseller: index < 4,
     };
 
     return {
@@ -607,7 +602,7 @@ function getCuratedShowcaseItems(
 }
 
 export function getHomeFeaturedShowcaseCatalog() {
-  return getCuratedShowcaseItems(curatedHomeFeaturedProductIds, 4);
+  return getShowcaseCatalog().slice(0, 4);
 }
 
 export function getProductsFeaturedRailCatalog() {
@@ -654,8 +649,13 @@ export function getProductPiecesLabel(item: ShowcaseCatalogItem) {
   return pieceCount ? `${pieceCount} PCS` : item.pieceBand.toUpperCase();
 }
 
-export function getProductPriceLabel(item: ShowcaseCatalogItem) {
-  return item.product.pricing?.display?.en || item.product.pricing?.display?.zh || "Quote on request";
+export function getProductPriceLabel(item: ShowcaseCatalogItem, locale: Locale = "en") {
+  return (
+    item.product.pricing?.display?.[locale] ||
+    item.product.pricing?.display?.en ||
+    item.product.pricing?.display?.zh ||
+    "Quote on request"
+  );
 }
 
 export function getPrimaryAttributes(product: ProductJson, limit = 6) {

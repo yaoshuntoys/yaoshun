@@ -125,9 +125,9 @@ const localeEntries = Object.entries(localeRegistry) as Array<
 
 const footerQuickLinkRoutes = [
   { label: { en: "Home", zh: "首页" }, route: "home" },
-  { label: { en: "Products", zh: "产品" }, route: "products" },
+  { label: { en: "Products", zh: "产品目录" }, route: "products" },
   { label: { en: "Solutions", zh: "解决方案" }, route: "solutions" },
-  { label: { en: "News", zh: "新闻" }, route: "news" },
+  { label: { en: "News", zh: "新闻中心" }, route: "news" },
   { label: { en: "About Us", zh: "关于我们" }, route: "about" },
 ] as const satisfies ReadonlyArray<{
   label: { en: string; zh: string };

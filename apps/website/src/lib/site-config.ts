@@ -7,7 +7,15 @@ function normalizeSiteUrl(value: string): string {
 }
 
 export const siteUrl = normalizeSiteUrl(rawSiteUrl);
-export const siteName = "Dongguan Yaoshun Technology Co., Ltd. | yaoshun toys";
+export const siteHomeUrl = `${siteUrl}/`;
+export const siteName = "Yaoshun Toys";
+export const siteLegalName = "Dongguan Yaoshun Technology Co., Ltd.";
+export const siteAlternateNames = [
+  "yaoshun toys",
+  "Yaoshun",
+  "尧顺玩具",
+  "尧顺",
+] as const;
 export const siteDescription = "Dongguan Yaoshun Technology Co., Ltd. is a Dongguan source toy factory supporting building toys, custom toys, toy OEM/ODM, custom development, in-house mold development, precision injection molding, assembly, packaging, and export-ready delivery for global B2B buyers.";
 export const defaultOgImage = "/site/misc/home-bg.webp";
 

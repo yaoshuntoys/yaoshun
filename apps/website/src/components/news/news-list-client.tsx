@@ -202,7 +202,7 @@ export function NewsListClient({articles, locale, text}: NewsListClientProps) {
   }
 
   return (
-    <section className="news-content-grid">
+    <section className="news-content-grid" id="news-list">
       <aside className="news-sidebar">
         <div className="news-sidebar-sticky">
           <article className="news-sidebar-card">

@@ -29,15 +29,15 @@ export const certificateItems = [
 
 export const factoryItems = [
   { title: { en: "Factory Exterior", zh: "工厂外景" }, image: factoryImage4 },
-  { title: { en: "Automatic Cutting Line", zh: "自动切管生产线" }, image: factoryImage1 },
   {
     title: { en: "Extrusion Production Line", zh: "挤出生产线" },
     image: factoryImage2,
   },
-  { title: { en: "Production Workshop", zh: "生产车间" }, image: factoryImage3 },
-  { title: { en: "Packing Warehouse", zh: "包装仓储区" }, image: factoryImage5 },
+  { title: { en: "Automatic Cutting Line", zh: "自动切管生产线" }, image: factoryImage1 },
   {
     title: { en: "Injection Molding Machine", zh: "注塑设备" },
     image: factoryImage6,
   },
+  { title: { en: "Production Workshop", zh: "生产车间" }, image: factoryImage3 },
+  { title: { en: "Packing Warehouse", zh: "包装仓储区" }, image: factoryImage5 },
 ] as const;

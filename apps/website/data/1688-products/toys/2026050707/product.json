@@ -1,0 +1,611 @@
+{
+  "productId": "2026050707",
+  "module": "toys",
+  "priority": 0,
+  "title": {
+    "en": "Custom DIY FORTS Color Box Building Kit",
+    "zh": "定制 DIY FORTS 彩盒堡垒拼搭套装"
+  },
+  "summary": {
+    "en": "Custom DIY FORTS color-box set for brand orders, with adjustable artwork, piece mix, colors, and packing details.",
+    "zh": "DIY FORTS 彩盒定制款，可调整盒面、件数、配色和包装内容。"
+  },
+  "description": {
+    "en": [
+      "DIY FORTS 3+ is a made-to-order color-box set for private-label or exclusive retail packs.",
+      "The set uses PP plastic rods and connector balls. Children insert and twist the rods to build forts, tents, rockets, houses, tunnels, and other play structures.",
+      "Logo, box artwork, manual, piece count, rod colors, connector colors, and carton marks can be adjusted.",
+      "No public price is shown. Quotation follows confirmed artwork, configuration, quantity, and packing."
+    ],
+    "zh": [
+      "DIY FORTS 3+ 为彩盒定制款，可做贴牌包装或渠道专版。",
+      "产品采用 PP 塑料杆件和连接球，插入后旋转固定，可搭建城堡、帐篷、火箭、房屋、隧道等造型。",
+      "LOGO、彩盒画面、说明书、件数、杆件颜色、连接球颜色和外箱唛头都可以调整。",
+      "不公开标价，确认画面、配置、数量和包装后报价。"
+    ]
+  },
+  "categories": {
+    "en": [
+      "Custom Toys",
+      "Blocks & Model Building Toys",
+      "Building Block Sets"
+    ],
+    "zh": [
+      "定制玩具",
+      "积木与模型拼搭玩具",
+      "积木套装"
+    ]
+  },
+  "pricing": {
+    "display": {
+      "en": "Custom quote",
+      "zh": "定制方案"
+    },
+    "currency": "USD",
+    "isRange": false
+  },
+  "customizationOptions": [
+    {
+      "label": {
+        "en": "Customized logo",
+        "zh": "定制 Logo"
+      },
+      "minOrder": {
+        "en": "1,000 sets",
+        "zh": "1,000 套"
+      }
+    },
+    {
+      "label": {
+        "en": "Customized packaging",
+        "zh": "定制包装"
+      },
+      "minOrder": {
+        "en": "1,000 sets",
+        "zh": "1,000 套"
+      }
+    },
+    {
+      "label": {
+        "en": "Graphic customization",
+        "zh": "图文定制"
+      },
+      "minOrder": {
+        "en": "1,000 sets",
+        "zh": "1,000 套"
+      }
+    },
+    {
+      "label": {
+        "en": "Colors, size, and private label",
+        "zh": "颜色、尺寸和贴牌"
+      },
+      "minOrder": {
+        "en": "Confirm before quotation",
+        "zh": "报价前确认"
+      }
+    }
+  ],
+  "specifications": [
+    {
+      "key": {
+        "en": "Custom Items",
+        "zh": "可定制内容"
+      },
+      "value": {
+        "en": "Color box artwork, logo, piece count, rod color, connector color, and instruction content",
+        "zh": "彩盒画面、LOGO、件数、杆件颜色、连接球颜色和说明书内容"
+      }
+    },
+    {
+      "key": {
+        "en": "Builds Shown on Box",
+        "zh": "盒面展示造型"
+      },
+      "value": {
+        "en": "Castle, rocket, tent, house, and tunnel",
+        "zh": "城堡、火箭、帐篷、房屋、隧道"
+      }
+    },
+    {
+      "key": {
+        "en": "Build Reference",
+        "zh": "结构参考"
+      },
+      "value": {
+        "en": "Reference builds use about 37 to 52 rods and 21 to 29 connector balls",
+        "zh": "参考造型约用 37-52 根管、21-29 个连接球"
+      }
+    },
+    {
+      "key": {
+        "en": "Pricing Note",
+        "zh": "报价说明"
+      },
+      "value": {
+        "en": "No public price; quote after artwork, configuration, quantity, and packing are confirmed",
+        "zh": "不公开价格，确认画面、配置、数量和包装后报价"
+      }
+    }
+  ],
+  "productAttributes": [
+    {
+      "key": {
+        "en": "Product Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Custom fort building toy",
+        "zh": "定制堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 3+",
+        "zh": "3岁以上"
+      }
+    },
+    {
+      "key": {
+        "en": "Supplier Age Range",
+        "zh": "供应商适龄范围"
+      },
+      "value": {
+        "en": "2 to 4 Years, 5 to 7 years, 8 to 13 Years, 14 Years & up",
+        "zh": "2-4岁、5-7岁、8-13岁、14岁以上"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "Custom configuration",
+        "zh": "可定制配置"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP plastic rods and connector balls",
+        "zh": "PP塑料杆件和连接球"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM / ODM Customization",
+        "zh": "OEM / ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Package",
+        "zh": "包装"
+      },
+      "value": {
+        "en": "Color Box + Outer Carton",
+        "zh": "彩盒 + 外箱"
+      }
+    }
+  ],
+  "attributePairs": [
+    {
+      "key": {
+        "en": "Product Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Custom DIY fort building kit",
+        "zh": "定制DIY堡垒拼搭套装"
+      }
+    },
+    {
+      "key": {
+        "en": "Customization Type",
+        "zh": "定制类型"
+      },
+      "value": {
+        "en": "OEM/ODM box, logo, color, size, artwork, piece count, and build guide",
+        "zh": "OEM/ODM 包装、LOGO、配色、尺寸、画面、件数和搭建说明"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "Custom configuration",
+        "zh": "可定制配置"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 3+",
+        "zh": "3岁以上"
+      }
+    },
+    {
+      "key": {
+        "en": "Supplier Age Range",
+        "zh": "供应商适龄范围"
+      },
+      "value": {
+        "en": "2 to 4 Years, 5 to 7 years, 8 to 13 Years, 14 Years & up",
+        "zh": "2-4岁、5-7岁、8-13岁、14岁以上"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP plastic rods and connector balls",
+        "zh": "PP塑料杆件和连接球"
+      }
+    },
+    {
+      "key": {
+        "en": "Assembly",
+        "zh": "组装方式"
+      },
+      "value": {
+        "en": "Insert and twist rods into balls; quick assembly and easy disassembly",
+        "zh": "杆件插入连接球后旋转固定，快速组装，易拆卸"
+      }
+    },
+    {
+      "key": {
+        "en": "Creative Builds",
+        "zh": "创意造型"
+      },
+      "value": {
+        "en": "Cave, play tent, rocket, house, igloo, princess castle, tunnel, teepee, toy tents, and pirate ship",
+        "zh": "洞穴、游戏帐篷、火箭、房屋、冰屋、公主城堡、隧道、圆锥帐篷、玩具帐篷和海盗船"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Helps with spatial thinking, imagination, and shape recognition",
+        "zh": "帮助锻炼空间思维、想象力和图形认知"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color Box + Outer Carton",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Color Box Reference",
+        "zh": "彩盒参考"
+      },
+      "value": {
+        "en": "44 x 34 x 11.5 cm",
+        "zh": "44 x 34 x 11.5 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Outer Carton Reference",
+        "zh": "外箱参考"
+      },
+      "value": {
+        "en": "46 x 36 x 60 cm / 5 boxes",
+        "zh": "46 x 36 x 60 cm / 5盒"
+      }
+    },
+    {
+      "key": {
+        "en": "Weight Reference",
+        "zh": "重量参考"
+      },
+      "value": {
+        "en": "3.3 kg / 18 kg",
+        "zh": "3.3kg / 18kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Ball Size",
+        "zh": "连接球尺寸"
+      },
+      "value": {
+        "en": "PP ball size 6.0 cm",
+        "zh": "PP连接球6.0cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Rod Size",
+        "zh": "杆件尺寸"
+      },
+      "value": {
+        "en": "40 cm rod reference",
+        "zh": "40cm杆件参考"
+      }
+    },
+    {
+      "key": {
+        "en": "Pricing",
+        "zh": "价格"
+      },
+      "value": {
+        "en": "Quoted after details are confirmed",
+        "zh": "确认细节后报价"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization and private-label packing",
+        "zh": "OEM/ODM 定制和贴牌包装"
+      }
+    }
+  ],
+  "packagingAndShipping": {
+    "unitSize": "45X13X35",
+    "unitVolume": "",
+    "unitWeight": "3.500",
+    "summary": {
+      "en": "Custom Packaging & Shipping",
+      "zh": "定制包装与运输"
+    },
+    "blocks": [
+      {
+        "label": {
+          "en": "Selling unit",
+          "zh": "销售单位"
+        },
+        "value": {
+          "en": "Made-to-order color box set",
+          "zh": "彩盒定制套装"
+        }
+      },
+      {
+        "label": {
+          "en": "Color box reference",
+          "zh": "彩盒参考"
+        },
+        "value": {
+          "en": "44 x 34 x 11.5 cm",
+          "zh": "44 x 34 x 11.5 厘米"
+        }
+      },
+      {
+        "label": {
+          "en": "Outer carton reference",
+          "zh": "外箱参考"
+        },
+        "value": {
+          "en": "46 x 36 x 60 cm / 5 boxes",
+          "zh": "46 x 36 x 60 厘米 / 5盒"
+        }
+      },
+      {
+        "label": {
+          "en": "Single package reference",
+          "zh": "单件包装参考"
+        },
+        "value": {
+          "en": "45 x 13 x 35 cm, 3.500 kg",
+          "zh": "45 x 13 x 35 厘米，3.500 千克"
+        }
+      }
+    ]
+  },
+  "packagingPairs": [
+    {
+      "key": {
+        "en": "Color Box Reference",
+        "zh": "彩盒参考"
+      },
+      "value": {
+        "en": "44 x 34 x 11.5 cm",
+        "zh": "44 x 34 x 11.5 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Outer Carton Reference",
+        "zh": "外箱参考"
+      },
+      "value": {
+        "en": "46 x 36 x 60 cm / 5 boxes",
+        "zh": "46 x 36 x 60 cm / 5盒"
+      }
+    },
+    {
+      "key": {
+        "en": "Single Package Reference",
+        "zh": "单件包装参考"
+      },
+      "value": {
+        "en": "45 x 13 x 35 cm",
+        "zh": "45 x 13 x 35 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Single Gross Weight",
+        "zh": "单件毛重"
+      },
+      "value": {
+        "en": "3.500 kg",
+        "zh": "3.500 kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Quote Note",
+        "zh": "报价备注"
+      },
+      "value": {
+        "en": "No public unit price; quote after details and quantity are confirmed",
+        "zh": "不公开单价，确认细节和数量后报价"
+      }
+    }
+  ],
+  "leadTime": {
+    "tiers": [
+      {
+        "minQuantity": "1",
+        "maxQuantity": "1",
+        "processPeriodDays": 7
+      },
+      {
+        "minQuantity": "2",
+        "maxQuantity": "500",
+        "processPeriodDays": 30
+      },
+      {
+        "minQuantity": "501",
+        "maxQuantity": "1,000",
+        "processPeriodDays": 60
+      }
+    ]
+  },
+  "productDetails": [
+    {
+      "sectionTitle": {
+        "en": "Custom DIY FORTS Color Box",
+        "zh": "定制 DIY FORTS 彩盒"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/1.webp",
+      "text": {
+        "en": "The color box can be updated with the customer logo, box artwork, product name, build icons, and feature copy.",
+        "zh": "彩盒可替换客户 LOGO、盒面画面、产品名称、搭建图标和产品文案。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Piece Mix & Packing",
+        "zh": "配置与包装"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/3.webp",
+      "text": {
+        "en": "Rod colors, connector colors, piece count, manual content, and packing method are checked before we quote.",
+        "zh": "报价前确认杆件颜色、连接球颜色、件数、说明书内容和包装方式。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Build Effect",
+        "zh": "搭建效果"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/2.webp",
+      "text": {
+        "en": "The blue-rod fort reference helps show the expected structure style before artwork and packing are finalized.",
+        "zh": "蓝色杆件堡垒效果图可作为结构参考，方便在定稿包装前确认展示方向。"
+      }
+    }
+  ],
+  "tags": [
+    {
+      "key": "toys",
+      "en": "Toys",
+      "zh": "玩具"
+    },
+    {
+      "key": "custom-toy",
+      "en": "Custom Toy",
+      "zh": "定制玩具"
+    },
+    {
+      "key": "oem-odm",
+      "en": "OEM/ODM",
+      "zh": "OEM/ODM"
+    },
+    {
+      "key": "color-box-packaging",
+      "en": "Color Box Packaging",
+      "zh": "彩盒包装"
+    }
+  ],
+  "images": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/1.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/2.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/3.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/4.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/5.webp"
+  ],
+  "media": {
+    "main": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/1.webp"
+      }
+    ],
+    "detail": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/2.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/3.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/4.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/5.webp"
+      }
+    ]
+  },
+  "sourceUrl": "https://www.alibaba.com/product-detail/YaoShun-158pcs-Children-Puzzle-Building-Blocks_1601094195076.html"
+}

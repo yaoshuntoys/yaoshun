@@ -19,6 +19,7 @@ import {
   Star,
   Truck,
   UserRound,
+  Wrench,
 } from "lucide-react";
 import Image from "@/components/media/smart-image";
 import Link from "next/link";
@@ -497,7 +498,6 @@ function copy(locale: "en" | "zh") {
     cultureTitle: t(locale, {en: "Corporate Culture", zh: "企业文化"}),
     cultureEyebrow: t(locale, {en: "Culture", zh: "文化理念"}),
     viewCertificate: t(locale, {en: "View certificate", zh: "查看证书"}),
-    closePreview: t(locale, {en: "Close preview", zh: "关闭预览"}),
     factoryText: t(locale, {
       en: "Our Dongguan source-factory system covers extrusion lines, injection molding capacity, clean processing areas, assembly stations, and inspection checkpoints for building toys, custom toys, and plastic support products.",
       zh: "尧顺东莞源头工厂体系覆盖挤出产线、注塑设备、洁净生产区域、组装工位与检测节点，可支撑搭建玩具、定制玩具及塑胶配套产品的稳定交付。",
@@ -600,20 +600,54 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
             <p className="about-hero-eyebrow">{text.heroEyebrow}</p>
             <h1 className="about-hero-title">
               <span>{text.heroTitleLine1}</span>
-              <span>{text.heroTitleLine2}</span>
+              <span>
+                <span className="hero-blue-word">{text.heroTitleLine2}</span>{" "}
+                <span className="hero-orange-word">OEM/ODM</span>
+              </span>
             </h1>
             <p className="about-hero-text">{text.heroText}</p>
-            <Link
-              className="about-primary-cta"
-              data-track-destination="#about-advantages"
-              data-track-event="cta_click"
-              data-track-label="learn_more"
-              data-track-location="about_hero"
-              href="#about-advantages"
-            >
-              <span>{text.learnMore}</span>
-              <ArrowRight size={16} strokeWidth={2.15} />
-            </Link>
+            <div className="page-hero-actions">
+              <Link
+                className="hero-primary-cta"
+                data-track-destination="#about-advantages"
+                data-track-event="cta_click"
+                data-track-label="learn_more"
+                data-track-location="about_hero"
+                href="#about-advantages"
+              >
+                <span>{text.learnMore}</span>
+                <ArrowRight size={16} strokeWidth={2.15} />
+              </Link>
+              <Link
+                className="hero-secondary-cta"
+                data-track-destination={contactFormPath(locale)}
+                data-track-event="cta_click"
+                data-track-label="contact_us"
+                data-track-location="about_hero"
+                href={contactFormPath(locale)}
+              >
+                <span>{text.contactUs}</span>
+                <span className="hero-secondary-dot" />
+              </Link>
+            </div>
+            <div className="hero-feature-strip">
+              {[
+                {icon: Lightbulb, label: {en: "R&D And Structure Review", zh: "研发与结构评估"}},
+                {icon: Wrench, label: {en: "In-House Tooling Support", zh: "自有模具支持"}},
+                {icon: Factory, label: {en: "Injection And Assembly", zh: "注塑与组装协同"}},
+                {icon: Globe, label: {en: "Export Document Handoff", zh: "出口资料交接"}},
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <article className="hero-feature-item" key={item.label.en}>
+                    <div className="hero-feature-icon">
+                      <Icon size={21} strokeWidth={1.95} />
+                    </div>
+                    <p>{t(locale, item.label)}</p>
+                  </article>
+                );
+              })}
+            </div>
           </div>
         </div>
 
@@ -675,6 +709,7 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
                   alt={item.title[locale]}
                   className="about-factory-image"
                   fill
+                  preview
                   sizes="(min-width: 1024px) 26vw, (min-width: 768px) 42vw, 100vw"
                   src={item.image}
                   unoptimized={item.image.startsWith("http")}
@@ -696,7 +731,6 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
         </div>
 
         <AboutCertificateGallery
-          closeLabel={text.closePreview}
           dialogLabel={text.viewCertificate}
           items={certificateItems}
         />

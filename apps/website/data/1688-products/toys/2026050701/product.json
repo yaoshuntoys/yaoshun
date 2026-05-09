@@ -1,0 +1,704 @@
+{
+  "productId": "2026050701",
+  "title": {
+    "en": "LONDY Little Explorer 69-Piece Fort Building Kit",
+    "zh": "LONDY Little Explorer 69件儿童堡垒拼搭套装"
+  },
+  "summary": {
+    "en": "A 69-piece LONDY Little Explorer set with blue rods, mixed-color connector balls, clips, storage bag, and printed tent blanket.",
+    "zh": "69件 LONDY Little Explorer 套装，配置蓝色杆、混色连接球、夹子、收纳袋和印花帐篷布。"
+  },
+  "description": {
+    "en": [
+      "The 69-piece LONDY Little Explorer set pairs blue PP rods with mixed-color connector balls for compact forts and tent-style builds.",
+      "The box includes rods, connector balls, purple clips, a printed tent blanket, handbook, PE warning bag, and storage bag.",
+      "Packed set price is $17.13. Package reference is 45 x 9 x 35 cm, with about 2.4 kg quoted weight.",
+      "Printed blankets and storage bags can be customized for brand orders."
+    ],
+    "zh": [
+      "69件 LONDY Little Explorer 采用蓝色 PP 杆和混色连接球，适合搭建小型堡垒和帐篷框架。",
+      "套装包含杆件、连接球、紫色夹子、印花帐篷布、说明书、PE 警示袋和收纳袋。",
+      "单盒合计价格 $17.13，包装参考为 45 x 9 x 35 cm，报价重量约 2.4 kg。",
+      "印花毯和收纳袋可按品牌需求定制。"
+    ]
+  },
+  "categories": {
+    "en": [
+      "Mother, Kids & Toys",
+      "Blocks & Model Building Toys",
+      "Building Block Sets"
+    ],
+    "zh": [
+      "母婴与玩具",
+      "积木与模型拼搭玩具",
+      "积木套装"
+    ]
+  },
+  "pricing": {
+    "display": {
+      "en": "$17.13",
+      "zh": "$17.13"
+    },
+    "currency": "$",
+    "isRange": false,
+    "minOrder": {
+      "en": "1 box",
+      "zh": "1 箱"
+    },
+    "tiers": [
+      {
+        "quantity": {
+          "en": "Unit price",
+          "zh": "单盒价格"
+        },
+        "price": "$17.13"
+      }
+    ]
+  },
+  "customizationOptions": [
+    {
+      "label": {
+        "en": "Custom printed blanket",
+        "zh": "印花毯定制"
+      },
+      "minOrder": {
+        "en": "Confirm with sales team",
+        "zh": "请与业务确认"
+      }
+    },
+    {
+      "label": {
+        "en": "Custom storage bag",
+        "zh": "收纳袋定制"
+      },
+      "minOrder": {
+        "en": "Confirm with sales team",
+        "zh": "请与业务确认"
+      }
+    },
+    {
+      "label": {
+        "en": "OEM/ODM packaging",
+        "zh": "OEM/ODM 包装"
+      },
+      "minOrder": {
+        "en": "Confirm with sales team",
+        "zh": "请与业务确认"
+      }
+    }
+  ],
+  "specifications": [
+    {
+      "key": {
+        "en": "Blue PP Rods",
+        "zh": "蓝色 PP 杆"
+      },
+      "value": {
+        "en": "44 pcs, 400 mm, phi 9.3 mm, $0.045 each, quoted total $2.02",
+        "zh": "44件，400mm，直径9.3mm，单价 $0.045，报价小计 $2.02"
+      }
+    },
+    {
+      "key": {
+        "en": "Connector Balls",
+        "zh": "连接球"
+      },
+      "value": {
+        "en": "25 pcs, 55 mm: 5 orange, 5 yellow, 5 blue, 5 red, 5 purple; $0.132 each",
+        "zh": "25件，55mm：橙/黄/蓝/红/紫各5件；单价 $0.132"
+      }
+    },
+    {
+      "key": {
+        "en": "Clips",
+        "zh": "夹子"
+      },
+      "value": {
+        "en": "10 pcs, $0.033 each, quoted total $0.33",
+        "zh": "10件，单价 $0.033，报价小计 $0.33"
+      }
+    },
+    {
+      "key": {
+        "en": "Packing Accessories",
+        "zh": "包装配件"
+      },
+      "value": {
+        "en": "2 PE warning bags, handbook, 44 x 52 cm storage bag, subpackaging fee, outer box",
+        "zh": "2个含警告语PE袋、说明书、44 x 52cm 收纳袋、分装费、外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Printed Blanket",
+        "zh": "印花毯"
+      },
+      "value": {
+        "en": "3 x 1.75 m, quoted total $6.14",
+        "zh": "3 x 1.75m，报价小计 $6.14"
+      }
+    }
+  ],
+  "productAttributes": [
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Brand Name",
+        "zh": "品牌"
+      },
+      "value": {
+        "en": "LONDY / Londy-2569",
+        "zh": "LONDY / Londy-2569"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "YS-LD2569 / Londy-2569",
+        "zh": "YS-LD2569 / Londy-2569"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "69 pcs",
+        "zh": "69件"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 4+; supplier range 5 to 13 years",
+        "zh": "4岁以上；供应商范围5-13岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP plastic rods and PP plastic balls",
+        "zh": "PP塑料杆和PP塑料连接球"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Theme",
+        "zh": "主题"
+      },
+      "value": {
+        "en": "Modern buildings",
+        "zh": "现代建筑"
+      }
+    },
+    {
+      "key": {
+        "en": "Style",
+        "zh": "风格"
+      },
+      "value": {
+        "en": "Educational toy",
+        "zh": "益智玩具"
+      }
+    }
+  ],
+  "attributePairs": [
+    {
+      "key": {
+        "en": "Product Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Fort building toy",
+        "zh": "堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Product Series",
+        "zh": "产品系列"
+      },
+      "value": {
+        "en": "Little Explorer Kit",
+        "zh": "Little Explorer Kit 小小冒险家"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "69 pcs",
+        "zh": "69件"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "YS-LD2569 / Londy-2569",
+        "zh": "YS-LD2569 / Londy-2569"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 4+; supplier range 5 to 13 years",
+        "zh": "4岁以上；供应商范围5-13岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP plastic rods and PP plastic balls with fabric accessories",
+        "zh": "PP塑料杆、PP塑料连接球及布艺配件"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Theme",
+        "zh": "主题"
+      },
+      "value": {
+        "en": "Modern buildings",
+        "zh": "现代建筑"
+      }
+    },
+    {
+      "key": {
+        "en": "Rod Material",
+        "zh": "杆件材质"
+      },
+      "value": {
+        "en": "PP plastic",
+        "zh": "PP塑料"
+      }
+    },
+    {
+      "key": {
+        "en": "Rod Color",
+        "zh": "杆件颜色"
+      },
+      "value": {
+        "en": "Blue",
+        "zh": "蓝色"
+      }
+    },
+    {
+      "key": {
+        "en": "Ball Material",
+        "zh": "连接球材质"
+      },
+      "value": {
+        "en": "PP plastic",
+        "zh": "PP塑料"
+      }
+    },
+    {
+      "key": {
+        "en": "Ball Color",
+        "zh": "连接球颜色"
+      },
+      "value": {
+        "en": "Yellow, red, blue, purple, and orange",
+        "zh": "黄色、红色、蓝色、紫色、橙色"
+      }
+    },
+    {
+      "key": {
+        "en": "Ball Weight",
+        "zh": "连接球重量"
+      },
+      "value": {
+        "en": "32 g - 35 g",
+        "zh": "32g-35g"
+      }
+    },
+    {
+      "key": {
+        "en": "Clip Color",
+        "zh": "夹子颜色"
+      },
+      "value": {
+        "en": "Purple",
+        "zh": "紫色"
+      }
+    },
+    {
+      "key": {
+        "en": "Clip Size",
+        "zh": "夹子尺寸"
+      },
+      "value": {
+        "en": "12 mm",
+        "zh": "12mm"
+      }
+    },
+    {
+      "key": {
+        "en": "Warning Bag",
+        "zh": "警示袋"
+      },
+      "value": {
+        "en": "PE with 5-language warning",
+        "zh": "PE袋，含5种语言警示语"
+      }
+    },
+    {
+      "key": {
+        "en": "Application",
+        "zh": "应用"
+      },
+      "value": {
+        "en": "Kids fort building kit",
+        "zh": "儿童堡垒拼搭套装"
+      }
+    },
+    {
+      "key": {
+        "en": "Quote Price",
+        "zh": "报价价格"
+      },
+      "value": {
+        "en": "$17.13 per box",
+        "zh": "$17.13 / 箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Quoted Weight",
+        "zh": "报价重量"
+      },
+      "value": {
+        "en": "2.4 kg",
+        "zh": "2.4 kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Color Box Size",
+        "zh": "彩盒尺寸"
+      },
+      "value": {
+        "en": "42 x 30 x 7.5 cm",
+        "zh": "42 x 30 x 7.5 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box packing",
+        "zh": "彩盒包装"
+      }
+    },
+    {
+      "key": {
+        "en": "Rod Configuration",
+        "zh": "杆件配置"
+      },
+      "value": {
+        "en": "44 blue PP rods, 40 cm, phi 9.3 mm",
+        "zh": "44根蓝色PP杆，40cm，直径9.3mm"
+      }
+    },
+    {
+      "key": {
+        "en": "Ball Configuration",
+        "zh": "连接球配置"
+      },
+      "value": {
+        "en": "25 balls, 55 mm: orange/yellow/blue/red/purple, 5 pcs each",
+        "zh": "25个55mm连接球：橙/黄/蓝/红/紫各5个"
+      }
+    },
+    {
+      "key": {
+        "en": "Accessories",
+        "zh": "配件"
+      },
+      "value": {
+        "en": "10 clips, 2 PE warning bags, handbook, storage bag, printed blanket",
+        "zh": "10个夹子、2个PE警示袋、说明书、收纳袋、印花毯"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "Custom printed blankets and storage bags available",
+        "zh": "可定制印花毯和收纳袋"
+      }
+    }
+  ],
+  "packagingAndShipping": {
+    "unitSize": "45X9X35",
+    "unitVolume": "",
+    "unitWeight": "3.000",
+    "summary": {
+      "en": "Packaging & Shipping",
+      "zh": "包装与运输"
+    },
+    "blocks": [
+      {
+        "label": {
+          "en": "Selling unit",
+          "zh": "销售单位"
+        },
+        "value": {
+          "en": "Single item / single color box",
+          "zh": "单件 / 单个彩盒"
+        }
+      },
+      {
+        "label": {
+          "en": "Color box size",
+          "zh": "彩盒尺寸"
+        },
+        "value": {
+          "en": "42 x 30 x 7.5 cm",
+          "zh": "42 x 30 x 7.5 厘米"
+        }
+      },
+      {
+        "label": {
+          "en": "Single package size",
+          "zh": "单件包装尺寸"
+        },
+        "value": {
+          "en": "45 x 9 x 35 cm",
+          "zh": "45 x 9 x 35 厘米"
+        }
+      },
+      {
+        "label": {
+          "en": "Single gross weight",
+          "zh": "单件毛重"
+        },
+        "value": {
+          "en": "3.000 kg",
+          "zh": "3.000 千克"
+        }
+      }
+    ]
+  },
+  "packagingPairs": [
+    {
+      "key": {
+        "en": "Color Box Size",
+        "zh": "彩盒尺寸"
+      },
+      "value": {
+        "en": "42 x 30 x 7.5 cm",
+        "zh": "42 x 30 x 7.5 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Package Size Reference",
+        "zh": "包装尺寸参考"
+      },
+      "value": {
+        "en": "45 x 9 x 35 cm",
+        "zh": "45 x 9 x 35 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Gross Weight Reference",
+        "zh": "毛重参考"
+      },
+      "value": {
+        "en": "3.000 kg",
+        "zh": "3.000 kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Storage Bag",
+        "zh": "收纳袋"
+      },
+      "value": {
+        "en": "44 x 52 cm",
+        "zh": "44 x 52 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Quote Note",
+        "zh": "报价备注"
+      },
+      "value": {
+        "en": "Transport cost to be confirmed separately",
+        "zh": "运输费用需另行确认"
+      }
+    }
+  ],
+  "leadTime": {
+    "tiers": [
+      {
+        "minQuantity": "1",
+        "maxQuantity": "1",
+        "processPeriodDays": 7
+      },
+      {
+        "minQuantity": "2",
+        "maxQuantity": "500",
+        "processPeriodDays": 30
+      },
+      {
+        "minQuantity": "501",
+        "maxQuantity": "1,000",
+        "processPeriodDays": 60
+      }
+    ]
+  },
+  "media": {
+    "main": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/1.webp"
+      }
+    ],
+    "detail": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/2.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/3.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/4.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/5.webp"
+      }
+    ]
+  },
+  "images": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/1.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/2.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/3.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/4.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/5.webp"
+  ],
+  "productDetails": [
+    {
+      "sectionTitle": {
+        "en": "Little Explorer Gift Box",
+        "zh": "小小冒险家彩盒"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/1.webp",
+      "text": {
+        "en": "The 69-piece Little Explorer box shows the model, age mark, and tent-building scenes at a glance.",
+        "zh": "69件 Little Explorer 彩盒直观展示型号、适龄和帐篷拼搭场景。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Clear Component Plan",
+        "zh": "清晰配件清单"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/2.webp",
+      "text": {
+        "en": "The SKU image identifies the rods, connector balls, clips, tent cloth, handbook, and storage bag included in the box.",
+        "zh": "SKU 图明确列出杆件、连接球、夹子、帐篷布、说明书和收纳袋配置。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Compact Fort Structures",
+        "zh": "紧凑堡垒结构"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/3.webp",
+      "text": {
+        "en": "The compact piece count is easy for younger builders to handle and works well for parent-child play.",
+        "zh": "紧凑件数更适合低龄儿童上手，也方便亲子一起搭建。"
+      }
+    }
+  ],
+  "module": "toys",
+  "priority": 0,
+  "tags": [
+    {
+      "key": "toys",
+      "en": "Toys",
+      "zh": "玩具"
+    },
+    {
+      "key": "londy",
+      "en": "LONDY",
+      "zh": "LONDY"
+    },
+    {
+      "key": "fort-building-kit",
+      "en": "Fort Building Kit",
+      "zh": "堡垒拼搭套装"
+    },
+    {
+      "key": "color-box-packaging",
+      "en": "Color Box Packaging",
+      "zh": "彩盒包装"
+    }
+  ],
+  "sourceUrl": "https://www.alibaba.com/product-detail/Little-Explorer-69-Pieces-DIY-Fort_1601723797459.html"
+}

@@ -15,9 +15,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-import { Breadcrumbs } from "@/components/ui/marketing";
 import { ContactForm } from "@/components/forms/contact-form";
-import { PageHero } from "@/components/sections/page-hero";
 import { StructuredData } from "@/components/seo/structured-data";
 import { siteCopy } from "@/components/layout/site-shell.data";
 import { contactContent } from "@/content/site";
@@ -32,28 +30,16 @@ const contactCards = [
     title: { en: "Email Us", zh: "邮件联系" },
     icon: Mail,
     value: siteCopy.contact.email,
-    note: {
-      en: "Most first replies are sent within 24 hours",
-      zh: "大多数询盘会在 24 小时内获得初步回复",
-    },
   },
   {
     title: { en: "Call Us", zh: "电话联系" },
     icon: Phone,
     value: siteCopy.contact.phone,
-    note: {
-      en: "Factory coordination for sampling, production, and shipment",
-      zh: "可沟通打样、生产排期与出货协同",
-    },
   },
   {
     title: { en: "Visit Us", zh: "来访地址" },
     icon: MapPin,
     value: siteCopy.contact.address,
-    note: {
-      en: "Factory visits can be arranged in advance",
-      zh: "支持提前预约工厂来访",
-    },
   },
   {
     title: { en: "Business Hours", zh: "工作时间" },
@@ -61,10 +47,6 @@ const contactCards = [
     value: {
       en: "Mon - Fri: 9:00 AM - 6:00 PM",
       zh: "周一至周五：9:00 - 18:00",
-    },
-    note: {
-      en: "GMT+8, with export inquiry follow-up support",
-      zh: "GMT+8，支持出口项目跟进",
     },
   },
 ] as const;
@@ -79,7 +61,10 @@ const solutionItems = [
     icon: PackageCheck,
   },
   {
-    title: { en: "In-House Mold, Injection & Extrusion", zh: "自有模具、注塑与挤出配套" },
+    title: {
+      en: "In-House Mold, Injection & Extrusion",
+      zh: "自有模具、注塑与挤出配套",
+    },
     text: {
       en: "Support drawing-based and sample-based processing for custom tubing, plastic profiles, structural parts, and precision molded components inside one factory workflow.",
       zh: "在同一工厂流程中协同完成来图来样加工、定制管材、塑胶异型材、结构件与高精密注塑件开发。",
@@ -87,7 +72,10 @@ const solutionItems = [
     icon: Factory,
   },
   {
-    title: { en: "Reports, Packing & Export Coordination", zh: "检测资料、包装与出口协同" },
+    title: {
+      en: "Reports, Packing & Export Coordination",
+      zh: "检测资料、包装与出口协同",
+    },
     text: {
       en: "Covers raw material review, production control, assembly, inspection, third-party reports, logistics, and buyer filing support.",
       zh: "覆盖原料评估、生产管控、组装、检验、第三方报告、物流与客户归档资料支持。",
@@ -115,7 +103,10 @@ const assuranceItems = [
   },
   {
     icon: Clock3,
-    title: { en: "Flexible Trial & Lead Time Planning", zh: "灵活试单与交期规划" },
+    title: {
+      en: "Flexible Trial & Lead Time Planning",
+      zh: "灵活试单与交期规划",
+    },
     text: {
       en: "Small-batch trial orders are supported, with many regular projects moving in about 7 to 15 days after confirmation.",
       zh: "支持小批量试单，许多常规项目在确认后可按 7 到 15 天左右的节奏推进。",
@@ -123,7 +114,10 @@ const assuranceItems = [
   },
   {
     icon: PackageCheck,
-    title: { en: "Reports & Export Delivery Support", zh: "检测资料与出口交付支持" },
+    title: {
+      en: "Reports & Export Delivery Support",
+      zh: "检测资料与出口交付支持",
+    },
     text: {
       en: "We can coordinate third-party reports, buyer filing documents, packing plans, and shipment handoff for export orders.",
       zh: "可协同第三方检测、客户归档资料、包装方案与出口订单交付对接。",
@@ -142,22 +136,16 @@ export async function generateMetadata({
 
 function copy(locale: "en" | "zh") {
   return {
-    heroTitle: t(locale, {
-      en: "Tell Us Your Project, Get A Practical Factory Reply",
-      zh: "告诉我们你的项目，获取务实的工厂回复",
-    }),
-    heroAlt: t(locale, {
-      en: "yaoshun toys contact hero visual",
-      zh: "yaoshun toys 联系我们页主视觉",
-    }),
-    getInTouch: t(locale, { en: "Get in Touch", zh: "联系我们" }),
     aboutBrand: t(locale, {
       en: "Factory Snapshot",
       zh: "工厂概览",
     }),
     faqTitle: t(locale, { en: "Frequently Asked Questions", zh: "常见问题" }),
     faqAction: t(locale, { en: "View All FAQs", zh: "查看全部 FAQ" }),
-    solutionsTitle: t(locale, { en: "Project Support We Can Deliver", zh: "我们可提供的项目支持" }),
+    solutionsTitle: t(locale, {
+      en: "Project Support We Can Deliver",
+      zh: "我们可提供的项目支持",
+    }),
     solutionsAction: t(locale, {
       en: "Learn More About Our Solutions",
       zh: "了解更多方案",
@@ -239,90 +227,6 @@ export default async function ContactPage({
     <div className="contact-page">
       <StructuredData data={structuredData} />
 
-      <PageHero
-        backgroundClassName="contact-hero-background"
-        backgroundImageClassName="contact-hero-background-image"
-        backgroundSrc="/site/misc/contact-bg.webp"
-        copyClassName="contact-hero-copy"
-        gridClassName="contact-hero-grid"
-        innerClassName="contact-hero-inner"
-        sectionClassName="contact-hero"
-      >
-        <Breadcrumbs
-          items={[
-            { href: `/${locale}`, label: { en: "Home", zh: "首页" } },
-            { label: { en: "Contact", zh: "联系我们" } },
-          ]}
-          locale={locale}
-          trackingLocation="contact_breadcrumbs"
-        />
-        <p className="contact-eyebrow">{contactCopy.eyebrow[locale]}</p>
-        <h1 className="contact-hero-title">{text.heroTitle}</h1>
-        <p className="contact-hero-text">{contactCopy.description[locale]}</p>
-        <Link
-          className="contact-primary-cta"
-          data-track-destination={`mailto:${siteCopy.contact.email}`}
-          data-track-event="contact_click"
-          data-track-label="get_in_touch"
-          data-track-location="contact_hero"
-          data-track-method="email"
-          href={`mailto:${siteCopy.contact.email}`}
-        >
-          <span>{text.getInTouch}</span>
-          <ArrowRight size={16} strokeWidth={2.1} />
-        </Link>
-      </PageHero>
-
-      <section className="contact-card-grid">
-        {contactCards.map((item) => {
-          const Icon = item.icon;
-          return (
-            <article className="contact-card" key={item.title.en}>
-              <div className="contact-card-head">
-                <div className="contact-card-icon">
-                  <Icon size={22} strokeWidth={2} />
-                </div>
-                <h3>{item.title[locale]}</h3>
-              </div>
-              <p className="contact-card-value">
-                {item.icon === Mail ? (
-                  <a
-                    className="transition hover:text-[#2563ff]"
-                    data-track-event="contact_click"
-                    data-track-label="contact_card_email"
-                    data-track-location="contact_cards"
-                    data-track-method="email"
-                    href={`mailto:${siteCopy.contact.email}`}
-                  >
-                    {typeof item.value === "string"
-                      ? item.value
-                      : item.value[locale]}
-                  </a>
-                ) : item.icon === Phone ? (
-                  <a
-                    className="transition hover:text-[#2563ff]"
-                    data-track-event="contact_click"
-                    data-track-label="contact_card_phone"
-                    data-track-location="contact_cards"
-                    data-track-method="phone"
-                    href={telephoneHref(siteCopy.contact.phone)}
-                  >
-                    {typeof item.value === "string"
-                      ? item.value
-                      : item.value[locale]}
-                  </a>
-                ) : (
-                  typeof item.value === "string"
-                    ? item.value
-                    : item.value[locale]
-                )}
-              </p>
-              <p className="contact-card-note">{item.note[locale]}</p>
-            </article>
-          );
-        })}
-      </section>
-
       <section className="contact-message-shell" id="contact-message">
         <article className="contact-company-panel">
           <div className="contact-panel-head">
@@ -332,47 +236,49 @@ export default async function ContactPage({
           </div>
           <div className="contact-company-content">
             <div className="contact-company-stats">
-              {[
-                {
-                  value: "2016",
-                  label: {
-                    en: "Company Established",
-                    zh: "公司成立",
-                  },
-                  icon: Factory,
-                },
-                {
-                  value: "RMB 3M",
-                  label: {
-                    en: "Registered Capital",
-                    zh: "注册资本",
-                  },
-                  icon: Sparkles,
-                },
-                {
-                  value: "24H",
-                  label: { en: "First Reply Target", zh: "首次回复目标" },
-                  icon: Mail,
-                },
-                {
-                  value: "7-15 Days",
-                  label: {
-                    en: "Regular Lead Time",
-                    zh: "常规交付周期",
-                  },
-                  icon: PackageCheck,
-                },
-              ].map((item) => {
-                const StatIcon = item.icon;
+              {contactCards.map((item) => {
+                const ContactIcon = item.icon;
+                const value =
+                  typeof item.value === "string"
+                    ? item.value
+                    : item.value[locale];
 
                 return (
-                  <div className="contact-company-stat" key={item.value}>
+                  <div className="contact-company-stat" key={item.title.en}>
                     <div className="contact-company-stat-icon">
-                      <StatIcon size={18} strokeWidth={2} />
+                      <ContactIcon size={18} strokeWidth={2} />
                     </div>
                     <div className="contact-company-stat-copy">
-                      <strong>{item.value}</strong>
-                      <span>{item.label[locale]}</span>
+                      <span className="contact-company-stat-label">
+                        {item.title[locale]}
+                      </span>
+                      {item.icon === Mail ? (
+                        <strong>
+                          <a
+                            data-track-event="contact_click"
+                            data-track-label="company_panel_email"
+                            data-track-location="contact_company_panel"
+                            data-track-method="email"
+                            href={`mailto:${siteCopy.contact.email}`}
+                          >
+                            {value}
+                          </a>
+                        </strong>
+                      ) : item.icon === Phone ? (
+                        <strong>
+                          <a
+                            data-track-event="contact_click"
+                            data-track-label="company_panel_phone"
+                            data-track-location="contact_company_panel"
+                            data-track-method="phone"
+                            href={telephoneHref(siteCopy.contact.phone)}
+                          >
+                            {value}
+                          </a>
+                        </strong>
+                      ) : (
+                        <strong>{value}</strong>
+                      )}
                     </div>
                   </div>
                 );

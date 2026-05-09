@@ -35,8 +35,14 @@ import { siteUrl, toAbsoluteUrl } from "@/lib/site-config";
 
 function copy(locale: Locale) {
   return {
-    eyebrow: t(locale, { en: "Dongguan Source Factory · Toy OEM/ODM", zh: "东莞源头工厂 · 玩具 OEM/ODM" }),
-    heroLine1: t(locale, { en: "Yaoshun Source Factory For", zh: "尧顺源头工厂" }),
+    eyebrow: t(locale, {
+      en: "Dongguan Source Factory · Toy OEM/ODM",
+      zh: "东莞源头工厂 · 玩具 OEM/ODM",
+    }),
+    heroLine1: t(locale, {
+      en: "Yaoshun Source Factory For",
+      zh: "尧顺源头工厂",
+    }),
     heroLine2a: t(locale, { en: "Building Toys", zh: "搭建玩具" }),
     heroLine2b: t(locale, { en: "And Custom", zh: "与定制" }),
     heroLine2c: t(locale, { en: "Toys", zh: "玩具" }),
@@ -52,8 +58,14 @@ function copy(locale: Locale) {
       zh: "为什么选择 yaoshun toys？",
     }),
     aboutEyebrow: t(locale, { en: "ABOUT YAOSHUN", zh: "关于尧顺" }),
-    aboutTitleA: t(locale, { en: "Your Trusted OEM/ODM", zh: "值得信赖的 OEM/ODM" }),
-    aboutTitleB: t(locale, { en: "Source Factory Partner", zh: "源头工厂合作伙伴" }),
+    aboutTitleA: t(locale, {
+      en: "Your Trusted OEM/ODM",
+      zh: "值得信赖的 OEM/ODM",
+    }),
+    aboutTitleB: t(locale, {
+      en: "Source Factory Partner",
+      zh: "源头工厂合作伙伴",
+    }),
     aboutText: t(locale, {
       en: "Founded on August 26, 2016, Dongguan Yaoshun Technology Co., Ltd. is a full-chain source factory focused on building toys, custom toys, educational toys, interlocking plastic toys, precision injection molded parts, and tubing or profile support, with one-stop toy OEM/ODM and custom development from design and tooling to production, packaging, and delivery.",
       zh: "东莞市尧顺科技有限公司成立于 2016 年 8 月 26 日，是一家聚焦搭建玩具、定制玩具、益智玩具、拼插类塑胶玩具、精密注塑件及管材型材配套的全链路源头工厂，提供从设计、开模到生产、包装、交付的一站式玩具 OEM/ODM 与定制化开发服务。",
@@ -174,7 +186,10 @@ export default async function HomePage({
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      name: locale === "zh" ? "尧顺精选搭建玩具与定制玩具" : "Featured Yaoshun Building Toys And Custom Toys",
+      name:
+        locale === "zh"
+          ? "尧顺精选搭建玩具与定制玩具"
+          : "Featured Yaoshun Building Toys And Custom Toys",
       itemListElement: featuredProducts.map((item, index) => ({
         "@type": "ListItem",
         position: index + 1,
@@ -187,146 +202,157 @@ export default async function HomePage({
   return (
     <div className="home-page">
       <StructuredData data={structuredData} />
-      <PageHero
-        afterContent={
-          <div className="home-hero-surface-anchor">
-            <section className="home-stats home-surface">
-              {[
-                {
-                  value: "2016",
-                  label: t(locale, { en: "Founded", zh: "成立时间" }),
-                  icon: Sparkles,
-                },
-                {
-                  value: "24H",
-                  label: t(locale, { en: "First Reply Target", zh: "首次回复目标" }),
-                  icon: Mail,
-                },
-                {
-                  value: "7-15 Days",
-                  label: t(locale, { en: "Regular Lead Time", zh: "常规交付周期" }),
-                  icon: Clock3,
-                },
-                {
-                  value: "OEM/ODM",
-                  label: t(locale, {
-                    en: "Custom Programs",
-                    zh: "定制项目",
-                  }),
-                  icon: ShieldCheck,
-                },
-                {
-                  value: "RoHS / REACH",
-                  label: t(locale, { en: "Compliance", zh: "合规支持" }),
-                  icon: Globe2,
-                },
-              ].map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.value} className="home-stat-item">
-                    <Icon
-                      className="home-stat-icon"
-                      size={30}
-                      strokeWidth={1.9}
-                    />
-                    <div>
-                      <div className="home-stat-value">{item.value}</div>
-                      <div className="home-stat-label">{item.label}</div>
-                    </div>
-                  </div>
-                );
-              })}
-            </section>
+      <div className="home-hero-block">
+        <PageHero
+          backgroundClassName="home-hero-background"
+          backgroundImageClassName="home-section-image home-hero-background-image"
+          backgroundSrc="/site/misc/home-bg.webp"
+          copyClassName="home-hero-copy"
+          gridClassName="home-hero-grid"
+          innerClassName="home-hero-inner"
+          quality={75}
+          sectionClassName="home-hero-section"
+        >
+          <p className="home-eyebrow">{text.eyebrow}</p>
+          <h1 className="home-hero-title">
+            <span>{text.heroLine1}</span>
+            <span>
+              {text.heroLine2a}{" "}
+              <span className="home-blue-word">{text.heroLine2b}</span>{" "}
+              <span className="home-orange-word">{text.heroLine2c}</span>
+            </span>
+          </h1>
+          <p className="home-hero-text">{text.heroText}</p>
+
+          <div className="home-hero-actions">
+            <Link
+              className="home-primary-cta"
+              data-track-destination={`/${locale}/products`}
+              data-track-event="cta_click"
+              data-track-label="explore_products"
+              data-track-location="home_hero"
+              href={`/${locale}/products`}
+            >
+              <span>{text.explore}</span>
+              <ArrowRight size={16} strokeWidth={2.25} />
+            </Link>
+            <Link
+              className="home-secondary-cta"
+              data-track-destination={`/${locale}/about`}
+              data-track-event="cta_click"
+              data-track-label="learn_more"
+              data-track-location="home_hero"
+              href={`/${locale}/about`}
+            >
+              <span>{text.learnMore}</span>
+              <span className="home-secondary-dot" />
+            </Link>
           </div>
-        }
-        backgroundClassName="home-hero-background"
-        backgroundImageClassName="home-section-image home-hero-background-image"
-        backgroundSrc="/site/misc/solution-bg.webp"
-        copyClassName="home-hero-copy"
-        gridClassName="home-hero-grid"
-        innerClassName="home-hero-inner"
-        quality={75}
-        sectionClassName="home-hero-section"
-      >
-        <p className="home-eyebrow">{text.eyebrow}</p>
-        <h1 className="home-hero-title">
-          <span>{text.heroLine1}</span>
-          <span>
-            {text.heroLine2a}{" "}
-            <span className="home-blue-word">{text.heroLine2b}</span>{" "}
-            <span className="home-orange-word">{text.heroLine2c}</span>
-          </span>
-        </h1>
-        <p className="home-hero-text">{text.heroText}</p>
 
-        <div className="home-hero-actions">
-          <Link
-            className="home-primary-cta"
-            data-track-destination={`/${locale}/products`}
-            data-track-event="cta_click"
-            data-track-label="explore_products"
-            data-track-location="home_hero"
-            href={`/${locale}/products`}
-          >
-            <span>{text.explore}</span>
-            <ArrowRight size={16} strokeWidth={2.25} />
-          </Link>
-          <Link
-            className="home-secondary-cta"
-            data-track-destination={`/${locale}/about`}
-            data-track-event="cta_click"
-            data-track-label="learn_more"
-            data-track-location="home_hero"
-            href={`/${locale}/about`}
-          >
-            <span>{text.learnMore}</span>
-            <span className="home-secondary-dot" />
-          </Link>
-        </div>
+          <div className="home-feature-strip">
+            {[
+              {
+                title: t(locale, {
+                  en: "Non-toxic & Compliant Materials",
+                  zh: "环保无毒与合规材料",
+                }),
+                icon: ShieldCheck,
+              },
+              {
+                title: t(locale, {
+                  en: "In-House Mold Development",
+                  zh: "自有模具开发",
+                }),
+                icon: Wrench,
+              },
+              {
+                title: t(locale, {
+                  en: "Flexible Trial & Bulk Orders",
+                  zh: "灵活试单与批量订单",
+                }),
+                icon: PackageCheck,
+              },
+              {
+                title: t(locale, {
+                  en: "Export & Document Support",
+                  zh: "出口与资料协同支持",
+                }),
+                icon: Globe2,
+              },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="home-feature-item">
+                  <div className="home-feature-icon">
+                    <Icon size={22} strokeWidth={1.95} />
+                  </div>
+                  <p>{item.title}</p>
+                </div>
+              );
+            })}
+          </div>
+        </PageHero>
 
-        <div className="home-feature-strip">
+        <section
+          aria-label={t(locale, {
+            en: "Homepage key factory metrics",
+            zh: "首页工厂关键指标",
+          })}
+          className="home-stats home-surface"
+        >
           {[
             {
-              title: t(locale, {
-                en: "Non-toxic & Compliant Materials",
-                zh: "环保无毒与合规材料",
+              value: "2016",
+              label: t(locale, { en: "Founded", zh: "成立时间" }),
+              icon: Sparkles,
+            },
+            {
+              value: "24H",
+              label: t(locale, {
+                en: "First Reply Target",
+                zh: "首次回复目标",
+              }),
+              icon: Mail,
+            },
+            {
+              value: "7-15 Days",
+              label: t(locale, {
+                en: "Regular Lead Time",
+                zh: "常规交付周期",
+              }),
+              icon: Clock3,
+            },
+            {
+              value: "OEM/ODM",
+              label: t(locale, {
+                en: "Custom Programs",
+                zh: "定制项目",
               }),
               icon: ShieldCheck,
             },
             {
-              title: t(locale, {
-                en: "In-House Mold Development",
-                zh: "自有模具开发",
-              }),
-              icon: Wrench,
-            },
-            {
-              title: t(locale, {
-                en: "Flexible Trial & Bulk Orders",
-                zh: "灵活试单与批量订单",
-              }),
-              icon: PackageCheck,
-            },
-            {
-              title: t(locale, {
-                en: "Export & Document Support",
-                zh: "出口与资料协同支持",
-              }),
+              value: "RoHS / REACH",
+              label: t(locale, { en: "Compliance", zh: "合规支持" }),
               icon: Globe2,
             },
           ].map((item) => {
             const Icon = item.icon;
             return (
-              <div key={item.title} className="home-feature-item">
-                <div className="home-feature-icon">
-                  <Icon size={22} strokeWidth={1.95} />
+              <div key={item.value} className="home-stat-item">
+                <Icon
+                  className="home-stat-icon"
+                  size={30}
+                  strokeWidth={1.9}
+                />
+                <div>
+                  <div className="home-stat-value">{item.value}</div>
+                  <div className="home-stat-label">{item.label}</div>
                 </div>
-                <p>{item.title}</p>
               </div>
             );
           })}
-        </div>
-      </PageHero>
+        </section>
+      </div>
 
       <section className="home-bestseller home-surface">
         <div className="home-section-head">
@@ -368,6 +394,7 @@ export default async function HomePage({
                     alt={item.title}
                     className="home-section-image home-product-image"
                     fill
+                    preview
                     quality={75}
                     sizes="(min-width: 1280px) 18rem, (min-width: 768px) 24vw, 100vw"
                     src={item.image}
@@ -410,7 +437,10 @@ export default async function HomePage({
           <div className="home-why-features">
             {[
               {
-                title: t(locale, { en: "In-House Tooling & R&D", zh: "自有模具与研发" }),
+                title: t(locale, {
+                  en: "In-House Tooling & R&D",
+                  zh: "自有模具与研发",
+                }),
                 text: t(locale, {
                   en: "We support drawing-based or sample-based development, structure refinement, and mold coordination inside one connected team.",
                   zh: "支持来图来样开发、结构优化与模具协同，由同一团队贯穿推进。",
@@ -429,7 +459,10 @@ export default async function HomePage({
                 icon: ShieldCheck,
               },
               {
-                title: t(locale, { en: "Flexible Production Planning", zh: "灵活的生产规划" }),
+                title: t(locale, {
+                  en: "Flexible Production Planning",
+                  zh: "灵活的生产规划",
+                }),
                 text: t(locale, {
                   en: "We support samples, small-batch trial orders, and bulk production with a normal project rhythm of about 7 to 15 days.",
                   zh: "支持样品、小批量试单和批量生产，许多常规项目可按 7 到 15 天左右节奏推进。",
@@ -437,7 +470,10 @@ export default async function HomePage({
                 icon: Factory,
               },
               {
-                title: t(locale, { en: "Global Trade Coordination", zh: "全球贸易协同" }),
+                title: t(locale, {
+                  en: "Global Trade Coordination",
+                  zh: "全球贸易协同",
+                }),
                 text: t(locale, {
                   en: "We help buyers coordinate packaging, compliance files, logistics, and export handoff for international programs.",
                   zh: "可协助客户处理包装、合规资料、物流与出口交接，适配国际项目推进。",
@@ -463,16 +499,18 @@ export default async function HomePage({
           <Image
             alt={text.whyImageAlt}
             className="home-section-image home-why-image"
-            fill
+            height={1088}
+            preview
             quality={75}
-            sizes="(min-width: 1024px) 36vw, 100vw"
+            sizes="(min-width: 1024px) 28vw, 72vw"
             src={homePageImages.why}
+            width={1088}
           />
         </div>
       </section>
 
       <section className="home-about">
-        <div className="home-about-copy">
+        <div className="home-about-copy" data-locale={locale}>
           <p className="home-eyebrow">{text.aboutEyebrow}</p>
           <h2 className="home-section-title home-about-title">
             <span>{text.aboutTitleA}</span>
@@ -483,20 +521,20 @@ export default async function HomePage({
           <div className="home-about-list">
             {[
               t(locale, {
-                en: "OEM / ODM With Mold, Injection, Assembly, And Delivery",
-                zh: "覆盖开模、注塑、组装与交付的 OEM / ODM 服务",
+                en: "OEM/ODM tooling, molding, assembly, and delivery",
+                zh: "开模、注塑、组装、交付",
               }),
               t(locale, {
-                en: "RoHS / REACH / EN71 / ASTM F963 Compliance Support",
-                zh: "支持 RoHS / REACH / EN71 / ASTM F963 合规要求",
+                en: "RoHS, REACH, EN71, and ASTM F963 support",
+                zh: "RoHS / REACH / EN71 / ASTM F963",
               }),
               t(locale, {
-                en: "Custom Extrusion, Tubing, Precision Injection, And AI Plastic Electronic Part Support",
-                zh: "具备定制挤出、管材、精密注塑及 AI 塑胶电子部件配套能力",
+                en: "Custom tubing, extrusion, and precision plastic parts",
+                zh: "管材、挤出、精密注塑",
               }),
               t(locale, {
-                en: "Small-Batch Trial Orders, Third-Party Reports, And Flexible Bulk Production",
-                zh: "支持小批量试单、第三方检测资料与灵活批量生产",
+                en: "Trial orders, reports, and flexible bulk production",
+                zh: "小批量试单与灵活量产",
               }),
             ].map((item) => (
               <div key={item} className="home-about-bullet">
@@ -525,6 +563,7 @@ export default async function HomePage({
               alt={text.factoryAlt}
               className="home-section-image home-about-image"
               fill
+              preview
               quality={75}
               sizes="(min-width: 1024px) 42vw, 100vw"
               src={homePageImages.about}
@@ -578,15 +617,24 @@ export default async function HomePage({
               icon: Wrench,
             },
             {
-              label: t(locale, { en: "Injection / Extrusion", zh: "注塑 / 挤出生产" }),
+              label: t(locale, {
+                en: "Injection / Extrusion",
+                zh: "注塑 / 挤出生产",
+              }),
               icon: Factory,
             },
             {
-              label: t(locale, { en: "Inspection & Assembly", zh: "检测与组装" }),
+              label: t(locale, {
+                en: "Inspection & Assembly",
+                zh: "检测与组装",
+              }),
               icon: ShieldCheck,
             },
             {
-              label: t(locale, { en: "Packing & Export Handoff", zh: "包装与出口交接" }),
+              label: t(locale, {
+                en: "Packing & Export Handoff",
+                zh: "包装与出口交接",
+              }),
               icon: PackageCheck,
             },
           ].map((item, index) => {
@@ -624,7 +672,9 @@ export default async function HomePage({
                 </div>
                 <div>
                   <Globe2 size={17} strokeWidth={2} />
-                  <span>{siteCopy.contact.website.replace(/^https?:\/\//, "")}</span>
+                  <span>
+                    {siteCopy.contact.website.replace(/^https?:\/\//, "")}
+                  </span>
                 </div>
                 <div>
                   <MapPin size={17} strokeWidth={2} />

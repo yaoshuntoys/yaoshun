@@ -3,12 +3,12 @@ import {seoKeywordPools} from '@/content/site/shared';
 export const newsContent = {
   seo: {
     title: {
-      en: 'News Center | Dongguan Yaoshun Technology Co., Ltd. | Toy OEM/ODM Updates',
-      zh: '新闻中心 | 东莞市尧顺科技有限公司 | 玩具 OEM/ODM 动态'
+      en: 'Toy OEM/ODM News & Factory Updates | Yaoshun Toys',
+      zh: '玩具 OEM/ODM 新闻与工厂动态 | 尧顺玩具'
     },
     description: {
-      en: 'Browse factory updates and explainers around fort building toys, STEM building kits, toy OEM/ODM, PU/PVC tubing, injection molding, quality control and delivery execution.',
-      zh: '查看围绕堡垒拼搭玩具、STEM搭建套装、玩具 OEM/ODM、PU/PVC 管材、注塑、质量管理与交付执行的工厂动态与科普文章。'
+      en: 'Factory updates and practical explainers on fort building toys, STEM kits, toy OEM/ODM, tubing, injection molding, quality control and delivery.',
+      zh: '查看堡垒拼搭玩具、STEM搭建套装、玩具 OEM/ODM、管材、注塑、质量管理与交付执行的工厂动态。'
     },
     keywords: {
       en: [

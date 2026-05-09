@@ -16,10 +16,10 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 
 function copy(locale: "en" | "zh") {
   return {
-    sectionTitle: t(locale, {en: "Frequently Asked Questions", zh: "常见问题"}),
+    sectionTitle: t(locale, {en: "Toy OEM/ODM FAQ", zh: "玩具 OEM/ODM 常见问题"}),
     sectionText: t(locale, {
-      en: "Start here for the questions buyers ask most often before sampling, packaging approval, and mass production.",
-      zh: "从这里快速了解买家在打样、包装确认和量产前最常关注的问题。",
+      en: "Quick answers for MOQ, sampling, packaging, lead time, quality checks, and export handoff before production starts.",
+      zh: "快速了解起订量、打样、包装、交期、质检与出口交接等量产前关键问题。",
     }),
   };
 }

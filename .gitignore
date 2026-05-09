@@ -31,3 +31,5 @@ coverage
 apps/server/uploads
 apps/server/prisma/dev.db
 apps/server/prisma/dev.db-journal
+product-details
+*.bak

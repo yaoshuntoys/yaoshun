@@ -18,6 +18,14 @@ import p1601316497567 from "../../../data/1688-products/toys/1601316497567/produ
 import p1601724919450 from "../../../data/1688-products/toys/1601724919450/product.json";
 import p1601729143208 from "../../../data/1688-products/toys/1601729143208/product.json";
 import p1601729187617 from "../../../data/1688-products/toys/1601729187617/product.json";
+import p2026050701 from "../../../data/1688-products/toys/2026050701/product.json";
+import p2026050702 from "../../../data/1688-products/toys/2026050702/product.json";
+import p2026050703 from "../../../data/1688-products/toys/2026050703/product.json";
+import p2026050704 from "../../../data/1688-products/toys/2026050704/product.json";
+import p2026050705 from "../../../data/1688-products/toys/2026050705/product.json";
+import p2026050706 from "../../../data/1688-products/toys/2026050706/product.json";
+import p2026050707 from "../../../data/1688-products/toys/2026050707/product.json";
+import p2026050708 from "../../../data/1688-products/toys/2026050708/product.json";
 
 export type ProductJsonLocalizedText = Partial<Record<"zh" | "en", string>>;
 export type ProductJsonLocalizedList = Partial<Record<"zh" | "en", string[]>>;
@@ -122,6 +130,14 @@ const importedProducts = [
   withSource(p1601724919450 as ProductJson, "apps/website/data/1688-products/toys/1601724919450/product.json"),
   withSource(p1601729143208 as ProductJson, "apps/website/data/1688-products/toys/1601729143208/product.json"),
   withSource(p1601729187617 as ProductJson, "apps/website/data/1688-products/toys/1601729187617/product.json"),
+  withSource(p2026050701 as ProductJson, "apps/website/data/1688-products/toys/2026050701/product.json"),
+  withSource(p2026050702 as ProductJson, "apps/website/data/1688-products/toys/2026050702/product.json"),
+  withSource(p2026050703 as ProductJson, "apps/website/data/1688-products/toys/2026050703/product.json"),
+  withSource(p2026050704 as ProductJson, "apps/website/data/1688-products/toys/2026050704/product.json"),
+  withSource(p2026050705 as ProductJson, "apps/website/data/1688-products/toys/2026050705/product.json"),
+  withSource(p2026050706 as ProductJson, "apps/website/data/1688-products/toys/2026050706/product.json"),
+  withSource(p2026050707 as ProductJson, "apps/website/data/1688-products/toys/2026050707/product.json"),
+  withSource(p2026050708 as ProductJson, "apps/website/data/1688-products/toys/2026050708/product.json"),
 ] as const;
 
 export const productSourcePathById = new Map(

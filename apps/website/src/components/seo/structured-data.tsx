@@ -2,7 +2,15 @@ import {companyProfile, pageLabels} from '@/content/site';
 import {products} from '@/content/site/products-catalog';
 import {localeRegistry, t, type Locale} from '@/lib/i18n';
 import {localizedPath} from '@/lib/routes';
-import {defaultOgImage, siteUrl, toAbsoluteUrl} from '@/lib/site-config';
+import {
+  defaultOgImage,
+  siteAlternateNames,
+  siteHomeUrl,
+  siteLegalName,
+  siteName,
+  siteUrl,
+  toAbsoluteUrl,
+} from '@/lib/site-config';
 
 type StructuredDataProps = {
   data: Record<string, unknown> | Array<Record<string, unknown>>;
@@ -32,13 +40,13 @@ export function SiteStructuredData({locale}: {locale: Locale}) {
     '@type': ['Organization', 'LocalBusiness'],
     '@id': `${siteUrl}#organization`,
     name: t(locale, companyProfile.companyName),
-    legalName: t(locale, companyProfile.companyName),
-    alternateName: [
+    legalName: locale === 'zh' ? t(locale, companyProfile.companyName) : siteLegalName,
+    alternateName: Array.from(new Set([
       t(locale, companyProfile.brandShort),
-      'yaoshun toys',
-      'Yaoshun',
-      'Dongguan Yaoshun Technology'
-    ],
+      ...siteAlternateNames,
+      'Dongguan Yaoshun Technology',
+      '东莞市尧顺科技'
+    ])),
     url: siteUrl,
     logo: toAbsoluteUrl('/favicon-rounded-192.png'),
     image: [
@@ -137,8 +145,9 @@ export function SiteStructuredData({locale}: {locale: Locale}) {
   const website = {
     '@type': 'WebSite',
     '@id': `${siteUrl}#website`,
-    name: t(locale, companyProfile.companyName),
-    url: siteUrl,
+    name: siteName,
+    alternateName: siteAlternateNames,
+    url: siteHomeUrl,
     inLanguage: localeMeta.htmlLang,
     description: t(locale, companyProfile.seoDescription),
     about: {

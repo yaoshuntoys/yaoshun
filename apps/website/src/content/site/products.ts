@@ -3,20 +3,20 @@ import {seoKeywordPools} from '@/content/site/shared';
 export const productsPageContent = {
   seo: {
     title: {
-      en: 'Building & Custom Toy Catalog | Yaoshun Dongguan Source Factory',
-      zh: '搭建玩具与定制玩具目录 | 尧顺东莞源头工厂'
+      en: 'Building & Custom Toy Catalog | Yaoshun Toys',
+      zh: '搭建玩具与定制玩具目录 | 尧顺玩具'
     },
     description: {
-      en: 'Explore Yaoshun fort building toys, STEM building kits, glow-in-the-dark fort kits, rotating ball building toys, PP rods, connector balls, storage bags and color box packaging for toy OEM/ODM projects.',
-      zh: '查看尧顺堡垒拼搭玩具、STEM搭建套装、夜光拼搭套装、旋转球搭建玩具、PP连接杆、连接球、收纳袋与彩盒包装定制方案。'
+      en: 'Explore Yaoshun fort building toys, STEM kits, glow-in-the-dark fort kits, connector balls, storage bags and color box packaging for toy OEM/ODM.',
+      zh: '查看尧顺堡垒拼搭玩具、STEM搭建套装、夜光拼搭套装、连接球、收纳袋与彩盒包装定制方案。'
     },
     detailTitleTemplate: {
-      en: '{product} | Building & Custom Toy OEM/ODM | Yaoshun Source Factory',
-      zh: '{product} | 搭建玩具定制玩具 OEM/ODM | 尧顺源头工厂'
+      en: '{product} | Yaoshun Toys',
+      zh: '{product} | 尧顺玩具'
     },
     detailDescriptionTemplate: {
-      en: '{product} from Yaoshun, a Dongguan source factory supporting building toys, custom toys, toy OEM/ODM, custom development, mold planning, quality checkpoints, and export delivery.',
-      zh: '{product} 由尧顺东莞源头工厂提供，支持搭建玩具、定制玩具、玩具 OEM/ODM、定制化开发、开模规划、质量控制与出口交付。'
+      en: '{product} from Yaoshun Toys, with OEM/ODM support for packaging, quality checks and export delivery.',
+      zh: '{product} 由尧顺玩具提供，支持 OEM/ODM、包装、质检与出口交付。'
     },
     keywords: {
       en: [

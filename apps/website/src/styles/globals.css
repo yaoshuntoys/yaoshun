@@ -94,6 +94,11 @@ img {
   max-width: 100%;
 }
 
+img[data-image-preview-src],
+[data-image-preview-trigger] {
+  cursor: zoom-in;
+}
+
 button,
 input,
 select,

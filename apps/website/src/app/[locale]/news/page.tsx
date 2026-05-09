@@ -1,5 +1,13 @@
 import type {Metadata} from "next";
 import "@/styles/pages/news.css";
+import {
+  ArrowRight,
+  Building2,
+  ClipboardCheck,
+  Newspaper,
+  PackageCheck,
+} from "lucide-react";
+import Link from "next/link";
 
 import {NewsListClient} from "@/components/news/news-list-client";
 import {PageHero} from "@/components/sections/page-hero";
@@ -25,22 +33,26 @@ function copy(locale: Locale) {
   return {
     eyebrow: t(locale, {en: "NEWS", zh: "新闻"}),
     titleLine1: t(locale, {
-      en: "Factory News",
-      zh: "工厂新闻",
+      en: "News Center",
+      zh: "新闻中心",
     }),
     titleLine2: t(locale, {
-      en: "& OEM/ODM Insights",
-      zh: "与 OEM/ODM 洞察",
+      en: "Factory & Project Insights",
+      zh: "工厂与项目洞察",
     }),
+    titleBlue: t(locale, {en: "Factory", zh: "工厂"}),
+    titleOrange: t(locale, {en: "Insights", zh: "洞察"}),
     heroAlt: t(locale, {
       en: "yaoshun toys news hero visual",
       zh: "yaoshun toys 新闻页主视觉",
     }),
     description: t(locale, {
-      en: "Follow Yaoshun's factory updates, OEM/ODM project insights, compliance progress, tooling improvements, quality-control practices, and export-ready delivery stories. This page is built to help buyers understand how our educational toy, interlocking toy, and custom plastic manufacturing work actually moves forward.",
-      zh: "在这里持续了解尧顺的工厂动态、OEM/ODM 项目洞察、合规进展、模具能力提升、质量控制实践与出口交付故事。我们希望让客户更清楚地看到，益智玩具、拼接玩具与塑料制品制造项目在我们这里是如何真实推进的。",
+      en: "Follow Yaoshun's factory updates, project cases, compliance progress, quality-control notes, and manufacturing workflow stories. These articles help sourcing teams understand how toy OEM/ODM projects move from review to delivery.",
+      zh: "持续了解尧顺的工厂动态、项目案例、合规进展、质量控制与制造流程更新。这些内容帮助采购团队看清玩具 OEM/ODM 项目从评估到交付的推进方式。",
     }),
     categories: t(locale, {en: "Categories", zh: "分类"}),
+    browseNews: t(locale, {en: "Browse News", zh: "浏览新闻"}),
+    viewSolutions: t(locale, {en: "View Solutions", zh: "查看方案"}),
     readMore: t(locale, {en: "Read More", zh: "阅读全文"}),
     showingText: (start: number, end: number, total: number) =>
       t(locale, {
@@ -132,9 +144,40 @@ export default async function NewsPage({
         <p className="news-eyebrow">{text.eyebrow}</p>
         <h1 className="news-hero-title">
           <span>{text.titleLine1}</span>
-          <span>{text.titleLine2}</span>
+          <span>
+            <span className="hero-blue-word">{text.titleBlue}</span>{" "}
+            <span className="hero-orange-word">{text.titleOrange}</span>
+          </span>
         </h1>
         <p className="news-hero-text">{text.description}</p>
+        <div className="page-hero-actions">
+          <Link className="hero-primary-cta" href={`/${locale}/news#news-list`}>
+            <span>{text.browseNews}</span>
+            <ArrowRight size={16} strokeWidth={2.25} />
+          </Link>
+          <Link className="hero-secondary-cta" href={`/${locale}/solutions`}>
+            <span>{text.viewSolutions}</span>
+            <span className="hero-secondary-dot" />
+          </Link>
+        </div>
+        <div className="hero-feature-strip">
+          {[
+            {icon: Building2, label: {en: "Factory Updates", zh: "工厂动态"}},
+            {icon: Newspaper, label: {en: "Project Cases", zh: "项目案例"}},
+            {icon: ClipboardCheck, label: {en: "Compliance Progress", zh: "合规进展"}},
+            {icon: PackageCheck, label: {en: "Delivery Notes", zh: "交付记录"}},
+          ].map((item) => {
+            const Icon = item.icon;
+            return (
+              <article className="hero-feature-item" key={item.label.en}>
+                <div className="hero-feature-icon">
+                  <Icon size={21} strokeWidth={1.95} />
+                </div>
+                <p>{t(locale, item.label)}</p>
+              </article>
+            );
+          })}
+        </div>
       </PageHero>
 
       <NewsListClient

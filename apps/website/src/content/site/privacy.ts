@@ -29,8 +29,8 @@ export const privacyContent = {
     eyebrow: {en: "Legal Document", zh: "法律文件"},
     title: {en: "Privacy Policy", zh: "隐私政策"},
     description: {
-      en: "This document explains how Dongguan Yaoshun Technology Co., Ltd. handles information collected through this B2B website, inquiry forms, and advertising landing pages.",
-      zh: "本文件说明东莞市尧顺科技有限公司如何处理通过本 B2B 网站、询盘表单和广告落地页收集的信息。",
+      en: "How Yaoshun handles B2B website visits, inquiry forms, cookies, analytics, and advertising landing-page data.",
+      zh: "说明尧顺如何处理 B2B 网站访问、询盘表单、Cookie、分析与广告落地页数据。",
     },
   },
   policyMeta: {

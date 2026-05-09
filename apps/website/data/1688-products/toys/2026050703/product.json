@@ -1,0 +1,636 @@
+{
+  "productId": "2026050703",
+  "title": {
+    "en": "LONDY Luminous Explorer 130-Piece Glow Fort Building Kit",
+    "zh": "LONDY Luminous Explorer 130件夜光堡垒拼搭套装"
+  },
+  "summary": {
+    "en": "A 130-piece glow-in-the-dark Luminous Explorer set with 86 luminous rods, 44 black connector balls, storage bag, and flag.",
+    "zh": "130件 Luminous Explorer 夜光套装，含86根夜光杆、44个黑色连接球、收纳袋和旗子。"
+  },
+  "description": {
+    "en": [
+      "The 130-piece LONDY Luminous Explorer set uses 86 glow rods and 44 black connector balls for night-theme fort builds.",
+      "PP rods and connector balls use an insert-and-twist structure, making the set easy to build and take apart.",
+      "Packed set price is $23.64. Color box reference is 43 x 28 x 11 cm, with about 3 kg quoted weight.",
+      "Space-themed packaging works well for gift shelves, STEM-style building play, and online listings."
+    ],
+    "zh": [
+      "130件 LONDY Luminous Explorer 配置86根夜光杆和44个黑色连接球，主打夜光堡垒搭建。",
+      "PP 杆件与连接球采用插入旋转结构，搭建和拆卸都比较方便。",
+      "单盒合计价格 $23.64，彩盒参考尺寸为 43 x 28 x 11 cm，报价重量约 3 kg。",
+      "太空主题包装适合礼品货架、STEM 拼搭和线上展示。"
+    ]
+  },
+  "categories": {
+    "en": [
+      "Mother, Kids & Toys",
+      "Educational Toys",
+      "Other Educational Toys"
+    ],
+    "zh": [
+      "母婴与玩具",
+      "益智玩具",
+      "其他益智玩具"
+    ]
+  },
+  "pricing": {
+    "display": {
+      "en": "$23.64",
+      "zh": "$23.64"
+    },
+    "currency": "$",
+    "isRange": false,
+    "minOrder": {
+      "en": "1 box",
+      "zh": "1 箱"
+    },
+    "tiers": [
+      {
+        "quantity": {
+          "en": "Unit price",
+          "zh": "单盒价格"
+        },
+        "price": "$23.64"
+      }
+    ]
+  },
+  "customizationOptions": [
+    {
+      "label": {
+        "en": "Custom printed blanket",
+        "zh": "印花毯定制"
+      },
+      "minOrder": {
+        "en": "Confirm with sales team",
+        "zh": "请与业务确认"
+      }
+    },
+    {
+      "label": {
+        "en": "Custom storage bag",
+        "zh": "收纳袋定制"
+      },
+      "minOrder": {
+        "en": "Confirm with sales team",
+        "zh": "请与业务确认"
+      }
+    },
+    {
+      "label": {
+        "en": "OEM/ODM packaging",
+        "zh": "OEM/ODM 包装"
+      },
+      "minOrder": {
+        "en": "Confirm with sales team",
+        "zh": "请与业务确认"
+      }
+    }
+  ],
+  "specifications": [
+    {
+      "key": {
+        "en": "Luminous Rods",
+        "zh": "夜光杆"
+      },
+      "value": {
+        "en": "86 pcs, 400 mm, phi 9.3 mm, $0.072 each, quoted total $6.192",
+        "zh": "86件，400mm，直径9.3mm，单价 $0.072，报价小计 $6.192"
+      }
+    },
+    {
+      "key": {
+        "en": "Black Connector Balls",
+        "zh": "黑色连接球"
+      },
+      "value": {
+        "en": "44 pcs, 55 mm, 32-35 g, $0.132 each, quoted total $5.81",
+        "zh": "44件，55mm，32-35g，单价 $0.132，报价小计 $5.81"
+      }
+    },
+    {
+      "key": {
+        "en": "Packing Accessories",
+        "zh": "包装配件"
+      },
+      "value": {
+        "en": "2 PE warning bags, handbook, 44 x 52 cm storage bag, subpackaging fee, outer box, flag",
+        "zh": "2个含警告语PE袋、说明书、44 x 52cm 收纳袋、分装费、外箱、旗子"
+      }
+    },
+    {
+      "key": {
+        "en": "Color Box",
+        "zh": "彩盒"
+      },
+      "value": {
+        "en": "43 x 28 x 11 cm, quoted total $1.52",
+        "zh": "43 x 28 x 11cm，报价小计 $1.52"
+      }
+    }
+  ],
+  "productAttributes": [
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Brand Name",
+        "zh": "品牌"
+      },
+      "value": {
+        "en": "LONDY / Londy",
+        "zh": "LONDY / Londy"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "YS-LD25130 / 130pcs",
+        "zh": "YS-LD25130 / 130pcs"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "130 pcs",
+        "zh": "130件"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 5+; supplier range 5 to 13 years",
+        "zh": "5岁以上；供应商范围5-13岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Feature",
+        "zh": "特色"
+      },
+      "value": {
+        "en": "DIY Practice; glow in the dark",
+        "zh": "DIY实践；夜光"
+      }
+    }
+  ],
+  "attributePairs": [
+    {
+      "key": {
+        "en": "Product Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Glow fort building toy",
+        "zh": "夜光堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Product Series",
+        "zh": "产品系列"
+      },
+      "value": {
+        "en": "Luminous Explorer Kit",
+        "zh": "Luminous Explorer Kit 夜光探索家"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "130 pcs",
+        "zh": "130件"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "YS-LD25130 / 130pcs",
+        "zh": "YS-LD25130 / 130pcs"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 5+; supplier range 5 to 13 years",
+        "zh": "5岁以上；供应商范围5-13岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP glow rods and PP connector balls",
+        "zh": "PP夜光杆及PP连接球"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Type",
+        "zh": "类型"
+      },
+      "value": {
+        "en": "Other Educational Toys",
+        "zh": "其他益智玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Developing intelligence",
+        "zh": "开发智力"
+      }
+    },
+    {
+      "key": {
+        "en": "Feature",
+        "zh": "特色"
+      },
+      "value": {
+        "en": "DIY Practice",
+        "zh": "DIY实践"
+      }
+    },
+    {
+      "key": {
+        "en": "Style",
+        "zh": "风格"
+      },
+      "value": {
+        "en": "Educational kid toys",
+        "zh": "儿童益智玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Weight Reference",
+        "zh": "重量参考"
+      },
+      "value": {
+        "en": "3.8 kg",
+        "zh": "3.8kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Quote Price",
+        "zh": "报价价格"
+      },
+      "value": {
+        "en": "$23.64 per box",
+        "zh": "$23.64 / 箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Quoted Weight",
+        "zh": "报价重量"
+      },
+      "value": {
+        "en": "3 kg",
+        "zh": "3 kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Color Box Size",
+        "zh": "彩盒尺寸"
+      },
+      "value": {
+        "en": "43 x 28 x 11 cm",
+        "zh": "43 x 28 x 11 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Glow theme color box packing",
+        "zh": "夜光主题彩盒包装"
+      }
+    },
+    {
+      "key": {
+        "en": "Rod Configuration",
+        "zh": "杆件配置"
+      },
+      "value": {
+        "en": "86 luminous rods, 40 cm",
+        "zh": "86根40cm夜光杆"
+      }
+    },
+    {
+      "key": {
+        "en": "Ball Configuration",
+        "zh": "连接球配置"
+      },
+      "value": {
+        "en": "44 black connector balls, 55 mm",
+        "zh": "44个55mm黑色连接球"
+      }
+    },
+    {
+      "key": {
+        "en": "Accessories",
+        "zh": "配件"
+      },
+      "value": {
+        "en": "2 PE warning bags, handbook, storage bag, decorative flag",
+        "zh": "2个PE警示袋、说明书、收纳袋、装饰旗"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM offered; custom printed blankets and storage bags available",
+        "zh": "支持 OEM；可定制印花毯和收纳袋"
+      }
+    }
+  ],
+  "packagingAndShipping": {
+    "unitSize": "43X28X11",
+    "unitVolume": "",
+    "unitWeight": "3.800",
+    "summary": {
+      "en": "Packaging & Shipping",
+      "zh": "包装与运输"
+    },
+    "blocks": [
+      {
+        "label": {
+          "en": "Selling unit",
+          "zh": "销售单位"
+        },
+        "value": {
+          "en": "Single item / single color box",
+          "zh": "单件 / 单个彩盒"
+        }
+      },
+      {
+        "label": {
+          "en": "Color box size",
+          "zh": "彩盒尺寸"
+        },
+        "value": {
+          "en": "43 x 28 x 11 cm",
+          "zh": "43 x 28 x 11 厘米"
+        }
+      },
+      {
+        "label": {
+          "en": "Single package size",
+          "zh": "单件包装尺寸"
+        },
+        "value": {
+          "en": "43 x 28 x 11 cm",
+          "zh": "43 x 28 x 11 厘米"
+        }
+      },
+      {
+        "label": {
+          "en": "Single gross weight",
+          "zh": "单件毛重"
+        },
+        "value": {
+          "en": "3.800 kg",
+          "zh": "3.800 千克"
+        }
+      }
+    ]
+  },
+  "packagingPairs": [
+    {
+      "key": {
+        "en": "Color Box Size",
+        "zh": "彩盒尺寸"
+      },
+      "value": {
+        "en": "43 x 28 x 11 cm",
+        "zh": "43 x 28 x 11 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Package Size Reference",
+        "zh": "包装尺寸参考"
+      },
+      "value": {
+        "en": "43 x 28 x 11 cm",
+        "zh": "43 x 28 x 11 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Gross Weight Reference",
+        "zh": "毛重参考"
+      },
+      "value": {
+        "en": "3.800 kg",
+        "zh": "3.800 kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Packing",
+        "zh": "包装"
+      },
+      "value": {
+        "en": "Color box + outer case",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Quote Note",
+        "zh": "报价备注"
+      },
+      "value": {
+        "en": "Transport cost to be confirmed separately",
+        "zh": "运输费用需另行确认"
+      }
+    }
+  ],
+  "leadTime": {
+    "tiers": [
+      {
+        "minQuantity": "1",
+        "maxQuantity": "5",
+        "processPeriodDays": 7
+      },
+      {
+        "minQuantity": "6",
+        "maxQuantity": "100",
+        "processPeriodDays": 30
+      },
+      {
+        "minQuantity": "101",
+        "maxQuantity": "500",
+        "processPeriodDays": 60
+      }
+    ]
+  },
+  "media": {
+    "main": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/1.webp"
+      }
+    ],
+    "detail": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/2.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/3.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/4.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/5.webp"
+      }
+    ]
+  },
+  "images": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/1.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/2.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/3.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/4.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/5.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/6.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/7.webp"
+  ],
+  "productDetails": [
+    {
+      "sectionTitle": {
+        "en": "Luminous Explorer Box",
+        "zh": "夜光探索家彩盒"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/1.webp",
+      "text": {
+        "en": "The space-themed 130-piece box puts the glow-in-the-dark play feature front and center.",
+        "zh": "130件太空主题彩盒突出夜光玩法，夜间拼搭特点一眼可见。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Glow Rod Configuration",
+        "zh": "夜光杆件配置"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/2.webp",
+      "text": {
+        "en": "The SKU image shows 86 luminous rods and 44 black connector balls for larger glow structures.",
+        "zh": "SKU 图展示86根夜光杆和44个黑色连接球，可搭建更大的夜光结构。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Dark-Room Building",
+        "zh": "暗光拼搭效果"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050703/4.webp",
+      "text": {
+        "en": "The green rod structure gives buyers a clear reference for the finished build and works well for product displays.",
+        "zh": "绿色杆件结构可直观看到成品搭建效果，适合用于商品展示和详情说明。"
+      }
+    }
+  ],
+  "module": "toys",
+  "priority": 0,
+  "tags": [
+    {
+      "key": "toys",
+      "en": "Toys",
+      "zh": "玩具"
+    },
+    {
+      "key": "londy",
+      "en": "LONDY",
+      "zh": "LONDY"
+    },
+    {
+      "key": "glow-fort-building-kit",
+      "en": "Glow Fort Building Kit",
+      "zh": "夜光堡垒拼搭套装"
+    },
+    {
+      "key": "color-box-packaging",
+      "en": "Color Box Packaging",
+      "zh": "彩盒包装"
+    }
+  ],
+  "sourceUrl": "https://www.alibaba.com/product-detail/DIY-Toy130pcs-the-Night-Light-Castle_1601724020140.html"
+}

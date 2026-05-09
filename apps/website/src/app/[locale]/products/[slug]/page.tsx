@@ -105,7 +105,7 @@ function getPairValue(
   return localize(locale, findPair(locale, pairs, keys, options)?.value, fallback);
 }
 
-function formatPriceRange(product: ProductJson) {
+function formatPriceRange(product: ProductJson, locale: Locale) {
   const currency = product.pricing?.currency || "$";
 
   if (
@@ -119,7 +119,7 @@ function formatPriceRange(product: ProductJson) {
       : `${currency}${min} - ${max}`;
   }
 
-  const raw = localize("en", product.pricing?.display, "");
+  const raw = localize(locale, product.pricing?.display, "");
   return raw.replace(/^US\$/i, "$") || "-";
 }
 
@@ -282,15 +282,7 @@ export async function generateMetadata({
   const product = findProduct(slug);
 
   if (!product) {
-    return buildMetadata(
-      locale,
-      t(locale, { en: "Product Detail", zh: "产品详情" }),
-      t(locale, {
-        en: "yaoshun toys product detail",
-        zh: "yaoshun toys 产品详情",
-      }),
-      `products/${slug}`,
-    );
+    notFound();
   }
 
   const productTitle = localize(locale, product.title, slug);
@@ -689,10 +681,12 @@ export default async function ProductDetailPage({
                 {text.priceLabel}
               </p>
               <div className="font-display text-[1.8rem] font-extrabold leading-none text-[#ff7e1f] sm:text-[2.35rem]">
-                {formatPriceRange(product)}
-                <span className="ml-2 inline-block text-[0.95rem] font-semibold text-[#6f7ea9]">
-                  / {priceUnit}
-                </span>
+                {formatPriceRange(product, locale)}
+                {minOrder ? (
+                  <span className="ml-2 inline-block text-[0.95rem] font-semibold text-[#6f7ea9]">
+                    / {priceUnit}
+                  </span>
+                ) : null}
               </div>
               {minOrder ? (
                 <strong className="text-[0.98rem] font-semibold text-[#4d608b]">
@@ -796,6 +790,7 @@ export default async function ProductDetailPage({
               alt={text.highlightImageAlt}
               className="object-contain object-center"
               fill
+              preview
               sizes="(min-width: 1024px) 19rem, 100vw"
               src={highlightImage}
             />
@@ -1000,6 +995,7 @@ export default async function ProductDetailPage({
                         alt={`${item.title || title} ${index + 1}`}
                         className="object-contain object-center"
                         fill
+                        preview
                         sizes="(min-width: 1024px) 19rem, 100vw"
                         src={item.image}
                       />

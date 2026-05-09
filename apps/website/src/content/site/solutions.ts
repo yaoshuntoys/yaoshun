@@ -3,12 +3,12 @@ import {seoKeywordPools, visualAssets} from '@/content/site/shared';
 export const solutionsContent = {
   seo: {
     title: {
-      en: 'Toy OEM/ODM & Custom Development | Yaoshun Dongguan Source Factory',
-      zh: '玩具 OEM/ODM 与定制化开发 | 尧顺东莞源头工厂'
+      en: 'Toy OEM/ODM & Custom Development | Yaoshun Toys',
+      zh: '玩具 OEM/ODM 与定制化开发 | 尧顺玩具'
     },
     description: {
-      en: 'Yaoshun provides toy OEM/ODM and custom development for fort building toys, STEM building kits and interlocking plastic toys, covering structure design, mold planning, sampling, injection molding, color box packaging and shipment handoff.',
-      zh: '尧顺作为东莞源头工厂提供玩具 OEM/ODM 与定制化开发，覆盖堡垒拼搭玩具、STEM搭建套装、拼插类塑胶玩具的结构设计、开模、打样、注塑、彩盒包装与出货交接。'
+      en: 'Toy OEM/ODM for fort building toys, STEM kits and interlocking toys, covering design, tooling, sampling, injection molding, packaging and shipment.',
+      zh: '尧顺提供堡垒拼搭玩具、STEM搭建套装与拼插玩具 OEM/ODM，覆盖设计、开模、打样、注塑、包装与出货交接。'
     },
     keywords: {
       en: [

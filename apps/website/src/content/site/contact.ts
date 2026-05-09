@@ -3,12 +3,12 @@ import {seoKeywordPools} from '@/content/site/shared';
 export const contactContent = {
   seo: {
     title: {
-      en: 'Get A Toy Manufacturing Quote | Dongguan Yaoshun Technology Co., Ltd.',
-      zh: '获取玩具制造报价 | 东莞市尧顺科技有限公司'
+      en: 'Toy Manufacturing Quote | Yaoshun Dongguan Factory',
+      zh: '玩具制造报价 | 尧顺东莞工厂'
     },
     description: {
-      en: 'Contact Dongguan Yaoshun Technology Co., Ltd. for fort building toy, STEM kit and custom toy OEM/ODM quotation, sampling, mold evaluation, color box packaging and export delivery support.',
-      zh: '联系东莞市尧顺科技有限公司，获取堡垒拼搭玩具、STEM搭建套装和定制玩具 OEM/ODM 报价，支持打样、开模评估、彩盒包装与出口交付。'
+      en: 'Contact Yaoshun for fort building toy, STEM kit and custom toy OEM/ODM quotes, sampling, mold evaluation, packaging and export delivery support.',
+      zh: '联系尧顺获取堡垒拼搭玩具、STEM搭建套装和定制玩具 OEM/ODM 报价，支持打样、开模评估、包装与出口交付。'
     },
     keywords: {
       en: [

@@ -1,0 +1,621 @@
+{
+  "productId": "2026050708",
+  "module": "toys",
+  "priority": 0,
+  "title": {
+    "en": "Custom Glow in the Dark 130-Piece Fort Building Kit",
+    "zh": "定制130件夜光堡垒拼搭套装"
+  },
+  "summary": {
+    "en": "Custom 130-piece glow-in-the-dark fort set with a space-theme color box and OEM/ODM packing.",
+    "zh": "130件夜光堡垒拼搭彩盒定制款，可调整太空主题盒面和 OEM/ODM 包装。"
+  },
+  "description": {
+    "en": [
+      "This Glow in the Dark 130-piece fort set is a made-to-order color-box item. The box shows a 4+ age mark.",
+      "The set uses PP plastic rods and connector balls. Children insert and twist the rods to build glowing forts, tents, rockets, houses, and tunnels.",
+      "Logo, space-theme artwork, manual, colors, accessory mix, and private-label packing can be adjusted.",
+      "No public price is shown. Quotation follows confirmed artwork, configuration, quantity, and packing."
+    ],
+    "zh": [
+      "Glow in the Dark 130件为夜光堡垒拼搭彩盒定制款，盒面标注适用年龄 4 岁以上。",
+      "产品采用 PP 塑料杆件和连接球，插入后旋转固定，可搭建夜光城堡、帐篷、火箭、房屋、隧道等造型。",
+      "LOGO、太空主题画面、说明书、配色、配件组合和贴牌包装都可以调整。",
+      "不公开标价，确认画面、配置、数量和包装后报价。"
+    ]
+  },
+  "categories": {
+    "en": [
+      "Custom Toys",
+      "Blocks & Model Building Toys",
+      "Building Block Sets"
+    ],
+    "zh": [
+      "定制玩具",
+      "积木与模型拼搭玩具",
+      "积木套装"
+    ]
+  },
+  "pricing": {
+    "display": {
+      "en": "Custom quote",
+      "zh": "定制方案"
+    },
+    "currency": "USD",
+    "isRange": false
+  },
+  "customizationOptions": [
+    {
+      "label": {
+        "en": "Customized logo",
+        "zh": "定制 Logo"
+      },
+      "minOrder": {
+        "en": "1,000 sets",
+        "zh": "1,000 套"
+      }
+    },
+    {
+      "label": {
+        "en": "Customized packaging",
+        "zh": "定制包装"
+      },
+      "minOrder": {
+        "en": "1,000 sets",
+        "zh": "1,000 套"
+      }
+    },
+    {
+      "label": {
+        "en": "Graphic customization",
+        "zh": "图文定制"
+      },
+      "minOrder": {
+        "en": "1,000 sets",
+        "zh": "1,000 套"
+      }
+    },
+    {
+      "label": {
+        "en": "Colors, size, and private label",
+        "zh": "颜色、尺寸和贴牌"
+      },
+      "minOrder": {
+        "en": "Confirm before quotation",
+        "zh": "报价前确认"
+      }
+    }
+  ],
+  "specifications": [
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "130 pcs",
+        "zh": "130件"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 4+",
+        "zh": "4岁以上"
+      }
+    },
+    {
+      "key": {
+        "en": "Theme",
+        "zh": "夜光主题"
+      },
+      "value": {
+        "en": "Glow-in-the-dark space fort building set",
+        "zh": "夜光太空主题堡垒拼搭套装"
+      }
+    },
+    {
+      "key": {
+        "en": "Pricing Note",
+        "zh": "报价说明"
+      },
+      "value": {
+        "en": "No public price; quote after artwork, configuration, quantity, and packing are confirmed",
+        "zh": "不公开价格，确认画面、配置、数量和包装后报价"
+      }
+    }
+  ],
+  "productAttributes": [
+    {
+      "key": {
+        "en": "Product Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Custom glow fort building toy",
+        "zh": "定制夜光堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 4+",
+        "zh": "4岁以上"
+      }
+    },
+    {
+      "key": {
+        "en": "Supplier Age Range",
+        "zh": "供应商适龄范围"
+      },
+      "value": {
+        "en": "2 to 4 Years, 5 to 7 years, 8 to 13 Years, 14 Years & up",
+        "zh": "2-4岁、5-7岁、8-13岁、14岁以上"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "130 pcs",
+        "zh": "130件"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP plastic rods and connector balls",
+        "zh": "PP塑料杆件和连接球"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM / ODM Customization",
+        "zh": "OEM / ODM 定制"
+      }
+    },
+    {
+      "key": {
+        "en": "Package",
+        "zh": "包装"
+      },
+      "value": {
+        "en": "Color Box + Outer Carton",
+        "zh": "彩盒 + 外箱"
+      }
+    }
+  ],
+  "attributePairs": [
+    {
+      "key": {
+        "en": "Product Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Custom glow-in-the-dark fort building kit",
+        "zh": "定制夜光堡垒拼搭套装"
+      }
+    },
+    {
+      "key": {
+        "en": "Customization Type",
+        "zh": "定制类型"
+      },
+      "value": {
+        "en": "OEM/ODM box, glow-theme artwork, logo, colors, size, graphics, and manual layout",
+        "zh": "OEM/ODM 包装、夜光主题画面、LOGO、配色、尺寸、图文和说明书排版"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "130 pcs",
+        "zh": "130件"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 4+",
+        "zh": "4岁以上"
+      }
+    },
+    {
+      "key": {
+        "en": "Supplier Age Range",
+        "zh": "供应商适龄范围"
+      },
+      "value": {
+        "en": "2 to 4 Years, 5 to 7 years, 8 to 13 Years, 14 Years & up",
+        "zh": "2-4岁、5-7岁、8-13岁、14岁以上"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP plastic rods and connector balls",
+        "zh": "PP塑料杆件和连接球"
+      }
+    },
+    {
+      "key": {
+        "en": "Assembly",
+        "zh": "组装方式"
+      },
+      "value": {
+        "en": "Insert and twist rods into balls; quick assembly and easy disassembly",
+        "zh": "杆件插入连接球后旋转固定，快速组装，易拆卸"
+      }
+    },
+    {
+      "key": {
+        "en": "Creative Builds",
+        "zh": "创意造型"
+      },
+      "value": {
+        "en": "Cave, play tent, rocket, house, igloo, princess castle, tunnel, teepee, toy tents, and pirate ship",
+        "zh": "洞穴、游戏帐篷、火箭、房屋、冰屋、公主城堡、隧道、圆锥帐篷、玩具帐篷和海盗船"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Helps with spatial thinking, imagination, and shape recognition",
+        "zh": "帮助锻炼空间思维、想象力和图形认知"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color Box + Outer Carton",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Color Box Reference",
+        "zh": "彩盒参考"
+      },
+      "value": {
+        "en": "44 x 34 x 11.5 cm",
+        "zh": "44 x 34 x 11.5 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Outer Carton Reference",
+        "zh": "外箱参考"
+      },
+      "value": {
+        "en": "46 x 36 x 60 cm / 5 boxes",
+        "zh": "46 x 36 x 60 cm / 5盒"
+      }
+    },
+    {
+      "key": {
+        "en": "Weight Reference",
+        "zh": "重量参考"
+      },
+      "value": {
+        "en": "3.3 kg / 18 kg",
+        "zh": "3.3kg / 18kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Ball Size",
+        "zh": "连接球尺寸"
+      },
+      "value": {
+        "en": "PP ball size 6.0 cm",
+        "zh": "PP连接球6.0cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Rod Size",
+        "zh": "杆件尺寸"
+      },
+      "value": {
+        "en": "40 cm rod reference",
+        "zh": "40cm杆件参考"
+      }
+    },
+    {
+      "key": {
+        "en": "Pricing",
+        "zh": "价格"
+      },
+      "value": {
+        "en": "Quoted after details are confirmed",
+        "zh": "确认细节后报价"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM/ODM customization and private-label packing",
+        "zh": "OEM/ODM 定制和贴牌包装"
+      }
+    }
+  ],
+  "packagingAndShipping": {
+    "unitSize": "45X13X35",
+    "unitVolume": "",
+    "unitWeight": "3.500",
+    "summary": {
+      "en": "Custom Packaging & Shipping",
+      "zh": "定制包装与运输"
+    },
+    "blocks": [
+      {
+        "label": {
+          "en": "Selling unit",
+          "zh": "销售单位"
+        },
+        "value": {
+          "en": "Made-to-order color box set",
+          "zh": "彩盒定制套装"
+        }
+      },
+      {
+        "label": {
+          "en": "Color box reference",
+          "zh": "彩盒参考"
+        },
+        "value": {
+          "en": "44 x 34 x 11.5 cm",
+          "zh": "44 x 34 x 11.5 厘米"
+        }
+      },
+      {
+        "label": {
+          "en": "Outer carton reference",
+          "zh": "外箱参考"
+        },
+        "value": {
+          "en": "46 x 36 x 60 cm / 5 boxes",
+          "zh": "46 x 36 x 60 厘米 / 5盒"
+        }
+      },
+      {
+        "label": {
+          "en": "Single package reference",
+          "zh": "单件包装参考"
+        },
+        "value": {
+          "en": "45 x 13 x 35 cm, 3.500 kg",
+          "zh": "45 x 13 x 35 厘米，3.500 千克"
+        }
+      }
+    ]
+  },
+  "packagingPairs": [
+    {
+      "key": {
+        "en": "Color Box Reference",
+        "zh": "彩盒参考"
+      },
+      "value": {
+        "en": "44 x 34 x 11.5 cm",
+        "zh": "44 x 34 x 11.5 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Outer Carton Reference",
+        "zh": "外箱参考"
+      },
+      "value": {
+        "en": "46 x 36 x 60 cm / 5 boxes",
+        "zh": "46 x 36 x 60 cm / 5盒"
+      }
+    },
+    {
+      "key": {
+        "en": "Single Package Reference",
+        "zh": "单件包装参考"
+      },
+      "value": {
+        "en": "45 x 13 x 35 cm",
+        "zh": "45 x 13 x 35 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Single Gross Weight",
+        "zh": "单件毛重"
+      },
+      "value": {
+        "en": "3.500 kg",
+        "zh": "3.500 kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Quote Note",
+        "zh": "报价备注"
+      },
+      "value": {
+        "en": "No public unit price; quote after details and quantity are confirmed",
+        "zh": "不公开单价，确认细节和数量后报价"
+      }
+    }
+  ],
+  "leadTime": {
+    "tiers": [
+      {
+        "minQuantity": "1",
+        "maxQuantity": "1",
+        "processPeriodDays": 7
+      },
+      {
+        "minQuantity": "2",
+        "maxQuantity": "500",
+        "processPeriodDays": 30
+      },
+      {
+        "minQuantity": "501",
+        "maxQuantity": "1,000",
+        "processPeriodDays": 60
+      }
+    ]
+  },
+  "productDetails": [
+    {
+      "sectionTitle": {
+        "en": "Custom Glow Color Box",
+        "zh": "定制夜光彩盒"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/1.webp",
+      "text": {
+        "en": "The 130-piece glow-theme box can be updated with the customer logo, product name, artwork text, and packing marks.",
+        "zh": "130件夜光主题彩盒可替换客户 LOGO、产品名称、图案文字和包装标识。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Glow Build Effect",
+        "zh": "夜光搭建效果"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/3.webp",
+      "text": {
+        "en": "The green build reference shows the finished fort shape clearly and keeps the glow-theme look consistent.",
+        "zh": "绿色搭建效果图能清楚展示成品结构，也和夜光主题包装保持一致。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Quotation Details",
+        "zh": "报价信息"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/5.webp",
+      "text": {
+        "en": "We confirm the 130-piece mix, packing content, manual layout, and accessory details before quoting.",
+        "zh": "报价前先确认130件配置、包装内容、说明书排版和配件细节。"
+      }
+    }
+  ],
+  "tags": [
+    {
+      "key": "toys",
+      "en": "Toys",
+      "zh": "玩具"
+    },
+    {
+      "key": "custom-toy",
+      "en": "Custom Toy",
+      "zh": "定制玩具"
+    },
+    {
+      "key": "oem-odm",
+      "en": "OEM/ODM",
+      "zh": "OEM/ODM"
+    },
+    {
+      "key": "glow-fort-building-kit",
+      "en": "Glow Fort Building Kit",
+      "zh": "夜光堡垒拼搭套装"
+    },
+    {
+      "key": "color-box-packaging",
+      "en": "Color Box Packaging",
+      "zh": "彩盒包装"
+    }
+  ],
+  "images": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/1.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/2.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/3.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/4.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/5.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/6.webp"
+  ],
+  "media": {
+    "main": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/1.webp"
+      }
+    ],
+    "detail": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/2.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/3.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/4.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/5.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/6.webp"
+      }
+    ]
+  },
+  "sourceUrl": "https://www.alibaba.com/product-detail/YaoShun-158pcs-Children-Puzzle-Building-Blocks_1601094195076.html"
+}

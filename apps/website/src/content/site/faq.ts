@@ -3,12 +3,12 @@ import {seoKeywordPools} from '@/content/site/shared';
 export const faqContent = {
   seo: {
     title: {
-      en: 'FAQ, MOQ & Lead Time | Dongguan Yaoshun Technology Co., Ltd. | 东莞市尧顺科技有限公司',
-      zh: 'FAQ、起订量与交期 | 东莞市尧顺科技有限公司 | Dongguan Yaoshun Technology Co., Ltd.'
+      en: 'Toy OEM/ODM FAQ, MOQ & Lead Time | Yaoshun Toys',
+      zh: '玩具 OEM/ODM FAQ、起订量与交期 | 尧顺玩具'
     },
     description: {
-      en: 'Find answers about MOQ, lead time, sampling, OEM/ODM workflow, packaging, shipment and quality checkpoints for fort building toys, STEM kits, interlocking toys and custom toy manufacturing projects.',
-      zh: '查看堡垒拼搭玩具、STEM搭建套装、拼插类玩具与定制玩具制造项目的 MOQ、交期、打样、OEM/ODM 流程、包装出货和质量节点。'
+      en: 'Answers about MOQ, lead time, sampling, OEM/ODM workflow, packaging, shipment and quality checkpoints for fort building toys and custom toy projects.',
+      zh: '查看堡垒拼搭玩具、STEM搭建套装与定制玩具项目的 MOQ、交期、打样、OEM/ODM 流程、包装出货和质量节点。'
     },
     keywords: {
       en: [

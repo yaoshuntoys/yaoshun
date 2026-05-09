@@ -25,9 +25,9 @@ export const siteCopy = {
 
 export const navItems = [
   {key: "home", href: "", label: {en: "Home", zh: "首页"}},
-  {key: "products", href: "/products", label: {en: "Products", zh: "产品"}},
+  {key: "products", href: "/products", label: {en: "Products", zh: "产品目录"}},
   {key: "solutions", href: "/solutions", label: {en: "Solutions", zh: "解决方案"}},
-  {key: "news", href: "/news", label: {en: "News", zh: "新闻"}},
+  {key: "news", href: "/news", label: {en: "News", zh: "新闻中心"}},
   {key: "about", href: "/about", label: {en: "About Us", zh: "关于我们"}},
 ] as const;
 

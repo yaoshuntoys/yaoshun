@@ -72,6 +72,7 @@ export function ProductMediaStrip({locale, images, title, videos}: ProductMediaS
                 alt={`${title} ${index + 1}`}
                 className="object-contain object-center transition duration-200"
                 fill
+                preview
                 sizes="(min-width: 1280px) 12rem, (min-width: 768px) 20vw, 44vw"
                 src={image}
               />

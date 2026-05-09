@@ -1,0 +1,639 @@
+{
+  "productId": "2026050704",
+  "title": {
+    "en": "LONDY Magic Building 228-Piece Fort Building Kit",
+    "zh": "LONDY Magic Building 228件大型堡垒拼搭套装"
+  },
+  "summary": {
+    "en": "A 228-piece larger LONDY fort kit with four rod lengths, red and yellow connector balls, storage bag, and flag.",
+    "zh": "228件 LONDY 大型堡垒套装，含四种杆长、红黄连接球、收纳袋和旗子。"
+  },
+  "description": {
+    "en": [
+      "The 228-piece LONDY Magic Building set offers a larger fort kit with four rod lengths and red-yellow connector balls.",
+      "PP parts are marked for ages 5+ and support wider forts, taller towers, and open-ended building layouts.",
+      "Packed set price is $34.11, with about 3.7 kg quoted weight. Packing is color box with outer carton.",
+      "OEM packaging is available for private-label orders."
+    ],
+    "zh": [
+      "228件 LONDY Magic Building 是更大规格的堡垒套装，配置四种杆长和红黄连接球。",
+      "PP 配件标注适用 5 岁以上，可搭建更宽的堡垒、更高的塔形和更自由的结构。",
+      "单盒合计价格 $34.11，报价重量约 3.7 kg；包装为彩盒加外箱。",
+      "支持贴牌订单的 OEM 包装。"
+    ]
+  },
+  "categories": {
+    "en": [
+      "Mother, Kids & Toys",
+      "Blocks & Model Building Toys",
+      "Building Block Sets"
+    ],
+    "zh": [
+      "母婴与玩具",
+      "积木与模型拼搭玩具",
+      "积木套装"
+    ]
+  },
+  "pricing": {
+    "display": {
+      "en": "$34.11",
+      "zh": "$34.11"
+    },
+    "currency": "$",
+    "isRange": false,
+    "minOrder": {
+      "en": "1 box",
+      "zh": "1 箱"
+    },
+    "tiers": [
+      {
+        "quantity": {
+          "en": "Unit price",
+          "zh": "单盒价格"
+        },
+        "price": "$34.11"
+      }
+    ]
+  },
+  "customizationOptions": [
+    {
+      "label": {
+        "en": "Custom printed blanket",
+        "zh": "印花毯定制"
+      },
+      "minOrder": {
+        "en": "Confirm with sales team",
+        "zh": "请与业务确认"
+      }
+    },
+    {
+      "label": {
+        "en": "Custom storage bag",
+        "zh": "收纳袋定制"
+      },
+      "minOrder": {
+        "en": "Confirm with sales team",
+        "zh": "请与业务确认"
+      }
+    },
+    {
+      "label": {
+        "en": "OEM/ODM packaging",
+        "zh": "OEM/ODM 包装"
+      },
+      "minOrder": {
+        "en": "Confirm with sales team",
+        "zh": "请与业务确认"
+      }
+    }
+  ],
+  "specifications": [
+    {
+      "key": {
+        "en": "Long Rods",
+        "zh": "长杆"
+      },
+      "value": {
+        "en": "55 pcs, 425 mm, phi 9.3 mm, $0.0489 each, quoted total $2.69",
+        "zh": "55件，425mm，直径9.3mm，单价 $0.0489，报价小计 $2.69"
+      }
+    },
+    {
+      "key": {
+        "en": "Medium Rods",
+        "zh": "中杆"
+      },
+      "value": {
+        "en": "55 pcs, 283 mm, phi 9.3 mm, $0.042 each, quoted total $2.31",
+        "zh": "55件，283mm，直径9.3mm，单价 $0.042，报价小计 $2.31"
+      }
+    },
+    {
+      "key": {
+        "en": "Short Rods",
+        "zh": "短杆"
+      },
+      "value": {
+        "en": "30 pcs at 120 mm and 40 pcs at 75 mm",
+        "zh": "120mm 30件，75mm 40件"
+      }
+    },
+    {
+      "key": {
+        "en": "Connector Balls",
+        "zh": "连接球"
+      },
+      "value": {
+        "en": "48 pcs, 55 mm: 24 red and 24 yellow; $0.134 each",
+        "zh": "48件，55mm：24个红色、24个黄色；单价 $0.134"
+      }
+    },
+    {
+      "key": {
+        "en": "Packing Accessories",
+        "zh": "包装配件"
+      },
+      "value": {
+        "en": "2 PE warning bags, handbook, 44 x 52 cm storage bag, subpackaging fee, outer box, flag",
+        "zh": "2个含警告语PE袋、说明书、44 x 52cm 收纳袋、分装费、外箱、旗子"
+      }
+    }
+  ],
+  "productAttributes": [
+    {
+      "key": {
+        "en": "Place of Origin",
+        "zh": "产地"
+      },
+      "value": {
+        "en": "Guangdong, China",
+        "zh": "中国广东"
+      }
+    },
+    {
+      "key": {
+        "en": "Brand Name",
+        "zh": "品牌"
+      },
+      "value": {
+        "en": "LONDY / Londy",
+        "zh": "LONDY / Londy"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "YS-LD25228 / YS-LONDY25228",
+        "zh": "YS-LD25228 / YS-LONDY25228"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "228 pcs",
+        "zh": "228件"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 5+; supplier range 5 to 13 years",
+        "zh": "5岁以上；供应商范围5-13岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Developing intelligence",
+        "zh": "开发智力"
+      }
+    }
+  ],
+  "attributePairs": [
+    {
+      "key": {
+        "en": "Product Type",
+        "zh": "产品类型"
+      },
+      "value": {
+        "en": "Large fort building toy",
+        "zh": "大型堡垒拼搭玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Product Series",
+        "zh": "产品系列"
+      },
+      "value": {
+        "en": "Magic Building Kit",
+        "zh": "Magic Building Kit 魔法建筑师"
+      }
+    },
+    {
+      "key": {
+        "en": "Piece Count",
+        "zh": "件数"
+      },
+      "value": {
+        "en": "228 pcs",
+        "zh": "228件"
+      }
+    },
+    {
+      "key": {
+        "en": "Model Number",
+        "zh": "型号"
+      },
+      "value": {
+        "en": "YS-LD25228 / YS-LONDY25228",
+        "zh": "YS-LD25228 / YS-LONDY25228"
+      }
+    },
+    {
+      "key": {
+        "en": "Age Range",
+        "zh": "适用年龄"
+      },
+      "value": {
+        "en": "Ages 5+; supplier range 5 to 13 years",
+        "zh": "5岁以上；供应商范围5-13岁"
+      }
+    },
+    {
+      "key": {
+        "en": "Material",
+        "zh": "材质"
+      },
+      "value": {
+        "en": "PP",
+        "zh": "PP"
+      }
+    },
+    {
+      "key": {
+        "en": "Gender",
+        "zh": "适用性别"
+      },
+      "value": {
+        "en": "Unisex",
+        "zh": "男女通用"
+      }
+    },
+    {
+      "key": {
+        "en": "Function",
+        "zh": "功能"
+      },
+      "value": {
+        "en": "Developing intelligence",
+        "zh": "开发智力"
+      }
+    },
+    {
+      "key": {
+        "en": "Type",
+        "zh": "类型"
+      },
+      "value": {
+        "en": "Educational toys",
+        "zh": "益智玩具"
+      }
+    },
+    {
+      "key": {
+        "en": "Color",
+        "zh": "颜色"
+      },
+      "value": {
+        "en": "Orange ball + yellow ball + five-colored poles",
+        "zh": "橙色球 + 黄色球 + 五色杆"
+      }
+    },
+    {
+      "key": {
+        "en": "Keywords",
+        "zh": "关键词"
+      },
+      "value": {
+        "en": "Improve practical ability",
+        "zh": "提升动手能力"
+      }
+    },
+    {
+      "key": {
+        "en": "Weight Reference",
+        "zh": "重量参考"
+      },
+      "value": {
+        "en": "4 kg",
+        "zh": "4kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Quote Price",
+        "zh": "报价价格"
+      },
+      "value": {
+        "en": "$34.11 per box",
+        "zh": "$34.11 / 箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Quoted Weight",
+        "zh": "报价重量"
+      },
+      "value": {
+        "en": "3.7 kg",
+        "zh": "3.7 kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Color Box Size",
+        "zh": "彩盒尺寸"
+      },
+      "value": {
+        "en": "44 x 31 x 11 cm",
+        "zh": "44 x 31 x 11 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Packaging",
+        "zh": "包装方式"
+      },
+      "value": {
+        "en": "Color box packing",
+        "zh": "彩盒包装"
+      }
+    },
+    {
+      "key": {
+        "en": "Rod Configuration",
+        "zh": "杆件配置"
+      },
+      "value": {
+        "en": "55 rods at 42.5 cm, 55 rods at 28.3 cm, 30 rods at 12 cm, 40 rods at 7.5 cm",
+        "zh": "42.5cm 55根，28.3cm 55根，12cm 30根，7.5cm 40根"
+      }
+    },
+    {
+      "key": {
+        "en": "Ball Configuration",
+        "zh": "连接球配置"
+      },
+      "value": {
+        "en": "48 connector balls: 24 red and 24 yellow",
+        "zh": "48个连接球：红色24个、黄色24个"
+      }
+    },
+    {
+      "key": {
+        "en": "Accessories",
+        "zh": "配件"
+      },
+      "value": {
+        "en": "2 PE warning bags, handbook, storage bag, decorative flag",
+        "zh": "2个PE警示袋、说明书、收纳袋、装饰旗"
+      }
+    },
+    {
+      "key": {
+        "en": "Service",
+        "zh": "服务"
+      },
+      "value": {
+        "en": "OEM offered; custom printed blankets and storage bags available",
+        "zh": "支持 OEM；可定制印花毯和收纳袋"
+      }
+    }
+  ],
+  "packagingAndShipping": {
+    "unitSize": "47X13X36",
+    "unitVolume": "",
+    "unitWeight": "4.000",
+    "summary": {
+      "en": "Packaging & Shipping",
+      "zh": "包装与运输"
+    },
+    "blocks": [
+      {
+        "label": {
+          "en": "Selling unit",
+          "zh": "销售单位"
+        },
+        "value": {
+          "en": "Single item / single color box",
+          "zh": "单件 / 单个彩盒"
+        }
+      },
+      {
+        "label": {
+          "en": "Color box size",
+          "zh": "彩盒尺寸"
+        },
+        "value": {
+          "en": "44 x 31 x 11 cm",
+          "zh": "44 x 31 x 11 厘米"
+        }
+      },
+      {
+        "label": {
+          "en": "Packing size reference",
+          "zh": "包装尺寸参考"
+        },
+        "value": {
+          "en": "47 x 13 x 36 cm",
+          "zh": "47 x 13 x 36 厘米"
+        }
+      },
+      {
+        "label": {
+          "en": "Single gross weight",
+          "zh": "单件毛重"
+        },
+        "value": {
+          "en": "4.000 kg",
+          "zh": "4.000 千克"
+        }
+      }
+    ]
+  },
+  "packagingPairs": [
+    {
+      "key": {
+        "en": "Color Box Size",
+        "zh": "彩盒尺寸"
+      },
+      "value": {
+        "en": "44 x 31 x 11 cm",
+        "zh": "44 x 31 x 11 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Package Size Reference",
+        "zh": "包装尺寸参考"
+      },
+      "value": {
+        "en": "47 x 13 x 36 cm",
+        "zh": "47 x 13 x 36 cm"
+      }
+    },
+    {
+      "key": {
+        "en": "Gross Weight Reference",
+        "zh": "毛重参考"
+      },
+      "value": {
+        "en": "4.000 kg",
+        "zh": "4.000 kg"
+      }
+    },
+    {
+      "key": {
+        "en": "Packing",
+        "zh": "包装"
+      },
+      "value": {
+        "en": "Color box + outer case",
+        "zh": "彩盒 + 外箱"
+      }
+    },
+    {
+      "key": {
+        "en": "Quote Note",
+        "zh": "报价备注"
+      },
+      "value": {
+        "en": "Transport cost to be confirmed separately",
+        "zh": "运输费用需另行确认"
+      }
+    }
+  ],
+  "leadTime": {
+    "tiers": [
+      {
+        "minQuantity": "1",
+        "maxQuantity": "5",
+        "processPeriodDays": 7
+      },
+      {
+        "minQuantity": "6",
+        "maxQuantity": "500",
+        "processPeriodDays": 30
+      },
+      {
+        "minQuantity": "501",
+        "maxQuantity": "1,000",
+        "processPeriodDays": 60
+      }
+    ]
+  },
+  "media": {
+    "main": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050704/1.webp"
+      }
+    ],
+    "detail": [
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050704/2.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050704/3.webp"
+      },
+      {
+        "type": "image",
+        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050704/4.webp"
+      }
+    ]
+  },
+  "images": [
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050704/1.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050704/2.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050704/3.webp",
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050704/4.webp"
+  ],
+  "productDetails": [
+    {
+      "sectionTitle": {
+        "en": "Magic Building Box",
+        "zh": "魔法建筑师彩盒"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050704/1.webp",
+      "text": {
+        "en": "The 228-piece color box presents a larger set made for family builds and group play.",
+        "zh": "228件彩盒呈现更大规格的拼搭套装，适合家庭和多人一起玩。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Multi-Length Rod System",
+        "zh": "多长度杆件系统"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050704/2.webp",
+      "text": {
+        "en": "Four rod lengths allow children to build large frames and smaller geometric structures from the same box.",
+        "zh": "四种杆长让儿童可从同一套装搭建大型框架和小型几何结构。"
+      }
+    },
+    {
+      "sectionTitle": {
+        "en": "Larger Fort Builds",
+        "zh": "大型堡垒搭建"
+      },
+      "type": "text",
+      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050704/3.webp",
+      "text": {
+        "en": "More pieces mean wider forts, taller towers, and more freedom when planning the build.",
+        "zh": "件数更多，可以搭更宽的堡垒、更高的塔，也能自由组合更多结构。"
+      }
+    }
+  ],
+  "module": "toys",
+  "priority": 0,
+  "tags": [
+    {
+      "key": "toys",
+      "en": "Toys",
+      "zh": "玩具"
+    },
+    {
+      "key": "londy",
+      "en": "LONDY",
+      "zh": "LONDY"
+    },
+    {
+      "key": "fort-building-kit",
+      "en": "Fort Building Kit",
+      "zh": "堡垒拼搭套装"
+    },
+    {
+      "key": "color-box-packaging",
+      "en": "Color Box Packaging",
+      "zh": "彩盒包装"
+    }
+  ],
+  "sourceUrl": "https://www.alibaba.com/product-detail/Londy-Intelligent-Educational-Building-Blocks-Toy_1601730351412.html"
+}

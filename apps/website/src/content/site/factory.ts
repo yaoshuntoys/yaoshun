@@ -3,12 +3,12 @@ import {seoKeywordPools, visualAssets} from '@/content/site/shared';
 export const factoryContent = {
   seo: {
     title: {
-      en: 'Factory Tour | Dongguan Yaoshun Technology Co., Ltd. | Toy Manufacturing',
-      zh: '工厂展示 | 东莞市尧顺科技有限公司 | 玩具制造能力'
+      en: 'Factory Tour | Yaoshun Toy Manufacturing',
+      zh: '工厂展示 | 尧顺玩具制造能力'
     },
     description: {
-      en: 'Explore Dongguan Yaoshun factory capabilities for fort building toys, STEM building kits and toy OEM/ODM projects, including mold development, injection molding, extrusion, assembly, color box packaging and export coordination.',
-      zh: '查看东莞市尧顺科技有限公司在堡垒拼搭玩具、STEM搭建套装与玩具 OEM/ODM 项目中的工厂能力，包括模具开发、注塑、挤出、组装、彩盒包装与出口协同。'
+      en: 'Explore Yaoshun factory capabilities for fort building toys, STEM kits and toy OEM/ODM, including tooling, injection molding, assembly, packaging and export.',
+      zh: '查看尧顺在堡垒拼搭玩具、STEM搭建套装与玩具 OEM/ODM 项目中的工厂能力，包括开模、注塑、组装、包装与出口协同。'
     },
     keywords: {
       en: [

@@ -5,7 +5,7 @@ export const termsContent = {
       zh: "用户协议 | 东莞市尧顺科技有限公司",
     },
     description: {
-      en: "Simple user agreement for this B2B toy manufacturing website, covering website use, inquiries, quotations, product information, advertising landing pages, and project documents.",
+      en: "User agreement for this B2B toy manufacturing website, covering site use, inquiries, quotations, product information, ad landing pages and project documents.",
       zh: "本 B2B 玩具制造网站的简明用户协议，涵盖网站使用、询盘、报价、产品信息、广告落地页和项目文件。",
     },
     keywords: {
@@ -29,8 +29,8 @@ export const termsContent = {
     eyebrow: {en: "Legal Document", zh: "法律文件"},
     title: {en: "User Agreement", zh: "用户协议"},
     description: {
-      en: "This agreement explains the basic rules for using our B2B website, submitting inquiries, reviewing product information, and contacting us through advertising landing pages.",
-      zh: "本协议说明使用本 B2B 网站、提交询盘、查看产品信息以及通过广告落地页联系我们时适用的基本规则。",
+      en: "Basic rules for using the Yaoshun B2B website, reviewing product information, and submitting project inquiries.",
+      zh: "说明使用尧顺 B2B 网站、查看产品信息与提交项目询盘时适用的基本规则。",
     },
   },
   policyMeta: {

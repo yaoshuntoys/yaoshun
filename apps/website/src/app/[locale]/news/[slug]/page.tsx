@@ -91,11 +91,22 @@ export async function generateMetadata({
   const article = findNewsArticle(slug);
 
   if (!article) {
-    return buildMetadata(locale, "News Detail", "yaoshun toys news detail", `news/${slug}`);
+    notFound();
   }
 
-  const articleTitle = localize(article.title, locale, "News Detail");
-  const articleDescription = localize(article.excerpt, locale, "yaoshun toys news detail");
+  const articleTitle = localize(
+    article.title,
+    locale,
+    t(locale, { en: "Yaoshun News", zh: "尧顺新闻" }),
+  );
+  const articleDescription = localize(
+    article.excerpt,
+    locale,
+    t(locale, {
+      en: "Toy manufacturing and project delivery updates from Yaoshun.",
+      zh: "尧顺玩具制造与项目交付动态。",
+    }),
+  );
   const baseMetadata = buildMetadata(
     locale,
     articleTitle,
@@ -159,7 +170,11 @@ export default async function NewsDetailPage({
   const recentNews = getRecentNews(slug, 3);
   const adjacent = getAdjacentNews(slug);
   const articleUrl = toAbsoluteUrl(`/${locale}/news/${slug}`);
-  const articleTitle = localize(article.title, locale, "News Detail");
+  const articleTitle = localize(
+    article.title,
+    locale,
+    t(locale, { en: "Yaoshun News", zh: "尧顺新闻" }),
+  );
   const articleDescription = localize(article.excerpt, locale);
   const categoryLabel = getNewsCategoryLabel(locale, article);
   const readingMinutes = getReadingMinutes(article);

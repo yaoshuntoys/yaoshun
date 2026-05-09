@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
 
+import { ImageLightbox } from "@/components/media/image-lightbox";
 import { ClientRuntime } from "@/components/tracking/client-runtime";
 import { homeContent, siteSeo } from "@/content/site";
 import {
@@ -149,6 +150,7 @@ export default function RootLayout({
     >
       <body>
         {children}
+        <ImageLightbox />
         <ClientRuntime />
       </body>
     </html>

@@ -1,4 +1,4 @@
-const customSideImage = "/site/products/custom-side-v2.webp";
+const customSideImage = "/site/products/custom-sourcing-showcase.webp";
 
 import type {LocalizedText, ShowcaseProductSeed} from "@/content/types";
 
@@ -7,7 +7,7 @@ export const productCollections: Array<{key: ShowcaseProductSeed["collection"]; 
   {key: "building", label: {en: "Building Sets", zh: "搭建套装"}},
   {key: "creative", label: {en: "Creative Sets", zh: "创意套装"}},
   {key: "themed", label: {en: "Themed Sets", zh: "主题套装"}},
-  {key: "accessories", label: {en: "Accessories", zh: "配件"}},
+  {key: "accessories", label: {en: "Custom", zh: "定制"}},
 ];
 
 export const pieceBands: Array<{key: ShowcaseProductSeed["pieceBand"]; label: LocalizedText}> = [

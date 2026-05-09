@@ -54,24 +54,18 @@ export function ProductGallery({
     <div className="product-gallery grid min-w-0 gap-4">
       <div className="relative overflow-hidden rounded-[1.35rem] border border-[rgba(24,56,138,0.08)] bg-[radial-gradient(circle_at_top,rgba(37,99,255,0.06),transparent_42%),linear-gradient(180deg,#f7faff_0%,#ffffff_100%)] shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.7rem]">
         <button
-          aria-label={normalized.length > 1 ? text.next : text.open}
-          className={`relative block aspect-[4/3] w-full overflow-hidden border-0 bg-transparent p-0 text-left ${
-            normalized.length > 1 ? "cursor-pointer" : "cursor-zoom-in"
-          }`}
+          aria-label={text.open}
+          className="relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden border-0 bg-transparent p-0 text-left"
+          data-image-preview-alt={`${title} ${activeIndex + 1}`}
+          data-image-preview-src={current}
+          data-image-preview-trigger
           type="button"
-          onClick={() => {
-            if (normalized.length > 1) {
-              showNext();
-              return;
-            }
-
-            window.open(current, "_blank", "noopener,noreferrer");
-          }}
         >
           <Image
             alt={`${title} ${activeIndex + 1}`}
             className="object-contain object-center"
             fill
+            preview
             priority
             sizes="(min-width: 1024px) 55vw, 100vw"
             src={current}
@@ -100,8 +94,10 @@ export function ProductGallery({
         <button
           aria-label={text.open}
           className="absolute bottom-4 right-4 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(37,99,255,0.12)] bg-white text-[#2563ff] shadow-[0_16px_34px_-24px_rgba(18,41,103,0.18)] transition duration-200 hover:-translate-y-0.5 hover:border-transparent hover:bg-[linear-gradient(135deg,#2563ff_0%,#1a43c9_100%)] hover:text-white hover:shadow-[0_18px_38px_-24px_rgba(37,99,255,0.62)]"
+          data-image-preview-alt={`${title} ${activeIndex + 1}`}
+          data-image-preview-src={current}
+          data-image-preview-trigger
           type="button"
-          onClick={() => window.open(current, "_blank", "noopener,noreferrer")}
         >
           <Search size={18} strokeWidth={2.1} />
         </button>
@@ -131,6 +127,7 @@ export function ProductGallery({
                       ? "border-[#2563ff] shadow-[0_0_0_2px_rgba(37,99,255,0.12)]"
                       : "border-[rgba(24,56,138,0.08)] hover:border-[rgba(37,99,255,0.18)]"
                   }`}
+                  data-image-preview-disabled
                   type="button"
                   onClick={() => setActive(actualIndex)}
                 >

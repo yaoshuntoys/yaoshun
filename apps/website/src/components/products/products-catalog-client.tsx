@@ -144,7 +144,7 @@ export function ProductsCatalogClient({
   };
 
   return (
-    <section className="products-catalog-layout">
+    <section className="products-catalog-layout" id="products-catalog">
       <aside className="products-sidebar">
         <div className="products-sidebar-sticky">
           <div className="products-sidebar-group">
@@ -234,6 +234,7 @@ export function ProductsCatalogClient({
                   alt={t(locale, item.label)}
                   className="products-grid-image"
                   fill
+                  preview
                   sizes="(min-width: 1024px) 24vw, 100vw"
                   src={item.images[0] || productsPageAssets.fallbackImage}
                 />

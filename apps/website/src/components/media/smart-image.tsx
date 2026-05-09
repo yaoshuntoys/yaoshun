@@ -3,25 +3,57 @@ import NextImage, {type ImageProps, type StaticImageData} from "next/image";
 
 export type {ImageProps, StaticImageData};
 
+type SmartImageProps = ImageProps & {
+  preview?: boolean;
+};
+
+type StaticRequire = {
+  default: StaticImageData;
+};
+
 function isRemoteHttpSource(src: ImageProps["src"]) {
   return typeof src === "string" && /^https?:\/\//.test(src);
 }
 
-function canUsePlainImage(props: ImageProps) {
+function getPreviewSource(src: ImageProps["src"]) {
+  if (typeof src === "string") {
+    return src;
+  }
+
+  if (typeof src === "object" && src !== null) {
+    if ("src" in src && typeof src.src === "string") {
+      return src.src;
+    }
+
+    if ("default" in src) {
+      const staticRequire = src as StaticRequire;
+      return staticRequire.default.src;
+    }
+  }
+
+  return undefined;
+}
+
+function canUsePlainImage(props: SmartImageProps) {
   const isRemote = isRemoteHttpSource(props.src);
   const hasFill = Boolean(props.fill);
   const hasExplicitSize = typeof props.width !== "undefined" && typeof props.height !== "undefined";
   return isRemote && !hasFill && !hasExplicitSize;
 }
 
-export default function SmartImage(props: ImageProps) {
-  const bypassOptimization = props.unoptimized ?? false;
+export default function SmartImage(props: SmartImageProps) {
+  const {preview = false, ...imageProps} = props;
+  const previewSource = preview ? getPreviewSource(imageProps.src) : undefined;
+  const previewProps = previewSource
+    ? {"data-image-preview-src": previewSource}
+    : {};
+  const bypassOptimization = imageProps.unoptimized ?? false;
   const nextImageProps =
-    typeof props.quality === "undefined"
-      ? {...props, quality: 75}
-      : props;
+    typeof imageProps.quality === "undefined"
+      ? {...imageProps, quality: 75}
+      : imageProps;
 
-  if (canUsePlainImage(props)) {
+  if (canUsePlainImage(imageProps)) {
     const {
       alt,
       className,
@@ -36,22 +68,23 @@ export default function SmartImage(props: ImageProps) {
       src,
       style,
       width,
-    } = props;
+    } = imageProps;
 
     const plainProps: ImgHTMLAttributes<HTMLImageElement> = {
       alt: alt ?? "",
       className,
       decoding,
       draggable,
-      fetchPriority: fetchPriority ?? (props.priority ? "high" : undefined),
+      fetchPriority: fetchPriority ?? (imageProps.priority ? "high" : undefined),
       height: typeof height === "number" || typeof height === "string" ? height : undefined,
-      loading: props.priority ? "eager" : loading,
+      loading: imageProps.priority ? "eager" : loading,
       onError: onError as ImgHTMLAttributes<HTMLImageElement>["onError"],
       onLoad: onLoad as ImgHTMLAttributes<HTMLImageElement>["onLoad"],
       sizes,
       src: src as string,
       style,
       width: typeof width === "number" || typeof width === "string" ? width : undefined,
+      ...previewProps,
     };
     const {alt: plainAlt, ...restPlainProps} = plainProps;
 
@@ -61,8 +94,8 @@ export default function SmartImage(props: ImageProps) {
 
   if (bypassOptimization) {
     const {quality: _quality, ...nextProps} = nextImageProps;
-    return <NextImage {...nextProps} unoptimized />;
+    return <NextImage {...nextProps} {...previewProps} unoptimized />;
   }
 
-  return <NextImage {...nextImageProps} />;
+  return <NextImage {...nextImageProps} {...previewProps} />;
 }

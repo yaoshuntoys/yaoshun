@@ -103,6 +103,7 @@ export function ProductsFeaturedCarousel({
                     alt={t(locale, item.label)}
                     className="products-featured-image"
                     fill
+                    preview
                     sizes="(min-width: 1024px) 28rem, 100vw"
                     src={item.image}
                   />
