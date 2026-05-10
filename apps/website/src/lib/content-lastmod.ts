@@ -3,6 +3,7 @@ import "server-only";
 import { statSync } from "node:fs";
 import path from "node:path";
 
+import { newsSourcePathBySlug } from "@/content/pages/news";
 import { productSourcePathById } from "@/content/site/products-catalog";
 
 const ROOT = process.cwd();
@@ -86,7 +87,10 @@ function getLatestDate(dates: Array<Date | undefined>): Date {
 }
 
 export function getStaticRouteLastModified(route: string): Date {
-  const sourcePaths = staticRouteSourcePaths[route] || [];
+  const sourcePaths = [
+    ...(staticRouteSourcePaths[route] || []),
+    ...(route === "/news" ? Array.from(newsSourcePathBySlug.values()) : []),
+  ];
   return getLatestDate(sourcePaths.map(getFileLastModified));
 }
 
@@ -99,10 +103,13 @@ export function getProductLastModified(productId: string): Date {
   ]);
 }
 
-export function getNewsLastModified(publishedAt: string): Date {
+export function getNewsLastModified(slug: string, publishedAt: string): Date {
   const publishedDate = new Date(`${publishedAt}T00:00:00.000Z`);
+  const sourcePath = newsSourcePathBySlug.get(slug);
+
   return getLatestDate([
     publishedDate,
+    sourcePath ? getFileLastModified(sourcePath) : undefined,
     getFileLastModified(NEWS_CONTENT_PATH),
     getFileLastModified("apps/website/src/app/[locale]/news/[slug]/page.tsx"),
   ]);

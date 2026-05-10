@@ -8,8 +8,7 @@ export type NewsCategoryKey =
   | "product"
   | "events"
   | "insights"
-  | "awards"
-  | "press";
+  | "awards";
 
 export type NewsArticleSeed = {
   slug: string;
@@ -18,12 +17,15 @@ export type NewsArticleSeed = {
   excerpt: LocalizedText;
   publishedAt: string;
   image: string;
+  galleryImages?: string[];
   featuredTopic?: boolean;
-  body: Array<{
-    heading: LocalizedText;
-    paragraphs: LocalizedText[];
-    image?: string;
-  }>;
+  seoKeywords?: Partial<Record<Locale, string[]>>;
+  body: LocalizedText;
+  relatedProduct?: {
+    productId: string;
+    label: LocalizedText;
+    description?: LocalizedText;
+  };
 };
 
 export type ShowcaseProductSeed = {

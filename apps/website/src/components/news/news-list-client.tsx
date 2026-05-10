@@ -6,7 +6,6 @@ import {
   ArrowRight,
   Award,
   Building2,
-  FileText,
   Grid2x2,
   Package2,
   Sparkles,
@@ -43,12 +42,11 @@ type NewsListClientProps = {
 
 const categoryItems = [
   {key: "all", label: {en: "All News", zh: "全部新闻"}},
-  {key: "company", label: {en: "Company News", zh: "企业新闻"}},
-  {key: "product", label: {en: "Product Updates", zh: "产品更新"}},
+  {key: "company", label: {en: "Factory & Delivery", zh: "工厂与交付"}},
+  {key: "product", label: {en: "Products & Customization", zh: "产品与定制"}},
   {key: "events", label: {en: "Events & Exhibitions", zh: "活动与展会"}},
   {key: "insights", label: {en: "Industry Insights", zh: "行业洞察"}},
-  {key: "awards", label: {en: "Awards & Recognition", zh: "奖项与荣誉"}},
-  {key: "press", label: {en: "Press Releases", zh: "新闻稿"}},
+  {key: "awards", label: {en: "Qualifications & Honors", zh: "资质与荣誉"}},
 ] as const;
 
 const categoryIcons = {
@@ -58,7 +56,6 @@ const categoryIcons = {
   events: TentTree,
   insights: Sparkles,
   awards: Award,
-  press: FileText,
 } as const;
 
 const categoryTones = {
@@ -68,17 +65,15 @@ const categoryTones = {
   events: 2,
   insights: 3,
   awards: 0,
-  press: 1,
 } as const;
 
 const categoryLabels: Record<NewsCategoryKey, {en: string; zh: string}> = {
   all: {en: "All News", zh: "全部新闻"},
-  company: {en: "Company News", zh: "企业新闻"},
-  product: {en: "Product Updates", zh: "产品更新"},
+  company: {en: "Factory & Delivery", zh: "工厂与交付"},
+  product: {en: "Products & Customization", zh: "产品与定制"},
   events: {en: "Events & Exhibitions", zh: "活动与展会"},
   insights: {en: "Industry Insights", zh: "行业洞察"},
-  awards: {en: "Awards & Recognition", zh: "奖项与荣誉"},
-  press: {en: "Press Releases", zh: "新闻稿"},
+  awards: {en: "Qualifications & Honors", zh: "资质与荣誉"},
 };
 
 function localize(
@@ -169,6 +164,15 @@ export function NewsListClient({articles, locale, text}: NewsListClientProps) {
       ),
     [articles, query.category],
   );
+  const availableCategoryItems = useMemo(
+    () =>
+      categoryItems.filter(
+        (category) =>
+          category.key === "all" ||
+          articles.some((article) => article.category === category.key),
+      ),
+    [articles],
+  );
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
   const currentPage = Math.min(
     Math.max(Number(query.page || "1"), 1),
@@ -208,7 +212,7 @@ export function NewsListClient({articles, locale, text}: NewsListClientProps) {
           <article className="news-sidebar-card">
             <h2>{text.categories}</h2>
             <div className="news-category-list">
-              {categoryItems.map((category) => {
+              {availableCategoryItems.map((category) => {
                 const Icon =
                   categoryIcons[category.key as keyof typeof categoryIcons];
                 const href = `/${locale}/news${buildQueryString({}, {

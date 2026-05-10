@@ -709,12 +709,11 @@ export function formatPublishedDate(locale: Locale, publishedAt: string) {
 export function getNewsCategoryLabel(locale: Locale, article: NewsArticleSeed) {
   const labels: Record<NewsArticleSeed["category"], {en: string; zh: string}> = {
     all: {en: "All News", zh: "全部新闻"},
-    company: {en: "Company News", zh: "企业新闻"},
-    product: {en: "Product Updates", zh: "产品更新"},
+    company: {en: "Factory & Delivery", zh: "工厂与交付"},
+    product: {en: "Products & Customization", zh: "产品与定制"},
     events: {en: "Events & Exhibitions", zh: "活动与展会"},
     insights: {en: "Industry Insights", zh: "行业洞察"},
-    awards: {en: "Awards & Recognition", zh: "奖项与荣誉"},
-    press: {en: "Press Releases", zh: "新闻稿"},
+    awards: {en: "Qualifications & Honors", zh: "资质与荣誉"},
   };
 
   return t(locale, labels[article.category]);

@@ -5,8 +5,6 @@ import {
   ArrowRight,
   CalendarDays,
   Clock3,
-  FileText,
-  Share2,
 } from "lucide-react";
 import Image from "@/components/media/smart-image";
 import Link from "next/link";
@@ -30,15 +28,10 @@ function copy(locale: Locale) {
   return {
     recentNews: t(locale, { en: "Recent News", zh: "最新新闻" }),
     backToNews: t(locale, { en: "Back to News", zh: "返回新闻列表" }),
-    closing: t(locale, {
-      en: "We will continue improving document readiness, quality communication, and project support for customers worldwide.",
-      zh: "我们将继续完善资料准备、品质沟通与项目支持能力，为全球客户提供更稳定的协作体验。",
-    }),
     previousArticle: t(locale, { en: "Previous Article", zh: "上一篇" }),
     nextArticle: t(locale, { en: "Next Article", zh: "下一篇" }),
     previousFallback: t(locale, { en: "Back to News", zh: "返回新闻" }),
     nextFallback: t(locale, { en: "Browse More News", zh: "浏览更多新闻" }),
-    articleOverview: t(locale, { en: "Article Overview", zh: "文章导读" }),
     publishedOn: t(locale, { en: "Published", zh: "发布时间" }),
     readingTime: (minutes: number) =>
       t(locale, {
@@ -57,17 +50,19 @@ function localize(
   return value[locale] || value.en || value.zh || fallback;
 }
 
+function localizeList(
+  value: { en?: string[]; zh?: string[] } | undefined,
+  locale: Locale,
+) {
+  if (!value) return [];
+  return value[locale] || value.en || value.zh || [];
+}
+
 function getReadingMinutes(article: NonNullable<ReturnType<typeof findNewsArticle>>) {
-  const rawText = [
-    article.excerpt.en,
-    article.excerpt.zh,
-    ...article.body.flatMap((section) => [
-      section.heading.en,
-      section.heading.zh,
-      ...section.paragraphs.map((paragraph) => `${paragraph.en || ""} ${paragraph.zh || ""}`),
-    ]),
-  ]
+  const rawText = [article.body.en, article.body.zh]
     .join(" ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&[a-zA-Z0-9#]+;/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 
@@ -117,6 +112,7 @@ export async function generateMetadata({
       getNewsCategoryLabel(locale, article),
       "toy manufacturing news",
       "quality and compliance updates",
+      ...localizeList(article.seoKeywords, locale),
     ],
     article.image
       ? {
@@ -178,11 +174,6 @@ export default async function NewsDetailPage({
   const articleDescription = localize(article.excerpt, locale);
   const categoryLabel = getNewsCategoryLabel(locale, article);
   const readingMinutes = getReadingMinutes(article);
-  const overviewItems = article.body
-    .slice(0, 3)
-    .map((section) => localize(section.heading, locale))
-    .filter(Boolean);
-
   const breadcrumbData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -261,7 +252,10 @@ export default async function NewsDetailPage({
             <span>{text.backToNews}</span>
           </Link>
 
-          <span className="news-article-pill">{categoryLabel}</span>
+          <div className="news-article-kicker">
+            <span>{categoryLabel}</span>
+            <span>{formatPublishedDate(locale, article.publishedAt)}</span>
+          </div>
           <h1 className="news-article-title">{articleTitle}</h1>
           <p className="news-article-lead">{articleDescription}</p>
 
@@ -273,78 +267,13 @@ export default async function NewsDetailPage({
             <span>
               <Clock3 size={15} strokeWidth={2.05} /> {text.readingTime(readingMinutes)}
             </span>
-            <span>
-              <FileText size={15} strokeWidth={2.05} /> {categoryLabel}
-            </span>
           </div>
         </header>
 
-        {article.image ? (
-          <div className="news-article-image-frame news-article-hero-placeholder">
-            <Image
-              alt={articleTitle}
-              className="news-article-detail-image"
-              fill
-              priority
-              sizes="(max-width: 767px) 100vw, 1100px"
-              src={article.image}
-            />
-          </div>
-        ) : null}
-
-        <div className="news-article-outline">
-          <p className="news-article-outline-title">{text.articleOverview}</p>
-          <div className="news-article-outline-list">
-            {overviewItems.map((item) => (
-              <span className="news-article-outline-item" key={item}>
-                <Share2 size={14} strokeWidth={2.05} />
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="news-article-body">
-          {article.body.map((section, index) => {
-            const previousSectionImage =
-              index > 0 ? article.body[index - 1]?.image : undefined;
-            const sectionImage =
-              section.image &&
-              section.image !== article.image &&
-              section.image !== previousSectionImage
-                ? section.image
-                : undefined;
-
-            return (
-              <section className="news-article-section" key={`${section.heading.en}-${index}`}>
-                <div className="news-article-section-copy">
-                  <h2>{localize(section.heading, locale)}</h2>
-                  {section.paragraphs.map((paragraph, paragraphIndex) => (
-                    <p key={`${section.heading.en}-${paragraphIndex}`}>
-                      {localize(paragraph, locale)}
-                    </p>
-                  ))}
-                </div>
-
-                {sectionImage ? (
-                  <figure className="news-article-inline-media">
-                    <div className="news-article-image-frame news-article-inline-placeholder">
-                      <Image
-                        alt={localize(section.heading, locale, articleTitle)}
-                        className="news-article-detail-image"
-                        fill
-                        sizes="(max-width: 767px) 100vw, 520px"
-                        src={sectionImage}
-                      />
-                    </div>
-                  </figure>
-                ) : null}
-              </section>
-            );
-          })}
-
-          <p className="news-article-closing">{text.closing}</p>
-        </div>
+        <div
+          className="news-article-body"
+          dangerouslySetInnerHTML={{ __html: localize(article.body, locale) }}
+        />
       </article>
 
       <section className="news-article-more">
@@ -383,9 +312,10 @@ export default async function NewsDetailPage({
                 <Image
                   alt={localize(item.title, locale)}
                   className="news-article-recent-thumb"
-                  fill
+                  height={900}
                   sizes="(max-width: 767px) 100vw, 360px"
                   src={item.image}
+                  width={1200}
                 />
               </div>
               <div className="news-article-recent-card-copy">

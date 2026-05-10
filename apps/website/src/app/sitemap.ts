@@ -92,7 +92,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const path = `/news/${article.slug}`;
       entries.push({
         url: withBase(`/${locale}${path}`),
-        lastModified: getNewsLastModified(article.publishedAt),
+        lastModified: getNewsLastModified(article.slug, article.publishedAt),
         alternates: buildAlternates(path),
         changeFrequency: "monthly",
         images: article.image ? [toAbsoluteUrl(article.image)] : undefined,
