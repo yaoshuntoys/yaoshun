@@ -17,6 +17,7 @@ import {
   siteUrl,
   toAbsoluteUrl,
 } from "@/lib/site-config";
+import { localizedUrlPath } from "@/lib/routes";
 
 import "../styles/globals.css";
 import "../styles/marketing.css";
@@ -36,7 +37,7 @@ const defaultKeywords = Array.from(
 const defaultAlternates = Object.fromEntries(
   locales.map((locale) => [
     localeRegistry[locale].htmlLang,
-    `${siteUrl}/${locale}`,
+    `${siteUrl}${localizedUrlPath(locale)}`,
   ]),
 );
 
@@ -46,10 +47,10 @@ export const metadata: Metadata = {
   description: defaultDescription,
   keywords: defaultKeywords,
   alternates: {
-    canonical: `${siteUrl}/${defaultLocale}`,
+    canonical: `${siteUrl}${localizedUrlPath(defaultLocale)}`,
     languages: {
       ...defaultAlternates,
-      "x-default": `${siteUrl}/${defaultLocale}`,
+      "x-default": `${siteUrl}${localizedUrlPath(defaultLocale)}`,
     },
   },
   applicationName: siteName,

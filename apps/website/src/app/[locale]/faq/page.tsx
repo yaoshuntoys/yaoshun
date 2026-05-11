@@ -8,6 +8,7 @@ import {buildPageMetadata} from "@/lib/metadata";
 import {getLocaleFromParams, t} from "@/lib/i18n";
 import {toAbsoluteUrl} from "@/lib/site-config";
 import {faqItems} from "@/content/pages/faq";
+import {localizedPath} from "@/lib/routes";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
@@ -27,7 +28,9 @@ function copy(locale: "en" | "zh") {
 export default async function FaqPage({params}: {params: Promise<{locale: string}>}) {
   const locale = await getLocaleFromParams(params);
   const text = copy(locale);
-  const pageUrl = toAbsoluteUrl(`/${locale}/faq`);
+  const homeHref = localizedPath(locale, "home");
+  const faqHref = localizedPath(locale, "faq");
+  const pageUrl = toAbsoluteUrl(faqHref);
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -37,7 +40,7 @@ export default async function FaqPage({params}: {params: Promise<{locale: string
           "@type": "ListItem",
           position: 1,
           name: locale === "zh" ? "首页" : "Home",
-          item: toAbsoluteUrl(`/${locale}`),
+          item: toAbsoluteUrl(homeHref),
         },
         {
           "@type": "ListItem",
@@ -69,7 +72,7 @@ export default async function FaqPage({params}: {params: Promise<{locale: string
       <div className="faq-breadcrumb-wrap">
         <Breadcrumbs
           items={[
-            {href: `/${locale}`, label: {en: "Home", zh: "首页"}},
+            {href: homeHref, label: {en: "Home", zh: "首页"}},
             {label: {en: "FAQ", zh: "常见问题"}},
           ]}
           locale={locale}

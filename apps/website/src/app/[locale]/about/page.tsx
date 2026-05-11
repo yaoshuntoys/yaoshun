@@ -30,7 +30,7 @@ import {siteCopy} from "@/components/layout/site-shell.data";
 import {aboutContent} from "@/content/site";
 import {buildPageMetadata} from "@/lib/metadata";
 import {getLocaleFromParams, t} from "@/lib/i18n";
-import {contactFormPath} from "@/lib/routes";
+import {contactFormPath, localizedPath} from "@/lib/routes";
 import {toAbsoluteUrl} from "@/lib/site-config";
 import {aboutCertificateCopy, certificateItems, factoryItems} from "@/content/pages/about";
 
@@ -525,7 +525,8 @@ function copy(locale: "en" | "zh") {
 export default async function AboutPage({params}: {params: Promise<{locale: string}>}) {
   const locale = await getLocaleFromParams(params);
   const text = copy(locale);
-  const pageUrl = toAbsoluteUrl(`/${locale}/about`);
+  const homeHref = localizedPath(locale, "home");
+  const pageUrl = toAbsoluteUrl(localizedPath(locale, "about"));
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -535,7 +536,7 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
           "@type": "ListItem",
           position: 1,
           name: locale === "zh" ? "首页" : "Home",
-          item: toAbsoluteUrl(`/${locale}`),
+          item: toAbsoluteUrl(homeHref),
         },
         {
           "@type": "ListItem",

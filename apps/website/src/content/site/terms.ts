@@ -134,5 +134,18 @@ export const termsContent = {
         },
       ],
     },
+    {
+      title: {en: "7. Shipping, Returns And After-Sales", zh: "7. 运输、退换与售后"},
+      paragraphs: [
+        {
+          en: "Yaoshun handles OEM/ODM and B2B export orders. Shipping methods, loading port, freight cost, trade terms, delivery timing, inspection, and documents are confirmed in the written quotation, pro forma invoice, purchase order, or contract for each project.",
+          zh: "尧顺承接 OEM/ODM 与 B2B 出口订单。运输方式、装货港、运费、贸易条款、交付时间、验货和单证，以每个项目的书面报价、形式发票、采购订单或合同确认为准。",
+        },
+        {
+          en: "Returns, replacements, refunds, or other after-sales remedies are not automatic retail returns. They must be agreed in the project documents or confirmed by Yaoshun in writing, especially for customized goods, samples, packaging, or bulk production.",
+          zh: "退货、换货、退款或其他售后处理不属于自动零售退货，需在项目文件中约定或经尧顺书面确认，尤其适用于定制产品、样品、包装或批量生产订单。",
+        },
+      ],
+    },
   ],
 } as const;

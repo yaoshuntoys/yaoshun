@@ -17,6 +17,7 @@ import {buildPageMetadata} from "@/lib/metadata";
 import {getNewsList} from "@/lib/site-data";
 import {getLocaleFromParams, t, type Locale} from "@/lib/i18n";
 import {toAbsoluteUrl} from "@/lib/site-config";
+import {localizedPath, localizedUrlPath} from "@/lib/routes";
 
 export const dynamic = "force-static";
 
@@ -79,7 +80,10 @@ export default async function NewsPage({
   const locale = await getLocaleFromParams(params);
   const text = copy(locale);
   const allArticles = getNewsList();
-  const pageUrl = toAbsoluteUrl(`/${locale}/news`);
+  const homeHref = localizedPath(locale, "home");
+  const newsHref = localizedPath(locale, "news");
+  const solutionsHref = localizedPath(locale, "solutions");
+  const pageUrl = toAbsoluteUrl(newsHref);
   const listArticles = allArticles.map((article) => ({
     slug: article.slug,
     category: article.category,
@@ -97,7 +101,7 @@ export default async function NewsPage({
           "@type": "ListItem",
           position: 1,
           name: locale === "zh" ? "首页" : "Home",
-          item: toAbsoluteUrl(`/${locale}`),
+          item: toAbsoluteUrl(homeHref),
         },
         {
           "@type": "ListItem",
@@ -122,7 +126,7 @@ export default async function NewsPage({
         itemListElement: allArticles.map((article, index) => ({
           "@type": "ListItem",
           position: index + 1,
-          url: toAbsoluteUrl(`/${locale}/news/${article.slug}`),
+          url: toAbsoluteUrl(localizedUrlPath(locale, `/news/${article.slug}`)),
           name: localize(article.title, locale, "News Article"),
         })),
       },
@@ -151,11 +155,11 @@ export default async function NewsPage({
         </h1>
         <p className="news-hero-text">{text.description}</p>
         <div className="page-hero-actions">
-          <Link className="hero-primary-cta" href={`/${locale}/news#news-list`}>
+          <Link className="hero-primary-cta" href={`${newsHref}#news-list`}>
             <span>{text.browseNews}</span>
             <ArrowRight size={16} strokeWidth={2.25} />
           </Link>
-          <Link className="hero-secondary-cta" href={`/${locale}/solutions`}>
+          <Link className="hero-secondary-cta" href={solutionsHref}>
             <span>{text.viewSolutions}</span>
             <span className="hero-secondary-dot" />
           </Link>

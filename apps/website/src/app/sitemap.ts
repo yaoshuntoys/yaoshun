@@ -8,7 +8,7 @@ import {
 } from "@/lib/content-lastmod";
 import { defaultLocale, localeRegistry, locales } from "@/lib/i18n";
 import { getNewsList } from "@/lib/site-data";
-import { routePathMap, type RouteKey } from "@/lib/routes";
+import { localizedUrlPath, routePathMap, type RouteKey } from "@/lib/routes";
 import { siteUrl, toAbsoluteUrl } from "@/lib/site-config";
 
 const sitemapRouteKeys = [
@@ -24,6 +24,8 @@ const sitemapRouteKeys = [
 ] as const satisfies readonly RouteKey[];
 
 function withBase(path: string): string {
+  if (path === "/") return siteUrl;
+
   return `${siteUrl}${path}`;
 }
 
@@ -33,10 +35,10 @@ function buildAlternates(path: string) {
       ...Object.fromEntries(
         locales.map((locale) => [
           localeRegistry[locale].htmlLang,
-          withBase(`/${locale}${path}`),
+          withBase(localizedUrlPath(locale, path)),
         ]),
       ),
-      "x-default": withBase(`/${defaultLocale}${path}`),
+      "x-default": withBase(localizedUrlPath(defaultLocale, path)),
     },
   };
 }
@@ -67,7 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const locale of locales) {
     for (const route of routeEntries) {
       entries.push({
-        url: withBase(`/${locale}${route}`),
+        url: withBase(localizedUrlPath(locale, route)),
         lastModified: getStaticRouteLastModified(route),
         alternates: buildAlternates(route),
         changeFrequency: getRouteChangeFrequency(route),
@@ -79,7 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       if (!product.productId) continue;
       const path = `/products/${product.productId}`;
       entries.push({
-        url: withBase(`/${locale}${path}`),
+        url: withBase(localizedUrlPath(locale, path)),
         lastModified: getProductLastModified(product.productId),
         alternates: buildAlternates(path),
         changeFrequency: "monthly",
@@ -91,7 +93,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const article of getNewsList()) {
       const path = `/news/${article.slug}`;
       entries.push({
-        url: withBase(`/${locale}${path}`),
+        url: withBase(localizedUrlPath(locale, path)),
         lastModified: getNewsLastModified(article.slug, article.publishedAt),
         alternates: buildAlternates(path),
         changeFrequency: "monthly",

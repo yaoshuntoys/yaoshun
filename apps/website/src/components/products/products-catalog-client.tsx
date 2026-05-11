@@ -8,6 +8,7 @@ import Link from "next/link";
 
 import {productCollections, productsPageAssets} from "@/content/pages/products";
 import {t, type Locale} from "@/lib/i18n";
+import {localizedPath, productPath} from "@/lib/routes";
 
 type SearchParamMap = {
   category?: string;
@@ -107,6 +108,7 @@ export function ProductsCatalogClient({
     [query.category, sortedCatalog],
   );
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const productsHref = localizedPath(locale, "products");
   const currentPage = Math.min(
     Math.max(Number(query.page || "1"), 1),
     totalPages,
@@ -133,7 +135,7 @@ export function ProductsCatalogClient({
     event.preventDefault();
 
     const nextQuery = {...query, ...next};
-    const href = `/${locale}/products${buildQueryString(query, next)}`;
+    const href = `${productsHref}${buildQueryString(query, next)}`;
     window.history.pushState(null, "", href);
     setQuery(nextQuery);
   }
@@ -157,11 +159,11 @@ export function ProductsCatalogClient({
                     : "products-category-link"
                 }
                 data-track-category="all"
-                data-track-destination={`/${locale}/products`}
+                data-track-destination={productsHref}
                 data-track-event="filter_select"
                 data-track-label="all_products"
                 data-track-location="products_category_filter"
-                href={`/${locale}/products`}
+                href={productsHref}
                 onClick={(event) =>
                   navigate(event, {category: undefined, page: undefined})
                 }
@@ -169,7 +171,7 @@ export function ProductsCatalogClient({
                 {text.allProducts}
               </a>
               {productCollections.map((collection) => {
-                const href = `/${locale}/products${buildQueryString(currentQuery, {
+                const href = `${productsHref}${buildQueryString(currentQuery, {
                   category: collection.key,
                   page: undefined,
                 })}`;
@@ -225,7 +227,7 @@ export function ProductsCatalogClient({
               data-track-event="product_card_click"
               data-track-label={item.productId}
               data-track-location="products_grid"
-              href={`/${locale}/products/${item.productId}`}
+              href={productPath(locale, item.productId)}
               key={item.productId}
               prefetch={false}
             >
@@ -263,11 +265,11 @@ export function ProductsCatalogClient({
           {currentPage > 1 ? (
             <a
               aria-label="Previous page"
-              data-track-destination={`/${locale}/products${buildQueryString(currentQuery, {page: String(currentPage - 1) === "1" ? undefined : String(currentPage - 1)})}`}
+              data-track-destination={`${productsHref}${buildQueryString(currentQuery, {page: String(currentPage - 1) === "1" ? undefined : String(currentPage - 1)})}`}
               data-track-event="pagination_click"
               data-track-label="previous"
               data-track-location="products_pagination"
-              href={`/${locale}/products${buildQueryString(currentQuery, {page: String(currentPage - 1) === "1" ? undefined : String(currentPage - 1)})}`}
+              href={`${productsHref}${buildQueryString(currentQuery, {page: String(currentPage - 1) === "1" ? undefined : String(currentPage - 1)})}`}
               onClick={(event) =>
                 navigate(event, {
                   page:
@@ -285,7 +287,7 @@ export function ProductsCatalogClient({
 
           {Array.from({length: totalPages}, (_, index) => {
             const page = String(index + 1);
-            const href = `/${locale}/products${buildQueryString(currentQuery, {
+            const href = `${productsHref}${buildQueryString(currentQuery, {
               page: page === "1" ? undefined : page,
             })}`;
             const active = String(currentPage) === page;
@@ -314,11 +316,11 @@ export function ProductsCatalogClient({
           {currentPage < totalPages ? (
             <a
               aria-label="Next page"
-              data-track-destination={`/${locale}/products${buildQueryString(currentQuery, {page: String(currentPage + 1)})}`}
+              data-track-destination={`${productsHref}${buildQueryString(currentQuery, {page: String(currentPage + 1)})}`}
               data-track-event="pagination_click"
               data-track-label="next"
               data-track-location="products_pagination"
-              href={`/${locale}/products${buildQueryString(currentQuery, {page: String(currentPage + 1)})}`}
+              href={`${productsHref}${buildQueryString(currentQuery, {page: String(currentPage + 1)})}`}
               onClick={(event) =>
                 navigate(event, {page: String(currentPage + 1)})
               }

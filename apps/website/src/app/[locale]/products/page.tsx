@@ -26,6 +26,7 @@ import {
 } from "@/lib/site-data";
 import { productsPageAssets } from "@/content/pages/products";
 import { toAbsoluteUrl } from "@/lib/site-config";
+import { localizedPath, productPath } from "@/lib/routes";
 
 export const dynamic = "force-static";
 
@@ -100,7 +101,7 @@ export default async function ProductsPage({
   const featuredRail = getProductsFeaturedRailCatalog();
   const featuredRailItems = featuredRail.map((item) => ({
     id: item.product.productId,
-    href: `/${locale}/products/${item.product.productId}`,
+    href: productPath(locale, item.product.productId),
     image: item.images[0] || productsPageAssets.fallbackImage,
     label: item.label,
     summary: item.summary,
@@ -119,7 +120,10 @@ export default async function ProductsPage({
   const defaultGridProducts = [...catalog]
     .sort((a, b) => Number(b.bestseller) - Number(a.bestseller))
     .slice(0, 6);
-  const pageUrl = toAbsoluteUrl(`/${locale}/products`);
+  const homeHref = localizedPath(locale, "home");
+  const productsHref = localizedPath(locale, "products");
+  const solutionsHref = localizedPath(locale, "solutions");
+  const pageUrl = toAbsoluteUrl(productsHref);
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -129,7 +133,7 @@ export default async function ProductsPage({
           "@type": "ListItem",
           position: 1,
           name: locale === "zh" ? "首页" : "Home",
-          item: toAbsoluteUrl(`/${locale}`),
+          item: toAbsoluteUrl(homeHref),
         },
         {
           "@type": "ListItem",
@@ -151,7 +155,7 @@ export default async function ProductsPage({
         itemListElement: defaultGridProducts.map((item, index) => ({
           "@type": "ListItem",
           position: index + 1,
-          url: toAbsoluteUrl(`/${locale}/products/${item.product.productId}`),
+          url: toAbsoluteUrl(productPath(locale, item.product.productId)),
           name: t(locale, item.label),
         })),
       },
@@ -181,11 +185,11 @@ export default async function ProductsPage({
         <p className="products-hero-text">{text.heroText}</p>
 
         <div className="page-hero-actions">
-          <Link className="hero-primary-cta" href={`/${locale}/products#products-catalog`}>
+          <Link className="hero-primary-cta" href={`${productsHref}#products-catalog`}>
             <span>{text.browseCatalog}</span>
             <ArrowRight size={16} strokeWidth={2.25} />
           </Link>
-          <Link className="hero-secondary-cta" href={`/${locale}/solutions`}>
+          <Link className="hero-secondary-cta" href={solutionsHref}>
             <span>{text.customService}</span>
             <span className="hero-secondary-dot" />
           </Link>
@@ -245,11 +249,11 @@ export default async function ProductsPage({
           <p>{text.customText}</p>
           <Link
             className="products-oem-link products-oem-cta"
-            data-track-destination={`/${locale}/solutions`}
+            data-track-destination={solutionsHref}
             data-track-event="cta_click"
             data-track-label="learn_more"
             data-track-location="products_oem_banner"
-            href={`/${locale}/solutions`}
+            href={solutionsHref}
           >
             <span>{text.customAction}</span>
             <ArrowRight size={16} strokeWidth={2.1} />

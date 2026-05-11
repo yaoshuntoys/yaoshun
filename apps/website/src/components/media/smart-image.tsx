@@ -11,6 +11,8 @@ type StaticRequire = {
   default: StaticImageData;
 };
 
+const DEFAULT_IMAGE_QUALITY = 100;
+
 function isRemoteHttpSource(src: ImageProps["src"]) {
   return typeof src === "string" && /^https?:\/\//.test(src);
 }
@@ -50,7 +52,7 @@ export default function SmartImage(props: SmartImageProps) {
   const bypassOptimization = imageProps.unoptimized ?? false;
   const nextImageProps =
     typeof imageProps.quality === "undefined"
-      ? {...imageProps, quality: 75}
+      ? {...imageProps, quality: DEFAULT_IMAGE_QUALITY}
       : imageProps;
 
   if (canUsePlainImage(imageProps)) {

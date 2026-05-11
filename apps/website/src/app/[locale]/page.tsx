@@ -29,7 +29,7 @@ import { homeContent } from "@/content/site";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getLocaleFromParams, t, type Locale } from "@/lib/i18n";
 import { getHomeFeaturedShowcaseCatalog } from "@/lib/site-data";
-import { productPath } from "@/lib/routes";
+import { localizedPath, productPath } from "@/lib/routes";
 import { homePageImages } from "@/content/pages/home";
 import { siteUrl, toAbsoluteUrl } from "@/lib/site-config";
 
@@ -157,7 +157,9 @@ export default async function HomePage({
 }) {
   const locale = await getLocaleFromParams(params);
   const text = copy(locale);
-  const pageUrl = toAbsoluteUrl(`/${locale}`);
+  const pageUrl = toAbsoluteUrl(localizedPath(locale, "home"));
+  const productsHref = localizedPath(locale, "products");
+  const aboutHref = localizedPath(locale, "about");
   const featuredProducts = getHomeFeaturedShowcaseCatalog().map((item) => ({
     title: t(locale, item.label),
     meta: t(locale, item.summary),
@@ -210,7 +212,7 @@ export default async function HomePage({
           copyClassName="home-hero-copy"
           gridClassName="home-hero-grid"
           innerClassName="home-hero-inner"
-          quality={75}
+          quality={100}
           sectionClassName="home-hero-section"
         >
           <p className="home-eyebrow">{text.eyebrow}</p>
@@ -227,22 +229,22 @@ export default async function HomePage({
           <div className="home-hero-actions">
             <Link
               className="home-primary-cta"
-              data-track-destination={`/${locale}/products`}
+              data-track-destination={productsHref}
               data-track-event="cta_click"
               data-track-label="explore_products"
               data-track-location="home_hero"
-              href={`/${locale}/products`}
+              href={productsHref}
             >
               <span>{text.explore}</span>
               <ArrowRight size={16} strokeWidth={2.25} />
             </Link>
             <Link
               className="home-secondary-cta"
-              data-track-destination={`/${locale}/about`}
+              data-track-destination={aboutHref}
               data-track-event="cta_click"
               data-track-label="learn_more"
               data-track-location="home_hero"
-              href={`/${locale}/about`}
+              href={aboutHref}
             >
               <span>{text.learnMore}</span>
               <span className="home-secondary-dot" />
@@ -331,7 +333,7 @@ export default async function HomePage({
               icon: ShieldCheck,
             },
             {
-              value: "RoHS / REACH",
+              value: "CE / CPC",
               label: t(locale, { en: "Compliance", zh: "合规支持" }),
               icon: Globe2,
             },
@@ -339,11 +341,7 @@ export default async function HomePage({
             const Icon = item.icon;
             return (
               <div key={item.value} className="home-stat-item">
-                <Icon
-                  className="home-stat-icon"
-                  size={30}
-                  strokeWidth={1.9}
-                />
+                <Icon className="home-stat-icon" size={30} strokeWidth={1.9} />
                 <div>
                   <div className="home-stat-value">{item.value}</div>
                   <div className="home-stat-label">{item.label}</div>
@@ -366,11 +364,11 @@ export default async function HomePage({
           </div>
           <Link
             className="home-inline-link view-accent-link"
-            data-track-destination={`/${locale}/products`}
+            data-track-destination={productsHref}
             data-track-event="cta_click"
             data-track-label="view_all_products"
             data-track-location="home_bestsellers"
-            href={`/${locale}/products`}
+            href={productsHref}
           >
             <span>{text.viewAllProducts}</span>
             <ArrowRight size={15} strokeWidth={2.2} />
@@ -395,7 +393,7 @@ export default async function HomePage({
                     className="home-section-image home-product-image"
                     fill
                     preview
-                    quality={75}
+                    quality={100}
                     sizes="(min-width: 1280px) 18rem, (min-width: 768px) 24vw, 100vw"
                     src={item.image}
                   />
@@ -501,7 +499,7 @@ export default async function HomePage({
             className="home-section-image home-why-image"
             height={1088}
             preview
-            quality={75}
+            quality={100}
             sizes="(min-width: 1024px) 28vw, 72vw"
             src={homePageImages.why}
             width={1088}
@@ -546,11 +544,11 @@ export default async function HomePage({
 
           <Link
             className="home-primary-cta home-about-cta"
-            data-track-destination={`/${locale}/about`}
+            data-track-destination={aboutHref}
             data-track-event="cta_click"
             data-track-label="about_learn_more"
             data-track-location="home_about"
-            href={`/${locale}/about`}
+            href={aboutHref}
           >
             <span>{text.aboutCta}</span>
             <ArrowRight size={16} strokeWidth={2.25} />
@@ -564,7 +562,7 @@ export default async function HomePage({
               className="home-section-image home-about-image"
               fill
               preview
-              quality={75}
+              quality={100}
               sizes="(min-width: 1024px) 42vw, 100vw"
               src={homePageImages.about}
             />

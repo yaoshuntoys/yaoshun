@@ -24,6 +24,7 @@ import { getLocaleFromParams, t } from "@/lib/i18n";
 import { toAbsoluteUrl } from "@/lib/site-config";
 import { contactCopy } from "@/content/pages/contact";
 import { faqItems } from "@/content/pages/faq";
+import { localizedPath } from "@/lib/routes";
 
 const contactCards = [
   {
@@ -165,7 +166,11 @@ export default async function ContactPage({
   const locale = await getLocaleFromParams(params);
   const text = copy(locale);
   const featuredFaqItems = faqItems.slice(0, 5);
-  const pageUrl = toAbsoluteUrl(`/${locale}/contact`);
+  const homeHref = localizedPath(locale, "home");
+  const contactHref = localizedPath(locale, "contact");
+  const solutionsHref = localizedPath(locale, "solutions");
+  const faqHref = localizedPath(locale, "faq");
+  const pageUrl = toAbsoluteUrl(contactHref);
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -175,7 +180,7 @@ export default async function ContactPage({
           "@type": "ListItem",
           position: 1,
           name: locale === "zh" ? "首页" : "Home",
-          item: toAbsoluteUrl(`/${locale}`),
+          item: toAbsoluteUrl(homeHref),
         },
         {
           "@type": "ListItem",
@@ -231,7 +236,7 @@ export default async function ContactPage({
         <article className="contact-company-panel">
           <div className="contact-panel-head">
             <p className="contact-mini-eyebrow">{text.aboutBrand}</p>
-            <h2>{siteCopy.companyName[locale]}</h2>
+            <h1>{siteCopy.companyName[locale]}</h1>
             <p>{siteCopy.companyIntro[locale]}</p>
           </div>
           <div className="contact-company-content">
@@ -349,11 +354,11 @@ export default async function ContactPage({
           </div>
           <Link
             className="contact-secondary-cta"
-            data-track-destination={`/${locale}/solutions`}
+            data-track-destination={solutionsHref}
             data-track-event="cta_click"
             data-track-label="learn_more_solutions"
             data-track-location="contact_solutions"
-            href={`/${locale}/solutions`}
+            href={solutionsHref}
           >
             <span>{text.solutionsAction}</span>
             <ArrowRight size={16} strokeWidth={2.1} />
@@ -374,11 +379,11 @@ export default async function ContactPage({
           </div>
           <Link
             className="contact-inline-link view-accent-link contact-faq-link"
-            data-track-destination={`/${locale}/faq`}
+            data-track-destination={faqHref}
             data-track-event="cta_click"
             data-track-label="view_all_faq"
             data-track-location="contact_faq"
-            href={`/${locale}/faq`}
+            href={faqHref}
           >
             <span>{text.faqAction}</span>
             <ArrowRight size={14} strokeWidth={2.1} />

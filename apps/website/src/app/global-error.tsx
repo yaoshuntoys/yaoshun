@@ -115,7 +115,7 @@ export default function GlobalError({
         <main style={wrapStyle}>
           <section style={panelStyle}>
             <div style={brandStyle} aria-label="yaoshun toys">
-              <Image alt="" height={34} src="/favicon-rounded-192.png" style={{borderRadius: "9px"}} width={34} />
+              <Image alt="" height={34} quality={100} src="/favicon-rounded-192.png" style={{borderRadius: "9px"}} width={34} />
               <span style={{color: "#2563ff"}}>yaoshun</span>
               <span style={{color: "#ff9700"}}>toys</span>
             </div>
@@ -128,7 +128,7 @@ export default function GlobalError({
               <button style={primaryStyle} type="button" onClick={reset}>
                 Try Again
               </button>
-              <Link style={secondaryStyle} href="/en">
+              <Link style={secondaryStyle} href="/">
                 Back to Home
               </Link>
             </div>

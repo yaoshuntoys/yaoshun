@@ -27,7 +27,7 @@ import {siteCopy} from "@/components/layout/site-shell.data";
 import {solutionsContent} from "@/content/site";
 import {buildPageMetadata} from "@/lib/metadata";
 import {getLocaleFromParams, t, type Locale} from "@/lib/i18n";
-import {contactFormPath} from "@/lib/routes";
+import {contactFormPath, localizedPath} from "@/lib/routes";
 import {toAbsoluteUrl} from "@/lib/site-config";
 import {solutionsEquipmentImages, solutionsPageImages} from "@/content/pages/solutions";
 
@@ -215,7 +215,7 @@ const equipmentTabs = [
   {id: "all", label: {en: "All", zh: "全部设备"}},
   {id: "tooling", label: {en: "Tooling Shop", zh: "模具车间"}},
   {id: "machining", label: {en: "Turning / Milling / Drilling", zh: "车铣钻加工"}},
-  {id: "edm", label: {en: "Wire-Cut / EDM", zh: "线切割电火花"}},
+  {id: "edm", label: {en: "Extrusion Workshop", zh: "挤出车间"}},
   {id: "injection", label: {en: "Injection", zh: "注塑生产"}},
 ] as const;
 
@@ -497,7 +497,8 @@ function SectionHeader({
 export default async function SolutionsPage({params}: {params: Promise<{locale: string}>}) {
   const locale = await getLocaleFromParams(params);
   const contactHref = contactFormPath(locale);
-  const pageUrl = toAbsoluteUrl(`/${locale}/solutions`);
+  const homeHref = localizedPath(locale, "home");
+  const pageUrl = toAbsoluteUrl(localizedPath(locale, "solutions"));
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -507,7 +508,7 @@ export default async function SolutionsPage({params}: {params: Promise<{locale: 
           "@type": "ListItem",
           position: 1,
           name: locale === "zh" ? "首页" : "Home",
-          item: toAbsoluteUrl(`/${locale}`),
+          item: toAbsoluteUrl(homeHref),
         },
         {
           "@type": "ListItem",
@@ -530,7 +531,7 @@ export default async function SolutionsPage({params}: {params: Promise<{locale: 
         name: siteCopy.companyName[locale],
         email: siteCopy.contact.email,
         telephone: siteCopy.contact.phone,
-        url: toAbsoluteUrl(`/${locale}`),
+        url: toAbsoluteUrl(homeHref),
       },
       url: pageUrl,
     },
@@ -548,7 +549,7 @@ export default async function SolutionsPage({params}: {params: Promise<{locale: 
             fill
             priority
             loading="eager"
-            quality={92}
+            quality={100}
             sizes="100vw"
             src={heroImage}
           />

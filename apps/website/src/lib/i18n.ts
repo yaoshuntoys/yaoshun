@@ -62,6 +62,10 @@ export function getLocalePattern(): RegExp {
   return new RegExp(`^/(${locales.join("|")})(?=/|$)`);
 }
 
+export function localePathPrefix(locale: Locale): string {
+  return locale === defaultLocale ? "" : `/${locale}`;
+}
+
 export function getLocaleFromPathname(pathname: string): Locale | null {
   const match = pathname.match(getLocalePattern());
 

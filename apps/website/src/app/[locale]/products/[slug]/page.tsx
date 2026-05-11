@@ -36,7 +36,7 @@ import {
   getProductSeoKeywords,
 } from "@/lib/site-data";
 import { getLocaleFromParams, locales, t, type Locale } from "@/lib/i18n";
-import { contactFormPath } from "@/lib/routes";
+import { contactFormPath, localizedPath, productPath } from "@/lib/routes";
 import { toAbsoluteUrl } from "@/lib/site-config";
 
 const alternateLocale: Record<Locale, Locale> = {
@@ -131,6 +131,97 @@ function normalizeCurrencyCode(currency?: string) {
   }
 
   return /^[A-Z]{3}$/.test(normalized) ? normalized : "USD";
+}
+
+function parsePriceValue(value?: string) {
+  if (!value || /custom|quote|定制|询价/i.test(value)) return null;
+
+  const match = value.replace(/,/g, "").match(/\d+(?:\.\d+)?/);
+  if (!match) return null;
+
+  const price = Number(match[0]);
+  return Number.isFinite(price) && price > 0 ? price : null;
+}
+
+function getStructuredPrice(product: ProductJson) {
+  const min = typeof product.pricing?.min === "number" ? product.pricing.min : null;
+  const max = typeof product.pricing?.max === "number" ? product.pricing.max : null;
+
+  if (min != null || max != null) {
+    return {
+      min: min ?? max,
+      max: max ?? min,
+      isRange: Boolean(product.pricing?.isRange) || (min != null && max != null && min !== max),
+    };
+  }
+
+  const tierPrices = (product.pricing?.tiers || [])
+    .map((tier) => parsePriceValue(tier.price))
+    .filter((price): price is number => price != null);
+
+  if (tierPrices.length > 0) {
+    return {
+      min: Math.min(...tierPrices),
+      max: Math.max(...tierPrices),
+      isRange: tierPrices.length > 1 && Math.min(...tierPrices) !== Math.max(...tierPrices),
+    };
+  }
+
+  const displayPrice = parsePriceValue(product.pricing?.display?.en || product.pricing?.display?.zh);
+
+  return displayPrice == null
+    ? null
+    : {
+        min: displayPrice,
+        max: displayPrice,
+        isRange: false,
+      };
+}
+
+function buildOfferPolicyReferences(locale: Locale) {
+  const termsUrl = toAbsoluteUrl(localizedPath(locale, "terms"));
+
+  return {
+    hasMerchantReturnPolicy: {
+      "@id": `${termsUrl}#merchant-return-policy`,
+    },
+    shippingDetails: {
+      "@type": "OfferShippingDetails",
+      shippingOrigin: {
+        "@type": "DefinedRegion",
+        addressCountry: "CN",
+      },
+      shippingDestination: [
+        { "@type": "DefinedRegion", addressCountry: "US" },
+        { "@type": "DefinedRegion", addressCountry: "CA" },
+        { "@type": "DefinedRegion", addressCountry: "GB" },
+        { "@type": "DefinedRegion", addressCountry: "AU" },
+        { "@type": "DefinedRegion", addressCountry: "DE" },
+        { "@type": "DefinedRegion", addressCountry: "FR" },
+        { "@type": "DefinedRegion", addressCountry: "JP" },
+        { "@type": "DefinedRegion", addressCountry: "KR" },
+        { "@type": "DefinedRegion", addressCountry: "SG" },
+      ],
+      deliveryTime: {
+        "@type": "ShippingDeliveryTime",
+        handlingTime: {
+          "@type": "QuantitativeValue",
+          minValue: 7,
+          maxValue: 15,
+          unitCode: "DAY",
+        },
+        transitTime: {
+          "@type": "QuantitativeValue",
+          minValue: 7,
+          maxValue: 45,
+          unitCode: "DAY",
+        },
+      },
+      hasShippingService: {
+        "@id": `${termsUrl}#merchant-shipping-policy`,
+      },
+    },
+  };
 }
 
 function formatTierPrice(price: string | undefined) {
@@ -501,28 +592,35 @@ export default async function ProductDetailPage({
     minOrder ? `MOQ ${minOrder}` : "",
     showcase?.bestseller ? text.bestSeller : "",
   ]).slice(0, 2);
-  const productUrl = toAbsoluteUrl(`/${locale}/products/${slug}`);
+  const homeHref = localizedPath(locale, "home");
+  const productsHref = localizedPath(locale, "products");
+  const currentProductHref = productPath(locale, slug);
+  const previousProductHref = adjacentProducts.previous
+    ? productPath(locale, adjacentProducts.previous.product.productId)
+    : productsHref;
+  const nextProductHref = adjacentProducts.next
+    ? productPath(locale, adjacentProducts.next.product.productId)
+    : productsHref;
+  const productUrl = toAbsoluteUrl(currentProductHref);
   const productDescription = uniqueLines(descriptionLines).join(" ").trim() || title;
   const categoryNames = categoryTrail;
   const structuredImages = mediaImages.slice(0, 8).map((image) => toAbsoluteUrl(image));
   const currencyCode = normalizeCurrencyCode(product.pricing?.currency);
-  const hasMinPrice = typeof product.pricing?.min === "number";
-  const hasMaxPrice = typeof product.pricing?.max === "number";
+  const structuredPrice = getStructuredPrice(product);
+  const offerPolicyReferences = buildOfferPolicyReferences(locale);
   const structuredOffer =
-    hasMinPrice || hasMaxPrice
-      ? product.pricing?.isRange ||
-        (hasMinPrice &&
-          hasMaxPrice &&
-          product.pricing?.min !== product.pricing?.max)
+    structuredPrice
+      ? structuredPrice.isRange
         ? {
             "@type": "AggregateOffer",
-            lowPrice: product.pricing?.min ?? product.pricing?.max,
-            highPrice: product.pricing?.max ?? product.pricing?.min,
+            lowPrice: structuredPrice.min,
+            highPrice: structuredPrice.max,
             priceCurrency: currencyCode,
             availability: "https://schema.org/InStock",
             businessFunction: "https://schema.org/Sell",
             itemCondition: "https://schema.org/NewCondition",
             url: productUrl,
+            ...offerPolicyReferences,
             seller: {
               "@type": "Organization",
               name: "Dongguan Yaoshun Technology Co., Ltd.",
@@ -530,19 +628,57 @@ export default async function ProductDetailPage({
           }
         : {
             "@type": "Offer",
-            price: product.pricing?.min ?? product.pricing?.max,
+            price: structuredPrice.min,
             priceCurrency: currencyCode,
             availability: "https://schema.org/InStock",
             businessFunction: "https://schema.org/Sell",
             itemCondition: "https://schema.org/NewCondition",
             url: productUrl,
+            ...offerPolicyReferences,
             seller: {
               "@type": "Organization",
               name: "Dongguan Yaoshun Technology Co., Ltd.",
             },
           }
       : undefined;
-  const structuredData = [
+  const productStructuredData = structuredOffer
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: title,
+        description: productDescription,
+        url: productUrl,
+        mainEntityOfPage: productUrl,
+        inLanguage: locale === "zh" ? "zh-CN" : "en-US",
+        sku: product.productId,
+        mpn: modelNumber !== "-" ? modelNumber : undefined,
+        category: categoryNames.join(" / ") || undefined,
+        image: structuredImages.length > 0 ? structuredImages : undefined,
+        brand: {
+          "@type": "Brand",
+          name: "yaoshun toys",
+        },
+        manufacturer: {
+          "@type": "Organization",
+          name: "Dongguan Yaoshun Technology Co., Ltd.",
+        },
+        audience: {
+          "@type": "BusinessAudience",
+          audienceType:
+            locale === "zh"
+              ? "品牌采购、跨境卖家、礼品渠道、教育渠道与玩具进口商"
+              : "brand sourcing teams, cross-border sellers, gift channels, education channels, and toy importers",
+        },
+        material: material !== "-" ? material : undefined,
+        offers: structuredOffer,
+        additionalProperty: attributePairs.slice(0, 12).map((item) => ({
+          "@type": "PropertyValue",
+          name: item.label,
+          value: item.value,
+        })),
+      }
+    : null;
+  const structuredData: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -551,13 +687,13 @@ export default async function ProductDetailPage({
           "@type": "ListItem",
           position: 1,
           name: text.home,
-          item: toAbsoluteUrl(`/${locale}`),
+          item: toAbsoluteUrl(homeHref),
         },
         {
           "@type": "ListItem",
           position: 2,
           name: text.products,
-          item: toAbsoluteUrl(`/${locale}/products`),
+          item: toAbsoluteUrl(productsHref),
         },
         {
           "@type": "ListItem",
@@ -567,42 +703,11 @@ export default async function ProductDetailPage({
         },
       ],
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      name: title,
-      description: productDescription,
-      url: productUrl,
-      mainEntityOfPage: productUrl,
-      inLanguage: locale === "zh" ? "zh-CN" : "en-US",
-      sku: product.productId,
-      mpn: modelNumber !== "-" ? modelNumber : undefined,
-      category: categoryNames.join(" / ") || undefined,
-      image: structuredImages.length > 0 ? structuredImages : undefined,
-      brand: {
-        "@type": "Brand",
-        name: "yaoshun toys",
-      },
-      manufacturer: {
-        "@type": "Organization",
-        name: "Dongguan Yaoshun Technology Co., Ltd.",
-      },
-      audience: {
-        "@type": "BusinessAudience",
-        audienceType:
-          locale === "zh"
-            ? "品牌采购、跨境卖家、礼品渠道、教育渠道与玩具进口商"
-            : "brand sourcing teams, cross-border sellers, gift channels, education channels, and toy importers",
-      },
-      material: material !== "-" ? material : undefined,
-      offers: structuredOffer,
-      additionalProperty: attributePairs.slice(0, 12).map((item) => ({
-        "@type": "PropertyValue",
-        name: item.label,
-        value: item.value,
-      })),
-    },
   ];
+
+  if (productStructuredData) {
+    structuredData.push(productStructuredData);
+  }
 
   return (
     <div className="site-container grid gap-7 pb-4 pt-4 sm:pt-6 lg:gap-10">
@@ -614,22 +719,22 @@ export default async function ProductDetailPage({
       >
         <Link
           className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full px-3 transition hover:bg-[#2563ff]/8 hover:text-[#2563ff]"
-          data-track-destination={`/${locale}`}
+          data-track-destination={homeHref}
           data-track-event="breadcrumb_click"
           data-track-label={text.home}
           data-track-location="product_detail_breadcrumbs"
-          href={`/${locale}`}
+          href={homeHref}
         >
           {text.home}
         </Link>
         <span className="shrink-0">/</span>
         <Link
           className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full px-3 transition hover:bg-[#2563ff]/8 hover:text-[#2563ff]"
-          data-track-destination={`/${locale}/products`}
+          data-track-destination={productsHref}
           data-track-event="breadcrumb_click"
           data-track-label={text.products}
           data-track-location="product_detail_breadcrumbs"
-          href={`/${locale}/products`}
+          href={productsHref}
         >
           {text.products}
         </Link>
@@ -1034,17 +1139,13 @@ export default async function ProductDetailPage({
         <Link
           className="grid gap-3 rounded-[1.5rem] border border-[rgba(24,56,138,0.08)] bg-white p-5 shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] transition hover:-translate-y-1 hover:border-[rgba(37,99,255,0.14)] hover:shadow-[0_26px_56px_-34px_rgba(18,41,103,0.22)] sm:p-6"
           data-track-destination={
-            adjacentProducts.previous
-              ? `/${locale}/products/${adjacentProducts.previous.product.productId}`
-              : `/${locale}/products`
+            previousProductHref
           }
           data-track-event={adjacentProducts.previous ? "product_card_click" : "nav_click"}
           data-track-label={adjacentProducts.previous?.product.productId ?? "back_to_products"}
           data-track-location="product_detail_adjacent"
           href={
-            adjacentProducts.previous
-              ? `/${locale}/products/${adjacentProducts.previous.product.productId}`
-              : `/${locale}/products`
+            previousProductHref
           }
           prefetch={false}
         >
@@ -1066,17 +1167,13 @@ export default async function ProductDetailPage({
         <Link
           className="grid gap-3 rounded-[1.5rem] border border-[rgba(24,56,138,0.08)] bg-white p-5 text-right shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] transition hover:-translate-y-1 hover:border-[rgba(37,99,255,0.14)] hover:shadow-[0_26px_56px_-34px_rgba(18,41,103,0.22)] sm:p-6"
           data-track-destination={
-            adjacentProducts.next
-              ? `/${locale}/products/${adjacentProducts.next.product.productId}`
-              : `/${locale}/products`
+            nextProductHref
           }
           data-track-event={adjacentProducts.next ? "product_card_click" : "nav_click"}
           data-track-label={adjacentProducts.next?.product.productId ?? "browse_more_products"}
           data-track-location="product_detail_adjacent"
           href={
-            adjacentProducts.next
-              ? `/${locale}/products/${adjacentProducts.next.product.productId}`
-              : `/${locale}/products`
+            nextProductHref
           }
           prefetch={false}
         >

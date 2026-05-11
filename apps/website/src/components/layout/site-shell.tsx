@@ -11,6 +11,7 @@ import { localeRegistry, t, type Locale } from "@/lib/i18n";
 import {
   contactFormPath,
   localizedPath,
+  localizedUrlPath,
   replaceLocaleInPath,
   type RouteKey,
 } from "@/lib/routes";
@@ -180,10 +181,10 @@ function stripTrailingSlash(pathname: string) {
 
 function isActive(pathname: string, locale: Locale, href: string) {
   const currentPath = stripTrailingSlash(pathname);
-  const localizedHref = stripTrailingSlash(`/${locale}${href}`);
+  const localizedHref = stripTrailingSlash(localizedUrlPath(locale, href));
 
   if (href === "") {
-    return currentPath === `/${locale}`;
+    return currentPath === stripTrailingSlash(localizedPath(locale, "home"));
   }
 
   return (
@@ -299,6 +300,7 @@ function SiteHeader({
   pathname: string;
 }) {
   const contactHref = contactFormPath(locale);
+  const homeHref = localizedPath(locale, "home");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [localeOpen, setLocaleOpen] = useState(false);
   const localeMenuRef = useRef<HTMLDivElement>(null);
@@ -365,11 +367,11 @@ function SiteHeader({
         <Link
           aria-label="yaoshun toys"
           className="shrink-0"
-          data-track-destination={`/${locale}`}
+          data-track-destination={homeHref}
           data-track-event="nav_click"
           data-track-label="brand_logo"
           data-track-location="header"
-          href={`/${locale}`}
+          href={homeHref}
           prefetch={true}
         >
           <div className="flex flex-col gap-1">
@@ -390,11 +392,11 @@ function SiteHeader({
               className={`${navLinkBase} ${
                 isActive(pathname, locale, item.href) ? navLinkActive : ""
               }`}
-              data-track-destination={`/${locale}${item.href}`}
+              data-track-destination={localizedUrlPath(locale, item.href)}
               data-track-event="nav_click"
               data-track-label={item.key}
               data-track-location="header"
-              href={`/${locale}${item.href}`}
+              href={localizedUrlPath(locale, item.href)}
               prefetch={true}
               onClick={closeMenus}
             >
@@ -468,11 +470,11 @@ function SiteHeader({
                           ? "border-transparent bg-[linear-gradient(135deg,#2563ff_0%,#1a43c9_100%)] !text-white shadow-[0_18px_38px_-24px_rgba(37,99,255,0.54)]"
                           : "border-[rgba(37,99,255,0.10)] bg-white text-[#17306e] hover:border-[rgba(37,99,255,0.16)] hover:bg-white"
                       }`}
-                      data-track-destination={`/${locale}${item.href}`}
+                      data-track-destination={localizedUrlPath(locale, item.href)}
                       data-track-event="nav_click"
                       data-track-label={item.key}
                       data-track-location="mobile_header"
-                      href={`/${locale}${item.href}`}
+                      href={localizedUrlPath(locale, item.href)}
                       prefetch={true}
                       onClick={closeMenus}
                     >

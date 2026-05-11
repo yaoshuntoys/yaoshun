@@ -14,6 +14,7 @@ import {
   siteUrl,
   toAbsoluteUrl,
 } from "@/lib/site-config";
+import { localizedUrlPath } from "@/lib/routes";
 
 type LocalizedSeo = {
   title: LocalizedText;
@@ -55,7 +56,7 @@ export function buildMetadata(
   options: BuildMetadataOptions = {},
 ): Metadata {
   const normalizedPath = normalizePath(path);
-  const localePath = `/${locale}${normalizedPath}`;
+  const localePath = localizedUrlPath(locale, normalizedPath);
   const canonical = `${siteUrl}${localePath}`;
   const mergedKeywords = uniqueKeywords([
     ...t(locale, siteSeo.defaultKeywords),
@@ -64,7 +65,7 @@ export function buildMetadata(
   const alternates = Object.fromEntries(
     locales.map((item) => [
       localeRegistry[item].htmlLang,
-      `${siteUrl}/${item}${normalizedPath}`,
+      `${siteUrl}${localizedUrlPath(item, normalizedPath)}`,
     ]),
   );
   const primaryImage = options.image
@@ -90,7 +91,7 @@ export function buildMetadata(
       canonical,
       languages: {
         ...alternates,
-        "x-default": `${siteUrl}/${defaultLocale}${normalizedPath}`,
+        "x-default": `${siteUrl}${localizedUrlPath(defaultLocale, normalizedPath)}`,
       },
     },
     robots: {

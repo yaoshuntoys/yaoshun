@@ -1,4 +1,9 @@
-import { getLocalePattern, type Locale } from "@/lib/i18n";
+import {
+  defaultLocale,
+  getLocalePattern,
+  localePathPrefix,
+  type Locale,
+} from "@/lib/i18n";
 
 export const routePathMap = {
   home: "",
@@ -17,8 +22,15 @@ export const routePathMap = {
 
 export type RouteKey = keyof typeof routePathMap;
 
+export function localizedUrlPath(locale: Locale, path = ""): string {
+  const normalizedPath = path ? `/${path.replace(/^\/+/, "")}` : "";
+  const urlPath = `${localePathPrefix(locale)}${normalizedPath}`;
+
+  return urlPath || "/";
+}
+
 export function localizedPath(locale: Locale, route: RouteKey): string {
-  return `/${locale}${routePathMap[route]}`;
+  return localizedUrlPath(locale, routePathMap[route]);
 }
 
 export function contactFormPath(locale: Locale): string {
@@ -26,15 +38,21 @@ export function contactFormPath(locale: Locale): string {
 }
 
 export function productPath(locale: Locale, slug: string): string {
-  return `/${locale}/products/${slug}`;
+  return localizedUrlPath(locale, `/products/${slug}`);
 }
 
 export function replaceLocaleInPath(pathname: string, locale: Locale): string {
   const pattern = getLocalePattern();
 
   if (pattern.test(pathname)) {
-    return pathname.replace(pattern, `/${locale}`);
+    const nextPathname = pathname.replace(pattern, localePathPrefix(locale));
+
+    return nextPathname || "/";
   }
 
-  return `/${locale}${pathname === "/" ? "" : pathname}`;
+  if (locale === defaultLocale) {
+    return pathname || "/";
+  }
+
+  return `${localePathPrefix(locale)}${pathname === "/" ? "" : pathname}`;
 }

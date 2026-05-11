@@ -23,6 +23,7 @@ import {
 import { getLocaleFromParams, locales, t, type Locale } from "@/lib/i18n";
 import { toAbsoluteUrl } from "@/lib/site-config";
 import { newsArticles } from "@/content/pages/news";
+import { localizedPath, localizedUrlPath } from "@/lib/routes";
 
 function copy(locale: Locale) {
   return {
@@ -165,7 +166,16 @@ export default async function NewsDetailPage({
 
   const recentNews = getRecentNews(slug, 3);
   const adjacent = getAdjacentNews(slug);
-  const articleUrl = toAbsoluteUrl(`/${locale}/news/${slug}`);
+  const homeHref = localizedPath(locale, "home");
+  const newsHref = localizedPath(locale, "news");
+  const articleHref = localizedUrlPath(locale, `/news/${slug}`);
+  const previousArticleHref = adjacent.previous
+    ? localizedUrlPath(locale, `/news/${adjacent.previous.slug}`)
+    : newsHref;
+  const nextArticleHref = adjacent.next
+    ? localizedUrlPath(locale, `/news/${adjacent.next.slug}`)
+    : newsHref;
+  const articleUrl = toAbsoluteUrl(articleHref);
   const articleTitle = localize(
     article.title,
     locale,
@@ -182,13 +192,13 @@ export default async function NewsDetailPage({
         "@type": "ListItem",
         position: 1,
         name: locale === "zh" ? "首页" : "Home",
-        item: toAbsoluteUrl(`/${locale}`),
+        item: toAbsoluteUrl(homeHref),
       },
       {
         "@type": "ListItem",
         position: 2,
         name: locale === "zh" ? "新闻" : "News",
-        item: toAbsoluteUrl(`/${locale}/news`),
+        item: toAbsoluteUrl(newsHref),
       },
       {
         "@type": "ListItem",
@@ -230,8 +240,8 @@ export default async function NewsDetailPage({
 
       <Breadcrumbs
         items={[
-          { href: `/${locale}`, label: { en: "Home", zh: "首页" } },
-          { href: `/${locale}/news`, label: { en: "News", zh: "新闻" } },
+          { href: homeHref, label: { en: "Home", zh: "首页" } },
+          { href: newsHref, label: { en: "News", zh: "新闻" } },
           { label: { en: articleTitle, zh: articleTitle } },
         ]}
         locale={locale}
@@ -242,11 +252,11 @@ export default async function NewsDetailPage({
         <header className="news-article-header">
           <Link
             className="news-article-back"
-            data-track-destination={`/${locale}/news`}
+            data-track-destination={newsHref}
             data-track-event="nav_click"
             data-track-label="back_to_news"
             data-track-location="news_article_header"
-            href={`/${locale}/news`}
+            href={newsHref}
           >
             <ArrowLeft size={16} strokeWidth={2.1} />
             <span>{text.backToNews}</span>
@@ -284,11 +294,11 @@ export default async function NewsDetailPage({
           </div>
           <Link
             className="news-inline-link"
-            data-track-destination={`/${locale}/news`}
+            data-track-destination={newsHref}
             data-track-event="nav_click"
             data-track-label="back_to_news"
             data-track-location="news_article_more"
-            href={`/${locale}/news`}
+            href={newsHref}
           >
             <span>{text.backToNews}</span>
             <ArrowRight size={15} strokeWidth={2.05} />
@@ -300,11 +310,11 @@ export default async function NewsDetailPage({
             <Link
               className="news-article-recent-card"
               data-track-category={item.category}
-              data-track-destination={`/${locale}/news/${item.slug}`}
+              data-track-destination={localizedUrlPath(locale, `/news/${item.slug}`)}
               data-track-event="news_card_click"
               data-track-label={item.slug}
               data-track-location="news_article_recent"
-              href={`/${locale}/news/${item.slug}`}
+              href={localizedUrlPath(locale, `/news/${item.slug}`)}
               key={item.slug}
               prefetch={false}
             >
@@ -313,6 +323,7 @@ export default async function NewsDetailPage({
                   alt={localize(item.title, locale)}
                   className="news-article-recent-thumb"
                   height={900}
+                  quality={100}
                   sizes="(max-width: 767px) 100vw, 360px"
                   src={item.image}
                   width={1200}
@@ -330,13 +341,11 @@ export default async function NewsDetailPage({
         <div className="news-article-adjacent">
           <Link
             className="news-article-adjacent-card"
-            data-track-destination={
-              adjacent.previous ? `/${locale}/news/${adjacent.previous.slug}` : `/${locale}/news`
-            }
+            data-track-destination={previousArticleHref}
             data-track-event={adjacent.previous ? "news_card_click" : "nav_click"}
             data-track-label={adjacent.previous?.slug ?? "back_to_news"}
             data-track-location="news_article_adjacent"
-            href={adjacent.previous ? `/${locale}/news/${adjacent.previous.slug}` : `/${locale}/news`}
+            href={previousArticleHref}
             prefetch={false}
           >
             <span>{text.previousArticle}</span>
@@ -346,13 +355,11 @@ export default async function NewsDetailPage({
           </Link>
           <Link
             className="news-article-adjacent-card"
-            data-track-destination={
-              adjacent.next ? `/${locale}/news/${adjacent.next.slug}` : `/${locale}/news`
-            }
+            data-track-destination={nextArticleHref}
             data-track-event={adjacent.next ? "news_card_click" : "nav_click"}
             data-track-label={adjacent.next?.slug ?? "browse_more_news"}
             data-track-location="news_article_adjacent"
-            href={adjacent.next ? `/${locale}/news/${adjacent.next.slug}` : `/${locale}/news`}
+            href={nextArticleHref}
             prefetch={false}
           >
             <span>{text.nextArticle}</span>

@@ -697,7 +697,7 @@
   width: min(78%, 25rem) !important;
   height: auto !important;
   max-height: 15.5rem;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .home-why-item p {

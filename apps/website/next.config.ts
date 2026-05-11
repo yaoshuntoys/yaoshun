@@ -121,26 +121,6 @@ const nextConfig: NextConfig = {
         destination: "/sitemap.xml",
         permanent: true,
       },
-      {
-        source: "/:locale/company",
-        destination: "/:locale/about",
-        permanent: true,
-      },
-      {
-        source: "/:locale/factory",
-        destination: "/:locale/about",
-        permanent: true,
-      },
-      {
-        source: "/:locale/compliance",
-        destination: "/:locale/about",
-        permanent: true,
-      },
-      {
-        source: "/:locale/oem-odm",
-        destination: "/:locale/solutions",
-        permanent: true,
-      },
     ];
   },
   images: {
@@ -148,7 +128,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 30,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 24, 32, 48, 64, 96, 128, 256, 384],
-    qualities: [75, 92],
+    qualities: [100],
     remotePatterns: [
       {
         protocol: "https",

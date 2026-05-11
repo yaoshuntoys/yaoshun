@@ -16,6 +16,7 @@ import Link from "next/link";
 
 import type {NewsCategoryKey} from "@/content/types";
 import {t, type Locale} from "@/lib/i18n";
+import {localizedPath, localizedUrlPath} from "@/lib/routes";
 
 type SearchParamMap = {
   category?: string;
@@ -140,6 +141,7 @@ function formatShowingText(
 export function NewsListClient({articles, locale, text}: NewsListClientProps) {
   const [query, setQuery] = useState<SearchParamMap>({});
   const pageSize = 6;
+  const newsHref = localizedPath(locale, "news");
 
   useEffect(() => {
     const syncFromUrl = () => {
@@ -200,7 +202,7 @@ export function NewsListClient({articles, locale, text}: NewsListClientProps) {
     event.preventDefault();
 
     const nextQuery = {...query, ...next};
-    const href = `/${locale}/news${buildQueryString(query, next)}`;
+    const href = `${newsHref}${buildQueryString(query, next)}`;
     window.history.pushState(null, "", href);
     setQuery(nextQuery);
   }
@@ -215,7 +217,7 @@ export function NewsListClient({articles, locale, text}: NewsListClientProps) {
               {availableCategoryItems.map((category) => {
                 const Icon =
                   categoryIcons[category.key as keyof typeof categoryIcons];
-                const href = `/${locale}/news${buildQueryString({}, {
+                const href = `${newsHref}${buildQueryString({}, {
                   category:
                     category.key === "all" ? undefined : category.key,
                   page: undefined,
@@ -280,11 +282,11 @@ export function NewsListClient({articles, locale, text}: NewsListClientProps) {
                 aria-label={localize(article.title, locale, "News Article")}
                 className="news-card"
                 data-track-category={article.category}
-                data-track-destination={`/${locale}/news/${article.slug}`}
+                data-track-destination={localizedUrlPath(locale, `/news/${article.slug}`)}
                 data-track-event="news_card_click"
                 data-track-label={article.slug}
                 data-track-location="news_grid"
-                href={`/${locale}/news/${article.slug}`}
+                href={localizedUrlPath(locale, `/news/${article.slug}`)}
                 key={article.slug}
                 prefetch={false}
               >
@@ -293,9 +295,9 @@ export function NewsListClient({articles, locale, text}: NewsListClientProps) {
                     <Image
                       alt={localize(article.title, locale, "News Article")}
                       className="news-card-thumb"
+                      fill
+                      sizes="(min-width: 1024px) 280px, (min-width: 768px) 45vw, 100vw"
                       src={article.image}
-                      width={88}
-                      height={88}
                     />
                   ) : (
                     <div
@@ -330,11 +332,11 @@ export function NewsListClient({articles, locale, text}: NewsListClientProps) {
           {currentPage > 1 ? (
             <a
               aria-label="Previous page"
-              data-track-destination={`/${locale}/news${buildQueryString(query, {page: String(currentPage - 1) === "1" ? undefined : String(currentPage - 1)})}`}
+              data-track-destination={`${newsHref}${buildQueryString(query, {page: String(currentPage - 1) === "1" ? undefined : String(currentPage - 1)})}`}
               data-track-event="pagination_click"
               data-track-label="previous"
               data-track-location="news_pagination"
-              href={`/${locale}/news${buildQueryString(query, {page: String(currentPage - 1) === "1" ? undefined : String(currentPage - 1)})}`}
+              href={`${newsHref}${buildQueryString(query, {page: String(currentPage - 1) === "1" ? undefined : String(currentPage - 1)})}`}
               onClick={(event) =>
                 navigate(event, {
                   page:
@@ -352,7 +354,7 @@ export function NewsListClient({articles, locale, text}: NewsListClientProps) {
 
           {Array.from({length: totalPages}, (_, index) => {
             const page = String(index + 1);
-            const href = `/${locale}/news${buildQueryString(query, {
+            const href = `${newsHref}${buildQueryString(query, {
               page: page === "1" ? undefined : page,
             })}`;
             const active = String(currentPage) === page;
@@ -381,11 +383,11 @@ export function NewsListClient({articles, locale, text}: NewsListClientProps) {
           {currentPage < totalPages ? (
             <a
               aria-label="Next page"
-              data-track-destination={`/${locale}/news${buildQueryString(query, {page: String(currentPage + 1)})}`}
+              data-track-destination={`${newsHref}${buildQueryString(query, {page: String(currentPage + 1)})}`}
               data-track-event="pagination_click"
               data-track-label="next"
               data-track-location="news_pagination"
-              href={`/${locale}/news${buildQueryString(query, {page: String(currentPage + 1)})}`}
+              href={`${newsHref}${buildQueryString(query, {page: String(currentPage + 1)})}`}
               onClick={(event) =>
                 navigate(event, {page: String(currentPage + 1)})
               }

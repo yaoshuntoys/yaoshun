@@ -1,9 +1,10 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 import {
+  defaultLocale,
   getLocaleFromPathname,
   localeCookieName,
-  resolvePreferredLocale,
+  localePathPrefix,
 } from "@/lib/i18n";
 import {
   consentRequiredCookieName,
@@ -12,6 +13,7 @@ import {
 
 const oneYearInSeconds = 60 * 60 * 24 * 365;
 const thirtyDaysInSeconds = 60 * 60 * 24 * 30;
+const internalLocaleRewriteHeader = "x-yaoshun-internal-locale-rewrite";
 
 function resolveCountryCode(request: NextRequest): string | null {
   return (
@@ -56,25 +58,25 @@ function applyContextCookies(
   }
 }
 
-function getPreferredLocale(request: NextRequest) {
-  return resolvePreferredLocale({
-    cookieLocale: request.cookies.get(localeCookieName)?.value,
-  });
-}
-
-function redirectToLocalizedPath(
+function rewriteDefaultLocalePath(
   request: NextRequest,
-  locale: string,
   consentRequired: boolean,
 ) {
   const url = request.nextUrl.clone();
   url.pathname =
     request.nextUrl.pathname === "/"
-      ? `/${locale}`
-      : `/${locale}${request.nextUrl.pathname}`;
+      ? `/${defaultLocale}`
+      : `/${defaultLocale}${request.nextUrl.pathname}`;
 
-  const response = NextResponse.redirect(url);
-  applyContextCookies(response, request, locale, consentRequired);
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set(internalLocaleRewriteHeader, "1");
+
+  const response = NextResponse.rewrite(url, {
+    request: {
+      headers: requestHeaders,
+    },
+  });
+  applyContextCookies(response, request, defaultLocale, consentRequired);
   return response;
 }
 
@@ -89,16 +91,23 @@ export function proxy(request: NextRequest) {
   const consentRequired = isConsentRequiredCountry(resolveCountryCode(request));
 
   if (localeInPath) {
+    const isInternalLocaleRewrite =
+      request.headers.get(internalLocaleRewriteHeader) === "1";
+
+    if (
+      localeInPath === defaultLocale &&
+      localePathPrefix(defaultLocale) === "" &&
+      !isInternalLocaleRewrite
+    ) {
+      return new NextResponse("Not Found", { status: 404 });
+    }
+
     const response = NextResponse.next();
     applyContextCookies(response, request, localeInPath, consentRequired);
     return response;
   }
 
-  return redirectToLocalizedPath(
-    request,
-    getPreferredLocale(request),
-    consentRequired,
-  );
+  return rewriteDefaultLocalePath(request, consentRequired);
 }
 
 export const config = {
