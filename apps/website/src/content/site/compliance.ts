@@ -1,4 +1,4 @@
-import {seoKeywordPools, visualAssets} from '@/content/site/shared';
+import {visualAssets} from '@/content/site/shared';
 
 export const complianceContent = {
   seo: {
@@ -12,22 +12,20 @@ export const complianceContent = {
     },
     keywords: {
       en: [
-        ...seoKeywordPools.company.en.slice(0, 6),
-        ...seoKeywordPools.compliance.en,
-        ...seoKeywordPools.factoryCapabilities.en.slice(6, 12),
-        'toy compliance supplier',
-        'factory certification files',
+        'supplier document review',
+        'toy compliance files',
+        'ISO 9000 quality documents',
+        'RoHS REACH toy materials',
+        'EN71 ASTM F963 support',
         'buyer due diligence documents'
       ],
       zh: [
-        ...seoKeywordPools.company.zh.slice(0, 6),
-        ...seoKeywordPools.compliance.zh,
-        ...seoKeywordPools.factoryCapabilities.zh.slice(6, 12),
-        '尧顺资质',
-        '尧顺供应商文件',
-        '玩具资质',
-        '供应商尽调资料',
-        '工厂资质文件'
+        '供应商文件审核',
+        '玩具合规资料',
+        'ISO9000质量文件',
+        'RoHS REACH玩具材料',
+        'EN71 ASTM F963支持',
+        '客户尽调资料'
       ]
     }
   },

@@ -15,6 +15,7 @@ import {
   toAbsoluteUrl,
 } from "@/lib/site-config";
 import { localizedUrlPath } from "@/lib/routes";
+import { cleanSeoKeywords } from "@/lib/seo-keywords";
 
 type LocalizedSeo = {
   title: LocalizedText;
@@ -37,16 +38,6 @@ function normalizePath(path: string): string {
   return path ? `/${path.replace(/^\/+/, "")}` : "";
 }
 
-function uniqueKeywords(keywords: string[]): string[] {
-  return Array.from(
-    new Set(
-      keywords
-        .map((keyword) => keyword.trim())
-        .filter(Boolean),
-    ),
-  );
-}
-
 export function buildMetadata(
   locale: Locale,
   title: string,
@@ -58,10 +49,9 @@ export function buildMetadata(
   const normalizedPath = normalizePath(path);
   const localePath = localizedUrlPath(locale, normalizedPath);
   const canonical = `${siteUrl}${localePath}`;
-  const mergedKeywords = uniqueKeywords([
-    ...t(locale, siteSeo.defaultKeywords),
-    ...keywords,
-  ]);
+  const mergedKeywords = cleanSeoKeywords(
+    keywords.length ? keywords : t(locale, siteSeo.defaultKeywords),
+  );
   const alternates = Object.fromEntries(
     locales.map((item) => [
       localeRegistry[item].htmlLang,

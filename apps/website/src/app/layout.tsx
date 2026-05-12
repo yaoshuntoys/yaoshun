@@ -18,6 +18,7 @@ import {
   toAbsoluteUrl,
 } from "@/lib/site-config";
 import { localizedUrlPath } from "@/lib/routes";
+import { cleanSeoKeywords } from "@/lib/seo-keywords";
 
 import "../styles/globals.css";
 import "../styles/marketing.css";
@@ -31,9 +32,7 @@ const outfit = Outfit({
 
 const defaultTitle = t(defaultLocale, homeContent.seo.title);
 const defaultDescription = t(defaultLocale, homeContent.seo.description);
-const defaultKeywords = Array.from(
-  new Set(locales.flatMap((locale) => t(locale, siteSeo.defaultKeywords))),
-);
+const defaultKeywords = cleanSeoKeywords(t(defaultLocale, siteSeo.defaultKeywords));
 const defaultAlternates = Object.fromEntries(
   locales.map((locale) => [
     localeRegistry[locale].htmlLang,

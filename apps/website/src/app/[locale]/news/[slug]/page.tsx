@@ -109,10 +109,8 @@ export async function generateMetadata({
     articleDescription,
     `news/${slug}`,
     [
-      article.title.en || "",
+      articleTitle,
       getNewsCategoryLabel(locale, article),
-      "toy manufacturing news",
-      "quality and compliance updates",
       ...localizeList(article.seoKeywords, locale),
     ],
     article.image

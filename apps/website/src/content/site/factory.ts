@@ -1,4 +1,4 @@
-import {seoKeywordPools, visualAssets} from '@/content/site/shared';
+import {visualAssets} from '@/content/site/shared';
 
 export const factoryContent = {
   seo: {
@@ -12,20 +12,20 @@ export const factoryContent = {
     },
     keywords: {
       en: [
-        ...seoKeywordPools.company.en.slice(0, 8),
-        ...seoKeywordPools.factoryCapabilities.en,
-        ...seoKeywordPools.products.en.slice(0, 8),
-        ...seoKeywordPools.customization.en.slice(0, 6),
-        'toy production line',
-        'plastic processing factory'
+        'toy production workflow',
+        'in-house mold development',
+        'injection molding workshop',
+        'assembly packaging line',
+        'quality inspection checkpoints',
+        'export delivery support'
       ],
       zh: [
-        ...seoKeywordPools.company.zh.slice(0, 8),
-        ...seoKeywordPools.factoryCapabilities.zh,
-        ...seoKeywordPools.products.zh.slice(0, 8),
-        ...seoKeywordPools.customization.zh.slice(0, 6),
-        '玩具生产车间',
-        '制造车间'
+        '玩具生产流程',
+        '自有模具开发',
+        '注塑成型车间',
+        '组装包装产线',
+        '质量检验节点',
+        '出口交付支持'
       ]
     }
   },

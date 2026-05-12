@@ -1,5 +1,3 @@
-import {seoKeywordPools} from '@/content/site/shared';
-
 export const productsPageContent = {
   seo: {
     title: {
@@ -20,20 +18,20 @@ export const productsPageContent = {
     },
     keywords: {
       en: [
-        ...seoKeywordPools.products.en,
-        ...seoKeywordPools.customization.en.slice(0, 8),
-        ...seoKeywordPools.company.en.slice(3, 8),
-        'educational building toys wholesale',
-        'building toy product catalog'
+        'fort building toy catalog',
+        'STEM building kit catalog',
+        'glow fort building kits',
+        'connector balls and rods',
+        'custom color box building toys',
+        'OEM ODM toy product sourcing'
       ],
       zh: [
-        ...seoKeywordPools.products.zh,
-        ...seoKeywordPools.customization.zh.slice(0, 9),
-        ...seoKeywordPools.company.zh.slice(3, 8),
         '搭建玩具目录',
-        '定制玩具目录',
-        '源头工厂玩具产品',
-        '益智拼装玩具批发'
+        'STEM搭建套装目录',
+        '夜光堡垒拼搭套装',
+        '连接杆连接球配件',
+        '彩盒包装搭建玩具',
+        'OEM ODM玩具选品'
       ]
     }
   },

@@ -1,5 +1,3 @@
-import {seoKeywordPools} from '@/content/site/shared';
-
 export const contactContent = {
   seo: {
     title: {
@@ -12,20 +10,20 @@ export const contactContent = {
     },
     keywords: {
       en: [
-        ...seoKeywordPools.company.en.slice(0, 6),
-        ...seoKeywordPools.products.en.slice(0, 8),
-        ...seoKeywordPools.customization.en.slice(0, 10),
-        'building toy OEM inquiry',
-        'custom building toy quotation',
-        'toy sampling and mass production quote'
+        'custom toy quote request',
+        'fort building toy inquiry',
+        'OEM ODM sampling quote',
+        'mold evaluation request',
+        'packaging quotation review',
+        'export delivery quote'
       ],
       zh: [
-        ...seoKeywordPools.company.zh.slice(0, 6),
-        ...seoKeywordPools.products.zh.slice(0, 8),
-        ...seoKeywordPools.customization.zh.slice(0, 10),
+        '定制玩具报价申请',
+        '堡垒拼搭玩具询盘',
+        'OEM ODM打样报价',
+        '开模评估需求',
         '拼搭玩具定制报价',
-        'B2B玩具供应商询价',
-        '打样量产报价'
+        '出口交付报价'
       ]
     }
   },

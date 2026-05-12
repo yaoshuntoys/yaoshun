@@ -2,6 +2,7 @@ import {companyProfile, pageLabels} from '@/content/site';
 import {products} from '@/content/site/products-catalog';
 import {localeRegistry, t, type Locale} from '@/lib/i18n';
 import {localizedPath, productPath} from '@/lib/routes';
+import {cleanSeoKeywords} from '@/lib/seo-keywords';
 import {
   defaultOgImage,
   siteAlternateNames,
@@ -38,6 +39,7 @@ export function SiteStructuredData({locale}: {locale: Locale}) {
   const contactLanguages = companyProfile.contactLanguages.map((item) => t(locale, item));
   const serviceRegions = companyProfile.serviceRegions.map((item) => t(locale, item));
   const expertise = companyProfile.expertise.map((item) => t(locale, item));
+  const expertiseKeywords = cleanSeoKeywords(expertise);
 
   const organization = {
     '@type': ['Organization', 'LocalBusiness'],
@@ -128,8 +130,8 @@ export function SiteStructuredData({locale}: {locale: Locale}) {
       }
     },
     sameAs: [companyProfile.website, 'https://www.1688.com/factory/b2b-33834399288d4ed.html'],
-    keywords: expertise,
-    knowsAbout: expertise,
+    keywords: expertiseKeywords,
+    knowsAbout: expertiseKeywords,
     areaServed: serviceRegions,
     address: {
       '@type': 'PostalAddress',

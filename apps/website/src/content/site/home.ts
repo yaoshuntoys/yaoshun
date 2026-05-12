@@ -1,4 +1,4 @@
-import {seoKeywordPools, visualAssets} from '@/content/site/shared';
+import {visualAssets} from '@/content/site/shared';
 
 export const homeContent = {
   seo: {
@@ -12,16 +12,20 @@ export const homeContent = {
     },
     keywords: {
       en: [
-        ...seoKeywordPools.company.en.slice(0, 8),
-        ...seoKeywordPools.products.en.slice(0, 12),
-        ...seoKeywordPools.customization.en.slice(0, 8),
-        ...seoKeywordPools.factoryCapabilities.en.slice(0, 5)
+        'Yaoshun Toys',
+        'toy OEM ODM manufacturing partner',
+        'fort building toy manufacturer',
+        'STEM building kit supplier',
+        'custom toy development',
+        'injection molding and packaging support'
       ],
       zh: [
-        ...seoKeywordPools.company.zh.slice(0, 8),
-        ...seoKeywordPools.products.zh.slice(0, 12),
-        ...seoKeywordPools.customization.zh.slice(0, 9),
-        ...seoKeywordPools.factoryCapabilities.zh.slice(0, 5)
+        '尧顺玩具',
+        '玩具OEM ODM制造伙伴',
+        '堡垒拼搭玩具厂家',
+        'STEM搭建套装供应',
+        '定制玩具开发',
+        '注塑包装交付支持'
       ]
     }
   },

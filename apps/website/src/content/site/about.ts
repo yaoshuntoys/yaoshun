@@ -1,5 +1,3 @@
-import {seoKeywordPools} from '@/content/site/shared';
-
 export const aboutContent = {
   seo: {
     title: {
@@ -12,19 +10,21 @@ export const aboutContent = {
     },
     keywords: {
       en: [
-        ...seoKeywordPools.company.en,
-        ...seoKeywordPools.factoryCapabilities.en,
-        ...seoKeywordPools.compliance.en.slice(0, 5),
-        "Dongguan Yaoshun company profile",
+        "Yaoshun company profile",
         "OEM ODM toy enterprise",
+        "factory execution model",
+        "educational toy manufacturing",
+        "precision plastic molding capability",
+        "compliance document support",
       ],
       zh: [
-        ...seoKeywordPools.company.zh,
-        ...seoKeywordPools.factoryCapabilities.zh,
-        ...seoKeywordPools.compliance.zh.slice(0, 5),
         "尧顺企业简介",
-        "东莞市尧顺科技有限公司资料",
+        "尧顺科技公司资料",
         "OEM ODM玩具企业",
+        "工厂执行模式",
+        "益智玩具制造",
+        "精密塑胶成型能力",
+        "合规资料支持",
       ],
     },
   },

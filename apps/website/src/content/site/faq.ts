@@ -1,5 +1,3 @@
-import {seoKeywordPools} from '@/content/site/shared';
-
 export const faqContent = {
   seo: {
     title: {
@@ -12,23 +10,20 @@ export const faqContent = {
     },
     keywords: {
       en: [
-        ...seoKeywordPools.products.en.slice(0, 8),
-        ...seoKeywordPools.customization.en.slice(0, 8),
-        'toy manufacturing faq',
-        'toy moq lead time',
-        'b2b shipping support',
-        'toy export logistics',
-        'sample fee toy supplier'
+        'toy OEM ODM FAQ',
+        'MOQ and lead time',
+        'toy sampling process',
+        'packaging and shipment FAQ',
+        'quality checkpoint questions',
+        'export logistics support'
       ],
       zh: [
-        ...seoKeywordPools.products.zh.slice(0, 8),
-        ...seoKeywordPools.customization.zh.slice(0, 8),
-        '玩具FAQ',
-        '起订量交期',
-        '外贸物流支持',
-        '玩具出口发货',
-        '打样费说明',
-        '工厂交期'
+        '玩具OEM ODM FAQ',
+        '起订量和交期',
+        '玩具打样流程',
+        '包装出货常见问题',
+        '质量节点问题',
+        '出口物流支持'
       ]
     }
   },
