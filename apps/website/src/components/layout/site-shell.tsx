@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { BrandMark } from "@/components/ui/marketing";
@@ -120,10 +120,6 @@ function X(props: IconProps) {
   );
 }
 
-const localeEntries = Object.entries(localeRegistry) as Array<
-  [Locale, (typeof localeRegistry)[Locale]]
->;
-
 const footerQuickLinkRoutes = [
   { label: { en: "Home", zh: "首页" }, route: "home" },
   { label: { en: "Products", zh: "产品目录" }, route: "products" },
@@ -159,11 +155,6 @@ const navLinkBase =
 const navLinkActive = "text-[#2563ff] after:scale-x-100";
 const localeButtonClass =
   "inline-flex h-11 items-center justify-center gap-2 rounded-full border border-[rgba(32,62,143,0.10)] bg-white px-3.5 text-[0.92rem] font-medium text-[#132968] shadow-[0_10px_30px_-24px_rgba(20,44,119,0.2)] transition duration-200 hover:-translate-y-0.5 hover:border-[rgba(37,99,255,0.16)] hover:bg-[#f7faff] hover:text-[#2563ff]";
-const dropdownClass =
-  "absolute right-0 top-[calc(100%+0.75rem)] z-50 min-w-[180px] rounded-[1.1rem] border border-[rgba(32,62,143,0.10)] bg-white/95 p-3 shadow-[0_18px_42px_-30px_rgba(20,44,119,0.14)] backdrop-blur-xl";
-const localeOptionClass =
-  "block rounded-2xl px-4 py-3 text-sm font-semibold text-[#6f7ea9] transition hover:bg-[#2563ff]/10 hover:text-[#0e2f9a]";
-const localeOptionActiveClass = "bg-[#2563ff]/10 text-[#0e2f9a]";
 const headerCtaClass =
   "inline-flex h-11 items-center justify-center gap-2 rounded-full border border-transparent bg-[linear-gradient(135deg,#2563ff_0%,#1a43c9_100%)] px-4 text-[0.92rem] font-bold text-white shadow-[0_16px_34px_-20px_rgba(37,99,255,0.58)] transition duration-200 hover:-translate-y-0.5 hover:text-white hover:shadow-[0_20px_40px_-22px_rgba(37,99,255,0.66)] [&>span]:text-white [&>svg]:text-white";
 const mobileHeaderCtaClass =
@@ -195,6 +186,10 @@ function isActive(pathname: string, locale: Locale, href: string) {
 
 function telephoneHref(phone: string) {
   return `tel:${phone.replace(/[^\d+]/g, "")}`;
+}
+
+function getAlternateLocale(locale: Locale): Locale {
+  return locale === "zh" ? "en" : "zh";
 }
 
 function useScrollRestoration(pathname: string) {
@@ -235,60 +230,36 @@ function useScrollRestoration(pathname: string) {
 function LocaleSwitcher({
   closeMenus,
   locale,
-  localeOpen,
   pathname,
   trackingLocation,
-  toggleLocaleOpen,
 }: {
   closeMenus: () => void;
   locale: Locale;
-  localeOpen: boolean;
   pathname: string;
   trackingLocation: string;
-  toggleLocaleOpen: () => void;
 }) {
-  const localeMenuId = `site-locale-menu-${locale}`;
+  const router = useRouter();
+  const targetLocale = getAlternateLocale(locale);
+  const targetHref = replaceLocaleInPath(pathname, targetLocale);
+  const targetLabel = localeRegistry[targetLocale].nativeLabel;
 
   return (
-    <>
-      <button
-        aria-controls={localeMenuId}
-        aria-expanded={localeOpen}
-        aria-label={t(locale, siteShellUi.localeMenuLabel)}
-        className={localeButtonClass}
-        data-track-event="cta_click"
-        data-track-label="locale_menu"
-        data-track-location={trackingLocation}
-        type="button"
-        onClick={toggleLocaleOpen}
-      >
-        <Globe size={16} strokeWidth={2.2} />
-        <span>{localeRegistry[locale].nativeLabel}</span>
-      </button>
-      {localeOpen ? (
-        <div className={dropdownClass} id={localeMenuId}>
-          {localeEntries.map(([entry, meta]) => (
-            <Link
-              key={entry}
-              aria-current={entry === locale ? "true" : undefined}
-              className={`${localeOptionClass} ${
-                entry === locale ? localeOptionActiveClass : ""
-              }`}
-              data-track-destination={replaceLocaleInPath(pathname, entry)}
-              data-track-event="locale_switch"
-              data-track-label={entry}
-              data-track-location={trackingLocation}
-              href={replaceLocaleInPath(pathname, entry)}
-              hrefLang={localeRegistry[entry].htmlLang}
-              prefetch={true}
-              onClick={closeMenus}
-            >
-              {meta.nativeLabel}
-            </Link>
-          ))}
-        </div>
-      ) : null}
-    </>
+    <button
+      aria-label={targetLabel}
+      className={localeButtonClass}
+      data-track-destination={targetHref}
+      data-track-event="locale_switch"
+      data-track-label={targetLocale}
+      data-track-location={trackingLocation}
+      type="button"
+      onClick={() => {
+        closeMenus();
+        router.push(targetHref);
+      }}
+    >
+      <Globe size={16} strokeWidth={2.2} />
+      <span>{targetLabel}</span>
+    </button>
   );
 }
 
@@ -299,31 +270,25 @@ function SiteHeader({
   locale: Locale;
   pathname: string;
 }) {
+  const router = useRouter();
   const contactHref = contactFormPath(locale);
   const homeHref = localizedPath(locale, "home");
+  const mobileTargetLocale = getAlternateLocale(locale);
+  const mobileTargetHref = replaceLocaleInPath(pathname, mobileTargetLocale);
+  const mobileTargetLabel = localeRegistry[mobileTargetLocale].nativeLabel;
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [localeOpen, setLocaleOpen] = useState(false);
-  const localeMenuRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const mobileMenuId = `site-mobile-menu-${locale}`;
   const closeMenus = () => {
     setMobileOpen(false);
-    setLocaleOpen(false);
   };
 
   useEffect(() => {
-    if (!localeOpen && !mobileOpen) {
+    if (!mobileOpen) {
       return;
     }
 
     function handlePointer(event: MouseEvent) {
-      if (
-        localeMenuRef.current &&
-        !localeMenuRef.current.contains(event.target as Node)
-      ) {
-        setLocaleOpen(false);
-      }
-
       if (
         mobileMenuRef.current &&
         !mobileMenuRef.current.contains(event.target as Node)
@@ -335,7 +300,6 @@ function SiteHeader({
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setMobileOpen(false);
-        setLocaleOpen(false);
       }
     }
 
@@ -346,7 +310,7 @@ function SiteHeader({
       document.removeEventListener("mousedown", handlePointer);
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [localeOpen, mobileOpen]);
+  }, [mobileOpen]);
 
   useEffect(() => {
     if (!mobileOpen) {
@@ -406,16 +370,12 @@ function SiteHeader({
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <div className="relative" ref={localeMenuRef}>
-            <LocaleSwitcher
-              closeMenus={closeMenus}
-              locale={locale}
-              localeOpen={localeOpen}
-              pathname={pathname}
-              trackingLocation="header"
-              toggleLocaleOpen={() => setLocaleOpen((value) => !value)}
-            />
-          </div>
+          <LocaleSwitcher
+            closeMenus={closeMenus}
+            locale={locale}
+            pathname={pathname}
+            trackingLocation="header"
+          />
 
           <Link
             className={headerCtaClass}
@@ -499,27 +459,22 @@ function SiteHeader({
                   </Link>
 
                   <div className="grid w-full gap-2.5 border-t border-[rgba(37,99,255,0.08)] pt-4">
-                    {localeEntries.map(([entry, meta]) => (
-                      <Link
-                        key={entry}
-                        aria-current={entry === locale ? "true" : undefined}
-                        className={`flex min-h-[3.1rem] items-center justify-center rounded-[1.1rem] border px-4 text-[0.98rem] font-semibold shadow-none transition duration-200 ${
-                          entry === locale
-                            ? "border-transparent bg-[#dceaff] text-[#16368d]"
-                            : "border-[rgba(37,99,255,0.10)] bg-white text-[#17306e] hover:bg-[#2563ff]/10 hover:text-[#0e2f9a]"
-                        }`}
-                        data-track-destination={replaceLocaleInPath(pathname, entry)}
-                        data-track-event="locale_switch"
-                        data-track-label={entry}
-                        data-track-location="mobile_header"
-                        href={replaceLocaleInPath(pathname, entry)}
-                        hrefLang={localeRegistry[entry].htmlLang}
-                        prefetch={true}
-                        onClick={closeMenus}
-                      >
-                        {meta.nativeLabel}
-                      </Link>
-                    ))}
+                    <button
+                      aria-label={mobileTargetLabel}
+                      className="flex min-h-[3.1rem] items-center justify-center gap-2 rounded-[1.1rem] border border-[rgba(37,99,255,0.10)] bg-white px-4 text-[0.98rem] font-semibold text-[#17306e] shadow-none transition duration-200 hover:bg-[#2563ff]/10 hover:text-[#0e2f9a]"
+                      data-track-destination={mobileTargetHref}
+                      data-track-event="locale_switch"
+                      data-track-label={mobileTargetLocale}
+                      data-track-location="mobile_header"
+                      type="button"
+                      onClick={() => {
+                        closeMenus();
+                        router.push(mobileTargetHref);
+                      }}
+                    >
+                      <Globe size={16} strokeWidth={2.2} />
+                      <span>{mobileTargetLabel}</span>
+                    </button>
                   </div>
                 </div>
               </div>
