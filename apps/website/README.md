@@ -49,7 +49,7 @@ pnpm --filter @yaoshun/website build
 
 ## 环境变量
 
-官网运行时配置从 `apps/website/.env*` 读取。可从 `.env.example` 或 `.env.local.example` 复制：
+官网运行时配置从 Vercel 环境变量或本地 `.env*.local` 读取：
 
 ```bash
 NEXT_PUBLIC_SITE_URL=https://www.yaoshuntoys.com

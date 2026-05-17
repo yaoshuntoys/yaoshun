@@ -1,0 +1,20 @@
+// 邮件记录
+model MailRecord {
+  id           Int      @id @default(autoincrement())
+  scene        String
+  status       String
+  subject      String
+  toEmail      String
+  fromEmail    String
+  content      String   @db.Text
+  errorMessage String?  @db.Text
+  relatedType  String?
+  relatedId    Int?
+  createdAt    DateTime @default(now())
+
+  @@index([scene])
+  @@index([status])
+  @@index([toEmail])
+  @@index([createdAt])
+  @@index([relatedType, relatedId])
+}

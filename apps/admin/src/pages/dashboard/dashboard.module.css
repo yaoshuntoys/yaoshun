@@ -1,0 +1,259 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.statsRow {
+  margin-bottom: 0 !important;
+}
+
+.statCard {
+  border: 0;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.statCardLoading {
+  cursor: default;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+}
+
+.statCardLoading:hover {
+  transform: none;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+.statContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.statLabel {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.statValue {
+  margin-top: 10px;
+  color: #0f172a;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.statTrend {
+  margin-top: 12px;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.statIcon {
+  display: flex;
+  height: 52px;
+  width: 52px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  font-size: 24px;
+}
+
+.statContentIcon {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+}
+
+.statPublishedIcon {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+}
+
+.statMediaIcon {
+  background: rgba(168, 85, 247, 0.12);
+  color: #7c3aed;
+}
+
+.statMessageIcon {
+  background: rgba(244, 63, 94, 0.12);
+  color: #e11d48;
+}
+
+.twoColumnRow {
+  margin-bottom: 0 !important;
+}
+
+.blockCard {
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.actionCard {
+  height: 100%;
+  cursor: pointer;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  transition: all 0.2s ease;
+}
+
+.actionCard:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.1);
+}
+
+.actionBody {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.actionIconWrap {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-size: 22px;
+}
+
+.actionNews {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.actionProduct {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+}
+
+.actionMedia {
+  background: rgba(168, 85, 247, 0.12);
+  color: #7c3aed;
+}
+
+.actionPage {
+  background: rgba(245, 158, 11, 0.14);
+  color: #d97706;
+}
+
+.actionTitle {
+  margin: 0;
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.actionDescription {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.timelineItem {
+  padding-bottom: 8px;
+}
+
+.activityRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.activityUser {
+  font-weight: 600;
+}
+
+.activityModule {
+  color: #64748b;
+}
+
+.activityTarget {
+  display: block;
+  margin-top: 4px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.timelineCreate :global(.ant-timeline-item-head) {
+  color: #059669;
+  border-color: #059669;
+}
+
+.timelineUpdate :global(.ant-timeline-item-head) {
+  color: #2563eb;
+  border-color: #2563eb;
+}
+
+.timelineDelete :global(.ant-timeline-item-head) {
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+.emptyState {
+  padding: 24px 0 8px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.activityPlaceholderList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.activityPlaceholderItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.activityPlaceholderAvatar {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.activityPlaceholderContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 3px;
+}
+
+.activityPlaceholderLine,
+.activityPlaceholderLineShort {
+  height: 10px;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.activityPlaceholderLine {
+  width: 100%;
+}
+
+.activityPlaceholderLineShort {
+  width: 38%;
+}

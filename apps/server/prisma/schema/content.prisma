@@ -1,0 +1,172 @@
+// 产品中心
+model Product {
+  id                   Int      @id @default(autoincrement())
+  productId            String?  @unique
+  slug                 String   @unique
+  category             String
+  titleZh              String
+  titleEn              String
+  summaryZh            String?  @db.Text
+  summaryEn            String?  @db.Text
+  descriptionZh        String   @db.Text
+  descriptionEn        String   @db.Text
+  specs                Json?
+  productAttributes    Json?
+  attributePairs       Json?
+  pricing              Json?
+  customizationOptions Json?
+  images               Json?
+  seoKeywords          Json?
+  detailConfig         Json?
+  rawData              Json?
+  cover                String?
+  status               String   @default("active")
+  sortOrder            Int      @default(0)
+  deletedAt            DateTime?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@index([productId])
+  @@index([category])
+  @@index([status])
+  @@index([sortOrder])
+  @@index([deletedAt])
+  @@index([createdAt])
+}
+
+// 新闻中心
+model News {
+  id             Int       @id @default(autoincrement())
+  slug           String    @unique
+  category       String
+  titleZh        String
+  titleEn        String
+  summaryZh      String?   @db.Text
+  summaryEn      String?   @db.Text
+  contentZh      String    @db.Text
+  contentEn      String    @db.Text
+  cover          String?
+  galleryImages  Json?
+  featuredTopic  Boolean   @default(false)
+  seoKeywords    Json?
+  relatedProduct Json?
+  detailConfig   Json?
+  rawData        Json?
+  status         String    @default("published")
+  publishedAt    DateTime?
+  viewCount      Int       @default(0)
+  sortOrder      Int       @default(0)
+  deletedAt      DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@index([category])
+  @@index([status])
+  @@index([publishedAt])
+  @@index([featuredTopic])
+  @@index([sortOrder])
+  @@index([deletedAt])
+  @@index([createdAt])
+}
+
+// 常见问题
+model FaqItem {
+  id              Int      @id @default(autoincrement())
+  categoryKey     String
+  categoryLabelZh String
+  categoryLabelEn String
+  questionZh      String   @db.Text
+  questionEn      String   @db.Text
+  answerZh        String   @db.Text
+  answerEn        String   @db.Text
+  status          String   @default("active")
+  sortOrder       Int      @default(0)
+  deletedAt       DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([categoryKey])
+  @@index([status])
+  @@index([sortOrder])
+  @@index([deletedAt])
+  @@index([createdAt])
+}
+
+// 合作客户
+model Partner {
+  id        Int      @id @default(autoincrement())
+  nameZh    String
+  nameEn    String
+  logo      String?
+  website   String?
+  status    String   @default("active")
+  sortOrder Int      @default(0)
+  deletedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([sortOrder])
+  @@index([deletedAt])
+  @@index([createdAt])
+}
+
+// 官网页面定义
+model SitePage {
+  id          Int      @id @default(autoincrement())
+  key         String   @unique
+  title       String
+  description String   @db.Text
+  path        String
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  draft       SitePageDraft?
+  published   SitePagePublished?
+
+  @@index([sortOrder])
+}
+
+// 官网页面草稿
+model SitePageDraft {
+  id           Int      @id @default(autoincrement())
+  pageKey      String   @unique
+  page         SitePage @relation(fields: [pageKey], references: [key], onDelete: Cascade, onUpdate: Cascade)
+  content      Json
+  operatorName String?
+  updatedAt    DateTime @updatedAt
+  createdAt    DateTime @default(now())
+
+  @@index([updatedAt])
+}
+
+// 官网页面发布版本
+model SitePagePublished {
+  id           Int      @id @default(autoincrement())
+  pageKey      String   @unique
+  page         SitePage @relation(fields: [pageKey], references: [key], onDelete: Cascade, onUpdate: Cascade)
+  content      Json
+  operatorName String?
+  publishedAt  DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  createdAt    DateTime @default(now())
+
+  @@index([publishedAt])
+}
+
+// 通用内容历史版本
+model ContentRevision {
+  id           Int      @id @default(autoincrement())
+  entityType   String
+  entityId     String
+  version      Int
+  action       String
+  operatorName String?
+  summary      String?  @db.Text
+  snapshot     Json
+  createdAt    DateTime @default(now())
+
+  @@unique([entityType, entityId, version])
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}

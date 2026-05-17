@@ -1,0 +1,55 @@
+// 多媒体文件夹
+model MediaFolder {
+  id        Int           @id @default(autoincrement())
+  name      String
+  parentId  Int?
+  isSystem  Boolean       @default(false)
+  parent    MediaFolder?  @relation("MediaFolderTree", fields: [parentId], references: [id], onDelete: Cascade)
+  children  MediaFolder[] @relation("MediaFolderTree")
+  assets    MediaAsset[]
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@index([parentId])
+}
+
+// 多媒体资源
+model MediaAsset {
+  id              Int      @id @default(autoincrement())
+  filename        String
+  originalName    String
+  mimetype        String
+  size            Int
+  url             String
+  storageProvider String   @default("local")
+  storageKey      String?
+  pathname        String?
+  folderId        Int?
+  folder          MediaFolder? @relation(fields: [folderId], references: [id], onDelete: SetNull)
+  deletedAt       DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  references      MediaReference[]
+
+  @@index([mimetype])
+  @@index([createdAt])
+  @@index([folderId])
+  @@index([deletedAt])
+  @@index([storageProvider])
+}
+
+// 多媒体引用
+model MediaReference {
+  id          Int        @id @default(autoincrement())
+  assetId     Int
+  asset       MediaAsset @relation(fields: [assetId], references: [id], onDelete: Cascade)
+  entityType  String
+  entityId    String
+  fieldPath   String?
+  displayName String?
+  createdAt   DateTime   @default(now())
+
+  @@unique([assetId, entityType, entityId, fieldPath])
+  @@index([assetId])
+  @@index([entityType, entityId])
+}

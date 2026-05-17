@@ -3,11 +3,18 @@
   "private": true,
   "version": "0.1.0",
   "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
-    "dev": "pnpm --filter @yaoshun/website dev",
+    "dev": "pnpm --parallel -r dev",
     "dev:website": "pnpm --filter @yaoshun/website dev",
+    "dev:server": "pnpm --filter @yaoshun/server dev",
+    "dev:admin": "pnpm --filter @yaoshun/admin dev",
     "lint": "pnpm -r lint",
     "build": "pnpm -r build",
-    "typecheck": "pnpm -r typecheck"
+    "typecheck": "pnpm -r typecheck",
+    "setup": "pnpm install && pnpm --filter @yaoshun/server prisma:generate",
+    "setup:db": "pnpm --filter @yaoshun/server prisma:push && pnpm --filter @yaoshun/server prisma:seed"
   }
 }

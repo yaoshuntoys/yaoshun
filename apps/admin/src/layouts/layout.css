@@ -1,0 +1,367 @@
+.admin-layout {
+  min-height: 100vh;
+}
+
+.admin-layout-main {
+  background: transparent;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.admin-layout-sider.ant-layout-sider {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-layout-sider .ant-layout-sider-children {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.admin-layout-menu.ant-menu {
+  border-inline-end: 0 !important;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.admin-layout-header.ant-layout-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 248px;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  transition: left 0.2s, width 0.2s;
+}
+
+.admin-layout-header.ant-layout-header.admin-layout-header-collapsed {
+  left: 80px;
+}
+
+.admin-layout-header-light.ant-layout-header {
+  background: #ffffff;
+}
+
+.admin-layout-header-dark.ant-layout-header {
+  background: #141414;
+}
+
+.admin-tabs {
+  position: fixed;
+  top: 64px;
+  right: 0;
+  left: 248px;
+  z-index: 98;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  background: #ffffff;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 6px 22px;
+  transition: left 0.2s, width 0.2s;
+}
+
+.admin-layout-header-collapsed + .admin-tabs,
+.admin-layout-main:has(.admin-layout-header-collapsed) .admin-tabs {
+  left: 80px;
+}
+
+.admin-tabs-track {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  height: 100%;
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+.admin-tabs-track::-webkit-scrollbar {
+  display: none;
+}
+
+.admin-tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 160px;
+  height: 28px;
+  padding: 0 9px 0 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+  transition:
+    background 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.admin-tab:hover {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #334155;
+}
+
+.admin-tab-active {
+  background: #eef4ff;
+  border-color: #c7d7fe;
+  color: #1d4ed8;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.admin-tab-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-tab-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  color: #94a3b8;
+  font-size: 10px;
+  opacity: 0.7;
+  transition:
+    background 0.16s ease,
+    color 0.16s ease,
+    opacity 0.16s ease;
+}
+
+.admin-tab-close:hover {
+  background: rgba(30, 64, 175, 0.1);
+  color: #1e40af;
+}
+
+.admin-tabs-clear.ant-btn {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  color: #64748b;
+}
+
+.admin-tabs-clear.ant-btn:hover {
+  background: #f8fafc;
+  color: #1d4ed8;
+}
+
+.page-editor-side-card {
+  position: sticky;
+  top: 12px;
+  z-index: 5;
+  max-height: calc(100vh - 188px);
+  overflow-y: auto;
+  align-self: flex-start;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 14px;
+}
+
+.page-editor-module-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.page-editor-module-item {
+  min-height: 30px;
+  border-radius: 6px;
+  padding: 7px 10px;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.page-editor-module-item:hover {
+  background: #eef4ff;
+  color: #1d4ed8;
+}
+
+.page-editor-nested-card.ant-card {
+  margin-bottom: 14px;
+  background: #fbfdff;
+}
+
+.page-editor-array-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.page-editor-array-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.admin-layout-content.ant-layout-content {
+  box-sizing: border-box;
+  height: calc(100vh - 152px);
+  margin: 24px;
+  margin-top: 128px;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.admin-layout-content-light.ant-layout-content {
+  background: #ffffff;
+}
+
+.admin-layout-content-dark.ant-layout-content {
+  background: #141414;
+}
+
+.admin-keep-alive {
+  height: 100%;
+}
+
+.admin-keep-alive-pane {
+  display: none;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.admin-keep-alive-pane-active {
+  display: block;
+}
+
+.admin-header-icon-button.ant-btn {
+  font-size: 16px;
+}
+
+.admin-header-icon-button-light.ant-btn {
+  color: #334155;
+}
+
+.admin-header-icon-button-dark.ant-btn {
+  color: #ffffff;
+}
+
+.admin-header-user {
+  cursor: pointer;
+}
+
+.admin-header-user-text-light {
+  color: #334155 !important;
+}
+
+.admin-header-user-text-dark {
+  color: #ffffff !important;
+}
+
+.admin-logo {
+  display: flex;
+  height: 64px;
+  align-items: center;
+}
+
+.admin-logo-expanded {
+  justify-content: flex-start;
+  padding: 0 20px;
+}
+
+.admin-logo-collapsed {
+  justify-content: center;
+  padding: 0;
+}
+
+.admin-logo-light {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-logo-dark {
+  border-bottom: 1px solid #333333;
+}
+
+.admin-logo-image {
+  height: 32px;
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.admin-logo-text {
+  font-size: 16px;
+}
+
+.admin-logo-text-light {
+  color: #334155 !important;
+}
+
+.rich-text-editor {
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rich-text-editor .ProseMirror {
+  min-height: 200px;
+  padding: 12px;
+  outline: none;
+}
+
+.rich-text-editor .ProseMirror p {
+  margin: 0 0 0.75em 0;
+}
+
+.rich-text-editor .ProseMirror p:last-child {
+  margin-bottom: 0;
+}
+
+.rich-text-editor .ProseMirror h2 {
+  margin: 0 0 0.5em 0;
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+.rich-text-editor .ProseMirror ul,
+.rich-text-editor .ProseMirror ol {
+  margin: 0 0 0.75em 0;
+  padding-left: 1.5em;
+}
+
+.rich-text-editor .ProseMirror li {
+  margin: 0.25em 0;
+}
+
+.rich-text-editor .ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+}

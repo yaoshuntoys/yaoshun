@@ -11,6 +11,8 @@ coverage
 
 # Logs
 *.log
+*.log.gz
+apps/server/logs/.application-audit.json
 
 # Local environment files
 .env

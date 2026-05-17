@@ -1,0 +1,142 @@
+.form {
+  width: 100%;
+}
+
+.fieldsWrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.fieldCol {
+  min-width: 200px;
+  flex: 0 1 200px;
+}
+
+.fieldInput,
+.fieldPassword,
+.fieldTextarea {
+  min-width: 320px;
+  flex-basis: 320px;
+}
+
+.fieldDate,
+.fieldDateRange {
+  min-width: 260px;
+  flex-basis: 260px;
+}
+
+.fieldSelect,
+.fieldNumber,
+.fieldSwitch {
+  min-width: 220px;
+  flex-basis: 220px;
+}
+
+.fieldItem {
+  width: 100%;
+  margin-bottom: 0 !important;
+}
+
+.fieldItem :global(.ant-form-item-control),
+.fieldItem :global(.ant-form-item-control-input),
+.fieldItem :global(.ant-form-item-control-input-content) {
+  width: 100%;
+}
+
+.fieldItem :global(.ant-input-affix-wrapper),
+.fieldItem :global(.ant-input),
+.fieldItem :global(.ant-input-number),
+.fieldItem :global(.ant-picker),
+.fieldItem :global(.ant-select),
+.fieldItem :global(.ant-select-selector) {
+  width: 100% !important;
+}
+
+.fieldItem :global(.ant-input-affix-wrapper),
+.fieldItem :global(.ant-input),
+.fieldItem :global(.ant-input-number),
+.fieldItem :global(.ant-picker),
+.fieldItem :global(.ant-select) {
+  min-width: 0;
+}
+
+.fieldInput .fieldItem :global(.ant-input-affix-wrapper),
+.fieldInput .fieldItem :global(.ant-input),
+.fieldPassword .fieldItem :global(.ant-input-affix-wrapper),
+.fieldPassword .fieldItem :global(.ant-input),
+.fieldTextarea .fieldItem :global(.ant-input-affix-wrapper),
+.fieldTextarea .fieldItem :global(.ant-input) {
+  min-width: 320px;
+}
+
+.fieldDate .fieldItem :global(.ant-picker),
+.fieldDateRange .fieldItem :global(.ant-picker) {
+  min-width: 260px;
+}
+
+.fieldSelect .fieldItem :global(.ant-select),
+.fieldNumber .fieldItem :global(.ant-input-number),
+.fieldSwitch .fieldItem :global(.ant-switch) {
+  min-width: 220px;
+}
+
+.actionItem {
+  margin-bottom: 0 !important;
+  margin-left: auto;
+}
+
+.actionWrap {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 32px;
+}
+
+.actionSpace {
+  flex-wrap: nowrap !important;
+}
+
+.actionSpace :global(.ant-btn) {
+  white-space: nowrap;
+}
+
+@media (max-width: 992px) {
+  .fieldsWrap {
+    gap: 12px;
+  }
+
+  .fieldCol,
+  .fieldInput,
+  .fieldPassword,
+  .fieldTextarea,
+  .fieldDate,
+  .fieldDateRange,
+  .fieldSelect,
+  .fieldNumber,
+  .fieldSwitch {
+    min-width: 0;
+    flex-basis: 100%;
+  }
+
+  .fieldItem :global(.ant-input-affix-wrapper),
+  .fieldItem :global(.ant-input),
+  .fieldItem :global(.ant-input-number),
+  .fieldItem :global(.ant-picker),
+  .fieldItem :global(.ant-select) {
+    min-width: 0;
+  }
+
+  .actionItem {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .actionWrap {
+    justify-content: flex-start;
+  }
+
+  .actionSpace {
+    flex-wrap: wrap !important;
+  }
+}

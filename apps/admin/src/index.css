@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f5f7fb;
+  color: #0f172a;
+}
+
+#root {
+  height: 100%;
+}
+
+.ant-table-wrapper .ant-table-thead > tr > th {
+  white-space: nowrap;
+}
+
+.ant-table-wrapper .ant-table-cell-fix-right,
+.ant-table-wrapper .ant-table-cell-fix-left {
+  background: #ffffff;
+}
+
+@layer components {
+  .admin-surface-card {
+    @apply rounded-xl shadow-panel;
+  }
+
+  .admin-section-title {
+    @apply !mb-0;
+  }
+
+  .admin-muted-text {
+    @apply text-xs text-slate-500;
+  }
+
+  .admin-form-item-compact {
+    @apply !mb-0;
+  }
+
+  .admin-inline-form {
+    @apply w-full;
+  }
+
+  .login-card .ant-card-body {
+    @apply p-8 md:p-10;
+  }
+
+  .dashboard-action-card .ant-card-body {
+    @apply px-4 py-6;
+  }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* 选中文字样式 */
+::selection {
+  background: rgba(102, 126, 234, 0.2);
+}
+
+/* 通用工具类 */
+/* 动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
