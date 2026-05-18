@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
+import { GlobalFormFeedback } from "@/components/forms/global-form-feedback";
 import { BrandMark } from "@/components/ui/marketing";
 import {
   navItems,
@@ -690,6 +691,7 @@ export function SiteShell({ children, locale }: SiteShellProps) {
       <SiteHeader key={`${locale}:${pathname}`} locale={locale} pathname={pathname} />
       <main className="w-full px-0 pb-[3rem] lg:pb-[4.5rem]">{children}</main>
       <SiteFooter locale={locale} />
+      <GlobalFormFeedback locale={locale} />
     </div>
   );
 }

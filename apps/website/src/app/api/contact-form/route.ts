@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { Resend } from "resend";
 
@@ -13,7 +13,7 @@ const maxAttributionLength = 8000;
 const defaultContactRecipient = "yaoshuntoys@gmail.com";
 const rateLimitBuckets = new Map<string, number[]>();
 
-type EmailProvider = "smtp" | "resend";
+type EmailProvider = "smtp-contact" | "smtp-tawk" | "resend";
 
 type MailPayload = {
   headers: Record<string, string>;
@@ -35,15 +35,39 @@ type SmtpConfig = {
   pass: string;
   port: number;
   secure: boolean;
-  to: string;
   user: string;
 };
 
 type ResendConfig = {
   apiKey: string;
   from: string;
-  to: string;
+  to: string[];
 };
+
+type DeliveryTarget = {
+  from: string;
+  to: string[];
+};
+
+type DeliveryTask = {
+  provider: EmailProvider;
+  send: () => Promise<string | undefined>;
+  target: DeliveryTarget;
+};
+
+type DeliverySuccess = {
+  messageId?: string;
+  ok: true;
+  provider: EmailProvider;
+};
+
+type DeliveryFailure = {
+  ok: false;
+  provider: EmailProvider;
+  reason: string;
+};
+
+type DeliveryResult = DeliverySuccess | DeliveryFailure;
 
 function escapeHtml(value: string) {
   return value
@@ -70,6 +94,30 @@ function uniqueValues(values: string[]) {
   return [...new Set(values.filter(Boolean))];
 }
 
+function getPrimaryRecipient() {
+  return getEnvValue("CONTACT_FORM_TO_EMAIL") || defaultContactRecipient;
+}
+
+function getEmailList(values: string[]) {
+  return uniqueValues(
+    values
+      .flatMap((value) => value.split(","))
+      .map((value) => value.trim().toLowerCase()),
+  );
+}
+
+function maskEmailAddress(value: string) {
+  return value.replace(
+    /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi,
+    (email) => {
+      const [local = "", domain = ""] = email.split("@");
+      const visiblePrefix = local.slice(0, 2) || "*";
+
+      return `${visiblePrefix}***@${domain}`;
+    },
+  );
+}
+
 function formatUnknownError(error: unknown) {
   if (error instanceof Error) {
     return error.message;
@@ -90,7 +138,6 @@ function getSmtpConfig(): {
   config: SmtpConfig | null;
   diagnostics: ProviderDiagnostics;
 } {
-  const to = getEnvValue("TAWK_TICKET_EMAIL") || defaultContactRecipient;
   const host = getEnvValue("EMAIL_HOST");
   const rawPort = getEnvValue("EMAIL_PORT");
   const user = getEnvValue("EMAIL_USER");
@@ -126,7 +173,6 @@ function getSmtpConfig(): {
       pass,
       port,
       secure: port === 465,
-      to,
       user,
     },
     diagnostics,
@@ -139,13 +185,12 @@ function getResendConfig(): {
 } {
   const apiKey = getEnvValue("RESEND_API_KEY");
   const from = getEnvValue("RESEND_FROM_EMAIL") || "onboarding@resend.dev";
-  const to =
-    getEnvValue("RESEND_TO_EMAIL") ||
-    getEnvValue("TAWK_TICKET_EMAIL") ||
-    defaultContactRecipient;
+  const to = getEmailList([getPrimaryRecipient(), getEnvValue("RESEND_TO_EMAIL")]);
   const missing = [!apiKey ? "RESEND_API_KEY" : ""];
   const invalid = [
-    !isValidEmail(to) ? "RESEND_TO_EMAIL / TAWK_TICKET_EMAIL must be a valid email" : "",
+    to.length === 0 || to.some((item) => !isValidEmail(item))
+      ? "RESEND_TO_EMAIL / CONTACT_FORM_TO_EMAIL must contain valid email addresses"
+      : "",
     !from ? "RESEND_FROM_EMAIL" : "",
   ];
   const diagnostics = {
@@ -161,23 +206,29 @@ function getResendConfig(): {
   return { config: { apiKey, from, to }, diagnostics };
 }
 
-async function sendWithSmtp(config: SmtpConfig, payload: MailPayload) {
+async function sendWithSmtp(config: SmtpConfig, to: string[], payload: MailPayload) {
   const transporter = nodemailer.createTransport({
+    connectionTimeout: 8000,
+    dnsTimeout: 5000,
+    greetingTimeout: 8000,
     host: config.host,
     port: config.port,
     secure: config.secure,
+    socketTimeout: 12000,
     auth: { user: config.user, pass: config.pass },
   });
 
-  await transporter.sendMail({
+  const info = await transporter.sendMail({
     from: config.from,
-    to: config.to,
+    to: to.join(", "),
     replyTo: payload.replyTo,
     subject: payload.subject,
     text: payload.text,
     html: payload.html,
     headers: payload.headers,
   });
+
+  return typeof info.messageId === "string" ? info.messageId : undefined;
 }
 
 async function sendWithResend(config: ResendConfig, payload: MailPayload) {
@@ -195,26 +246,76 @@ async function sendWithResend(config: ResendConfig, payload: MailPayload) {
   if (result.error) {
     throw new Error(`${result.error.name}: ${result.error.message}`);
   }
+
+  return result.data?.id;
 }
 
-async function sendLeadEmail(payload: MailPayload) {
+function formatProviderDiagnostics(diagnostics: ProviderDiagnostics) {
+  return diagnostics.configured
+    ? diagnostics
+    : {
+        ...diagnostics,
+        missing: diagnostics.missing,
+      };
+}
+
+function getLeadEmailTasks(payload: MailPayload) {
   const smtp = getSmtpConfig();
   const resend = getResendConfig();
+  const contactSmtpRecipients = getEmailList([
+    getPrimaryRecipient(),
+    getEnvValue("SMTP_TO_EMAIL"),
+  ]);
+  const tawkRecipients = getEmailList([getEnvValue("TAWK_TICKET_EMAIL")]);
   const skipped: Record<EmailProvider, ProviderDiagnostics> = {
-    smtp: smtp.diagnostics,
+    "smtp-contact": smtp.diagnostics,
+    "smtp-tawk": tawkRecipients.length > 0
+      ? smtp.diagnostics
+      : {
+          configured: false,
+          invalid: [],
+          missing: ["TAWK_TICKET_EMAIL"],
+        },
     resend: resend.diagnostics,
   };
-  const sendTasks: Array<{
-    provider: EmailProvider;
-    send: () => Promise<void>;
-  }> = [];
+  const invalidContactRecipients = contactSmtpRecipients.some((item) => !isValidEmail(item));
+  const invalidTawkRecipients = tawkRecipients.some((item) => !isValidEmail(item));
+  const sendTasks: DeliveryTask[] = [];
 
-  if (smtp.config) {
+  if (smtp.config && contactSmtpRecipients.length > 0 && !invalidContactRecipients) {
     const smtpConfig = smtp.config;
     sendTasks.push({
-      provider: "smtp",
-      send: () => sendWithSmtp(smtpConfig, payload),
+      provider: "smtp-contact",
+      send: () => sendWithSmtp(smtpConfig, contactSmtpRecipients, payload),
+      target: {
+        from: smtpConfig.from,
+        to: contactSmtpRecipients,
+      },
     });
+  } else if (invalidContactRecipients) {
+    skipped["smtp-contact"] = {
+      configured: false,
+      invalid: ["SMTP_TO_EMAIL / CONTACT_FORM_TO_EMAIL must contain valid email addresses"],
+      missing: [],
+    };
+  }
+
+  if (smtp.config && tawkRecipients.length > 0 && !invalidTawkRecipients) {
+    const smtpConfig = smtp.config;
+    sendTasks.push({
+      provider: "smtp-tawk",
+      send: () => sendWithSmtp(smtpConfig, tawkRecipients, payload),
+      target: {
+        from: smtpConfig.from,
+        to: tawkRecipients,
+      },
+    });
+  } else if (invalidTawkRecipients) {
+    skipped["smtp-tawk"] = {
+      configured: false,
+      invalid: ["TAWK_TICKET_EMAIL must contain valid email addresses"],
+      missing: [],
+    };
   }
 
   if (resend.config) {
@@ -222,52 +323,138 @@ async function sendLeadEmail(payload: MailPayload) {
     sendTasks.push({
       provider: "resend",
       send: () => sendWithResend(resendConfig, payload),
+      target: {
+        from: resendConfig.from,
+        to: resendConfig.to,
+      },
     });
   }
 
-  const results = await Promise.all(
-    sendTasks.map(async ({ provider, send }) => {
-      try {
-        await send();
-        return { ok: true as const, provider };
-      } catch (error) {
-        return {
-          ok: false as const,
-          provider,
-          reason: formatUnknownError(error),
-        };
-      }
-    }),
-  );
+  return { sendTasks, skipped };
+}
+
+async function runDeliveryTask(task: DeliveryTask): Promise<DeliveryResult> {
+  try {
+    const messageId = await task.send();
+    return {
+      messageId,
+      ok: true,
+      provider: task.provider,
+    };
+  } catch (error) {
+    return {
+      ok: false,
+      provider: task.provider,
+      reason: formatUnknownError(error),
+    };
+  }
+}
+
+function summarizeDeliveryResults(
+  sendTasks: DeliveryTask[],
+  skipped: Record<EmailProvider, ProviderDiagnostics>,
+  results: DeliveryResult[],
+) {
   const attempted = sendTasks.map((task) => task.provider);
-  const successes = results
-    .filter((result) => result.ok)
-    .map((result) => result.provider);
-  const failures = results
-    .filter((result) => !result.ok)
-    .map((result) => ({
+  const failures: Array<{ provider: EmailProvider; reason: string }> = [];
+  const successes: EmailProvider[] = [];
+  const transportIds: Array<{ messageId: string; provider: EmailProvider }> = [];
+
+  for (const result of results) {
+    if (result.ok) {
+      successes.push(result.provider);
+
+      if (result.messageId) {
+        transportIds.push({
+          messageId: result.messageId,
+          provider: result.provider,
+        });
+      }
+
+      continue;
+    }
+
+    failures.push({
       provider: result.provider,
       reason: result.reason,
-    }));
-  const diagnosticSummary = {
+    });
+  }
+
+  return {
     attempted,
     failures,
-    skipped,
+    skipped: {
+      "smtp-contact": formatProviderDiagnostics(skipped["smtp-contact"]),
+      "smtp-tawk": formatProviderDiagnostics(skipped["smtp-tawk"]),
+      resend: formatProviderDiagnostics(skipped.resend),
+    },
     successes,
+    targets: Object.fromEntries(
+      sendTasks.map((task) => [
+        task.provider,
+        {
+          from: maskEmailAddress(task.target.from),
+          to: task.target.to.map(maskEmailAddress),
+        },
+      ]),
+    ) as Record<EmailProvider, DeliveryTarget>,
+    transportIds,
   };
-  const hasSkippedProviderIssues = !smtp.diagnostics.configured || !resend.diagnostics.configured;
+}
 
-  if (successes.length > 0) {
-    if (
-      failures.length > 0 ||
-      attempted.length > successes.length ||
-      hasSkippedProviderIssues
-    ) {
-      console.warn("Contact form email sent with partial provider issues", diagnosticSummary);
+async function waitForFirstSuccessfulDelivery(
+  taskPromises: Array<Promise<DeliveryResult>>,
+) {
+  return new Promise<DeliveryResult[]>((resolve) => {
+    const completedResults: DeliveryResult[] = [];
+
+    if (taskPromises.length === 0) {
+      resolve(completedResults);
+      return;
     }
+
+    for (const taskPromise of taskPromises) {
+      taskPromise.then((result) => {
+        completedResults.push(result);
+
+        if (result.ok || completedResults.length === taskPromises.length) {
+          resolve([...completedResults]);
+        }
+      });
+    }
+  });
+}
+
+async function sendLeadEmail(payload: MailPayload) {
+  const { sendTasks, skipped } = getLeadEmailTasks(payload);
+  const taskPromises = sendTasks.map(runDeliveryTask);
+  const firstResults = await waitForFirstSuccessfulDelivery(taskPromises);
+  const hasFirstSuccess = firstResults.some((result) => result.ok);
+
+  if (hasFirstSuccess) {
+    const diagnosticSummary = summarizeDeliveryResults(sendTasks, skipped, firstResults);
+    console.info("Contact form email first delivery succeeded", diagnosticSummary);
+
+    after(async () => {
+      const allResults = await Promise.all(taskPromises);
+      const finalDiagnosticSummary = summarizeDeliveryResults(sendTasks, skipped, allResults);
+
+      if (allResults.some((result) => !result.ok) || allResults.length < sendTasks.length) {
+        console.warn(
+          "Contact form email completed with partial provider issues",
+          finalDiagnosticSummary,
+        );
+        return;
+      }
+
+      console.info("Contact form email delivery result", finalDiagnosticSummary);
+    });
 
     return diagnosticSummary;
   }
+
+  const results = await Promise.all(taskPromises);
+  const diagnosticSummary = summarizeDeliveryResults(sendTasks, skipped, results);
 
   console.error("Contact form email delivery failed", diagnosticSummary);
   throw new Error("No email provider delivered the contact form email.");
@@ -360,6 +547,8 @@ export async function POST(request: Request) {
     const now = Date.now();
 
     if (website) {
+      console.info("Contact form honeypot submission ignored");
+
       return NextResponse.json({ ok: true });
     }
 
@@ -430,7 +619,7 @@ export async function POST(request: Request) {
       message,
     ].filter(Boolean).join("\n");
 
-    await sendLeadEmail({
+    const mailPayload = {
       headers: {
         "X-Lead-Source": "website-contact-form",
       },
@@ -481,7 +670,22 @@ export async function POST(request: Request) {
       replyTo: normalizedEmail,
       subject,
       text,
+    };
+
+    console.info("Contact form submission received", {
+      attribution,
+      clientAddress,
+      company,
+      email: normalizedEmail,
+      locale,
+      message,
+      name,
+      submittedAt,
+      subject,
+      userAgent: request.headers.get("user-agent") ?? "",
     });
+
+    await sendLeadEmail(mailPayload);
 
     return NextResponse.json({ ok: true });
   } catch (error) {

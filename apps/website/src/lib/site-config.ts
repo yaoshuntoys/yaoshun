@@ -34,8 +34,8 @@ export const googleAdsContactConversionSendTo = (
 ).trim();
 export const googleAdsLeadConversionCurrency =
   (
-    process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_CONVERSION_CURRENCY || "CNY"
-  ).trim() || "CNY";
+    process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_CONVERSION_CURRENCY || "USD"
+  ).trim() || "USD";
 export const googleAdsLeadConversionValue = Number(
   process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_CONVERSION_VALUE || "1",
 );

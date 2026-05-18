@@ -1,7 +1,7 @@
 {
   "name": "Yaoshun Toys",
   "short_name": "Yaoshun Toys",
-  "start_url": "/en",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#f8f9fa",
   "theme_color": "#00113a",
