@@ -1,11 +1,17 @@
 "use client";
 
+import { Facebook, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { BrandMark } from "@/components/ui/marketing";
-import { navItems, siteCopy, siteShellUi } from "@/components/layout/site-shell.data";
+import {
+  navItems,
+  siteCopy,
+  siteShellUi,
+  socialContactLinks,
+} from "@/components/layout/site-shell.data";
 import { openCookieConsentManager } from "@/lib/cookie-consent-events";
 import { localeRegistry, t, type Locale } from "@/lib/i18n";
 import {
@@ -166,6 +172,13 @@ const footerLinkClass =
   "inline-flex min-h-11 w-full items-center rounded-[0.95rem] px-2 text-[0.82rem] leading-5 text-[#6f7ea9] transition hover:bg-[#2563ff]/6 hover:text-[#2563ff] md:min-h-0 md:w-auto md:rounded-none md:px-0 md:text-[0.92rem] md:leading-7 md:hover:bg-transparent";
 const footerContactClass =
   "flex min-h-10 items-center gap-2 rounded-[0.95rem] px-2 text-[0.82rem] leading-5 text-[#6f7ea9] transition hover:bg-[#2563ff]/6 hover:text-[#2563ff] md:min-h-0 md:px-0 md:text-[0.9rem] md:leading-6 md:hover:bg-transparent";
+const footerSocialLinkClass =
+  "inline-flex min-h-9 items-center justify-center gap-1.5 rounded-full border border-[rgba(37,99,255,0.12)] bg-white px-3 text-[0.76rem] font-semibold text-[#17306e] shadow-[0_12px_24px_-20px_rgba(18,41,103,0.16)] transition duration-200 hover:-translate-y-0.5 hover:border-[rgba(37,99,255,0.2)] hover:bg-[#f7faff] hover:text-[#2563ff] md:min-h-8 md:px-2.5 md:text-[0.78rem]";
+
+const socialContactIcons = {
+  whatsapp: MessageCircle,
+  facebook: Facebook,
+} as const;
 
 function stripTrailingSlash(pathname: string) {
   return pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
@@ -539,6 +552,7 @@ function SiteFooter({ locale }: { locale: Locale }) {
     label: t(locale, item.label),
     trackingLabel: item.route,
   }));
+  const activeSocialLinks = socialContactLinks.filter((item) => item.href);
   const copyrightYear = new Date().getFullYear();
 
   return (
@@ -577,6 +591,37 @@ function SiteFooter({ locale }: { locale: Locale }) {
               <span>{t(locale, siteCopy.contact.address)}</span>
             </span>
           </div>
+          {activeSocialLinks.length > 0 ? (
+            <div className="mt-3 border-t border-[rgba(37,99,255,0.08)] pt-3 md:mt-4 md:pt-4">
+              <h4 className="mb-2 text-[0.72rem] font-bold uppercase tracking-[0.12em] text-[#9aa8cc]">
+                {t(locale, { en: "Social Contact", zh: "社交联系方式" })}
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {activeSocialLinks.map((item) => {
+                  const SocialIcon = socialContactIcons[item.key];
+
+                  return (
+                    <a
+                      aria-label={t(locale, item.label)}
+                      className={footerSocialLinkClass}
+                      data-track-destination={item.href}
+                      data-track-event="contact_click"
+                      data-track-label={`footer_${item.key}`}
+                      data-track-location="footer_social_contact"
+                      data-track-method={item.trackingMethod}
+                      href={item.href}
+                      key={item.key}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <SocialIcon size={14} strokeWidth={2.1} />
+                      <span>{t(locale, item.label)}</span>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          ) : null}
         </div>
 
         <FooterLinkGroup

@@ -188,6 +188,51 @@
   text-decoration: none;
 }
 
+.contact-social-block {
+  display: grid;
+  gap: 0.65rem;
+  padding-top: 0.2rem;
+}
+
+.contact-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.contact-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.55rem;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  border: 1px solid rgba(37, 99, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #17306e;
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 14px 28px -24px rgba(18, 41, 103, 0.18);
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.contact-social-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(37, 99, 255, 0.22);
+  background: #ffffff;
+  color: #2563ff;
+}
+
+.contact-social-link svg {
+  flex-shrink: 0;
+}
+
 .contact-company-placeholder {
   min-height: 19.5rem;
   border-radius: 1.3rem;
@@ -324,6 +369,12 @@
 
   .contact-company-stat strong {
     font-size: 1rem;
+  }
+
+  .contact-social-link {
+    min-height: 2.45rem;
+    padding: 0 0.85rem;
+    font-size: 0.82rem;
   }
 
   .contact-panel-head h2 {

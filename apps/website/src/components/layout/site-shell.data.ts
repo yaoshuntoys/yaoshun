@@ -23,6 +23,21 @@ export const siteCopy = {
   headerCta: {en: "Get in Touch", zh: "联系我们"},
 } as const;
 
+export const socialContactLinks = [
+  {
+    key: "whatsapp",
+    label: { en: "WhatsApp", zh: "WhatsApp" },
+    href: "https://wa.me/8618780083256",
+    trackingMethod: "whatsapp",
+  },
+  {
+    key: "facebook",
+    label: { en: "Facebook", zh: "Facebook" },
+    href: "",
+    trackingMethod: "facebook",
+  },
+] as const;
+
 export const navItems = [
   {key: "home", href: "", label: {en: "Home", zh: "首页"}},
   {key: "products", href: "/products", label: {en: "Products", zh: "产品目录"}},

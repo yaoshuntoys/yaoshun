@@ -3,10 +3,12 @@ import "@/styles/pages/contact.css";
 import {
   ArrowRight,
   Clock3,
+  Facebook,
   Factory,
   Globe2,
   Mail,
   MapPin,
+  MessageCircle,
   PackageCheck,
   Phone,
   Plus,
@@ -17,7 +19,7 @@ import Link from "next/link";
 
 import { ContactForm } from "@/components/forms/contact-form";
 import { StructuredData } from "@/components/seo/structured-data";
-import { siteCopy } from "@/components/layout/site-shell.data";
+import { siteCopy, socialContactLinks } from "@/components/layout/site-shell.data";
 import { contactContent } from "@/content/site";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getLocaleFromParams, t } from "@/lib/i18n";
@@ -126,6 +128,11 @@ const assuranceItems = [
   },
 ] as const;
 
+const socialContactIcons = {
+  whatsapp: MessageCircle,
+  facebook: Facebook,
+} as const;
+
 export async function generateMetadata({
   params,
 }: {
@@ -171,6 +178,7 @@ export default async function ContactPage({
   const solutionsHref = localizedPath(locale, "solutions");
   const faqHref = localizedPath(locale, "faq");
   const pageUrl = toAbsoluteUrl(contactHref);
+  const activeSocialLinks = socialContactLinks.filter((item) => item.href);
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -289,6 +297,36 @@ export default async function ContactPage({
                 );
               })}
             </div>
+            {activeSocialLinks.length > 0 ? (
+              <div className="contact-social-block">
+                <span className="contact-company-stat-label">
+                  {t(locale, { en: "Social Contact", zh: "社交联系方式" })}
+                </span>
+                <div className="contact-social-links">
+                  {activeSocialLinks.map((item) => {
+                    const SocialIcon = socialContactIcons[item.key];
+
+                    return (
+                      <a
+                        className="contact-social-link"
+                        data-track-destination={item.href}
+                        data-track-event="contact_click"
+                        data-track-label={`contact_${item.key}`}
+                        data-track-location="contact_company_panel"
+                        data-track-method={item.trackingMethod}
+                        href={item.href}
+                        key={item.key}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <SocialIcon size={16} strokeWidth={2.1} />
+                        <span>{t(locale, item.label)}</span>
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            ) : null}
           </div>
         </article>
 
