@@ -50,8 +50,8 @@ function copy(locale: "en" | "zh") {
     }),
     featuredEyebrow: t(locale, { en: "FEATURED COLLECTION", zh: "精选系列" }),
     featuredTitle: t(locale, {
-      en: "Source-Factory Building Toy Sets",
-      zh: "源头工厂搭建玩具套装",
+      en: "Source-Factory DIY Building Toy Sets",
+      zh: "源头工厂搭建DIY玩具套装",
     }),
     categories: t(locale, { en: "Categories", zh: "分类" }),
     allProducts: t(locale, { en: "All Products", zh: "全部产品" }),

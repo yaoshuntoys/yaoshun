@@ -5,13 +5,23 @@ const ourSolution3 = "/site/solutions/ourSolution3.webp";
 const ourSolution4 = "/site/solutions/ourSolution4.webp";
 const equipmentBase =
   "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions/equipment";
-
+const workshopBase =
+  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions/workshop";
 export const solutionsPageImages = {
   custom: customImage,
   education: ourSolution1,
   retail: ourSolution2,
   events: ourSolution3,
   oem: ourSolution4,
+} as const;
+
+export const solutionsWorkshopImages = {
+  overview: `${workshopBase}/plastic-electronics-workshop-main.webp`,
+  line1: `${workshopBase}/plastic-electronics-workshop-line-1.webp`,
+  line2: `${workshopBase}/plastic-electronics-workshop-line-2.webp`,
+  line3: `${workshopBase}/plastic-electronics-workshop-line-3.webp`,
+  line4: `${workshopBase}/plastic-electronics-workshop-line-4.webp`,
+  line5: `${workshopBase}/plastic-electronics-workshop-line-5.webp`,
 } as const;
 
 export const solutionsEquipmentImages = {
@@ -29,6 +39,12 @@ export const solutionsEquipmentImages = {
   turretMillDetail2: `${equipmentBase}/mold-machining-turret-milling-machine-detail-1.webp`,
   radialDrill: `${equipmentBase}/mold-machining-z3035x10-radial-drilling-machine-main.webp`,
   radialDrillDetail1: `${equipmentBase}/mold-machining-z3035x10-radial-drilling-machine-main.webp`,
+  extrusionWorkshopOverview:
+    "/site/solutions/workshop/extrusion-workshop-overview.webp",
+  extrusionWorkshopPackagingTurnover:
+    "/site/solutions/workshop/extrusion-workshop-packaging-turnover.webp",
+  extrusionWorkshopRodOutputInspection:
+    "/site/solutions/workshop/extrusion-workshop-rod-output-inspection.webp",
   mediumWireCutEdm: `${equipmentBase}/mold-machining-medium-speed-wire-cut-edm-main.webp`,
   mediumWireCutEdmDetail1: `${equipmentBase}/mold-machining-medium-speed-wire-cut-edm-main.webp`,
   fastWireCutEdm: `${equipmentBase}/mold-machining-fast-wire-cut-edm-main.webp`,

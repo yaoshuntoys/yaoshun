@@ -29,7 +29,7 @@ import {buildPageMetadata} from "@/lib/metadata";
 import {getLocaleFromParams, t, type Locale} from "@/lib/i18n";
 import {contactFormPath, localizedPath} from "@/lib/routes";
 import {toAbsoluteUrl} from "@/lib/site-config";
-import {solutionsEquipmentImages, solutionsPageImages} from "@/content/pages/solutions";
+import {solutionsEquipmentImages, solutionsPageImages, solutionsWorkshopImages} from "@/content/pages/solutions";
 
 type Localized = {
   en: string;
@@ -215,7 +215,7 @@ const equipmentTabs = [
   {id: "all", label: {en: "All", zh: "全部设备"}},
   {id: "tooling", label: {en: "Tooling Shop", zh: "模具车间"}},
   {id: "machining", label: {en: "Turning / Milling / Drilling", zh: "车铣钻加工"}},
-  {id: "edm", label: {en: "Extrusion Workshop", zh: "挤出车间"}},
+  {id: "extrusion", label: {en: "Extrusion Workshop", zh: "挤出车间"}},
   {id: "injection", label: {en: "Injection", zh: "注塑生产"}},
 ] as const;
 
@@ -251,22 +251,22 @@ const equipmentCards = [
     text: {en: "Used for mold-base holes, threaded holes, water-line preparation, and flexible positioning on larger workpieces.", zh: "用于模架孔位、螺纹孔、冷却水路和较大工件的钻孔定位，摇臂结构便于调整。"},
   },
   {
-    category: "edm",
-    image: solutionsEquipmentImages.mediumWireCutEdm,
-    title: {en: "Medium-Speed Wire-Cut EDM", zh: "中走丝线切割"},
-    text: {en: "Cuts complex contours, narrow slots, and mold insert profiles with an EDM wire-cut process.", zh: "通过电火花线切割加工复杂轮廓、窄槽和镶件形状，适合精细模具部位。"},
+    category: "extrusion",
+    image: solutionsEquipmentImages.extrusionWorkshopOverview,
+    title: {en: "Extrusion Line Overview", zh: "挤出产线整体布局"},
+    text: {en: "Multiple extrusion lines, control stations, cooling and haul-off sections are arranged in a clean workshop for steady plastic profile and tube production.", zh: "多条挤出线、控制工位、冷却牵引与现场周转区集中布置，支撑塑胶管材和异型材稳定生产。"},
   },
   {
-    category: "edm",
-    image: solutionsEquipmentImages.fastWireCutEdm,
-    title: {en: "Fast Wire-Cut EDM", zh: "快走丝线切割"},
-    text: {en: "Supports faster cutting for mold outlines, inserts, and shaped holes during early tooling and repair work.", zh: "用于模具轮廓、插片和异形孔位的快速切割，加快开模前期加工与修模节奏。"},
+    category: "extrusion",
+    image: solutionsEquipmentImages.extrusionWorkshopPackagingTurnover,
+    title: {en: "Packaging And Turnover Station", zh: "包装与周转工位"},
+    text: {en: "Finished rolls, cartons, pallets, and blue turnover baskets are handled beside the extrusion lines to connect production, checking, and packing.", zh: "卷材、纸箱、托盘与蓝色周转筐靠近产线布置，方便挤出成品整理、复核与包装衔接。"},
   },
   {
-    category: "edm",
-    image: solutionsEquipmentImages.edmHoleDrillDetail1,
-    title: {en: "EDM Hole Drilling Machine", zh: "电火花穿孔机"},
-    text: {en: "Creates wire-start holes, deep small holes, and EDM preparation points in hardened steel parts.", zh: "用于硬质钢件预穿丝孔、深小孔和放电加工前准备，为线切割创造入口。"},
+    category: "extrusion",
+    image: solutionsEquipmentImages.extrusionWorkshopRodOutputInspection,
+    title: {en: "Plastic Rod Output And Inspection", zh: "塑胶杆件出料与检验"},
+    text: {en: "White extruded rods are gathered at the line-side table for length sorting, visual checks, and order-ready turnover.", zh: "白色挤出杆件在产线旁集中出料，便于长度整理、外观复核和订单周转。"},
   },
   {
     category: "injection",
@@ -406,6 +406,53 @@ const processReadinessItems = [
       en: "Lock open issues, responsible owners, change records, and go/no-go decisions before releasing bulk production.",
       zh: "量产前锁定未决问题、责任人、变更记录与是否放行生产的判断。",
     },
+  },
+] as const;
+
+const workshopHighlights = [
+  {
+    title: {en: "Orderly Assembly Layout", zh: "设备有序布局"},
+    text: {
+      en: "Assembly stations, aisles, and material turnover areas are arranged for clearer plastic electronics coordination.",
+      zh: "设备工位、通道与物料周转区有序布置，便于现场协同与生产推进。",
+    },
+  },
+  {
+    title: {en: "Plastic Electronics Production View", zh: "车间级生产视角"},
+    text: {
+      en: "Real production images show the plastic electronics environment behind custom project delivery.",
+      zh: "通过真实车间图片呈现定制塑胶件与塑胶电子产品交付背后的生产环境。",
+    },
+  },
+  {
+    title: {en: "Stable Batch Handoff", zh: "稳定批量衔接"},
+    text: {
+      en: "From machine-side handling to inspection-ready turnover, the layout supports repeat-order execution.",
+      zh: "从机台周边周转到待检流转，车间动线服务于稳定复产与批量交付。",
+    },
+  },
+] as const;
+
+const workshopGallery = [
+  {
+    image: solutionsWorkshopImages.line1,
+    title: {en: "Machine-side production cell", zh: "机台生产工位"},
+  },
+  {
+    image: solutionsWorkshopImages.line2,
+    title: {en: "Workshop aisle and turnover", zh: "车间通道与周转"},
+  },
+  {
+    image: solutionsWorkshopImages.line3,
+    title: {en: "Equipment operation area", zh: "设备运行区域"},
+  },
+  {
+    image: solutionsWorkshopImages.line4,
+    title: {en: "Batch production environment", zh: "批量生产环境"},
+  },
+  {
+    image: solutionsWorkshopImages.line5,
+    title: {en: "On-site manufacturing view", zh: "现场制造视角"},
   },
 ] as const;
 
@@ -649,6 +696,70 @@ export default async function SolutionsPage({params}: {params: Promise<{locale: 
             expandLabel={localized(locale, {en: "Expand Equipment", zh: "展开设备"})}
             filterLabel={localized(locale, {en: "Equipment filters", zh: "设备分类"})}
           />
+        </div>
+      </section>
+
+      <section className="solutions-workshop" aria-labelledby="solutions-workshop-title">
+        <SectionHeader
+          highlight={{en: "Production Workshop", zh: "生产车间"}}
+          locale={locale}
+          title={{en: "Plastic Electronics Production Workshop", zh: "塑胶电子生产车间"}}
+          text={{
+            en: "A clearer view of the real production environment behind plastic electronics assembly, plastic-part turnover, and repeat-order delivery.",
+            zh: "以真实车间环境展示塑胶电子装配、塑胶件周转与稳定复产交付能力。",
+          }}
+        />
+
+        <div className="solutions-workshop-board">
+          <div className="solutions-workshop-visual">
+            <Image
+              alt={localized(locale, {en: "Plastic electronics production environment overview", zh: "塑胶电子生产车间整体环境"})}
+              className="solutions-workshop-main-image"
+              fill
+              preview
+              sizes="(min-width: 1024px) 54vw, 100vw"
+              src={solutionsWorkshopImages.overview}
+            />
+            <div className="solutions-workshop-visual-label">
+              <span>{localized(locale, {en: "Real Workshop", zh: "真实车间"})}</span>
+              <strong>{localized(locale, {en: "Plastic electronics production site", zh: "塑胶电子生产现场"})}</strong>
+            </div>
+          </div>
+
+          <div className="solutions-workshop-copy">
+            <span>{localized(locale, {en: "Plastic Electronics Workshop", zh: "塑胶电子生产车间"})}</span>
+            <h3>{localized(locale, {en: "A practical workshop layout for custom plastic electronics projects.", zh: "服务定制塑胶电子项目的生产车间布局。"})}</h3>
+            <p>
+              {localized(locale, {
+                en: "Plastic electronics assembly stations, operating aisles, turnover baskets, and production-side handling form the daily foundation for sampling, repeat production, and project handoff.",
+                zh: "塑胶电子装配工位、操作通道、周转筐与现场流转共同构成打样、复产和项目交付的现场基础。",
+              })}
+            </p>
+            <div className="solutions-workshop-highlights">
+              {workshopHighlights.map((item) => (
+                <article key={item.title.en}>
+                  <h4>{localized(locale, item.title)}</h4>
+                  <p>{localized(locale, item.text)}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="solutions-workshop-gallery" aria-label={localized(locale, {en: "Workshop production photos", zh: "车间生产图片"})}>
+          {workshopGallery.map((item) => (
+            <figure className="solutions-workshop-thumb" key={item.title.en}>
+              <Image
+                alt={localized(locale, item.title)}
+                className="solutions-workshop-thumb-image"
+                fill
+                preview
+                sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw"
+                src={item.image}
+              />
+              <figcaption>{localized(locale, item.title)}</figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 
