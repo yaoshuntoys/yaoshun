@@ -174,6 +174,8 @@ const footerContactClass =
   "flex min-h-10 items-center gap-2 rounded-[0.95rem] px-2 text-[0.82rem] leading-5 text-[#6f7ea9] transition hover:bg-[#2563ff]/6 hover:text-[#2563ff] md:min-h-0 md:px-0 md:text-[0.9rem] md:leading-6 md:hover:bg-transparent";
 const footerSocialLinkClass =
   "inline-flex min-h-9 items-center justify-center gap-1.5 rounded-full border border-[rgba(37,99,255,0.12)] bg-white px-3 text-[0.76rem] font-semibold text-[#17306e] shadow-[0_12px_24px_-20px_rgba(18,41,103,0.16)] transition duration-200 hover:-translate-y-0.5 hover:border-[rgba(37,99,255,0.2)] hover:bg-[#f7faff] hover:text-[#2563ff] md:min-h-8 md:px-2.5 md:text-[0.78rem]";
+const footerSocialPrimaryLinkClass =
+  "inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-transparent bg-[#25d366] px-4 text-[0.82rem] font-bold !text-white shadow-[0_18px_34px_-18px_rgba(37,211,102,0.62)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#1ebe5d] hover:!text-white hover:shadow-[0_22px_40px_-18px_rgba(37,211,102,0.72)] md:min-h-9 md:px-3.5 md:text-[0.84rem] [&>span]:!text-white [&>svg]:!text-white";
 
 const socialContactIcons = {
   whatsapp: MessageCircle,
@@ -603,7 +605,11 @@ function SiteFooter({ locale }: { locale: Locale }) {
                   return (
                     <a
                       aria-label={t(locale, item.label)}
-                      className={footerSocialLinkClass}
+                      className={
+                        item.variant === "primary"
+                          ? footerSocialPrimaryLinkClass
+                          : footerSocialLinkClass
+                      }
                       data-track-destination={item.href}
                       data-track-event="contact_click"
                       data-track-label={`footer_${item.key}`}

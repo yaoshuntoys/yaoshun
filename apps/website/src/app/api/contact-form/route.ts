@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 import { defaultLocale, isLocale } from "@/lib/i18n";
 
@@ -9,7 +10,40 @@ const rateLimitWindowMs = 10 * 60 * 1000;
 const maxSubmissionsPerWindow = 5;
 const maxMessageLength = 5000;
 const maxAttributionLength = 8000;
+const defaultContactRecipient = "yaoshuntoys@gmail.com";
 const rateLimitBuckets = new Map<string, number[]>();
+
+type EmailProvider = "smtp" | "resend";
+
+type MailPayload = {
+  headers: Record<string, string>;
+  html: string;
+  replyTo: string;
+  subject: string;
+  text: string;
+};
+
+type ProviderDiagnostics = {
+  configured: boolean;
+  invalid: string[];
+  missing: string[];
+};
+
+type SmtpConfig = {
+  from: string;
+  host: string;
+  pass: string;
+  port: number;
+  secure: boolean;
+  to: string;
+  user: string;
+};
+
+type ResendConfig = {
+  apiKey: string;
+  from: string;
+  to: string;
+};
 
 function escapeHtml(value: string) {
   return value
@@ -26,6 +60,217 @@ function isValidEmail(value: string) {
 
 function jsonError(message: string, status: number) {
   return NextResponse.json({ ok: false, message }, { status });
+}
+
+function getEnvValue(name: string) {
+  return process.env[name]?.trim() ?? "";
+}
+
+function uniqueValues(values: string[]) {
+  return [...new Set(values.filter(Boolean))];
+}
+
+function formatUnknownError(error: unknown) {
+  if (error instanceof Error) {
+    return error.message;
+  }
+
+  if (typeof error === "string") {
+    return error;
+  }
+
+  try {
+    return JSON.stringify(error);
+  } catch {
+    return "Unknown error";
+  }
+}
+
+function getSmtpConfig(): {
+  config: SmtpConfig | null;
+  diagnostics: ProviderDiagnostics;
+} {
+  const to = getEnvValue("TAWK_TICKET_EMAIL") || defaultContactRecipient;
+  const host = getEnvValue("EMAIL_HOST");
+  const rawPort = getEnvValue("EMAIL_PORT");
+  const user = getEnvValue("EMAIL_USER");
+  const pass = getEnvValue("EMAIL_PASS");
+  const from = getEnvValue("EMAIL_FROM");
+  const port = Number(rawPort);
+  const missing = [
+    !host ? "EMAIL_HOST" : "",
+    !rawPort ? "EMAIL_PORT" : "",
+    !user ? "EMAIL_USER" : "",
+    !pass ? "EMAIL_PASS" : "",
+    !from ? "EMAIL_FROM" : "",
+  ];
+  const invalid = [
+    rawPort && (!Number.isInteger(port) || port <= 0)
+      ? "EMAIL_PORT must be a positive integer"
+      : "",
+  ];
+  const diagnostics = {
+    configured: !missing.some(Boolean) && !invalid.some(Boolean),
+    invalid: uniqueValues(invalid),
+    missing: uniqueValues(missing),
+  };
+
+  if (!diagnostics.configured) {
+    return { config: null, diagnostics };
+  }
+
+  return {
+    config: {
+      from,
+      host,
+      pass,
+      port,
+      secure: port === 465,
+      to,
+      user,
+    },
+    diagnostics,
+  };
+}
+
+function getResendConfig(): {
+  config: ResendConfig | null;
+  diagnostics: ProviderDiagnostics;
+} {
+  const apiKey = getEnvValue("RESEND_API_KEY");
+  const from = getEnvValue("RESEND_FROM_EMAIL") || "onboarding@resend.dev";
+  const to =
+    getEnvValue("RESEND_TO_EMAIL") ||
+    getEnvValue("TAWK_TICKET_EMAIL") ||
+    defaultContactRecipient;
+  const missing = [!apiKey ? "RESEND_API_KEY" : ""];
+  const invalid = [
+    !isValidEmail(to) ? "RESEND_TO_EMAIL / TAWK_TICKET_EMAIL must be a valid email" : "",
+    !from ? "RESEND_FROM_EMAIL" : "",
+  ];
+  const diagnostics = {
+    configured: !missing.some(Boolean) && !invalid.some(Boolean),
+    invalid: uniqueValues(invalid),
+    missing: uniqueValues(missing),
+  };
+
+  if (!diagnostics.configured) {
+    return { config: null, diagnostics };
+  }
+
+  return { config: { apiKey, from, to }, diagnostics };
+}
+
+async function sendWithSmtp(config: SmtpConfig, payload: MailPayload) {
+  const transporter = nodemailer.createTransport({
+    host: config.host,
+    port: config.port,
+    secure: config.secure,
+    auth: { user: config.user, pass: config.pass },
+  });
+
+  await transporter.sendMail({
+    from: config.from,
+    to: config.to,
+    replyTo: payload.replyTo,
+    subject: payload.subject,
+    text: payload.text,
+    html: payload.html,
+    headers: payload.headers,
+  });
+}
+
+async function sendWithResend(config: ResendConfig, payload: MailPayload) {
+  const resend = new Resend(config.apiKey);
+  const result = await resend.emails.send({
+    from: config.from,
+    to: config.to,
+    replyTo: payload.replyTo,
+    subject: payload.subject,
+    text: payload.text,
+    html: payload.html,
+    headers: payload.headers,
+  });
+
+  if (result.error) {
+    throw new Error(`${result.error.name}: ${result.error.message}`);
+  }
+}
+
+async function sendLeadEmail(payload: MailPayload) {
+  const smtp = getSmtpConfig();
+  const resend = getResendConfig();
+  const skipped: Record<EmailProvider, ProviderDiagnostics> = {
+    smtp: smtp.diagnostics,
+    resend: resend.diagnostics,
+  };
+  const sendTasks: Array<{
+    provider: EmailProvider;
+    send: () => Promise<void>;
+  }> = [];
+
+  if (smtp.config) {
+    const smtpConfig = smtp.config;
+    sendTasks.push({
+      provider: "smtp",
+      send: () => sendWithSmtp(smtpConfig, payload),
+    });
+  }
+
+  if (resend.config) {
+    const resendConfig = resend.config;
+    sendTasks.push({
+      provider: "resend",
+      send: () => sendWithResend(resendConfig, payload),
+    });
+  }
+
+  const results = await Promise.all(
+    sendTasks.map(async ({ provider, send }) => {
+      try {
+        await send();
+        return { ok: true as const, provider };
+      } catch (error) {
+        return {
+          ok: false as const,
+          provider,
+          reason: formatUnknownError(error),
+        };
+      }
+    }),
+  );
+  const attempted = sendTasks.map((task) => task.provider);
+  const successes = results
+    .filter((result) => result.ok)
+    .map((result) => result.provider);
+  const failures = results
+    .filter((result) => !result.ok)
+    .map((result) => ({
+      provider: result.provider,
+      reason: result.reason,
+    }));
+  const diagnosticSummary = {
+    attempted,
+    failures,
+    skipped,
+    successes,
+  };
+  const hasSkippedProviderIssues = !smtp.diagnostics.configured || !resend.diagnostics.configured;
+
+  if (successes.length > 0) {
+    if (
+      failures.length > 0 ||
+      attempted.length > successes.length ||
+      hasSkippedProviderIssues
+    ) {
+      console.warn("Contact form email sent with partial provider issues", diagnosticSummary);
+    }
+
+    return diagnosticSummary;
+  }
+
+  console.error("Contact form email delivery failed", diagnosticSummary);
+  throw new Error("No email provider delivered the contact form email.");
 }
 
 function stringifyAttribution(value: unknown) {
@@ -153,26 +398,6 @@ export async function POST(request: Request) {
       return jsonError("Too many requests. Please try again later.", 429);
     }
 
-    const ticketEmail = process.env.TAWK_TICKET_EMAIL?.trim();
-    const host = process.env.EMAIL_HOST?.trim();
-    const port = Number(process.env.EMAIL_PORT);
-    const user = process.env.EMAIL_USER?.trim();
-    const pass = process.env.EMAIL_PASS?.trim();
-    const from = process.env.EMAIL_FROM?.trim();
-
-    if (!ticketEmail || !host || !user || !pass || !from || !Number.isInteger(port) || port <= 0) {
-      return jsonError("Mail config missing.", 500);
-    }
-
-    const secure = port === 465;
-
-    const transporter = nodemailer.createTransport({
-      host,
-      port,
-      secure,
-      auth: { user, pass },
-    });
-
     const submittedAt = new Date().toISOString();
     const subjectPrefix = locale === "en" ? "Website Form" : "官网表单";
     const subject =
@@ -205,12 +430,10 @@ export async function POST(request: Request) {
       message,
     ].filter(Boolean).join("\n");
 
-    await transporter.sendMail({
-      from,
-      to: ticketEmail,
-      replyTo: normalizedEmail,
-      subject,
-      text,
+    await sendLeadEmail({
+      headers: {
+        "X-Lead-Source": "website-contact-form",
+      },
       html: `
         <div style="margin:0;background:#eef2f7;padding:28px 12px;font-family:'Segoe UI',Arial,sans-serif;color:#111827;">
           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:720px;margin:0 auto;border-collapse:collapse;background:#ffffff;border:1px solid #dbe3ef;">
@@ -255,9 +478,9 @@ export async function POST(request: Request) {
           </table>
         </div>
       `,
-      headers: {
-        "X-Lead-Source": "website-contact-form",
-      },
+      replyTo: normalizedEmail,
+      subject,
+      text,
     });
 
     return NextResponse.json({ ok: true });

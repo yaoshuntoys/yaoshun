@@ -308,7 +308,11 @@ export default async function ContactPage({
 
                     return (
                       <a
-                        className="contact-social-link"
+                        className={
+                          item.variant === "primary"
+                            ? "contact-social-link contact-social-link-primary"
+                            : "contact-social-link"
+                        }
                         data-track-destination={item.href}
                         data-track-event="contact_click"
                         data-track-label={`contact_${item.key}`}

@@ -26,15 +26,17 @@ export const siteCopy = {
 export const socialContactLinks = [
   {
     key: "whatsapp",
-    label: { en: "WhatsApp", zh: "WhatsApp" },
+    label: { en: "WhatsApp Inquiry", zh: "WhatsApp 咨询" },
     href: "https://wa.me/8618780083256",
     trackingMethod: "whatsapp",
+    variant: "primary",
   },
   {
     key: "facebook",
     label: { en: "Facebook", zh: "Facebook" },
     href: "",
     trackingMethod: "facebook",
+    variant: "secondary",
   },
 ] as const;
 

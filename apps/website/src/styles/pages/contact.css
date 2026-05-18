@@ -229,6 +229,27 @@
   color: #2563ff;
 }
 
+.contact-social-link-primary {
+  min-height: 2.9rem;
+  padding: 0 1.25rem;
+  border-color: transparent;
+  background: #25d366;
+  color: #ffffff !important;
+  box-shadow: 0 20px 38px -20px rgba(37, 211, 102, 0.68);
+}
+
+.contact-social-link-primary:hover {
+  border-color: transparent;
+  background: #1ebe5d;
+  color: #ffffff !important;
+  box-shadow: 0 24px 46px -20px rgba(37, 211, 102, 0.78);
+}
+
+.contact-social-link-primary span,
+.contact-social-link-primary svg {
+  color: #ffffff !important;
+}
+
 .contact-social-link svg {
   flex-shrink: 0;
 }
@@ -375,6 +396,11 @@
     min-height: 2.45rem;
     padding: 0 0.85rem;
     font-size: 0.82rem;
+  }
+
+  .contact-social-link-primary {
+    min-height: 2.75rem;
+    padding: 0 1rem;
   }
 
   .contact-panel-head h2 {
