@@ -33,11 +33,17 @@ function buildTrackingBootstrap() {
     window.gtag = gtag;
     gtag('js', new Date());
     gtag('consent', 'default', {
+      ad_personalization: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+    gtag('consent', 'update', {
       ad_personalization: 'granted',
       ad_storage: 'granted',
       ad_user_data: 'granted',
-      analytics_storage: 'granted',
-      wait_for_update: 500
+      analytics_storage: 'granted'
     });
     ${configs}
   `;

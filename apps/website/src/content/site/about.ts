@@ -29,7 +29,10 @@ export const aboutContent = {
     },
   },
   hero: {
-    eyebrow: { en: "Dongguan Source Factory Founded In 2016", zh: "成立于 2016 年的东莞源头工厂" },
+    eyebrow: {
+      en: "Dongguan Source Factory Founded In 2016",
+      zh: "成立于 2016 年的东莞源头工厂",
+    },
     title: {
       en: "A Source Toy Factory Built For OEM/ODM And Custom Development",
       zh: "面向 OEM/ODM 与定制化开发的源头玩具工厂",
@@ -194,10 +197,6 @@ export const aboutContent = {
       {
         label: { en: "Custom Contract Transactions", zh: "定制合约交易" },
         value: { en: "2+ ten-thousand CNY", zh: "2+ 万元" },
-      },
-      {
-        label: { en: "On-Time Fulfillment Rate", zh: "准时履约率" },
-        value: { en: "100%", zh: "100%" },
       },
       {
         label: { en: "Service Response Rate", zh: "服务响应率" },

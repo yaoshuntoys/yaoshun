@@ -37,6 +37,10 @@ const cookieConsentCopy = {
     en: "Privacy Policy",
     zh: "隐私政策",
   },
+  googleData: {
+    en: "Google data use",
+    zh: "Google 数据使用",
+  },
   close: {
     en: "Close",
     zh: "关闭",
@@ -113,6 +117,14 @@ export function CookieConsentManager() {
             >
               {t(locale, cookieConsentCopy.privacy)}
             </Link>
+            <a
+              className="ml-1 font-semibold text-[#2563ff] transition hover:text-[#0e2f9a]"
+              href="https://business.safety.google/privacy/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {t(locale, cookieConsentCopy.googleData)}
+            </a>
           </p>
         </div>
 

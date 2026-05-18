@@ -20,6 +20,7 @@ const sitemapRouteKeys = [
   "faq",
   "contact",
   "privacy",
+  "refundReturn",
   "terms",
 ] as const satisfies readonly RouteKey[];
 
@@ -46,7 +47,7 @@ function buildAlternates(path: string) {
 function getRouteChangeFrequency(route: string): MetadataRoute.Sitemap[number]["changeFrequency"] {
   if (route === "") return "weekly";
   if (route === "/products" || route === "/news") return "weekly";
-  if (route === "/privacy" || route === "/terms") return "yearly";
+  if (route === "/privacy" || route === "/terms" || route === "/refund-return") return "yearly";
 
   return "monthly";
 }
@@ -57,7 +58,7 @@ function getRoutePriority(route: string) {
   if (route === "/contact") return 0.9;
   if (route === "/solutions" || route === "/about") return 0.85;
   if (route === "/faq" || route === "/news") return 0.75;
-  if (route === "/privacy" || route === "/terms") return 0.25;
+  if (route === "/privacy" || route === "/terms" || route === "/refund-return") return 0.25;
 
   return 0.7;
 }

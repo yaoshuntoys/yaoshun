@@ -59,6 +59,11 @@ const staticRouteSourcePaths: Record<string, string[]> = {
     "apps/website/src/content/site/privacy.ts",
     "apps/website/src/components/sections/legal-document-page.tsx",
   ],
+  "/refund-return": [
+    "apps/website/src/app/[locale]/refund-return/page.tsx",
+    "apps/website/src/content/site/refund-return.ts",
+    "apps/website/src/components/sections/legal-document-page.tsx",
+  ],
   "/terms": [
     "apps/website/src/app/[locale]/terms/page.tsx",
     "apps/website/src/content/site/terms.ts",

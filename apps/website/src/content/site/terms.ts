@@ -1,17 +1,18 @@
 export const termsContent = {
   seo: {
     title: {
-      en: "User Agreement | Dongguan Yaoshun Technology Co., Ltd.",
-      zh: "用户协议 | 东莞市尧顺科技有限公司",
+      en: "Terms & Conditions | Dongguan Yaoshun Technology Co., Ltd.",
+      zh: "条款与条件 | 东莞市尧顺科技有限公司",
     },
     description: {
-      en: "User agreement for this B2B toy manufacturing website, covering site use, inquiries, quotations, product information, ad landing pages and project documents.",
-      zh: "本 B2B 玩具制造网站的简明用户协议，涵盖网站使用、询盘、报价、产品信息、广告落地页和项目文件。",
+      en: "Terms and conditions for this B2B toy manufacturing website, covering site use, inquiries, quotations, product information, ad landing pages and project documents.",
+      zh: "本 B2B 玩具制造网站的条款与条件，涵盖网站使用、询盘、报价、产品信息、广告落地页和项目文件。",
     },
     keywords: {
       en: [
         "user agreement",
         "terms of service",
+        "terms and conditions",
         "B2B website terms",
         "quote request terms",
         "OEM ODM cooperation terms",
@@ -19,6 +20,7 @@ export const termsContent = {
       zh: [
         "用户协议",
         "服务条款",
+        "条款与条件",
         "B2B网站条款",
         "报价申请条款",
         "OEM ODM合作条款",
@@ -27,7 +29,7 @@ export const termsContent = {
   },
   hero: {
     eyebrow: {en: "Legal Document", zh: "法律文件"},
-    title: {en: "User Agreement", zh: "用户协议"},
+    title: {en: "Terms & Conditions", zh: "条款与条件"},
     description: {
       en: "Basic rules for using the Yaoshun B2B website, reviewing product information, and submitting project inquiries.",
       zh: "说明使用尧顺 B2B 网站、查看产品信息与提交项目询盘时适用的基本规则。",
@@ -48,8 +50,8 @@ export const termsContent = {
           zh: "本网站由东莞市尧顺科技有限公司运营，用于 B2B 商务沟通、产品参考、报价申请、样品规划、工厂了解和 OEM/ODM 合作洽谈。",
         },
         {
-          en: "By accessing the website, submitting a form, requesting a quote, or contacting us through a landing page, you agree to this User Agreement and the related Privacy Policy.",
-          zh: "当你访问网站、提交表单、申请报价，或通过落地页联系我们时，即表示你同意本用户协议及相关隐私政策。",
+          en: "By accessing the website, submitting a form, requesting a quote, or contacting us through a landing page, you agree to these Terms & Conditions and the related Privacy Policy.",
+          zh: "当你访问网站、提交表单、申请报价，或通过落地页联系我们时，即表示你同意本条款与条件及相关隐私政策。",
         },
       ],
     },
@@ -125,12 +127,12 @@ export const termsContent = {
           zh: "本协议不排除适用法律下不得排除的责任。",
         },
         {
-          en: "If a quotation, purchase order, pro forma invoice, tooling agreement, NDA, quality standard, or signed contract conflicts with this User Agreement, the project-specific written document prevails.",
-          zh: "若报价、采购订单、形式发票、模具协议、保密协议、质量标准或签署合同与本用户协议冲突，则以项目专属书面文件为准。",
+          en: "If a quotation, purchase order, pro forma invoice, tooling agreement, NDA, quality standard, or signed contract conflicts with these Terms & Conditions, the project-specific written document prevails.",
+          zh: "若报价、采购订单、形式发票、模具协议、保密协议、质量标准或签署合同与本条款与条件冲突，则以项目专属书面文件为准。",
         },
         {
-          en: "For legal or commercial clarification, contact yaoshuntoys@gmail.com. We may update this User Agreement when website features, advertising platform requirements, legal rules, or business operations change.",
-          zh: "如需法律或商务说明，请联系 yaoshuntoys@gmail.com。若网站功能、广告平台要求、法律规则或业务运营变化，我们可能更新本用户协议。",
+          en: "For legal or commercial clarification, contact yaoshuntoys@gmail.com. We may update these Terms & Conditions when website features, advertising platform requirements, legal rules, or business operations change.",
+          zh: "如需法律或商务说明，请联系 yaoshuntoys@gmail.com。若网站功能、广告平台要求、法律规则或业务运营变化，我们可能更新本条款与条件。",
         },
       ],
     },

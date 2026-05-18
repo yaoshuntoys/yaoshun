@@ -314,6 +314,11 @@ export default async function ContactPage({
                   zh: "请详细描述你的需求...",
                 },
               },
+              privacyNotice: {
+                en: "By submitting this form, you agree that Yaoshun may use your contact details and inquiry content to reply, prepare quotations, prevent misuse, and measure advertising performance as described in our",
+                zh: "提交表单即表示你同意尧顺按照以下文件所述，用你的联系方式和询盘内容进行回复、报价准备、防止滥用和广告效果衡量：",
+              },
+              privacyLink: { en: "Privacy Policy", zh: "隐私政策" },
               submit: { en: "Send Message", zh: "发送消息" },
               success: {
                 en: "Your inquiry has been submitted successfully.",

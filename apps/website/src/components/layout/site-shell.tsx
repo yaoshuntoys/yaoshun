@@ -143,8 +143,9 @@ const footerSupportLinkRoutes = [
   { label: { en: "Custom Solutions", zh: "定制方案" }, route: "solutions" },
   { label: { en: "Company Capability", zh: "公司能力" }, route: "about" },
   { label: { en: "Get a Quote", zh: "获取报价" }, route: "contact" },
-  { label: { en: "User Agreement", zh: "用户协议" }, route: "terms" },
   { label: { en: "Privacy Policy", zh: "隐私政策" }, route: "privacy" },
+  { label: { en: "Terms & Conditions", zh: "条款与条件" }, route: "terms" },
+  { label: { en: "Refund / Return Policy", zh: "退款与退换货政策" }, route: "refundReturn" },
 ] as const satisfies ReadonlyArray<{
   label: { en: string; zh: string };
   route: RouteKey;

@@ -9,14 +9,12 @@ export const routePathMap = {
   home: "",
   about: "/about",
   solutions: "/solutions",
-  oemOdm: "/oem-odm",
   products: "/products",
   news: "/news",
-  factory: "/factory",
-  compliance: "/compliance",
   faq: "/faq",
   contact: "/contact",
   privacy: "/privacy",
+  refundReturn: "/refund-return",
   terms: "/terms",
 } as const;
 

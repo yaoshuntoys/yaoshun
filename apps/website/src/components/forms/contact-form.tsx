@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {type FormEvent, useState} from "react";
 
 import {
@@ -7,6 +8,7 @@ import {
   recordCampaignAttribution,
 } from "@/lib/campaign-attribution";
 import {t, type Locale} from "@/lib/i18n";
+import {localizedPath} from "@/lib/routes";
 import {formFeedbackBaseClass, inputClass, primaryButtonClass, textareaClass} from "@/lib/ui";
 
 type ContactFormProps = {
@@ -15,6 +17,8 @@ type ContactFormProps = {
     name: {label: {en?: string; zh?: string}; placeholder: {en?: string; zh?: string}};
     email: {label: {en?: string; zh?: string}; placeholder: {en?: string; zh?: string}};
     message: {label: {en?: string; zh?: string}; placeholder: {en?: string; zh?: string}};
+    privacyNotice: {en?: string; zh?: string};
+    privacyLink: {en?: string; zh?: string};
     submit: {en?: string; zh?: string};
     success: {en?: string; zh?: string};
     error: {en?: string; zh?: string};
@@ -168,6 +172,15 @@ export function ContactForm({locale, labels}: ContactFormProps) {
           <input autoComplete="off" name="website" tabIndex={-1} type="text" />
         </label>
       </div>
+      <p className="m-0 text-[0.78rem] leading-5 text-[#6f7ea9]">
+        {t(locale, labels.privacyNotice)}{" "}
+        <Link
+          className="font-semibold text-[#2563ff] transition hover:text-[#0e2f9a]"
+          href={localizedPath(locale, "privacy")}
+        >
+          {t(locale, labels.privacyLink)}
+        </Link>
+      </p>
       <button className={`${primaryButtonClass} w-full`} disabled={submitState === "submitting"} type="submit">
         <SendHorizontal size={15} strokeWidth={2.1} />
         <span>{t(locale, labels.submit)}</span>
