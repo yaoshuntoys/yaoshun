@@ -671,6 +671,7 @@
 }
 
 .about-advantages,
+.about-partners,
 .about-closing-panel {
   display: grid;
   gap: 1.4rem;
@@ -733,6 +734,54 @@
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.about-partner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.about-partner-card {
+  display: grid;
+  gap: 0.75rem;
+  align-content: center;
+  justify-items: center;
+  min-height: 8.4rem;
+  padding: 1.1rem;
+  border: 1px solid rgba(24, 56, 138, 0.08);
+  border-radius: 1.15rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 16px 32px -30px rgba(18, 41, 103, 0.12);
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.about-partner-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(37, 99, 255, 0.16);
+  box-shadow: 0 20px 40px -30px rgba(18, 41, 103, 0.2);
+}
+
+.about-partner-logo-wrap {
+  position: relative;
+  width: min(100%, 10rem);
+  height: 3.4rem;
+}
+
+.about-partner-logo {
+  object-fit: contain;
+  object-position: center center;
+}
+
+.about-partner-card span {
+  color: #536895;
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
 }
 
 .about-info-card .about-section-heading h2 {
@@ -937,6 +986,7 @@
   .about-certificate,
   .about-factory,
   .about-advantages,
+  .about-partners,
   .about-closing-panel,
   .about-bottom-grid {
     gap: 1.2rem;
@@ -1049,6 +1099,7 @@
   .about-certificate,
   .about-factory,
   .about-advantages,
+  .about-partners,
   .about-closing-panel {
     padding: 1.2rem 1rem;
     border-radius: 1.35rem;
@@ -1077,8 +1128,18 @@
   }
 
   .about-advantage-card,
+  .about-partner-card,
   .about-service-detail-item {
     padding: 1rem;
+  }
+
+  .about-partner-card {
+    min-height: 7.8rem;
+  }
+
+  .about-partner-logo-wrap {
+    width: min(100%, 8.5rem);
+    height: 3rem;
   }
 
   .about-info-card .about-section-heading h2 {
@@ -1125,6 +1186,10 @@
   .about-advantage-grid,
   .about-bottom-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-partner-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .about-shipping-list,
@@ -1176,6 +1241,10 @@
 
   .about-advantage-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .about-partner-grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
   }
 
   .about-bottom-grid {
