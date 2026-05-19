@@ -208,7 +208,7 @@ export default async function HomePage({
         <PageHero
           backgroundClassName="home-hero-background"
           backgroundImageClassName="home-section-image home-hero-background-image"
-          backgroundSrc="/site/misc/home-bg.webp"
+          backgroundSrc="/site/misc/home-bg.jpg"
           copyClassName="home-hero-copy"
           gridClassName="home-hero-grid"
           innerClassName="home-hero-inner"

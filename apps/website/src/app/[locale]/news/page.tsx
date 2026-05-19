@@ -1,4 +1,4 @@
-import type {Metadata} from "next";
+import type { Metadata } from "next";
 import "@/styles/pages/news.css";
 import {
   ArrowRight,
@@ -9,20 +9,20 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-import {NewsListClient} from "@/components/news/news-list-client";
-import {PageHero} from "@/components/sections/page-hero";
-import {StructuredData} from "@/components/seo/structured-data";
-import {newsContent} from "@/content/site";
-import {buildPageMetadata} from "@/lib/metadata";
-import {getNewsList} from "@/lib/site-data";
-import {getLocaleFromParams, t, type Locale} from "@/lib/i18n";
-import {toAbsoluteUrl} from "@/lib/site-config";
-import {localizedPath, localizedUrlPath} from "@/lib/routes";
+import { NewsListClient } from "@/components/news/news-list-client";
+import { PageHero } from "@/components/sections/page-hero";
+import { StructuredData } from "@/components/seo/structured-data";
+import { newsContent } from "@/content/site";
+import { buildPageMetadata } from "@/lib/metadata";
+import { getNewsList } from "@/lib/site-data";
+import { getLocaleFromParams, t, type Locale } from "@/lib/i18n";
+import { toAbsoluteUrl } from "@/lib/site-config";
+import { localizedPath, localizedUrlPath } from "@/lib/routes";
 
 export const dynamic = "force-static";
 
 function localize(
-  value: {en?: string; zh?: string} | undefined,
+  value: { en?: string; zh?: string } | undefined,
   locale: Locale,
   fallback = "",
 ) {
@@ -32,7 +32,7 @@ function localize(
 
 function copy(locale: Locale) {
   return {
-    eyebrow: t(locale, {en: "NEWS", zh: "新闻"}),
+    eyebrow: t(locale, { en: "NEWS", zh: "新闻" }),
     titleLine1: t(locale, {
       en: "News Center",
       zh: "新闻中心",
@@ -41,8 +41,8 @@ function copy(locale: Locale) {
       en: "Factory & Project Insights",
       zh: "工厂与项目洞察",
     }),
-    titleBlue: t(locale, {en: "Factory", zh: "工厂"}),
-    titleOrange: t(locale, {en: "Insights", zh: "洞察"}),
+    titleBlue: t(locale, { en: "Factory", zh: "工厂" }),
+    titleOrange: t(locale, { en: "Insights", zh: "洞察" }),
     heroAlt: t(locale, {
       en: "yaoshun toys news hero visual",
       zh: "yaoshun toys 新闻页主视觉",
@@ -51,10 +51,10 @@ function copy(locale: Locale) {
       en: "Follow Yaoshun's factory updates, project cases, compliance progress, quality-control notes, and manufacturing workflow stories. These articles help sourcing teams understand how toy OEM/ODM projects move from review to delivery.",
       zh: "持续了解尧顺的工厂动态、项目案例、合规进展、质量控制与制造流程更新。这些内容帮助采购团队看清玩具 OEM/ODM 项目从评估到交付的推进方式。",
     }),
-    categories: t(locale, {en: "Categories", zh: "分类"}),
-    browseNews: t(locale, {en: "Browse News", zh: "浏览新闻"}),
-    viewSolutions: t(locale, {en: "View Solutions", zh: "查看方案"}),
-    readMore: t(locale, {en: "Read More", zh: "阅读全文"}),
+    categories: t(locale, { en: "Categories", zh: "分类" }),
+    browseNews: t(locale, { en: "Browse News", zh: "浏览新闻" }),
+    viewSolutions: t(locale, { en: "View Solutions", zh: "查看方案" }),
+    readMore: t(locale, { en: "Read More", zh: "阅读全文" }),
     showingText: (start: number, end: number, total: number) =>
       t(locale, {
         en: `Showing ${start}-${end} of ${total} news`,
@@ -66,7 +66,7 @@ function copy(locale: Locale) {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
   return buildPageMetadata(locale, newsContent.seo, "news");
@@ -75,7 +75,7 @@ export async function generateMetadata({
 export default async function NewsPage({
   params,
 }: {
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }) {
   const locale = await getLocaleFromParams(params);
   const text = copy(locale);
@@ -115,9 +115,7 @@ export default async function NewsPage({
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       name:
-        locale === "zh"
-          ? "尧顺新闻中心"
-          : "Dongguan Yaoshun Technology News",
+        locale === "zh" ? "尧顺新闻中心" : "Dongguan Yaoshun Technology News",
       description: text.description,
       url: pageUrl,
       inLanguage: locale === "zh" ? "zh-CN" : "en-US",
@@ -139,7 +137,7 @@ export default async function NewsPage({
       <PageHero
         backgroundClassName="news-hero-background"
         backgroundImageClassName="news-hero-background-image"
-        backgroundSrc="/site/misc/new-bg.webp"
+        backgroundSrc="/site/misc/new-bg.jpg"
         copyClassName="news-hero-copy"
         gridClassName="news-hero-grid"
         innerClassName="news-hero-inner"
@@ -166,10 +164,19 @@ export default async function NewsPage({
         </div>
         <div className="hero-feature-strip">
           {[
-            {icon: Building2, label: {en: "Factory Updates", zh: "工厂动态"}},
-            {icon: Newspaper, label: {en: "Project Cases", zh: "项目案例"}},
-            {icon: ClipboardCheck, label: {en: "Compliance Progress", zh: "合规进展"}},
-            {icon: PackageCheck, label: {en: "Delivery Notes", zh: "交付记录"}},
+            {
+              icon: Building2,
+              label: { en: "Factory Updates", zh: "工厂动态" },
+            },
+            { icon: Newspaper, label: { en: "Project Cases", zh: "项目案例" } },
+            {
+              icon: ClipboardCheck,
+              label: { en: "Compliance Progress", zh: "合规进展" },
+            },
+            {
+              icon: PackageCheck,
+              label: { en: "Delivery Notes", zh: "交付记录" },
+            },
           ].map((item) => {
             const Icon = item.icon;
             return (

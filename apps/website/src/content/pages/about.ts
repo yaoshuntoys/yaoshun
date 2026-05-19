@@ -15,7 +15,7 @@ const factoryImage1 =
 const factoryImage2 =
   "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-8.webp";
 const factoryImage3 =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/production.webp";
+  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions/extrusion-workshop-overview.webp";
 const factoryImage4 = "/site/home/about-factory.webp";
 const factoryImage5 =
   "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/warehouse.jpg";
