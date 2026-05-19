@@ -265,13 +265,9 @@ const coreFocusCards = [
 
 const equipmentTabs = [
   { id: "all", label: { en: "All", zh: "全部设备" } },
-  { id: "tooling", label: { en: "Tooling Shop", zh: "模具车间" } },
-  {
-    id: "machining",
-    label: { en: "Turning / Milling / Drilling", zh: "车铣钻加工" },
-  },
+  { id: "tooling", label: { en: "Mold Machining Workshop", zh: "模具加工车间" } },
   { id: "extrusion", label: { en: "Extrusion Workshop", zh: "挤出车间" } },
-  { id: "injection", label: { en: "Injection", zh: "注塑生产" } },
+  { id: "injection", label: { en: "Injection Production", zh: "注塑生产" } },
 ] as const;
 
 const equipmentCards = [
@@ -285,7 +281,7 @@ const equipmentCards = [
     },
   },
   {
-    category: "machining",
+    category: "tooling",
     image: solutionsEquipmentImages.c6140aLathe,
     title: { en: "C6140A Engine Lathe", zh: "C6140A 普通车床" },
     text: {
@@ -294,7 +290,7 @@ const equipmentCards = [
     },
   },
   {
-    category: "machining",
+    category: "tooling",
     image: solutionsEquipmentImages.cn6150bLathe,
     title: { en: "CN6150B Long-Bed Lathe", zh: "CN6150B 长床车床" },
     text: {
@@ -303,7 +299,7 @@ const equipmentCards = [
     },
   },
   {
-    category: "machining",
+    category: "tooling",
     image: solutionsEquipmentImages.turretMillDetail1,
     title: { en: "Turret Milling Machine", zh: "炮塔铣床" },
     text: {
@@ -312,7 +308,7 @@ const equipmentCards = [
     },
   },
   {
-    category: "machining",
+    category: "tooling",
     image: solutionsEquipmentImages.radialDrill,
     title: { en: "Z3035x10 Radial Drilling Machine", zh: "Z3035x10 摇臂钻床" },
     text: {
