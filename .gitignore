@@ -26,6 +26,7 @@ coverage
 .DS_Store
 .idea
 .vscode
+.history
 
 # App-specific local runtime data
 apps/server/uploads
