@@ -20,7 +20,14 @@ const curatedProductsFeaturedRailIds = [
   "1601213973459",
   "1601214840405",
   "1601316497567",
+  "2026050705",
+  "2026050706",
 ] as const;
+
+const productsFeaturedRailImageOverrides: Partial<Record<string, string>> = {
+  "2026050705": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050705/2.webp",
+  "2026050706": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050706/3.webp",
+};
 
 function extractPieceCount(product: ProductJson) {
   const pools = [
@@ -677,7 +684,19 @@ export function getHomeFeaturedShowcaseCatalog() {
 }
 
 export function getProductsFeaturedRailCatalog() {
-  return getCuratedShowcaseItems(curatedProductsFeaturedRailIds, 5);
+  return getCuratedShowcaseItems(
+    curatedProductsFeaturedRailIds,
+    curatedProductsFeaturedRailIds.length,
+  ).map((item) => {
+    const overrideImage = productsFeaturedRailImageOverrides[item.product.productId];
+
+    return overrideImage
+      ? {
+          ...item,
+          images: [overrideImage, ...item.images.filter((image) => image !== overrideImage)],
+        }
+      : item;
+  });
 }
 
 export function findShowcaseProduct(productId: string) {

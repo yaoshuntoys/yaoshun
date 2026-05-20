@@ -65,107 +65,32 @@ const proofCards = [
 
 const capabilityTabs = [
   {
-    label: { en: "Tooling Shop", zh: "模具车间" },
+    label: { en: "Injection Molding", zh: "注塑成型" },
+    meta: { en: "Trial and repeat molding", zh: "试模与复产成型" },
+  },
+  {
+    label: { en: "Extrusion Workshop", zh: "挤出车间" },
+    meta: { en: "Profile and tube production", zh: "管材与型材生产" },
+  },
+  {
+    label: { en: "PCBA Custom Service", zh: "PCBA定制服务" },
+    meta: { en: "Board assembly and testing", zh: "板卡组装与测试" },
+  },
+  {
+    label: { en: "Assembly / Packaging Test", zh: "组/包装测试" },
+    meta: { en: "Assembly and delivery check", zh: "组装包装与交付复核" },
+  },
+  {
+    label: { en: "Mold Making", zh: "模具制作" },
     meta: { en: "Steel and tooling intake", zh: "钢料与开模准备" },
   },
   {
-    label: { en: "Turning", zh: "车削加工" },
-    meta: { en: "Round insert machining", zh: "圆件与镶件加工" },
-  },
-  {
-    label: { en: "Milling", zh: "铣削定位" },
-    meta: { en: "Datum and surface setup", zh: "平面与基准建立" },
-  },
-  {
-    label: { en: "Drilling", zh: "钻孔攻牙" },
-    meta: { en: "Mold-base holes", zh: "孔位与水路准备" },
-  },
-  {
-    label: { en: "Wire-Cut / EDM", zh: "线切割放电" },
-    meta: { en: "Contour and detail finishing", zh: "轮廓与细节精修" },
-  },
-  {
-    label: { en: "Injection", zh: "注塑成型" },
-    meta: { en: "Trial and repeat molding", zh: "试模与复产成型" },
+    label: { en: "Extrusion Equipment", zh: "挤出设备" },
+    meta: { en: "Line equipment control", zh: "产线设备控制" },
   },
 ] as const;
 
 const capabilityCards = [
-  {
-    icon: Factory,
-    image: solutionsEquipmentImages.moldWorkshop,
-    title: { en: "In-House Tooling Workflow", zh: "自有模具加工动线" },
-    text: {
-      en: "The tooling shop brings turning, milling, drilling, wire cutting, and EDM preparation into one visible workflow.",
-      zh: "模具车间集中车、铣、钻、线切割与电火花准备，形成从钢料到试模前的自有加工动线。",
-    },
-    bullets: [
-      { en: "Tooling schedule coordination", zh: "模具加工排程协同" },
-      { en: "Steel preparation and fixture setup", zh: "钢料准备与工装定位" },
-      { en: "Multiple machining stations", zh: "多工位加工衔接" },
-      { en: "Trial-molding readiness", zh: "面向试模交付准备" },
-    ],
-  },
-  {
-    icon: CircleDotDashed,
-    image: solutionsEquipmentImages.c6140aLathe,
-    title: { en: "Turning For Mold Inserts", zh: "车削加工与圆件成型" },
-    text: {
-      en: "C6140A and CN6150B lathes support round inserts, sleeves, guide parts, and mold repair components.",
-      zh: "C6140A 与 CN6150B 车床用于圆形镶件、轴套、导柱和修模件加工，稳定模具基础尺寸。",
-    },
-    bullets: [
-      { en: "Outer diameter and end-face turning", zh: "外圆与端面车削" },
-      { en: "Inner-hole and sleeve processing", zh: "内孔与套筒加工" },
-      { en: "Round mold insert preparation", zh: "圆形模具镶件准备" },
-      { en: "Repair and repeat-order support", zh: "修配与复产支持" },
-    ],
-  },
-  {
-    icon: Settings2,
-    image: solutionsEquipmentImages.turretMillDetail1,
-    title: { en: "Milling And Datum Setup", zh: "铣削定位与平面加工" },
-    text: {
-      en: "The turret milling machine handles mold plates, slots, steps, and datum surfaces before fitting and drilling.",
-      zh: "炮塔铣床用于模板平面、槽位、台阶和定位面的加工，为后续装配、钻孔和修模建立基准。",
-    },
-    bullets: [
-      { en: "Flat surface finishing", zh: "模板平面修整" },
-      { en: "Slot and step machining", zh: "槽位与台阶加工" },
-      { en: "Datum setup for fitting", zh: "装配基准建立" },
-      { en: "Small-batch mold adjustment", zh: "小批量修模调整" },
-    ],
-  },
-  {
-    icon: Wrench,
-    image: solutionsEquipmentImages.radialDrill,
-    title: { en: "Drilling And Tapping", zh: "钻孔攻牙与模架孔位" },
-    text: {
-      en: "The Z3035x10 radial drill handles mold-base holes, water circuits, threaded holes, and larger fixture positioning.",
-      zh: "Z3035x10 摇臂钻床用于模架孔位、冷却水路、螺纹孔和较大工件的灵活钻孔定位。",
-    },
-    bullets: [
-      { en: "Mold-base drilling", zh: "模架孔位加工" },
-      { en: "Cooling-channel preparation", zh: "冷却水路准备" },
-      { en: "Threaded hole processing", zh: "螺纹孔加工" },
-      { en: "Large-part positioning", zh: "大工件定位" },
-    ],
-  },
-  {
-    icon: Sparkles,
-    image: solutionsEquipmentImages.mediumWireCutEdm,
-    title: { en: "Wire-Cut And EDM Finishing", zh: "线切割与电火花精修" },
-    text: {
-      en: "Medium-speed and fast wire-cut EDM work with hole drilling to shape narrow slots, inserts, and complex mold contours.",
-      zh: "中走丝、快走丝与电火花穿孔配合，用于复杂轮廓、窄槽、镶件和穿丝孔加工。",
-    },
-    bullets: [
-      { en: "Complex contour cutting", zh: "复杂轮廓切割" },
-      { en: "Narrow slot and insert shaping", zh: "窄槽与镶件成型" },
-      { en: "Wire-start hole preparation", zh: "穿丝孔准备" },
-      { en: "Hard-to-machine detail finishing", zh: "难加工细节精修" },
-    ],
-  },
   {
     icon: FlaskConical,
     image: solutionsEquipmentImages.hwaChin210se,
@@ -179,6 +104,81 @@ const capabilityCards = [
       { en: "Automatic take-out support", zh: "自动取件辅机配合" },
       { en: "Trial molding parameter tuning", zh: "试模参数验证" },
       { en: "Repeatable plastic-part output", zh: "塑件稳定复产" },
+    ],
+  },
+  {
+    icon: Factory,
+    image: solutionsEquipmentImages.extrusionWorkshopOverview,
+    title: { en: "Extrusion Workshop For Tubes And Profiles", zh: "挤出车间管材与型材生产" },
+    text: {
+      en: "The workshop overview shows extrusion lines, control stations, cooling sections, and line-side turnover areas for steady plastic tube and profile production.",
+      zh: "车间总览展示挤出产线、控制工位、冷却段和线边周转区，支撑塑胶管材与异型材稳定生产。",
+    },
+    bullets: [
+      { en: "Plastic tube and profile extrusion", zh: "塑胶管材与异型材挤出" },
+      { en: "Line-side cooling and haul-off", zh: "线边冷却与牵引衔接" },
+      { en: "Workshop turnover arrangement", zh: "车间周转动线安排" },
+      { en: "Batch production preparation", zh: "批量生产前置准备" },
+    ],
+  },
+  {
+    icon: Settings2,
+    image: solutionsEquipmentImages.pcbaServiceBoard,
+    title: { en: "PCBA Custom Service For Electronic Products", zh: "电子产品 PCBA 定制服务" },
+    text: {
+      en: "The full board image shows mounted chips, interface connectors, power areas, and test points for PCBA assembly, programming, and functional review.",
+      zh: "完整板卡图展示芯片、接口端子、电源区域和测试点，可支持 PCBA 贴装、程序烧录与功能复核。",
+    },
+    bullets: [
+      { en: "SMT component assembly support", zh: "SMT 元件贴装支持" },
+      { en: "Connector and interface review", zh: "连接器与接口复核" },
+      { en: "Program flashing and function test", zh: "程序烧录与功能测试" },
+      { en: "Anti-static delivery preparation", zh: "防静电交付准备" },
+    ],
+  },
+  {
+    icon: PackageCheck,
+    image: solutionsWorkshopImages.overview,
+    title: { en: "Assembly, Packaging And Testing Workflow", zh: "组装、包装与测试流程" },
+    text: {
+      en: "The plastic-electronics workshop view shows organized workstations for assembly, checking, packaging preparation, and shipment-ready review.",
+      zh: "塑胶电子车间图展示整齐工位，可承接产品组装、过程检查、包装准备和出货前复核。",
+    },
+    bullets: [
+      { en: "Product assembly workstation", zh: "产品组装工位" },
+      { en: "Function and appearance checks", zh: "功能与外观检查" },
+      { en: "Packaging preparation and sorting", zh: "包装准备与分拣" },
+      { en: "Shipment-ready review", zh: "出货前复核" },
+    ],
+  },
+  {
+    icon: Factory,
+    image: solutionsEquipmentImages.moldWorkshop,
+    title: { en: "In-House Mold Making Workflow", zh: "自有模具制作动线" },
+    text: {
+      en: "The tooling shop brings turning, milling, drilling, wire cutting, and EDM preparation into one visible workflow.",
+      zh: "模具车间集中车、铣、钻、线切割与电火花准备，形成从钢料到试模前的自有加工动线。",
+    },
+    bullets: [
+      { en: "Tooling schedule coordination", zh: "模具加工排程协同" },
+      { en: "Steel preparation and fixture setup", zh: "钢料准备与工装定位" },
+      { en: "Multiple machining stations", zh: "多工位加工衔接" },
+      { en: "Trial-molding readiness", zh: "面向试模交付准备" },
+    ],
+  },
+  {
+    icon: Wrench,
+    image: solutionsEquipmentImages.extrusionEquipmentDisplay,
+    title: { en: "Extrusion Equipment And Line Control", zh: "挤出设备与产线控制" },
+    text: {
+      en: "The equipment image shows a complete extrusion line with control panels, drive sections, forming areas, and downstream handling equipment in a bright workshop.",
+      zh: "设备图展示完整挤出产线，包含控制面板、驱动段、成型区域和后段辅助设备，适合说明挤出设备配置能力。",
+    },
+    bullets: [
+      { en: "Multi-zone equipment control", zh: "多区段设备控制" },
+      { en: "Extrusion forming and output", zh: "挤出成型与出料" },
+      { en: "Line setup and process tuning", zh: "产线调试与工艺调整" },
+      { en: "Workshop-scale equipment layout", zh: "车间级设备布局" },
     ],
   },
 ] as const;
@@ -268,9 +268,55 @@ const equipmentTabs = [
   { id: "tooling", label: { en: "Mold Machining Workshop", zh: "模具加工车间" } },
   { id: "extrusion", label: { en: "Extrusion Workshop", zh: "挤出车间" } },
   { id: "injection", label: { en: "Injection Production", zh: "注塑生产" } },
+  { id: "pcba", label: { en: "PCBA Service", zh: "PCBA 服务" } },
 ] as const;
 
 const equipmentCards = [
+  {
+    category: "pcba",
+    image: solutionsEquipmentImages.pcbaServiceBoard,
+    title: { en: "Video Communication PCBA Programming And Testing", zh: "视频通讯板程序烧录与功能测试" },
+    text: {
+      en: "Supports video communication board program flashing, functional testing, connector review, inspection checkpoints, and anti-static packaging before delivery.",
+      zh: "支持视频通讯板程序烧录、功能测试、接口复核、检测点确认，并在出货前配合防静电包装。",
+    },
+  },
+  {
+    category: "pcba",
+    image: solutionsEquipmentImages.pcbaServiceAngle,
+    title: { en: "12-Layer 2.0 mm PCB Assembly", zh: "12层 2.0mm PCB 板组装" },
+    text: {
+      en: "The angled board view shows a 12-layer PCB with 2.0 mm board thickness, mounted chips, capacitors, connectors, and functional module areas.",
+      zh: "斜角板卡图展示 12层 PCB、2.0mm 板厚、芯片、电容、连接器和功能模块区域。",
+    },
+  },
+  {
+    category: "pcba",
+    image: solutionsEquipmentImages.pcbaServiceInterface,
+    title: { en: "Double-Sided SMT And Interface Integration", zh: "双面贴片与接口端子集成" },
+    text: {
+      en: "The interface close-up supports double-sided SMT projects with USB ports, pin headers, sockets, and external connector integration.",
+      zh: "接口与排针区域特写，适合双面贴片项目中 USB、排针、插座和外部连接端子的集成确认。",
+    },
+  },
+  {
+    category: "pcba",
+    image: solutionsEquipmentImages.pcbaServiceSmtDetail,
+    title: { en: "0201 SMD And Dense Component Placement", zh: "0201 SMD 与密集元件贴装" },
+    text: {
+      en: "SMT details cover 0201 SMD placement, more than 15 IC types, over 150 chip component types, soldering quality, and inspection requirements.",
+      zh: "SMT 细节覆盖 0201 SMD 贴装、15种以上 IC、150种以上 CHIP 料、焊接品质和检验要求。",
+    },
+  },
+  {
+    category: "pcba",
+    image: solutionsEquipmentImages.pcbaServiceCircuitDetail,
+    title: { en: "0.3 mm BGA Pitch And Circuit Review", zh: "0.3mm BGA 球距与线路复核" },
+    text: {
+      en: "The circuit close-up supports board-level review for 0.3 mm BGA pitch, 12 BGA packages, dense traces, pads, and product integration.",
+      zh: "线路局部图支持 0.3mm BGA 球距、12颗 BGA、密集走线、焊盘和整机集成前的板级复核。",
+    },
+  },
   {
     category: "tooling",
     image: solutionsEquipmentImages.moldWorkshop,
@@ -854,8 +900,8 @@ export default async function SolutionsPage({
           locale={locale}
           title={{ en: "Our Solution Capabilities", zh: "我们的解决方案能力" }}
           text={{
-            en: "A real equipment-led view of the workflow from tooling preparation to repeatable injection molding.",
-            zh: "按真实设备动线展示从模具准备到注塑复产的解决方案能力。",
+            en: "A real equipment-led view of injection molding, extrusion, PCBA, assembly, packaging, testing, and tooling support.",
+            zh: "按真实设备与车间画面展示注塑、挤出、PCBA、组装包装测试和模具制作能力。",
           }}
         />
 

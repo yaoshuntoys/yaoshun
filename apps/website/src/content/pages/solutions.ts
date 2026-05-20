@@ -27,6 +27,12 @@ export const solutionsWorkshopImages = {
 } as const;
 
 export const solutionsEquipmentImages = {
+  pcbaServiceBoard: "/site/solutions/pcba-service-board.png",
+  pcbaServiceAngle: "/site/solutions/pcba-service-angle.png",
+  pcbaServiceInterface: "/site/solutions/pcba-service-interface.png",
+  pcbaServiceSmtDetail: "/site/solutions/pcba-service-smt-detail.png",
+  pcbaServiceCircuitDetail: "/site/solutions/pcba-service-circuit-detail.png",
+  extrusionEquipmentDisplay: "/site/solutions/extrusion-equipment-display.png",
   moldWorkshop: `${equipmentBase}/mold-machining-workshop-overview.webp`,
   c6140aLathe: `${equipmentBase}/mold-machining-c6140a-engine-lathe-main.webp`,
   c6140aLatheDetail1: `${equipmentBase}/mold-machining-c6140a-engine-lathe-main.webp`,
