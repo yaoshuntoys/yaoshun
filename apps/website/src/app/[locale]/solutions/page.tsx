@@ -40,6 +40,20 @@ type Localized = {
   zh: string;
 };
 
+type CapabilityTileSeed = {
+  image: string;
+  title: Localized;
+};
+
+type CapabilityCardSeed = {
+  bullets: Localized[];
+  icon: typeof Factory;
+  image: string;
+  text: Localized;
+  title: Localized;
+  tiles?: CapabilityTileSeed[];
+};
+
 const proofCards = [
   {
     icon: CircleDotDashed,
@@ -90,7 +104,7 @@ const capabilityTabs = [
   },
 ] as const;
 
-const capabilityCards = [
+const capabilityCards: CapabilityCardSeed[] = [
   {
     icon: FlaskConical,
     image: solutionsEquipmentImages.hwaChin210se,
@@ -123,17 +137,35 @@ const capabilityCards = [
   },
   {
     icon: Settings2,
-    image: solutionsEquipmentImages.pcbaServiceBoard,
-    title: { en: "PCBA Custom Service For Electronic Products", zh: "电子产品 PCBA 定制服务" },
+    image: solutionsEquipmentImages.pcbaDesignRd,
+    title: { en: "PCBA Design And R&D Custom Service", zh: "PCBA设计与研发定制服务" },
     text: {
-      en: "The full board image shows mounted chips, interface connectors, power areas, and test points for PCBA assembly, programming, and functional review.",
-      zh: "完整板卡图展示芯片、接口端子、电源区域和测试点，可支持 PCBA 贴装、程序烧录与功能复核。",
+      en: "From PCB layout and board making to SMT placement and complete product solution customization, PCBA work starts with design and R&D review before assembly.",
+      zh: "从 PCB 设计、PCB 制板到 SMT 贴片和整机方案定制，PCBA 服务先围绕设计研发评估，再进入贴装与功能验证。",
     },
     bullets: [
-      { en: "SMT component assembly support", zh: "SMT 元件贴装支持" },
-      { en: "Connector and interface review", zh: "连接器与接口复核" },
-      { en: "Program flashing and function test", zh: "程序烧录与功能测试" },
-      { en: "Anti-static delivery preparation", zh: "防静电交付准备" },
+      { en: "PCB Design", zh: "PCB设计" },
+      { en: "PCB Board Making", zh: "PCB制板" },
+      { en: "SMT Placement", zh: "SMT贴片" },
+      { en: "Tailor-made PCBA Solution", zh: "方案定制" },
+    ],
+    tiles: [
+      {
+        image: solutionsEquipmentImages.pcbaDesignRd,
+        title: { en: "PCB Design", zh: "PCB设计" },
+      },
+      {
+        image: solutionsEquipmentImages.pcbaBoardMaking,
+        title: { en: "PCB Board Making", zh: "PCB制板" },
+      },
+      {
+        image: solutionsEquipmentImages.pcbaSmtPlacement,
+        title: { en: "SMT Placement", zh: "SMT贴片" },
+      },
+      {
+        image: solutionsEquipmentImages.pcbaTailorMadeSolution,
+        title: { en: "Tailor-made PCBA Solution", zh: "方案定制" },
+      },
     ],
   },
   {
@@ -911,6 +943,10 @@ export default async function SolutionsPage({
             image: card.image,
             meta: localized(locale, capabilityTabs[index].meta),
             text: localized(locale, card.text),
+            tiles: card.tiles?.map((tile) => ({
+              image: tile.image,
+              title: localized(locale, tile.title),
+            })),
             title: localized(locale, capabilityTabs[index].label),
           }))}
           contactHref={contactHref}

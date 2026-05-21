@@ -35,7 +35,7 @@ export function SolutionsEquipmentList({
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeCategory, setActiveCategory] = useState("all");
   const filteredCards =
-    activeCategory === "all" ? cards : cards.filter((card) => card.category === activeCategory);
+    activeCategory === "all" ? [...cards].reverse() : cards.filter((card) => card.category === activeCategory);
   const canToggle = filteredCards.length > 3;
 
   function selectCategory(category: string) {

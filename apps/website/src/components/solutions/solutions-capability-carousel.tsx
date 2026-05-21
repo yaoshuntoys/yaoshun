@@ -12,6 +12,10 @@ type CapabilityCard = {
   meta: string;
   text: string;
   title: string;
+  tiles?: Array<{
+    image: ImageProps["src"];
+    title: string;
+  }>;
 };
 
 type SolutionsCapabilityCarouselProps = {
@@ -124,32 +128,56 @@ export function SolutionsCapabilityCarousel({
             return (
               <article
                 aria-hidden={!isActive}
-                className={isActive ? "solutions-capability-card active" : "solutions-capability-card"}
+                className={`solutions-capability-card ${isActive ? "active" : ""} ${
+                  card.tiles?.length ? "has-tiles" : ""
+                }`}
                 data-offset={offset}
                 key={card.title}
                 style={style}
               >
-                <div className="solutions-capability-image-wrap">
-                  <Image
-                    alt={card.title}
-                    className="solutions-capability-image"
-                    fill
-                    preview
-                    sizes="(min-width: 1180px) 500px, (min-width: 768px) 56vw, 88vw"
-                    src={card.image}
-                  />
-                </div>
+                {card.tiles?.length ? null : (
+                  <div className="solutions-capability-image-wrap">
+                    <Image
+                      alt={card.title}
+                      className="solutions-capability-image"
+                      fill
+                      preview
+                      sizes="(min-width: 1180px) 500px, (min-width: 768px) 56vw, 88vw"
+                      src={card.image}
+                    />
+                  </div>
+                )}
                 <div className="solutions-capability-body">
                   <div className="solutions-capability-title-row">
                     <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                     <h3>{card.title}</h3>
                   </div>
                   <p>{card.text}</p>
-                  <ul>
-                    {card.bullets.map((bullet) => (
-                      <li key={bullet}>{bullet}</li>
-                    ))}
-                  </ul>
+                  {card.tiles?.length ? (
+                    <div className="solutions-capability-tile-grid">
+                      {card.tiles.map((tile) => (
+                        <article className="solutions-capability-tile" key={tile.title}>
+                          <div className="solutions-capability-tile-image">
+                            <Image
+                              alt={tile.title}
+                              className="solutions-capability-tile-media"
+                              fill
+                              preview
+                              sizes="(min-width: 1180px) 240px, (min-width: 768px) 24vw, 44vw"
+                              src={tile.image}
+                            />
+                          </div>
+                          <h4>{tile.title}</h4>
+                        </article>
+                      ))}
+                    </div>
+                  ) : (
+                    <ul>
+                      {card.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  )}
                   <Link className="solutions-card-link" href={contactHref} tabIndex={isActive ? undefined : -1}>
                     <span>{learnMoreLabel}</span>
                     <ArrowRight size={14} strokeWidth={2.2} />
