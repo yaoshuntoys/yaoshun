@@ -37,7 +37,7 @@ import {
   certificateItems,
   factoryItems,
 } from "@/content/pages/about";
-console.log(11);
+
 const heroFactItems = [
   {
     value: { en: "2016", zh: "2016" },
