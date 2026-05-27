@@ -13,17 +13,15 @@ export const faqContent = {
         'toy OEM ODM FAQ',
         'MOQ and lead time',
         'toy sampling process',
-        'packaging and shipment FAQ',
-        'quality checkpoint questions',
-        'export logistics support'
+        'packaging shipment FAQ',
+        'quality checkpoint questions'
       ],
       zh: [
         '玩具OEM ODM FAQ',
         '起订量和交期',
         '玩具打样流程',
         '包装出货常见问题',
-        '质量节点问题',
-        '出口物流支持'
+        '质量节点问题'
       ]
     }
   },

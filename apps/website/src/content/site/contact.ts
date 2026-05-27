@@ -10,19 +10,19 @@ export const contactContent = {
     },
     keywords: {
       en: [
+        'toy manufacturing quote',
         'custom toy quote request',
-        'fort building toy inquiry',
         'OEM ODM sampling quote',
+        'private label toy inquiry',
         'mold evaluation request',
-        'packaging quotation review',
         'export delivery quote'
       ],
       zh: [
+        '玩具制造报价',
         '定制玩具报价申请',
-        '堡垒拼搭玩具询盘',
         'OEM ODM打样报价',
+        '私标玩具询盘',
         '开模评估需求',
-        '拼搭玩具定制报价',
         '出口交付报价'
       ]
     }

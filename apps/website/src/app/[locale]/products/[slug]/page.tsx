@@ -490,8 +490,13 @@ export default async function ProductDetailPage({
       value: localize(locale, packagePair?.value, "-"),
     },
   ];
+  const productSearchPositioning = t(locale, {
+    en: "Suitable for fort building kit, STEM toy, and make a fort sourcing projects.",
+    zh: "适合堡垒搭建套装、STEM玩具与搭建堡垒采购项目。",
+  });
   const highlightBullets = uniqueLines([
     descriptionLines[0] || "",
+    productSearchPositioning,
     functionPair
       ? `${localize(locale, functionPair.key)}: ${localize(locale, functionPair.value)}`
       : "",
@@ -602,7 +607,10 @@ export default async function ProductDetailPage({
     ? productPath(locale, adjacentProducts.next.product.productId)
     : productsHref;
   const productUrl = toAbsoluteUrl(currentProductHref);
-  const productDescription = uniqueLines(descriptionLines).join(" ").trim() || title;
+  const productDescription = [
+    uniqueLines(descriptionLines).join(" ").trim() || title,
+    productSearchPositioning,
+  ].join(" ");
   const categoryNames = categoryTrail;
   const structuredImages = mediaImages.slice(0, 8).map((image) => toAbsoluteUrl(image));
   const currencyCode = normalizeCurrencyCode(product.pricing?.currency);

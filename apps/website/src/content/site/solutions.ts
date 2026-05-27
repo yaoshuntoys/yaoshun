@@ -14,17 +14,17 @@ export const solutionsContent = {
       en: [
         'toy OEM ODM workflow',
         'custom toy development process',
-        'mold sampling for toys',
-        'injection molding assembly packaging',
         'private label toy packaging',
+        'toy mold sampling',
+        'injection molding assembly',
         'export delivery planning'
       ],
       zh: [
         '玩具OEM ODM流程',
         '定制玩具开发流程',
-        '玩具开模打样',
-        '注塑组装包装',
         '私标玩具包装',
+        '玩具开模打样',
+        '注塑组装',
         '出口交付规划'
       ]
     }

@@ -13,19 +13,19 @@ export const homeContent = {
     keywords: {
       en: [
         'Yaoshun Toys',
-        'toy OEM ODM manufacturing partner',
-        'fort building toy manufacturer',
-        'STEM building kit supplier',
-        'custom toy development',
-        'injection molding and packaging support'
+        'toy OEM ODM factory',
+        'B2B toy supplier',
+        'custom toy manufacturer',
+        'educational toy manufacturing',
+        'toy export delivery'
       ],
       zh: [
         '尧顺玩具',
-        '玩具OEM ODM制造伙伴',
-        '堡垒拼搭玩具厂家',
-        'STEM搭建套装供应',
-        '定制玩具开发',
-        '注塑包装交付支持'
+        '玩具OEM ODM工厂',
+        'B2B玩具供应商',
+        '定制玩具制造商',
+        '益智玩具制造',
+        '玩具出口交付'
       ]
     }
   },

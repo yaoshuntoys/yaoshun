@@ -5,32 +5,32 @@ export const productsPageContent = {
       zh: '搭建玩具与定制玩具目录 | 尧顺玩具'
     },
     description: {
-      en: 'Explore Yaoshun fort building toys, STEM kits, glow-in-the-dark fort kits, connector balls, storage bags and color box packaging for toy OEM/ODM.',
-      zh: '查看尧顺堡垒拼搭玩具、STEM搭建套装、夜光拼搭套装、连接球、收纳袋与彩盒包装定制方案。'
+      en: 'Explore Yaoshun fort building kit options, STEM toy programs, make a fort play sets, glow-in-the-dark kits, connector balls, storage bags and color box packaging for toy OEM/ODM.',
+      zh: '查看尧顺堡垒搭建套装、STEM玩具、搭建堡垒玩法套装、夜光拼搭套装、连接球、收纳袋与彩盒包装定制方案。'
     },
     detailTitleTemplate: {
       en: '{product} | Yaoshun Toys',
       zh: '{product} | 尧顺玩具'
     },
     detailDescriptionTemplate: {
-      en: '{product} from Yaoshun Toys, with OEM/ODM support for packaging, quality checks and export delivery.',
-      zh: '{product} 由尧顺玩具提供，支持 OEM/ODM、包装、质检与出口交付。'
+      en: '{product} from Yaoshun Toys, suitable for fort building kit, STEM toy, and make a fort sourcing, with OEM/ODM support for packaging, quality checks and export delivery.',
+      zh: '{product} 由尧顺玩具提供，适合堡垒搭建套装、STEM玩具与搭建堡垒项目采购，支持 OEM/ODM、包装、质检与出口交付。'
     },
     keywords: {
       en: [
-        'fort building toy catalog',
-        'STEM building kit catalog',
-        'glow fort building kits',
-        'connector balls and rods',
-        'custom color box building toys',
-        'OEM ODM toy product sourcing'
+        'fort building kit',
+        'STEM toy',
+        'make a fort',
+        'glow fort building kit',
+        'kids fort kit',
+        'OEM ODM toy sourcing'
       ],
       zh: [
-        '搭建玩具目录',
-        'STEM搭建套装目录',
+        '堡垒搭建套装',
+        'STEM玩具',
+        '搭建堡垒玩具',
         '夜光堡垒拼搭套装',
-        '连接杆连接球配件',
-        '彩盒包装搭建玩具',
+        '儿童堡垒套装',
         'OEM ODM玩具选品'
       ]
     }
@@ -38,8 +38,8 @@ export const productsPageContent = {
   hero: {
     title: {en: 'Toy Product Catalog', zh: '玩具产品目录'},
     description: {
-      en: 'Browse by project type instead of generic categories: finished toy lines, component development, and supporting process capabilities.',
-      zh: '按项目类型而非泛化品类浏览：成品玩具线、结构件开发与配套工艺能力。'
+      en: 'Browse fort building kit, STEM toy, and make a fort project options by finished toy lines, component development, and supporting process capabilities.',
+      zh: '按堡垒搭建套装、STEM玩具与搭建堡垒项目方向浏览：成品玩具线、结构件开发与配套工艺能力。'
     }
   },
   catalogPillars: [

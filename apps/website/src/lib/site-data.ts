@@ -552,6 +552,10 @@ export function getProductSeoKeywords(
 
   return uniqueSeoKeywords(
     [
+      ...getKeywordPool(locale, {
+        en: ["fort building kit", "STEM toy", "make a fort"],
+        zh: ["堡垒搭建套装", "STEM玩具", "搭建堡垒玩具"],
+      }),
       title,
       ...getPieceCountSeoKeywords(locale, product),
       ...categorySeoKeywords,
@@ -565,7 +569,7 @@ export function getProductSeoKeywords(
 export function getCatalogSeoKeywords(locale: Locale, limit = 2) {
   return uniqueSeoKeywords(
     getKeywordPool(locale, {
-      en: ["rotating ball fort kits", "storage bag fort kit options"],
+      en: ["rotating ball fort building kit", "storage bag fort kit"],
       zh: ["旋转球堡垒拼搭套装", "收纳袋堡垒拼搭套装"],
     }),
     limit,

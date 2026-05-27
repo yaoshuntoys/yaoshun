@@ -61,71 +61,46 @@ export const seoKeywordPools = {
   company: {
     en: [
       "Yaoshun Toys",
-      "Yaoshun Technology",
-      "Yaoshun toy manufacturer",
-      "Yaoshun toy factory",
-      "source toy factory China",
-      "toy manufacturer China",
-      "B2B toy manufacturer",
-      "toy manufacturer and exporter",
-      "OEM ODM toy manufacturer",
-      "custom toy manufacturing partner",
-      "educational toy manufacturer",
+      "toy OEM ODM factory",
+      "B2B toy supplier",
+      "custom toy manufacturer",
+      "educational toy manufacturing",
+      "toy export delivery",
     ],
     zh: [
-      "尧顺科技",
       "尧顺玩具",
-      "尧顺玩具工厂",
-      "尧顺玩具厂家",
-      "源头玩具工厂",
-      "源头实力工厂",
+      "玩具 OEM ODM工厂",
       "B2B玩具供应商",
-      "玩具制造出口工厂",
-      "OEM ODM玩具厂家",
       "定制玩具制造商",
-      "益智玩具厂家",
+      "益智玩具制造",
+      "玩具出口交付",
     ],
   },
   products: {
     en: [
-      "fort building toy",
       "fort building kit",
-      "STEM fort building kit",
-      "educational building toys",
+      "STEM toy",
+      "make a fort",
+      "fort building toy",
+      "kids fort kit",
       "DIY building toys",
-      "interlocking building toys",
       "construction toy for kids",
-      "building block sets",
-      "tent fort building kit",
-      "castle fort building kit",
-      "secret base fort building kit",
       "glow in the dark fort building kit",
       "rotating ball fort building kit",
-      "parent child building toy",
       "PP rods connector balls",
-      "ABS rotating ball connectors",
       "storage bag fort kit",
-      "color box building toy",
     ],
     zh: [
-      "堡垒拼搭玩具",
       "堡垒搭建套装",
+      "STEM玩具",
+      "搭建堡垒玩具",
+      "堡垒拼搭玩具",
       "STEM搭建玩具",
-      "益智拼搭玩具",
       "DIY儿童搭建玩具",
-      "拼插类玩具",
-      "积木与模型拼搭玩具",
-      "帐篷堡垒搭建套件",
-      "儿童秘密基地玩具",
-      "城堡堡垒拼搭套装",
       "夜光堡垒拼搭玩具",
       "旋转球堡垒拼搭玩具",
-      "亲子互动搭建玩具",
       "连接杆连接球",
-      "PP连接杆",
-      "ABS旋转球连接件",
       "收纳袋玩具套装",
-      "彩盒包装搭建玩具",
     ],
   },
   factoryCapabilities: {
@@ -160,11 +135,10 @@ export const seoKeywordPools = {
   },
   customization: {
     en: [
-      "toy OEM ODM factory",
-      "OEM ODM toy manufacturer",
+      "toy OEM ODM customization",
+      "private label toy production",
       "custom toy development",
       "custom building toy development",
-      "private label toy manufacturer",
       "custom toy packaging",
       "custom logo toy packaging",
       "sample-based processing",
@@ -174,12 +148,11 @@ export const seoKeywordPools = {
       "mass production toy supplier",
     ],
     zh: [
-      "玩具OEM ODM工厂",
-      "OEM ODM玩具厂家",
+      "玩具OEM ODM定制",
+      "私标玩具生产",
       "定制玩具",
       "玩具定制化开发",
       "搭建玩具定制开发",
-      "贴牌玩具厂家",
       "包装定制",
       "彩盒包装定制",
       "Logo定制",
@@ -214,15 +187,19 @@ export const siteSeo = {
   defaultKeywords: {
     en: [
       "Yaoshun Toys",
-      "toy OEM ODM manufacturing",
-      "custom building toys",
-      "toy export support",
+      "toy OEM ODM factory",
+      "B2B toy supplier",
+      "custom toy manufacturer",
+      "educational toy manufacturing",
+      "toy export delivery",
     ],
     zh: [
       "尧顺玩具",
-      "玩具OEM ODM制造",
-      "定制搭建玩具",
-      "玩具出口支持",
+      "玩具OEM ODM工厂",
+      "B2B玩具供应商",
+      "定制玩具制造商",
+      "益智玩具制造",
+      "玩具出口交付",
     ],
   },
 };
@@ -239,7 +216,7 @@ export const sharedUi = {
     title: { en: "Request a Quote", zh: "获取报价" },
     description: {
       en: "Share product direction, quantity, and timeline to start a structured quotation review.",
-      zh: "填写产品方向、数量与时间要求，快速启动结构化报价评估。"
+      zh: "填写产品方向、数量与时间要求，快速启动结构化报价评估。",
     },
     step: { en: "STEP 1 OF 1", zh: "第 1 步 / 共 1 步" },
     fields: {
@@ -257,7 +234,10 @@ export const sharedUi = {
       },
       country: {
         label: { en: "Target Market / Country", zh: "目标市场 / 国家" },
-        placeholder: { en: "e.g. US, Germany, UAE", zh: "例如：美国、德国、阿联酋" },
+        placeholder: {
+          en: "e.g. US, Germany, UAE",
+          zh: "例如：美国、德国、阿联酋",
+        },
       },
       quantity: {
         label: { en: "Estimated Quantity", zh: "预估数量" },
@@ -401,17 +381,28 @@ export const companyProfile = {
 };
 
 export const visualAssets = {
-  companyHero: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601110728943/1.webp",
-  factoryHero: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601730326005/1.webp",
-  factoryFloor: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1600900125789/1.webp",
-  toyLearning: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601724919450/1.webp",
-  profileSeries: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601730435470/1.webp",
-  engineeringSupport: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601316583146/1.webp",
-  rdLab: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601728749802/3.webp",
-  craftsmanship: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601213973459/1.webp",
-  complianceLab: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601214840405/1.webp",
-  oemWorkflow: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601729187617/1.webp",
-  projectEngineering: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601313719232/3.webp",
+  companyHero:
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601110728943/1.webp",
+  factoryHero:
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601730326005/1.webp",
+  factoryFloor:
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1600900125789/1.webp",
+  toyLearning:
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601724919450/1.webp",
+  profileSeries:
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601730435470/1.webp",
+  engineeringSupport:
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601316583146/1.webp",
+  rdLab:
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601728749802/3.webp",
+  craftsmanship:
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601213973459/1.webp",
+  complianceLab:
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601214840405/1.webp",
+  oemWorkflow:
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601729187617/1.webp",
+  projectEngineering:
+    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601313719232/3.webp",
 } as const;
 
 export const siteStats = [

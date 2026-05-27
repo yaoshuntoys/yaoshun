@@ -1,4 +1,4 @@
-export const seoKeywordLimit = 8;
+export const seoKeywordLimit = 6;
 
 const excludedSeoKeywordPattern = /东\s*莞|dong\s*guan/i;
 const weakSeoKeywordTokens = new Set([
