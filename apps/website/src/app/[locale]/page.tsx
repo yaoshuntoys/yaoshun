@@ -47,7 +47,7 @@ function copy(locale: Locale) {
     heroLine2b: t(locale, { en: "And Custom", zh: "与定制" }),
     heroLine2c: t(locale, { en: "Toys", zh: "玩具" }),
     heroText: t(locale, {
-      en: "Founded in 2016, Dongguan Yaoshun Technology Co., Ltd. is a Dongguan source toy factory supporting building toys, custom toys, toy OEM/ODM, and custom development, with in-house mold development, injection molding, assembly, packaging, and export-ready delivery.",
+      en: "Founded in 2016, Dongguan Yaoshun Technology Co., Ltd. is a source toy factory for fort building kit, connector ball tent, ball and rod tent, kids tent building kit, make a fort toy, custom toys, toy OEM/ODM, and export-ready delivery.",
       zh: "东莞市尧顺科技有限公司成立于 2016 年，是一家东莞源头玩具工厂，支持搭建玩具、定制玩具、玩具 OEM/ODM 与定制化开发，覆盖自有开模、注塑、组装包装与出口交付。",
     }),
     explore: t(locale, { en: "Explore Products", zh: "探索产品" }),
@@ -67,7 +67,7 @@ function copy(locale: Locale) {
       zh: "源头工厂合作伙伴",
     }),
     aboutText: t(locale, {
-      en: "Founded on August 26, 2016, Dongguan Yaoshun Technology Co., Ltd. is a full-chain source factory focused on building toys, custom toys, educational toys, interlocking plastic toys, precision injection molded parts, and tubing or profile support, with one-stop toy OEM/ODM and custom development from design and tooling to production, packaging, and delivery.",
+      en: "Founded on August 26, 2016, Dongguan Yaoshun Technology Co., Ltd. is a full-chain source factory focused on fort building kit, connector ball tent, ball and rod tent, kids tent building kit, make a fort toy, custom toys, educational toys, and interlocking plastic toys, with one-stop toy OEM/ODM from design and tooling to production, packaging, and delivery.",
       zh: "东莞市尧顺科技有限公司成立于 2016 年 8 月 26 日，是一家聚焦搭建玩具、定制玩具、益智玩具、拼插类塑胶玩具、精密注塑件及管材型材配套的全链路源头工厂，提供从设计、开模到生产、包装、交付的一站式玩具 OEM/ODM 与定制化开发服务。",
     }),
     solutions: t(locale, {
@@ -87,7 +87,7 @@ function copy(locale: Locale) {
     bestsellersLead: t(locale, { en: "Our", zh: "我们的" }),
     bestsellersAccent: t(locale, { en: "Bestsellers", zh: "热销产品" }),
     bestsellersTags: t(locale, {
-      en: "Building Toys · Custom Toys · Source Factory",
+      en: "Fort Building Kit · Connector Ball Tent · Make A Fort Toy",
       zh: "搭建玩具 · 定制玩具 · 源头工厂",
     }),
     viewAllProducts: t(locale, { en: "View All Products", zh: "查看全部产品" }),

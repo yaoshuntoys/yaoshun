@@ -12,6 +12,14 @@ const weakSeoKeywordTokens = new Set([
   "an",
 ]);
 
+const prioritySeoKeywords = [
+  "fort building kit",
+  "connector ball tent",
+  "ball and rod tent",
+  "kids tent building kit",
+  "make a fort toy",
+] as const;
+
 function normalizeSeoKeyword(value: string) {
   return value
     .replace(/[|]/g, " ")
@@ -36,6 +44,14 @@ function getSimilarityTokens(value: string) {
   return normalizeKeywordForSimilarity(value)
     .split(" ")
     .filter((token) => token.length > 1 && !weakSeoKeywordTokens.has(token));
+}
+
+function isPrioritySeoKeyword(keyword: string) {
+  const normalized = normalizeKeywordForSimilarity(keyword);
+
+  return prioritySeoKeywords.some(
+    (target) => normalizeKeywordForSimilarity(target) === normalized,
+  );
 }
 
 export function areSeoKeywordsSimilar(first: string, second: string) {
@@ -76,7 +92,13 @@ export function cleanSeoKeywords(
       continue;
     }
 
-    if (result.some((existing) => areSeoKeywordsSimilar(keyword, existing))) {
+    if (
+      result.some(
+        (existing) =>
+          areSeoKeywordsSimilar(keyword, existing) &&
+          !(isPrioritySeoKeyword(keyword) && isPrioritySeoKeyword(existing)),
+      )
+    ) {
       continue;
     }
 

@@ -213,6 +213,22 @@ const seoSearchIntentSignals = [
   "出口",
 ] as const;
 
+const priorityProductSeoKeywords = [
+  "fort building kit",
+  "connector ball tent",
+  "ball and rod tent",
+  "kids tent building kit",
+  "make a fort toy",
+] as const;
+
+function isPriorityProductSeoKeyword(keyword: string) {
+  const normalized = normalizeKeywordForMatching(keyword);
+
+  return priorityProductSeoKeywords.some(
+    (target) => normalizeKeywordForMatching(target) === normalized,
+  );
+}
+
 function hasSeoSearchIntent(keyword: string) {
   const normalized = keyword
     .replace(/[^\p{L}\p{N}\s]/gu, " ")
@@ -253,7 +269,14 @@ function uniqueSeoKeywords(keywords: readonly string[], limit: number) {
       !isAllowedSeoKeyword(keyword) ||
       !hasSeoSearchIntent(keyword) ||
       seen.has(lookupKey) ||
-      result.some((existing) => areSeoKeywordsSimilar(keyword, existing))
+      result.some(
+        (existing) =>
+          areSeoKeywordsSimilar(keyword, existing) &&
+          !(
+            isPriorityProductSeoKeyword(keyword) &&
+            isPriorityProductSeoKeyword(existing)
+          ),
+      )
     ) {
       continue;
     }
@@ -553,7 +576,13 @@ export function getProductSeoKeywords(
   return uniqueSeoKeywords(
     [
       ...getKeywordPool(locale, {
-        en: ["fort building kit", "STEM toy", "make a fort"],
+        en: [
+          "fort building kit",
+          "connector ball tent",
+          "ball and rod tent",
+          "kids tent building kit",
+          "make a fort toy",
+        ],
         zh: ["堡垒搭建套装", "STEM玩具", "搭建堡垒玩具"],
       }),
       title,
@@ -569,7 +598,14 @@ export function getProductSeoKeywords(
 export function getCatalogSeoKeywords(locale: Locale, limit = 2) {
   return uniqueSeoKeywords(
     getKeywordPool(locale, {
-      en: ["rotating ball fort building kit", "storage bag fort kit"],
+      en: [
+        "connector ball tent",
+        "ball and rod tent",
+        "kids tent building kit",
+        "make a fort toy",
+        "rotating ball fort building kit",
+        "storage bag fort kit",
+      ],
       zh: ["旋转球堡垒拼搭套装", "收纳袋堡垒拼搭套装"],
     }),
     limit,

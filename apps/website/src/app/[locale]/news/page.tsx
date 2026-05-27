@@ -48,7 +48,7 @@ function copy(locale: Locale) {
       zh: "yaoshun toys 新闻页主视觉",
     }),
     description: t(locale, {
-      en: "Follow Yaoshun's factory updates, project cases, compliance progress, quality-control notes, and manufacturing workflow stories. These articles help sourcing teams understand how toy OEM/ODM projects move from review to delivery.",
+      en: "Follow Yaoshun's factory updates, project cases, and sourcing notes for fort building kit, connector ball tent, ball and rod tent, kids tent building kit, and make a fort toy OEM/ODM projects from review to delivery.",
       zh: "持续了解尧顺的工厂动态、项目案例、合规进展、质量控制与制造流程更新。这些内容帮助采购团队看清玩具 OEM/ODM 项目从评估到交付的推进方式。",
     }),
     categories: t(locale, { en: "Categories", zh: "分类" }),

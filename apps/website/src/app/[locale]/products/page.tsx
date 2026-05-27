@@ -41,7 +41,7 @@ function copy(locale: "en" | "zh") {
     heroTitleBlue: t(locale, {en: "Building", zh: "产品"}),
     heroTitleOrange: t(locale, {en: "Toys", zh: "目录"}),
     heroText: t(locale, {
-      en: "Explore building toys, custom toys, educational interlocking sets, and custom-ready product lines from Yaoshun, a Dongguan source factory supporting safe materials, toy OEM/ODM, custom development, and stable manufacturing execution.",
+      en: "Explore fort building kit, connector ball tent, ball and rod tent, kids tent building kit, make a fort toy, and custom-ready product lines from Yaoshun, a source factory supporting safe materials, toy OEM/ODM, and stable manufacturing execution.",
       zh: "浏览尧顺东莞源头工厂的搭建玩具、定制玩具、益智拼接套装与可定制产品系列，背后由安全材料方案、玩具 OEM/ODM、定制化开发能力和稳定制造体系提供支持。",
     }),
     heroAlt: t(locale, {
@@ -50,7 +50,7 @@ function copy(locale: "en" | "zh") {
     }),
     featuredEyebrow: t(locale, { en: "FEATURED COLLECTION", zh: "精选系列" }),
     featuredTitle: t(locale, {
-      en: "Source-Factory DIY Building Toy Sets",
+      en: "Source-Factory Fort Building Kit And Tent Sets",
       zh: "源头工厂搭建DIY玩具套装",
     }),
     categories: t(locale, { en: "Categories", zh: "分类" }),
@@ -63,7 +63,7 @@ function copy(locale: "en" | "zh") {
       zh: "正在寻找源头工厂定制玩具？",
     }),
     customText: t(locale, {
-      en: "Yaoshun provides custom building toy and custom toy development tailored to your brand, market, packaging plan, and OEM/ODM delivery requirements.",
+      en: "Yaoshun provides custom fort building kit, kids tent building kit, make a fort toy, and custom toy development tailored to your brand, market, packaging plan, and OEM/ODM delivery requirements.",
       zh: "尧顺提供面向品牌、市场、包装方案与 OEM/ODM 交付要求的搭建玩具和定制玩具开发服务。",
     }),
     customAction: t(locale, { en: "Learn More", zh: "了解更多" }),

@@ -61,11 +61,12 @@ export const seoKeywordPools = {
   company: {
     en: [
       "Yaoshun Toys",
+      "fort building kit",
+      "kids tent building kit",
+      "make a fort toy",
       "toy OEM ODM factory",
       "B2B toy supplier",
       "custom toy manufacturer",
-      "educational toy manufacturing",
-      "toy export delivery",
     ],
     zh: [
       "尧顺玩具",
@@ -79,11 +80,14 @@ export const seoKeywordPools = {
   products: {
     en: [
       "fort building kit",
+      "connector ball tent",
+      "ball and rod tent",
+      "kids tent building kit",
+      "make a fort toy",
+      "DIY building toys",
       "STEM toy",
-      "make a fort",
       "fort building toy",
       "kids fort kit",
-      "DIY building toys",
       "construction toy for kids",
       "glow in the dark fort building kit",
       "rotating ball fort building kit",
@@ -187,11 +191,11 @@ export const siteSeo = {
   defaultKeywords: {
     en: [
       "Yaoshun Toys",
-      "toy OEM ODM factory",
-      "B2B toy supplier",
-      "custom toy manufacturer",
-      "educational toy manufacturing",
-      "toy export delivery",
+      "fort building kit",
+      "connector ball tent",
+      "ball and rod tent",
+      "kids tent building kit",
+      "make a fort toy",
     ],
     zh: [
       "尧顺玩具",

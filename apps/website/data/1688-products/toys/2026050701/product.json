@@ -5,15 +5,15 @@
     "zh": "LONDY Little Explorer 69件儿童堡垒拼搭套装"
   },
   "summary": {
-    "en": "A 69-piece LONDY Little Explorer set with blue rods, mixed-color connector balls, clips, storage bag, and printed tent blanket.",
+    "en": "A 69-piece kids tent building kit and connector ball tent set with blue rods, mixed-color connector balls, clips, storage bag, and printed tent blanket.",
     "zh": "69件 LONDY Little Explorer 套装，配置蓝色杆、混色连接球、夹子、收纳袋和印花帐篷布。"
   },
   "description": {
     "en": [
-      "The 69-piece LONDY Little Explorer set pairs blue PP rods with mixed-color connector balls for compact forts and tent-style builds.",
+      "The 69-piece LONDY Little Explorer set pairs blue PP rods with mixed-color connector balls for a compact fort building kit, connector ball tent, and tent-style builds.",
       "The box includes rods, connector balls, purple clips, a printed tent blanket, handbook, PE warning bag, and storage bag.",
       "Packed set price is $17.13. Package reference is 45 x 9 x 35 cm, with about 2.4 kg quoted weight.",
-      "Printed blankets and storage bags can be customized for brand orders."
+      "Printed blankets and storage bags can be customized for brand orders that need a make a fort toy or kids tent building kit entry SKU."
     ],
     "zh": [
       "69件 LONDY Little Explorer 采用蓝色 PP 杆和混色连接球，适合搭建小型堡垒和帐篷框架。",
@@ -238,7 +238,7 @@
         "zh": "产品类型"
       },
       "value": {
-        "en": "Fort building toy",
+        "en": "Fort building kit / connector ball tent",
         "zh": "堡垒拼搭玩具"
       }
     },
@@ -647,7 +647,7 @@
       "type": "text",
       "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/1.webp",
       "text": {
-        "en": "The 69-piece Little Explorer box shows the model, age mark, and tent-building scenes at a glance.",
+        "en": "The 69-piece Little Explorer box shows the model, age mark, and kids tent building kit scenes at a glance.",
         "zh": "69件 Little Explorer 彩盒直观展示型号、适龄和帐篷拼搭场景。"
       }
     },
@@ -659,7 +659,7 @@
       "type": "text",
       "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/2.webp",
       "text": {
-        "en": "The SKU image identifies the rods, connector balls, clips, tent cloth, handbook, and storage bag included in the box.",
+        "en": "The SKU image identifies the rods, connector balls, clips, tent cloth, handbook, and storage bag included in the connector ball tent box.",
         "zh": "SKU 图明确列出杆件、连接球、夹子、帐篷布、说明书和收纳袋配置。"
       }
     },
@@ -671,7 +671,7 @@
       "type": "text",
       "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050701/3.webp",
       "text": {
-        "en": "The compact piece count is easy for younger builders to handle and works well for parent-child play.",
+        "en": "The compact piece count is easy for younger builders to handle and works well as an entry make a fort toy for parent-child play.",
         "zh": "紧凑件数更适合低龄儿童上手，也方便亲子一起搭建。"
       }
     }
