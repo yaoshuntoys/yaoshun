@@ -87,7 +87,7 @@ function trackFormEvent(
 function reportLeadConversion() {
   void import("@/lib/analytics")
     .then(({ reportGoogleAdsLeadConversion }) => {
-      reportGoogleAdsLeadConversion({ currency: "USD", value: 1 });
+      reportGoogleAdsLeadConversion();
     })
     .catch(() => undefined);
 }

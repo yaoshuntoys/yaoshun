@@ -33,7 +33,7 @@ function trackFormEvent(eventName: string, params: Record<string, FormTrackingVa
 function reportLeadConversion() {
   void import("@/lib/analytics")
     .then(({reportGoogleAdsLeadConversion}) => {
-      reportGoogleAdsLeadConversion({currency: "USD", value: 1});
+      reportGoogleAdsLeadConversion();
     })
     .catch(() => undefined);
 }
