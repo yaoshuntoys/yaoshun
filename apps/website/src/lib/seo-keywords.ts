@@ -14,10 +14,12 @@ const weakSeoKeywordTokens = new Set([
 
 const prioritySeoKeywords = [
   "fort building kit",
-  "connector ball tent",
-  "ball and rod tent",
-  "kids tent building kit",
-  "make a fort toy",
+  "fort building toy",
+  "fort building kit manufacturer",
+  "fort building kit factory",
+  "ball and rod tent supplier",
+  "wholesale fort building kits",
+  "bulk fort building kits",
 ] as const;
 
 function normalizeSeoKeyword(value: string) {

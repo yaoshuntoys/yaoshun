@@ -3,21 +3,24 @@ import {visualAssets} from '@/content/site/shared';
 export const homeContent = {
   seo: {
     title: {
-      en: 'Yaoshun Toys | Dongguan Toy OEM/ODM Factory',
+      en: 'Fort Building Kit Manufacturer | Yaoshun Toys',
       zh: '尧顺玩具 | 东莞源头玩具工厂'
     },
     description: {
-      en: 'Dongguan source factory for fort building kit, connector ball tent, ball and rod tent, kids tent building kit, make a fort toy and custom toy OEM/ODM programs.',
+      en: 'Dongguan source factory for fort building kit, fort building toy, ball and rod tent supplier programs, wholesale fort building kits, bulk orders, private label packaging and toy OEM/ODM.',
       zh: '尧顺是东莞源头玩具工厂，主营堡垒拼搭玩具、STEM搭建套装和定制玩具 OEM/ODM，支持开模、注塑、包装与出口交付。'
     },
     keywords: {
       en: [
         'Yaoshun Toys',
         'fort building kit',
-        'connector ball tent',
-        'ball and rod tent',
-        'kids tent building kit',
-        'make a fort toy',
+        'fort building toy',
+        'fort building kit manufacturer',
+        'fort building kit factory',
+        'ball and rod tent supplier',
+        'wholesale fort building kits',
+        'bulk fort building kits',
+        'private label fort building kits',
         'toy OEM ODM factory',
       ],
       zh: [
@@ -36,11 +39,11 @@ export const homeContent = {
       zh: '玩具 OEM/ODM · 从设计到量产'
     },
     title: {
-      en: 'Toy Development And Manufacturing Partner Since 2016',
+      en: 'Fort Building Kit Manufacturer Since 2016',
       zh: '始于 2016 年的玩具研发与制造合作伙伴'
     },
     description: {
-      en: 'Yaoshun focuses on toy OEM/ODM projects for fort building kit, connector ball tent, ball and rod tent, kids tent building kit, and make a fort toy lines, covering concept review, mold development, injection production, assembly, packaging, and export delivery.',
+      en: 'Yaoshun focuses on fort building kit, fort building toy, ball and rod tent, wholesale fort building kits, bulk orders, and private label fort building kit programs, covering concept review, mold development, injection production, assembly, packaging, and export delivery.',
       zh: '尧顺以玩具 OEM/ODM 项目为核心，覆盖方案评估、模具开发、注塑生产、组装包装与出口交付；塑胶与挤出工艺作为项目配套能力按需提供。'
     },
     primary: {
@@ -68,9 +71,9 @@ export const homeContent = {
     entries: [
       {
         route: 'products',
-        title: {en: 'Product Catalog', zh: '产品目录'},
+        title: {en: 'Fort Building Kit Catalog', zh: '产品目录'},
         description: {
-          en: 'Review fort building kit, connector ball tent, ball and rod tent, and kids tent building kit options by structure, MOQ, and packaging.',
+          en: 'Review fort building kit, fort building toy, ball and rod tent supplier options, bulk MOQ, and packaging.',
           zh: '按品类查看玩具方案、结构参考与基础 MOQ 区间。'
         }
       },
@@ -132,9 +135,9 @@ export const homeContent = {
   },
   categories: [
     {
-      title: {en: 'Toy Product Programs', zh: '玩具成品项目'},
+      title: {en: 'Fort Building Kit Programs', zh: '玩具成品项目'},
       description: {
-        en: 'Fort building kit, make a fort toy, DIY children toy and smart toy product lines, supporting OEM/ODM development, trial runs, and mass production delivery.',
+        en: 'Fort building kit, fort building toy, ball and rod tent, and private label fort building kits, supporting OEM/ODM development, trial runs, and mass production delivery.',
         zh: '聚焦 DIY 儿童玩具与智能玩具产品线，支持 OEM/ODM 开发、打样验证与量产交付。'
       },
       image: visualAssets.toyLearning

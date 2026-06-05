@@ -1,11 +1,11 @@
 export const productsPageContent = {
   seo: {
     title: {
-      en: 'Building & Custom Toy Catalog | Yaoshun Toys',
+      en: 'Fort Building Kit & Fort Building Toy Catalog | Yaoshun Toys',
       zh: '搭建玩具与定制玩具目录 | 尧顺玩具'
     },
     description: {
-      en: 'Explore Yaoshun fort building kit, connector ball tent, ball and rod tent, kids tent building kit, make a fort toy, glow kits, storage bags and color box packaging for toy OEM/ODM.',
+      en: 'Explore fort building kit and fort building toy options from Yaoshun, a source factory for bulk fort building kits, ball and rod tent supplier programs, private label packaging and OEM/ODM support.',
       zh: '查看尧顺堡垒搭建套装、STEM玩具、搭建堡垒玩法套装、夜光拼搭套装、连接球、收纳袋与彩盒包装定制方案。'
     },
     detailTitleTemplate: {
@@ -13,16 +13,22 @@ export const productsPageContent = {
       zh: '{product} | 尧顺玩具'
     },
     detailDescriptionTemplate: {
-      en: '{product} from Yaoshun Toys, suitable for fort building kit, connector ball tent, ball and rod tent, kids tent building kit, and make a fort toy sourcing, with OEM/ODM support for packaging, quality checks and export delivery.',
+      en: '{product} from Yaoshun Toys, suitable for fort building kit, fort building toy, ball and rod tent, wholesale fort building kits, and private label sourcing, with OEM/ODM support for packaging, quality checks and export delivery.',
       zh: '{product} 由尧顺玩具提供，适合堡垒搭建套装、STEM玩具与搭建堡垒项目采购，支持 OEM/ODM、包装、质检与出口交付。'
     },
     keywords: {
       en: [
         'fort building kit',
-        'connector ball tent',
+        'fort building toy',
+        'fort building kit manufacturer',
+        'fort building kit factory',
+        'ball and rod tent supplier',
+        'wholesale fort building kits',
+        'bulk fort building kits',
+        'private label fort building kits',
         'ball and rod tent',
-        'kids tent building kit',
-        'make a fort toy',
+        'fort building kit for preschools',
+        'bulk fort kits for schools',
         'OEM ODM toy sourcing',
       ],
       zh: [
@@ -36,17 +42,17 @@ export const productsPageContent = {
     }
   },
   hero: {
-    title: {en: 'Toy Product Catalog', zh: '玩具产品目录'},
+    title: {en: 'Fort Building Kit Catalog', zh: '玩具产品目录'},
     description: {
-      en: 'Browse fort building kit, connector ball tent, ball and rod tent, kids tent building kit, and make a fort toy project options by finished toy lines, component development, and supporting process capabilities.',
+      en: 'Browse fort building kit, fort building toy, ball and rod tent, wholesale fort building kits, and private label fort building kit project options by finished toy lines, component development, and supporting process capabilities.',
       zh: '按堡垒搭建套装、STEM玩具与搭建堡垒项目方向浏览：成品玩具线、结构件开发与配套工艺能力。'
     }
   },
   catalogPillars: [
     {
-      title: {en: 'Finished Toy Programs', zh: '成品玩具项目'},
+      title: {en: 'Fort Building Kit Programs', zh: '成品玩具项目'},
       text: {
-        en: 'For brands requiring complete toy development, assembly, packaging, and shipment handoff.',
+        en: 'For brands requiring fort building kit factory support, assembly, packaging, and shipment handoff.',
         zh: '适合需要完整开发、组装、包装和出货交接的成品玩具项目。'
       }
     },
@@ -69,9 +75,9 @@ export const productsPageContent = {
     title: {en: 'For Procurement Teams', zh: '采购团队常看信息'},
     cards: [
       {
-        title: {en: 'MOQ Logic', zh: 'MOQ 逻辑'},
+        title: {en: 'Bulk Fort Kit MOQ', zh: 'MOQ 逻辑'},
         text: {
-          en: 'MOQ is evaluated by structure complexity, tooling route, and packaging setup rather than one fixed number.',
+          en: 'Bulk fort building kits are evaluated by structure complexity, tooling route, and packaging setup rather than one fixed number.',
           zh: 'MOQ 依据结构复杂度、模具路线和包装配置综合评估，并非单一固定值。'
         }
       },
@@ -90,9 +96,9 @@ export const productsPageContent = {
         }
       },
       {
-        title: {en: 'Packaging Readiness', zh: '包装就绪度'},
+        title: {en: 'Private Label Packaging', zh: '包装就绪度'},
         text: {
-          en: 'Retail and shipping packaging for make a fort toy, kids tent building kit, and private-label fort lines are reviewed together to reduce delivery-side surprises.',
+          en: 'Retail and shipping packaging for private label fort building kits, school fort kits, and preschool fort building kit programs are reviewed together to reduce delivery-side surprises.',
           zh: '零售包装与运输包装会同步评估，减少交付阶段风险。'
         }
       }
