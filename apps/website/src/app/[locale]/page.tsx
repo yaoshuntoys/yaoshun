@@ -391,7 +391,6 @@ export default async function HomePage({
                     alt={item.title}
                     className="home-section-image home-product-image"
                     fill
-                    preview
                     sizes="(min-width: 1280px) 18rem, (min-width: 768px) 24vw, 100vw"
                     src={item.image}
                   />
