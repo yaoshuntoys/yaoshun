@@ -392,7 +392,6 @@ export default async function HomePage({
                     className="home-section-image home-product-image"
                     fill
                     preview
-                    quality={100}
                     sizes="(min-width: 1280px) 18rem, (min-width: 768px) 24vw, 100vw"
                     src={item.image}
                   />
@@ -498,7 +497,6 @@ export default async function HomePage({
             className="home-section-image home-why-image"
             height={1088}
             preview
-            quality={100}
             sizes="(min-width: 1024px) 28vw, 72vw"
             src={homePageImages.why}
             width={1088}
@@ -561,7 +559,6 @@ export default async function HomePage({
               className="home-section-image home-about-image"
               fill
               preview
-              quality={100}
               sizes="(min-width: 1024px) 42vw, 100vw"
               src={homePageImages.about}
             />

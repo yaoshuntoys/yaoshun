@@ -353,7 +353,7 @@ function SiteHeader({
           data-track-label="brand_logo"
           data-track-location="header"
           href={homeHref}
-          prefetch={true}
+          prefetch={false}
         >
           <div className="flex flex-col gap-1">
             <BrandMark />
@@ -378,7 +378,7 @@ function SiteHeader({
               data-track-label={item.key}
               data-track-location="header"
               href={localizedUrlPath(locale, item.href)}
-              prefetch={true}
+              prefetch={false}
               onClick={closeMenus}
             >
               {t(locale, item.label)}
@@ -401,7 +401,7 @@ function SiteHeader({
             data-track-label="contact_us"
             data-track-location="header"
             href={contactHref}
-            prefetch={true}
+            prefetch={false}
             onClick={closeMenus}
           >
             <span>{t(locale, siteCopy.headerCta)}</span>
@@ -452,7 +452,7 @@ function SiteHeader({
                       data-track-label={item.key}
                       data-track-location="mobile_header"
                       href={localizedUrlPath(locale, item.href)}
-                      prefetch={true}
+                      prefetch={false}
                       onClick={closeMenus}
                     >
                       {t(locale, item.label)}
@@ -468,7 +468,7 @@ function SiteHeader({
                     data-track-label="contact_us"
                     data-track-location="mobile_header"
                     href={contactHref}
-                    prefetch={true}
+                    prefetch={false}
                     onClick={closeMenus}
                   >
                     <span>{t(locale, siteCopy.headerCta)}</span>

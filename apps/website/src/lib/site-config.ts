@@ -20,7 +20,7 @@ export const siteAlternateNames = [
 ] as const;
 export const siteDescription =
   "Dongguan Yaoshun Technology Co., Ltd. is a Dongguan source toy factory supporting building toys, custom toys, toy OEM/ODM, custom development, in-house mold development, precision injection molding, assembly, packaging, and export-ready delivery for global B2B buyers.";
-export const defaultOgImage = "/site/misc/home-bg.png";
+export const defaultOgImage = "/site/misc/home-bg.webp";
 
 export const googleAnalyticsId = (
   process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ""
