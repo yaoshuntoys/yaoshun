@@ -26,6 +26,7 @@ import "../styles/page-shared.css";
 
 const outfit = Outfit({
   display: "swap",
+  preload: false,
   subsets: ["latin"],
   variable: "--font-outfit",
 });

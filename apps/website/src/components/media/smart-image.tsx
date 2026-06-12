@@ -11,7 +11,7 @@ type StaticRequire = {
   default: StaticImageData;
 };
 
-const DEFAULT_IMAGE_QUALITY = 100;
+const DEFAULT_IMAGE_QUALITY = 80;
 
 function isRemoteHttpSource(src: ImageProps["src"]) {
   return typeof src === "string" && /^https?:\/\//.test(src);

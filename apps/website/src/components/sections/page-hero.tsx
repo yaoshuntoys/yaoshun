@@ -26,7 +26,7 @@ export function PageHero({
   gridClassName,
   innerClassName,
   priority = true,
-  quality = 100,
+  quality = 80,
   sectionClassName,
   unoptimized = false,
 }: PageHeroProps) {

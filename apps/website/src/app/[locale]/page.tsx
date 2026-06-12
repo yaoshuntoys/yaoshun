@@ -208,11 +208,10 @@ export default async function HomePage({
         <PageHero
           backgroundClassName="home-hero-background"
           backgroundImageClassName="home-section-image home-hero-background-image"
-          backgroundSrc="/site/misc/home-bg.jpg"
+          backgroundSrc="/site/misc/home-bg.webp"
           copyClassName="home-hero-copy"
           gridClassName="home-hero-grid"
           innerClassName="home-hero-inner"
-          quality={100}
           sectionClassName="home-hero-section"
         >
           <p className="home-eyebrow">{text.eyebrow}</p>
