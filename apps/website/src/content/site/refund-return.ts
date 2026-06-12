@@ -5,15 +5,16 @@ export const refundReturnContent = {
       zh: "退款与退换货政策 | 东莞市尧顺科技有限公司",
     },
     description: {
-      en: "Refund, return, replacement, warranty, and after-sales policy for Yaoshun B2B OEM/ODM toy manufacturing inquiries, samples, custom packaging, and bulk orders.",
+      en: "Refund, return, replacement, warranty, and after-sales policy for Yaoshun B2B fort building toy OEM/ODM inquiries, samples, custom packaging, and bulk orders.",
       zh: "适用于尧顺 B2B 玩具 OEM/ODM 询盘、样品、定制包装和批量订单的退款、退换货、质保与售后政策。",
     },
     keywords: {
       en: [
+        "B2B toy after-sales policy",
+        "fort building toy warranty",
+        "custom toy order returns",
         "refund policy",
         "return policy",
-        "B2B after-sales policy",
-        "custom product returns",
         "OEM ODM warranty",
       ],
       zh: [

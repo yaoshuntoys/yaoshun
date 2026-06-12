@@ -1,11 +1,11 @@
 export const productsPageContent = {
   seo: {
     title: {
-      en: 'Fort Building Kit & Fort Building Toy Catalog | Yaoshun Toys',
+      en: 'Fort Building Toy & Fort Building Kit Catalog | Yaoshun Toys',
       zh: '搭建玩具与定制玩具目录 | 尧顺玩具'
     },
     description: {
-      en: 'Explore fort building kit and fort building toy options from Yaoshun, a source factory for bulk fort building kits, ball and rod tent supplier programs, private label packaging and OEM/ODM support.',
+      en: 'Explore fort building toy and fort building kit options from Yaoshun, a source factory for construction toys wholesale, bulk fort kits, private label packaging and OEM/ODM support.',
       zh: '查看尧顺堡垒搭建套装、STEM玩具、搭建堡垒玩法套装、夜光拼搭套装、连接球、收纳袋与彩盒包装定制方案。'
     },
     detailTitleTemplate: {
@@ -13,19 +13,21 @@ export const productsPageContent = {
       zh: '{product} | 尧顺玩具'
     },
     detailDescriptionTemplate: {
-      en: '{product} from Yaoshun Toys, suitable for fort building kit, fort building toy, ball and rod tent, wholesale fort building kits, and private label sourcing, with OEM/ODM support for packaging, quality checks and export delivery.',
+      en: '{product} from Yaoshun Toys, suitable for fort building toy, fort building kit, construction toys wholesale, and private label sourcing, with OEM/ODM support for packaging, quality checks and export delivery.',
       zh: '{product} 由尧顺玩具提供，适合堡垒搭建套装、STEM玩具与搭建堡垒项目采购，支持 OEM/ODM、包装、质检与出口交付。'
     },
     keywords: {
       en: [
-        'fort building kit',
         'fort building toy',
-        'fort building kit manufacturer',
-        'fort building kit factory',
-        'ball and rod tent supplier',
+        'fort building kit',
+        'fort building toy manufacturer',
+        'fort building toy factory',
+        'construction toys wholesale',
+        'fort building toys wholesale',
         'wholesale fort building kits',
         'bulk fort building kits',
         'private label fort building kits',
+        'ball and rod tent supplier',
         'ball and rod tent',
         'fort building kit for preschools',
         'bulk fort kits for schools',
@@ -42,9 +44,9 @@ export const productsPageContent = {
     }
   },
   hero: {
-    title: {en: 'Fort Building Kit Catalog', zh: '玩具产品目录'},
+    title: {en: 'Fort Building Toy And Kit Catalog', zh: '玩具产品目录'},
     description: {
-      en: 'Browse fort building kit, fort building toy, ball and rod tent, wholesale fort building kits, and private label fort building kit project options by finished toy lines, component development, and supporting process capabilities.',
+      en: 'Browse fort building toy, fort building kit, construction toys wholesale, bulk fort kits, and private label project options by finished toy lines, component development, and supporting process capabilities.',
       zh: '按堡垒搭建套装、STEM玩具与搭建堡垒项目方向浏览：成品玩具线、结构件开发与配套工艺能力。'
     }
   },
@@ -52,7 +54,7 @@ export const productsPageContent = {
     {
       title: {en: 'Fort Building Kit Programs', zh: '成品玩具项目'},
       text: {
-        en: 'For brands requiring fort building kit factory support, assembly, packaging, and shipment handoff.',
+        en: 'For brands requiring fort building toy factory support, assembly, packaging, and shipment handoff.',
         zh: '适合需要完整开发、组装、包装和出货交接的成品玩具项目。'
       }
     },
@@ -77,7 +79,7 @@ export const productsPageContent = {
       {
         title: {en: 'Bulk Fort Kit MOQ', zh: 'MOQ 逻辑'},
         text: {
-          en: 'Bulk fort building kits are evaluated by structure complexity, tooling route, and packaging setup rather than one fixed number.',
+          en: 'Construction toys wholesale and bulk fort building kits are evaluated by structure complexity, tooling route, and packaging setup rather than one fixed number.',
           zh: 'MOQ 依据结构复杂度、模具路线和包装配置综合评估，并非单一固定值。'
         }
       },

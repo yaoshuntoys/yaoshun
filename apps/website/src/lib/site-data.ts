@@ -214,11 +214,13 @@ const seoSearchIntentSignals = [
 ] as const;
 
 const priorityProductSeoKeywords = [
+  "fort building toy",
   "fort building kit",
-  "connector ball tent",
-  "ball and rod tent",
-  "kids tent building kit",
-  "make a fort toy",
+  "fort building toy manufacturer",
+  "fort building toy factory",
+  "construction toys wholesale",
+  "bulk fort building kits",
+  "private label fort building kits",
 ] as const;
 
 function isPriorityProductSeoKeyword(keyword: string) {
@@ -577,11 +579,11 @@ export function getProductSeoKeywords(
     [
       ...getKeywordPool(locale, {
         en: [
+          "fort building toy",
           "fort building kit",
-          "connector ball tent",
-          "ball and rod tent",
-          "kids tent building kit",
-          "make a fort toy",
+          "fort building toy manufacturer",
+          "fort building toy factory",
+          "construction toys wholesale",
         ],
         zh: ["堡垒搭建套装", "STEM玩具", "搭建堡垒玩具"],
       }),
@@ -599,10 +601,10 @@ export function getCatalogSeoKeywords(locale: Locale, limit = 2) {
   return uniqueSeoKeywords(
     getKeywordPool(locale, {
       en: [
-        "connector ball tent",
-        "ball and rod tent",
-        "kids tent building kit",
-        "make a fort toy",
+        "fort building toys wholesale",
+        "bulk fort building kits",
+        "private label fort building kits",
+        "ball and rod tent supplier",
         "rotating ball fort building kit",
         "storage bag fort kit",
       ],

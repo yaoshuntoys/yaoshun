@@ -1,21 +1,21 @@
 export const newsContent = {
   seo: {
     title: {
-      en: "Toy OEM/ODM News & Factory Updates | Yaoshun Toys",
+      en: "Fort Building Toy News & Factory Updates | Yaoshun Toys",
       zh: "玩具 OEM/ODM 新闻与工厂动态 | 尧顺玩具",
     },
     description: {
-      en: "Factory updates and practical explainers on fort building kit, connector ball tent, ball and rod tent, kids tent building kit, make a fort toy, toy OEM/ODM, quality control and delivery.",
+      en: "Factory updates and practical explainers on fort building toy, fort building kit, construction toys wholesale, toy OEM/ODM, safety compliance, quality control and delivery.",
       zh: "查看堡垒搭建套装项目、STEM玩具采购、搭建堡垒玩法、玩具 OEM/ODM、注塑、质量管理与交付执行的工厂动态。",
     },
     keywords: {
       en: [
-        "fort building kit articles",
-        "connector ball tent",
-        "ball and rod tent",
-        "kids tent building kit",
-        "make a fort toy",
+        "fort building toy articles",
+        "fort building kit sourcing",
+        "construction toys wholesale insights",
+        "toy OEM ODM news",
         "toy safety compliance",
+        "quality control for toys",
       ],
       zh: [
         "堡垒搭建套装文章",
@@ -34,7 +34,7 @@ export const newsContent = {
       zh: "面向玩具项目的工厂动态与科普文章",
     },
     description: {
-      en: "This page publishes fort building kit updates, connector ball tent and ball and rod tent sourcing notes, kids tent building kit articles, make a fort toy ideas, and factory execution explainers for buyer teams.",
+      en: "This page publishes fort building toy updates, fort building kit sourcing notes, construction toys wholesale insights, safety articles, and factory execution explainers for buyer teams.",
       zh: "本页持续发布堡垒搭建套装动态、STEM玩具采购笔记、搭建堡垒玩法文章与面向采购团队的工厂执行科普。",
     },
   },

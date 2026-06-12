@@ -1,17 +1,19 @@
 export const contactContent = {
   seo: {
     title: {
-      en: 'Toy Manufacturing Quote | Yaoshun Dongguan Factory',
+      en: 'Fort Building Toy Quote | Yaoshun Factory',
       zh: '玩具制造报价 | 尧顺东莞工厂'
     },
     description: {
-      en: 'Contact Yaoshun for fort building toy, STEM kit and custom toy OEM/ODM quotes, sampling, mold evaluation, packaging and export delivery support.',
+      en: 'Contact Yaoshun for fort building toy, fort building kit, construction toys wholesale and custom toy OEM/ODM quotes, sampling, mold evaluation, packaging and export delivery support.',
       zh: '联系尧顺获取堡垒拼搭玩具、STEM搭建套装和定制玩具 OEM/ODM 报价，支持打样、开模评估、包装与出口交付。'
     },
     keywords: {
       en: [
-        'toy manufacturing quote',
-        'custom toy quote request',
+        'fort building toy quote',
+        'fort building kit quote',
+        'construction toys wholesale quote',
+        'fort building toy factory inquiry',
         'OEM ODM sampling quote',
         'private label toy inquiry',
         'mold evaluation request',
@@ -29,9 +31,9 @@ export const contactContent = {
   },
   hero: {
     eyebrow: {en: 'Contact & Quote', zh: '联系与报价'},
-    title: {en: 'Share Your Toy Project, We Reply With A Practical Plan', zh: '提交玩具项目需求，我们给出可执行的报价方案'},
+    title: {en: 'Share Your Fort Building Toy Project For A Practical Quote', zh: '提交玩具项目需求，我们给出可执行的报价方案'},
     description: {
-      en: 'Submit product type, quantity range, target market, and packaging direction. We will reply with a practical quotation and execution suggestion.',
+      en: 'Submit fort building toy type, fort building kit quantity range, target market, and packaging direction. We will reply with a practical quotation and execution suggestion.',
       zh: '提交产品类型、数量区间、目标市场和包装方向后，我们会回复可执行的报价与推进建议。'
     }
   },
@@ -48,7 +50,7 @@ export const contactContent = {
       {
         title: {en: 'Product Positioning', zh: '产品定位'},
         text: {
-          en: 'Category, age grade, function focus, and target sales channel.',
+          en: 'Fort building toy category, age grade, function focus, and target sales channel.',
           zh: '确认品类、适龄段、功能重点与目标销售渠道。'
         }
       },

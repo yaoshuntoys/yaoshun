@@ -5,15 +5,16 @@ export const termsContent = {
       zh: "条款与条件 | 东莞市尧顺科技有限公司",
     },
     description: {
-      en: "Terms and conditions for this B2B toy manufacturing website, covering site use, inquiries, quotations, product information, ad landing pages and project documents.",
+      en: "Terms and conditions for this B2B fort building toy manufacturing website, covering site use, inquiries, quotations, product information, ad landing pages and project documents.",
       zh: "本 B2B 玩具制造网站的条款与条件，涵盖网站使用、询盘、报价、产品信息、广告落地页和项目文件。",
     },
     keywords: {
       en: [
+        "B2B toy manufacturing terms",
+        "fort building toy inquiry terms",
         "user agreement",
         "terms of service",
         "terms and conditions",
-        "B2B website terms",
         "quote request terms",
         "OEM ODM cooperation terms",
       ],

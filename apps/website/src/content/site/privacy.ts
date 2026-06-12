@@ -5,16 +5,17 @@ export const privacyContent = {
       zh: "隐私政策 | 东莞市尧顺科技有限公司",
     },
     description: {
-      en: "Privacy policy for B2B inquiries, quote forms, cookies, Google Analytics, Google Ads conversion measurement, and privacy requests.",
+      en: "Privacy policy for Yaoshun B2B fort building toy inquiries, quote forms, cookies, Google Analytics, Google Ads conversion measurement, and privacy requests.",
       zh: "适用于 B2B 询盘、报价表单、Cookie、Google Analytics、Google Ads 转化衡量和隐私请求的隐私政策。",
     },
     keywords: {
       en: [
+        "B2B toy inquiry privacy",
+        "fort building toy inquiry privacy",
         "privacy policy",
         "cookie policy",
         "Google Ads conversion tracking",
         "Google Analytics",
-        "B2B inquiry privacy",
       ],
       zh: [
         "隐私政策",

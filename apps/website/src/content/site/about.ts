@@ -1,17 +1,20 @@
 export const aboutContent = {
   seo: {
     title: {
-      en: "About Yaoshun | Dongguan Toy OEM/ODM Factory",
+      en: "About Yaoshun | Fort Building Toy Factory",
       zh: "关于尧顺 | 东莞玩具 OEM/ODM 工厂",
     },
     description: {
-      en: "Learn about Yaoshun's Dongguan source factory for fort building toys, STEM kits, toy OEM/ODM, molding, packaging, compliance and export delivery.",
+      en: "Learn about Yaoshun, a Dongguan fort building toy factory and toy OEM/ODM partner for fort building kit production, molding, packaging, compliance and export delivery.",
       zh: "了解尧顺东莞源头工厂：主营堡垒拼搭玩具、STEM搭建套装，支持玩具 OEM/ODM、注塑、包装、合规资料与出口交付。",
     },
     keywords: {
       en: [
+        "fort building toy factory",
+        "fort building toy manufacturer",
+        "fort building kit production",
         "Yaoshun company profile",
-        "OEM ODM toy enterprise",
+        "Dongguan toy factory",
         "toy factory audit",
         "educational toy manufacturing",
         "precision plastic molding",
@@ -33,11 +36,11 @@ export const aboutContent = {
       zh: "成立于 2016 年的东莞源头工厂",
     },
     title: {
-      en: "A Source Toy Factory Built For OEM/ODM And Custom Development",
+      en: "A Source Fort Building Toy Factory Built For OEM/ODM",
       zh: "面向 OEM/ODM 与定制化开发的源头玩具工厂",
     },
     description: {
-      en: "Yaoshun focuses on building toys, custom toys, educational toys, interlocking toy projects, custom toy development, precision injection molding, tubing, profiles, and coordinated factory delivery workflows.",
+      en: "Yaoshun focuses on fort building toy, fort building kit, custom toys, educational toys, interlocking toy projects, precision injection molding, tubing, profiles, and coordinated factory delivery workflows.",
       zh: "尧顺聚焦搭建玩具、定制玩具、益智玩具、拼插玩具项目、玩具定制化开发、精密注塑件、管材型材及协同工厂交付流程。",
     },
   },
@@ -65,7 +68,7 @@ export const aboutContent = {
       {
         title: { en: "Company Profile", zh: "公司概况" },
         text: {
-          en: "Long-term focus on educational toys and interlocking toy projects, with supporting capabilities in tubing, profiles, and plastic process manufacturing.",
+          en: "Long-term focus on fort building toys, educational toys and interlocking toy projects, with supporting capabilities in tubing, profiles, and plastic process manufacturing.",
           zh: "长期聚焦益智玩具与拼插玩具项目，并具备管材、型材及塑胶工艺配套能力。",
         },
       },

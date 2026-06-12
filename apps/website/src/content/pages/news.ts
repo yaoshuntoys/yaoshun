@@ -25,6 +25,15 @@ import newsArticle24 from "../../../data/news/premium-building-sets-and-retail-v
 import newsArticle25 from "../../../data/news/glow-fort-building-kits-turn-night-play-into-a-retail-story/news.json";
 import newsArticle26 from "../../../data/news/guided-parent-child-play-makes-fort-building-toys-more-valuable/news.json";
 import newsArticle27 from "../../../data/news/private-label-fort-building-kits-sourcing-guide-for-oem-odm-buyers/news.json";
+import newsArticle28 from "../../../data/news/room-sized-construction-play-how-fort-kits-extend-block-play/news.json";
+import newsArticle29 from "../../../data/news/spatial-language-instructions-help-families-build-better-forts/news.json";
+import newsArticle30 from "../../../data/news/parent-child-fort-building-night-routine-for-repeat-play/news.json";
+import newsArticle31 from "../../../data/news/open-ended-construction-toys-and-2026-retail-assortments/news.json";
+import newsArticle32 from "../../../data/news/piece-count-ladder-for-fort-building-kit-series-planning/news.json";
+import newsArticle33 from "../../../data/news/pre-quotation-safety-brief-for-private-label-fort-building-kits/news.json";
+import newsArticle34 from "../../../data/news/eu-toy-safety-preparation-for-fort-building-kit-exporters/news.json";
+import newsArticle35 from "../../../data/news/durable-fort-building-kits-support-sustainable-family-play/news.json";
+import newsArticle36 from "../../../data/news/school-and-activity-channel-fort-building-kit-buying-notes/news.json";
 
 import type { NewsArticleSeed } from "@/content/types";
 
@@ -60,6 +69,15 @@ const importedNewsArticles = [
   withSource(newsArticle25 as NewsArticleSeed, "apps/website/data/news/glow-fort-building-kits-turn-night-play-into-a-retail-story/news.json"),
   withSource(newsArticle26 as NewsArticleSeed, "apps/website/data/news/guided-parent-child-play-makes-fort-building-toys-more-valuable/news.json"),
   withSource(newsArticle27 as NewsArticleSeed, "apps/website/data/news/private-label-fort-building-kits-sourcing-guide-for-oem-odm-buyers/news.json"),
+  withSource(newsArticle28 as NewsArticleSeed, "apps/website/data/news/room-sized-construction-play-how-fort-kits-extend-block-play/news.json"),
+  withSource(newsArticle29 as NewsArticleSeed, "apps/website/data/news/spatial-language-instructions-help-families-build-better-forts/news.json"),
+  withSource(newsArticle30 as NewsArticleSeed, "apps/website/data/news/parent-child-fort-building-night-routine-for-repeat-play/news.json"),
+  withSource(newsArticle31 as NewsArticleSeed, "apps/website/data/news/open-ended-construction-toys-and-2026-retail-assortments/news.json"),
+  withSource(newsArticle32 as NewsArticleSeed, "apps/website/data/news/piece-count-ladder-for-fort-building-kit-series-planning/news.json"),
+  withSource(newsArticle33 as NewsArticleSeed, "apps/website/data/news/pre-quotation-safety-brief-for-private-label-fort-building-kits/news.json"),
+  withSource(newsArticle34 as NewsArticleSeed, "apps/website/data/news/eu-toy-safety-preparation-for-fort-building-kit-exporters/news.json"),
+  withSource(newsArticle35 as NewsArticleSeed, "apps/website/data/news/durable-fort-building-kits-support-sustainable-family-play/news.json"),
+  withSource(newsArticle36 as NewsArticleSeed, "apps/website/data/news/school-and-activity-channel-fort-building-kit-buying-notes/news.json"),
 ] as const;
 
 export const newsSourcePathBySlug = new Map(

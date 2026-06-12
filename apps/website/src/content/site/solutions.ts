@@ -3,18 +3,21 @@ import {visualAssets} from '@/content/site/shared';
 export const solutionsContent = {
   seo: {
     title: {
-      en: 'Toy OEM/ODM & Custom Development | Yaoshun Toys',
+      en: 'Fort Building Toy OEM/ODM & Custom Development | Yaoshun Toys',
       zh: '玩具 OEM/ODM 与定制化开发 | 尧顺玩具'
     },
     description: {
-      en: 'Toy OEM/ODM for fort building toys, STEM kits and interlocking toys, covering design, tooling, sampling, injection molding, packaging and shipment.',
+      en: 'OEM/ODM workflow from a fort building toy manufacturer and factory, covering fort building kit design, tooling, sampling, injection molding, private label packaging and shipment.',
       zh: '尧顺提供堡垒拼搭玩具、STEM搭建套装与拼插玩具 OEM/ODM，覆盖设计、开模、打样、注塑、包装与出货交接。'
     },
     keywords: {
       en: [
+        'fort building toy manufacturer',
+        'fort building toy factory',
+        'fort building kit OEM ODM',
+        'custom fort building toy development',
+        'private label fort building kit',
         'toy OEM ODM workflow',
-        'custom toy development process',
-        'private label toy packaging',
         'toy mold sampling',
         'injection molding assembly',
         'export delivery planning'
@@ -35,11 +38,11 @@ export const solutionsContent = {
       zh: 'OEM/ODM 协作框架'
     },
     title: {
-      en: 'From Requirement To Shipment: A Practical Toy Project Workflow',
+      en: 'From Fort Building Toy Requirement To Shipment',
       zh: '从需求到出货的玩具项目执行路径'
     },
     description: {
-      en: 'We structure toy projects around clear milestones: requirement alignment, engineering review, pilot validation, mass production, and shipment handoff.',
+      en: 'We structure fort building toy and fort building kit OEM/ODM projects around clear milestones: requirement alignment, engineering review, pilot validation, mass production, private label packaging, and shipment handoff.',
       zh: '我们将玩具项目拆解为明确里程碑：需求对齐、工程评审、试产验证、量产执行与出货交接。'
     },
     primaryAction: {en: 'Start A Quote Review', zh: '启动报价评估'},
@@ -52,14 +55,14 @@ export const solutionsContent = {
       {
         title: {en: 'Brand New Launch', zh: '新品立项开发'},
         text: {
-          en: 'For brand teams building a new toy line from concept definition to first shipment.',
+          en: 'For brand teams building a new fort building toy line from concept definition to first shipment.',
           zh: '适用于品牌方从概念定义到首批交付的新品开发。'
         }
       },
       {
         title: {en: 'Existing SKU Upgrade', zh: '在售 SKU 升级'},
         text: {
-          en: 'For projects needing structure optimization, packaging refresh, or quality stabilization.',
+          en: 'For fort building kit projects needing structure optimization, packaging refresh, or quality stabilization.',
           zh: '适用于结构优化、包装升级或质量稳定化改造。'
         }
       },
@@ -122,7 +125,7 @@ export const solutionsContent = {
       zh: '以玩具为核心的 OEM/ODM 与工艺配套'
     },
     description: {
-      en: 'Toy projects remain the mainline. Plastic and extrusion capabilities are applied only when the engineering route requires them.',
+      en: 'Fort building toy and custom toy projects remain the mainline. Plastic and extrusion capabilities are applied only when the engineering route requires them.',
       zh: '玩具项目始终是主线，塑胶与挤出能力仅在工程路径需要时作为配套能力介入。'
     }
   },

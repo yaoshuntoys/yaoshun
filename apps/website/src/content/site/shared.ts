@@ -60,12 +60,12 @@ export const desktopNav: RouteKey[] = [
 export const seoKeywordPools = {
   company: {
     en: [
-      "Yaoshun Toys",
-      "fort building kit",
       "fort building toy",
-      "fort building kit manufacturer",
-      "fort building kit factory",
-      "ball and rod tent supplier",
+      "fort building kit",
+      "fort building toy manufacturer",
+      "fort building toy factory",
+      "construction toys wholesale",
+      "Yaoshun Toys",
       "toy OEM ODM factory",
       "B2B toy supplier",
       "custom toy manufacturer",
@@ -81,14 +81,16 @@ export const seoKeywordPools = {
   },
   products: {
     en: [
-      "fort building kit",
       "fort building toy",
-      "fort building kit manufacturer",
-      "fort building kit factory",
-      "ball and rod tent supplier",
+      "fort building kit",
+      "fort building toy manufacturer",
+      "fort building toy factory",
+      "construction toys wholesale",
+      "fort building toys wholesale",
       "wholesale fort building kits",
       "bulk fort building kits",
       "private label fort building kits",
+      "ball and rod tent supplier",
       "custom make a fort toy manufacturer",
       "bulk buy make a fort toys",
       "bulk fort kits for schools",
@@ -199,12 +201,12 @@ export const seoKeywordPools = {
 export const siteSeo = {
   defaultKeywords: {
     en: [
-      "Yaoshun Toys",
+      "fort building toy",
       "fort building kit",
-      "connector ball tent",
-      "ball and rod tent",
-      "kids tent building kit",
-      "make a fort toy",
+      "fort building toy manufacturer",
+      "fort building toy factory",
+      "construction toys wholesale",
+      "Yaoshun Toys",
     ],
     zh: [
       "尧顺玩具",

@@ -71,6 +71,58 @@ function getReadingMinutes(article: NonNullable<ReturnType<typeof findNewsArticl
   return Math.max(3, Math.round(approximateUnits / 180));
 }
 
+function getArticleTopicKeywords(
+  locale: Locale,
+  article: NonNullable<ReturnType<typeof findNewsArticle>>,
+) {
+  const text = [
+    article.title.en,
+    article.title.zh,
+    article.excerpt.en,
+    article.excerpt.zh,
+    article.slug,
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  const keywords: Record<Locale, string[]> = {
+    en: [],
+    zh: [],
+  };
+
+  if (/wholesale|bulk|retail|assortment|procurement|sourcing|采购|批发|选品/.test(text)) {
+    keywords.en.push("construction toys wholesale", "fort building kit sourcing");
+    keywords.zh.push("搭建玩具批发", "堡垒搭建套装采购");
+  }
+
+  if (/custom|private label|oem|odm|packaging|quotation|定制|贴牌|包装|报价/.test(text)) {
+    keywords.en.push("private label fort building kit", "fort building toy OEM ODM");
+    keywords.zh.push("私标堡垒拼搭套装", "堡垒拼搭玩具OEM ODM");
+  }
+
+  if (/safety|astm|en71|test|compliance|certificate|report|合规|检测|认证|证书/.test(text)) {
+    keywords.en.push("fort building toy safety compliance", "toy test report support");
+    keywords.zh.push("堡垒拼搭玩具安全合规", "玩具检测报告支持");
+  }
+
+  if (/factory|production|workflow|quality|delivery|shipment|工厂|生产|质量|交付|出货/.test(text)) {
+    keywords.en.push("fort building toy factory", "toy quality control");
+    keywords.zh.push("堡垒拼搭玩具工厂", "玩具质量控制");
+  }
+
+  if (/stem|spatial|screen|parent|child|play|learning|family|learning|亲子|空间|学习|家庭/.test(text)) {
+    keywords.en.push("fort building toy", "STEM fort building kit");
+    keywords.zh.push("堡垒拼搭玩具", "STEM堡垒搭建套装");
+  }
+
+  if (!keywords.en.length) {
+    keywords.en.push("fort building toy articles", "fort building kit sourcing");
+    keywords.zh.push("堡垒拼搭玩具文章", "堡垒搭建套装采购");
+  }
+
+  return keywords[locale];
+}
+
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
     newsArticles.map((article) => ({ locale, slug: article.slug })),
@@ -110,6 +162,7 @@ export async function generateMetadata({
     `news/${slug}`,
     [
       ...localizeList(article.seoKeywords, locale),
+      ...getArticleTopicKeywords(locale, article),
       articleTitle,
       getNewsCategoryLabel(locale, article),
     ],

@@ -1,4 +1,4 @@
-export const seoKeywordLimit = 6;
+export const seoKeywordLimit = 8;
 
 const excludedSeoKeywordPattern = /东\s*莞|dong\s*guan/i;
 const weakSeoKeywordTokens = new Set([
@@ -13,13 +13,13 @@ const weakSeoKeywordTokens = new Set([
 ]);
 
 const prioritySeoKeywords = [
-  "fort building kit",
   "fort building toy",
-  "fort building kit manufacturer",
-  "fort building kit factory",
-  "ball and rod tent supplier",
-  "wholesale fort building kits",
+  "fort building kit",
+  "fort building toy manufacturer",
+  "fort building toy factory",
+  "construction toys wholesale",
   "bulk fort building kits",
+  "private label fort building kits",
 ] as const;
 
 function normalizeSeoKeyword(value: string) {

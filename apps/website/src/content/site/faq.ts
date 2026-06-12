@@ -1,18 +1,20 @@
 export const faqContent = {
   seo: {
     title: {
-      en: 'Toy OEM/ODM FAQ, MOQ & Lead Time | Yaoshun Toys',
+      en: 'Fort Building Toy FAQ, MOQ & Lead Time | Yaoshun Toys',
       zh: '玩具 OEM/ODM FAQ、起订量与交期 | 尧顺玩具'
     },
     description: {
-      en: 'Answers about MOQ, lead time, sampling, OEM/ODM workflow, packaging, shipment and quality checkpoints for fort building toys and custom toy projects.',
+      en: 'Answers about MOQ, lead time, sampling, OEM/ODM workflow, packaging, shipment and quality checkpoints for fort building toy, fort building kit and construction toys wholesale projects.',
       zh: '查看堡垒拼搭玩具、STEM搭建套装与定制玩具项目的 MOQ、交期、打样、OEM/ODM 流程、包装出货和质量节点。'
     },
     keywords: {
       en: [
+        'fort building toy FAQ',
+        'fort building kit MOQ',
+        'construction toys wholesale lead time',
+        'fort building kit sampling process',
         'toy OEM ODM FAQ',
-        'MOQ and lead time',
-        'toy sampling process',
         'packaging shipment FAQ',
         'quality checkpoint questions'
       ],
@@ -29,7 +31,7 @@ export const faqContent = {
     eyebrow: {en: 'Trade Resources', zh: '贸易支持资料'},
     title: {en: 'Manufacturing & Trade FAQ', zh: '制造与外贸常见问题'},
     description: {
-      en: 'This FAQ summarizes recurring buyer questions in toy OEM/ODM projects, from inquiry preparation to shipment handoff.',
+      en: 'This FAQ summarizes recurring buyer questions in fort building toy and fort building kit OEM/ODM projects, from inquiry preparation to shipment handoff.',
       zh: '本页汇总玩具 OEM/ODM 项目的高频采购问题，覆盖询盘准备到出货交接。'
     }
   },
@@ -38,9 +40,9 @@ export const faqContent = {
   },
   questions: [
     {
-      q: {en: 'What toy categories does Yaoshun focus on?', zh: '尧顺主要聚焦哪些玩具品类？'},
+      q: {en: 'What fort building toy categories does Yaoshun focus on?', zh: '尧顺主要聚焦哪些玩具品类？'},
       a: {
-        en: 'The core focus is toy OEM/ODM, including educational toys, DIY toy programs, and structural plastic parts used in toy assemblies.',
+        en: 'The core focus is fort building toy and fort building kit OEM/ODM, including educational construction toys, DIY toy programs, and structural plastic parts used in toy assemblies.',
         zh: '核心聚焦玩具 OEM/ODM，覆盖益智玩具、DIY 系列以及玩具装配所需塑胶结构件。'
       }
     },

@@ -491,7 +491,7 @@ export default async function ProductDetailPage({
     },
   ];
   const productSearchPositioning = t(locale, {
-    en: "Suitable for fort building kit, connector ball tent, ball and rod tent, kids tent building kit, and make a fort toy sourcing projects.",
+    en: "Suitable for fort building toy, fort building kit, construction toys wholesale, and private label sourcing projects.",
     zh: "适合堡垒搭建套装、STEM玩具与搭建堡垒采购项目。",
   });
   const highlightBullets = uniqueLines([
