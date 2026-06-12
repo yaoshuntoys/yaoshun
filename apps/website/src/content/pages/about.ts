@@ -11,9 +11,9 @@ const certificateImage5 =
 const certificateImage6 =
   "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-5.webp";
 const factoryImage1 =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-7.webp";
+  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-7-optimized.webp";
 const factoryImage2 =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-8.webp";
+  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-8-optimized.webp";
 const factoryImage3 =
   "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions/extrusion-workshop-overview.webp";
 const factoryImage4 = "/site/home/about-factory.webp";

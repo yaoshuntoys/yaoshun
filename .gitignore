@@ -34,3 +34,4 @@ apps/server/prisma/dev.db
 apps/server/prisma/dev.db-journal
 product-details
 *.bak
+apps/website/.env.local
