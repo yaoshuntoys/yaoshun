@@ -216,7 +216,7 @@ const seoSearchIntentSignals = [
 const priorityProductSeoKeywords = [
   "fort building toy",
   "fort building kit",
-  "fort building toy manufacturer",
+  "Fort Building Kit Manufacturer",
   "fort building toy factory",
   "construction toys wholesale",
   "bulk fort building kits",
@@ -581,7 +581,7 @@ export function getProductSeoKeywords(
         en: [
           "fort building toy",
           "fort building kit",
-          "fort building toy manufacturer",
+          "Fort Building Kit Manufacturer",
           "fort building toy factory",
           "construction toys wholesale",
         ],

@@ -15,7 +15,7 @@ import {
   toAbsoluteUrl,
 } from "@/lib/site-config";
 import { localizedUrlPath } from "@/lib/routes";
-import { cleanSeoKeywords } from "@/lib/seo-keywords";
+import { cleanSeoKeywords, primarySeoKeyword } from "@/lib/seo-keywords";
 
 type LocalizedSeo = {
   title: LocalizedText;
@@ -50,7 +50,10 @@ export function buildMetadata(
   const localePath = localizedUrlPath(locale, normalizedPath);
   const canonical = `${siteUrl}${localePath}`;
   const mergedKeywords = cleanSeoKeywords(
-    keywords.length ? keywords : t(locale, siteSeo.defaultKeywords),
+    [
+      primarySeoKeyword,
+      ...(keywords.length ? keywords : t(locale, siteSeo.defaultKeywords)),
+    ],
   );
   const alternates = Object.fromEntries(
     locales.map((item) => [

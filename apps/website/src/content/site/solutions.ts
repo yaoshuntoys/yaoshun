@@ -7,12 +7,12 @@ export const solutionsContent = {
       zh: '玩具 OEM/ODM 与定制化开发 | 尧顺玩具'
     },
     description: {
-      en: 'OEM/ODM workflow from a fort building toy manufacturer and factory, covering fort building kit design, tooling, sampling, injection molding, private label packaging and shipment.',
+      en: 'OEM/ODM workflow from a Fort Building Kit Manufacturer and factory, covering fort building kit design, tooling, sampling, injection molding, private label packaging and shipment.',
       zh: '尧顺提供堡垒拼搭玩具、STEM搭建套装与拼插玩具 OEM/ODM，覆盖设计、开模、打样、注塑、包装与出货交接。'
     },
     keywords: {
       en: [
-        'fort building toy manufacturer',
+        'Fort Building Kit Manufacturer',
         'fort building toy factory',
         'fort building kit OEM ODM',
         'custom fort building toy development',

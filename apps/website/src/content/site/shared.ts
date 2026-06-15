@@ -60,6 +60,7 @@ export const desktopNav: RouteKey[] = [
 export const seoKeywordPools = {
   company: {
     en: [
+      "Fort Building Kit Manufacturer",
       "fort building toy",
       "fort building kit",
       "fort building toy manufacturer",
@@ -81,6 +82,7 @@ export const seoKeywordPools = {
   },
   products: {
     en: [
+      "Fort Building Kit Manufacturer",
       "fort building toy",
       "fort building kit",
       "fort building toy manufacturer",
@@ -201,6 +203,7 @@ export const seoKeywordPools = {
 export const siteSeo = {
   defaultKeywords: {
     en: [
+      "Fort Building Kit Manufacturer",
       "fort building toy",
       "fort building kit",
       "fort building toy manufacturer",
