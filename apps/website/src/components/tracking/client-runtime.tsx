@@ -11,7 +11,6 @@ type LocalRuntimeComponents = {
 
 type ThirdPartyRuntimeComponents = {
   SpeedInsights: RuntimeComponent;
-  TawkScript: RuntimeComponent;
   TrackingScripts: RuntimeComponent;
   VercelAnalytics: RuntimeComponent;
 };
@@ -77,17 +76,15 @@ export function ClientRuntime() {
     const cleanup = scheduleIdle(() => {
       void Promise.all([
         import('@/components/tracking/tracking-scripts'),
-        import('@/components/tracking/tawk-script'),
         import('@vercel/analytics/next'),
         import('@vercel/speed-insights/next'),
-      ]).then(([tracking, tawk, analytics, speedInsights]) => {
+      ]).then(([tracking, analytics, speedInsights]) => {
         if (!active) {
           return;
         }
 
         setThirdPartyRuntime({
           SpeedInsights: speedInsights.SpeedInsights as RuntimeComponent,
-          TawkScript: tawk.TawkScript as RuntimeComponent,
           TrackingScripts: tracking.TrackingScripts as RuntimeComponent,
           VercelAnalytics: analytics.Analytics as RuntimeComponent,
         });
@@ -103,7 +100,6 @@ export function ClientRuntime() {
   const AnalyticsEvents = localRuntime?.AnalyticsEvents;
   const CookieConsentManager = localRuntime?.CookieConsentManager;
   const SpeedInsights = thirdPartyRuntime?.SpeedInsights;
-  const TawkScript = thirdPartyRuntime?.TawkScript;
   const TrackingScripts = thirdPartyRuntime?.TrackingScripts;
   const VercelAnalytics = thirdPartyRuntime?.VercelAnalytics;
 
@@ -117,10 +113,9 @@ export function ClientRuntime() {
           <CookieConsentManager />
         </>
       ) : null}
-      {SpeedInsights && TawkScript && TrackingScripts && VercelAnalytics ? (
+      {SpeedInsights && TrackingScripts && VercelAnalytics ? (
         <>
           <TrackingScripts />
-          <TawkScript />
           <VercelAnalytics />
           <SpeedInsights />
         </>

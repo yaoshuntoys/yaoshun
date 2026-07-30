@@ -202,7 +202,7 @@ function isActive(pathname: string, locale: Locale, href: string) {
 }
 
 function telephoneHref(phone: string) {
-  return `tel:${phone.replace(/[^\d+]/g, "")}`;
+  return `tel:${phone.split(" / ")[0].replace(/[^\d+]/g, "")}`;
 }
 
 function getAlternateLocale(locale: Locale): Locale {

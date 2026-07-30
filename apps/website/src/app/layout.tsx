@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 
 import { ImageLightbox } from "@/components/media/image-lightbox";
 import { ClientRuntime } from "@/components/tracking/client-runtime";
+import { TawkScript } from "@/components/tracking/tawk-script";
 import { homeContent, siteSeo } from "@/content/site";
 import {
   defaultLocale,
@@ -155,6 +156,7 @@ export default function RootLayout({
       <body>
         {children}
         <ImageLightbox />
+        <TawkScript />
         <ClientRuntime />
       </body>
     </html>

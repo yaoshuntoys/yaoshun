@@ -162,7 +162,7 @@ function copy(locale: "en" | "zh") {
 }
 
 function telephoneHref(phone: string) {
-  return `tel:${phone.replace(/[^\d+]/g, "")}`;
+  return `tel:${phone.split(" / ")[0].replace(/[^\d+]/g, "")}`;
 }
 
 export default async function ContactPage({
