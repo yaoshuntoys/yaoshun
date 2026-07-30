@@ -1,4 +1,5 @@
 export const seoKeywordLimit = 8;
+export const primarySeoKeyword = "Fort Building Kit Manufacturer";
 
 const excludedSeoKeywordPattern = /东\s*莞|dong\s*guan/i;
 const weakSeoKeywordTokens = new Set([
@@ -13,6 +14,7 @@ const weakSeoKeywordTokens = new Set([
 ]);
 
 const prioritySeoKeywords = [
+  primarySeoKeyword,
   "fort building toy",
   "fort building kit",
   "fort building toy manufacturer",

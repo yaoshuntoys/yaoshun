@@ -20,7 +20,7 @@ export const productsPageContent = {
       en: [
         'fort building toy',
         'fort building kit',
-        'fort building toy manufacturer',
+        'Fort Building Kit Manufacturer',
         'fort building toy factory',
         'construction toys wholesale',
         'fort building toys wholesale',

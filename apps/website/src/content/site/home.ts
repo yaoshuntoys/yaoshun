@@ -3,18 +3,18 @@ import {visualAssets} from '@/content/site/shared';
 export const homeContent = {
   seo: {
     title: {
-      en: 'Fort Building Toy Manufacturer & Factory | Yaoshun Toys',
+      en: 'Fort Building Kit Manufacturer | Yaoshun Toys',
       zh: '尧顺玩具 | 东莞源头玩具工厂'
     },
     description: {
-      en: 'Yaoshun is a fort building toy manufacturer and fort building toy factory for fort building kit programs, construction toys wholesale, private label packaging and toy OEM/ODM.',
+      en: 'Yaoshun is a Fort Building Kit Manufacturer and fort building toy factory for fort building kit programs, construction toys wholesale, private label packaging and toy OEM/ODM.',
       zh: '尧顺是东莞源头玩具工厂，主营堡垒拼搭玩具、STEM搭建套装和定制玩具 OEM/ODM，支持开模、注塑、包装与出口交付。'
     },
     keywords: {
       en: [
         'fort building toy',
         'fort building kit',
-        'fort building toy manufacturer',
+        'Fort Building Kit Manufacturer',
         'fort building toy factory',
         'construction toys wholesale',
         'Yaoshun Toys',
@@ -37,7 +37,7 @@ export const homeContent = {
       zh: '玩具 OEM/ODM · 从设计到量产'
     },
     title: {
-      en: 'Fort Building Toy Manufacturer Since 2016',
+      en: 'Fort Building Kit Manufacturer Since 2016',
       zh: '始于 2016 年的玩具研发与制造合作伙伴'
     },
     description: {
