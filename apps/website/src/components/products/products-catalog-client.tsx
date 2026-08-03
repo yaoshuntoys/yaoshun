@@ -236,7 +236,6 @@ export function ProductsCatalogClient({
                   alt={t(locale, item.label)}
                   className="products-grid-image"
                   fill
-                  preview
                   sizes="(min-width: 1024px) 24vw, 100vw"
                   src={item.images[0] || productsPageAssets.fallbackImage}
                 />
