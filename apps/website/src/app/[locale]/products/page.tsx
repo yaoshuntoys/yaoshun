@@ -34,14 +34,14 @@ function copy(locale: "en" | "zh") {
   return {
     heroEyebrow: t(locale, { en: "Yaoshun Source Factory Products", zh: "尧顺源头工厂产品" }),
     heroTitle: t(locale, {
-      en: "Fort Building Toys And Custom Toys",
-      zh: "搭建玩具与定制玩具",
+      en: "Fort Building Kits For Kids",
+      zh: "儿童堡垒拼搭套装",
     }),
-    heroTitleLead: t(locale, {en: "Catalog For", zh: "搭建玩具"}),
-    heroTitleBlue: t(locale, {en: "Fort Building", zh: "产品"}),
-    heroTitleOrange: t(locale, {en: "Toys", zh: "目录"}),
+    heroTitleLead: t(locale, {en: "Fort Building", zh: "堡垒拼搭"}),
+    heroTitleBlue: t(locale, {en: "Kits", zh: "套装"}),
+    heroTitleOrange: t(locale, {en: "For Kids", zh: "产品目录"}),
     heroText: t(locale, {
-      en: "Explore fort building toy, fort building kit, construction toys wholesale, ball and rod tent, and custom-ready product lines from Yaoshun, a source factory supporting safe materials, toy OEM/ODM, and stable manufacturing execution.",
+      en: "Explore fort building kits for kids in multiple piece counts, colors and packaging options. Yaoshun supplies wholesale fort building kits with OEM/ODM, private-label packaging and custom configurations for toy brands, retailers and importers.",
       zh: "浏览尧顺东莞源头工厂的搭建玩具、定制玩具、益智拼接套装与可定制产品系列，背后由安全材料方案、玩具 OEM/ODM、定制化开发能力和稳定制造体系提供支持。",
     }),
     heroAlt: t(locale, {
@@ -57,13 +57,13 @@ function copy(locale: "en" | "zh") {
     allProducts: t(locale, { en: "All Products", zh: "全部产品" }),
     viewDetails: t(locale, { en: "View details", zh: "查看详情" }),
     browseCatalog: t(locale, {en: "Browse Catalog", zh: "浏览目录"}),
-    customService: t(locale, {en: "Custom Service", zh: "定制服务"}),
+    customService: t(locale, {en: "Custom Fort Building Kit Service", zh: "堡垒拼搭套装定制服务"}),
     customTitle: t(locale, {
       en: "Looking for Custom Toys From A Source Factory?",
       zh: "正在寻找源头工厂定制玩具？",
     }),
     customText: t(locale, {
-      en: "Yaoshun provides custom fort building toy, fort building kit, and construction toys wholesale development tailored to your brand, market, packaging plan, and OEM/ODM delivery requirements.",
+      en: "Yaoshun provides custom fort building kit development tailored to your brand, target market, packaging plan and OEM/ODM delivery requirements.",
       zh: "尧顺提供面向品牌、市场、包装方案与 OEM/ODM 交付要求的搭建玩具和定制玩具开发服务。",
     }),
     customAction: t(locale, { en: "Learn More", zh: "了解更多" }),

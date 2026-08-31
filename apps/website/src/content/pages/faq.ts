@@ -1,22 +1,22 @@
 export const faqItems = [
   {
-    question: {en: "Are you a trading company or a manufacturer?", zh: "您是贸易公司还是制造商？"},
+    question: {en: "Do you manufacture fort building kits?", zh: "你们生产堡垒拼搭套装吗？"},
     answer: {
-      en: "We are a manufacturer with our own production base in Dongguan, Guangdong, and we also provide export coordination for overseas buyers. Customers can work with one team for development, production, inspection, and shipment follow-up.",
+      en: "Yes. We manufacture fort building kits at our own production base in Dongguan, Guangdong, and provide development, production, inspection, packaging and shipment coordination for overseas buyers.",
       zh: "我们是拥有自有生产基地的制造商，工厂位于广东东莞，同时也为海外客户提供出口协同服务。客户可以由同一团队对接开发、生产、检验和出货跟进。",
     },
   },
   {
-    question: {en: "What product categories and plastic capabilities do you support?", zh: "你们主要支持哪些产品和塑胶制造能力？"},
+    question: {en: "What is the MOQ for wholesale fort building kits?", zh: "堡垒拼搭套装批发的 MOQ 是多少？"},
     answer: {
-      en: "Our core focus is educational toys, interlocking building toys, DIY assembly toys, custom plastic products, precision injection-molded parts, PVC/PU/ABS/PC/nylon tubing, and custom profiles. We can also support matching structural parts, accessory kits, and selected AI toy plastic electronic housings.",
+      en: "MOQ depends on the fort building kit structure, tooling complexity, piece count and packaging configuration. We provide tiered pricing and confirm the practical MOQ during quotation review.",
       zh: "我们的核心方向包括益智玩具、积木拼装玩具、DIY 拼接玩具、塑料制品定制、高精密注塑件、PVC/PU/ABS/PC/尼龙管材以及各类异型材，也可配套塑胶结构件、辅件组合和部分 AI 玩具塑胶电子外壳开发。",
     },
   },
   {
-    question: {en: "Can you support OEM/ODM projects and in-house mold development?", zh: "你们可以支持 OEM/ODM 和自有开模吗？"},
+    question: {en: "Can I add my own logo and packaging to a fort building kit?", zh: "可以为堡垒拼搭套装添加自己的 LOGO 和包装吗？"},
     answer: {
-      en: "Yes. We support drawing-based or sample-based processing, in-house mold development, structural refinement, material selection, packaging customization, and pilot sampling for OEM/ODM programs.",
+      en: "Yes. We support logo artwork, custom colors, retail boxes, instruction languages and private-label packaging, together with drawing-based or sample-based OEM/ODM development.",
       zh: "可以。我们支持来图来样加工、自有模具开发、结构优化、材料选择、包装定制以及 OEM/ODM 项目的打样验证。",
     },
   },

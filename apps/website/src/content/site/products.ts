@@ -1,11 +1,11 @@
 export const productsPageContent = {
   seo: {
     title: {
-      en: 'Fort Building Toy & Fort Building Kit Catalog | Yaoshun Toys',
+      en: 'Fort Building Kits for Kids | Wholesale & Custom | Yaoshun',
       zh: '搭建玩具与定制玩具目录 | 尧顺玩具'
     },
     description: {
-      en: 'Explore fort building toy and fort building kit options from Yaoshun, a source factory for construction toys wholesale, bulk fort kits, private label packaging and OEM/ODM support.',
+      en: 'Explore Yaoshun fort building kits for kids in multiple piece counts, colors and packaging options. Wholesale, OEM/ODM and custom configurations are available direct from our factory.',
       zh: '查看尧顺堡垒搭建套装、STEM玩具、搭建堡垒玩法套装、夜光拼搭套装、连接球、收纳袋与彩盒包装定制方案。'
     },
     detailTitleTemplate: {
@@ -13,7 +13,7 @@ export const productsPageContent = {
       zh: '{product} | 尧顺玩具'
     },
     detailDescriptionTemplate: {
-      en: '{product} from Yaoshun Toys, suitable for fort building toy, fort building kit, construction toys wholesale, and private label sourcing, with OEM/ODM support for packaging, quality checks and export delivery.',
+      en: '{product} from Yaoshun Toys. Review the piece count, materials, structure, packaging and customization options for wholesale and private-label sourcing.',
       zh: '{product} 由尧顺玩具提供，适合堡垒搭建套装、STEM玩具与搭建堡垒项目采购，支持 OEM/ODM、包装、质检与出口交付。'
     },
     keywords: {
@@ -44,7 +44,7 @@ export const productsPageContent = {
     }
   },
   hero: {
-    title: {en: 'Fort Building Toy And Kit Catalog', zh: '玩具产品目录'},
+    title: {en: 'Fort Building Kits For Kids', zh: '儿童堡垒拼搭套装目录'},
     description: {
       en: 'Browse fort building toy, fort building kit, construction toys wholesale, bulk fort kits, and private label project options by finished toy lines, component development, and supporting process capabilities.',
       zh: '按堡垒搭建套装、STEM玩具与搭建堡垒项目方向浏览：成品玩具线、结构件开发与配套工艺能力。'

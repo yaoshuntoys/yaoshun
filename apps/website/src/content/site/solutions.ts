@@ -3,11 +3,11 @@ import {visualAssets} from '@/content/site/shared';
 export const solutionsContent = {
   seo: {
     title: {
-      en: 'Fort Building Toy OEM/ODM & Custom Development | Yaoshun Toys',
+      en: 'Custom Fort Building Kit OEM/ODM | Yaoshun Toys',
       zh: '玩具 OEM/ODM 与定制化开发 | 尧顺玩具'
     },
     description: {
-      en: 'OEM/ODM workflow from a Fort Building Kit Manufacturer and factory, covering fort building kit design, tooling, sampling, injection molding, private label packaging and shipment.',
+      en: 'Custom fort building kit OEM/ODM from product configuration and tooling to sampling, private-label packaging, testing, assembly and export delivery.',
       zh: '尧顺提供堡垒拼搭玩具、STEM搭建套装与拼插玩具 OEM/ODM，覆盖设计、开模、打样、注塑、包装与出货交接。'
     },
     keywords: {

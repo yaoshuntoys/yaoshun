@@ -17,7 +17,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 
 function copy(locale: "en" | "zh") {
   return {
-    sectionTitle: t(locale, {en: "Toy OEM/ODM FAQ", zh: "玩具 OEM/ODM 常见问题"}),
+    sectionTitle: t(locale, {en: "Fort Building Kit Wholesale & OEM FAQ", zh: "堡垒拼搭套装批发与 OEM 常见问题"}),
     sectionText: t(locale, {
       en: "Quick answers for MOQ, sampling, packaging, lead time, quality checks, and export handoff before production starts.",
       zh: "快速了解起订量、打样、包装、交期、质检与出口交接等量产前关键问题。",

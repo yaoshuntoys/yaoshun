@@ -1,11 +1,11 @@
 export const faqContent = {
   seo: {
     title: {
-      en: 'Fort Building Toy FAQ, MOQ & Lead Time | Yaoshun Toys',
+      en: 'Fort Building Kit FAQ | MOQ, OEM, Lead Time & Wholesale',
       zh: '玩具 OEM/ODM FAQ、起订量与交期 | 尧顺玩具'
     },
     description: {
-      en: 'Answers about MOQ, lead time, sampling, OEM/ODM workflow, packaging, shipment and quality checkpoints for fort building toy, fort building kit and construction toys wholesale projects.',
+      en: 'Answers about MOQ, OEM/ODM, lead time, sampling, packaging, shipment and quality checks for wholesale fort building kits and custom toy projects.',
       zh: '查看堡垒拼搭玩具、STEM搭建套装与定制玩具项目的 MOQ、交期、打样、OEM/ODM 流程、包装出货和质量节点。'
     },
     keywords: {

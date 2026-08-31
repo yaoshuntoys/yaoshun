@@ -869,20 +869,20 @@ export default async function SolutionsPage({
             </p>
             <h1 className="solutions-hero-title">
               <span>
-                {localized(locale, { en: "Toy Custom", zh: "玩具定制" })}
+                {localized(locale, { en: "Custom Fort Building Kit", zh: "定制堡垒拼搭套装" })}
               </span>
               <span>
                 <span className="hero-blue-word">
-                  {localized(locale, { en: "Solutions", zh: "解决方案" })}
+                  {localized(locale, { en: "OEM/ODM", zh: "OEM/ODM" })}
                 </span>{" "}
                 <span className="hero-orange-word">
-                  {localized(locale, { en: "To Shipment", zh: "到出货" })}
+                  {localized(locale, { en: "Solutions", zh: "解决方案" })}
                 </span>
               </span>
             </h1>
             <p className="solutions-hero-text">
               {localized(locale, {
-                en: "For brand and sourcing teams, Yaoshun connects requirement review, structure design, mold machining, injection molding, assembly, quality control, packaging, and export documents into one toy OEM/ODM delivery workflow.",
+              en: "For brand and sourcing teams, Yaoshun connects requirement review, structure design, mold machining, injection molding, assembly, quality control, packaging, and export documents into one toy OEM/ODM delivery workflow.",
                 zh: "面向品牌与采购团队，尧顺把需求评估、结构设计、模具加工、注塑生产、组装质检、包装与出口资料串联成清晰的玩具 OEM/ODM 交付流程。",
               })}
             </p>

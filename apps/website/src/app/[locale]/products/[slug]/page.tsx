@@ -293,7 +293,7 @@ function copy(locale: Locale, title: string, minOrder: string) {
   return {
     bestSeller: t(locale, { en: "Best Seller", zh: "Best Seller" }),
     home: t(locale, { en: "Home", zh: "首页" }),
-    products: t(locale, { en: "Products", zh: "产品" }),
+    products: t(locale, { en: "Fort Building Kits", zh: "堡垒拼搭套装" }),
     priceLabel: t(locale, {
       en: "Price (FOB Reference)",
       zh: "价格（FOB 参考）",
@@ -387,10 +387,12 @@ export async function generateMetadata({
     t(locale, productsPageContent.seo.detailTitleTemplate),
     productTitle,
   );
-  const description = applyProductSeoTemplate(
-    t(locale, productsPageContent.seo.detailDescriptionTemplate),
-    productTitle,
-  );
+  const description = uniqueLines([
+    ...((descriptionList[locale] || descriptionList.en || descriptionList.zh) ?? []),
+    localize(locale, product.summary, ""),
+  ])
+    .join(" ")
+    .slice(0, 320);
   const primaryProductImage = product.images?.[0];
 
   return buildMetadata(
@@ -490,13 +492,8 @@ export default async function ProductDetailPage({
       value: localize(locale, packagePair?.value, "-"),
     },
   ];
-  const productSearchPositioning = t(locale, {
-    en: "Suitable for fort building toy, fort building kit, construction toys wholesale, and private label sourcing projects.",
-    zh: "适合堡垒搭建套装、STEM玩具与搭建堡垒采购项目。",
-  });
   const highlightBullets = uniqueLines([
     descriptionLines[0] || "",
-    productSearchPositioning,
     functionPair
       ? `${localize(locale, functionPair.key)}: ${localize(locale, functionPair.value)}`
       : "",
@@ -607,10 +604,7 @@ export default async function ProductDetailPage({
     ? productPath(locale, adjacentProducts.next.product.productId)
     : productsHref;
   const productUrl = toAbsoluteUrl(currentProductHref);
-  const productDescription = [
-    uniqueLines(descriptionLines).join(" ").trim() || title,
-    productSearchPositioning,
-  ].join(" ");
+  const productDescription = uniqueLines(descriptionLines).join(" ").trim() || title;
   const categoryNames = categoryTrail;
   const structuredImages = mediaImages.slice(0, 8).map((image) => toAbsoluteUrl(image));
   const currencyCode = normalizeCurrencyCode(product.pricing?.currency);
@@ -649,8 +643,7 @@ export default async function ProductDetailPage({
             },
           }
       : undefined;
-  const productStructuredData = structuredOffer
-    ? {
+  const productStructuredData = {
         "@context": "https://schema.org",
         "@type": "Product",
         name: title,
@@ -678,14 +671,13 @@ export default async function ProductDetailPage({
               : "brand sourcing teams, cross-border sellers, gift channels, education channels, and toy importers",
         },
         material: material !== "-" ? material : undefined,
-        offers: structuredOffer,
+        ...(structuredOffer ? { offers: structuredOffer } : {}),
         additionalProperty: attributePairs.slice(0, 12).map((item) => ({
           "@type": "PropertyValue",
           name: item.label,
           value: item.value,
         })),
-      }
-    : null;
+      };
   const structuredData: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
@@ -713,9 +705,7 @@ export default async function ProductDetailPage({
     },
   ];
 
-  if (productStructuredData) {
-    structuredData.push(productStructuredData);
-  }
+  structuredData.push(productStructuredData);
 
   return (
     <div className="site-container grid gap-7 pb-4 pt-4 sm:pt-6 lg:gap-10">

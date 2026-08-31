@@ -623,12 +623,12 @@ function copy(locale: "en" | "zh") {
       zh: "东莞源头工厂",
     }),
     heroTitleLine1: t(locale, {
-      en: "Building Toy And Custom Toy",
-      zh: "搭建玩具与定制玩具",
+      en: "About Yaoshun",
+      zh: "关于尧顺",
     }),
     heroTitleLine2: t(locale, {
-      en: "OEM/ODM Development",
-      zh: "OEM/ODM 定制化开发",
+      en: "Fort Building Toy Manufacturer",
+      zh: "堡垒拼搭玩具制造商",
     }),
     heroText: t(locale, {
       en: "Founded in 2016, Dongguan Yaoshun Technology Co., Ltd. is a Dongguan source toy factory combining design, tooling, production, quality control, and export coordination for building toys, custom toys, and global toy OEM/ODM programs.",
@@ -796,10 +796,7 @@ export default async function AboutPage({
             <p className="about-hero-eyebrow">{text.heroEyebrow}</p>
             <h1 className="about-hero-title">
               <span>{text.heroTitleLine1}</span>
-              <span>
-                <span className="hero-blue-word">{text.heroTitleLine2}</span>{" "}
-                <span className="hero-orange-word">OEM/ODM</span>
-              </span>
+              <span className="hero-blue-word">{text.heroTitleLine2}</span>
             </h1>
             <p className="about-hero-text">{text.heroText}</p>
             <div className="page-hero-actions">
