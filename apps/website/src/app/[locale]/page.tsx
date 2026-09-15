@@ -111,6 +111,10 @@ function copy(locale: Locale) {
   };
 }
 
+function telephoneHref(phone: string) {
+  return `tel:${phone.split(" / ")[0].replace(/[^\d+]/g, "")}`;
+}
+
 function PlaceholderVisual({
   locale,
   title,
@@ -657,11 +661,27 @@ export default async function HomePage({
               <div className="home-contact-lines">
                 <div>
                   <Mail size={17} strokeWidth={2} />
-                  <span>{siteCopy.contact.email}</span>
+                  <a
+                    data-track-event="contact_click"
+                    data-track-label="home_contact_email"
+                    data-track-location="home_contact"
+                    data-track-method="email"
+                    href={`mailto:${siteCopy.contact.email}`}
+                  >
+                    <span>{siteCopy.contact.email}</span>
+                  </a>
                 </div>
                 <div>
                   <Phone size={17} strokeWidth={2} />
-                  <span>{siteCopy.contact.phone}</span>
+                  <a
+                    data-track-event="contact_click"
+                    data-track-label="home_contact_phone"
+                    data-track-location="home_contact"
+                    data-track-method="phone"
+                    href={telephoneHref(siteCopy.contact.phone)}
+                  >
+                    <span>{siteCopy.contact.phone}</span>
+                  </a>
                 </div>
                 <div>
                   <Globe2 size={17} strokeWidth={2} />

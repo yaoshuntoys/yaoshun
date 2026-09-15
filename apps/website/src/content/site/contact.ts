@@ -155,8 +155,8 @@ export const contactContent = {
   channels: [
     {
       label: {en: 'WhatsApp Trade Desk', zh: 'WhatsApp 贸易沟通'},
-      value: '+86 13724590707',
-      href: 'https://wa.me/8613724590707'
+      value: '+86 15708470147',
+      href: 'https://wa.me/8615708470147'
     },
     {
       label: {en: 'Direct Email', zh: '邮箱'},

@@ -390,7 +390,7 @@ export const companyProfile = {
   foundedYear: "2016-08-26",
   email: "yaoshuntoys@gmail.com",
   phone: ["+86 13724590707", "+86 13798852689"],
-  whatsapp: "8613724590707",
+  whatsapp: "8615708470147",
   website: "https://www.yaoshuntoys.com/",
   address: {
     en: "No. 3 Weixing Road, Chashan Town, Dongguan, Guangdong, China",

@@ -984,6 +984,13 @@
   line-height: 1.6;
 }
 
+.home-contact-lines a:hover,
+.home-contact-lines a:focus-visible {
+  color: #2563ff;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 @media (max-width: 767.98px) {
 
 .home-page {
