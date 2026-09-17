@@ -27,7 +27,7 @@ export const socialContactLinks = [
   {
     key: "whatsapp",
     label: { en: "WhatsApp Inquiry", zh: "WhatsApp 咨询" },
-    href: "https://wa.me/8615708470147",
+    href: "https://wa.me/8613724590707",
     trackingMethod: "whatsapp",
     variant: "primary",
   },
