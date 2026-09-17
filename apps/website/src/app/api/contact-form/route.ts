@@ -1,5 +1,4 @@
-import { after, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 import { defaultLocale, isLocale } from "@/lib/i18n";
@@ -12,8 +11,6 @@ const maxMessageLength = 5000;
 const maxAttributionLength = 8000;
 const defaultContactRecipient = "yaoshuntoys@gmail.com";
 const rateLimitBuckets = new Map<string, number[]>();
-
-type EmailProvider = "smtp-contact" | "smtp-tawk" | "resend";
 
 type MailPayload = {
   headers: Record<string, string>;
@@ -29,45 +26,11 @@ type ProviderDiagnostics = {
   missing: string[];
 };
 
-type SmtpConfig = {
-  from: string;
-  host: string;
-  pass: string;
-  port: number;
-  secure: boolean;
-  user: string;
-};
-
 type ResendConfig = {
   apiKey: string;
   from: string;
   to: string[];
 };
-
-type DeliveryTarget = {
-  from: string;
-  to: string[];
-};
-
-type DeliveryTask = {
-  provider: EmailProvider;
-  send: () => Promise<string | undefined>;
-  target: DeliveryTarget;
-};
-
-type DeliverySuccess = {
-  messageId?: string;
-  ok: true;
-  provider: EmailProvider;
-};
-
-type DeliveryFailure = {
-  ok: false;
-  provider: EmailProvider;
-  reason: string;
-};
-
-type DeliveryResult = DeliverySuccess | DeliveryFailure;
 
 function escapeHtml(value: string) {
   return value
@@ -134,51 +97,6 @@ function formatUnknownError(error: unknown) {
   }
 }
 
-function getSmtpConfig(): {
-  config: SmtpConfig | null;
-  diagnostics: ProviderDiagnostics;
-} {
-  const host = getEnvValue("EMAIL_HOST");
-  const rawPort = getEnvValue("EMAIL_PORT");
-  const user = getEnvValue("EMAIL_USER");
-  const pass = getEnvValue("EMAIL_PASS");
-  const from = getEnvValue("EMAIL_FROM");
-  const port = Number(rawPort);
-  const missing = [
-    !host ? "EMAIL_HOST" : "",
-    !rawPort ? "EMAIL_PORT" : "",
-    !user ? "EMAIL_USER" : "",
-    !pass ? "EMAIL_PASS" : "",
-    !from ? "EMAIL_FROM" : "",
-  ];
-  const invalid = [
-    rawPort && (!Number.isInteger(port) || port <= 0)
-      ? "EMAIL_PORT must be a positive integer"
-      : "",
-  ];
-  const diagnostics = {
-    configured: !missing.some(Boolean) && !invalid.some(Boolean),
-    invalid: uniqueValues(invalid),
-    missing: uniqueValues(missing),
-  };
-
-  if (!diagnostics.configured) {
-    return { config: null, diagnostics };
-  }
-
-  return {
-    config: {
-      from,
-      host,
-      pass,
-      port,
-      secure: port === 465,
-      user,
-    },
-    diagnostics,
-  };
-}
-
 function getResendConfig(): {
   config: ResendConfig | null;
   diagnostics: ProviderDiagnostics;
@@ -206,31 +124,6 @@ function getResendConfig(): {
   return { config: { apiKey, from, to }, diagnostics };
 }
 
-async function sendWithSmtp(config: SmtpConfig, to: string[], payload: MailPayload) {
-  const transporter = nodemailer.createTransport({
-    connectionTimeout: 8000,
-    dnsTimeout: 5000,
-    greetingTimeout: 8000,
-    host: config.host,
-    port: config.port,
-    secure: config.secure,
-    socketTimeout: 12000,
-    auth: { user: config.user, pass: config.pass },
-  });
-
-  const info = await transporter.sendMail({
-    from: config.from,
-    to: to.join(", "),
-    replyTo: payload.replyTo,
-    subject: payload.subject,
-    text: payload.text,
-    html: payload.html,
-    headers: payload.headers,
-  });
-
-  return typeof info.messageId === "string" ? info.messageId : undefined;
-}
-
 async function sendWithResend(config: ResendConfig, payload: MailPayload) {
   const resend = new Resend(config.apiKey);
   const result = await resend.emails.send({
@@ -250,214 +143,34 @@ async function sendWithResend(config: ResendConfig, payload: MailPayload) {
   return result.data?.id;
 }
 
-function formatProviderDiagnostics(diagnostics: ProviderDiagnostics) {
-  return diagnostics.configured
-    ? diagnostics
-    : {
-        ...diagnostics,
-        missing: diagnostics.missing,
-      };
-}
-
-function getLeadEmailTasks(payload: MailPayload) {
-  const smtp = getSmtpConfig();
-  const resend = getResendConfig();
-  const contactSmtpRecipients = getEmailList([
-    getPrimaryRecipient(),
-    getEnvValue("SMTP_TO_EMAIL"),
-  ]);
-  const tawkRecipients = getEmailList([getEnvValue("TAWK_TICKET_EMAIL")]);
-  const skipped: Record<EmailProvider, ProviderDiagnostics> = {
-    "smtp-contact": smtp.diagnostics,
-    "smtp-tawk": tawkRecipients.length > 0
-      ? smtp.diagnostics
-      : {
-          configured: false,
-          invalid: [],
-          missing: ["TAWK_TICKET_EMAIL"],
-        },
-    resend: resend.diagnostics,
-  };
-  const invalidContactRecipients = contactSmtpRecipients.some((item) => !isValidEmail(item));
-  const invalidTawkRecipients = tawkRecipients.some((item) => !isValidEmail(item));
-  const sendTasks: DeliveryTask[] = [];
-
-  if (smtp.config && contactSmtpRecipients.length > 0 && !invalidContactRecipients) {
-    const smtpConfig = smtp.config;
-    sendTasks.push({
-      provider: "smtp-contact",
-      send: () => sendWithSmtp(smtpConfig, contactSmtpRecipients, payload),
-      target: {
-        from: smtpConfig.from,
-        to: contactSmtpRecipients,
-      },
-    });
-  } else if (invalidContactRecipients) {
-    skipped["smtp-contact"] = {
-      configured: false,
-      invalid: ["SMTP_TO_EMAIL / CONTACT_FORM_TO_EMAIL must contain valid email addresses"],
-      missing: [],
-    };
-  }
-
-  if (smtp.config && tawkRecipients.length > 0 && !invalidTawkRecipients) {
-    const smtpConfig = smtp.config;
-    sendTasks.push({
-      provider: "smtp-tawk",
-      send: () => sendWithSmtp(smtpConfig, tawkRecipients, payload),
-      target: {
-        from: smtpConfig.from,
-        to: tawkRecipients,
-      },
-    });
-  } else if (invalidTawkRecipients) {
-    skipped["smtp-tawk"] = {
-      configured: false,
-      invalid: ["TAWK_TICKET_EMAIL must contain valid email addresses"],
-      missing: [],
-    };
-  }
-
-  if (resend.config) {
-    const resendConfig = resend.config;
-    sendTasks.push({
-      provider: "resend",
-      send: () => sendWithResend(resendConfig, payload),
-      target: {
-        from: resendConfig.from,
-        to: resendConfig.to,
-      },
-    });
-  }
-
-  return { sendTasks, skipped };
-}
-
-async function runDeliveryTask(task: DeliveryTask): Promise<DeliveryResult> {
-  try {
-    const messageId = await task.send();
-    return {
-      messageId,
-      ok: true,
-      provider: task.provider,
-    };
-  } catch (error) {
-    return {
-      ok: false,
-      provider: task.provider,
-      reason: formatUnknownError(error),
-    };
-  }
-}
-
-function summarizeDeliveryResults(
-  sendTasks: DeliveryTask[],
-  skipped: Record<EmailProvider, ProviderDiagnostics>,
-  results: DeliveryResult[],
-) {
-  const attempted = sendTasks.map((task) => task.provider);
-  const failures: Array<{ provider: EmailProvider; reason: string }> = [];
-  const successes: EmailProvider[] = [];
-  const transportIds: Array<{ messageId: string; provider: EmailProvider }> = [];
-
-  for (const result of results) {
-    if (result.ok) {
-      successes.push(result.provider);
-
-      if (result.messageId) {
-        transportIds.push({
-          messageId: result.messageId,
-          provider: result.provider,
-        });
-      }
-
-      continue;
-    }
-
-    failures.push({
-      provider: result.provider,
-      reason: result.reason,
-    });
-  }
-
-  return {
-    attempted,
-    failures,
-    skipped: {
-      "smtp-contact": formatProviderDiagnostics(skipped["smtp-contact"]),
-      "smtp-tawk": formatProviderDiagnostics(skipped["smtp-tawk"]),
-      resend: formatProviderDiagnostics(skipped.resend),
-    },
-    successes,
-    targets: Object.fromEntries(
-      sendTasks.map((task) => [
-        task.provider,
-        {
-          from: maskEmailAddress(task.target.from),
-          to: task.target.to.map(maskEmailAddress),
-        },
-      ]),
-    ) as Record<EmailProvider, DeliveryTarget>,
-    transportIds,
-  };
-}
-
-async function waitForFirstSuccessfulDelivery(
-  taskPromises: Array<Promise<DeliveryResult>>,
-) {
-  return new Promise<DeliveryResult[]>((resolve) => {
-    const completedResults: DeliveryResult[] = [];
-
-    if (taskPromises.length === 0) {
-      resolve(completedResults);
-      return;
-    }
-
-    for (const taskPromise of taskPromises) {
-      taskPromise.then((result) => {
-        completedResults.push(result);
-
-        if (result.ok || completedResults.length === taskPromises.length) {
-          resolve([...completedResults]);
-        }
-      });
-    }
-  });
-}
-
 async function sendLeadEmail(payload: MailPayload) {
-  const { sendTasks, skipped } = getLeadEmailTasks(payload);
-  const taskPromises = sendTasks.map(runDeliveryTask);
-  const firstResults = await waitForFirstSuccessfulDelivery(taskPromises);
-  const hasFirstSuccess = firstResults.some((result) => result.ok);
+  const { config, diagnostics } = getResendConfig();
 
-  if (hasFirstSuccess) {
-    const diagnosticSummary = summarizeDeliveryResults(sendTasks, skipped, firstResults);
-    console.info("Contact form email first delivery succeeded", diagnosticSummary);
-
-    after(async () => {
-      const allResults = await Promise.all(taskPromises);
-      const finalDiagnosticSummary = summarizeDeliveryResults(sendTasks, skipped, allResults);
-
-      if (allResults.some((result) => !result.ok) || allResults.length < sendTasks.length) {
-        console.warn(
-          "Contact form email completed with partial provider issues",
-          finalDiagnosticSummary,
-        );
-        return;
-      }
-
-      console.info("Contact form email delivery result", finalDiagnosticSummary);
-    });
-
-    return diagnosticSummary;
+  if (!config) {
+    console.error("Contact form Resend configuration is invalid", diagnostics);
+    throw new Error("Resend is not configured for contact form delivery.");
   }
 
-  const results = await Promise.all(taskPromises);
-  const diagnosticSummary = summarizeDeliveryResults(sendTasks, skipped, results);
+  try {
+    const messageId = await sendWithResend(config, payload);
+    const deliverySummary = {
+      messageId,
+      provider: "resend",
+      target: {
+        from: maskEmailAddress(config.from),
+        to: config.to.map(maskEmailAddress),
+      },
+    };
 
-  console.error("Contact form email delivery failed", diagnosticSummary);
-  throw new Error("No email provider delivered the contact form email.");
+    console.info("Contact form email delivered", deliverySummary);
+    return deliverySummary;
+  } catch (error) {
+    console.error("Contact form email delivery failed", {
+      provider: "resend",
+      reason: formatUnknownError(error),
+    });
+    throw new Error("Resend failed to deliver the contact form email.", { cause: error });
+  }
 }
 
 function stringifyAttribution(value: unknown) {

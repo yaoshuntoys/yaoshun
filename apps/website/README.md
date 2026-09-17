@@ -65,13 +65,10 @@ NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
 
 `NEXT_PUBLIC_ENABLE_THIRD_PARTY_TRACKING` 留空时默认开启；填 `0` 可关闭 GA/Google Ads 脚本，填 `1` 可显式开启。
 
-联系表单会提交到 `POST /api/contact-form`，并通过邮件转发到 Tawk ticket inbox：
+联系表单会提交到 `POST /api/contact-form`，并仅通过 Resend 发送询盘邮件：
 
 ```bash
-TAWK_TICKET_EMAIL=ticket+xxxxxx@tawk.to
-EMAIL_HOST=smtp.your-provider.com
-EMAIL_PORT=465
-EMAIL_USER=your-email-account
-EMAIL_PASS=your-email-password-or-app-password
-EMAIL_FROM=sales@your-domain.com
+CONTACT_FORM_TO_EMAIL=yaoshuntoys@gmail.com
+RESEND_API_KEY=re_xxxxxx
+RESEND_FROM_EMAIL=sales@your-domain.com
 ```
