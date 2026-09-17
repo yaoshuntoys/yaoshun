@@ -3,6 +3,7 @@
 .news-page {
   display: grid;
   gap: 5rem;
+  min-width: 0;
 }
 
 .news-hero {
@@ -150,14 +151,18 @@
 
 .news-content-grid {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.6rem;
+  min-width: 0;
   scroll-margin-top: 7rem;
 }
 
 .news-sidebar,
 .news-main {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.2rem;
+  min-width: 0;
   align-content: start;
 }
 
@@ -282,7 +287,9 @@
 
 .news-card-grid {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.45rem;
+  min-width: 0;
   align-items: stretch;
 }
 
@@ -290,6 +297,7 @@
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 0.7rem;
+  min-width: 0;
   min-height: 100%;
   padding: 1.05rem 1.08rem 1.22rem;
   border: 1px solid rgba(24, 56, 138, 0.08);

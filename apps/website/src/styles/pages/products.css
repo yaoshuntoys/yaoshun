@@ -348,6 +348,7 @@
 
 .products-featured-stage {
   position: relative;
+  overflow: hidden;
   margin-top: 2.1rem;
   padding: 0 4rem;
   perspective: 2200px;

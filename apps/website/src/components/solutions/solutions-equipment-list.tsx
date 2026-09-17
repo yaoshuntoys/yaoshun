@@ -10,6 +10,7 @@ type EquipmentCard = {
   image: ImageProps["src"];
   text: string;
   title: string;
+  unoptimized?: boolean;
 };
 
 type EquipmentCategory = {
@@ -73,6 +74,7 @@ export function SolutionsEquipmentList({
                 preview
                 sizes="(min-width: 1024px) 260px, (min-width: 640px) 45vw, 100vw"
                 src={card.image}
+                unoptimized={card.unoptimized}
               />
             </div>
             <div className="solutions-equipment-body">

@@ -985,6 +985,9 @@ export default async function SolutionsPage({
               image: card.image,
               text: localized(locale, card.text),
               title: localized(locale, card.title),
+              unoptimized:
+                card.image ===
+                solutionsEquipmentImages.extrusionWorkshopPackagingTurnover,
             }))}
             categories={equipmentTabs.map((tab) => ({
               id: tab.id,

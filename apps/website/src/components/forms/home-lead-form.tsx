@@ -46,6 +46,9 @@ export function HomeLeadForm({locale}: {locale: Locale}) {
   const errorTitle = t(locale, {en: "Submission Failed", zh: "提交失败"});
   const successMessage = t(locale, {en: "Message sent successfully.", zh: "消息发送成功。"});
   const successTitle = t(locale, {en: "Message Sent", zh: "消息已发送"});
+  const nameLabel = t(locale, {en: "Your Name", zh: "你的姓名"});
+  const emailLabel = t(locale, {en: "Your Email", zh: "你的邮箱"});
+  const messageLabel = t(locale, {en: "Your Message", zh: "你的留言"});
   const isSubmitting = state === "submitting";
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -149,6 +152,8 @@ export function HomeLeadForm({locale}: {locale: Locale}) {
     >
       <div className="grid gap-4 md:grid-cols-2">
         <input
+          aria-label={nameLabel}
+          autoComplete="name"
           className={inputClass}
           name="name"
           placeholder={t(locale, {en: "Your Name *", zh: "你的姓名 *"})}
@@ -156,6 +161,8 @@ export function HomeLeadForm({locale}: {locale: Locale}) {
           type="text"
         />
         <input
+          aria-label={emailLabel}
+          autoComplete="email"
           className={inputClass}
           name="email"
           placeholder={t(locale, {en: "Your Email *", zh: "你的邮箱 *"})}
@@ -164,6 +171,7 @@ export function HomeLeadForm({locale}: {locale: Locale}) {
         />
       </div>
       <textarea
+        aria-label={messageLabel}
         className={`${textareaClass} min-h-[7rem]`}
         name="message"
         placeholder={t(locale, {en: "Your Message *", zh: "你的留言 *"})}

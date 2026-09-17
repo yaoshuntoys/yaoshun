@@ -931,12 +931,27 @@ export default async function ProductDetailPage({
                   <td className="w-[30%] border-b border-[rgba(24,56,138,0.08)] px-4 py-3 text-[0.95rem] text-[#17306e]">
                     {row[0]?.value || "-"}
                   </td>
-                  <th className="w-[20%] border-b border-[rgba(24,56,138,0.08)] bg-[#f8fbff] px-4 py-3 text-left text-[0.84rem] font-bold text-[#6f7ea9]">
-                    {row[1]?.label || ""}
-                  </th>
-                  <td className="w-[30%] border-b border-[rgba(24,56,138,0.08)] px-4 py-3 text-[0.95rem] text-[#17306e]">
-                    {row[1]?.value || ""}
-                  </td>
+                  {row[1] ? (
+                    <>
+                      <th className="w-[20%] border-b border-[rgba(24,56,138,0.08)] bg-[#f8fbff] px-4 py-3 text-left text-[0.84rem] font-bold text-[#6f7ea9]">
+                        {row[1].label}
+                      </th>
+                      <td className="w-[30%] border-b border-[rgba(24,56,138,0.08)] px-4 py-3 text-[0.95rem] text-[#17306e]">
+                        {row[1].value}
+                      </td>
+                    </>
+                  ) : (
+                    <>
+                      <td
+                        aria-hidden="true"
+                        className="w-[20%] border-b border-[rgba(24,56,138,0.08)] bg-[#f8fbff] px-4 py-3"
+                      />
+                      <td
+                        aria-hidden="true"
+                        className="w-[30%] border-b border-[rgba(24,56,138,0.08)] px-4 py-3"
+                      />
+                    </>
+                  )}
                 </tr>
               ))}
             </tbody>

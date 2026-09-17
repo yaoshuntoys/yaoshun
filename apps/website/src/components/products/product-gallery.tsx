@@ -64,9 +64,11 @@ export function ProductGallery({
           <Image
             alt={`${title} ${activeIndex + 1}`}
             className="object-contain object-center"
+            fetchPriority="high"
             fill
+            loading="eager"
+            preload={activeIndex === 0}
             preview
-            priority
             sizes="(min-width: 1024px) 55vw, 100vw"
             src={current}
           />

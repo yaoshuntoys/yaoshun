@@ -514,7 +514,7 @@ function FooterLinkGroup({
 }) {
   return (
     <div className="rounded-[1.2rem] border border-[rgba(32,62,143,0.07)] bg-white/84 p-3.5 shadow-[0_16px_34px_-30px_rgba(20,44,119,0.14)] md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
-      <h4 className={footerHeadingClass}>{title}</h4>
+      <h2 className={footerHeadingClass}>{title}</h2>
       <div className="grid gap-1.5 md:gap-2">
         {links.map((item) => (
           <Link
@@ -596,9 +596,9 @@ function SiteFooter({ locale }: { locale: Locale }) {
           </div>
           {activeSocialLinks.length > 0 ? (
             <div className="mt-3 border-t border-[rgba(37,99,255,0.08)] pt-3 md:mt-4 md:pt-4">
-              <h4 className="mb-2 text-[0.72rem] font-bold uppercase tracking-[0.12em] text-[#9aa8cc]">
+              <h2 className="mb-2 text-[0.72rem] font-bold uppercase tracking-[0.12em] text-[#9aa8cc]">
                 {t(locale, { en: "Social Contact", zh: "社交联系方式" })}
-              </h4>
+              </h2>
               <div className="flex flex-wrap gap-2">
                 {activeSocialLinks.map((item) => {
                   const SocialIcon = socialContactIcons[item.key];
@@ -644,9 +644,9 @@ function SiteFooter({ locale }: { locale: Locale }) {
         />
 
         <div className="col-span-2 rounded-[1.2rem] border border-[rgba(32,62,143,0.07)] bg-white/84 p-3.5 shadow-[0_16px_34px_-30px_rgba(20,44,119,0.14)] md:col-span-1 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
-          <h4 className={footerHeadingClass}>
+          <h2 className={footerHeadingClass}>
             {t(locale, { en: "Support", zh: "支持" })}
-          </h4>
+          </h2>
           <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 md:grid-cols-1 md:gap-2">
             {supportLinks.map((item) => (
               <Link
