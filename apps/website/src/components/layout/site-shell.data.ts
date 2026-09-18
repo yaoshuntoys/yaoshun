@@ -40,6 +40,17 @@ export const socialContactLinks = [
   },
 ] as const;
 
+export const partnerLinks = [
+  {
+    key: "ulike_pcba",
+    label: {
+      en: "ULIKE PCBA — Shenzhen PCBA, SMT Assembly & Electronics OEM/ODM",
+      zh: "ULIKE PCBA — 深圳 PCBA、SMT 贴片与电子产品 OEM/ODM",
+    },
+    href: "https://www.ljkal.com/",
+  },
+] as const;
+
 export const navItems = [
   {key: "home", href: "", label: {en: "Home", zh: "首页"}},
   {key: "products", href: "/products", label: {en: "Products", zh: "产品目录"}},

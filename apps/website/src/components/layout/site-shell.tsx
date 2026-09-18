@@ -9,6 +9,7 @@ import { GlobalFormFeedback } from "@/components/forms/global-form-feedback";
 import { BrandMark } from "@/components/ui/marketing";
 import {
   navItems,
+  partnerLinks,
   siteCopy,
   siteShellUi,
   socialContactLinks,
@@ -678,6 +679,24 @@ function SiteFooter({ locale }: { locale: Locale }) {
       <p className="site-container mt-4 border-t border-[rgba(19,41,104,0.08)] pt-3 text-center text-[0.76rem] leading-5 text-[#6f7ea9] md:mt-8 md:border-0 md:pt-0 md:text-[0.84rem]">
         © {copyrightYear} {t(locale, siteCopy.companyName)}. All Rights Reserved.
       </p>
+
+      <div className="site-container mt-2 flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 px-4 text-center text-[0.7rem] leading-5 text-[#9aa8cc] md:text-[0.72rem]">
+        {partnerLinks.map((item) => (
+          <a
+            className="text-[#9aa8cc] underline decoration-[rgba(154,168,204,0.35)] underline-offset-2 transition hover:text-[#6f7ea9]"
+            data-track-destination={item.href}
+            data-track-event="partner_click"
+            data-track-label={item.key}
+            data-track-location="footer_partners"
+            href={item.href}
+            key={item.key}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {t(locale, item.label)}
+          </a>
+        ))}
+      </div>
     </footer>
   );
 }
