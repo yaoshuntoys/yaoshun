@@ -34,6 +34,7 @@ import newsArticle33 from "../../../data/news/pre-quotation-safety-brief-for-pri
 import newsArticle34 from "../../../data/news/eu-toy-safety-preparation-for-fort-building-kit-exporters/news.json";
 import newsArticle35 from "../../../data/news/durable-fort-building-kits-support-sustainable-family-play/news.json";
 import newsArticle36 from "../../../data/news/school-and-activity-channel-fort-building-kit-buying-notes/news.json";
+import newsArticle37 from "../../../data/news/one-stop-fort-building-kit-oem-odm-manufacturing-for-global-toy-brands/news.json";
 
 import type { NewsArticleSeed } from "@/content/types";
 
@@ -78,6 +79,7 @@ const importedNewsArticles = [
   withSource(newsArticle34 as NewsArticleSeed, "apps/website/data/news/eu-toy-safety-preparation-for-fort-building-kit-exporters/news.json"),
   withSource(newsArticle35 as NewsArticleSeed, "apps/website/data/news/durable-fort-building-kits-support-sustainable-family-play/news.json"),
   withSource(newsArticle36 as NewsArticleSeed, "apps/website/data/news/school-and-activity-channel-fort-building-kit-buying-notes/news.json"),
+  withSource(newsArticle37 as NewsArticleSeed, "apps/website/data/news/one-stop-fort-building-kit-oem-odm-manufacturing-for-global-toy-brands/news.json"),
 ] as const;
 
 export const newsSourcePathBySlug = new Map(
