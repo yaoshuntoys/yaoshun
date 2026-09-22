@@ -12,7 +12,7 @@ export const siteCopy = {
     zh: "尧顺成立于 2016 年，是一家东莞源头工厂，专注搭建玩具、定制玩具、益智玩具、AI塑胶电子产品、拼插类塑胶玩具、精密注塑件及管材型材配套，提供从设计、开模到交付的玩具 OEM/ODM 与定制化开发支持。",
   },
   contact: {
-    email: "yaoshuntoys@gmail.com",
+    email: "info@yaoshuntoys.com",
     phone: "+86 13724590707 / +86 13798852689",
     website: "https://www.yaoshuntoys.com/",
     address: {

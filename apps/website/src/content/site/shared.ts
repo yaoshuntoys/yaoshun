@@ -388,7 +388,7 @@ export const companyProfile = {
     { en: "Chinese", zh: "中文" },
   ],
   foundedYear: "2016-08-26",
-  email: "yaoshuntoys@gmail.com",
+  email: "info@yaoshuntoys.com",
   phone: ["+86 13724590707", "+86 13798852689"],
   whatsapp: "8613724590707",
   website: "https://www.yaoshuntoys.com/",

@@ -68,7 +68,7 @@ NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
 联系表单会提交到 `POST /api/contact-form`，并仅通过 Resend 发送询盘邮件：
 
 ```bash
-CONTACT_FORM_TO_EMAIL=yaoshuntoys@gmail.com
+CONTACT_FORM_TO_EMAIL=info@yaoshuntoys.com
 RESEND_API_KEY=re_xxxxxx
 RESEND_FROM_EMAIL=sales@your-domain.com
 ```

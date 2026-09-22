@@ -132,8 +132,8 @@ export const termsContent = {
           zh: "若报价、采购订单、形式发票、模具协议、保密协议、质量标准或签署合同与本条款与条件冲突，则以项目专属书面文件为准。",
         },
         {
-          en: "For legal or commercial clarification, contact yaoshuntoys@gmail.com. We may update these Terms & Conditions when website features, advertising platform requirements, legal rules, or business operations change.",
-          zh: "如需法律或商务说明，请联系 yaoshuntoys@gmail.com。若网站功能、广告平台要求、法律规则或业务运营变化，我们可能更新本条款与条件。",
+          en: "For legal or commercial clarification, contact info@yaoshuntoys.com. We may update these Terms & Conditions when website features, advertising platform requirements, legal rules, or business operations change.",
+          zh: "如需法律或商务说明，请联系 info@yaoshuntoys.com。若网站功能、广告平台要求、法律规则或业务运营变化，我们可能更新本条款与条件。",
         },
       ],
     },

@@ -9,7 +9,7 @@ const rateLimitWindowMs = 10 * 60 * 1000;
 const maxSubmissionsPerWindow = 5;
 const maxMessageLength = 5000;
 const maxAttributionLength = 8000;
-const defaultContactRecipient = "yaoshuntoys@gmail.com";
+const defaultContactRecipient = "info@yaoshuntoys.com";
 const rateLimitBuckets = new Map<string, number[]>();
 
 type MailPayload = {

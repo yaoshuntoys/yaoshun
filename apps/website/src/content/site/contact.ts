@@ -160,8 +160,8 @@ export const contactContent = {
     },
     {
       label: {en: 'Direct Email', zh: '邮箱'},
-      value: 'yaoshuntoys@gmail.com',
-      href: 'mailto:yaoshuntoys@gmail.com'
+      value: 'info@yaoshuntoys.com',
+      href: 'mailto:info@yaoshuntoys.com'
     }
   ],
   journey: {

@@ -160,8 +160,8 @@ export const privacyContent = {
           zh: "你可以通过浏览器设置、上方 Google 控制入口，以及本网站显示的任何同意控制来管理 Cookie。你可以通过更改这些设置或清除本网站在浏览器中保存的数据来撤回同意。",
         },
         {
-          en: "For privacy requests, please contact yaoshuntoys@gmail.com and include your company name, request details, and the email address used in the inquiry. We may update this policy when website features, advertising tools, or legal requirements change.",
-          zh: "隐私请求请联系 yaoshuntoys@gmail.com，并附公司名称、请求详情以及询盘时使用的邮箱。若网站功能、广告工具或法律要求变化，我们可能更新本政策。",
+          en: "For privacy requests, please contact info@yaoshuntoys.com and include your company name, request details, and the email address used in the inquiry. We may update this policy when website features, advertising tools, or legal requirements change.",
+          zh: "隐私请求请联系 info@yaoshuntoys.com，并附公司名称、请求详情以及询盘时使用的邮箱。若网站功能、广告工具或法律要求变化，我们可能更新本政策。",
         },
       ],
     },

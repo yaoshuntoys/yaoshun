@@ -114,8 +114,8 @@ export const refundReturnContent = {
           zh: "运输责任、运费、保险、关税及风险转移，以项目书面文件确认的贸易条款为准。经批准的退款通常通过原付款路径退回，或按双方书面确认作为后续订单抵扣处理。",
         },
         {
-          en: "For return, refund, replacement, or warranty requests, contact yaoshuntoys@gmail.com with your company name, order reference, product name, delivery date, issue description, and supporting photos or videos.",
-          zh: "如需申请退货、退款、换货或质保支持，请联系 yaoshuntoys@gmail.com，并提供公司名称、订单编号、产品名称、收货日期、问题说明及相关图片或视频。",
+          en: "For return, refund, replacement, or warranty requests, contact info@yaoshuntoys.com with your company name, order reference, product name, delivery date, issue description, and supporting photos or videos.",
+          zh: "如需申请退货、退款、换货或质保支持，请联系 info@yaoshuntoys.com，并提供公司名称、订单编号、产品名称、收货日期、问题说明及相关图片或视频。",
         },
       ],
     },
