@@ -428,13 +428,13 @@ export async function POST(request: Request) {
         "X-Lead-Source": "website-contact-form",
       },
       html: `
-        <div style="margin:0;background:#f5f8ff;padding:20px 12px;font-family:Arial,'Helvetica Neue',sans-serif;color:#17306e;">
-          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:640px;margin:0 auto;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #dfe7f3;border-radius:8px;overflow:hidden;">
+        <div style="margin:0;background:#ffffff;padding:20px 18px;font-family:Arial,'Helvetica Neue',sans-serif;color:#17306e;">
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:640px;margin:0 auto;border-collapse:collapse;background:#ffffff;">
             <tr>
               <td style="height:4px;background:#2563ff;font-size:0;line-height:0;">&nbsp;</td>
             </tr>
             <tr>
-              <td style="padding:14px 22px;border-bottom:1px solid #edf1f7;">
+              <td style="padding:14px 0;border-bottom:1px solid #dfe7f3;">
                 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;">
                   <tr>
                     <td style="vertical-align:middle;">
@@ -455,7 +455,7 @@ export async function POST(request: Request) {
               </td>
             </tr>
             <tr>
-              <td style="padding:20px 22px 22px 22px;">
+              <td style="padding:20px 0 0 0;">
                 <div style="font-size:11px;line-height:1.4;color:#6f7ea9;">${escapedSubmittedAt}</div>
                 <h1 style="margin:5px 0 14px 0;font-size:22px;line-height:1.3;font-weight:800;color:#17306e;">${escapeHtml(mailCopy.newInquiry)}</h1>
                 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;">
@@ -465,7 +465,7 @@ export async function POST(request: Request) {
                   </tr>
                   ${companyHtml}
                 </table>
-                <div style="margin:16px 0 0 0;padding:14px 16px;border-left:3px solid #2563ff;background:#f7faff;">
+                <div style="margin:16px 0 0 0;padding:14px 0;border-top:1px solid #dfe7f3;border-bottom:1px solid #dfe7f3;">
                   <div style="margin:0 0 6px 0;font-size:11px;font-weight:700;line-height:1.4;color:#6f7ea9;text-transform:uppercase;">${mailCopy.message}</div>
                   <div style="font-size:14px;line-height:1.65;color:#17306e;white-space:pre-wrap;word-break:break-word;">${escapedMessage}</div>
                 </div>
