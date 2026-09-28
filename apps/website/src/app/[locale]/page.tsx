@@ -22,7 +22,10 @@ import Image from "@/components/media/smart-image";
 import Link from "next/link";
 
 import { HomeLeadForm } from "@/components/forms/home-lead-form";
+import {CertificatesSection} from "@/components/sections/certificates-section";
+import {CooperationPartnersSection} from "@/components/sections/cooperation-partners-section";
 import { PageHero } from "@/components/sections/page-hero";
+import {SourceFactorySection} from "@/components/sections/source-factory-section";
 import { StructuredData } from "@/components/seo/structured-data";
 import { siteCopy } from "@/components/layout/site-shell.data";
 import { homeContent } from "@/content/site";
@@ -31,6 +34,13 @@ import { getLocaleFromParams, t, type Locale } from "@/lib/i18n";
 import { getHomeFeaturedShowcaseCatalog } from "@/lib/site-data";
 import { localizedPath, productPath } from "@/lib/routes";
 import { homePageImages } from "@/content/pages/home";
+import {certificateItems, certificateSectionCopy} from "@/content/pages/certificates";
+import {
+  cooperationPartnersSectionCopy,
+  factoryItems,
+  partnerItems,
+  sourceFactorySectionCopy,
+} from "@/content/pages/company-showcase";
 import { siteUrl, toAbsoluteUrl } from "@/lib/site-config";
 
 function copy(locale: Locale) {
@@ -593,6 +603,35 @@ export default async function HomePage({
           </div>
         </div>
       </section>
+
+      <SourceFactorySection
+        description={t(locale, sourceFactorySectionCopy.description)}
+        eyebrow={t(locale, sourceFactorySectionCopy.eyebrow)}
+        id="home-source-factory"
+        items={factoryItems}
+        locale={locale}
+        title={t(locale, sourceFactorySectionCopy.title)}
+      />
+
+      <CertificatesSection
+        collapseLabel={t(locale, certificateSectionCopy.collapseLabel)}
+        description={t(locale, certificateSectionCopy.description)}
+        dialogLabel={t(locale, certificateSectionCopy.dialogLabel)}
+        expandLabel={t(locale, certificateSectionCopy.expandLabel)}
+        eyebrow={t(locale, certificateSectionCopy.eyebrow)}
+        id="home-certificates"
+        items={certificateItems}
+        title={t(locale, certificateSectionCopy.title)}
+      />
+
+      <CooperationPartnersSection
+        description={t(locale, cooperationPartnersSectionCopy.description)}
+        eyebrow={t(locale, cooperationPartnersSectionCopy.eyebrow)}
+        id="home-cooperation-partners"
+        items={partnerItems}
+        locale={locale}
+        title={t(locale, cooperationPartnersSectionCopy.title)}
+      />
 
       <section className="home-solutions">
         <h2 className="home-solutions-title">

@@ -15,12 +15,15 @@ const staticRouteSourcePaths: Record<string, string[]> = {
     "apps/website/src/app/[locale]/page.tsx",
     "apps/website/src/content/site/home.ts",
     "apps/website/src/content/pages/home.ts",
+    "apps/website/src/content/pages/certificates.ts",
+    "apps/website/src/content/pages/company-showcase.ts",
     "apps/website/src/content/site/shared.ts",
   ],
   "/about": [
     "apps/website/src/app/[locale]/about/page.tsx",
     "apps/website/src/content/site/about.ts",
-    "apps/website/src/content/pages/about.ts",
+    "apps/website/src/content/pages/certificates.ts",
+    "apps/website/src/content/pages/company-showcase.ts",
     "apps/website/src/content/site/shared.ts",
   ],
   "/solutions": [

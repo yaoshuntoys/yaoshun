@@ -24,7 +24,9 @@ import {
 import Image from "@/components/media/smart-image";
 import Link from "next/link";
 
-import { AboutCertificateGallery } from "@/components/sections/about-certificate-gallery";
+import {CooperationPartnersSection} from "@/components/sections/cooperation-partners-section";
+import {CertificatesSection} from "@/components/sections/certificates-section";
+import {SourceFactorySection} from "@/components/sections/source-factory-section";
 import { StructuredData } from "@/components/seo/structured-data";
 import { siteCopy } from "@/components/layout/site-shell.data";
 import { aboutContent } from "@/content/site";
@@ -32,11 +34,13 @@ import { buildPageMetadata } from "@/lib/metadata";
 import { getLocaleFromParams, t } from "@/lib/i18n";
 import { contactFormPath, localizedPath } from "@/lib/routes";
 import { toAbsoluteUrl } from "@/lib/site-config";
+import {certificateItems, certificateSectionCopy} from "@/content/pages/certificates";
 import {
-  aboutCertificateCopy,
-  certificateItems,
+  cooperationPartnersSectionCopy,
   factoryItems,
-} from "@/content/pages/about";
+  partnerItems,
+  sourceFactorySectionCopy,
+} from "@/content/pages/company-showcase";
 
 const heroFactItems = [
   {
@@ -67,7 +71,7 @@ const advantageItems = [
     title: { en: "Integrated R&D And Tooling", zh: "研发与模具一体化" },
     text: {
       en: "Our engineering team supports CAD/UG-based mold design, drawing-based or sample-based development, structural refinement, and sample optimization for educational toys and precision plastic components.",
-      zh: "工程团队可基于 CAD/UG 完成模具设计、来图来样开发、结构优化与样品改良，服务益智玩具及精密塑胶件项目。",
+      zh: "工程团队使用 CAD/UG 完成模具设计、来图来样开发和结构优化，服务益智玩具及精密塑胶件项目。",
     },
   },
   {
@@ -75,7 +79,7 @@ const advantageItems = [
     title: { en: "Full-Chain Manufacturing", zh: "全链路制造能力" },
     text: {
       en: "The factory integrates extrusion, injection molding, quality inspection, finished assembly, and export handoff in one coordinated workflow.",
-      zh: "工厂将挤出成型、注塑加工、品控检测、成品组装与出口交付整合在同一协同流程中。",
+      zh: "覆盖挤出、注塑、质检、组装和出口交付。",
     },
   },
   {
@@ -83,7 +87,7 @@ const advantageItems = [
     title: { en: "Custom Plastic Product Coverage", zh: "塑胶制品定制覆盖面" },
     text: {
       en: "We support educational toys, interlocking toy accessories, precision molded parts, PVC/PU/ABS/PC/nylon tubing, and custom plastic profiles.",
-      zh: "可支持益智玩具、拼插玩具配件、高精密注塑件、PVC/PU/ABS/PC/尼龙管材及各类塑胶异型材定制。",
+      zh: "提供益智玩具、拼插配件、精密注塑件、PVC/PU/ABS/PC/尼龙管材及异型材定制。",
     },
   },
   {
@@ -91,7 +95,7 @@ const advantageItems = [
     title: { en: "Flexible OEM/ODM Cooperation", zh: "灵活的 OEM/ODM 协作" },
     text: {
       en: "From small-batch trial orders to large-volume production, we adapt tooling, materials, packaging, and schedules to real customer programs.",
-      zh: "从小批量试单到大批量订单，我们都可按项目需求灵活调整模具、材料、包装与交付节奏。",
+      zh: "支持小批量试单和大批量生产，按项目调整模具、材料、包装和交期。",
     },
   },
   {
@@ -99,7 +103,7 @@ const advantageItems = [
     title: { en: "Eco-Compliant Materials", zh: "环保合规材料" },
     text: {
       en: "Materials are planned around RoHS, REACH, EN71, and ASTM F963 expectations while avoiding phthalates, heavy metals, and other restricted substances.",
-      zh: "材料方案围绕 RoHS、REACH、EN71、ASTM F963 等要求进行规划，避免邻苯二甲酸盐、重金属等受限物质。",
+      zh: "按 RoHS、REACH、EN71、ASTM F963 等要求规划材料，控制邻苯、重金属等受限物质。",
     },
   },
   {
@@ -107,7 +111,7 @@ const advantageItems = [
     title: { en: "Process Accuracy And Validation", zh: "工艺精度与验证能力" },
     text: {
       en: "Tooling precision can reach +/-0.01 mm, supported by tensile, climate simulation, drop, durability, and dimensional checks before shipment.",
-      zh: "模具加工精度可达 +/-0.01 mm，并通过拉力、环境模拟、跌落、耐用性与尺寸检测确保出货稳定性。",
+      zh: "模具精度可达 +/-0.01 mm，出货前完成拉力、跌落、耐用性和尺寸检测。",
     },
   },
   {
@@ -115,7 +119,7 @@ const advantageItems = [
     title: { en: "Strict Quality Assurance", zh: "严格质量保障" },
     text: {
       en: "Raw material inspection, in-process sampling, automated inspection, lab verification, final outgoing checks, and third-party report coordination are built into every order workflow.",
-      zh: "从原料检验、过程抽检、自动化检测、实验室验证到出厂终检与第三方检测协同，每一笔订单都纳入完整质控流程。",
+      zh: "覆盖原料检验、过程抽检、自动检测、实验室验证、出厂终检及第三方检测。",
     },
   },
   {
@@ -123,7 +127,7 @@ const advantageItems = [
     title: { en: "Multi-Industry Delivery Experience", zh: "多行业交付经验" },
     text: {
       en: "Beyond toys, our plastic manufacturing workflow also supports industrial, medical, food-contact, and lighting-related applications when projects require it.",
-      zh: "除玩具外，我们的塑胶制造体系也可为工业、医疗、食品接触及灯饰等项目提供配套支持。",
+      zh: "除玩具外，也支持工业、医疗、食品接触和灯饰类塑胶项目。",
     },
   },
 ] as const;
@@ -134,7 +138,7 @@ const serviceHighlights = [
     title: { en: "Educational Toy Development", zh: "益智玩具开发" },
     text: {
       en: "Support concept review, structural refinement, and play-pattern optimization for STEM and interlocking toy programs.",
-      zh: "支持 STEM 与拼插玩具项目的方案评估、结构优化与玩法细化。",
+      zh: "提供 STEM 与拼插玩具的方案评估、结构优化和玩法设计。",
     },
   },
   {
@@ -142,7 +146,7 @@ const serviceHighlights = [
     title: { en: "Precision Injection Molding", zh: "高精密注塑件" },
     text: {
       en: "Produce toy accessories, structural parts, and custom molded components with stable dimensional control.",
-      zh: "稳定生产玩具配件、结构件及各类定制注塑件，并保障尺寸一致性。",
+      zh: "生产玩具配件、结构件和定制注塑件，控制尺寸一致性。",
     },
   },
   {
@@ -150,7 +154,7 @@ const serviceHighlights = [
     title: { en: "Custom Tubing & Profiles", zh: "定制管材与异型材" },
     text: {
       en: "Support PVC, PU, ABS, PC, PE, and nylon tubing or profile development with flexible size and hardness options.",
-      zh: "支持 PVC、PU、ABS、PC、PE、尼龙等管材及型材开发，并可灵活调整规格、颜色与硬度。",
+      zh: "提供 PVC、PU、ABS、PC、PE、尼龙管材及型材开发，可调整规格、颜色和硬度。",
     },
   },
   {
@@ -158,7 +162,7 @@ const serviceHighlights = [
     title: { en: "Mold Design & Sampling", zh: "模具设计与打样" },
     text: {
       en: "Shorten the path from drawing or sample to pilot validation with in-house tooling coordination.",
-      zh: "通过内部模具协同能力，缩短从来图来样到试产验证的推进周期。",
+      zh: "厂内完成模具设计与打样，缩短从图纸或样品到试产的周期。",
     },
   },
   {
@@ -166,7 +170,7 @@ const serviceHighlights = [
     title: { en: "Compliance & Testing", zh: "合规与测试支持" },
     text: {
       en: "Coordinate reports, lab checks, and market-entry requirements for toy and plastic product export programs.",
-      zh: "配合玩具及塑胶制品出口项目完成检测资料、实验室验证与市场准入要求对接。",
+      zh: "协助完成检测资料、实验室验证和市场准入。",
     },
   },
   {
@@ -174,7 +178,7 @@ const serviceHighlights = [
     title: { en: "Fast Business Response", zh: "快速商务响应" },
     text: {
       en: "Multilingual trade support targets replies within 24 hours and keeps quotation progress visible.",
-      zh: "多语种外贸团队力争 24 小时内响应，并让报价与项目推进更透明。",
+      zh: "多语种外贸团队跟进报价和项目，力争 24 小时内回复。",
     },
   },
 ] as const;
@@ -192,7 +196,7 @@ const cultureItems = [
     title: { en: "Mission", zh: "企业使命" },
     text: {
       en: "Create safe and reliable plastic product value for global customers, making every delivery worthy of trust.",
-      zh: "用专业工艺为全球客户创造安全、可靠的塑胶产品价值，让每一份交付都值得信赖。",
+      zh: "以可靠工艺，为客户提供安全、稳定的塑胶产品。",
     },
   },
   {
@@ -200,7 +204,7 @@ const cultureItems = [
     title: { en: "Vision", zh: "企业愿景" },
     text: {
       en: "Become a benchmark manufacturer for plastic tubing and toy accessories, building a trusted Yaoshun quality label.",
-      zh: "成为塑胶管材与玩具配件领域的标杆型制造企业，打造值得信赖的“尧顺制造”品质名片。",
+      zh: "成为塑胶管材和玩具配件领域值得信赖的制造商。",
     },
   },
   {
@@ -208,7 +212,7 @@ const cultureItems = [
     title: { en: "Core Values", zh: "核心价值观" },
     text: {
       en: "Quality first, customer focus, innovation, integrity, compliance, and collaborative growth.",
-      zh: "坚持品质为本、客户至上、创新驱动、诚信合规与协作共赢。",
+      zh: "品质优先、客户至上、创新、诚信、合规、协作共赢。",
     },
   },
   {
@@ -216,7 +220,7 @@ const cultureItems = [
     title: { en: "Team Culture", zh: "团队文化" },
     text: {
       en: "Craftsmanship, continuous learning, human care, and strong ownership shape our daily execution style.",
-      zh: "以匠人精神、持续学习、人文关怀与责任担当，构成团队日常执行方式。",
+      zh: "重视工艺、学习、关怀和责任。",
     },
   },
 ] as const;
@@ -243,7 +247,7 @@ const milestoneItems = [
     title: { en: "Clean Production Upgraded", zh: "洁净产线升级" },
     text: {
       en: "Production capacity and cleanliness were upgraded to support higher-standard tubing and plastic product projects.",
-      zh: "升级产能与洁净生产条件，支持更高标准的管材与塑胶制品项目。",
+      zh: "升级产能和洁净生产条件，满足更高标准的管材与塑胶项目。",
     },
   },
   {
@@ -251,7 +255,7 @@ const milestoneItems = [
     title: { en: "In-House Tooling Team Built", zh: "自有模具团队建立" },
     text: {
       en: "Independent tooling design shortened sample lead times and improved custom project responsiveness.",
-      zh: "建立自有模具设计团队，缩短打样周期并提升定制项目响应效率。",
+      zh: "建立自有模具团队，缩短打样周期，提升项目响应速度。",
     },
   },
   {
@@ -262,7 +266,7 @@ const milestoneItems = [
     },
     text: {
       en: "Environmental compliance capabilities were strengthened for European and North American market access.",
-      zh: "进一步完善环保合规能力，为欧洲和北美市场准入打下基础。",
+      zh: "完善 RoHS、REACH 等环保合规资料，支持产品进入欧洲和北美市场。",
     },
   },
   {
@@ -273,7 +277,7 @@ const milestoneItems = [
     },
     text: {
       en: "The company expanded international buyer outreach through trade-show participation and deeper coordination with overseas sourcing programs.",
-      zh: "公司通过展会参与和更深入的海外采购项目协同，进一步扩大国际客户触达与市场拓展。",
+      zh: "通过展会和海外采购项目，服务更多国际客户。",
     },
   },
   {
@@ -281,7 +285,7 @@ const milestoneItems = [
     title: { en: "Automation And QC Expanded", zh: "自动化与质控提升" },
     text: {
       en: "Facilities and automatic inspection tools were upgraded to support more stable batch delivery.",
-      zh: "完成厂房与自动化检测设备升级，提升批量交付的稳定性与一致性。",
+      zh: "升级厂房和自动检测设备，提升批量交付的稳定性。",
     },
   },
 ] as const;
@@ -290,65 +294,18 @@ const shippingItems = [
   {
     icon: Truck,
     label: { en: "Europe", zh: "欧洲市场" },
-    text: {
-      en: "Support buyer programs across Germany, the United Kingdom, France, Spain, and Italy.",
-      zh: "稳定服务德国、英国、法国、西班牙、意大利等欧洲客户项目。",
-    },
   },
   {
     icon: Plane,
     label: { en: "North America & Central America", zh: "北美与中美洲市场" },
-    text: {
-      en: "Coordinate delivery and compliance support for the United States, Canada, and Central America, where about 25% of shipments are delivered.",
-      zh: "面向美国、加拿大及中美洲市场提供交付与合规资料协同，其中约 25% 的产品销往中美洲。",
-    },
   },
   {
     icon: PackageCheck,
     label: { en: "Asia", zh: "亚洲市场" },
-    text: {
-      en: "Ongoing projects extend to Japan, South Korea, and Southeast Asia.",
-      zh: "项目持续覆盖日本、韩国及多个东南亚国家。",
-    },
   },
   {
     icon: Globe,
     label: { en: "Oceania", zh: "大洋洲市场" },
-    text: {
-      en: "Australia and New Zealand remain part of our regular export coverage.",
-      zh: "澳大利亚与新西兰也在常规出口服务范围内。",
-    },
-  },
-] as const;
-
-const partnerItems = [
-  {
-    label: { en: "VEVOR", zh: "VEVOR" },
-    image: "/site/partners/vevor-logo.png",
-  },
-  {
-    label: { en: "Dreame", zh: "追觅" },
-    image: "/site/partners/dreame-logo.svg",
-  },
-  {
-    label: { en: "Narwal", zh: "云鲸" },
-    image: "/site/partners/narwal-logo.png",
-  },
-  {
-    label: { en: "Guowin Optoelectronics", zh: "国盈光电" },
-    image: "/site/partners/guowin-logo.png",
-  },
-  {
-    label: { en: "Langxin Medical", zh: "朗信医疗" },
-    image: "/site/partners/langxin-medical-logo.png",
-  },
-  {
-    label: { en: "Baoxin Cable", zh: "宝新电缆" },
-    image: "/site/partners/baoxin-cable-logo.png",
-  },
-  {
-    label: { en: "OML", zh: "欧曼" },
-    image: "/site/partners/oml-logo.png",
   },
 ] as const;
 
@@ -632,11 +589,11 @@ function copy(locale: "en" | "zh") {
     }),
     heroText: t(locale, {
       en: "Founded in 2016, Dongguan Yaoshun Technology Co., Ltd. is a Dongguan source toy factory combining design, tooling, production, quality control, and export coordination for building toys, custom toys, and global toy OEM/ODM programs.",
-      zh: "东莞市尧顺科技有限公司成立于 2016 年，是一家东莞源头玩具工厂，集设计、开模、生产、质控与出口协同于一体，为全球客户提供搭建玩具、定制玩具与玩具 OEM/ODM 定制化开发服务。",
+      zh: "尧顺 2016 年成立于东莞，专注搭建玩具和定制玩具的设计、开模、生产与质检，承接海外 OEM/ODM 订单。",
     }),
     intro: t(locale, {
       en: "Founded on August 26, 2016 with registered capital of RMB 3 million, Dongguan Yaoshun Technology Co., Ltd. is a full-chain Dongguan source factory integrating mold development, plastic extrusion, precision injection molding, quality inspection, finished assembly, and export delivery. We focus on building toys, custom toys, educational toys, interlocking plastic toys, custom tubing, profiles, precision molded parts, and selected AI toy plastic electronic products for global OEM/ODM buyers.",
-      zh: "东莞市尧顺科技有限公司成立于 2016 年 8 月 26 日，注册资本 300 万元，是一家集模具开发、塑胶挤出、精密注塑、品质检测、成品组装与出口交付于一体的东莞源头工厂。公司聚焦搭建玩具、定制玩具、益智玩具、拼插类塑胶玩具、定制管材型材、高精密注塑件以及部分 AI 玩具塑胶电子产品，为全球 OEM/ODM 客户提供一站式定制化开发支持。",
+      zh: "尧顺成立于 2016 年，注册资本 300 万元。厂内涵盖模具开发、塑胶挤出、精密注塑、质检和组装包装，主要生产搭建玩具、益智玩具、塑胶配件、管材型材及注塑件，承接全球 OEM/ODM 项目。",
     }),
     companyTitle: t(locale, {
       en: "Dongguan Yaoshun Technology Co., Ltd.",
@@ -644,15 +601,11 @@ function copy(locale: "en" | "zh") {
     }),
     learnMore: t(locale, { en: "Learn More", zh: "了解更多" }),
     contactUs: t(locale, { en: "Contact Us", zh: "联系我们" }),
-    certificate: t(locale, { en: "Certificates & Compliance", zh: "资质证书" }),
-    certificateEyebrow: t(locale, { en: "Compliance", zh: "合规资料" }),
-    factory: t(locale, { en: "Our Source Factory", zh: "我们的源头工厂" }),
-    factoryEyebrow: t(locale, { en: "Manufacturing", zh: "生产制造" }),
     advantages: t(locale, { en: "Our Advantages", zh: "我们的优势" }),
     advantagesEyebrow: t(locale, { en: "Why Choose Us", zh: "核心优势" }),
     advantagesText: t(locale, {
       en: "Our competitive edge comes from combining building toy and custom toy development with in-house tooling, extrusion, injection, compliance, automated inspection, and delivery execution in one source-factory system.",
-      zh: "我们的优势在于把搭建玩具与定制玩具开发、自有模具、挤出、注塑、合规、自动化检测和交付能力整合到同一源头工厂体系中，形成更稳定的项目执行力。",
+      zh: "从开发、开模到挤出、注塑、检测和出货，主要环节均可在厂内完成，便于控制进度和品质。",
     }),
     oneStop: t(locale, { en: "Core Services", zh: "核心服务" }),
     serviceEyebrow: t(locale, { en: "Capabilities", zh: "能力模块" }),
@@ -665,30 +618,19 @@ function copy(locale: "en" | "zh") {
     paymentEyebrow: t(locale, { en: "Markets", zh: "市场覆盖" }),
     paymentMethods: t(locale, { en: "Payment Methods", zh: "支付方式" }),
     deliveryMethods: t(locale, { en: "Delivery Methods", zh: "配送方式" }),
-    partners: t(locale, { en: "Cooperation Partners", zh: "合作伙伴" }),
-    partnersEyebrow: t(locale, { en: "Partners", zh: "合作伙伴" }),
-    partnersText: t(locale, {
-      en: "Selected partner and customer brands reflect Yaoshun's ongoing collaboration across toy OEM/ODM, plastic components, and supporting manufacturing programs.",
-      zh: "以下展示部分合作伙伴与客户品牌，体现尧顺在玩具 OEM/ODM、塑胶部件及配套制造项目中的持续协作能力。",
-    }),
     cultureTitle: t(locale, { en: "Corporate Culture", zh: "企业文化" }),
     cultureEyebrow: t(locale, { en: "Culture", zh: "文化理念" }),
-    viewCertificate: t(locale, { en: "View certificate", zh: "查看证书" }),
-    factoryText: t(locale, {
-      en: "Our Dongguan source-factory system covers extrusion lines, injection molding capacity, clean processing areas, assembly stations, and inspection checkpoints for building toys, custom toys, and plastic support products.",
-      zh: "尧顺东莞源头工厂体系覆盖挤出产线、注塑设备、洁净生产区域、组装工位与检测节点，可支撑搭建玩具、定制玩具及塑胶配套产品的稳定交付。",
-    }),
     serviceText: t(locale, {
       en: "From concept or sample to validated production, reports, and shipment, key tasks stay inside one connected execution chain.",
-      zh: "从概念或样品到验证量产、检测资料与正式出货，关键节点都在同一执行链路中推进。",
+      zh: "从概念、样品到量产、检测和出货，由同一团队全程跟进。",
     }),
     shippingText: t(locale, {
       en: "Key milestones show how the company expanded from tubing extrusion into mold development, precision injection, and international compliance support.",
-      zh: "发展节点展示了公司如何从管材挤出逐步扩展到模具研发、精密注塑与国际合规配套能力。",
+      zh: "公司从管材挤出起步，随后建立模具开发和精密注塑团队，完善出口产品的检测与合规服务。",
     }),
     paymentText: t(locale, {
       en: "Multilingual trade support covers core export regions with flexible payment, document, and shipping coordination for OEM/ODM orders.",
-      zh: "多语种外贸团队覆盖核心出口市场，并为 OEM/ODM 订单提供灵活的付款、资料和运输协同。",
+      zh: "多语种团队对接欧洲、北美和亚洲市场，协助安排订单付款、资料和运输。",
     }),
     closingTitle: t(locale, {
       en: "Build With A Reliable OEM/ODM Factory Team",
@@ -696,7 +638,7 @@ function copy(locale: "en" | "zh") {
     }),
     closingText: t(locale, {
       en: "Whether you are building a toy line, custom toy, custom plastic component, tubing project, or export-ready OEM program, Yaoshun is ready to support your project with source-factory engineering, disciplined quality control, and responsive delivery.",
-      zh: "无论你正在推进搭建玩具、定制玩具、自定义塑胶部件、管材项目，还是面向出口的 OEM 项目，尧顺都可以通过源头工厂工程能力、严格质控流程和稳定交付节奏为你提供支持。",
+      zh: "搭建玩具、定制玩具、塑胶部件或管材项目，尧顺都可从开模、生产、检测到出口交付全程跟进。",
     }),
   };
 }
@@ -882,6 +824,25 @@ export default async function AboutPage({
         </div>
       </section>
 
+      <section className="about-advantages" id="about-milestones">
+        <div className="about-section-heading">
+          <p className="about-section-eyebrow">{text.shippingEyebrow}</p>
+          <h2>{text.shipping}</h2>
+        </div>
+        <p className="about-section-copy">{text.shippingText}</p>
+        <div className="about-advantage-grid">
+          {milestoneItems.map((item) => (
+            <article className="about-advantage-card" key={item.year}>
+              <div className="about-advantage-copy">
+                <p className="about-milestone-year">{item.year}</p>
+                <h3>{item.title[locale]}</h3>
+                <p>{item.text[locale]}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="about-advantages" id="about-advantages">
         <div className="about-section-heading">
           <p className="about-section-eyebrow">{text.advantagesEyebrow}</p>
@@ -906,92 +867,43 @@ export default async function AboutPage({
         </div>
       </section>
 
-      <section className="about-factory">
-        <div className="about-section-heading">
-          <p className="about-section-eyebrow">{text.factoryEyebrow}</p>
-          <h2>{text.factory}</h2>
-        </div>
-        <p className="about-section-copy">{text.factoryText}</p>
-        <div className="about-factory-grid">
-          {factoryItems.map((item) => (
-            <article className="about-factory-card" key={item.title.en}>
-              <div className="about-factory-image-wrap">
-                <Image
-                  alt={item.title[locale]}
-                  className="about-factory-image"
-                  fill
-                  preview
-                  sizes="(min-width: 1024px) 26vw, (min-width: 768px) 42vw, 100vw"
-                  src={item.image}
-                  unoptimized={item.image.startsWith("http")}
-                />
-              </div>
-              <div className="about-factory-label">{item.title[locale]}</div>
-            </article>
-          ))}
-        </div>
-      </section>
+      <SourceFactorySection
+        description={t(locale, sourceFactorySectionCopy.description)}
+        eyebrow={t(locale, sourceFactorySectionCopy.eyebrow)}
+        id="about-source-factory"
+        items={factoryItems}
+        locale={locale}
+        title={t(locale, sourceFactorySectionCopy.title)}
+      />
 
-      <section className="about-certificate" id="about-certificate">
-        <div className="about-certificate-copy">
-          <div className="about-section-heading">
-            <p className="about-section-eyebrow">{text.certificateEyebrow}</p>
-            <h2>{text.certificate}</h2>
-          </div>
-          <p>{t(locale, aboutCertificateCopy.description)}</p>
-        </div>
+      <CertificatesSection
+        collapseLabel={t(locale, certificateSectionCopy.collapseLabel)}
+        description={t(locale, certificateSectionCopy.description)}
+        dialogLabel={t(locale, certificateSectionCopy.dialogLabel)}
+        expandLabel={t(locale, certificateSectionCopy.expandLabel)}
+        eyebrow={t(locale, certificateSectionCopy.eyebrow)}
+        id="about-certificate"
+        items={certificateItems}
+        title={t(locale, certificateSectionCopy.title)}
+      />
 
-        <AboutCertificateGallery
-          dialogLabel={text.viewCertificate}
-          items={certificateItems}
-        />
-      </section>
+      <CooperationPartnersSection
+        description={t(locale, cooperationPartnersSectionCopy.description)}
+        eyebrow={t(locale, cooperationPartnersSectionCopy.eyebrow)}
+        id="about-cooperation-partners"
+        items={partnerItems}
+        locale={locale}
+        title={t(locale, cooperationPartnersSectionCopy.title)}
+      />
 
-      <section className="about-partners">
-        <div className="about-section-heading">
-          <p className="about-section-eyebrow">{text.partnersEyebrow}</p>
-          <h2>{text.partners}</h2>
-        </div>
-        <p className="about-section-copy">{text.partnersText}</p>
-        <div className="about-partner-grid">
-          {partnerItems.map((item) => (
-            <article className="about-partner-card" key={item.image}>
-              <div className="about-partner-logo-wrap">
-                <Image
-                  alt={item.label[locale]}
-                  className="about-partner-logo"
-                  fill
-                  sizes="(min-width: 1024px) 13vw, (min-width: 768px) 22vw, 42vw"
-                  src={item.image}
-                  unoptimized={item.image.endsWith(".svg")}
-                />
-              </div>
-              {/* <span>{item.label[locale]}</span> */}
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="about-advantages">
-        <div className="about-section-heading">
-          <p className="about-section-eyebrow">{text.shippingEyebrow}</p>
-          <h2>{text.shipping}</h2>
-        </div>
-        <p className="about-section-copy">{text.shippingText}</p>
-        <div className="about-advantage-grid">
-          {milestoneItems.map((item) => (
-            <article className="about-advantage-card" key={item.year}>
-              <div className="about-advantage-copy">
-                <p className="about-milestone-year">{item.year}</p>
-                <h3>{item.title[locale]}</h3>
-                <p>{item.text[locale]}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="about-bottom-grid">
+      <section
+        aria-label={t(locale, {
+          en: "Core services, global markets, and company culture",
+          zh: "核心服务、全球市场与企业文化",
+        })}
+        className="about-bottom-grid"
+        id="about-company-details"
+      >
         <article className="about-info-card">
           <div className="about-section-heading">
             <p className="about-section-eyebrow">{text.serviceEyebrow}</p>
@@ -1016,47 +928,63 @@ export default async function AboutPage({
           </div>
         </article>
 
-        <article className="about-info-card">
+        <article className="about-info-card about-trade-card">
           <div className="about-section-heading">
             <p className="about-section-eyebrow">{text.paymentEyebrow}</p>
             <h2>{text.paymentDelivery}</h2>
           </div>
           <p className="about-card-copy">{text.paymentText}</p>
-          <div className="about-shipping-list">
-            {shippingItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div className="about-shipping-item" key={item.label.en}>
-                  <div className="about-shipping-item-head">
-                    <div className="about-shipping-item-icon">
-                      <Icon size={18} strokeWidth={2} />
-                    </div>
-                    <span>{t(locale, item.label)}</span>
-                  </div>
-                  <p>{t(locale, item.text)}</p>
-                </div>
-              );
-            })}
-          </div>
-          <div className="about-payment-delivery-grid">
-            <div className="about-payment-group">
-              <h3>{text.paymentMethods}</h3>
-              <div className="about-payment-chip-list">
-                {paymentMethods.map((item) => (
-                  <span className="about-payment-chip" key={item.key}>
-                    {item.label}
-                  </span>
-                ))}
-              </div>
+          <div className="about-trade-block">
+            <div className="about-trade-block-heading">
+              <h3>
+                {t(locale, { en: "Market coverage", zh: "市场覆盖" })}
+              </h3>
             </div>
-            <div className="about-payment-group">
-              <h3>{text.deliveryMethods}</h3>
-              <div className="about-payment-chip-list">
-                {deliveryMethods.map((item) => (
-                  <span className="about-payment-chip" key={item.key}>
-                    {item.label}
-                  </span>
-                ))}
+            <div className="about-shipping-list">
+              {shippingItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div className="about-shipping-item" key={item.label.en}>
+                    <div className="about-shipping-item-head">
+                      <div className="about-shipping-item-icon">
+                        <Icon size={18} strokeWidth={2} />
+                      </div>
+                      <span>{t(locale, item.label)}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="about-trade-block about-trade-methods">
+            <div className="about-trade-block-heading">
+              <h3>
+                {t(locale, {
+                  en: "Payment and shipping",
+                  zh: "付款与运输",
+                })}
+              </h3>
+            </div>
+            <div className="about-payment-delivery-grid">
+              <div className="about-payment-group">
+                <h4>{text.paymentMethods}</h4>
+                <div className="about-payment-chip-list">
+                  {paymentMethods.map((item) => (
+                    <span className="about-payment-chip" key={item.key}>
+                      {item.label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="about-payment-group">
+                <h4>{text.deliveryMethods}</h4>
+                <div className="about-payment-chip-list">
+                  {deliveryMethods.map((item) => (
+                    <span className="about-payment-chip" key={item.key}>
+                      {item.label}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -1070,7 +998,7 @@ export default async function AboutPage({
           <p className="about-card-copy">
             {t(locale, {
               en: "Our culture turns quality, customer focus, innovation, and responsibility into daily manufacturing behavior.",
-              zh: "企业文化把品质、客户导向、创新和责任，真正落实到日常制造与项目执行细节中。",
+              zh: "我们把品质、客户需求、创新和责任落实到每天的生产和项目沟通中。",
             })}
           </p>
           <div className="about-service-detail-list">
