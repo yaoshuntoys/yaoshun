@@ -65,6 +65,8 @@ NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
 
 `NEXT_PUBLIC_ENABLE_THIRD_PARTY_TRACKING` 留空时默认开启；填 `0` 可关闭 GA/Google Ads 脚本，填 `1` 可显式开启。
 
+Google tag 使用 Consent Mode Advanced：页面加载时默认将分析与广告存储设为 `denied` 并发送无 Cookie 衡量信号；访客接受 Cookie 后才更新为 `granted` 并启用完整衡量。
+
 联系表单会提交到 `POST /api/contact-form`，并仅通过 Resend 发送询盘邮件：
 
 ```bash

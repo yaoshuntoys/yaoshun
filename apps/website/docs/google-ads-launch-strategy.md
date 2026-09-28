@@ -33,7 +33,7 @@
 | 表单错误事件 | `form_submit_error` | 网络或接口错误时触发 |
 | 联系点击事件 | `contact_click` | 页面中带 `data-track-event="contact_click"` 的入口触发 |
 | 归因参数 | `utm_*`、`gclid`、`gbraid`、`wbraid`、`msclkid` | 保存 first touch / last touch 到浏览器本地存储 |
-| Consent Mode | `ad_storage`、`analytics_storage`、`ad_user_data`、`ad_personalization` | 用户接受 Cookie 后才加载第三方追踪脚本 |
+| Consent Mode | `ad_storage`、`analytics_storage`、`ad_user_data`、`ad_personalization` | 默认 denied 并发送无 Cookie 衡量；接受后更新为 granted |
 
 代码位置：
 
@@ -102,7 +102,7 @@ GOOGLE_SITE_VERIFICATION=
 1. 不要把 SMTP 密码、Resend API Key、邮箱授权码写入广告文档、广告后台备注或公开仓库。
 2. Vercel Production 环境变量更新后必须重新部署。
 3. 部署后用 Tag Assistant 检查 Google tag 是否触发。
-4. 用户未接受 Cookie 时，第三方追踪不加载，这是当前站点的隐私策略；测试转化时必须先点击 Cookie Accept。
+4. 用户未接受 Cookie 时，Google tag 以 Consent Mode Advanced 的 denied 状态发送无 Cookie 衡量；测试完整 GA/Ads 转化与 Cookie 写入时仍需先点击 Cookie Accept。
 
 ## 5. Google Ads 转化配置
 
@@ -772,7 +772,7 @@ Yaoshun 的网站定位是 B2B 工厂询盘，不应将广告定位为“面向�
 | `Website Lead - Quote Form` 是 Primary conversion | ☐ |
 | GA4 `generate_lead` 如导入，设置为 Secondary | ☐ |
 | 生产环境 Google Ads ID 与 Conversion label 正确 | ☐ |
-| Cookie Accept 后 Google tag 正常加载 | ☐ |
+| Google tag 在默认 denied 状态加载，Cookie Accept 后更新为 granted | ☐ |
 | 首页表单测试成功并收到邮件 | ☐ |
 | Contact 表单测试成功并收到邮件 | ☐ |
 | Tag Assistant 可看到 Google Ads conversion 事件 | ☐ |

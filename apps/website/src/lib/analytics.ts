@@ -19,6 +19,8 @@ declare global {
 type AnalyticsValue = string | number | boolean;
 type AnalyticsParams = Record<string, AnalyticsValue>;
 
+export const googleTrackingReadyEventName = 'google-tracking-ready';
+
 function normalizeDatasetKey(key: string): string {
   return key
     .replace(/^track/, '')
@@ -46,7 +48,6 @@ export function trackEvent(eventName: string, params: AnalyticsParams = {}) {
   if (
     typeof window === 'undefined'
     || typeof window.gtag !== 'function'
-    || readCookieConsentStatus() !== 'granted'
   ) {
     return;
   }

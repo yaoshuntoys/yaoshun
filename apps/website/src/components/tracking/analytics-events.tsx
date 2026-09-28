@@ -3,7 +3,12 @@
 import {usePathname, useSearchParams} from 'next/navigation';
 import {useEffect} from 'react';
 
-import {buildTrackedDatasetParams, trackEvent, trackPageView} from '@/lib/analytics';
+import {
+  buildTrackedDatasetParams,
+  googleTrackingReadyEventName,
+  trackEvent,
+  trackPageView,
+} from '@/lib/analytics';
 import {buildCampaignEventParams, recordCampaignAttribution} from '@/lib/campaign-attribution';
 
 export function AnalyticsEvents() {
@@ -14,7 +19,22 @@ export function AnalyticsEvents() {
 
   useEffect(() => {
     const attribution = recordCampaignAttribution();
-    trackPageView(currentPath, undefined, buildCampaignEventParams(attribution));
+    let pageViewSent = false;
+    const sendPageView = () => {
+      if (pageViewSent || typeof window.gtag !== 'function') {
+        return;
+      }
+
+      pageViewSent = true;
+      trackPageView(currentPath, undefined, buildCampaignEventParams(attribution));
+    };
+
+    sendPageView();
+    window.addEventListener(googleTrackingReadyEventName, sendPageView);
+
+    return () => {
+      window.removeEventListener(googleTrackingReadyEventName, sendPageView);
+    };
   }, [currentPath]);
 
   useEffect(() => {

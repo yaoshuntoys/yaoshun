@@ -100,6 +100,10 @@ export const privacyContent = {
           zh: "我们可能使用 Google Analytics 与 Google Ads 标签进行页面浏览和事件衡量、广告系列归因、已提交线索的转化追踪，以及落地页效果评估。这些工具可能处理 Cookie、设备信息、页面 URL、来源页面、广告系列标识、同意状态和事件数据。",
         },
         {
+          en: "Before analytics or advertising storage consent is granted, Google tags may send limited, cookieless measurements with storage disabled. Analytics and advertising cookies are written, and full measurement is enabled, only after the relevant consent is granted.",
+          zh: "在取得分析或广告存储同意之前，Google 标签可能会在存储功能关闭的状态下发送有限的无 Cookie 衡量信号。只有在取得相关同意后，才会写入分析或广告 Cookie 并启用完整衡量。",
+        },
+        {
           en: "Where analytics or advertising consent is active, we may keep first-party campaign attribution in browser storage, such as UTM parameters, click identifiers, referrers, first landing page, and last campaign touch, so submitted inquiries can be matched with advertising and search performance at a business level.",
           zh: "在分析或广告同意生效的情况下，我们可能在浏览器本地保存第一方广告归因信息，例如 UTM 参数、点击标识、来源页面、首次落地页和最近一次广告触点，以便将提交的询盘与广告和搜索表现进行业务层面的匹配。",
         },

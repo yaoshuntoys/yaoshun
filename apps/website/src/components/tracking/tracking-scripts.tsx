@@ -3,7 +3,12 @@
 import Script from 'next/script';
 import {useSyncExternalStore} from 'react';
 
-import {readCookieConsentStatus, subscribeToCookieConsent} from '@/lib/cookie-consent';
+import {
+  readCookieConsentStatus,
+  subscribeToCookieConsent,
+  type CookieConsentStatus,
+} from '@/lib/cookie-consent';
+import {googleTrackingReadyEventName} from '@/lib/analytics';
 import {googleAdsId, googleAnalyticsId} from '@/lib/site-config';
 
 function resolveThirdPartyTrackingEnabled() {
@@ -22,16 +27,24 @@ function resolveThirdPartyTrackingEnabled() {
 
 const enableThirdPartyTracking = resolveThirdPartyTrackingEnabled();
 
-function buildTrackingBootstrap() {
+function buildTrackingBootstrap(consentStatus: CookieConsentStatus | null) {
   const configs = [googleAnalyticsId, googleAdsId].filter(Boolean)
     .map((id) => `gtag('config', '${id}', ${id === googleAnalyticsId ? "{send_page_view: false}" : '{}'});`)
     .join('\n');
+  const grantedConsentUpdate = consentStatus === 'granted'
+    ? `
+    gtag('consent', 'update', {
+      ad_personalization: 'granted',
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      analytics_storage: 'granted'
+    });`
+    : '';
 
   return `
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     window.gtag = gtag;
-    gtag('js', new Date());
     gtag('consent', 'default', {
       ad_personalization: 'denied',
       ad_storage: 'denied',
@@ -39,13 +52,10 @@ function buildTrackingBootstrap() {
       analytics_storage: 'denied',
       wait_for_update: 500
     });
-    gtag('consent', 'update', {
-      ad_personalization: 'granted',
-      ad_storage: 'granted',
-      ad_user_data: 'granted',
-      analytics_storage: 'granted'
-    });
+    ${grantedConsentUpdate}
+    gtag('js', new Date());
     ${configs}
+    window.dispatchEvent(new Event('${googleTrackingReadyEventName}'));
   `;
 }
 
@@ -66,14 +76,10 @@ export function TrackingScripts() {
     return null;
   }
 
-  if (consentStatus !== 'granted') {
-    return null;
-  }
-
   return (
     <>
       <Script id="google-tracking-bootstrap" strategy="afterInteractive">
-        {buildTrackingBootstrap()}
+        {buildTrackingBootstrap(consentStatus)}
       </Script>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${trackingId}`} strategy="lazyOnload" />
     </>
