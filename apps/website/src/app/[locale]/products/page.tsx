@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
 import "@/styles/pages/products.css";
-import {
-  ArrowRight,
-  Boxes,
-  PackageCheck,
-  ShieldCheck,
-  Wrench,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "@/components/media/smart-image";
 import Link from "next/link";
 
-import { PageHero } from "@/components/sections/page-hero";
 import { ProductsCatalogClient } from "@/components/products/products-catalog-client";
-import { ProductsFeaturedCarousel } from "@/components/products/products-featured-carousel";
 import { StructuredData } from "@/components/seo/structured-data";
 import { productsPageContent } from "@/content/site";
 import { buildPageMetadata } from "@/lib/metadata";
@@ -21,7 +13,6 @@ import {
   getProductPiecesLabel,
   getProductPriceLabel,
   getCatalogSeoKeywords,
-  getProductsFeaturedRailCatalog,
   getShowcaseCatalog,
 } from "@/lib/site-data";
 import { productsPageAssets } from "@/content/pages/products";
@@ -32,32 +23,17 @@ export const dynamic = "force-static";
 
 function copy(locale: "en" | "zh") {
   return {
-    heroEyebrow: t(locale, { en: "Yaoshun Source Factory Products", zh: "尧顺源头工厂产品" }),
     heroTitle: t(locale, {
       en: "Fort Building Kits For Kids",
       zh: "儿童堡垒拼搭套装",
     }),
-    heroTitleLead: t(locale, {en: "Fort Building", zh: "堡垒拼搭"}),
-    heroTitleBlue: t(locale, {en: "Kits", zh: "套装"}),
-    heroTitleOrange: t(locale, {en: "For Kids", zh: "产品目录"}),
     heroText: t(locale, {
       en: "Explore fort building kits for kids in multiple piece counts, colors and packaging options. Yaoshun supplies wholesale fort building kits with OEM/ODM, private-label packaging and custom configurations for toy brands, retailers and importers.",
       zh: "浏览尧顺东莞源头工厂的搭建玩具、定制玩具、益智拼接套装与可定制产品系列，背后由安全材料方案、玩具 OEM/ODM、定制化开发能力和稳定制造体系提供支持。",
     }),
-    heroAlt: t(locale, {
-      en: "yaoshun toys product collection hero visual",
-      zh: "yaoshun toys 产品系列主视觉",
-    }),
-    featuredEyebrow: t(locale, { en: "FEATURED COLLECTION", zh: "精选系列" }),
-    featuredTitle: t(locale, {
-      en: "Source-Factory Fort Building Toy And Kit Sets",
-      zh: "源头工厂搭建DIY玩具套装",
-    }),
     categories: t(locale, { en: "Categories", zh: "分类" }),
     allProducts: t(locale, { en: "All Products", zh: "全部产品" }),
     viewDetails: t(locale, { en: "View details", zh: "查看详情" }),
-    browseCatalog: t(locale, {en: "Browse Catalog", zh: "浏览目录"}),
-    customService: t(locale, {en: "Custom Fort Building Kit Service", zh: "堡垒拼搭套装定制服务"}),
     customTitle: t(locale, {
       en: "Looking for Custom Toys From A Source Factory?",
       zh: "正在寻找源头工厂定制玩具？",
@@ -98,15 +74,6 @@ export default async function ProductsPage({
   const text = copy(locale);
   const catalog = getShowcaseCatalog();
 
-  const featuredRail = getProductsFeaturedRailCatalog();
-  const featuredRailItems = featuredRail.map((item) => ({
-    id: item.product.productId,
-    href: productPath(locale, item.product.productId),
-    image: item.images[0] || productsPageAssets.fallbackImage,
-    label: item.label,
-    summary: item.summary,
-    bestseller: item.bestseller,
-  }));
   const catalogItems = catalog.map((item) => ({
     productId: item.product.productId,
     label: item.label,
@@ -165,74 +132,6 @@ export default async function ProductsPage({
   return (
     <div className="products-page">
       <StructuredData data={structuredData} />
-      <PageHero
-        backgroundClassName="products-hero-background"
-        backgroundImageClassName="products-hero-background-image"
-        backgroundSrc="/site/misc/product-bg.webp"
-        copyClassName="products-hero-copy"
-        gridClassName="products-hero-grid"
-        innerClassName="products-hero-inner"
-        sectionClassName="products-hero"
-      >
-        <p className="products-hero-eyebrow">{text.heroEyebrow}</p>
-        <h1 className="products-hero-title">
-          <span>{text.heroTitleLead}</span>
-          <span>
-            <span className="hero-blue-word">{text.heroTitleBlue}</span>{" "}
-            <span className="hero-orange-word">{text.heroTitleOrange}</span>
-          </span>
-        </h1>
-        <p className="products-hero-text">{text.heroText}</p>
-
-        <div className="page-hero-actions">
-          <Link className="hero-primary-cta" href={`${productsHref}#products-catalog`}>
-            <span>{text.browseCatalog}</span>
-            <ArrowRight size={16} strokeWidth={2.25} />
-          </Link>
-          <Link className="hero-secondary-cta" href={solutionsHref}>
-            <span>{text.customService}</span>
-            <span className="hero-secondary-dot" />
-          </Link>
-        </div>
-
-        <div className="hero-feature-strip">
-          {[
-            {
-              title: { en: "Safe Material Options", zh: "安全材料可选" },
-              icon: ShieldCheck,
-            },
-            {
-              title: { en: "OEM/ODM Catalog Review", zh: "OEM/ODM 目录评估" },
-              icon: Boxes,
-            },
-            {
-              title: { en: "Packaging & Sampling", zh: "包装与打样支持" },
-              icon: Wrench,
-            },
-            {
-              title: { en: "Batch Delivery Planning", zh: "批量交付规划" },
-              icon: PackageCheck,
-            },
-          ].map((item) => {
-            const Icon = item.icon;
-            return (
-              <article key={item.title.en} className="hero-feature-item">
-                <div className="hero-feature-icon">
-                  <Icon size={21} strokeWidth={1.95} />
-                </div>
-                <p>{t(locale, item.title)}</p>
-              </article>
-            );
-          })}
-        </div>
-      </PageHero>
-
-      <section className="products-featured">
-        <p className="products-featured-eyebrow">{text.featuredEyebrow}</p>
-        <h2 className="products-featured-title">{text.featuredTitle}</h2>
-
-        <ProductsFeaturedCarousel items={featuredRailItems} locale={locale} />
-      </section>
 
       <ProductsCatalogClient
         catalog={catalogItems}

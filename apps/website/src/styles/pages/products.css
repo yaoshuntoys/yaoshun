@@ -85,6 +85,7 @@
 .products-page {
   display: grid;
   gap: 6rem;
+  padding-block: 2.25rem 2.75rem;
 }
 
 .products-hero,
@@ -842,6 +843,7 @@
 
   .products-page {
     gap: 2.95rem;
+    padding-block: 1.25rem 1.75rem;
   }
 
   .products-hero {

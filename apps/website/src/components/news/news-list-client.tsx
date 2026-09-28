@@ -140,7 +140,7 @@ function formatShowingText(
 
 export function NewsListClient({articles, locale, text}: NewsListClientProps) {
   const [query, setQuery] = useState<SearchParamMap>({});
-  const pageSize = 6;
+  const pageSize = 9;
   const newsHref = localizedPath(locale, "news");
 
   useEffect(() => {
@@ -205,6 +205,14 @@ export function NewsListClient({articles, locale, text}: NewsListClientProps) {
     const href = `${newsHref}${buildQueryString(query, next)}`;
     window.history.pushState(null, "", href);
     setQuery(nextQuery);
+
+    if (event.currentTarget.dataset.trackEvent === "pagination_click") {
+      requestAnimationFrame(() => {
+        document
+          .getElementById("news-list")
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
   }
 
   return (

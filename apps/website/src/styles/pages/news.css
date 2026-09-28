@@ -4,6 +4,7 @@
   display: grid;
   gap: 5rem;
   min-width: 0;
+  padding-block: 2.25rem 2.75rem;
 }
 
 .news-hero {
@@ -471,7 +472,7 @@
   display: flex;
   justify-content: center;
   gap: 0.55rem;
-  margin-top: 0.45rem;
+  margin: 1.4rem 0 1.6rem;
 }
 
 .news-pagination a,
@@ -503,6 +504,7 @@
 
   .news-page {
     gap: 2.65rem;
+    padding-block: 1.25rem 1.75rem;
   }
 
   .news-hero {
@@ -631,7 +633,7 @@
   }
 
   .news-pagination {
-    margin-top: 0.2rem;
+    margin: 1.1rem 0 1.25rem;
   }
 
 }

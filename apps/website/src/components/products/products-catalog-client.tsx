@@ -78,7 +78,7 @@ export function ProductsCatalogClient({
   text,
 }: ProductsCatalogClientProps) {
   const [query, setQuery] = useState<SearchParamMap>({});
-  const pageSize = 6;
+  const pageSize = 9;
 
   useEffect(() => {
     const syncFromUrl = () => {
@@ -138,6 +138,14 @@ export function ProductsCatalogClient({
     const href = `${productsHref}${buildQueryString(query, next)}`;
     window.history.pushState(null, "", href);
     setQuery(nextQuery);
+
+    if (event.currentTarget.dataset.trackEvent === "pagination_click") {
+      requestAnimationFrame(() => {
+        document
+          .getElementById("products-catalog")
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
   }
 
   const currentQuery = {
