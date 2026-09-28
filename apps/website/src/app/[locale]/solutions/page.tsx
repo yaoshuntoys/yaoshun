@@ -57,7 +57,7 @@ type CapabilityCardSeed = {
 const proofCards = [
   {
     icon: CircleDotDashed,
-    value: { en: "Since 2016", zh: "16+ 年" },
+    value: { en: "Since 2016", zh: "2016 年起" },
     label: { en: "Toy & plastic manufacturing", zh: "玩具与塑胶制造" },
   },
   {
@@ -67,13 +67,13 @@ const proofCards = [
   },
   {
     icon: Boxes,
-    value: { en: "One-stop", zh: "一站式" },
-    label: { en: "Project workflow", zh: "项目协作流程" },
+    value: { en: "One-stop", zh: "全流程" },
+    label: { en: "Project workflow", zh: "从开模到交付" },
   },
   {
     icon: ShieldCheck,
-    value: { en: "Global-ready", zh: "全球安全" },
-    label: { en: "Reports and delivery support", zh: "检测与交付支持" },
+    value: { en: "Global-ready", zh: "出口配套" },
+    label: { en: "Reports and delivery support", zh: "检测与出口交付" },
   },
 ] as const;
 
@@ -84,14 +84,14 @@ const capabilityTabs = [
   },
   {
     label: { en: "Extrusion Workshop", zh: "挤出车间" },
-    meta: { en: "Profile and tube production", zh: "管材与型材生产" },
+    meta: { en: "Profile and tube production", zh: "管材与异型材生产" },
   },
   {
-    label: { en: "PCBA Custom Service", zh: "PCBA定制服务" },
+    label: { en: "PCBA Custom Service", zh: "PCBA 定制服务" },
     meta: { en: "Board assembly and testing", zh: "板卡组装与测试" },
   },
   {
-    label: { en: "Assembly / Packaging Test", zh: "组/包装测试" },
+    label: { en: "Assembly / Packaging Test", zh: "组装与包装测试" },
     meta: { en: "Assembly and delivery check", zh: "组装包装与交付复核" },
   },
   {
@@ -108,73 +108,73 @@ const capabilityCards: CapabilityCardSeed[] = [
   {
     icon: FlaskConical,
     image: solutionsEquipmentImages.hwaChin210se,
-    title: { en: "Injection Molding Production", zh: "注塑成型与复产验证" },
+    title: { en: "Injection Molding Production", zh: "注塑成型与复产" },
     text: {
       en: "Hwa Chin, Haitian, and Victor Taichung horizontal injection machines turn approved tooling into repeatable toy parts.",
-      zh: "华钦、海天、台中精机等卧式注塑机承接试模与复产，把通过验证的模具转化为稳定塑件。",
+      zh: "华钦、海天、台中精机等卧式注塑机用于试模和复产，验证后的模具可继续生产玩具塑件。",
     },
     bullets: [
-      { en: "125SE to 220T machine coverage", zh: "125SE 至 220T 机台覆盖" },
-      { en: "Automatic take-out support", zh: "自动取件辅机配合" },
+      { en: "125SE to 220T machine coverage", zh: "125SE 至 220T 注塑机" },
+      { en: "Automatic take-out support", zh: "自动取件" },
       { en: "Trial molding parameter tuning", zh: "试模参数验证" },
-      { en: "Repeatable plastic-part output", zh: "塑件稳定复产" },
+      { en: "Repeatable plastic-part output", zh: "塑件批量复产" },
     ],
   },
   {
     icon: Factory,
     image: solutionsEquipmentImages.extrusionWorkshopOverview,
-    title: { en: "Extrusion Workshop For Tubes And Profiles", zh: "挤出车间管材与型材生产" },
+    title: { en: "Extrusion Workshop For Tubes And Profiles", zh: "管材与异型材挤出" },
     text: {
       en: "The workshop overview shows extrusion lines, control stations, cooling sections, and line-side turnover areas for steady plastic tube and profile production.",
-      zh: "车间总览展示挤出产线、控制工位、冷却段和线边周转区，支撑塑胶管材与异型材稳定生产。",
+      zh: "现场可看到挤出线、控制工位、冷却段和线边周转区，主要用于管材与异型材生产。",
     },
     bullets: [
       { en: "Plastic tube and profile extrusion", zh: "塑胶管材与异型材挤出" },
-      { en: "Line-side cooling and haul-off", zh: "线边冷却与牵引衔接" },
-      { en: "Workshop turnover arrangement", zh: "车间周转动线安排" },
-      { en: "Batch production preparation", zh: "批量生产前置准备" },
+      { en: "Line-side cooling and haul-off", zh: "冷却与牵引" },
+      { en: "Workshop turnover arrangement", zh: "成品周转" },
+      { en: "Batch production preparation", zh: "批量生产准备" },
     ],
   },
   {
     icon: Settings2,
     image: solutionsEquipmentImages.pcbaDesignRd,
-    title: { en: "PCBA Design And R&D Custom Service", zh: "PCBA设计与研发定制服务" },
+    title: { en: "PCBA Design And R&D Custom Service", zh: "PCBA 设计与研发定制" },
     text: {
       en: "From PCB layout and board making to SMT placement and complete product solution customization, PCBA work starts with design and R&D review before assembly.",
-      zh: "从 PCB 设计、PCB 制板到 SMT 贴片和整机方案定制，PCBA 服务先围绕设计研发评估，再进入贴装与功能验证。",
+      zh: "从 PCB 设计、制板、SMT 贴片到整机方案，先确认设计和工艺，再安排贴装与功能测试。",
     },
     bullets: [
-      { en: "PCB Design", zh: "PCB设计" },
-      { en: "PCB Board Making", zh: "PCB制板" },
-      { en: "SMT Placement", zh: "SMT贴片" },
-      { en: "Tailor-made PCBA Solution", zh: "方案定制" },
+      { en: "PCB Design", zh: "PCB 设计" },
+      { en: "PCB Board Making", zh: "PCB 制板" },
+      { en: "SMT Placement", zh: "SMT 贴片" },
+      { en: "Tailor-made PCBA Solution", zh: "整机方案定制" },
     ],
     tiles: [
       {
         image: solutionsEquipmentImages.pcbaDesignRd,
-        title: { en: "PCB Design", zh: "PCB设计" },
+        title: { en: "PCB Design", zh: "PCB 设计" },
       },
       {
         image: solutionsEquipmentImages.pcbaBoardMaking,
-        title: { en: "PCB Board Making", zh: "PCB制板" },
+        title: { en: "PCB Board Making", zh: "PCB 制板" },
       },
       {
         image: solutionsEquipmentImages.pcbaSmtPlacement,
-        title: { en: "SMT Placement", zh: "SMT贴片" },
+        title: { en: "SMT Placement", zh: "SMT 贴片" },
       },
       {
         image: solutionsEquipmentImages.pcbaTailorMadeSolution,
-        title: { en: "Tailor-made PCBA Solution", zh: "方案定制" },
+        title: { en: "Tailor-made PCBA Solution", zh: "整机方案定制" },
       },
     ],
   },
   {
     icon: PackageCheck,
     image: solutionsWorkshopImages.overview,
-    title: { en: "Assembly, Packaging And Testing Workflow", zh: "组装、包装与测试流程" },
+    title: { en: "Assembly, Packaging And Testing Workflow", zh: "组装、包装与测试" },
     text: {
       en: "The plastic-electronics workshop view shows organized workstations for assembly, checking, packaging preparation, and shipment-ready review.",
-      zh: "塑胶电子车间图展示整齐工位，可承接产品组装、过程检查、包装准备和出货前复核。",
+      zh: "塑胶电子车间按组装、检查、包装和出货复核安排工位，现场流程清楚。",
     },
     bullets: [
       { en: "Product assembly workstation", zh: "产品组装工位" },
@@ -186,16 +186,16 @@ const capabilityCards: CapabilityCardSeed[] = [
   {
     icon: Factory,
     image: solutionsEquipmentImages.moldWorkshop,
-    title: { en: "In-House Mold Making Workflow", zh: "自有模具制作动线" },
+    title: { en: "In-House Mold Making Workflow", zh: "自有模具加工" },
     text: {
       en: "The tooling shop brings turning, milling, drilling, wire cutting, and EDM preparation into one visible workflow.",
-      zh: "模具车间集中车、铣、钻、线切割与电火花准备，形成从钢料到试模前的自有加工动线。",
+      zh: "模具车间配有车、铣、钻、线切割和电火花等工位，从钢料加工到试模前准备都在厂内完成。",
     },
     bullets: [
-      { en: "Tooling schedule coordination", zh: "模具加工排程协同" },
+      { en: "Tooling schedule coordination", zh: "模具加工排程" },
       { en: "Steel preparation and fixture setup", zh: "钢料准备与工装定位" },
-      { en: "Multiple machining stations", zh: "多工位加工衔接" },
-      { en: "Trial-molding readiness", zh: "面向试模交付准备" },
+      { en: "Multiple machining stations", zh: "车、铣、钻等工序" },
+      { en: "Trial-molding readiness", zh: "试模前准备" },
     ],
   },
   {
@@ -204,13 +204,13 @@ const capabilityCards: CapabilityCardSeed[] = [
     title: { en: "Extrusion Equipment And Line Control", zh: "挤出设备与产线控制" },
     text: {
       en: "The equipment image shows a complete extrusion line with control panels, drive sections, forming areas, and downstream handling equipment in a bright workshop.",
-      zh: "设备图展示完整挤出产线，包含控制面板、驱动段、成型区域和后段辅助设备，适合说明挤出设备配置能力。",
+      zh: "照片能看到控制面板、驱动段、成型区和后段设备，便于了解整条挤出线的配置。",
     },
     bullets: [
-      { en: "Multi-zone equipment control", zh: "多区段设备控制" },
+      { en: "Multi-zone equipment control", zh: "多区段控制" },
       { en: "Extrusion forming and output", zh: "挤出成型与出料" },
       { en: "Line setup and process tuning", zh: "产线调试与工艺调整" },
-      { en: "Workshop-scale equipment layout", zh: "车间级设备布局" },
+      { en: "Workshop-scale equipment layout", zh: "整线设备布局" },
     ],
   },
 ] as const;
@@ -221,12 +221,12 @@ const coreFocusCards = [
     image: solutionsPageImages.education,
     title: { en: "STEM Toy R&D", zh: "STEM 益智玩具研发" },
     text: {
-      en: "Focused on educational toys and building block assembly programs.",
-      zh: "聚焦益智玩具与积木拼装产品，支持结构研发与生产导入。",
+      en: "Focused on educational toys and building block assembly, from structure development to production.",
+      zh: "围绕益智玩具与积木拼装产品，参与结构开发和生产导入。",
     },
     points: [
       { en: "Educational toy development", zh: "益智玩具开发" },
-      { en: "In-house tooling support", zh: "自有模具协同" },
+      { en: "In-house tooling support", zh: "自有模具配套" },
       { en: "Drawing or sample based", zh: "来图来样开发" },
     ],
   },
@@ -235,13 +235,13 @@ const coreFocusCards = [
     image: solutionsPageImages.retail,
     title: { en: "Interlocking & DIY Toys", zh: "拼接玩具与 DIY 定制" },
     text: {
-      en: "Custom interlocking sets, themed structures, and hands-on play products.",
-      zh: "支持拼接玩具、主题套装与 DIY 玩法产品定制。",
+      en: "Custom interlocking sets by theme, piece count, and play pattern, with sampling support.",
+      zh: "可按主题、件数和玩法定制拼接玩具套装，并支持打样复产。",
     },
     points: [
       { en: "Custom shapes and themes", zh: "造型与主题定制" },
-      { en: "Hands-on DIY creativity", zh: "强调动手创造体验" },
-      { en: "Trial to repeat orders", zh: "试单到复产" },
+      { en: "Hands-on DIY creativity", zh: "动手拼搭玩法" },
+      { en: "Trial to repeat orders", zh: "试单与复产" },
     ],
   },
   {
@@ -252,19 +252,19 @@ const coreFocusCards = [
       zh: "塑料制品、管材与塑胶电子外壳定制",
     },
     text: {
-      en: "Beyond toy sets, we also support PVC/PU/ABS/PC/nylon tubing, custom profiles, plastic structural parts, and selected AI toy plastic electronic housings when the project requires coordinated manufacturing.",
-      zh: "除玩具套装外，我们也支持 PVC/PU/ABS/PC/尼龙管材、塑胶异型材、塑料结构件以及部分 AI 玩具塑胶电子外壳定制，满足项目化协同生产需求。",
+      en: "Plastic tubing, profiles, structural parts, and selected electronic housings can be developed together.",
+      zh: "可配套管材、异型材、塑料结构件和塑胶电子外壳项目。",
     },
     points: [
       {
         en: "Plastic structural components and accessory parts",
-        zh: "塑料结构件与配套辅件",
+        zh: "结构件与配套辅件",
       },
       {
         en: "PVC, PU, ABS, PC, and nylon material routes",
-        zh: "PVC、PU、ABS、PC 与尼龙材料方案",
+        zh: "管材与异型材",
       },
-      { en: "Packaging-ready product combinations", zh: "可直接进入包装组合" },
+      { en: "Packaging-ready product combinations", zh: "电子外壳配套" },
     ],
   },
   {
@@ -272,24 +272,24 @@ const coreFocusCards = [
     image: solutionsPageImages.oem,
     title: {
       en: "Eco-Safe Materials With Strict QC",
-      zh: "环保材料与严格质量控制",
+      zh: "材料与质量控制",
     },
     text: {
-      en: "We prioritize eco-friendly, non-toxic material routes and use raw-material checks, in-process control, automated inspection, and final review to keep products safe, durable, and shipment-ready.",
-      zh: "我们优先采用环保无毒材料方案，并通过原料确认、过程管控、自动化检测和终检复核，确保产品安全、耐用、适合稳定出货。",
+      en: "Confirm materials and check incoming parts, production stages, and shipment status with records.",
+      zh: "按项目要求确认材料，并检查来料、生产过程和出货状态。",
     },
     points: [
       {
         en: "Durable and non-toxic material options",
-        zh: "耐用且环保无毒的材料选择",
+        zh: "材料与环保要求",
       },
       {
         en: "Automated inspection and traceable QC",
-        zh: "自动化检测与可追溯质控",
+        zh: "自动化检测记录",
       },
       {
         en: "Third-party reports and market-entry files",
-        zh: "第三方检测与市场准入资料",
+        zh: "第三方检测资料",
       },
     ],
   },
@@ -310,7 +310,7 @@ const equipmentCards = [
     title: { en: "Video Communication PCBA Programming And Testing", zh: "视频通讯板程序烧录与功能测试" },
     text: {
       en: "Supports video communication board program flashing, functional testing, connector review, inspection checkpoints, and anti-static packaging before delivery.",
-      zh: "支持视频通讯板程序烧录、功能测试、接口复核、检测点确认，并在出货前配合防静电包装。",
+      zh: "用于视频通讯板程序烧录和功能测试，出货前再核对接口、检测点并做好防静电包装。",
     },
   },
   {
@@ -319,7 +319,7 @@ const equipmentCards = [
     title: { en: "12-Layer 2.0 mm PCB Assembly", zh: "12层 2.0mm PCB 板组装" },
     text: {
       en: "The angled board view shows a 12-layer PCB with 2.0 mm board thickness, mounted chips, capacitors, connectors, and functional module areas.",
-      zh: "斜角板卡图展示 12层 PCB、2.0mm 板厚、芯片、电容、连接器和功能模块区域。",
+      zh: "板卡为 12 层、板厚 2.0mm，可看到芯片、电容、连接器和功能模块分区。",
     },
   },
   {
@@ -328,7 +328,7 @@ const equipmentCards = [
     title: { en: "Double-Sided SMT And Interface Integration", zh: "双面贴片与接口端子集成" },
     text: {
       en: "The interface close-up supports double-sided SMT projects with USB ports, pin headers, sockets, and external connector integration.",
-      zh: "接口与排针区域特写，适合双面贴片项目中 USB、排针、插座和外部连接端子的集成确认。",
+      zh: "特写可看到 USB、排针、插座等接口，便于确认双面贴片后的连接端子布局。",
     },
   },
   {
@@ -337,7 +337,7 @@ const equipmentCards = [
     title: { en: "0201 SMD And Dense Component Placement", zh: "0201 SMD 与密集元件贴装" },
     text: {
       en: "SMT details cover 0201 SMD placement, more than 15 IC types, over 150 chip component types, soldering quality, and inspection requirements.",
-      zh: "SMT 细节覆盖 0201 SMD 贴装、15种以上 IC、150种以上 CHIP 料、焊接品质和检验要求。",
+      zh: "细节图可看到 0201 SMD、15 种以上 IC、150 种以上 CHIP 料，以及焊接和检验要求。",
     },
   },
   {
@@ -346,7 +346,7 @@ const equipmentCards = [
     title: { en: "0.3 mm BGA Pitch And Circuit Review", zh: "0.3mm BGA 球距与线路复核" },
     text: {
       en: "The circuit close-up supports board-level review for 0.3 mm BGA pitch, 12 BGA packages, dense traces, pads, and product integration.",
-      zh: "线路局部图支持 0.3mm BGA 球距、12颗 BGA、密集走线、焊盘和整机集成前的板级复核。",
+      zh: "局部线路用于核对 0.3mm BGA 球距、12 颗 BGA、密集走线和焊盘，便于整机集成前检查。",
     },
   },
   {
@@ -355,7 +355,7 @@ const equipmentCards = [
     title: { en: "Mold Machining Workshop", zh: "模具加工车间" },
     text: {
       en: "A tooling area that gathers turning, drilling, milling, wire-cut, and EDM preparation around mold delivery.",
-      zh: "车床、钻床、铣床、线切割与电火花工位集中布置，围绕模具交付节奏形成自有加工动线。",
+      zh: "车、铣、钻、线切割和电火花工位集中在模具车间，按模具加工顺序衔接。",
     },
   },
   {
@@ -364,7 +364,7 @@ const equipmentCards = [
     title: { en: "C6140A Engine Lathe", zh: "C6140A 普通车床" },
     text: {
       en: "Used for round mold inserts, sleeves, guide pins, end faces, and inner-hole turning before mold assembly.",
-      zh: "用于圆形镶件、轴套、导柱类零件的外圆、端面和内孔车削，是模具基础加工工位。",
+      zh: "用于圆形镶件、轴套和导柱等零件的外圆、端面及内孔加工。",
     },
   },
   {
@@ -373,7 +373,7 @@ const equipmentCards = [
     title: { en: "CN6150B Long-Bed Lathe", zh: "CN6150B 长床车床" },
     text: {
       en: "The longer bed supports shaft-like mold components, longer fixtures, and auxiliary parts that need stable turning.",
-      zh: "机身行程更长，适合较长轴类、杆件、夹具和模具辅助件的稳定车削加工。",
+      zh: "床身较长，适合加工长轴、杆件、夹具和模具辅助件。",
     },
   },
   {
@@ -382,7 +382,7 @@ const equipmentCards = [
     title: { en: "Turret Milling Machine", zh: "炮塔铣床" },
     text: {
       en: "Handles mold plate surfaces, steps, slots, and datum faces so fitting and later drilling stay aligned.",
-      zh: "用于模板平面、台阶、槽位和定位面的铣削，为装配和后续钻孔提供加工基准。",
+      zh: "用于加工模板平面、台阶、槽位和定位面，为装配和后续钻孔留出基准。",
     },
   },
   {
@@ -391,7 +391,7 @@ const equipmentCards = [
     title: { en: "Z3035x10 Radial Drilling Machine", zh: "Z3035x10 摇臂钻床" },
     text: {
       en: "Used for mold-base holes, threaded holes, water-line preparation, and flexible positioning on larger workpieces.",
-      zh: "用于模架孔位、螺纹孔、冷却水路和较大工件的钻孔定位，摇臂结构便于调整。",
+      zh: "用于模架孔位、螺纹孔和冷却水路钻孔，大件定位和调整更方便。",
     },
   },
   {
@@ -400,7 +400,7 @@ const equipmentCards = [
     title: { en: "Extrusion Line Overview", zh: "挤出产线整体布局" },
     text: {
       en: "Multiple extrusion lines, control stations, cooling and haul-off sections are arranged in a clean workshop for steady plastic profile and tube production.",
-      zh: "多条挤出线、控制工位、冷却牵引与现场周转区集中布置，支撑塑胶管材和异型材稳定生产。",
+      zh: "现场可看到多条挤出线、控制工位、冷却牵引段和周转区，用于管材与异型材生产。",
     },
   },
   {
@@ -409,7 +409,7 @@ const equipmentCards = [
     title: { en: "Packaging And Turnover Station", zh: "包装与周转工位" },
     text: {
       en: "Finished rolls, cartons, pallets, and blue turnover baskets are handled beside the extrusion lines to connect production, checking, and packing.",
-      zh: "卷材、纸箱、托盘与蓝色周转筐靠近产线布置，方便挤出成品整理、复核与包装衔接。",
+      zh: "卷材、纸箱、托盘和蓝色周转筐放在产线旁，方便成品整理、复核和包装。",
     },
   },
   {
@@ -421,7 +421,7 @@ const equipmentCards = [
     },
     text: {
       en: "White extruded rods are gathered at the line-side table for length sorting, visual checks, and order-ready turnover.",
-      zh: "白色挤出杆件在产线旁集中出料，便于长度整理、外观复核和订单周转。",
+      zh: "白色挤出杆件在产线旁集中出料，现场可进行长度整理、外观检查和订单周转。",
     },
   },
   {
@@ -430,7 +430,7 @@ const equipmentCards = [
     title: { en: "Injection Molding Workshop", zh: "注塑生产车间" },
     text: {
       en: "A production line with horizontal injection machines, automatic take-out arms, drying hoppers, and material handling.",
-      zh: "多台卧式注塑机搭配自动取件机械手、料斗干燥和供料系统，形成稳定注塑生产线。",
+      zh: "多台卧式注塑机配合自动取件机械手、料斗干燥和供料系统，组成连续生产线。",
     },
   },
   {
@@ -439,7 +439,7 @@ const equipmentCards = [
     title: { en: "Hwa Chin 125SE Injection Machine", zh: "华钦 125SE 注塑机" },
     text: {
       en: "Suited to small and medium toy parts, connectors, and structural components with automatic take-out support.",
-      zh: "适合中小型玩具塑件、连接件和结构件成型，前端配合自动取件提升稳定性。",
+      zh: "适合中小型玩具塑件、连接件和结构件成型，自动取件可减少人工转运。",
     },
   },
   {
@@ -448,7 +448,7 @@ const equipmentCards = [
     title: { en: "Hwa Chin 210SE Injection Machine", zh: "华钦 210SE 注塑机" },
     text: {
       en: "Handles larger or heavier toy parts; the image shows take-out automation and turnover baskets at the machine side.",
-      zh: "用于更大尺寸或更高克重的玩具部件，图片中可见自动取件机械手与周转筐。",
+      zh: "适合更大尺寸或克重更高的玩具部件，机旁配有自动取件机械手和周转筐。",
     },
   },
   {
@@ -457,7 +457,7 @@ const equipmentCards = [
     title: { en: "Haitian 220T Injection Machine", zh: "海天 220T 注塑机" },
     text: {
       en: "Supports larger molds and higher clamping requirements for batch production of bigger plastic structures.",
-      zh: "承担较大模具和较高锁模需求的塑件成型，适合批量复产与较大结构件。",
+      zh: "用于较大模具和较高锁模需求的塑件成型，适合大结构件批量生产。",
     },
   },
   {
@@ -469,7 +469,7 @@ const equipmentCards = [
     },
     text: {
       en: "A horizontal injection cell for stable repeat production and flexible mold changes across toy part sizes.",
-      zh: "用于稳定复产和灵活换模，适配不同玩具零件尺寸与材料工艺。",
+      zh: "用于玩具零件复产和换模生产，可根据零件尺寸和材料调整工艺。",
     },
   },
 ] as const;
@@ -478,22 +478,22 @@ const processSteps = [
   {
     icon: ClipboardCheck,
     step: "01",
-    title: { en: "Project Brief And Fast Review", zh: "项目需求与快速评估" },
+    title: { en: "Project Brief And Fast Review", zh: "项目需求与初步评估" },
     text: {
       en: "We clarify target market, toy category, quantity plan, packaging direction, and technical scope first, with most first replies sent within 24 hours.",
-      zh: "先确认目标市场、玩具类别、数量计划、包装方向与技术范围。资料完整的询盘通常可在 24 小时内收到初步回复。",
+      zh: "先确认目标市场、玩具类别、数量、包装和技术要求；资料齐全的询盘通常可在 24 小时内收到初步回复。",
     },
     details: [
       { en: "Target market and product category", zh: "目标市场与产品类别" },
       {
         en: "Quantity plan and delivery expectation",
-        zh: "数量计划与交期预期",
+        zh: "数量与交期",
       },
       { en: "Packaging and technical boundaries", zh: "包装方向与技术范围" },
     ],
     output: {
       en: "Requirement list and first feasibility reply",
-      zh: "需求清单与初步可行性回复",
+      zh: "需求清单与初步评估",
     },
   },
   {
@@ -501,16 +501,16 @@ const processSteps = [
     step: "02",
     title: {
       en: "Tooling, Structure And Material Design",
-      zh: "模具、结构与材料设计",
+      zh: "模具、结构与材料方案",
     },
     text: {
       en: "Drawing-based or sample-based development defines assembly logic, mold route, material selection, component strength, and safety assumptions.",
-      zh: "围绕拼装逻辑、开模路径、材料方案、部件强度与安全要求，完成来图来样开发与结构设计。",
+      zh: "根据图纸或样品，确认拼装方式、开模路径、材料、部件强度和安全要求。",
     },
     details: [
-      { en: "Assembly logic and structure review", zh: "拼装逻辑与结构评估" },
-      { en: "Tooling route and material selection", zh: "开模路径与材料选择" },
-      { en: "Strength and safety assumptions", zh: "强度与安全要求预判" },
+      { en: "Assembly logic and structure review", zh: "拼装方式与结构检查" },
+      { en: "Tooling route and material selection", zh: "开模路径与材料" },
+      { en: "Strength and safety assumptions", zh: "强度与安全要求" },
     ],
     output: {
       en: "Practical structure and tooling proposal",
@@ -523,19 +523,19 @@ const processSteps = [
     title: { en: "Sampling And Trial Validation", zh: "打样与试单验证" },
     text: {
       en: "Samples or small-batch trial orders are used to review fit, appearance, playability, durability, and packaging assumptions before scale-up.",
-      zh: "通过样品或小批量试单验证装配匹配、外观、玩法、耐用性与包装假设，再推进后续量产。",
+      zh: "通过样品或小批量试单检查装配、外观、玩法、耐用性和包装，再决定是否放量。",
     },
     details: [
       {
         en: "Fit, appearance, and playability check",
-        zh: "装配、外观与玩法验证",
+        zh: "装配、外观与玩法检查",
       },
       { en: "Durability and material feedback", zh: "耐用性与材料反馈" },
-      { en: "Trial order before bulk production", zh: "小批量试单再放量" },
+      { en: "Trial order before bulk production", zh: "小批试单后再放量" },
     ],
     output: {
       en: "Approved sample and revision list",
-      zh: "确认样品与修订清单",
+      zh: "确认样品与修改清单",
     },
   },
   {
@@ -543,11 +543,11 @@ const processSteps = [
     step: "04",
     title: {
       en: "Production And Quality Control",
-      zh: "从原料到终检的量产控制",
+      zh: "量产与质量控制",
     },
     text: {
       en: "Production runs through raw material checks, in-process inspection, automated review, assembly control, and final outgoing inspection before shipment.",
-      zh: "量产阶段执行原料确认、过程检验、自动化复核、组装控制与出货终检，帮助提升批次稳定性。",
+      zh: "量产时检查原料、生产过程、自动化检测、组装和出货状态，并保留批次记录。",
     },
     details: [
       { en: "Raw material and color confirmation", zh: "原料与颜色确认" },
@@ -559,7 +559,7 @@ const processSteps = [
     ],
     output: {
       en: "Stable batch production and QC record",
-      zh: "稳定量产与质检记录",
+      zh: "批次记录与出货放行",
     },
   },
   {
@@ -567,11 +567,11 @@ const processSteps = [
     step: "05",
     title: {
       en: "Reports, Packaging And Export Handoff",
-      zh: "检测资料、包装与出口交接",
+      zh: "检测资料、包装与出货",
     },
     text: {
       en: "We coordinate packing details, third-party reports, buyer filing documents, and export handoff so the order can move forward with less friction.",
-      zh: "协同包装细节、第三方检测、客户归档资料与出口交接，让订单推进更顺畅。",
+      zh: "确认包装细节、第三方检测和客户归档资料，完成出口交接。",
     },
     details: [
       { en: "Packing method and carton details", zh: "包装方式与箱规细节" },
@@ -579,7 +579,7 @@ const processSteps = [
         en: "Third-party reports and filing files",
         zh: "第三方检测与归档资料",
       },
-      { en: "Export delivery handoff", zh: "出口交付交接" },
+      { en: "Export delivery handoff", zh: "出口出货交接" },
     ],
     output: {
       en: "Shipment-ready files and delivery handoff",
@@ -590,31 +590,31 @@ const processSteps = [
 
 const processReadinessItems = [
   {
-    title: { en: "Demand Freeze", zh: "需求冻结" },
+    title: { en: "Demand Freeze", zh: "需求确认" },
     text: {
       en: "Confirm product scope, target market, quantity rhythm, packaging direction, and cost boundary before tooling or batch scheduling.",
-      zh: "确认产品范围、目标市场、数量节奏、包装方向与成本边界，再进入开模或批量排程。",
+      zh: "在开模或排产前，确认产品范围、目标市场、数量、包装和成本边界。",
     },
   },
   {
     title: { en: "Sample Approval", zh: "样品确认" },
     text: {
       en: "Review structure, color, touch, play pattern, assembly fit, and safety risk points against the approved sample.",
-      zh: "围绕确认样品核对结构、颜色、手感、玩法、装配匹配与安全风险点。",
+      zh: "以确认样品为准，核对结构、颜色、手感、玩法、装配和安全风险。",
     },
   },
   {
     title: { en: "Production Files", zh: "生产资料" },
     text: {
       en: "Prepare BOM, tooling status, material batch notes, inspection standards, packing method, carton specs, and buyer files.",
-      zh: "准备 BOM、模具状态、材料批次、检验标准、包装方式、箱规与客户归档资料。",
+      zh: "整理 BOM、模具状态、材料批次、检验标准、包装方式、箱规和客户资料。",
     },
   },
   {
-    title: { en: "Risk Closure", zh: "风险闭环" },
+    title: { en: "Risk Closure", zh: "问题确认" },
     text: {
       en: "Lock open issues, responsible owners, change records, and go/no-go decisions before releasing bulk production.",
-      zh: "量产前锁定未决问题、责任人、变更记录与是否放行生产的判断。",
+      zh: "量产前明确未解决的问题、负责人、变更记录和是否放行。",
     },
   },
 ] as const;
@@ -626,7 +626,7 @@ const workshopHighlights = [
     title: { en: "SMT Mounting", zh: "SMT贴片" },
     text: {
       en: "Supports circuit-board mounting coordination for plastic electronics projects before functional assembly.",
-      zh: "支持塑胶电子项目的线路板贴装衔接，为后续功能件装配做准备。",
+      zh: "线路板先完成 SMT 贴片，再进入功能件组装。",
     },
   },
   {
@@ -635,7 +635,7 @@ const workshopHighlights = [
     title: { en: "DIP Insertion", zh: "DIP插件" },
     text: {
       en: "Through-hole insertion and line-side handling connect electronic components with stable production flow.",
-      zh: "插件作业与现场流转衔接电子元件处理，服务稳定的生产推进。",
+      zh: "DIP 插件与现场周转相连，方便电子元件继续流转到下一工序。",
     },
   },
   {
@@ -644,21 +644,21 @@ const workshopHighlights = [
     title: { en: "Product Assembly", zh: "成品组装" },
     text: {
       en: "Plastic housings, electronic parts, and final assembly stations connect sampling, repeat production, and shipment handoff.",
-      zh: "塑胶外壳、电子部件与成品组装工位衔接打样、复产和出货交接。",
+      zh: "塑胶外壳、电子部件和成品组装工位相互衔接，适合打样、复产和出货前整理。",
     },
   },
 ] as const;
 
 const workshopFlowItems = [
   {
-    title: { en: "Electronic Board Preparation", zh: "电子板准备" },
-    text: { en: "SMT mounting and DIP insertion", zh: "SMT贴片与DIP插件" },
+    title: { en: "Electronic Board Preparation", zh: "电子板加工" },
+    text: { en: "SMT mounting and DIP insertion", zh: "SMT 贴片与 DIP 插件" },
   },
   {
-    title: { en: "Plastic-Electronic Matching", zh: "塑胶电子匹配" },
+    title: { en: "Plastic-Electronic Matching", zh: "外壳与电子件匹配" },
     text: {
       en: "Plastic housings, parts, and electronic modules",
-      zh: "塑胶外壳、结构件与电子模块",
+      zh: "塑胶外壳、结构件和电子模块",
     },
   },
   {
@@ -669,10 +669,10 @@ const workshopFlowItems = [
     },
   },
   {
-    title: { en: "Repeat-Order Handoff", zh: "复产交付" },
+    title: { en: "Repeat-Order Handoff", zh: "复产与交付" },
     text: {
       en: "Inspection-ready handling for batch delivery",
-      zh: "面向批量交付的待检流转",
+      zh: "批量订单的待检流转",
     },
   },
 ] as const;
@@ -709,31 +709,31 @@ const reasonCards = [
     },
     text: {
       en: "One team connects requirements, development, tooling, production, and delivery.",
-      zh: "同一团队衔接需求、研发、模具、生产与交付。",
+      zh: "从需求、研发、模具到生产和交付，由同一团队跟进。",
     },
   },
   {
     icon: Globe2,
-    title: { en: "Domestic And Overseas Markets", zh: "国内外市场同步覆盖" },
+    title: { en: "Domestic And Overseas Markets", zh: "国内外订单经验" },
     text: {
       en: "Domestic and export project experience supports smoother buyer communication.",
-      zh: "覆盖国内外市场，支持出口项目沟通与资料协同。",
+      zh: "熟悉国内外项目沟通，出口资料协同更直接。",
     },
   },
   {
     icon: TimerReset,
-    title: { en: "Trial-To-Bulk Planning", zh: "试单到量产规划" },
+    title: { en: "Trial-To-Bulk Planning", zh: "从试单到量产" },
     text: {
       en: "Sampling, small trial orders, and repeat production are planned as one continuous path.",
-      zh: "从打样、小批量试单到复产放量，交期与产能按项目节奏推进。",
+      zh: "打样、小批试单和复产按同一项目节奏安排。",
     },
   },
   {
     icon: PackageCheck,
-    title: { en: "Reports And Export Handoff", zh: "检测资料与出口交接" },
+    title: { en: "Reports And Export Handoff", zh: "检测资料与出货交接" },
     text: {
       en: "Packing details, third-party reports, buyer files, and export handoff are coordinated before shipment.",
-      zh: "包装细节、第三方检测、客户归档资料与出口交接统一协同。",
+      zh: "包装细节、检测报告和客户资料在出货前一并核对。",
     },
   },
 ] as const;
@@ -829,7 +829,7 @@ export default async function SolutionsPage({
       }),
       description: localized(locale, {
         en: "Yaoshun provides toy OEM/ODM custom development from product design, mold development, injection molding, assembly, quality control, packaging, and export delivery.",
-        zh: "尧顺提供玩具 OEM/ODM 定制化开发，覆盖产品设计、模具开发、注塑成型、组装、品控、包装与出口交付。",
+        zh: "尧顺从产品设计、模具开发和注塑，到组装、品控、包装与出口交付，提供玩具 OEM/ODM 定制开发。",
       }),
       provider: {
         "@type": ["Organization", "LocalBusiness"],
@@ -883,7 +883,7 @@ export default async function SolutionsPage({
             <p className="solutions-hero-text">
               {localized(locale, {
               en: "For brand and sourcing teams, Yaoshun connects requirement review, structure design, mold machining, injection molding, assembly, quality control, packaging, and export documents into one toy OEM/ODM delivery workflow.",
-                zh: "面向品牌与采购团队，尧顺把需求评估、结构设计、模具加工、注塑生产、组装质检、包装与出口资料串联成清晰的玩具 OEM/ODM 交付流程。",
+                zh: "面向品牌与采购团队，尧顺从需求评估、结构设计、开模和注塑，到组装质检、包装与出口资料，按项目节点推进玩具 OEM/ODM 订单。",
               })}
             </p>
             <div className="page-hero-actions">
@@ -930,10 +930,10 @@ export default async function SolutionsPage({
         <SectionHeader
           highlight={{ en: "Solution", zh: "解决方案" }}
           locale={locale}
-          title={{ en: "Our Solution Capabilities", zh: "我们的解决方案能力" }}
+          title={{ en: "Our Solution Capabilities", zh: "生产与定制能力" }}
           text={{
             en: "A real equipment-led view of injection molding, extrusion, PCBA, assembly, packaging, testing, and tooling support.",
-            zh: "按真实设备与车间画面展示注塑、挤出、PCBA、组装包装测试和模具制作能力。",
+            zh: "现场设备和车间照片，分别展示注塑、挤出、PCBA、组装包装测试与模具加工。",
           }}
         />
 
@@ -974,8 +974,8 @@ export default async function SolutionsPage({
           locale={locale}
           title={{ en: "Equipment & Capacity Showcase", zh: "设备与产能展示" }}
           text={{
-            en: "Real workshop images explain what each machine does in tooling, trial molding, and batch production.",
-            zh: "用真实车间图片说明每台设备在开模、试模与批量生产中的作用。",
+            en: "Workshop photos show whether each machine is used for tooling, molding, extrusion, or PCBA work.",
+            zh: "设备照片按工序整理，方便了解它们分别用于模具加工、注塑、挤出还是 PCBA。",
           }}
         />
         <div className="solutions-equipment-panel">
@@ -1022,7 +1022,7 @@ export default async function SolutionsPage({
           }}
           text={{
             en: "A focused view of the workshop capability behind SMT mounting, DIP insertion, product assembly, plastic-part turnover, and repeat-order delivery.",
-            zh: "重点展示塑胶电子生产车间能力，覆盖SMT贴片、DIP插件、成品组装、塑胶件周转与稳定复产交付。",
+            zh: "现场展示塑胶电子车间的 SMT 贴片、DIP 插件、成品组装、塑胶件周转和复产交付。",
           }}
         />
 
@@ -1065,7 +1065,7 @@ export default async function SolutionsPage({
               <strong>
                 {localized(locale, {
                   en: "SMT, DIP And Assembly Production Site",
-                  zh: "SMT贴片、DIP插件与组装生产现场",
+                  zh: "SMT 贴片、DIP 插件与组装生产现场",
                 })}
               </strong>
             </div>
@@ -1081,13 +1081,13 @@ export default async function SolutionsPage({
             <h3>
               {localized(locale, {
                 en: "Workshop layout for SMT mounting, DIP insertion, and product assembly.",
-                zh: "覆盖SMT贴片、DIP插件与组装的生产车间布局。",
+                zh: "SMT 贴片、DIP 插件和成品组装在同一车间衔接。",
               })}
             </h3>
             <p>
               {localized(locale, {
                 en: "The workshop connects electronic-board work, plastic housing matching, assembly stations, operating aisles, turnover baskets, and inspection-ready handling into one practical production scene.",
-                zh: "车间把电子板作业、塑胶外壳匹配、组装工位、操作通道、周转筐与待检流转放在同一生产场景中，服务打样、复产和项目交付。",
+                zh: "现场可以看到电子板作业、塑胶外壳匹配、组装工位、操作通道、周转筐和待检区，便于打样、复产及出货交接。",
               })}
             </p>
             <div
@@ -1185,13 +1185,13 @@ export default async function SolutionsPage({
             <h3 id="solutions-core-reasons-title">
               {localized(locale, {
                 en: "Why Buyers Choose Yaoshun",
-                zh: "客户选择尧顺的原因",
+                zh: "为什么与尧顺合作",
               })}
             </h3>
             <p>
               {localized(locale, {
                 en: "Source-factory capability, deeper customization, safer materials, and reliable delivery build long-term cooperation.",
-                zh: "源头工厂能力、定制深度与安全交付，是长期合作的基础。",
+                zh: "从研发、开模到生产和交付，由同一团队持续跟进。",
               })}
             </p>
           </div>
@@ -1229,18 +1229,18 @@ export default async function SolutionsPage({
         <div className="solutions-process-board">
           <aside className="solutions-process-summary">
             <span>
-              {localized(locale, { en: "Cooperation Rhythm", zh: "协作节奏" })}
+              {localized(locale, { en: "Cooperation Rhythm", zh: "合作节奏" })}
             </span>
             <h3>
               {localized(locale, {
                 en: "Clear checkpoints before every production decision.",
-                zh: "每一次投入生产前，都先把关键节点确认清楚。",
+                zh: "每个生产节点，都先把关键事项确认清楚。",
               })}
             </h3>
             <p>
               {localized(locale, {
                 en: "Before tooling, trial production, bulk release, and shipment, we align the decision basis, owner, documents, and next action so the project does not move forward with unclear assumptions.",
-                zh: "开模、试产、量产放行与出货前，先把判断依据、责任人、资料与下一步动作对齐，避免项目带着不清晰的假设继续推进。",
+                zh: "开模、试产、量产放行和出货前，确认依据、负责人、资料和下一步动作，项目再继续推进。",
               })}
             </p>
             <div
@@ -1271,7 +1271,7 @@ export default async function SolutionsPage({
                 <span>
                   {localized(locale, {
                     en: "First reply for most inquiries",
-                    zh: "多数询盘初步回复",
+                    zh: "多数询盘初步回复时间",
                   })}
                 </span>
               </div>
@@ -1293,7 +1293,7 @@ export default async function SolutionsPage({
                 <span>
                   {localized(locale, {
                     en: "Reports and export coordination",
-                    zh: "检测与出口协同",
+                    zh: "检测资料与出口",
                   })}
                 </span>
               </div>
@@ -1352,8 +1352,8 @@ export default async function SolutionsPage({
             </h2>
             <p>
               {localized(locale, {
-                en: "Our team can help review the structure, tooling route, packaging plan, and delivery steps for your project.",
-                zh: "我们的团队可协助评估结构、开模路径、包装方案与交付步骤。",
+              en: "Our team can help review the structure, tooling route, packaging plan, and delivery steps for your project.",
+              zh: "我们的团队可协助评估结构、开模路径、包装方案与交付步骤。",
               })}
             </p>
             <div className="solutions-ready-actions">

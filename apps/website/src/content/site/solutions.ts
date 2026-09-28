@@ -8,7 +8,7 @@ export const solutionsContent = {
     },
     description: {
       en: 'Custom fort building kit OEM/ODM from product configuration and tooling to sampling, private-label packaging, testing, assembly and export delivery.',
-      zh: '尧顺提供堡垒拼搭玩具、STEM搭建套装与拼插玩具 OEM/ODM，覆盖设计、开模、打样、注塑、包装与出货交接。'
+      zh: '尧顺从设计、开模、打样和注塑，到包装与出货交接，提供堡垒拼搭玩具、STEM 搭建套装与拼插玩具 OEM/ODM。'
     },
     keywords: {
       en: [

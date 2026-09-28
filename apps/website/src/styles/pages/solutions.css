@@ -883,6 +883,7 @@
 }
 
 .solutions-core-body h3 {
+  min-height: 2.28rem;
   color: #183577;
   font-family: var(--font-heading);
   font-size: 1rem;
@@ -892,6 +893,7 @@
 }
 
 .solutions-core-body p {
+  min-height: 2.38rem;
   color: #5f70a0;
   font-size: 0.78rem;
   font-weight: 650;
