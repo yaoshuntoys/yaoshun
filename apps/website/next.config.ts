@@ -1,5 +1,8 @@
 import type { NextConfig } from "next";
 
+const publicBlobOrigin =
+  "https://7j7davvujdsmddan.public.blob.vercel-storage.com";
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   experimental: {
@@ -41,6 +44,23 @@ const nextConfig: NextConfig = {
           {
             key: "Cache-Control",
             value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/media/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=2592000, stale-while-revalidate=604800",
+          },
+          {
+            key: "CDN-Cache-Control",
+            value: "public, max-age=2592000, stale-while-revalidate=604800",
+          },
+          {
+            key: "x-vercel-enable-rewrite-caching",
+            value: "1",
           },
         ],
       },
@@ -123,6 +143,14 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: "/media/:path*",
+        destination: `${publicBlobOrigin}/yaoshun-assets/:path*`,
+      },
+    ];
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 30,
@@ -132,7 +160,8 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "**.public.blob.vercel-storage.com",
+        hostname: "www.yaoshuntoys.com",
+        pathname: "/media/**",
       },
       {
         protocol: "https",

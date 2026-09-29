@@ -521,7 +521,7 @@
         "zh": "定制夜光彩盒"
       },
       "type": "text",
-      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/1.webp",
+      "image": "https://www.yaoshuntoys.com/media/products-q92/2026050708/1.webp",
       "text": {
         "en": "The 130-piece glow-theme box can be updated with the customer logo, product name, artwork text, and packing marks.",
         "zh": "130件夜光主题彩盒可替换客户 LOGO、产品名称、图案文字和包装标识。"
@@ -533,7 +533,7 @@
         "zh": "夜光搭建效果"
       },
       "type": "text",
-      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/3.webp",
+      "image": "https://www.yaoshuntoys.com/media/products-q92/2026050708/3.webp",
       "text": {
         "en": "The green build reference shows the finished fort shape clearly and keeps the glow-theme look consistent.",
         "zh": "绿色搭建效果图能清楚展示成品结构，也和夜光主题包装保持一致。"
@@ -545,7 +545,7 @@
         "zh": "报价信息"
       },
       "type": "text",
-      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/5.webp",
+      "image": "https://www.yaoshuntoys.com/media/products-q92/2026050708/5.webp",
       "text": {
         "en": "We confirm the 130-piece mix, packing content, manual layout, and accessory details before quoting.",
         "zh": "报价前先确认130件配置、包装内容、说明书排版和配件细节。"
@@ -580,40 +580,40 @@
     }
   ],
   "images": [
-    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/1.webp",
-    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/2.webp",
-    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/3.webp",
-    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/4.webp",
-    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/5.webp",
-    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/6.webp"
+    "https://www.yaoshuntoys.com/media/products-q92/2026050708/1.webp",
+    "https://www.yaoshuntoys.com/media/products-q92/2026050708/2.webp",
+    "https://www.yaoshuntoys.com/media/products-q92/2026050708/3.webp",
+    "https://www.yaoshuntoys.com/media/products-q92/2026050708/4.webp",
+    "https://www.yaoshuntoys.com/media/products-q92/2026050708/5.webp",
+    "https://www.yaoshuntoys.com/media/products-q92/2026050708/6.webp"
   ],
   "media": {
     "main": [
       {
         "type": "image",
-        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/1.webp"
+        "url": "https://www.yaoshuntoys.com/media/products-q92/2026050708/1.webp"
       }
     ],
     "detail": [
       {
         "type": "image",
-        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/2.webp"
+        "url": "https://www.yaoshuntoys.com/media/products-q92/2026050708/2.webp"
       },
       {
         "type": "image",
-        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/3.webp"
+        "url": "https://www.yaoshuntoys.com/media/products-q92/2026050708/3.webp"
       },
       {
         "type": "image",
-        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/4.webp"
+        "url": "https://www.yaoshuntoys.com/media/products-q92/2026050708/4.webp"
       },
       {
         "type": "image",
-        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/5.webp"
+        "url": "https://www.yaoshuntoys.com/media/products-q92/2026050708/5.webp"
       },
       {
         "type": "image",
-        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050708/6.webp"
+        "url": "https://www.yaoshuntoys.com/media/products-q92/2026050708/6.webp"
       }
     ]
   },

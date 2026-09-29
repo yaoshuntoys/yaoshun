@@ -25,8 +25,8 @@ const curatedProductsFeaturedRailIds = [
 ] as const;
 
 const productsFeaturedRailImageOverrides: Partial<Record<string, string>> = {
-  "2026050705": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050705/2.webp",
-  "2026050706": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050706/3.webp",
+  "2026050705": "https://www.yaoshuntoys.com/media/products-q92/2026050705/2.webp",
+  "2026050706": "https://www.yaoshuntoys.com/media/products-q92/2026050706/3.webp",
 };
 
 function extractPieceCount(product: ProductJson) {

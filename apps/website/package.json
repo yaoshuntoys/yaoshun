@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "next dev --port 9000",
     "build": "next build --webpack",
+    "images:certificates:prepare": "node scripts/prepare-certificate-images.mjs",
+    "images:certificates:upload": "node --env-file=.env.local scripts/prepare-certificate-images.mjs --upload",
     "start": "next start --port 9000",
     "lint": "eslint .",
     "typecheck": "rm -rf .next && next typegen && rm -f tsconfig.tsbuildinfo && tsc --noEmit && rm -rf .next"
@@ -30,6 +32,7 @@
     "eslint-config-next": "16.2.6",
     "playwright": "^1.59.1",
     "postcss": "^8.5.8",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.2.2",
     "typescript": "^6.0.2"
   }

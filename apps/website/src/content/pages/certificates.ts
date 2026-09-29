@@ -1,41 +1,41 @@
 const certificateImage1 =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image.webp";
+  "https://www.yaoshuntoys.com/media/site/about/image.webp";
 const certificateImage2 =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-2.webp";
+  "https://www.yaoshuntoys.com/media/site/about/image-copy-2.webp";
 const certificateImage3 =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-3.webp";
+  "https://www.yaoshuntoys.com/media/site/about/image-copy-3.webp";
 const certificateImage4 =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-4.webp";
+  "https://www.yaoshuntoys.com/media/site/about/image-copy-4.webp";
 const certificateImage5 =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/cert5.webp";
+  "https://www.yaoshuntoys.com/media/site/about/cert5.webp";
 const certificateImage6 =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-5.webp";
+  "https://www.yaoshuntoys.com/media/site/about/image-copy-5.webp";
 const ukDesignRegistration =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/certificates/uk-design-registration-6487034-wgQLVBu551dy5Xc0qxCFBbjRvHKytQ.png";
+  "https://www.yaoshuntoys.com/media/site/about/certificates/uk-design-registration-6487034.webp";
 const eurofinsTestReport =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/certificates/eu-eurofins-test-report-efw726054129-page-01-CJ7REQHvwYfz9iZQ3r8Z6IXIo7QkS5.png";
+  "https://www.yaoshuntoys.com/media/site/about/certificates/eu-eurofins-test-report-efw726054129-page-01.webp";
 const childrensProductCertificate =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/certificates/us-childrens-product-certificate-FlfJ5k7ycMP1Xc0zjCxAwg2r91uHcI.png";
+  "https://www.yaoshuntoys.com/media/site/about/certificates/us-childrens-product-certificate.webp";
 const euipoDesignRegistration =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/certificates/eu-euipo-design-registration-nySjEhL0rSEpZQMTPmf3qZqoAFBpeQ.png";
+  "https://www.yaoshuntoys.com/media/site/about/certificates/eu-euipo-design-registration.webp";
 const qmsCertificateChinese =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/certificates/cn-iso-9001-certificate-page-01-PWR5ZvRCyiyDJVOl1An6GG7HYx0cIA.png";
+  "https://www.yaoshuntoys.com/media/site/about/certificates/cn-iso-9001-certificate-page-01.webp";
 const qmsCertificateEnglish =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/certificates/cn-iso-9001-certificate-page-02-2HAWuXRsWwzdwGbdqG2gBFPzzyhN8w.png";
+  "https://www.yaoshuntoys.com/media/site/about/certificates/cn-iso-9001-certificate-page-02.webp";
 const leyidiTrademarkRegistration =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/certificates/cn-trademark-registration-leyidi-tZw2FiGIeBOCKGn4m6ZVxJPy9zOQFE.png";
+  "https://www.yaoshuntoys.com/media/site/about/certificates/cn-trademark-registration-leyidi.webp";
 const londyTrademarkRegistration =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/certificates/cn-trademark-registration-londy-sn31tMawFt0tXv9yuXVxhjZMCViNGM.png";
+  "https://www.yaoshuntoys.com/media/site/about/certificates/cn-trademark-registration-londy.webp";
 const cccProductCertificate =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/certificates/cn-ccc-product-certificate-o3LwpZiJqQxKn2CxNW7SklNtDQb4MI.png";
+  "https://www.yaoshuntoys.com/media/site/about/certificates/cn-ccc-product-certificate.webp";
 const cccTestReportCover =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/certificates/cn-ccc-test-report-cover-9pderfjF2qY5fIJ3dVVwZ35BcPfDU6.png";
+  "https://www.yaoshuntoys.com/media/site/about/certificates/cn-ccc-test-report-cover.webp";
 const ceCertificateOfCompliance =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/certificates/eu-ce-certificate-of-compliance-RsNPj4XnPIkSvSUbGCeDTOisqvSt7m.png";
+  "https://www.yaoshuntoys.com/media/site/about/certificates/eu-ce-certificate-of-compliance.webp";
 const utilityModelPatent =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/certificates/cn-utility-model-patent-toy-ball-YaiDpTPijyZGifu2KEzpbiJhd8Lkn2.png";
+  "https://www.yaoshuntoys.com/media/site/about/certificates/cn-utility-model-patent-toy-ball.webp";
 const highlightedChildrensProductCertificate =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/certificates/us-childrens-product-certificate-highlighted-tyv8XT7yoxYYRaZCrWj9QuTZXR1Pb4.png";
+  "https://www.yaoshuntoys.com/media/site/about/certificates/us-childrens-product-certificate-highlighted.webp";
 
 export const certificateSectionCopy = {
   eyebrow: {en: "Compliance", zh: "合规资料"},

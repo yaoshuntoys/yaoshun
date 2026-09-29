@@ -1,14 +1,14 @@
 const factoryImage1 =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-7-optimized.webp";
+  "https://www.yaoshuntoys.com/media/site/about/image-copy-7-optimized.webp";
 const factoryImage2 =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/image-copy-8-optimized.webp";
+  "https://www.yaoshuntoys.com/media/site/about/image-copy-8-optimized.webp";
 const factoryImage3 =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions/extrusion-workshop-overview.webp";
+  "https://www.yaoshuntoys.com/media/site/solutions/extrusion-workshop-overview.webp";
 const factoryImage4 = "/site/home/about-factory.webp";
 const factoryImage5 =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about/warehouse.jpg";
+  "https://www.yaoshuntoys.com/media/site/about/warehouse.jpg";
 const factoryImage6 =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions/equipment/injection-molding-workshop-overview.webp";
+  "https://www.yaoshuntoys.com/media/site/solutions/equipment/injection-molding-workshop-overview.webp";
 
 export const sourceFactorySectionCopy = {
   eyebrow: {en: "Manufacturing", zh: "生产制造"},

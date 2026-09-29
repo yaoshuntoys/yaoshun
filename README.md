@@ -23,6 +23,20 @@ pnpm typecheck
 pnpm build
 ```
 
+## 证书图片上传
+
+根目录 `images/` 中的证书图片需要先转换成 WebP，再上传到 Vercel Blob：
+
+```bash
+# 只在本地转换、压缩并规范文件名
+pnpm images:certificates:prepare
+
+# 转换后上传，并自动更新网站中的证书图片 URL
+pnpm images:certificates:upload
+```
+
+上传流程会把图片限制在 1600×1800 像素以内，使用 WebP 质量 86，并采用无随机后缀的英文短横线文件名。上传需要在 `apps/website/.env.local` 中配置 `BLOB_READ_WRITE_TOKEN`。
+
 ## 技术基线
 
 - 包管理：`pnpm` workspace

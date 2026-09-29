@@ -12,6 +12,7 @@ type StaticRequire = {
 };
 
 const DEFAULT_IMAGE_QUALITY = 80;
+const publicMediaOrigin = "https://www.yaoshuntoys.com";
 
 function isRemoteHttpSource(src: ImageProps["src"]) {
   return typeof src === "string" && /^https?:\/\//.test(src);
@@ -36,6 +37,23 @@ function getPreviewSource(src: ImageProps["src"]) {
   return undefined;
 }
 
+function getRuntimeSource(src: ImageProps["src"]) {
+  if (process.env.NODE_ENV !== "development" || typeof src !== "string") {
+    return src;
+  }
+
+  try {
+    const url = new URL(src);
+    if (url.origin !== publicMediaOrigin || !url.pathname.startsWith("/media/")) {
+      return src;
+    }
+
+    return `${url.pathname}${url.search}${url.hash}`;
+  } catch {
+    return src;
+  }
+}
+
 function canUsePlainImage(props: SmartImageProps) {
   const isRemote = isRemoteHttpSource(props.src);
   const hasFill = Boolean(props.fill);
@@ -45,17 +63,22 @@ function canUsePlainImage(props: SmartImageProps) {
 
 export default function SmartImage(props: SmartImageProps) {
   const {preview = false, ...imageProps} = props;
-  const previewSource = preview ? getPreviewSource(imageProps.src) : undefined;
+  const runtimeSource = getRuntimeSource(imageProps.src);
+  const runtimeImageProps =
+    runtimeSource === imageProps.src
+      ? imageProps
+      : {...imageProps, src: runtimeSource};
+  const previewSource = preview ? getPreviewSource(runtimeSource) : undefined;
   const previewProps = previewSource
     ? {"data-image-preview-src": previewSource}
     : {};
-  const bypassOptimization = imageProps.unoptimized ?? false;
+  const bypassOptimization = runtimeImageProps.unoptimized ?? false;
   const nextImageProps =
-    typeof imageProps.quality === "undefined"
-      ? {...imageProps, quality: DEFAULT_IMAGE_QUALITY}
-      : imageProps;
+    typeof runtimeImageProps.quality === "undefined"
+      ? {...runtimeImageProps, quality: DEFAULT_IMAGE_QUALITY}
+      : runtimeImageProps;
 
-  if (canUsePlainImage(imageProps)) {
+  if (canUsePlainImage(runtimeImageProps)) {
     const {
       alt,
       className,
@@ -70,16 +93,16 @@ export default function SmartImage(props: SmartImageProps) {
       src,
       style,
       width,
-    } = imageProps;
+    } = runtimeImageProps;
 
     const plainProps: ImgHTMLAttributes<HTMLImageElement> = {
       alt: alt ?? "",
       className,
       decoding,
       draggable,
-      fetchPriority: fetchPriority ?? (imageProps.priority ? "high" : undefined),
+      fetchPriority: fetchPriority ?? (runtimeImageProps.priority ? "high" : undefined),
       height: typeof height === "number" || typeof height === "string" ? height : undefined,
-      loading: imageProps.priority ? "eager" : loading,
+      loading: runtimeImageProps.priority ? "eager" : loading,
       onError: onError as ImgHTMLAttributes<HTMLImageElement>["onError"],
       onLoad: onLoad as ImgHTMLAttributes<HTMLImageElement>["onLoad"],
       sizes,

@@ -228,7 +228,7 @@ export const aboutContent = {
         en: "Work is organized by milestones, owners, and handoff responsibilities rather than generic department silos.",
         zh: "按里程碑、责任人与交接节点组织执行，而非松散部门协作。",
       },
-      icon: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about-icons/project-driven.svg",
+      icon: "https://www.yaoshuntoys.com/media/site/about-icons/project-driven.svg",
     },
     {
       title: { en: "One Workflow For OEM/ODM", zh: "一条链路承接OEM/ODM" },
@@ -236,7 +236,7 @@ export const aboutContent = {
         en: "From requirement intake to shipment release, key project steps are managed in one consistent workflow.",
         zh: "从需求接收到出货放行，关键项目步骤在同一流程中闭环管理。",
       },
-      icon: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about-icons/oem-odm-workflow.svg",
+      icon: "https://www.yaoshuntoys.com/media/site/about-icons/oem-odm-workflow.svg",
     },
     {
       title: { en: "Global Buyer Communication", zh: "全球客户沟通能力" },
@@ -244,7 +244,7 @@ export const aboutContent = {
         en: "Trade team supports quotation, delivery alignment, and post-delivery follow-up across markets.",
         zh: "外贸团队支持报价沟通、交付对齐与交付后跟进。",
       },
-      icon: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about-icons/global-communication.svg",
+      icon: "https://www.yaoshuntoys.com/media/site/about-icons/global-communication.svg",
     },
     {
       title: { en: "Production Site", zh: "生产现场" },
@@ -252,7 +252,7 @@ export const aboutContent = {
         en: "All processes are organized around stable delivery and long-term collaboration, minimizing information loss across different stages.",
         zh: "所有流程围绕稳定交付与长期协作来组织，减少跨环节信息损耗。",
       },
-      icon: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/about-icons/production-site.svg",
+      icon: "https://www.yaoshuntoys.com/media/site/about-icons/production-site.svg",
     },
   ],
   rndSection: {

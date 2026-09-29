@@ -11,6 +11,27 @@ type PreviewImage = {
 type PreviewOpenEvent = CustomEvent<PreviewImage>;
 
 const previewOpenEventName = "image-preview:open";
+const publicMediaOrigin = "https://www.yaoshuntoys.com";
+
+function getRuntimePreviewSource(src: string) {
+  if (
+    process.env.NODE_ENV !== "development" ||
+    !["localhost", "127.0.0.1", "::1"].includes(window.location.hostname)
+  ) {
+    return src;
+  }
+
+  try {
+    const url = new URL(src, window.location.href);
+    if (url.origin !== publicMediaOrigin || !url.pathname.startsWith("/media/")) {
+      return src;
+    }
+
+    return `${url.pathname}${url.search}${url.hash}`;
+  } catch {
+    return src;
+  }
+}
 
 function getOptimizedImageSource(src: string) {
   try {
@@ -49,7 +70,7 @@ export function ImageLightbox() {
           : null;
       setPreview({
         alt: previewEvent.detail.alt || "",
-        src: previewEvent.detail.src,
+        src: getRuntimePreviewSource(previewEvent.detail.src),
       });
     }
 
@@ -81,7 +102,7 @@ export function ImageLightbox() {
         event.stopPropagation();
         openImagePreview({
           alt: trigger.dataset.imagePreviewAlt || "",
-          src,
+          src: getRuntimePreviewSource(src),
         });
         return;
       }
@@ -93,7 +114,7 @@ export function ImageLightbox() {
         return;
       }
 
-      const src = getOptimizedImageSource(previewSource);
+      const src = getRuntimePreviewSource(getOptimizedImageSource(previewSource));
 
       if (!src) {
         return;

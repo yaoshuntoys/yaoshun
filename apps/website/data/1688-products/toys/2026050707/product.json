@@ -521,7 +521,7 @@
         "zh": "定制 DIY FORTS 彩盒"
       },
       "type": "text",
-      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/1.webp",
+      "image": "https://www.yaoshuntoys.com/media/products-q92/2026050707/1.webp",
       "text": {
         "en": "The color box can be updated with the customer logo, box artwork, make a fort toy product name, build icons, and feature copy.",
         "zh": "彩盒可替换客户 LOGO、盒面画面、产品名称、搭建图标和产品文案。"
@@ -533,7 +533,7 @@
         "zh": "配置与包装"
       },
       "type": "text",
-      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/3.webp",
+      "image": "https://www.yaoshuntoys.com/media/products-q92/2026050707/3.webp",
       "text": {
         "en": "Rod colors, connector colors, connector ball tent piece count, manual content, and packing method are checked before we quote.",
         "zh": "报价前确认杆件颜色、连接球颜色、件数、说明书内容和包装方式。"
@@ -545,7 +545,7 @@
         "zh": "搭建效果"
       },
       "type": "text",
-      "image": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/2.webp",
+      "image": "https://www.yaoshuntoys.com/media/products-q92/2026050707/2.webp",
       "text": {
         "en": "The blue-rod fort reference helps show the expected ball and rod tent structure style before artwork and packing are finalized.",
         "zh": "蓝色杆件堡垒效果图可作为结构参考，方便在定稿包装前确认展示方向。"
@@ -575,35 +575,35 @@
     }
   ],
   "images": [
-    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/1.webp",
-    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/2.webp",
-    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/3.webp",
-    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/4.webp",
-    "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/5.webp"
+    "https://www.yaoshuntoys.com/media/products-q92/2026050707/1.webp",
+    "https://www.yaoshuntoys.com/media/products-q92/2026050707/2.webp",
+    "https://www.yaoshuntoys.com/media/products-q92/2026050707/3.webp",
+    "https://www.yaoshuntoys.com/media/products-q92/2026050707/4.webp",
+    "https://www.yaoshuntoys.com/media/products-q92/2026050707/5.webp"
   ],
   "media": {
     "main": [
       {
         "type": "image",
-        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/1.webp"
+        "url": "https://www.yaoshuntoys.com/media/products-q92/2026050707/1.webp"
       }
     ],
     "detail": [
       {
         "type": "image",
-        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/2.webp"
+        "url": "https://www.yaoshuntoys.com/media/products-q92/2026050707/2.webp"
       },
       {
         "type": "image",
-        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/3.webp"
+        "url": "https://www.yaoshuntoys.com/media/products-q92/2026050707/3.webp"
       },
       {
         "type": "image",
-        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/4.webp"
+        "url": "https://www.yaoshuntoys.com/media/products-q92/2026050707/4.webp"
       },
       {
         "type": "image",
-        "url": "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/2026050707/5.webp"
+        "url": "https://www.yaoshuntoys.com/media/products-q92/2026050707/5.webp"
       }
     ]
   },

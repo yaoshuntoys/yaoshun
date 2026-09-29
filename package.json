@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "pnpm --filter @yaoshun/website dev",
     "dev:website": "pnpm --filter @yaoshun/website dev",
+    "images:certificates:prepare": "pnpm --filter @yaoshun/website images:certificates:prepare",
+    "images:certificates:upload": "pnpm --filter @yaoshun/website images:certificates:upload",
     "lint": "pnpm -r lint",
     "build": "pnpm -r build",
     "typecheck": "pnpm -r typecheck"

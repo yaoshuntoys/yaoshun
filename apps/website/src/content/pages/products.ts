@@ -18,6 +18,6 @@ export const pieceBands: Array<{key: ShowcaseProductSeed["pieceBand"]; label: Lo
 ];
 
 export const productsPageAssets = {
-  fallbackImage: "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/products-q92/1601110728943/1.webp",
+  fallbackImage: "https://www.yaoshuntoys.com/media/products-q92/1601110728943/1.webp",
   lifestyleImage: customSideImage,
 } as const;

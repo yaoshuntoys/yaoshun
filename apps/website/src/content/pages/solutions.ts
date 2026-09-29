@@ -4,11 +4,11 @@ const ourSolution2 = "/site/solutions/ourSolution2.webp";
 const ourSolution3 = "/site/solutions/ourSolution3.webp";
 const ourSolution4 = "/site/solutions/ourSolution4.webp";
 const baseUrl =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions";
+  "https://www.yaoshuntoys.com/media/site/solutions";
 const equipmentBase =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions/equipment";
+  "https://www.yaoshuntoys.com/media/site/solutions/equipment";
 const workshopBase =
-  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions/workshop";
+  "https://www.yaoshuntoys.com/media/site/solutions/workshop";
 export const solutionsPageImages = {
   custom: customImage,
   education: ourSolution1,
