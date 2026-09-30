@@ -5,8 +5,8 @@ export const faqContent = {
       zh: '玩具 OEM/ODM FAQ、起订量与交期 | 尧顺玩具'
     },
     description: {
-      en: 'Answers about MOQ, OEM/ODM, lead time, sampling, packaging, shipment and quality checks for wholesale fort building kits and custom toy projects.',
-      zh: '查看堡垒拼搭玩具、STEM搭建套装与定制玩具项目的 MOQ、交期、打样、OEM/ODM 流程、包装出货和质量节点。'
+      en: 'Answers about fort building kit configurations, OEM/ODM workflow, MOQ, tooling, PCBA, materials, compliance, shipping and after-sales support.',
+      zh: '查看堡垒拼搭套装配置、OEM/ODM 流程、MOQ、开模、PCBA、材质、合规、出货与售后常见问题。'
     },
     keywords: {
       en: [
@@ -15,15 +15,21 @@ export const faqContent = {
         'construction toys wholesale lead time',
         'fort building kit sampling process',
         'toy OEM ODM FAQ',
+        'toy tooling and PCBA FAQ',
+        'toy certificate applicability',
         'packaging shipment FAQ',
-        'quality checkpoint questions'
+        'quality checkpoint questions',
+        'B2B toy after-sales support'
       ],
       zh: [
         '玩具OEM ODM FAQ',
         '起订量和交期',
         '玩具打样流程',
+        '玩具开模与PCBA',
+        '玩具证书适用范围',
         '包装出货常见问题',
-        '质量节点问题'
+        '质量节点问题',
+        'B2B玩具售后支持'
       ]
     }
   },
@@ -31,8 +37,8 @@ export const faqContent = {
     eyebrow: {en: 'Trade Resources', zh: '贸易支持资料'},
     title: {en: 'Manufacturing & Trade FAQ', zh: '制造与外贸常见问题'},
     description: {
-      en: 'This FAQ summarizes recurring buyer questions in fort building toy and fort building kit OEM/ODM projects, from inquiry preparation to shipment handoff.',
-      zh: '本页汇总玩具 OEM/ODM 项目的高频采购问题，覆盖询盘准备到出货交接。'
+      en: 'This FAQ summarizes recurring buyer questions in fort building toy and fort building kit OEM/ODM projects, from product selection and engineering review through shipment and after-sales coordination.',
+      zh: '本页汇总玩具 OEM/ODM 项目的高频采购问题，覆盖产品选型、工程评审、出货交接与售后协同。'
     }
   },
   faqSection: {

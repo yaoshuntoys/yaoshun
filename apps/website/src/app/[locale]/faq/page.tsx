@@ -19,8 +19,8 @@ function copy(locale: "en" | "zh") {
   return {
     sectionTitle: t(locale, {en: "Fort Building Kit Wholesale & OEM FAQ", zh: "堡垒拼搭套装批发与 OEM 常见问题"}),
     sectionText: t(locale, {
-      en: "Quick answers for MOQ, sampling, packaging, lead time, quality checks, and export handoff before production starts.",
-      zh: "快速了解起订量、打样、包装、交期、质检与出口交接等量产前关键问题。",
+      en: "Practical answers about product configurations, OEM/ODM development, MOQ, sampling, materials, compliance, production, shipping, and after-sales support.",
+      zh: "集中了解产品配置、OEM/ODM 开发、起订量、打样、材质、合规、生产、出货与售后支持。",
     }),
   };
 }
