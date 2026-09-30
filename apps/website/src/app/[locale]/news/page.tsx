@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import "@/styles/pages/news.css";
+import {
+  ArrowRight,
+  Building2,
+  ClipboardCheck,
+  Newspaper,
+  PackageCheck,
+} from "lucide-react";
 import Image from "@/components/media/smart-image";
 import Link from "next/link";
 
@@ -52,27 +59,28 @@ function localize(
 
 function copy(locale: Locale) {
   return {
-    eyebrow: t(locale, { en: "Sourcing & Manufacturing Insights", zh: "采购与制造洞察" }),
-    heroTitle: t(locale, { en: "Toy Industry News & Buyer Guides", zh: "玩具行业资讯与采购指南" }),
+    eyebrow: t(locale, { en: "News", zh: "新闻" }),
+    heroTitleLine1: t(locale, { en: "News Center", zh: "新闻中心" }),
+    heroTitleLine2Blue: t(locale, { en: "Factory", zh: "工厂" }),
+    heroTitleLine2Orange: t(locale, { en: "Insights", zh: "洞察" }),
     description: t(locale, {
       en: "Follow Yaoshun's factory updates, project cases, and sourcing notes for fort building toy, fort building kit, construction toys wholesale, and toy OEM/ODM projects from review to delivery.",
       zh: "持续了解尧顺的工厂动态、项目案例、合规进展、质量控制与制造流程更新。这些内容帮助采购团队看清玩具 OEM/ODM 项目从评估到交付的推进方式。",
     }),
+    browseNews: t(locale, { en: "Browse News", zh: "浏览新闻" }),
+    viewSolutions: t(locale, { en: "View Solutions", zh: "查看方案" }),
     categories: t(locale, { en: "Categories", zh: "分类" }),
     readMore: t(locale, { en: "Read More", zh: "阅读全文" }),
-    resourcesTitle: t(locale, { en: "Buyer Resource Hubs", zh: "采购主题指南" }),
-    resourcesText: t(locale, {
-      en: "Start with these in-depth guides on sourcing, safety, quality control, and OEM/ODM manufacturing, then explore the latest factory and product updates below.",
-      zh: "先从采购、安全、质量控制和 OEM/ODM 制造主题指南开始，再浏览下方最新的工厂与产品动态。",
-    }),
+    showMore: t(locale, { en: "Show more", zh: "显示更多" }),
+    showLess: t(locale, { en: "Show less", zh: "收起" }),
   };
 }
 
-const resourceGuideSlugs = [
-  "private-label-fort-building-kits-sourcing-guide-for-oem-odm-buyers",
-  "toy-safety-and-astm-f963-what-fort-building-kit-buyers-should-check",
-  "from-raw-material-review-to-final-qc-how-yaoshun-controls-production",
-  "one-stop-fort-building-kit-oem-odm-manufacturing-for-global-toy-brands",
+const newsHeroFeatures = [
+  { icon: Building2, label: { en: "Factory Updates", zh: "工厂动态" } },
+  { icon: Newspaper, label: { en: "Project Cases", zh: "项目案例" } },
+  { icon: ClipboardCheck, label: { en: "Compliance Progress", zh: "合规进展" } },
+  { icon: PackageCheck, label: { en: "Delivery Records", zh: "交付记录" } },
 ] as const;
 
 export async function generateMetadata({
@@ -116,10 +124,6 @@ export default async function NewsPage({
   const locale = await getLocaleFromParams(params);
   const text = copy(locale);
   const allArticles = getNewsList();
-  const resourceArticles = resourceGuideSlugs.flatMap((slug) => {
-    const article = allArticles.find((item) => item.slug === slug);
-    return article ? [article] : [];
-  });
   const query = getNewsQuery(await searchParams);
   const pageSize = 9;
   const filteredArticles = allArticles.filter(
@@ -136,6 +140,7 @@ export default async function NewsPage({
   );
   const homeHref = localizedPath(locale, "home");
   const newsHref = localizedPath(locale, "news");
+  const solutionsHref = localizedPath(locale, "solutions");
   const pageUrl = toAbsoluteUrl(newsHref);
   const listArticles = allArticles.map((article) => ({
     slug: article.slug,
@@ -196,39 +201,62 @@ export default async function NewsPage({
             fill
             priority
             sizes="100vw"
-            src="/site/misc/new-bg.webp"
+            src="/site/misc/new-bg.jpg"
           />
         </div>
         <div className="news-hero-inner">
           <div className="news-hero-grid">
             <div className="news-hero-copy">
               <p className="news-eyebrow">{text.eyebrow}</p>
-              <h1 className="news-hero-title">{text.heroTitle}</h1>
+              <h1 className="news-hero-title">
+                <span>{text.heroTitleLine1}</span>
+                <span>
+                  <span className="hero-blue-word">{text.heroTitleLine2Blue}</span>{" "}
+                  <span className="hero-orange-word">{text.heroTitleLine2Orange}</span>
+                </span>
+              </h1>
               <p className="news-hero-text">{text.description}</p>
+              <div className="page-hero-actions">
+                <Link
+                  className="hero-primary-cta"
+                  data-track-destination="#news-list"
+                  data-track-event="cta_click"
+                  data-track-label="browse_news"
+                  data-track-location="news_hero"
+                  href="#news-list"
+                >
+                  <span>{text.browseNews}</span>
+                  <ArrowRight size={16} strokeWidth={2.15} />
+                </Link>
+                <Link
+                  className="hero-secondary-cta"
+                  data-track-destination={solutionsHref}
+                  data-track-event="cta_click"
+                  data-track-label="view_solutions"
+                  data-track-location="news_hero"
+                  href={solutionsHref}
+                >
+                  <span>{text.viewSolutions}</span>
+                  <span className="hero-secondary-dot" />
+                </Link>
+              </div>
+              <div className="hero-feature-strip">
+                {newsHeroFeatures.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <article className="hero-feature-item" key={item.label.en}>
+                      <div className="hero-feature-icon">
+                        <Icon size={21} strokeWidth={1.95} />
+                      </div>
+                      <p>{t(locale, item.label)}</p>
+                    </article>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
       </header>
-
-      <section className="news-resource-hub" aria-labelledby="buyer-resource-hubs">
-        <div className="news-resource-heading">
-          <h2 id="buyer-resource-hubs">{text.resourcesTitle}</h2>
-          <p>{text.resourcesText}</p>
-        </div>
-        <div className="news-resource-grid">
-          {resourceArticles.map((article) => (
-            <Link
-              className="news-resource-card"
-              href={localizedUrlPath(locale, `/news/${article.slug}`)}
-              key={article.slug}
-            >
-              <h3>{localize(article.title, locale, "Buyer guide")}</h3>
-              <p>{localize(article.excerpt, locale)}</p>
-              <span>{text.readMore}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
 
       <NewsListClient
         articles={listArticles}
@@ -236,6 +264,8 @@ export default async function NewsPage({
         text={{
           categories: text.categories,
           readMore: text.readMore,
+          showLess: text.showLess,
+          showMore: text.showMore,
         }}
         initialQuery={query}
       />

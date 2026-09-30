@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import "@/styles/pages/products.css";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  Boxes,
+  PackageCheck,
+  ShieldCheck,
+  Wrench,
+} from "lucide-react";
 import Image from "@/components/media/smart-image";
 import Link from "next/link";
 
@@ -18,6 +24,8 @@ import {
 import { productsPageAssets } from "@/content/pages/products";
 import { toAbsoluteUrl } from "@/lib/site-config";
 import { localizedPath, productPath } from "@/lib/routes";
+
+const PRODUCTS_PAGE_SIZE = 9;
 
 type ProductsSearchParams = {
   category?: string | string[];
@@ -51,12 +59,20 @@ function getPageNumber(value: string | undefined) {
 function copy(locale: "en" | "zh") {
   return {
     heroEyebrow: t(locale, {
-      en: "Wholesale Product Catalog",
-      zh: "批发产品目录",
+      en: "Yaoshun Source Factory Products",
+      zh: "尧顺源头工厂产品",
     }),
-    heroTitle: t(locale, {
-      en: "Fort Building Kits For Kids",
-      zh: "儿童堡垒拼搭套装",
+    heroTitleLine1: t(locale, {
+      en: "Fort Building",
+      zh: "堡垒拼搭",
+    }),
+    heroTitleLine2Blue: t(locale, {
+      en: "Kit",
+      zh: "套装",
+    }),
+    heroTitleLine2Orange: t(locale, {
+      en: "Product Catalog",
+      zh: "产品目录",
     }),
     heroText: t(locale, {
       en: "Explore fort building kits for kids in multiple piece counts, colors and packaging options. Yaoshun supplies wholesale fort building kits with OEM/ODM, private-label packaging and custom configurations for toy brands, retailers and importers.",
@@ -81,6 +97,13 @@ function copy(locale: "en" | "zh") {
       }),
   };
 }
+
+const productsHeroFeatures = [
+  { icon: ShieldCheck, label: { en: "Safe Materials Available", zh: "安全材料可选" } },
+  { icon: Boxes, label: { en: "OEM/ODM Catalog Review", zh: "OEM/ODM 目录评估" } },
+  { icon: Wrench, label: { en: "Packaging & Sampling Support", zh: "包装与打样支持" } },
+  { icon: PackageCheck, label: { en: "Bulk Delivery Planning", zh: "批量交付规划" } },
+] as const;
 
 export async function generateMetadata({
   params,
@@ -129,7 +152,7 @@ export default async function ProductsPage({
   const text = copy(locale);
   const catalog = getShowcaseCatalog();
   const query = getProductsQuery(await searchParams);
-  const pageSize = 9;
+  const pageSize = PRODUCTS_PAGE_SIZE;
   const sortedCatalog = [...catalog].sort(
     (a, b) => Number(b.bestseller) - Number(a.bestseller),
   );
@@ -179,7 +202,7 @@ export default async function ProductsPage({
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: text.heroTitle,
+      name: `${text.heroTitleLine1} ${text.heroTitleLine2Blue} ${text.heroTitleLine2Orange}`,
       description: text.heroText,
       url: pageUrl,
       inLanguage: locale === "zh" ? "zh-CN" : "en-US",
@@ -214,8 +237,56 @@ export default async function ProductsPage({
           <div className="products-hero-grid">
             <div className="products-hero-copy">
               <p className="products-hero-eyebrow">{text.heroEyebrow}</p>
-              <h1 className="products-hero-title">{text.heroTitle}</h1>
+              <h1 className="products-hero-title">
+                <span>{text.heroTitleLine1}</span>
+                <span>
+                  <span className="hero-blue-word">{text.heroTitleLine2Blue}</span>{" "}
+                  <span className="hero-orange-word">{text.heroTitleLine2Orange}</span>
+                </span>
+              </h1>
               <p className="products-hero-text">{text.heroText}</p>
+              <div className="page-hero-actions">
+                <Link
+                  className="hero-primary-cta"
+                  data-track-destination="#products-catalog"
+                  data-track-event="cta_click"
+                  data-track-label="browse_catalog"
+                  data-track-location="products_hero"
+                  href="#products-catalog"
+                >
+                  <span>{t(locale, { en: "Browse Catalog", zh: "浏览目录" })}</span>
+                  <ArrowRight size={16} strokeWidth={2.15} />
+                </Link>
+                <Link
+                  className="hero-secondary-cta"
+                  data-track-destination={solutionsHref}
+                  data-track-event="cta_click"
+                  data-track-label="custom_service"
+                  data-track-location="products_hero"
+                  href={solutionsHref}
+                >
+                  <span>
+                    {t(locale, {
+                      en: "Fort Building Kit Customization",
+                      zh: "堡垒拼搭套装定制服务",
+                    })}
+                  </span>
+                  <span className="hero-secondary-dot" />
+                </Link>
+              </div>
+              <div className="hero-feature-strip">
+                {productsHeroFeatures.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <article className="hero-feature-item" key={item.label.en}>
+                      <div className="hero-feature-icon">
+                        <Icon size={21} strokeWidth={1.95} />
+                      </div>
+                      <p>{t(locale, item.label)}</p>
+                    </article>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

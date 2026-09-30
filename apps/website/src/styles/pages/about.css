@@ -922,11 +922,16 @@
   height: auto;
 }
 
+.about-mobile-toggle {
+  display: none;
+}
+
 @media (max-width: 767.98px) {
 
-.about-page {
+  .about-page {
     --about-hero-metrics-overlap: clamp(2.5rem, 8vw, 3.4rem);
     gap: 3.1rem;
+    overflow-x: clip;
   }
 
   .about-hero {
@@ -950,7 +955,7 @@
   }
 
   .about-hero-copy::before {
-    inset: -1.15rem -1rem -0.85rem -1rem;
+    inset: -1.15rem 0 -0.85rem 0;
     border-radius: 1.55rem;
     filter: blur(9px);
   }
@@ -1047,6 +1052,42 @@
     font-size: clamp(1.8rem, 8vw, 2.35rem);
   }
 
+  .about-advantages > .about-section-copy,
+  .about-info-card > .about-card-copy,
+  .about-closing-panel > .about-section-copy {
+    display: block;
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  .about-advantage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .about-mobile-collapsible-grid[data-mobile-collapsible="true"][data-expanded="false"]
+    > :nth-child(n + 5) {
+    display: none;
+  }
+
+  .about-mobile-toggle {
+    display: inline-flex;
+    justify-self: center;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.7rem;
+    margin-top: 0.15rem;
+    padding: 0 1rem;
+    border: 1px solid rgba(37, 99, 255, 0.22);
+    border-radius: 0.5rem;
+    color: #17306e;
+    background: #ffffff;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 750;
+    cursor: pointer;
+  }
+
   .about-factory,
   .about-advantages,
   .about-partners,
@@ -1068,6 +1109,31 @@
   .about-partner-card,
   .about-service-detail-item {
     padding: 1rem;
+  }
+
+  .about-advantage-card {
+    gap: 0.55rem;
+    padding: 0.8rem;
+  }
+
+  .about-advantage-card .about-advantage-copy p,
+  .about-service-detail-copy p,
+  .about-shipping-item p {
+    display: block;
+    font-size: 0.76rem;
+    line-height: 1.45;
+  }
+
+  .about-advantage-copy h3,
+  .about-service-detail-copy h3 {
+    font-size: 0.92rem;
+    line-height: 1.25;
+  }
+
+  .about-advantage-icon,
+  .about-service-icon {
+    width: 2.25rem;
+    height: 2.25rem;
   }
 
   .about-partner-card {

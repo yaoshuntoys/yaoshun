@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useMemo, useState} from "react";
+import {useEffect, useMemo, useState, useSyncExternalStore} from "react";
 import type {MouseEvent} from "react";
 import {ArrowRight, Package2} from "lucide-react";
 import Image from "@/components/media/smart-image";
@@ -9,6 +9,25 @@ import Link from "next/link";
 import {productCollections, productsPageAssets} from "@/content/pages/products";
 import {t, type Locale} from "@/lib/i18n";
 import {localizedPath, productPath} from "@/lib/routes";
+
+const MOBILE_PRODUCTS_PAGE_SIZE = 6;
+const DESKTOP_PRODUCTS_PAGE_SIZE = 9;
+const MOBILE_VIEWPORT_QUERY = "(max-width: 767.98px)";
+
+function subscribeToMobileViewport(callback: () => void) {
+  const mediaQuery = window.matchMedia(MOBILE_VIEWPORT_QUERY);
+  mediaQuery.addEventListener("change", callback);
+
+  return () => mediaQuery.removeEventListener("change", callback);
+}
+
+function getMobileViewportSnapshot() {
+  return window.matchMedia(MOBILE_VIEWPORT_QUERY).matches;
+}
+
+function getServerMobileViewportSnapshot() {
+  return false;
+}
 
 type SearchParamMap = {
   category?: string;
@@ -80,7 +99,14 @@ export function ProductsCatalogClient({
   text,
 }: ProductsCatalogClientProps) {
   const [query, setQuery] = useState<SearchParamMap>(initialQuery);
-  const pageSize = 9;
+  const isMobileViewport = useSyncExternalStore(
+    subscribeToMobileViewport,
+    getMobileViewportSnapshot,
+    getServerMobileViewportSnapshot,
+  );
+  const pageSize = isMobileViewport
+    ? MOBILE_PRODUCTS_PAGE_SIZE
+    : DESKTOP_PRODUCTS_PAGE_SIZE;
 
   useEffect(() => {
     const syncFromUrl = () => {

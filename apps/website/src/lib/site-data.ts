@@ -722,7 +722,7 @@ function getCuratedShowcaseItems(
 }
 
 export function getHomeFeaturedShowcaseCatalog() {
-  return getShowcaseCatalog().slice(0, 4);
+  return getShowcaseCatalog().slice(0, 8);
 }
 
 export function getProductsFeaturedRailCatalog() {

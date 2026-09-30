@@ -31,6 +31,8 @@ export const factoryItems = [
 export const cooperationPartnersSectionCopy = {
   eyebrow: {en: "Partners", zh: "合作伙伴"},
   title: {en: "Cooperation Partners", zh: "合作伙伴"},
+  expandLabel: {en: "Show more", zh: "显示更多"},
+  collapseLabel: {en: "Show less", zh: "收起"},
   description: {
     en: "Selected partner and customer brands reflect Yaoshun's ongoing collaboration across toy OEM/ODM, plastic components, and supporting manufacturing programs.",
     zh: "我们为品牌提供玩具 OEM/ODM、塑胶部件及相关生产服务，以下为部分合作伙伴。",

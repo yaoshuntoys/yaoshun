@@ -370,158 +370,6 @@ export default async function HomePage({
         </section>
       </div>
 
-      <section className="home-bestseller home-surface">
-        <div className="home-section-head">
-          <div>
-            <h2 className="home-section-title">
-              {text.bestsellersLead}{" "}
-              <span className="home-blue-word">{text.bestsellersAccent}</span>{" "}
-              <span className="home-orange-word">•</span>
-            </h2>
-            <p className="home-mini-tags">{text.bestsellersTags}</p>
-          </div>
-          <Link
-            className="home-inline-link view-accent-link"
-            data-track-destination={productsHref}
-            data-track-event="cta_click"
-            data-track-label="view_all_products"
-            data-track-location="home_bestsellers"
-            href={productsHref}
-          >
-            <span>{text.viewAllProducts}</span>
-            <ArrowRight size={15} strokeWidth={2.2} />
-          </Link>
-        </div>
-
-        <div className="home-product-row">
-          {featuredProducts.map((item) => (
-            <Link
-              className="home-product-card"
-              data-track-event="product_card_click"
-              data-track-label={item.productId}
-              data-track-location="home_bestsellers"
-              href={item.href}
-              key={item.title}
-              prefetch={false}
-            >
-              <div className="home-product-image-wrap">
-                {item.image ? (
-                  <Image
-                    alt={item.title}
-                    className="home-section-image home-product-image"
-                    fill
-                    sizes="(min-width: 1280px) 18rem, (min-width: 768px) 24vw, 100vw"
-                    src={item.image}
-                  />
-                ) : (
-                  <PlaceholderVisual
-                    compact
-                    className="home-product-placeholder"
-                    icon={
-                      item.title.includes("Connector")
-                        ? Circle
-                        : item.title.includes("3D")
-                          ? Blocks
-                          : item.title.includes("Large")
-                            ? House
-                            : PackageCheck
-                    }
-                    locale={locale}
-                    textless
-                    title={{ en: "Product Visual", zh: "产品图" }}
-                  />
-                )}
-              </div>
-              <div className="home-product-body">
-                <h3>{item.title}</h3>
-                <p>{item.meta}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="home-why home-surface">
-        <div className="home-why-copy">
-          <h2 className="home-section-title">
-            {text.whyChooseLead}{" "}
-            <span className="home-blue-word">yaoshun toys?</span>{" "}
-            <span className="home-orange-word">•</span>
-          </h2>
-          <div className="home-why-features">
-            {[
-              {
-                title: t(locale, {
-                  en: "In-House Tooling & R&D",
-                  zh: "自有模具与研发",
-                }),
-                text: t(locale, {
-                  en: "We support drawing-based or sample-based development, structure refinement, and mold coordination inside one connected team.",
-                  zh: "支持来图来样开发、结构优化与模具协同，由同一团队贯穿推进。",
-                }),
-                icon: Brain,
-              },
-              {
-                title: t(locale, {
-                  en: "Raw Material To Final QC",
-                  zh: "从原料到终检的质量控制",
-                }),
-                text: t(locale, {
-                  en: "Raw material checks, in-process inspection, automated review, and outgoing checks help keep delivery stable.",
-                  zh: "从原料确认、过程检验、自动化复核到出货终检，形成更稳定的交付品质。",
-                }),
-                icon: ShieldCheck,
-              },
-              {
-                title: t(locale, {
-                  en: "Flexible Production Planning",
-                  zh: "灵活的生产规划",
-                }),
-                text: t(locale, {
-                  en: "We support samples, small-batch trial orders, and bulk production with a normal project rhythm of about 7 to 15 days.",
-                  zh: "支持样品、小批量试单和批量生产，许多常规项目可按 7 到 15 天左右节奏推进。",
-                }),
-                icon: Factory,
-              },
-              {
-                title: t(locale, {
-                  en: "Global Trade Coordination",
-                  zh: "全球贸易协同",
-                }),
-                text: t(locale, {
-                  en: "We help buyers coordinate packaging, compliance files, logistics, and export handoff for international programs.",
-                  zh: "可协助客户处理包装、合规资料、物流与出口交接，适配国际项目推进。",
-                }),
-                icon: Globe2,
-              },
-            ].map((item) => {
-              const Icon = item.icon;
-              return (
-                <div key={item.title} className="home-why-item">
-                  <div className="home-feature-icon">
-                    <Icon size={24} strokeWidth={1.95} />
-                  </div>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        <div className="home-why-visual">
-          <Image
-            alt={text.whyImageAlt}
-            className="home-section-image home-why-image"
-            height={1088}
-            preview
-            sizes="(min-width: 1024px) 28vw, 72vw"
-            src={homePageImages.why}
-            width={1088}
-          />
-        </div>
-      </section>
-
       <section className="home-about">
         <div className="home-about-copy" data-locale={locale}>
           <p className="home-eyebrow">{text.aboutEyebrow}</p>
@@ -609,6 +457,77 @@ export default async function HomePage({
         </div>
       </section>
 
+      <section className="home-bestseller home-surface">
+        <div className="home-section-head">
+          <div>
+            <h2 className="home-section-title">
+              {text.bestsellersLead}{" "}
+              <span className="home-blue-word">{text.bestsellersAccent}</span>{" "}
+              <span className="home-orange-word">•</span>
+            </h2>
+            <p className="home-mini-tags">{text.bestsellersTags}</p>
+          </div>
+          <Link
+            className="home-inline-link view-accent-link"
+            data-track-destination={productsHref}
+            data-track-event="cta_click"
+            data-track-label="view_all_products"
+            data-track-location="home_bestsellers"
+            href={productsHref}
+          >
+            <span>{text.viewAllProducts}</span>
+            <ArrowRight size={15} strokeWidth={2.2} />
+          </Link>
+        </div>
+
+        <div className="home-product-row">
+          {featuredProducts.map((item) => (
+            <Link
+              className="home-product-card"
+              data-track-event="product_card_click"
+              data-track-label={item.productId}
+              data-track-location="home_bestsellers"
+              href={item.href}
+              key={item.title}
+              prefetch={false}
+            >
+              <div className="home-product-image-wrap">
+                {item.image ? (
+                  <Image
+                    alt={item.title}
+                    className="home-section-image home-product-image"
+                    fill
+                    sizes="(min-width: 1280px) 18rem, (min-width: 768px) 24vw, 100vw"
+                    src={item.image}
+                  />
+                ) : (
+                  <PlaceholderVisual
+                    compact
+                    className="home-product-placeholder"
+                    icon={
+                      item.title.includes("Connector")
+                        ? Circle
+                        : item.title.includes("3D")
+                          ? Blocks
+                          : item.title.includes("Large")
+                            ? House
+                            : PackageCheck
+                    }
+                    locale={locale}
+                    textless
+                    title={{ en: "Product Visual", zh: "产品图" }}
+                  />
+                )}
+              </div>
+              <div className="home-product-body">
+                <h3>{item.title}</h3>
+                <p>{item.meta}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <SourceFactorySection
         description={t(locale, sourceFactorySectionCopy.description)}
         eyebrow={t(locale, sourceFactorySectionCopy.eyebrow)}
@@ -627,18 +546,103 @@ export default async function HomePage({
         eyebrow={t(locale, certificateSectionCopy.eyebrow)}
         id="home-certificates"
         items={certificateItems}
+        limitToTwoRowsOnMobile
         previewOnlyLabel={t(locale, certificateSectionCopy.previewOnlyLabel)}
         title={t(locale, certificateSectionCopy.title)}
       />
 
       <CooperationPartnersSection
+        collapseLabel={t(locale, cooperationPartnersSectionCopy.collapseLabel)}
+        collapsibleOnMobile
         description={t(locale, cooperationPartnersSectionCopy.description)}
         eyebrow={t(locale, cooperationPartnersSectionCopy.eyebrow)}
+        expandLabel={t(locale, cooperationPartnersSectionCopy.expandLabel)}
         id="home-cooperation-partners"
         items={partnerItems}
         locale={locale}
         title={t(locale, cooperationPartnersSectionCopy.title)}
       />
+
+      <section className="home-why home-surface">
+        <div className="home-why-copy">
+          <h2 className="home-section-title">
+            {text.whyChooseLead}{" "}
+            <span className="home-blue-word">yaoshun toys?</span>{" "}
+            <span className="home-orange-word">•</span>
+          </h2>
+          <div className="home-why-features">
+            {[
+              {
+                title: t(locale, {
+                  en: "In-House Tooling & R&D",
+                  zh: "自有模具与研发",
+                }),
+                text: t(locale, {
+                  en: "We support drawing-based or sample-based development, structure refinement, and mold coordination inside one connected team.",
+                  zh: "支持来图来样开发、结构优化与模具协同，由同一团队贯穿推进。",
+                }),
+                icon: Brain,
+              },
+              {
+                title: t(locale, {
+                  en: "Raw Material To Final QC",
+                  zh: "从原料到终检的质量控制",
+                }),
+                text: t(locale, {
+                  en: "Raw material checks, in-process inspection, automated review, and outgoing checks help keep delivery stable.",
+                  zh: "从原料确认、过程检验、自动化复核到出货终检，形成更稳定的交付品质。",
+                }),
+                icon: ShieldCheck,
+              },
+              {
+                title: t(locale, {
+                  en: "Flexible Production Planning",
+                  zh: "灵活的生产规划",
+                }),
+                text: t(locale, {
+                  en: "We support samples, small-batch trial orders, and bulk production with a normal project rhythm of about 7 to 15 days.",
+                  zh: "支持样品、小批量试单和批量生产，许多常规项目可按 7 到 15 天左右节奏推进。",
+                }),
+                icon: Factory,
+              },
+              {
+                title: t(locale, {
+                  en: "Global Trade Coordination",
+                  zh: "全球贸易协同",
+                }),
+                text: t(locale, {
+                  en: "We help buyers coordinate packaging, compliance files, logistics, and export handoff for international programs.",
+                  zh: "可协助客户处理包装、合规资料、物流与出口交接，适配国际项目推进。",
+                }),
+                icon: Globe2,
+              },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="home-why-item">
+                  <div className="home-feature-icon">
+                    <Icon size={24} strokeWidth={1.95} />
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="home-why-visual">
+          <Image
+            alt={text.whyImageAlt}
+            className="home-section-image home-why-image"
+            height={1088}
+            preview
+            sizes="(min-width: 1024px) 28vw, 72vw"
+            src={homePageImages.why}
+            width={1088}
+          />
+        </div>
+      </section>
 
       <section className="home-solutions">
         <h2 className="home-solutions-title">

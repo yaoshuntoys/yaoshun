@@ -1993,13 +1993,13 @@
 
   .solutions-capability-card {
     width: min(100%, 370px);
-    min-height: 520px;
+    min-height: 420px;
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: 170px minmax(0, 1fr);
+    grid-template-rows: 132px minmax(0, 1fr);
   }
 
   .solutions-capability-stage {
-    min-height: 520px;
+    min-height: 420px;
   }
 
   .solutions-capability-track {
@@ -2016,7 +2016,7 @@
 
   .solutions-capability-card.has-tiles {
     width: min(100%, 370px);
-    min-height: 640px;
+    min-height: 520px;
   }
 
   .solutions-capability-tile-grid {
@@ -2025,7 +2025,7 @@
   }
 
   .solutions-capability-tile {
-    grid-template-rows: 118px auto;
+    grid-template-rows: 92px auto;
     padding: 0.72rem 0.62rem;
   }
 
@@ -2038,7 +2038,7 @@
   }
 
   .solutions-capability-tile-image {
-    min-height: 118px;
+    min-height: 92px;
     margin-bottom: 0.58rem;
   }
 
@@ -2217,7 +2217,7 @@
   .solutions-reason-grid,
   .solutions-workshop-capabilities,
   .solutions-workshop-gallery {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .solutions-workshop-visual {
@@ -2235,7 +2235,7 @@
     min-height: 170px;
   }
 
-  .solutions-equipment-list.collapsed .solutions-equipment-card:nth-child(n + 4) {
+  .solutions-equipment-list.collapsed .solutions-equipment-card:nth-child(n + 5) {
     display: none;
   }
 

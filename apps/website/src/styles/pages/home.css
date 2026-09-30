@@ -1077,12 +1077,14 @@
   }
 
   .home-section-head {
-    align-items: flex-start;
+    display: grid;
+    align-items: start;
     gap: 0.85rem;
   }
 
   .home-section-head .view-accent-link {
-    flex-shrink: 0;
+    justify-self: start;
+    max-width: 100%;
     min-height: 44px;
     padding: 0 1rem;
     font-size: 0.84rem;

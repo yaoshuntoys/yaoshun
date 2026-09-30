@@ -142,6 +142,10 @@
   object-position: center center;
 }
 
+.partnerToggle {
+  display: none;
+}
+
 @media (hover: hover) {
   .factoryCard:hover {
     transform: translateY(-6px);
@@ -220,6 +224,33 @@
   .partnerLogoWrap {
     width: min(100%, 8.5rem);
     height: 3rem;
+  }
+
+  .partnerGrid[data-collapsible="true"][data-expanded="false"]
+    .partnerCard:nth-child(n + 5) {
+    display: none;
+  }
+
+  .partnerToggle {
+    display: inline-flex;
+    justify-self: center;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0 1rem;
+    border: 1px solid rgba(37, 99, 255, 0.22);
+    border-radius: 0.5rem;
+    color: #17306e;
+    background: #ffffff;
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 750;
+    cursor: pointer;
+  }
+
+  .partnerToggle:focus-visible {
+    outline: 3px solid rgba(37, 99, 255, 0.22);
+    outline-offset: 3px;
   }
 }
 

@@ -14,7 +14,8 @@ type CertificateItem = {
   documentUrl?: string;
 };
 
-const INITIAL_VISIBLE_COUNT = 12;
+const MOBILE_INITIAL_VISIBLE_COUNT = 4;
+const DESKTOP_INITIAL_VISIBLE_COUNT = 12;
 
 function getPreviewSource(image: CertificateItem["image"]) {
   return typeof image === "string" ? image : image.src;
@@ -29,6 +30,7 @@ export function CertificatesSection({
   eyebrow,
   id,
   items,
+  limitToTwoRowsOnMobile = false,
   previewOnlyLabel,
   title,
 }: {
@@ -40,14 +42,15 @@ export function CertificatesSection({
   eyebrow: string;
   id: string;
   items: readonly CertificateItem[];
+  limitToTwoRowsOnMobile?: boolean;
   previewOnlyLabel: string;
   title: string;
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const hasMoreItems = items.length > INITIAL_VISIBLE_COUNT;
-  const visibleItems = isExpanded
-    ? items
-    : items.slice(0, INITIAL_VISIBLE_COUNT);
+  const mobileInitialVisibleCount = limitToTwoRowsOnMobile
+    ? MOBILE_INITIAL_VISIBLE_COUNT
+    : DESKTOP_INITIAL_VISIBLE_COUNT;
+  const hasMoreItems = items.length > mobileInitialVisibleCount;
   const galleryId = `${id}-gallery`;
   const titleId = `${id}-title`;
 
@@ -64,8 +67,13 @@ export function CertificatesSection({
       </div>
 
       <div className={styles.gallery}>
-        <div className={styles.row} id={galleryId}>
-          {visibleItems.map((item) => {
+        <div
+          className={styles.row}
+          data-limit-mobile={limitToTwoRowsOnMobile}
+          data-expanded={isExpanded}
+          id={galleryId}
+        >
+          {items.map((item) => {
             const previewSource = getPreviewSource(item.image);
             const accessibleTitle = `${item.code} ${item.title}`;
 
@@ -120,14 +128,26 @@ export function CertificatesSection({
           <button
             aria-controls={galleryId}
             aria-expanded={isExpanded}
+            aria-label={isExpanded ? collapseLabel : expandLabel}
             className={styles.toggle}
             onClick={() => setIsExpanded((current) => !current)}
             type="button"
           >
             <span>
-              {isExpanded
-                ? collapseLabel
-                : `${expandLabel} (${items.length - INITIAL_VISIBLE_COUNT})`}
+              {isExpanded ? (
+                collapseLabel
+              ) : (
+                <>
+                  {expandLabel} (
+                  <span className={styles.mobileRemainingCount}>
+                    {items.length - mobileInitialVisibleCount}
+                  </span>
+                  <span className={styles.desktopRemainingCount}>
+                    {items.length - DESKTOP_INITIAL_VISIBLE_COUNT}
+                  </span>
+                  )
+                </>
+              )}
             </span>
             {isExpanded ? (
               <ChevronUp aria-hidden="true" size={17} strokeWidth={2.1} />

@@ -724,8 +724,17 @@
   }
 
   .news-blog-content table {
-    min-width: 34rem;
-    font-size: 0.88rem;
+    min-width: 0;
+    table-layout: fixed;
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .news-blog-content th,
+  .news-blog-content td {
+    padding: 0.62rem 0.5rem;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .news-blog-cta {

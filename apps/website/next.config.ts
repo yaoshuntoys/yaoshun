@@ -165,6 +165,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "7j7davvujdsmddan.public.blob.vercel-storage.com",
+      },
+      {
+        protocol: "https",
         hostname: "s.alicdn.com",
       },
     ],

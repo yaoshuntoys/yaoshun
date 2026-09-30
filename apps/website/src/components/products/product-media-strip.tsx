@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "@/components/media/smart-image";
-import {PlayCircle} from "lucide-react";
+import {ChevronDown, ChevronUp, PlayCircle} from "lucide-react";
 import {useMemo, useState} from "react";
 
 import {t} from "@/lib/i18n";
@@ -17,11 +17,14 @@ export function ProductMediaStrip({locale, images, title, videos}: ProductMediaS
   const imageItems = useMemo(() => images.filter(Boolean).slice(0, 6), [images]);
   const videoItems = useMemo(() => videos.filter(Boolean), [videos]);
   const [tab, setTab] = useState<"images" | "videos">("images");
+  const [showAllImages, setShowAllImages] = useState(false);
   const text = {
     heading: t(locale, {en: "Product Media", zh: "产品媒体"}),
     images: t(locale, {en: `Images (${images.length})`, zh: `图片 (${images.length})`}),
     videos: t(locale, {en: `Videos (${videoItems.length})`, zh: `视频 (${videoItems.length})`}),
     videoTitle: (index: number) => t(locale, {en: `Product Video ${index + 1}`, zh: `产品视频 ${index + 1}`}),
+    showMore: t(locale, {en: "Show more images", zh: "展开更多图片"}),
+    showLess: t(locale, {en: "Show fewer images", zh: "收起图片"}),
   };
 
   return (
@@ -59,26 +62,46 @@ export function ProductMediaStrip({locale, images, title, videos}: ProductMediaS
       </div>
 
       {tab === "images" ? (
-        <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
-          {imageItems.map((image, index) => (
-            <a
-              className="group relative block aspect-[4/3] overflow-hidden rounded-[1rem] border border-[rgba(24,56,138,0.08)] bg-[#f8fbff] transition hover:border-[rgba(37,99,255,0.18)]"
-              href={image}
-              key={`${image}-${index}`}
-              rel="noreferrer"
-              target="_blank"
+        <>
+          <div
+            className="product-media-mobile-grid mt-5 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6"
+            data-expanded={showAllImages}
+          >
+            {imageItems.map((image, index) => (
+              <a
+                className="group relative block aspect-[4/3] overflow-hidden rounded-[1rem] border border-[rgba(24,56,138,0.08)] bg-[#f8fbff] transition hover:border-[rgba(37,99,255,0.18)]"
+                href={image}
+                key={`${image}-${index}`}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <Image
+                  alt={`${title} ${index + 1}`}
+                  className="object-contain object-center transition duration-200"
+                  fill
+                  preview
+                  sizes="(min-width: 1280px) 12rem, (min-width: 768px) 20vw, 44vw"
+                  src={image}
+                />
+              </a>
+            ))}
+          </div>
+          {imageItems.length > 4 ? (
+            <button
+              aria-expanded={showAllImages}
+              className="product-mobile-toggle product-media-mobile-toggle"
+              onClick={() => setShowAllImages((current) => !current)}
+              type="button"
             >
-              <Image
-                alt={`${title} ${index + 1}`}
-                className="object-contain object-center transition duration-200"
-                fill
-                preview
-                sizes="(min-width: 1280px) 12rem, (min-width: 768px) 20vw, 44vw"
-                src={image}
-              />
-            </a>
-          ))}
-        </div>
+              <span>{showAllImages ? text.showLess : text.showMore}</span>
+              {showAllImages ? (
+                <ChevronUp aria-hidden="true" size={17} strokeWidth={2.1} />
+              ) : (
+                <ChevronDown aria-hidden="true" size={17} strokeWidth={2.1} />
+              )}
+            </button>
+          ) : null}
+        </>
       ) : (
         <div className="mt-5 grid gap-4 md:grid-cols-2">
           {videoItems.map((video, index) => (

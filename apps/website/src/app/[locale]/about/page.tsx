@@ -26,6 +26,7 @@ import Link from "next/link";
 
 import {CooperationPartnersSection} from "@/components/sections/cooperation-partners-section";
 import {CertificatesSection} from "@/components/sections/certificates-section";
+import {AboutMobileCollapsibleGrid} from "@/components/sections/about-mobile-collapsible-grid";
 import {SourceFactorySection} from "@/components/sections/source-factory-section";
 import { StructuredData } from "@/components/seo/structured-data";
 import { siteCopy } from "@/components/layout/site-shell.data";
@@ -605,6 +606,8 @@ function copy(locale: "en" | "zh") {
     }),
     learnMore: t(locale, { en: "Learn More", zh: "了解更多" }),
     contactUs: t(locale, { en: "Contact Us", zh: "联系我们" }),
+    showMore: t(locale, { en: "Show more", zh: "显示更多" }),
+    showLess: t(locale, { en: "Show less", zh: "收起" }),
     advantages: t(locale, { en: "Our Advantages", zh: "我们的优势" }),
     advantagesEyebrow: t(locale, { en: "Why Choose Us", zh: "核心优势" }),
     advantagesText: t(locale, {
@@ -835,7 +838,13 @@ export default async function AboutPage({
           <h2>{text.shipping}</h2>
         </div>
         <p className="about-section-copy">{text.shippingText}</p>
-        <div className="about-advantage-grid">
+        <AboutMobileCollapsibleGrid
+          className="about-advantage-grid"
+          collapseLabel={text.showLess}
+          expandLabel={text.showMore}
+          id="about-milestones-grid"
+          itemCount={milestoneItems.length}
+        >
           {milestoneItems.map((item) => (
             <article className="about-advantage-card" key={item.year}>
               <div className="about-advantage-copy">
@@ -845,7 +854,7 @@ export default async function AboutPage({
               </div>
             </article>
           ))}
-        </div>
+        </AboutMobileCollapsibleGrid>
       </section>
 
       <section className="about-advantages" id="about-advantages">
@@ -854,7 +863,13 @@ export default async function AboutPage({
           <h2>{text.advantages}</h2>
         </div>
         <p className="about-section-copy">{text.advantagesText}</p>
-        <div className="about-advantage-grid">
+        <AboutMobileCollapsibleGrid
+          className="about-advantage-grid"
+          collapseLabel={text.showLess}
+          expandLabel={text.showMore}
+          id="about-advantages-grid"
+          itemCount={advantageItems.length}
+        >
           {advantageItems.map((item) => {
             const Icon = item.icon;
             return (
@@ -869,7 +884,7 @@ export default async function AboutPage({
               </article>
             );
           })}
-        </div>
+        </AboutMobileCollapsibleGrid>
       </section>
 
       <SourceFactorySection
@@ -890,13 +905,17 @@ export default async function AboutPage({
         eyebrow={t(locale, certificateSectionCopy.eyebrow)}
         id="about-certificate"
         items={certificateItems}
+        limitToTwoRowsOnMobile
         previewOnlyLabel={t(locale, certificateSectionCopy.previewOnlyLabel)}
         title={t(locale, certificateSectionCopy.title)}
       />
 
       <CooperationPartnersSection
+        collapseLabel={t(locale, cooperationPartnersSectionCopy.collapseLabel)}
+        collapsibleOnMobile
         description={t(locale, cooperationPartnersSectionCopy.description)}
         eyebrow={t(locale, cooperationPartnersSectionCopy.eyebrow)}
+        expandLabel={t(locale, cooperationPartnersSectionCopy.expandLabel)}
         id="about-cooperation-partners"
         items={partnerItems}
         locale={locale}

@@ -6,6 +6,8 @@ import {
   ArrowRight,
   Award,
   Building2,
+  ChevronDown,
+  ChevronUp,
   Grid2x2,
   Package2,
   Sparkles,
@@ -39,6 +41,8 @@ type NewsListClientProps = {
   text: {
     categories: string;
     readMore: string;
+    showLess: string;
+    showMore: string;
   };
 };
 
@@ -146,6 +150,7 @@ export function NewsListClient({
   text,
 }: NewsListClientProps) {
   const [query, setQuery] = useState<SearchParamMap>(initialQuery);
+  const [expandedQueryKey, setExpandedQueryKey] = useState<string | null>(null);
   const pageSize = 9;
   const newsHref = localizedPath(locale, "news");
 
@@ -190,6 +195,8 @@ export function NewsListClient({
     (currentPage - 1) * pageSize,
     currentPage * pageSize,
   );
+  const queryKey = `${query.category || "all"}:${currentPage}`;
+  const isMobileExpanded = expandedQueryKey === queryKey;
 
   function navigate(
     event: MouseEvent<HTMLAnchorElement>,
@@ -285,7 +292,11 @@ export function NewsListClient({
           </p>
         </div>
 
-        <div className="news-card-grid">
+        <div
+          className="news-card-grid"
+          data-mobile-expanded={isMobileExpanded}
+          id="news-card-grid"
+        >
           {paged.map((article) => {
             const tone =
               categoryTones[article.category as keyof typeof categoryTones] ??
@@ -341,6 +352,27 @@ export function NewsListClient({
             );
           })}
         </div>
+
+        {paged.length > 4 ? (
+          <button
+            aria-controls="news-card-grid"
+            aria-expanded={isMobileExpanded}
+            className="news-mobile-toggle"
+            onClick={() =>
+              setExpandedQueryKey((current) =>
+                current === queryKey ? null : queryKey,
+              )
+            }
+            type="button"
+          >
+            <span>{isMobileExpanded ? text.showLess : `${text.showMore} (${paged.length - 4})`}</span>
+            {isMobileExpanded ? (
+              <ChevronUp aria-hidden="true" size={17} strokeWidth={2.1} />
+            ) : (
+              <ChevronDown aria-hidden="true" size={17} strokeWidth={2.1} />
+            )}
+          </button>
+        ) : null}
 
         <div className="news-pagination">
           {currentPage > 1 ? (

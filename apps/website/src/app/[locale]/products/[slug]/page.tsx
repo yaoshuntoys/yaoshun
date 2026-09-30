@@ -18,6 +18,7 @@ import {
 import { notFound } from "next/navigation";
 
 import { ProductGallery } from "@/components/products/product-gallery";
+import { ProductMobileCollapsibleGrid } from "@/components/products/product-mobile-collapsible-grid";
 import { ProductMediaStrip } from "@/components/products/product-media-strip";
 import { StructuredData } from "@/components/seo/structured-data";
 import {
@@ -381,6 +382,8 @@ function copy(locale: Locale, title: string, minOrder: string) {
       en: "Browse More Products",
       zh: "浏览更多产品",
     }),
+    showMore: t(locale, { en: "Show more", zh: "展开更多" }),
+    showLess: t(locale, { en: "Show less", zh: "收起" }),
   };
 }
 
@@ -897,12 +900,12 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
-      <section className="grid overflow-hidden rounded-[1.3rem] border border-[rgba(24,56,138,0.08)] bg-white shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.6rem] md:grid-cols-2 xl:grid-cols-4">
+      <section className="product-detail-feature-grid grid overflow-hidden rounded-[1.3rem] border border-[rgba(24,56,138,0.08)] bg-white shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.6rem] md:grid-cols-2 xl:grid-cols-4">
         {featureCards.map((item, index) => {
           const Icon = item.icon;
           return (
             <article
-              className={`flex gap-3 px-4 py-4 text-[#2563ff] sm:gap-4 sm:px-6 sm:py-5 ${index > 0 ? "border-t border-[rgba(24,56,138,0.08)] md:border-l md:border-t-0 xl:border-l" : ""}`}
+              className={`product-detail-feature-card flex gap-3 px-4 py-4 text-[#2563ff] sm:gap-4 sm:px-6 sm:py-5 ${index > 0 ? "border-t border-[rgba(24,56,138,0.08)] md:border-l md:border-t-0 xl:border-l" : ""}`}
               key={item.label}
             >
               <Icon className="mt-0.5 shrink-0" size={26} strokeWidth={1.8} />
@@ -919,7 +922,7 @@ export default async function ProductDetailPage({
         })}
       </section>
 
-      <section className="grid overflow-hidden rounded-[1.4rem] border border-[rgba(24,56,138,0.08)] bg-[linear-gradient(135deg,#eef5ff_0%,#ffffff_100%)] shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.7rem] lg:grid-cols-[minmax(0,1fr)_auto]">
+      <section className="product-detail-highlights grid overflow-hidden rounded-[1.4rem] border border-[rgba(24,56,138,0.08)] bg-[linear-gradient(135deg,#eef5ff_0%,#ffffff_100%)] shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.7rem] lg:grid-cols-[minmax(0,1fr)_auto]">
         <div className="grid content-start gap-4 px-5 py-5 sm:gap-5 sm:px-8 sm:py-8">
           <h2 className="m-0 font-display text-[1.5rem] font-semibold text-[#17306e] sm:text-[1.7rem]">
             {text.highlights}
@@ -936,7 +939,7 @@ export default async function ProductDetailPage({
             ))}
           </ul>
         </div>
-        <div className="relative aspect-[4/3] min-h-0 overflow-hidden bg-[#f8fbff] lg:aspect-auto lg:h-full lg:min-h-[13.5rem] lg:w-[clamp(14rem,22vw,19rem)]">
+        <div className="product-detail-highlight-image relative aspect-[4/3] min-h-0 overflow-hidden bg-[#f8fbff] lg:aspect-auto lg:h-full lg:min-h-[13.5rem] lg:w-[clamp(14rem,22vw,19rem)]">
           {highlightImage ? (
             <Image
               alt={text.highlightImageAlt}
@@ -954,7 +957,13 @@ export default async function ProductDetailPage({
         <h2 className="m-0 font-display text-[1.45rem] font-semibold text-[#17306e] sm:text-[1.55rem]">
           {text.attributes}
         </h2>
-        <div className="mt-5 grid gap-2 sm:hidden">
+        <ProductMobileCollapsibleGrid
+          className="product-detail-attribute-mobile-grid mt-5 grid gap-2 sm:hidden"
+          collapseLabel={text.showLess}
+          expandLabel={text.showMore}
+          id="product-mobile-attributes"
+          itemCount={attributePairs.length}
+        >
           {attributePairs.map((item) => (
             <article
               className="grid gap-1 rounded-[1rem] border border-[rgba(24,56,138,0.08)] bg-[#f8fbff] px-4 py-3"
@@ -968,7 +977,7 @@ export default async function ProductDetailPage({
               </p>
             </article>
           ))}
-        </div>
+        </ProductMobileCollapsibleGrid>
         <div className="mt-5 hidden overflow-x-auto rounded-[1.2rem] border border-[rgba(24,56,138,0.08)] sm:block">
           <table className="w-full min-w-[720px] border-collapse bg-white">
             <tbody>
@@ -1008,15 +1017,21 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-3">
-        <article className="rounded-[1.4rem] border border-[rgba(24,56,138,0.08)] bg-white p-4 shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.7rem] sm:p-6">
+      <section className="product-detail-business-grid grid gap-4 md:grid-cols-3">
+        <article className="product-detail-business-card rounded-[1.4rem] border border-[rgba(24,56,138,0.08)] bg-white p-4 shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.7rem] sm:p-6">
           <h2 className="m-0 font-display text-[1.35rem] font-semibold text-[#17306e] sm:text-[1.55rem]">
             {text.customization}
           </h2>
-          <div className="mt-5 grid gap-5">
+          <ProductMobileCollapsibleGrid
+            className="product-detail-data-grid mt-5 grid gap-5"
+            collapseLabel={text.showLess}
+            expandLabel={text.showMore}
+            id="product-mobile-customization"
+            itemCount={Math.max(customizationItems.length, 1)}
+          >
             {customizationItems.length > 0 ? (
               customizationItems.map((item, index) => (
-                <div className="flex gap-4 text-[#2563ff]" key={item.key}>
+                <div className="product-detail-data-item flex gap-4 text-[#2563ff]" key={item.key}>
                   {index === 0 ? (
                     <Palette size={22} strokeWidth={1.85} />
                   ) : index === 1 ? (
@@ -1035,7 +1050,7 @@ export default async function ProductDetailPage({
                 </div>
               ))
             ) : (
-              <div className="flex gap-4 text-[#2563ff]">
+              <div className="product-detail-data-item flex gap-4 text-[#2563ff]">
                 <Palette size={22} strokeWidth={1.85} />
                 <div className="grid gap-1">
                   <h3 className="m-0 text-[1rem] font-semibold text-[#17306e]">
@@ -1047,17 +1062,23 @@ export default async function ProductDetailPage({
                 </div>
               </div>
             )}
-          </div>
+          </ProductMobileCollapsibleGrid>
         </article>
 
-        <article className="rounded-[1.4rem] border border-[rgba(24,56,138,0.08)] bg-white p-4 shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.7rem] sm:p-6">
+        <article className="product-detail-business-card rounded-[1.4rem] border border-[rgba(24,56,138,0.08)] bg-white p-4 shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.7rem] sm:p-6">
           <h2 className="m-0 font-display text-[1.35rem] font-semibold text-[#17306e] sm:text-[1.55rem]">
             {text.packagingShipping}
           </h2>
-          <div className="mt-5 grid gap-5">
+          <ProductMobileCollapsibleGrid
+            className="product-detail-data-grid mt-5 grid gap-5"
+            collapseLabel={text.showLess}
+            expandLabel={text.showMore}
+            id="product-mobile-packaging"
+            itemCount={packagingItems.length}
+          >
             {packagingItems.map((item, index) => (
               <div
-                className="flex gap-4 text-[#2563ff]"
+                className="product-detail-data-item flex gap-4 text-[#2563ff]"
                 key={`${localize(locale, item.key)}-${index}`}
               >
                 {index === 0 ? (
@@ -1077,18 +1098,24 @@ export default async function ProductDetailPage({
                 </div>
               </div>
             ))}
-          </div>
+          </ProductMobileCollapsibleGrid>
         </article>
 
-        <article className="rounded-[1.4rem] border border-[rgba(24,56,138,0.08)] bg-white p-4 shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.7rem] sm:p-6">
+        <article className="product-detail-business-card rounded-[1.4rem] border border-[rgba(24,56,138,0.08)] bg-white p-4 shadow-[0_18px_44px_-34px_rgba(18,41,103,0.16)] sm:rounded-[1.7rem] sm:p-6">
           <h2 className="m-0 font-display text-[1.35rem] font-semibold text-[#17306e] sm:text-[1.55rem]">
             {text.leadTime}
           </h2>
           {leadTime.length > 0 ? (
-            <div className="mt-5 grid gap-5">
+            <ProductMobileCollapsibleGrid
+              className="product-detail-data-grid mt-5 grid gap-5"
+              collapseLabel={text.showLess}
+              expandLabel={text.showMore}
+              id="product-mobile-lead-time"
+              itemCount={leadTime.length}
+            >
               {leadTime.map((item, index) => (
                 <div
-                  className="flex gap-4 text-[#2563ff]"
+                  className="product-detail-data-item flex gap-4 text-[#2563ff]"
                   key={`${item.minQuantity}-${index}`}
                 >
                   {index % 3 === 0 ? (
@@ -1115,7 +1142,7 @@ export default async function ProductDetailPage({
                   </div>
                 </div>
               ))}
-            </div>
+            </ProductMobileCollapsibleGrid>
           ) : (
             <div className="mt-5 text-[0.95rem] leading-7 text-[#50638f]">
               {text.leadTimeFallback}
@@ -1140,7 +1167,13 @@ export default async function ProductDetailPage({
             </p>
           </div>
 
-          <div className="mt-5 grid overflow-hidden rounded-[1.25rem] border border-[rgba(24,56,138,0.08)] bg-white">
+          <ProductMobileCollapsibleGrid
+            className="product-detail-sections-grid mt-5 grid overflow-hidden rounded-[1.25rem] border border-[rgba(24,56,138,0.08)] bg-white"
+            collapseLabel={text.showLess}
+            expandLabel={text.showMore}
+            id="product-mobile-detail-sections"
+            itemCount={detailArticleSections.length}
+          >
             {detailArticleSections.map((item, index) => {
               const reverse = index % 2 === 1;
               return (
@@ -1186,7 +1219,7 @@ export default async function ProductDetailPage({
                 </article>
               );
             })}
-          </div>
+          </ProductMobileCollapsibleGrid>
         </section>
       ) : null}
 
