@@ -28,8 +28,7 @@ export function SiteStructuredData({locale}: {locale: Locale}) {
   const localizedProducts = `${siteUrl}${localizedPath(locale, 'products')}`;
   const localizedContact = `${siteUrl}${localizedPath(locale, 'contact')}`;
   const localizedTerms = `${siteUrl}${localizedPath(locale, 'terms')}`;
-  const returnPolicyId = `${localizedTerms}#merchant-return-policy`;
-  const shippingPolicyId = `${localizedTerms}#merchant-shipping-policy`;
+  const localizedRefundReturn = `${siteUrl}${localizedPath(locale, 'refundReturn')}`;
   const contactLanguages = companyProfile.contactLanguages.map((item) => t(locale, item));
   const serviceRegions = companyProfile.serviceRegions.map((item) => t(locale, item));
   const expertise = companyProfile.expertise.map((item) => t(locale, item));
@@ -67,61 +66,18 @@ export function SiteStructuredData({locale}: {locale: Locale}) {
     paymentAccepted: ['T/T', 'Wire transfer'],
     hasMerchantReturnPolicy: {
       '@type': 'MerchantReturnPolicy',
-      '@id': returnPolicyId,
+      '@id': localizedRefundReturn,
       name: locale === 'zh' ? 'B2B 项目退换与售后政策' : 'B2B project returns and after-sales policy',
-      merchantReturnLink: localizedTerms
+      merchantReturnLink: localizedRefundReturn
     },
     hasShippingService: {
       '@type': 'ShippingService',
-      '@id': shippingPolicyId,
       name: locale === 'zh' ? 'B2B 出口运输协调' : 'B2B export shipping coordination',
+      url: localizedTerms,
       description: locale === 'zh'
         ? '运输方式、目的地、运费、贸易条款与交付时间根据订单数量、包装和项目文件确认。'
         : 'Shipping method, destination, freight cost, trade terms, and delivery timing are confirmed by order quantity, packaging, and project documents.',
-      fulfillmentType: 'https://schema.org/FulfillmentTypeDelivery',
-      handlingTime: {
-        '@type': 'ServicePeriod',
-        duration: {
-          '@type': 'QuantitativeValue',
-          minValue: 7,
-          maxValue: 15,
-          unitCode: 'DAY'
-        },
-        businessDays: [
-          'https://schema.org/Monday',
-          'https://schema.org/Tuesday',
-          'https://schema.org/Wednesday',
-          'https://schema.org/Thursday',
-          'https://schema.org/Friday'
-        ]
-      },
-      shippingConditions: {
-        '@type': 'ShippingConditions',
-        shippingOrigin: {
-          '@type': 'DefinedRegion',
-          addressCountry: 'CN'
-        },
-        shippingDestination: [
-          { '@type': 'DefinedRegion', addressCountry: 'US' },
-          { '@type': 'DefinedRegion', addressCountry: 'CA' },
-          { '@type': 'DefinedRegion', addressCountry: 'GB' },
-          { '@type': 'DefinedRegion', addressCountry: 'AU' },
-          { '@type': 'DefinedRegion', addressCountry: 'DE' },
-          { '@type': 'DefinedRegion', addressCountry: 'FR' },
-          { '@type': 'DefinedRegion', addressCountry: 'JP' },
-          { '@type': 'DefinedRegion', addressCountry: 'KR' },
-          { '@type': 'DefinedRegion', addressCountry: 'SG' }
-        ],
-        transitTime: {
-          '@type': 'ServicePeriod',
-          duration: {
-            '@type': 'QuantitativeValue',
-            minValue: 7,
-            maxValue: 45,
-            unitCode: 'DAY'
-          }
-        }
-      }
+      fulfillmentType: 'https://schema.org/FulfillmentTypeDelivery'
     },
     sameAs: [companyProfile.website, 'https://www.1688.com/factory/b2b-33834399288d4ed.html'],
     keywords: expertiseKeywords,
@@ -225,7 +181,6 @@ export function SiteStructuredData({locale}: {locale: Locale}) {
     offers: {
       '@type': 'Offer',
       url: localizedContact,
-      availability: 'https://schema.org/InStock',
       businessFunction: 'https://schema.org/Sell',
       itemOffered: {
         '@type': 'Service',

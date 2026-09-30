@@ -86,4 +86,10 @@ export const newsSourcePathBySlug = new Map(
   importedNewsArticles.map((item) => [item.data.slug, item.sourcePath]),
 );
 
-export const newsArticles: NewsArticleSeed[] = importedNewsArticles.map((item) => item.data);
+export const newsArticles: NewsArticleSeed[] = importedNewsArticles.map(({data}) => ({
+  ...data,
+  author: data.author || {
+    en: "Yaoshun Editorial Team",
+    zh: "尧顺编辑团队",
+  },
+}));

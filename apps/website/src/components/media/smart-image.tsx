@@ -38,7 +38,7 @@ function getPreviewSource(src: ImageProps["src"]) {
 }
 
 function getRuntimeSource(src: ImageProps["src"]) {
-  if (process.env.NODE_ENV !== "development" || typeof src !== "string") {
+  if (typeof src !== "string") {
     return src;
   }
 

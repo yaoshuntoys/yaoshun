@@ -14,7 +14,24 @@ const certificateContentPath = resolve(
 );
 const blobDirectory = "yaoshun-assets/site/about/certificates";
 const publicMediaBaseUrl = "https://www.yaoshuntoys.com/media";
-const shouldUpload = process.argv.includes("--upload");
+const shouldUploadImages = process.argv.includes("--upload");
+const shouldUploadPdfs = shouldUploadImages || process.argv.includes("--upload-pdfs");
+const pdfDirectory = resolve(repositoryDirectory, "pdf");
+
+const certificatePdfBySource = new Map([
+  [
+    "6487034-英国外观专利申请证书.pdf",
+    "uk-design-registration-6487034.pdf",
+  ],
+  ["CE COC.pdf", "ce-certificate-of-conformity.pdf"],
+  ["CPC.pdf", "us-childrens-product-certificate.pdf"],
+  ["EFW726054129-T-01.pdf", "eurofins-test-report-efw726054129.pdf"],
+  ["一种玩具球.pdf", "cn-utility-model-patent-toy-ball.pdf"],
+  [
+    "东莞市尧顺科技有限公司-QMS证书IAS_扫描版.pdf",
+    "cn-iso-9001-qms-certificate.pdf",
+  ],
+]);
 
 const MAX_WIDTH = 1600;
 const MAX_HEIGHT = 1800;
@@ -81,6 +98,10 @@ function toPublicMediaUrl(pathname, etag) {
   const url = new URL(`${publicMediaBaseUrl}/${publicPathname}`);
   url.searchParams.set("v", etag.replaceAll('"', ""));
   return url.toString();
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 async function optimizeImage(filename) {
@@ -161,6 +182,25 @@ async function updateCertificateUrls(urlByFilename) {
   await writeFile(certificateContentPath, source);
 }
 
+async function updateCertificateDocumentUrls(urlByFilename) {
+  let source = await readFile(certificateContentPath, "utf8");
+
+  for (const filename of certificatePdfBySource.values()) {
+    const url = urlByFilename.get(filename);
+    if (!url) {
+      throw new Error(`Missing uploaded PDF URL for ${filename}`);
+    }
+
+    const filenamePattern = escapeRegExp(filename);
+    source = source.replace(
+      new RegExp(`(documentUrl: )"[^"]*${filenamePattern}[^"]*"`, "g"),
+      `$1"${url}"`,
+    );
+  }
+
+  await writeFile(certificateContentPath, source);
+}
+
 const filenames = (await readdir(imagesDirectory))
   .filter((filename) => /\.(?:png|jpe?g|webp)$/i.test(filename))
   .sort();
@@ -184,9 +224,9 @@ for (const filename of filenames) {
   );
 }
 
-if (!shouldUpload) {
+if (!shouldUploadImages && !shouldUploadPdfs) {
   console.log(
-    `Prepared ${optimizedImages.length} WebP images. Run with --upload to publish them to Vercel Blob.`,
+    `Prepared ${optimizedImages.length} WebP images. Run with --upload-pdfs to publish certificate PDFs, or --upload for both images and PDFs.`,
   );
   process.exit(0);
 }
@@ -198,22 +238,44 @@ if (!process.env.BLOB_READ_WRITE_TOKEN) {
 }
 
 const urlByFilename = new Map();
-for (const image of optimizedImages) {
-  const pathname = `${blobDirectory}/${image.filename}`;
-  const body = await readFile(image.path);
-  const blob = await put(pathname, body, {
-    access: "public",
-    addRandomSuffix: false,
-    allowOverwrite: true,
-    contentType: "image/webp",
-    // The public URL includes the ETag so overwrites receive a fresh cache key.
-    cacheControlMaxAge: 60 * 60 * 24 * 30,
-  });
-  urlByFilename.set(image.filename, toPublicMediaUrl(blob.pathname, blob.etag));
-  console.log(`uploaded  ${pathname}`);
+if (shouldUploadImages) {
+  for (const image of optimizedImages) {
+    const pathname = `${blobDirectory}/${image.filename}`;
+    const body = await readFile(image.path);
+    const blob = await put(pathname, body, {
+      access: "public",
+      addRandomSuffix: false,
+      allowOverwrite: true,
+      contentType: "image/webp",
+      // The public URL includes the ETag so overwrites receive a fresh cache key.
+      cacheControlMaxAge: 60 * 60 * 24 * 30,
+    });
+    urlByFilename.set(image.filename, toPublicMediaUrl(blob.pathname, blob.etag));
+    console.log(`uploaded  ${pathname}`);
+  }
+
+  await updateCertificateUrls(urlByFilename);
 }
 
-await updateCertificateUrls(urlByFilename);
+if (shouldUploadPdfs) {
+  for (const [sourceFilename, publicFilename] of certificatePdfBySource) {
+    const sourcePath = resolve(pdfDirectory, sourceFilename);
+    const body = await readFile(sourcePath);
+    const pathname = `${blobDirectory}/${publicFilename}`;
+    const blob = await put(pathname, body, {
+      access: "public",
+      addRandomSuffix: false,
+      allowOverwrite: true,
+      contentType: "application/pdf",
+      cacheControlMaxAge: 60 * 60 * 24 * 30,
+    });
+    urlByFilename.set(publicFilename, toPublicMediaUrl(blob.pathname, blob.etag));
+    console.log(`uploaded  ${pathname}`);
+  }
+
+  await updateCertificateDocumentUrls(urlByFilename);
+}
+
 console.log(
-  `Uploaded ${optimizedImages.length} images and updated ${certificateContentPath}.`,
+  `Uploaded ${shouldUploadImages ? optimizedImages.length : 0} images and ${shouldUploadPdfs ? certificatePdfBySource.size : 0} PDFs; updated ${certificateContentPath}.`,
 );

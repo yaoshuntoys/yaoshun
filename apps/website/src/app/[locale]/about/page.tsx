@@ -34,7 +34,11 @@ import { buildPageMetadata } from "@/lib/metadata";
 import { getLocaleFromParams, t } from "@/lib/i18n";
 import { contactFormPath, localizedPath } from "@/lib/routes";
 import { toAbsoluteUrl } from "@/lib/site-config";
-import {certificateItems, certificateSectionCopy} from "@/content/pages/certificates";
+import {
+  certificateItems,
+  certificateSectionCopy,
+  getCertificateDocumentsStructuredData,
+} from "@/content/pages/certificates";
 import {
   cooperationPartnersSectionCopy,
   factoryItems,
@@ -715,6 +719,7 @@ export default async function AboutPage({
         ],
       },
     },
+    ...getCertificateDocumentsStructuredData(),
   ];
 
   return (
@@ -879,11 +884,13 @@ export default async function AboutPage({
       <CertificatesSection
         collapseLabel={t(locale, certificateSectionCopy.collapseLabel)}
         description={t(locale, certificateSectionCopy.description)}
+        documentLabel={t(locale, certificateSectionCopy.documentLabel)}
         dialogLabel={t(locale, certificateSectionCopy.dialogLabel)}
         expandLabel={t(locale, certificateSectionCopy.expandLabel)}
         eyebrow={t(locale, certificateSectionCopy.eyebrow)}
         id="about-certificate"
         items={certificateItems}
+        previewOnlyLabel={t(locale, certificateSectionCopy.previewOnlyLabel)}
         title={t(locale, certificateSectionCopy.title)}
       />
 

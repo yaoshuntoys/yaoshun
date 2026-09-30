@@ -16,6 +16,13 @@ export type NewsArticleSeed = {
   title: LocalizedText;
   excerpt: LocalizedText;
   publishedAt: string;
+  modifiedAt?: string;
+  author?: LocalizedText;
+  reviewedBy?: LocalizedText;
+  sources?: Array<{
+    title: LocalizedText;
+    url: string;
+  }>;
   image: string;
   galleryImages?: string[];
   featuredTopic?: boolean;

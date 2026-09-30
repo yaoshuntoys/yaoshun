@@ -150,6 +150,90 @@
   filter: drop-shadow(0 32px 48px rgba(16, 38, 96, 0.18));
 }
 
+.news-resource-hub {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.4rem, 3vw, 2.4rem);
+  border: 1px solid rgba(24, 56, 138, 0.08);
+  border-radius: 1.8rem;
+  background: linear-gradient(145deg, #f5f8ff 0%, #ffffff 72%);
+  box-shadow: 0 24px 54px -46px rgba(18, 41, 103, 0.3);
+}
+
+.news-resource-heading {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 54rem;
+}
+
+.news-resource-heading h2,
+.news-resource-heading p,
+.news-resource-card h3,
+.news-resource-card p {
+  margin: 0;
+}
+
+.news-resource-heading h2 {
+  color: #17306e;
+  font-family: var(--font-heading);
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  letter-spacing: -0.045em;
+}
+
+.news-resource-heading p,
+.news-resource-card p {
+  color: #65759e;
+  line-height: 1.68;
+}
+
+.news-resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.news-resource-card {
+  display: grid;
+  gap: 0.65rem;
+  align-content: start;
+  min-width: 0;
+  padding: 1.2rem;
+  border: 1px solid rgba(37, 99, 255, 0.1);
+  border-radius: 1.25rem;
+  background: #ffffff;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.news-resource-card:hover,
+.news-resource-card:focus-visible {
+  border-color: rgba(37, 99, 255, 0.28);
+  box-shadow: 0 18px 34px -28px rgba(37, 99, 255, 0.44);
+  transform: translateY(-2px);
+}
+
+.news-resource-card h3 {
+  color: #17306e;
+  font-family: var(--font-heading);
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.news-resource-card p {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 0.9rem;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.news-resource-card span {
+  color: #2563ff;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
 .news-content-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -562,6 +646,15 @@
   .news-sidebar,
   .news-main {
     gap: 0.85rem;
+  }
+
+  .news-resource-hub {
+    padding: 1.05rem;
+    border-radius: 1.35rem;
+  }
+
+  .news-resource-grid {
+    grid-template-columns: 1fr;
   }
 
   .news-sidebar {

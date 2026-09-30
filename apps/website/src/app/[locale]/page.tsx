@@ -34,7 +34,11 @@ import { getLocaleFromParams, t, type Locale } from "@/lib/i18n";
 import { getHomeFeaturedShowcaseCatalog } from "@/lib/site-data";
 import { localizedPath, productPath } from "@/lib/routes";
 import { homePageImages } from "@/content/pages/home";
-import {certificateItems, certificateSectionCopy} from "@/content/pages/certificates";
+import {
+  certificateItems,
+  certificateSectionCopy,
+  getCertificateDocumentsStructuredData,
+} from "@/content/pages/certificates";
 import {
   cooperationPartnersSectionCopy,
   factoryItems,
@@ -213,6 +217,7 @@ export default async function HomePage({
         url: toAbsoluteUrl(item.href),
       })),
     },
+    ...getCertificateDocumentsStructuredData(),
   ];
 
   return (
@@ -616,11 +621,13 @@ export default async function HomePage({
       <CertificatesSection
         collapseLabel={t(locale, certificateSectionCopy.collapseLabel)}
         description={t(locale, certificateSectionCopy.description)}
+        documentLabel={t(locale, certificateSectionCopy.documentLabel)}
         dialogLabel={t(locale, certificateSectionCopy.dialogLabel)}
         expandLabel={t(locale, certificateSectionCopy.expandLabel)}
         eyebrow={t(locale, certificateSectionCopy.eyebrow)}
         id="home-certificates"
         items={certificateItems}
+        previewOnlyLabel={t(locale, certificateSectionCopy.previewOnlyLabel)}
         title={t(locale, certificateSectionCopy.title)}
       />
 

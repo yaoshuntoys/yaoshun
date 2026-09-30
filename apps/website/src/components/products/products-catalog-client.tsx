@@ -28,6 +28,7 @@ export type ProductsCatalogClientItem = {
 
 type ProductsCatalogClientProps = {
   catalog: ProductsCatalogClientItem[];
+  initialQuery?: SearchParamMap;
   locale: Locale;
   text: {
     allProducts: string;
@@ -74,10 +75,11 @@ function formatShowingText(
 
 export function ProductsCatalogClient({
   catalog,
+  initialQuery = {},
   locale,
   text,
 }: ProductsCatalogClientProps) {
-  const [query, setQuery] = useState<SearchParamMap>({});
+  const [query, setQuery] = useState<SearchParamMap>(initialQuery);
   const pageSize = 9;
 
   useEffect(() => {

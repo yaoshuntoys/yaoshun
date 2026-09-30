@@ -1,14 +1,36 @@
 import "server-only";
 
-import { statSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import { existsSync, statSync } from "node:fs";
 import path from "node:path";
 
 import { newsSourcePathBySlug } from "@/content/pages/news";
 import { productSourcePathById } from "@/content/site/products-catalog";
 
-const ROOT = process.cwd();
+function findRepositoryRoot(startPath: string) {
+  let currentPath = path.resolve(startPath);
+
+  while (true) {
+    if (existsSync(path.join(currentPath, ".git"))) {
+      return currentPath;
+    }
+
+    const parentPath = path.dirname(currentPath);
+    if (parentPath === currentPath) {
+      return undefined;
+    }
+
+    currentPath = parentPath;
+  }
+}
+
+const REPOSITORY_ROOT = findRepositoryRoot(process.cwd());
+const APPLICATION_ROOT = existsSync(path.join(process.cwd(), "src", "app"))
+  ? process.cwd()
+  : path.join(process.cwd(), "apps", "website");
 const FALLBACK_DATE = new Date("2026-01-01T00:00:00.000Z");
 const NEWS_CONTENT_PATH = "apps/website/src/content/pages/news.ts";
+const lastModifiedCache = new Map<string, Date | undefined>();
 
 const staticRouteSourcePaths: Record<string, string[]> = {
   "": [
@@ -75,9 +97,37 @@ const staticRouteSourcePaths: Record<string, string[]> = {
 };
 
 function getFileLastModified(relativePath: string): Date | undefined {
+  const cached = lastModifiedCache.get(relativePath);
+  if (cached) return cached;
+
+  if (REPOSITORY_ROOT) {
+    try {
+      const committedAt = execFileSync(
+        "git",
+        ["log", "-1", "--format=%cI", "--", relativePath],
+        {cwd: REPOSITORY_ROOT, encoding: "utf8"},
+      ).trim();
+      const committedDate = new Date(committedAt);
+
+      if (committedAt && Number.isFinite(committedDate.getTime())) {
+        lastModifiedCache.set(relativePath, committedDate);
+        return committedDate;
+      }
+    } catch {
+      // Fall through to the filesystem timestamp when Git metadata is unavailable.
+    }
+  }
+
   try {
-    return statSync(path.join(ROOT, relativePath)).mtime;
+    const appRelativePath = relativePath.replace(/^apps\/website\//, "");
+    const filePath = REPOSITORY_ROOT
+      ? path.join(REPOSITORY_ROOT, relativePath)
+      : path.join(APPLICATION_ROOT, appRelativePath);
+    const modifiedAt = statSync(filePath).mtime;
+    lastModifiedCache.set(relativePath, modifiedAt);
+    return modifiedAt;
   } catch {
+    lastModifiedCache.set(relativePath, undefined);
     return undefined;
   }
 }

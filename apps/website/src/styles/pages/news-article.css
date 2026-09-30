@@ -258,6 +258,32 @@
   color: #6f7ea9;
 }
 
+.news-article-sources {
+  display: grid;
+  gap: 0.55rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(24, 56, 138, 0.08);
+  color: #4d618f;
+  font-size: 0.88rem;
+}
+
+.news-article-sources strong {
+  color: #17306e;
+}
+
+.news-article-sources ul {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.news-article-sources a {
+  color: #2563ff;
+  text-decoration: underline;
+  text-underline-offset: 0.15rem;
+}
+
 .news-article-image-frame {
   overflow: hidden;
   background:

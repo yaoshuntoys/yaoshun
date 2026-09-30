@@ -37,7 +37,7 @@ import {
 } from "@/lib/site-data";
 import { getLocaleFromParams, locales, t, type Locale } from "@/lib/i18n";
 import { contactFormPath, localizedPath, productPath } from "@/lib/routes";
-import { toAbsoluteUrl } from "@/lib/site-config";
+import { siteUrl, toAbsoluteUrl } from "@/lib/site-config";
 
 const alternateLocale: Record<Locale, Locale> = {
   en: "zh",
@@ -178,49 +178,76 @@ function getStructuredPrice(product: ProductJson) {
       };
 }
 
-function buildOfferPolicyReferences(locale: Locale) {
-  const termsUrl = toAbsoluteUrl(localizedPath(locale, "terms"));
+type StructuredDataRecord = Record<string, unknown>;
+
+function isStructuredDataRecord(value: unknown): value is StructuredDataRecord {
+  return typeof value === "object" && value !== null;
+}
+
+function hasStructuredType(value: StructuredDataRecord, type: string) {
+  const itemType = value["@type"];
+  return itemType === type || (Array.isArray(itemType) && itemType.includes(type));
+}
+
+function getSourceProductStructuredData(product: ProductJson) {
+  return product.structuredData?.find(
+    (item) => isStructuredDataRecord(item) && hasStructuredType(item, "Product"),
+  );
+}
+
+function getSourceOffer(product: ProductJson) {
+  const sourceProduct = getSourceProductStructuredData(product);
+  const offers = sourceProduct?.offers;
+  const offer = Array.isArray(offers) ? offers[0] : offers;
+
+  return isStructuredDataRecord(offer) ? offer : undefined;
+}
+
+function getSourceMediaStructuredData(product: ProductJson, productUrl: string) {
+  return (product.structuredData || [])
+    .filter(
+      (item) =>
+        isStructuredDataRecord(item) &&
+        (hasStructuredType(item, "VideoObject") || hasStructuredType(item, "ImageObject")),
+    )
+    .map((item, index) => {
+      const media = {...item};
+      const mediaType = hasStructuredType(item, "VideoObject") ? "video" : "image";
+      const contentUrl = media.contentUrl;
+      const thumbnailUrl = media.thumbnailUrl;
+
+      media["@context"] = "https://schema.org";
+      media["@id"] = `${productUrl}#${mediaType}-${index + 1}`;
+
+      if (typeof contentUrl === "string") {
+        media.contentUrl = toAbsoluteUrl(contentUrl);
+      }
+      if (typeof thumbnailUrl === "string") {
+        media.thumbnailUrl = toAbsoluteUrl(thumbnailUrl);
+      }
+
+      return media;
+    });
+
+}
+
+function getEligibleQuantity(minOrder: string) {
+  const match = minOrder.match(/[\d,.]+/);
+  if (!match) return undefined;
+
+  const value = Number(match[0].replace(/,/g, ""));
+  if (!Number.isFinite(value)) return undefined;
+
+  const unit = minOrder
+    .replace(match[0], "")
+    .replace(/^[\s:：]+|[\s]+$/g, "")
+    .replace(/^boxes?$/i, "box")
+    .replace(/^套$|^箱$/, "unit");
 
   return {
-    hasMerchantReturnPolicy: {
-      "@id": `${termsUrl}#merchant-return-policy`,
-    },
-    shippingDetails: {
-      "@type": "OfferShippingDetails",
-      shippingOrigin: {
-        "@type": "DefinedRegion",
-        addressCountry: "CN",
-      },
-      shippingDestination: [
-        { "@type": "DefinedRegion", addressCountry: "US" },
-        { "@type": "DefinedRegion", addressCountry: "CA" },
-        { "@type": "DefinedRegion", addressCountry: "GB" },
-        { "@type": "DefinedRegion", addressCountry: "AU" },
-        { "@type": "DefinedRegion", addressCountry: "DE" },
-        { "@type": "DefinedRegion", addressCountry: "FR" },
-        { "@type": "DefinedRegion", addressCountry: "JP" },
-        { "@type": "DefinedRegion", addressCountry: "KR" },
-        { "@type": "DefinedRegion", addressCountry: "SG" },
-      ],
-      deliveryTime: {
-        "@type": "ShippingDeliveryTime",
-        handlingTime: {
-          "@type": "QuantitativeValue",
-          minValue: 7,
-          maxValue: 15,
-          unitCode: "DAY",
-        },
-        transitTime: {
-          "@type": "QuantitativeValue",
-          minValue: 7,
-          maxValue: 45,
-          unitCode: "DAY",
-        },
-      },
-      hasShippingService: {
-        "@id": `${termsUrl}#merchant-shipping-policy`,
-      },
-    },
+    "@type": "QuantitativeValue",
+    value,
+    unitText: unit || "unit",
   };
 }
 
@@ -333,6 +360,10 @@ function copy(locale: Locale, title: string, minOrder: string) {
       en: "Please contact our team to confirm branding, packaging, and specification needs.",
       zh: "请联系团队确认品牌、包装与规格需求。",
     }),
+    quoteNote: t(locale, {
+      en: "FOB reference quote only. Final pricing is confirmed according to order quantity, packaging, customization, and trade terms.",
+      zh: "仅作 FOB 参考报价，最终价格需根据采购数量、包装、定制内容和贸易条款确认。",
+    }),
     packagingShipping: t(locale, {
       en: "Packaging & Shipping",
       zh: "包装与运输",
@@ -391,8 +422,7 @@ export async function generateMetadata({
     ...((descriptionList[locale] || descriptionList.en || descriptionList.zh) ?? []),
     localize(locale, product.summary, ""),
   ])
-    .join(" ")
-    .slice(0, 320);
+    .join(" ");
   const primaryProductImage = product.images?.[0];
 
   return buildMetadata(
@@ -609,7 +639,16 @@ export default async function ProductDetailPage({
   const structuredImages = mediaImages.slice(0, 8).map((image) => toAbsoluteUrl(image));
   const currencyCode = normalizeCurrencyCode(product.pricing?.currency);
   const structuredPrice = getStructuredPrice(product);
-  const offerPolicyReferences = buildOfferPolicyReferences(locale);
+  const sourceOffer = getSourceOffer(product);
+  const sourcePriceValidUntil =
+    typeof sourceOffer?.priceValidUntil === "string"
+      ? sourceOffer.priceValidUntil
+      : undefined;
+  const eligibleQuantity = minOrder ? getEligibleQuantity(minOrder) : undefined;
+  const quoteDescription =
+    locale === "zh"
+      ? "FOB 参考报价；最终价格需根据采购数量、包装、定制内容和贸易条款确认。"
+      : "FOB reference quote; final pricing is confirmed according to order quantity, packaging, customization, and trade terms.";
   const structuredOffer =
     structuredPrice
       ? structuredPrice.isRange
@@ -618,28 +657,34 @@ export default async function ProductDetailPage({
             lowPrice: structuredPrice.min,
             highPrice: structuredPrice.max,
             priceCurrency: currencyCode,
-            availability: "https://schema.org/InStock",
             businessFunction: "https://schema.org/Sell",
             itemCondition: "https://schema.org/NewCondition",
             url: productUrl,
-            ...offerPolicyReferences,
+            description: quoteDescription,
+            ...(sourcePriceValidUntil ? { priceValidUntil: sourcePriceValidUntil } : {}),
+            ...(eligibleQuantity ? { eligibleQuantity } : {}),
             seller: {
-              "@type": "Organization",
-              name: "Dongguan Yaoshun Technology Co., Ltd.",
+              "@id": `${siteUrl}#organization`,
             },
           }
         : {
             "@type": "Offer",
             price: structuredPrice.min,
             priceCurrency: currencyCode,
-            availability: "https://schema.org/InStock",
             businessFunction: "https://schema.org/Sell",
             itemCondition: "https://schema.org/NewCondition",
             url: productUrl,
-            ...offerPolicyReferences,
+            description: quoteDescription,
+            ...(sourcePriceValidUntil ? { priceValidUntil: sourcePriceValidUntil } : {}),
+            ...(eligibleQuantity ? { eligibleQuantity } : {}),
+            priceSpecification: {
+              "@type": "UnitPriceSpecification",
+              price: structuredPrice.min,
+              priceCurrency: currencyCode,
+              ...(eligibleQuantity ? { eligibleQuantity } : {}),
+            },
             seller: {
-              "@type": "Organization",
-              name: "Dongguan Yaoshun Technology Co., Ltd.",
+              "@id": `${siteUrl}#organization`,
             },
           }
       : undefined;
@@ -678,6 +723,7 @@ export default async function ProductDetailPage({
           value: item.value,
         })),
       };
+  const sourceMediaStructuredData = getSourceMediaStructuredData(product, productUrl);
   const structuredData: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
@@ -705,7 +751,7 @@ export default async function ProductDetailPage({
     },
   ];
 
-  structuredData.push(productStructuredData);
+  structuredData.push(productStructuredData, ...sourceMediaStructuredData);
 
   return (
     <div className="site-container grid gap-7 pb-4 pt-4 sm:pt-6 lg:gap-10">
@@ -796,6 +842,9 @@ export default async function ProductDetailPage({
                   {text.minOrderLabel}
                 </strong>
               ) : null}
+              <p className="m-0 text-[0.82rem] leading-6 text-[#6f7ea9]">
+                {text.quoteNote}
+              </p>
             </div>
 
             {product.pricing?.tiers?.length ? (

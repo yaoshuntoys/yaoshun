@@ -99,7 +99,14 @@ export function proxy(request: NextRequest) {
       localePathPrefix(defaultLocale) === "" &&
       !isInternalLocaleRewrite
     ) {
-      return new NextResponse("Not Found", { status: 404 });
+      const url = request.nextUrl.clone();
+      url.pathname = request.nextUrl.pathname.replace(
+        new RegExp(`^/${defaultLocale}(?=/|$)`),
+        "",
+      ) || "/";
+      const response = NextResponse.redirect(url, 308);
+      applyContextCookies(response, request, defaultLocale, consentRequired);
+      return response;
     }
 
     const response = NextResponse.next();

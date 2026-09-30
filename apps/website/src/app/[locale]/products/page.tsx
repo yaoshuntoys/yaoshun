@@ -19,10 +19,41 @@ import { productsPageAssets } from "@/content/pages/products";
 import { toAbsoluteUrl } from "@/lib/site-config";
 import { localizedPath, productPath } from "@/lib/routes";
 
-export const dynamic = "force-static";
+type ProductsSearchParams = {
+  category?: string | string[];
+  page?: string | string[];
+};
+
+type ProductsQuery = {
+  category?: string;
+  page?: string;
+};
+
+function firstSearchParam(value: string | string[] | undefined) {
+  return Array.isArray(value) ? value[0] : value;
+}
+
+function getProductsQuery(searchParams?: ProductsSearchParams): ProductsQuery {
+  const category = firstSearchParam(searchParams?.category);
+  const page = firstSearchParam(searchParams?.page);
+
+  return {
+    category: category || undefined,
+    page: page || undefined,
+  };
+}
+
+function getPageNumber(value: string | undefined) {
+  const parsed = Number(value || "1");
+  return Number.isFinite(parsed) ? Math.max(Math.floor(parsed), 1) : 1;
+}
 
 function copy(locale: "en" | "zh") {
   return {
+    heroEyebrow: t(locale, {
+      en: "Wholesale Product Catalog",
+      zh: "批发产品目录",
+    }),
     heroTitle: t(locale, {
       en: "Fort Building Kits For Kids",
       zh: "儿童堡垒拼搭套装",
@@ -53,26 +84,64 @@ function copy(locale: "en" | "zh") {
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams?: Promise<ProductsSearchParams>;
 }): Promise<Metadata> {
   const locale = await getLocaleFromParams(params);
-  return buildPageMetadata(
+  const metadata = buildPageMetadata(
     locale,
     productsPageContent.seo,
     "products",
     getCatalogSeoKeywords(locale),
   );
+  const query = getProductsQuery(await searchParams);
+
+  if (!query.category && !query.page) {
+    return metadata;
+  }
+
+  return {
+    ...metadata,
+    robots: {
+      index: false,
+      follow: true,
+      googleBot: {
+        index: false,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
+  };
 }
 
 export default async function ProductsPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams?: Promise<ProductsSearchParams>;
 }) {
   const locale = await getLocaleFromParams(params);
   const text = copy(locale);
   const catalog = getShowcaseCatalog();
+  const query = getProductsQuery(await searchParams);
+  const pageSize = 9;
+  const sortedCatalog = [...catalog].sort(
+    (a, b) => Number(b.bestseller) - Number(a.bestseller),
+  );
+  const filteredCatalog = sortedCatalog.filter(
+    (item) => !query.category || item.collection === query.category,
+  );
+  const totalPages = Math.max(1, Math.ceil(filteredCatalog.length / pageSize));
+  const currentPage = Math.min(getPageNumber(query.page), totalPages);
+  const currentPageCatalog = filteredCatalog.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize,
+  );
 
   const catalogItems = catalog.map((item) => ({
     productId: item.product.productId,
@@ -84,9 +153,6 @@ export default async function ProductsPage({
     priceLabel: getProductPriceLabel(item, locale),
     bestseller: item.bestseller,
   }));
-  const defaultGridProducts = [...catalog]
-    .sort((a, b) => Number(b.bestseller) - Number(a.bestseller))
-    .slice(0, 6);
   const homeHref = localizedPath(locale, "home");
   const productsHref = localizedPath(locale, "products");
   const solutionsHref = localizedPath(locale, "solutions");
@@ -119,9 +185,9 @@ export default async function ProductsPage({
       inLanguage: locale === "zh" ? "zh-CN" : "en-US",
       mainEntity: {
         "@type": "ItemList",
-        itemListElement: defaultGridProducts.map((item, index) => ({
+        itemListElement: currentPageCatalog.map((item, index) => ({
           "@type": "ListItem",
-          position: index + 1,
+          position: (currentPage - 1) * pageSize + index + 1,
           url: toAbsoluteUrl(productPath(locale, item.product.productId)),
           name: t(locale, item.label),
         })),
@@ -133,6 +199,28 @@ export default async function ProductsPage({
     <div className="products-page">
       <StructuredData data={structuredData} />
 
+      <header className="products-hero">
+        <div className="products-hero-background" aria-hidden="true">
+          <Image
+            alt=""
+            className="products-hero-background-image"
+            fill
+            priority
+            sizes="100vw"
+            src="/site/misc/product-bg.webp"
+          />
+        </div>
+        <div className="products-hero-inner">
+          <div className="products-hero-grid">
+            <div className="products-hero-copy">
+              <p className="products-hero-eyebrow">{text.heroEyebrow}</p>
+              <h1 className="products-hero-title">{text.heroTitle}</h1>
+              <p className="products-hero-text">{text.heroText}</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
       <ProductsCatalogClient
         catalog={catalogItems}
         locale={locale}
@@ -140,6 +228,7 @@ export default async function ProductsPage({
           allProducts: text.allProducts,
           categories: text.categories,
         }}
+        initialQuery={query}
       />
 
       <section className="products-oem-banner">

@@ -1,8 +1,6 @@
 const customImage = "/site/solutions/custom.webp";
-const ourSolution1 = "/site/solutions/ourSolution1.webp";
-const ourSolution2 = "/site/solutions/ourSolution2.webp";
-const ourSolution3 = "/site/solutions/ourSolution3.webp";
-const ourSolution4 = "/site/solutions/ourSolution4.webp";
+const coreFocusBase =
+  "https://7j7davvujdsmddan.public.blob.vercel-storage.com/yaoshun-assets/site/solutions/core-focus-v2";
 const baseUrl =
   "https://www.yaoshuntoys.com/media/site/solutions";
 const equipmentBase =
@@ -11,10 +9,10 @@ const workshopBase =
   "https://www.yaoshuntoys.com/media/site/solutions/workshop";
 export const solutionsPageImages = {
   custom: customImage,
-  education: ourSolution1,
-  retail: ourSolution2,
-  events: ourSolution3,
-  oem: ourSolution4,
+  education: `${coreFocusBase}/stem-toy-rd-factory-review.webp`,
+  retail: `${coreFocusBase}/interlocking-diy-toy-pilot-assembly.webp`,
+  events: `${coreFocusBase}/plastic-rod-extrusion-production.webp`,
+  oem: `${coreFocusBase}/toy-parts-quality-inspection.webp`,
 } as const;
 
 export const solutionsWorkshopImages = {

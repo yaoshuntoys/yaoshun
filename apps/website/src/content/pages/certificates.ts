@@ -37,6 +37,13 @@ const utilityModelPatent =
 const highlightedChildrensProductCertificate =
   "https://www.yaoshuntoys.com/media/site/about/certificates/us-childrens-product-certificate-highlighted.webp";
 
+export type CertificateItem = {
+  code: string;
+  title: string;
+  image: string;
+  documentUrl?: string;
+};
+
 export const certificateSectionCopy = {
   eyebrow: {en: "Compliance", zh: "合规资料"},
   title: {en: "Certificates & Compliance", zh: "资质证书"},
@@ -47,22 +54,59 @@ export const certificateSectionCopy = {
   dialogLabel: {en: "View certificate", zh: "查看证书"},
   expandLabel: {en: "Show more", zh: "显示更多"},
   collapseLabel: {en: "Show less", zh: "收起"},
+  documentLabel: {en: "View original PDF", zh: "查看 PDF 原件"},
+  previewOnlyLabel: {en: "Preview only", zh: "仅提供预览"},
 } as const;
 
-export const certificateItems = [
-  {code: "ISO 9001", title: "QMS Certificate (English)", image: qmsCertificateEnglish},
-  {code: "ISO 9001", title: "QMS Certificate (Chinese)", image: qmsCertificateChinese},
-  {code: "CE", title: "Certificate of Compliance", image: ceCertificateOfCompliance},
+export const certificateItems: CertificateItem[] = [
+  {
+    code: "ISO 9001",
+    title: "QMS Certificate (English)",
+    image: qmsCertificateEnglish,
+    documentUrl: "https://www.yaoshuntoys.com/media/site/about/certificates/cn-iso-9001-qms-certificate.pdf?v=dded357a39b23ff25674f8dfb4831555",
+  },
+  {
+    code: "ISO 9001",
+    title: "QMS Certificate (Chinese)",
+    image: qmsCertificateChinese,
+    documentUrl: "https://www.yaoshuntoys.com/media/site/about/certificates/cn-iso-9001-qms-certificate.pdf?v=dded357a39b23ff25674f8dfb4831555",
+  },
+  {
+    code: "CE",
+    title: "Certificate of Compliance",
+    image: ceCertificateOfCompliance,
+    documentUrl: "https://www.yaoshuntoys.com/media/site/about/certificates/ce-certificate-of-conformity.pdf?v=30a41069b886e123459b7c23e1548e11",
+  },
   {code: "CCC", title: "Product Certificate", image: cccProductCertificate},
-  {code: "CPSC", title: "Children's Product Certificate", image: childrensProductCertificate},
-  {code: "Eurofins", title: "Test Report", image: eurofinsTestReport},
+  {
+    code: "CPSC",
+    title: "Children's Product Certificate",
+    image: childrensProductCertificate,
+    documentUrl: "https://www.yaoshuntoys.com/media/site/about/certificates/us-childrens-product-certificate.pdf?v=b113197cb1c8793ff0885c01bd1509cf",
+  },
+  {
+    code: "Eurofins",
+    title: "Test Report",
+    image: eurofinsTestReport,
+    documentUrl: "https://www.yaoshuntoys.com/media/site/about/certificates/eurofins-test-report-efw726054129.pdf?v=52cfa2de43465c91de830c80b75366fe",
+  },
   {code: "NTEK", title: "Test Report", image: certificateImage1},
   {code: "NTEK", title: "Test Report", image: certificateImage2},
   {code: "SPG", title: "Certificate", image: certificateImage3},
   {code: "SEI", title: "Safety Standard", image: certificateImage4},
   {code: "EUIPO", title: "Design Registration", image: euipoDesignRegistration},
-  {code: "UKIPO", title: "Design Registration", image: ukDesignRegistration},
-  {code: "CNIPA", title: "Utility Model Patent", image: utilityModelPatent},
+  {
+    code: "UKIPO",
+    title: "Design Registration",
+    image: ukDesignRegistration,
+    documentUrl: "https://www.yaoshuntoys.com/media/site/about/certificates/uk-design-registration-6487034.pdf?v=148298fd53aefd6c7b496ecf4c530836",
+  },
+  {
+    code: "CNIPA",
+    title: "Utility Model Patent",
+    image: utilityModelPatent,
+    documentUrl: "https://www.yaoshuntoys.com/media/site/about/certificates/cn-utility-model-patent-toy-ball.pdf?v=16de4d73530ce311157f887014151ff1",
+  },
   {code: "CNIPA", title: "Leyidi Trademark Registration", image: leyidiTrademarkRegistration},
   {code: "CNIPA", title: "Londy Trademark Registration", image: londyTrademarkRegistration},
   {code: "CCC", title: "Test Report", image: cccTestReportCover},
@@ -74,3 +118,18 @@ export const certificateItems = [
   {code: "SPG", title: "Audit Record", image: certificateImage5},
   {code: "NTEK", title: "Sample Photos", image: certificateImage6},
 ] as const;
+
+export function getCertificateDocumentsStructuredData() {
+  return certificateItems
+    .filter((item): item is CertificateItem & {documentUrl: string} => Boolean(item.documentUrl))
+    .map((item) => ({
+      "@context": "https://schema.org",
+      "@type": "DigitalDocument",
+      name: `${item.code} - ${item.title}`,
+      url: toAbsoluteUrl(item.documentUrl),
+      image: item.image,
+      encodingFormat: "application/pdf",
+      about: "Yaoshun compliance and qualification evidence",
+    }));
+}
+import { toAbsoluteUrl } from "@/lib/site-config";

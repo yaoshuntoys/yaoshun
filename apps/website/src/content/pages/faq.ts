@@ -10,7 +10,7 @@ export const faqItems = [
     question: {en: "What is the MOQ for wholesale fort building kits?", zh: "堡垒拼搭套装批发的 MOQ 是多少？"},
     answer: {
       en: "MOQ depends on the fort building kit structure, tooling complexity, piece count and packaging configuration. We provide tiered pricing and confirm the practical MOQ during quotation review.",
-      zh: "我们的核心方向包括益智玩具、积木拼装玩具、DIY 拼接玩具、塑料制品定制、高精密注塑件、PVC/PU/ABS/PC/尼龙管材以及各类异型材，也可配套塑胶结构件、辅件组合和部分 AI 玩具塑胶电子外壳开发。",
+      zh: "MOQ 取决于堡垒拼搭套装的结构、模具复杂度、件数和包装配置。我们会按数量提供阶梯报价，并在报价评估时确认实际起订量。",
     },
   },
   {

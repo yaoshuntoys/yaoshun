@@ -20,6 +20,7 @@ import {
   getNewsCategoryLabel,
   getRecentNews,
 } from "@/lib/site-data";
+import { getNewsLastModified } from "@/lib/content-lastmod";
 import { getLocaleFromParams, locales, t, type Locale } from "@/lib/i18n";
 import { toAbsoluteUrl } from "@/lib/site-config";
 import { newsArticles } from "@/content/pages/news";
@@ -34,6 +35,10 @@ function copy(locale: Locale) {
     previousFallback: t(locale, { en: "Back to News", zh: "返回新闻" }),
     nextFallback: t(locale, { en: "Browse More News", zh: "浏览更多新闻" }),
     publishedOn: t(locale, { en: "Published", zh: "发布时间" }),
+    updatedOn: t(locale, { en: "Updated", zh: "更新于" }),
+    authorLabel: t(locale, { en: "Author", zh: "作者" }),
+    reviewedByLabel: t(locale, { en: "Reviewed by", zh: "审核" }),
+    sourcesLabel: t(locale, { en: "Sources", zh: "来源" }),
     readingTime: (minutes: number) =>
       t(locale, {
         en: `${minutes} min read`,
@@ -57,6 +62,34 @@ function localizeList(
 ) {
   if (!value) return [];
   return value[locale] || value.en || value.zh || [];
+}
+
+function getArticleModifiedAt(
+  article: NonNullable<ReturnType<typeof findNewsArticle>>,
+) {
+  if (article.modifiedAt) return article.modifiedAt;
+
+  const sourceModifiedAt = getNewsLastModified(
+    article.slug,
+    article.publishedAt,
+  )
+    .toISOString()
+    .slice(0, 10);
+
+  return sourceModifiedAt > article.publishedAt
+    ? sourceModifiedAt
+    : article.publishedAt;
+}
+
+function getArticleAuthor(
+  article: NonNullable<ReturnType<typeof findNewsArticle>>,
+  locale: Locale,
+) {
+  return localize(
+    article.author,
+    locale,
+    t(locale, { en: "Yaoshun Editorial Team", zh: "尧顺编辑团队" }),
+  );
 }
 
 function getReadingMinutes(article: NonNullable<ReturnType<typeof findNewsArticle>>) {
@@ -155,6 +188,8 @@ export async function generateMetadata({
       zh: "尧顺玩具制造与项目交付动态。",
     }),
   );
+  const articleModifiedAt = getArticleModifiedAt(article);
+  const articleAuthor = getArticleAuthor(article, locale);
   const baseMetadata = buildMetadata(
     locale,
     articleTitle,
@@ -184,9 +219,9 @@ export async function generateMetadata({
       ...baseMetadata.openGraph,
       type: "article",
       publishedTime: `${article.publishedAt}T00:00:00Z`,
-      modifiedTime: `${article.publishedAt}T00:00:00Z`,
+      modifiedTime: `${articleModifiedAt}T00:00:00Z`,
       section: getNewsCategoryLabel(locale, article),
-      authors: ["Dongguan Yaoshun Technology Co., Ltd."],
+      authors: [articleAuthor],
       images: article.image
         ? [
             {
@@ -233,6 +268,10 @@ export default async function NewsDetailPage({
     t(locale, { en: "Yaoshun News", zh: "尧顺新闻" }),
   );
   const articleDescription = localize(article.excerpt, locale);
+  const articleModifiedAt = getArticleModifiedAt(article);
+  const articleAuthor = getArticleAuthor(article, locale);
+  const articleReviewer = localize(article.reviewedBy, locale);
+  const articleSources = article.sources || [];
   const categoryLabel = getNewsCategoryLabel(locale, article);
   const readingMinutes = getReadingMinutes(article);
   const breadcrumbData = {
@@ -267,14 +306,31 @@ export default async function NewsDetailPage({
     description: articleDescription,
     articleSection: categoryLabel,
     datePublished: `${article.publishedAt}T00:00:00Z`,
-    dateModified: `${article.publishedAt}T00:00:00Z`,
+    dateModified: `${articleModifiedAt}T00:00:00Z`,
     mainEntityOfPage: articleUrl,
     inLanguage: locale === "zh" ? "zh-CN" : "en-US",
     image: article.image ? [toAbsoluteUrl(article.image)] : undefined,
     author: {
       "@type": "Organization",
-      name: "Dongguan Yaoshun Technology Co., Ltd.",
+      name: articleAuthor,
     },
+    ...(articleReviewer
+      ? {
+          reviewedBy: {
+            "@type": "Organization",
+            name: articleReviewer,
+          },
+        }
+      : {}),
+    ...(articleSources.length
+      ? {
+          citation: articleSources.map((source) => ({
+            "@type": "CreativeWork",
+            name: localize(source.title, locale),
+            url: source.url,
+          })),
+        }
+      : {}),
     publisher: {
       "@type": "Organization",
       name: "Dongguan Yaoshun Technology Co., Ltd.",
@@ -325,6 +381,20 @@ export default async function NewsDetailPage({
               <CalendarDays size={15} strokeWidth={2.05} /> {text.publishedOn}:{" "}
               {formatPublishedDate(locale, article.publishedAt)}
             </span>
+            {articleModifiedAt !== article.publishedAt ? (
+              <span>
+                <CalendarDays size={15} strokeWidth={2.05} /> {text.updatedOn}:{" "}
+                {formatPublishedDate(locale, articleModifiedAt)}
+              </span>
+            ) : null}
+            <span>
+              {text.authorLabel}: {articleAuthor}
+            </span>
+            {articleReviewer ? (
+              <span>
+                {text.reviewedByLabel}: {articleReviewer}
+              </span>
+            ) : null}
             <span>
               <Clock3 size={15} strokeWidth={2.05} /> {text.readingTime(readingMinutes)}
             </span>
@@ -335,6 +405,20 @@ export default async function NewsDetailPage({
           className="news-article-body"
           dangerouslySetInnerHTML={{ __html: localize(article.body, locale) }}
         />
+        {articleSources.length ? (
+          <aside className="news-article-sources" aria-label={text.sourcesLabel}>
+            <strong>{text.sourcesLabel}</strong>
+            <ul>
+              {articleSources.map((source) => (
+                <li key={source.url}>
+                  <a href={source.url} rel="noreferrer" target="_blank">
+                    {localize(source.title, locale, source.url)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        ) : null}
       </article>
 
       <section className="news-article-more">

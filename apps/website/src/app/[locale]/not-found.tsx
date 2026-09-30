@@ -1,16 +1,6 @@
-import type {Metadata} from "next";
-
 import {FallbackPage} from "@/components/sections/fallback-page";
 import {localeRegistry, type Locale} from "@/lib/i18n";
 import {contactFormPath, localizedPath} from "@/lib/routes";
-
-export const metadata: Metadata = {
-  title: "Page Not Found | yaoshun toys",
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
 
 export default async function LocaleNotFound({
   params,

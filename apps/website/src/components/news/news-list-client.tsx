@@ -34,6 +34,7 @@ export type NewsListClientArticle = {
 
 type NewsListClientProps = {
   articles: NewsListClientArticle[];
+  initialQuery?: SearchParamMap;
   locale: Locale;
   text: {
     categories: string;
@@ -138,8 +139,13 @@ function formatShowingText(
   });
 }
 
-export function NewsListClient({articles, locale, text}: NewsListClientProps) {
-  const [query, setQuery] = useState<SearchParamMap>({});
+export function NewsListClient({
+  articles,
+  initialQuery = {},
+  locale,
+  text,
+}: NewsListClientProps) {
+  const [query, setQuery] = useState<SearchParamMap>(initialQuery);
   const pageSize = 9;
   const newsHref = localizedPath(locale, "news");
 
