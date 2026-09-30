@@ -15,7 +15,6 @@ const rateLimitBuckets = new Map<string, number[]>();
 type MailPayload = {
   headers: Record<string, string>;
   html: string;
-  replyTo: string;
   subject: string;
   text: string;
 };
@@ -129,7 +128,10 @@ async function sendWithResend(config: ResendConfig, payload: MailPayload) {
   const result = await resend.emails.send({
     from: config.from,
     to: config.to,
-    replyTo: payload.replyTo,
+    // Keep the notification's Reply-To on the inquiry mailbox. The customer
+    // email is shown in the message body so the team can copy it into a new
+    // outbound message instead of replying to this internal notification.
+    replyTo: config.to[0],
     subject: payload.subject,
     text: payload.text,
     html: payload.html,
@@ -319,82 +321,116 @@ export async function POST(request: Request) {
 
     const submittedDate = new Date();
     const submittedAt = submittedDate.toISOString();
-    const formattedSubmittedAt = formatSubmittedAt(submittedDate, locale);
-    const subjectPrefix = locale === "en" ? "Website Inquiry" : "官网询单";
-    const subject = `[${subjectPrefix}] ${name}${company ? ` - ${company}` : ""}`;
-    const mailCopy =
-      locale === "zh"
-        ? {
-            company: "公司",
-            email: "邮箱",
-            inquiry: "官网询单",
-            newInquiry: `来自 ${name} 的新询单`,
-          }
-        : {
-            company: "Company",
-            email: "Email",
-            inquiry: "Website inquiry",
-            newInquiry: `New inquiry from ${name}`,
-          };
-    const escapedCompany = escapeHtml(company);
+    const formattedSubmittedAt = formatSubmittedAt(submittedDate, "zh");
+    const subjectPrefix = "官网询单";
+    const subject = `[${subjectPrefix}] 来自 ${name} 的新询单`;
+    const mailCopy = {
+      copyEmail: "点击客户邮箱，或复制后新建邮件回复",
+      email: "客户邮箱",
+      forwarded: "此邮件由官网客户留言自动转发至询单邮箱。",
+      inquiry: "官网询单",
+      message: "留言内容",
+      name: "客户名称",
+      newInquiry: `来自 ${name} 的新询单`,
+      noReply: "请勿直接回复此邮件",
+      eventJson: "事件详情",
+      source: "来源",
+      website: "官网客户留言",
+    };
+    const escapedName = escapeHtml(name);
     const escapedEmail = escapeHtml(normalizedEmail);
     const escapedMailto = escapeHtml(`mailto:${normalizedEmail}`);
     const escapedSubmittedAt = escapeHtml(formattedSubmittedAt);
     const escapedMessage = escapeHtml(message);
-    const companyHtml = company
-      ? `
-                  <tr>
-                    <td style="width:78px;padding:0;font-size:12px;font-weight:700;color:#6f7ea9;vertical-align:top;">${mailCopy.company}</td>
-                    <td style="padding:0;font-size:14px;color:#17306e;vertical-align:top;word-break:break-word;">${escapedCompany}</td>
-                  </tr>`
-      : "";
+    const eventJson = attribution || "{}";
+    const escapedEventJson = escapeHtml(eventJson);
+    const textareaStyle =
+      "box-sizing:border-box;min-height:96px;padding:12px 14px;background:#f8fbff;border:1px solid #dfe7f3;border-radius:6px;color:#17306e;";
     const text = [
       mailCopy.newInquiry,
-      `${mailCopy.email}: ${normalizedEmail}`,
-      company ? `${mailCopy.company}: ${company}` : "",
       "",
+      `${mailCopy.noReply}。`,
+      mailCopy.forwarded,
+      `${mailCopy.copyEmail}。`,
+      "",
+      `${mailCopy.name}: ${name}`,
+      `${mailCopy.email}: ${normalizedEmail}`,
+      "",
+      `${mailCopy.message}:`,
       message,
       "",
+      `${mailCopy.eventJson}:`,
+      eventJson,
+      "",
+      `${mailCopy.source}: ${mailCopy.website}`,
       formattedSubmittedAt,
     ].filter(Boolean).join("\n");
 
     const mailPayload = {
       headers: {
         "X-Lead-Source": "website-contact-form",
+        "X-Reply-Policy": "click-customer-email-to-start-new-message",
       },
       html: `
-        <div style="margin:0;background:#ffffff;padding:18px;font-family:Arial,'Helvetica Neue',sans-serif;color:#17306e;">
-          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:600px;margin:0 auto;border-collapse:collapse;background:#ffffff;">
+        <div style="margin:0;background:#f8fbff;padding:28px 12px;font-family:Arial,'Helvetica Neue',sans-serif;color:#17306e;">
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:640px;margin:0 auto;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #dfe7f3;border-radius:10px;overflow:hidden;">
             <tr>
-              <td style="padding:0 0 12px 0;border-bottom:2px solid #2563ff;">
+              <td style="padding:26px 28px 17px 28px;border-bottom:4px solid #2563ff;">
                 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;">
                   <tr>
-                    <td style="vertical-align:middle;white-space:nowrap;font-size:18px;line-height:1;font-weight:800;">
+                    <td style="vertical-align:middle;white-space:nowrap;font-size:28px;line-height:1;font-weight:800;letter-spacing:-.4px;">
                       <span style="color:#2563ff;">yaoshun</span><span style="color:#ff9700;"> toys</span>
                     </td>
-                    <td align="right" style="vertical-align:middle;font-size:11px;font-weight:700;line-height:1.3;color:#6f7ea9;">${mailCopy.inquiry}</td>
+                    <td align="right" style="vertical-align:middle;font-size:15px;font-weight:800;line-height:1.3;color:#6f7ea9;">${mailCopy.inquiry}</td>
                   </tr>
                 </table>
               </td>
             </tr>
             <tr>
-              <td style="padding:16px 0 0 0;">
-                <h1 style="margin:0 0 12px 0;font-size:20px;line-height:1.35;font-weight:800;color:#17306e;">${escapeHtml(mailCopy.newInquiry)}</h1>
-                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;">
+              <td style="padding:28px;">
+                <h1 style="margin:0;font-size:27px;line-height:1.3;font-weight:800;color:#17306e;">${escapeHtml(mailCopy.newInquiry)}</h1>
+
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:16px;border-collapse:separate;border-spacing:0;background:#fff4f1;border:1px solid #fecdca;border-radius:8px;">
                   <tr>
-                    <td style="width:78px;padding:0 0 7px 0;font-size:12px;font-weight:700;color:#6f7ea9;vertical-align:top;">${mailCopy.email}</td>
-                    <td style="padding:0 0 7px 0;font-size:14px;font-weight:700;vertical-align:top;word-break:break-word;"><a href="${escapedMailto}" style="color:#2563ff;text-decoration:none;">${escapedEmail}</a></td>
+                    <td style="padding:14px 16px;border-left:4px solid #d92d20;">
+                      <div style="margin:0 0 4px 0;font-size:13px;font-weight:800;line-height:1.4;color:#b42318;">${mailCopy.noReply}</div>
+                      <div style="font-size:13px;line-height:1.55;color:#7a271a;">${mailCopy.forwarded}${mailCopy.copyEmail}。</div>
+                    </td>
                   </tr>
-                  ${companyHtml}
                 </table>
-                <div style="margin:14px 0 0 0;padding:14px 0;border-top:1px solid #dfe7f3;font-size:14px;line-height:1.65;color:#17306e;white-space:pre-wrap;word-break:break-word;">${escapedMessage}</div>
-                <div style="margin-top:12px;font-size:11px;line-height:1.5;color:#8a97b8;">${escapedSubmittedAt}</div>
+
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:14px;border-collapse:collapse;">
+                  <tr>
+                    <td style="width:104px;padding:0 0 4px 0;font-size:13px;font-weight:700;color:#6f7ea9;vertical-align:top;">${mailCopy.name}</td>
+                    <td style="padding:0 0 4px 0;font-size:15px;font-weight:800;color:#17306e;vertical-align:top;word-break:break-word;">${escapedName}</td>
+                  </tr>
+                  <tr>
+                    <td style="width:104px;padding:0 0 4px 0;font-size:13px;font-weight:700;color:#6f7ea9;vertical-align:top;">${mailCopy.email}</td>
+                    <td style="padding:0 0 4px 0;font-size:15px;font-weight:800;vertical-align:top;word-break:break-word;user-select:all;"><a href="${escapedMailto}" style="color:#2563ff;text-decoration:underline;text-underline-offset:2px;">${escapedEmail}</a></td>
+                  </tr>
+                </table>
+
+                <div style="margin-top:4px;">
+                  <div style="font-size:12px;font-weight:700;line-height:1.4;color:#6f7ea9;letter-spacing:.45px;">${mailCopy.message}</div>
+                  <div style="margin-top:8px;${textareaStyle}font-size:15px;line-height:1.7;white-space:pre-wrap;word-break:break-word;">${escapedMessage}</div>
+                </div>
+
+                <div style="margin-top:12px;">
+                  <div style="font-size:12px;font-weight:700;line-height:1.4;color:#6f7ea9;letter-spacing:.45px;">${mailCopy.eventJson}</div>
+                  <pre style="margin:8px 0 0 0;${textareaStyle}font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;font-size:11px;line-height:1.55;color:#52658f;white-space:pre-wrap;word-break:break-word;">${escapedEventJson}</pre>
+                </div>
+
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:4px;padding-top:6px;border-collapse:collapse;border-top:1px solid #dfe7f3;">
+                  <tr>
+                    <td style="font-size:12px;line-height:1.5;color:#6f7ea9;">${mailCopy.source}: ${mailCopy.website}</td>
+                    <td align="right" style="font-size:12px;line-height:1.5;color:#8a97b8;">${escapedSubmittedAt}</td>
+                  </tr>
+                </table>
               </td>
             </tr>
           </table>
         </div>
       `,
-      replyTo: normalizedEmail,
       subject,
       text,
     };
