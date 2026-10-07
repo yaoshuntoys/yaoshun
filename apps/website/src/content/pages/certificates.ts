@@ -60,17 +60,14 @@ export const certificateSectionCopy = {
 
 export const certificateItems: CertificateItem[] = [
   {
-    code: "ISO 9001",
-    title: "QMS Certificate (English)",
-    image: qmsCertificateEnglish,
-    documentUrl: "https://www.yaoshuntoys.com/media/site/about/certificates/cn-iso-9001-qms-certificate.pdf?v=dded357a39b23ff25674f8dfb4831555",
+    code: "Eurofins",
+    title: "Test Report",
+    image: eurofinsTestReport,
+    documentUrl: "https://www.yaoshuntoys.com/media/site/about/certificates/eurofins-test-report-efw726054129.pdf?v=52cfa2de43465c91de830c80b75366fe",
   },
-  {
-    code: "ISO 9001",
-    title: "QMS Certificate (Chinese)",
-    image: qmsCertificateChinese,
-    documentUrl: "https://www.yaoshuntoys.com/media/site/about/certificates/cn-iso-9001-qms-certificate.pdf?v=dded357a39b23ff25674f8dfb4831555",
-  },
+  {code: "NTEK", title: "Test Report", image: certificateImage1},
+  {code: "NTEK", title: "Test Report", image: certificateImage2},
+  {code: "CCC", title: "Test Report", image: cccTestReportCover},
   {
     code: "CE",
     title: "Certificate of Compliance",
@@ -84,16 +81,27 @@ export const certificateItems: CertificateItem[] = [
     image: childrensProductCertificate,
     documentUrl: "https://www.yaoshuntoys.com/media/site/about/certificates/us-childrens-product-certificate.pdf?v=b113197cb1c8793ff0885c01bd1509cf",
   },
-  {
-    code: "Eurofins",
-    title: "Test Report",
-    image: eurofinsTestReport,
-    documentUrl: "https://www.yaoshuntoys.com/media/site/about/certificates/eurofins-test-report-efw726054129.pdf?v=52cfa2de43465c91de830c80b75366fe",
-  },
-  {code: "NTEK", title: "Test Report", image: certificateImage1},
-  {code: "NTEK", title: "Test Report", image: certificateImage2},
   {code: "SPG", title: "Certificate", image: certificateImage3},
   {code: "SEI", title: "Safety Standard", image: certificateImage4},
+  {
+    code: "CPSC",
+    title: "Children's Product Certificate Record",
+    image: highlightedChildrensProductCertificate,
+  },
+  {
+    code: "ISO 9001",
+    title: "QMS Certificate (English)",
+    image: qmsCertificateEnglish,
+    documentUrl: "https://www.yaoshuntoys.com/media/site/about/certificates/cn-iso-9001-qms-certificate.pdf?v=dded357a39b23ff25674f8dfb4831555",
+  },
+  {
+    code: "ISO 9001",
+    title: "QMS Certificate (Chinese)",
+    image: qmsCertificateChinese,
+    documentUrl: "https://www.yaoshuntoys.com/media/site/about/certificates/cn-iso-9001-qms-certificate.pdf?v=dded357a39b23ff25674f8dfb4831555",
+  },
+  {code: "SPG", title: "Audit Record", image: certificateImage5},
+  {code: "NTEK", title: "Sample Photos", image: certificateImage6},
   {code: "EUIPO", title: "Design Registration", image: euipoDesignRegistration},
   {
     code: "UKIPO",
@@ -109,14 +117,6 @@ export const certificateItems: CertificateItem[] = [
   },
   {code: "CNIPA", title: "Leyidi Trademark Registration", image: leyidiTrademarkRegistration},
   {code: "CNIPA", title: "Londy Trademark Registration", image: londyTrademarkRegistration},
-  {code: "CCC", title: "Test Report", image: cccTestReportCover},
-  {
-    code: "CPSC",
-    title: "Children's Product Certificate Record",
-    image: highlightedChildrensProductCertificate,
-  },
-  {code: "SPG", title: "Audit Record", image: certificateImage5},
-  {code: "NTEK", title: "Sample Photos", image: certificateImage6},
 ] as const;
 
 export function getCertificateDocumentsStructuredData() {

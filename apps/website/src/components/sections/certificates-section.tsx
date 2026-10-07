@@ -133,7 +133,8 @@ export function CertificatesSection({
             onClick={() => setIsExpanded((current) => !current)}
             type="button"
           >
-            <span>
+            {/* Replace the whole label because page translation can replace its text nodes. */}
+            <span key={isExpanded ? "collapse" : "expand"}>
               {isExpanded ? (
                 collapseLabel
               ) : (
